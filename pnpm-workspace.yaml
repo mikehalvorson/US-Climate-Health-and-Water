@@ -1,0 +1,5 @@
+# Records the required Astro/Vitest build-script approvals. This repository is
+# not a monorepo workspace.
+allowBuilds:
+  esbuild: true
+  sharp: true

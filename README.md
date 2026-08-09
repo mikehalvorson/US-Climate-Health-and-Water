@@ -11,7 +11,9 @@ and chapter-to-chapter navigation.
 
 ## Current phase
 
-The project is in research and documentation. The first verified corpus covers
+The project has completed its research baseline and canonical registry
+foundation. Public dashboard routes have not been implemented yet. The first
+verified corpus covers
 global and U.S. energy production, generation, consumption, transmission, and
 the public En-ROADS model architecture. It now also includes a verified
 technical, health, regulatory, and lifecycle-sustainability problem framework;
@@ -57,6 +59,12 @@ additives, PFAS, and particles. Its 21 dashboard claims each carry a three-check
 audit; the disputed pregnancy-and-vaccine claim is preserved as a correction,
 not repeated as fact. Its index is
 [`research/plastics/README.md`](research/plastics/README.md).
+
+The application foundation uses Astro 5, strict TypeScript, and Vitest. Stable
+namespaces, typed registry contracts, controlled vocabularies, all 16 required
+routes, mechanism links, and the reconciled integrity-test contract live under
+[`src/lib/registry`](src/lib/registry). Run `pnpm test`, `pnpm check`, and
+`pnpm build` to verify the current foundation.
 
 No factual claim or numeric parameter is ready for publication until it passes
 the verification process in
