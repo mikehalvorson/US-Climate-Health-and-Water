@@ -1,0 +1,1267 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedForEvidenceVintage": "2026-08-01",
+  "counts": {
+    "source": 336,
+    "claim": 157,
+    "dataset": 105,
+    "metric": 117,
+    "parameter": 12,
+    "scenario": 128,
+    "chart": 82,
+    "transformation": 5,
+    "model": 17,
+    "denominator": 14,
+    "open_item": 102
+  },
+  "sourceDefinitionCollisions": [
+    {
+      "legacyId": "SRC-DOE-NEEDS23",
+      "canonicalId": "SRC-000159",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/sources.json",
+        "research/energy/transmission/source-verification.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 2
+    },
+    {
+      "legacyId": "SRC-DOE-NTPS24",
+      "canonicalId": "SRC-000163",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/sources.json",
+        "research/energy/transmission/source-verification.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 2
+    },
+    {
+      "legacyId": "SRC-EIA-930",
+      "canonicalId": "SRC-000181",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/sources.json",
+        "research/energy/transmission/source-verification.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 2
+    },
+    {
+      "legacyId": "SRC-EIA-AEO2026-TABLES",
+      "canonicalId": "SRC-000182",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/consumption/source-verification.json",
+        "research/energy/sources.json",
+        "research/energy/timeseries/source-access.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 3
+    },
+    {
+      "legacyId": "SRC-EIA-MER-10.6",
+      "canonicalId": "SRC-000192",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/sources.json",
+        "research/energy/timeseries/source-access.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 2
+    },
+    {
+      "legacyId": "SRC-EIA-MER-7.2A",
+      "canonicalId": "SRC-000193",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/sources.json",
+        "research/energy/timeseries/source-access.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 2
+    },
+    {
+      "legacyId": "SRC-EIA-MER-7.6",
+      "canonicalId": "SRC-000194",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/consumption/source-verification.json",
+        "research/energy/sources.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 2
+    },
+    {
+      "legacyId": "SRC-ENR-DEMAND",
+      "canonicalId": "SRC-000203",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/consumption/source-verification.json",
+        "research/energy/sources.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 2
+    },
+    {
+      "legacyId": "SRC-FERC-ORDER1920",
+      "canonicalId": "SRC-000221",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/sources.json",
+        "research/energy/transmission/source-verification.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 2
+    },
+    {
+      "legacyId": "SRC-HIFLD-TRANSMISSION-LINES",
+      "canonicalId": "SRC-000228",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/sources.json",
+        "research/energy/transmission/source-verification.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 2
+    },
+    {
+      "legacyId": "SRC-IEA-COOLING18",
+      "canonicalId": "SRC-000231",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/consumption/source-verification.json",
+        "research/energy/sources.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 2
+    },
+    {
+      "legacyId": "SRC-IEA-ELECTRICITY26-DEMAND",
+      "canonicalId": "SRC-000233",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/consumption/source-verification.json",
+        "research/energy/sources.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 2
+    },
+    {
+      "legacyId": "SRC-IEA-ENERGY-AI25",
+      "canonicalId": "SRC-000235",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/consumption/source-verification.json",
+        "research/energy/sources.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 2
+    },
+    {
+      "legacyId": "SRC-IEA-GEVO26",
+      "canonicalId": "SRC-000243",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/consumption/source-verification.json",
+        "research/energy/sources.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 2
+    },
+    {
+      "legacyId": "SRC-IEA-HEATPUMPS22",
+      "canonicalId": "SRC-000244",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/consumption/source-verification.json",
+        "research/energy/sources.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 2
+    },
+    {
+      "legacyId": "SRC-IEA-WEO25-DEMAND",
+      "canonicalId": "SRC-000248",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/consumption/source-verification.json",
+        "research/energy/sources.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 2
+    },
+    {
+      "legacyId": "SRC-IRENA-OCEAN-INVESTMENT-2023",
+      "canonicalId": "SRC-000252",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/sources.json",
+        "research/energy/timeseries/source-access.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 2
+    },
+    {
+      "legacyId": "SRC-IRENASTAT-CAP26",
+      "canonicalId": "SRC-000253",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/sources.json",
+        "research/energy/timeseries/source-access.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 2
+    },
+    {
+      "legacyId": "SRC-IRENASTAT-GEN25",
+      "canonicalId": "SRC-000254",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/sources.json",
+        "research/energy/timeseries/source-access.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 2
+    },
+    {
+      "legacyId": "SRC-LBNL-DATACENTER24",
+      "canonicalId": "SRC-000257",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/consumption/source-verification.json",
+        "research/energy/sources.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 2
+    },
+    {
+      "legacyId": "SRC-NERC-LTRA25",
+      "canonicalId": "SRC-000267",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/sources.json",
+        "research/energy/transmission/source-verification.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 2
+    },
+    {
+      "legacyId": "SRC-NGFS-PHASE5.1",
+      "canonicalId": "SRC-000268",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/consumption/source-verification.json",
+        "research/energy/sources.json",
+        "research/energy/timeseries/source-access.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 3
+    },
+    {
+      "legacyId": "SRC-NREL-EFS18",
+      "canonicalId": "SRC-000276",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/consumption/source-verification.json",
+        "research/energy/sources.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 2
+    },
+    {
+      "legacyId": "SRC-NREL-STANDARD-SCENARIOS-2024",
+      "canonicalId": "SRC-000277",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/sources.json",
+        "research/energy/timeseries/source-access.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 2
+    },
+    {
+      "legacyId": "SRC-OWID-ENERGY",
+      "canonicalId": "SRC-000283",
+      "chosenPath": "research/energy/sources.json",
+      "candidatePaths": [
+        "research/energy/consumption/source-verification.json",
+        "research/energy/sources.json",
+        "research/energy/timeseries/source-access.json"
+      ],
+      "resolution": "owner_precedence",
+      "metadataVariants": 3
+    }
+  ],
+  "orphanResolution": [],
+  "duplicateCanonicalIds": [],
+  "controlledVocabularyFallbacks": [
+    "author_deposited_replication_data",
+    "industry_life_cycle_data_portal",
+    "industry_life_cycle_inventory",
+    "international_health_guidance",
+    "joint_scientific_workshop_report",
+    "mixed_methods_policy_research",
+    "national_academies_consensus_report",
+    "processed_open_data_compilation",
+    "technology_status_report"
+  ],
+  "semanticDrift": [],
+  "sourceCoverage": [
+    {
+      "claimId": "CLM-000001",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000002",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000003",
+      "sourceCount": 1,
+      "activeSourceCount": 1,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000004",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000005",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000006",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000007",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000008",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000009",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000010",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000011",
+      "sourceCount": 3,
+      "activeSourceCount": 3,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000012",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000013",
+      "sourceCount": 1,
+      "activeSourceCount": 1,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000014",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000015",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000016",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000017",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000018",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000019",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000020",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000021",
+      "sourceCount": 1,
+      "activeSourceCount": 1,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000022",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000023",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000024",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000025",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000026",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000027",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000028",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000029",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000030",
+      "sourceCount": 1,
+      "activeSourceCount": 1,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000031",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000032",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000033",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000034",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000035",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000036",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000037",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000038",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000039",
+      "sourceCount": 3,
+      "activeSourceCount": 3,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000040",
+      "sourceCount": 1,
+      "activeSourceCount": 1,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000041",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000042",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000043",
+      "sourceCount": 4,
+      "activeSourceCount": 4,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000044",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000045",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000046",
+      "sourceCount": 1,
+      "activeSourceCount": 1,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000047",
+      "sourceCount": 3,
+      "activeSourceCount": 3,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000048",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000049",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000050",
+      "sourceCount": 1,
+      "activeSourceCount": 1,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000051",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000052",
+      "sourceCount": 1,
+      "activeSourceCount": 1,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000053",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000054",
+      "sourceCount": 3,
+      "activeSourceCount": 3,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000055",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000056",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000057",
+      "sourceCount": 3,
+      "activeSourceCount": 3,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000058",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000059",
+      "sourceCount": 3,
+      "activeSourceCount": 3,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000060",
+      "sourceCount": 3,
+      "activeSourceCount": 3,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000061",
+      "sourceCount": 3,
+      "activeSourceCount": 3,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000062",
+      "sourceCount": 3,
+      "activeSourceCount": 3,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000063",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000064",
+      "sourceCount": 3,
+      "activeSourceCount": 3,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000065",
+      "sourceCount": 3,
+      "activeSourceCount": 3,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000066",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000067",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000068",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000069",
+      "sourceCount": 3,
+      "activeSourceCount": 3,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000070",
+      "sourceCount": 3,
+      "activeSourceCount": 3,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000071",
+      "sourceCount": 1,
+      "activeSourceCount": 1,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000072",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000073",
+      "sourceCount": 1,
+      "activeSourceCount": 1,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000074",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000075",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000076",
+      "sourceCount": 3,
+      "activeSourceCount": 3,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000077",
+      "sourceCount": 3,
+      "activeSourceCount": 3,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000078",
+      "sourceCount": 1,
+      "activeSourceCount": 1,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000079",
+      "sourceCount": 1,
+      "activeSourceCount": 1,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000080",
+      "sourceCount": 1,
+      "activeSourceCount": 1,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000081",
+      "sourceCount": 1,
+      "activeSourceCount": 1,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000082",
+      "sourceCount": 1,
+      "activeSourceCount": 1,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000083",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000084",
+      "sourceCount": 1,
+      "activeSourceCount": 1,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000085",
+      "sourceCount": 1,
+      "activeSourceCount": 1,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000086",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000087",
+      "sourceCount": 2,
+      "activeSourceCount": 2,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000088",
+      "sourceCount": 1,
+      "activeSourceCount": 1,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000089",
+      "sourceCount": 1,
+      "activeSourceCount": 1,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000090",
+      "sourceCount": 3,
+      "activeSourceCount": 3,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000091",
+      "sourceCount": 1,
+      "activeSourceCount": 1,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000092",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000093",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000094",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000095",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000096",
+      "sourceCount": 1,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000097",
+      "sourceCount": 1,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000098",
+      "sourceCount": 3,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000099",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000100",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000101",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000102",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000103",
+      "sourceCount": 1,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000104",
+      "sourceCount": 1,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000105",
+      "sourceCount": 1,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000106",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000107",
+      "sourceCount": 1,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000108",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000109",
+      "sourceCount": 1,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000110",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000111",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000112",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000113",
+      "sourceCount": 5,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000114",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000115",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000116",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000117",
+      "sourceCount": 3,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000118",
+      "sourceCount": 3,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000119",
+      "sourceCount": 1,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000120",
+      "sourceCount": 1,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000121",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000122",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000123",
+      "sourceCount": 5,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000124",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000125",
+      "sourceCount": 4,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000126",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000127",
+      "sourceCount": 1,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000128",
+      "sourceCount": 1,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000129",
+      "sourceCount": 1,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000130",
+      "sourceCount": 1,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000131",
+      "sourceCount": 1,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000132",
+      "sourceCount": 1,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000133",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000134",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000135",
+      "sourceCount": 1,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000136",
+      "sourceCount": 3,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000137",
+      "sourceCount": 3,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000138",
+      "sourceCount": 1,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000139",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000140",
+      "sourceCount": 4,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000141",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000142",
+      "sourceCount": 4,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000143",
+      "sourceCount": 1,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000144",
+      "sourceCount": 1,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000145",
+      "sourceCount": 1,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000146",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000147",
+      "sourceCount": 1,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000148",
+      "sourceCount": 3,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000149",
+      "sourceCount": 3,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000150",
+      "sourceCount": 1,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000151",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000152",
+      "sourceCount": 3,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000153",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000154",
+      "sourceCount": 1,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000155",
+      "sourceCount": 2,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000156",
+      "sourceCount": 3,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    },
+    {
+      "claimId": "CLM-000157",
+      "sourceCount": 3,
+      "activeSourceCount": 0,
+      "unresolvedSourceIds": []
+    }
+  ],
+  "unresolved": {
+    "openItems": 102,
+    "pendingSources": 0,
+    "pendingParameters": 12,
+    "unboundCharts": 82
+  },
+  "policies": {
+    "sourceCollision": "Highest-precedence domain owner wins; all candidate paths remain in this audit.",
+    "orphan": "A provisional canonical source and linked open item preserve referential integrity without fabricating metadata.",
+    "null": "Missing values remain null or absent; zero is never substituted.",
+    "scenario": "Source scenario families remain separate and conditional."
+  }
+}

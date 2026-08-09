@@ -1,3 +1,4 @@
+import generatedRegistry from '../../generated/registry.json';
 import { INTEGRITY_TEST_REGISTRY } from './integrity';
 import { ROUTES } from './routes';
 import type {
@@ -16,34 +17,35 @@ import type {
 } from './types';
 import { VOCABULARY_REGISTRY } from './vocabularies';
 
-const EMPTY_SOURCES: readonly SourceRecord[] = [];
-const EMPTY_CLAIMS: readonly ClaimRecord[] = [];
-const EMPTY_DATASETS: readonly DatasetRecord[] = [];
-const EMPTY_METRICS: readonly MetricRecord[] = [];
-const EMPTY_PARAMETERS: readonly ParameterRecord[] = [];
-const EMPTY_SCENARIOS: readonly ScenarioRecord[] = [];
-const EMPTY_CHARTS: readonly ChartRecord[] = [];
-const EMPTY_TRANSFORMATIONS: readonly TransformationRecord[] = [];
-const EMPTY_MODELS: readonly ModelRecord[] = [];
-const EMPTY_DENOMINATORS: readonly DenominatorRecord[] = [];
-const EMPTY_OPEN_ITEMS: readonly OpenItemRecord[] = [];
+interface GeneratedRegistryStore {
+  source: readonly SourceRecord[];
+  claim: readonly ClaimRecord[];
+  dataset: readonly DatasetRecord[];
+  metric: readonly MetricRecord[];
+  parameter: readonly ParameterRecord[];
+  scenario: readonly ScenarioRecord[];
+  chart: readonly ChartRecord[];
+  transformation: readonly TransformationRecord[];
+  model: readonly ModelRecord[];
+  denominator: readonly DenominatorRecord[];
+  open_item: readonly OpenItemRecord[];
+}
 
-// Step 3 populates the currently empty registries through read-only research
-// adapters. Keeping every registry present now makes absence explicit and
-// prevents later code from inventing local identity stores.
+const generated = generatedRegistry as unknown as GeneratedRegistryStore;
+
 export const CANONICAL_REGISTRIES: RegistryStore = {
-  source: EMPTY_SOURCES,
-  claim: EMPTY_CLAIMS,
-  dataset: EMPTY_DATASETS,
-  metric: EMPTY_METRICS,
-  parameter: EMPTY_PARAMETERS,
-  scenario: EMPTY_SCENARIOS,
-  chart: EMPTY_CHARTS,
-  transformation: EMPTY_TRANSFORMATIONS,
-  model: EMPTY_MODELS,
+  source: generated.source,
+  claim: generated.claim,
+  dataset: generated.dataset,
+  metric: generated.metric,
+  parameter: generated.parameter,
+  scenario: generated.scenario,
+  chart: generated.chart,
+  transformation: generated.transformation,
+  model: generated.model,
   route: ROUTES,
   vocabulary: VOCABULARY_REGISTRY,
-  denominator: EMPTY_DENOMINATORS,
-  open_item: EMPTY_OPEN_ITEMS,
+  denominator: generated.denominator,
+  open_item: generated.open_item,
   integrity_test: INTEGRITY_TEST_REGISTRY,
 };

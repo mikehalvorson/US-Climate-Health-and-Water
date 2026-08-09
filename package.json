@@ -9,10 +9,12 @@
     "pnpm": ">=11.16 <12"
   },
   "scripts": {
+    "generate:registries": "node tools/build-registries.mjs",
+    "generate:check": "node tools/build-registries.mjs --check",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check && tsc --noEmit",
+    "check": "pnpm generate:check && astro check && tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest"
   },

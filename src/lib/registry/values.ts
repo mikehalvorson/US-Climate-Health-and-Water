@@ -19,6 +19,9 @@ export type EvidenceState = (typeof EVIDENCE_STATES)[number];
 export const CLAIM_STATUSES = ['verified', 'provisional', 'rejected', 'superseded'] as const;
 export type ClaimStatus = (typeof CLAIM_STATUSES)[number];
 
+export const VERIFICATION_STATUSES = ['verified', 'provisional', 'not_assessed', 'rejected'] as const;
+export type VerificationStatus = (typeof VERIFICATION_STATUSES)[number];
+
 export const VIEWPOINTS = [
   'people_and_households',
   'workers_and_operators',
@@ -156,6 +159,7 @@ export const VOCABULARY_VALUES = {
   confidence: CONFIDENCE_LEVELS,
   evidence_state: EVIDENCE_STATES,
   claim_status: CLAIM_STATUSES,
+  verification_status: VERIFICATION_STATUSES,
   viewpoint: VIEWPOINTS,
   unit_family: UNIT_FAMILIES,
   use_class: USE_CLASSES,

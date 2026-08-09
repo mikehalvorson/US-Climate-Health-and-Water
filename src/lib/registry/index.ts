@@ -1,5 +1,6 @@
 export * from './integrity';
 export * from './namespaces';
+export * from './references';
 export * from './routes';
 export * from './store';
 export * from './types';

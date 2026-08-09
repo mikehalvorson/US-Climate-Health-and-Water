@@ -7,6 +7,7 @@ const descriptions: Readonly<Record<VocabularyKey, string>> = {
   confidence: 'Evidence confidence after source, proxy, transformation, and model limits are considered.',
   evidence_state: 'Visible distinction among observations, estimates, scenarios, transformations, models, qualitative evidence, and gaps.',
   claim_status: 'Publication review state for factual and numeric claims.',
+  verification_status: 'Identity and fidelity verification state for sources and claims.',
   viewpoint: 'Shared stakeholder and system viewpoints used across story chapters.',
   unit_family: 'Semantic unit families used to prevent incompatible comparisons and joins.',
   use_class: 'Declared computational role of a dataset, metric, denominator, or parameter.',

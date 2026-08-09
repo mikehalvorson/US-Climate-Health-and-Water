@@ -16,6 +16,7 @@ import type {
   Supersection,
   UnitFamily,
   UseClass,
+  VerificationStatus,
   VocabularyKey,
 } from './values';
 
@@ -54,8 +55,13 @@ export interface SourceRecord extends BaseRegistryRecord {
   url: string;
   sourceType: SourceType;
   publishedAt: string | null;
-  accessedAt: string;
+  accessedAt: string | null;
   locator?: string;
+  locators?: readonly string[];
+  dataPeriod?: string | null;
+  domain: string;
+  originalSourceType: string;
+  identityStatus: VerificationStatus;
 }
 
 export interface ClaimRecord extends BaseRegistryRecord {
@@ -69,6 +75,8 @@ export interface ClaimRecord extends BaseRegistryRecord {
   period: string;
   unit?: string;
   confidence: Confidence;
+  fidelityStatus: VerificationStatus;
+  domain: string;
   misuseGuardrail: string;
 }
 
@@ -81,6 +89,7 @@ export interface DatasetRecord extends BaseRegistryRecord {
   unitFamilies: readonly UnitFamily[];
   useClass: UseClass;
   participation: Participation;
+  paths?: readonly string[];
 }
 
 export interface MetricRecord extends BaseRegistryRecord {
@@ -158,6 +167,8 @@ export interface ChartRecord extends BaseRegistryRecord {
   emptyState: string;
   errorState: string;
   accessibilitySummary: string;
+  dataReferences?: readonly string[];
+  legacyContract?: Readonly<Record<string, unknown>>;
 }
 
 export interface TransformationRecord extends BaseRegistryRecord {
@@ -168,6 +179,7 @@ export interface TransformationRecord extends BaseRegistryRecord {
   outputMetricIds: readonly string[];
   confidence: Confidence;
   nullRule: string;
+  implementationPath?: string;
 }
 
 export interface ModelRecord extends BaseRegistryRecord {
@@ -175,6 +187,7 @@ export interface ModelRecord extends BaseRegistryRecord {
   version: string;
   modelClass: ModelClass;
   inputIds: readonly string[];
+  sourceIds?: readonly string[];
   outputMetricIds: readonly string[];
   interpretation: string;
   prohibitedInterpretations: readonly string[];
@@ -222,6 +235,8 @@ export interface OpenItemRecord extends BaseRegistryRecord {
   created: string;
   lastReviewed: string;
   closedByEvidenceIds?: readonly string[];
+  legacyGapId?: string;
+  sourcePath?: string;
 }
 
 export interface IntegrityTestDefinition extends BaseRegistryRecord {
