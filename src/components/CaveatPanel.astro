@@ -1,0 +1,27 @@
+---
+interface Props {
+  title?: string;
+  caveats?: readonly string[];
+  prohibitedInterpretations?: readonly string[];
+}
+
+const {
+  title = 'Limits and interpretation',
+  caveats = [],
+  prohibitedInterpretations = [],
+} = Astro.props;
+---
+<aside class="caveat-panel" aria-label={title} data-caveat-panel>
+  <div class="caveat-panel__mark" aria-hidden="true">i</div>
+  <div>
+    <h3>{title}</h3>
+    {caveats.length > 0 && <ul>{caveats.map((caveat) => <li>{caveat}</li>)}</ul>}
+    <slot />
+    {prohibitedInterpretations.length > 0 && (
+      <div class="caveat-panel__prohibited">
+        <strong>Do not interpret this as:</strong>
+        <ul>{prohibitedInterpretations.map((interpretation) => <li>{interpretation}</li>)}</ul>
+      </div>
+    )}
+  </div>
+</aside>

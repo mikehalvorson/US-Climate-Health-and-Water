@@ -1,0 +1,24 @@
+---
+interface Props {
+  id: string;
+  title: string;
+  conclusion: string;
+  rationale: readonly string[];
+  tradeoffs: readonly string[];
+  residualRisks: readonly string[];
+}
+
+const { id, title, conclusion, rationale, tradeoffs, residualRisks } = Astro.props;
+---
+<section class="recommendation-panel" aria-labelledby={`${id}-title`}>
+  <div class="recommendation-panel__decision">
+    <p class="section-kicker">Recommended design</p>
+    <h2 id={`${id}-title`}>{title}</h2>
+    <p>{conclusion}</p>
+  </div>
+  <div class="recommendation-panel__reasoning">
+    <div><h3>Why this option</h3><ol>{rationale.map((reason) => <li>{reason}</li>)}</ol></div>
+    <div><h3>Tradeoffs</h3><ul>{tradeoffs.map((tradeoff) => <li>{tradeoff}</li>)}</ul></div>
+    <div><h3>Residual risks</h3><ul>{residualRisks.map((risk) => <li>{risk}</li>)}</ul></div>
+  </div>
+</section>

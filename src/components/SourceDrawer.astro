@@ -1,0 +1,58 @@
+---
+import type { ClaimRecord, SourceRecord } from '../lib/registry/types';
+
+interface Props {
+  id: string;
+  source: SourceRecord;
+  claim?: ClaimRecord;
+  triggerLabel?: string;
+}
+
+const { id, source, claim, triggerLabel = source.publisher } = Astro.props;
+const titleId = `${id}-title`;
+const descriptionId = `${id}-description`;
+---
+<span class="source-disclosure" data-source-disclosure>
+  <a
+    class="source-disclosure__trigger"
+    href={source.url}
+    aria-haspopup="dialog"
+    aria-controls={id}
+    data-source-drawer-trigger
+  >{triggerLabel}</a>
+  <dialog
+    id={id}
+    class="source-drawer"
+    aria-labelledby={titleId}
+    aria-describedby={descriptionId}
+    data-source-drawer
+  >
+    <div class="source-drawer__header">
+      <div>
+        <p class="section-kicker">Source record · {source.id}</p>
+        <h2 id={titleId}>{source.title}</h2>
+      </div>
+      <button type="button" class="source-drawer__close" data-source-drawer-close aria-label="Close source details">×</button>
+    </div>
+    <div class="source-drawer__body" id={descriptionId}>
+      <dl class="source-drawer__metadata">
+        <div><dt>Publisher</dt><dd>{source.publisher}</dd></div>
+        <div><dt>Published</dt><dd>{source.publishedAt ?? 'Not recorded'}</dd></div>
+        <div><dt>Accessed</dt><dd>{source.accessedAt ?? 'Not recorded'}</dd></div>
+        <div><dt>Identity check</dt><dd>{source.identityStatus.replaceAll('_', ' ')}</dd></div>
+        {source.locator && <div><dt>Locator</dt><dd>{source.locator}</dd></div>}
+      </dl>
+      {claim && (
+        <section class="source-drawer__claim" aria-labelledby={`${id}-claim-title`}>
+          <h3 id={`${id}-claim-title`}>Linked claim · {claim.id}</h3>
+          <p>{claim.statement}</p>
+          <p><strong>Scope:</strong> {claim.geography} · {claim.period} · {claim.evidenceState.replaceAll('_', ' ')}</p>
+          <p><strong>Misuse guardrail:</strong> {claim.misuseGuardrail}</p>
+        </section>
+      )}
+      <a class="source-drawer__external" href={source.url}>Open the original source</a>
+    </div>
+  </dialog>
+</span>
+
+<script>import '../scripts/source-drawer.ts';</script>

@@ -1,0 +1,35 @@
+---
+import type { EvidenceState, Viewpoint } from '../lib/registry/values';
+import EvidenceBadge from './EvidenceBadge.astro';
+
+export interface ViewpointItem {
+  viewpoint: Viewpoint;
+  label: string;
+  problem: string;
+  evidenceState: EvidenceState;
+  consequence?: string;
+}
+
+interface Props {
+  id: string;
+  title: string;
+  items: readonly ViewpointItem[];
+}
+
+const { id, title, items } = Astro.props;
+---
+<section class="viewpoint-grid" aria-labelledby={`${id}-title`}>
+  <h2 id={`${id}-title`}>{title}</h2>
+  <div class="viewpoint-grid__items">
+    {items.map((item) => (
+      <article data-viewpoint={item.viewpoint}>
+        <div class="viewpoint-grid__header">
+          <h3>{item.label}</h3>
+          <EvidenceBadge state={item.evidenceState} />
+        </div>
+        <p>{item.problem}</p>
+        {item.consequence && <p class="viewpoint-grid__consequence">{item.consequence}</p>}
+      </article>
+    ))}
+  </div>
+</section>

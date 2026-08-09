@@ -1,0 +1,40 @@
+---
+import { formatEvidenceValue } from '../lib/evidence/presentation';
+
+export interface DataTableColumn {
+  key: string;
+  label: string;
+  unit?: string;
+  numeric?: boolean;
+}
+
+export type DataTableValue = string | number | null;
+export type DataTableRow = Readonly<Record<string, DataTableValue>>;
+
+interface Props {
+  caption: string;
+  columns: readonly DataTableColumn[];
+  rows: readonly DataTableRow[];
+}
+
+const { caption, columns, rows } = Astro.props;
+const display = (value: DataTableValue, numeric = false) => {
+  if (typeof value === 'number' || value === null) return formatEvidenceValue(value, { maximumFractionDigits: 3 });
+  return numeric && value === '' ? 'Missing' : value;
+};
+---
+<div class="data-table-scroll" tabindex="0" role="region" aria-label={`${caption} data table`} data-data-table>
+  <table>
+    <caption>{caption}</caption>
+    <thead>
+      <tr>{columns.map((column) => <th scope="col">{column.label}{column.unit && <span> ({column.unit})</span>}</th>)}</tr>
+    </thead>
+    <tbody>
+      {rows.length === 0 ? (
+        <tr><td colspan={columns.length}>No compatible rows are available.</td></tr>
+      ) : rows.map((row) => (
+        <tr>{columns.map((column, index) => index === 0 ? <th scope="row">{display(row[column.key] ?? null, column.numeric)}</th> : <td>{display(row[column.key] ?? null, column.numeric)}</td>)}</tr>
+      ))}
+    </tbody>
+  </table>
+</div>

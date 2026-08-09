@@ -1,0 +1,30 @@
+---
+import { buildMapPointGeometry, type MapPointInput } from '../../lib/charts/geometry';
+
+export interface LabeledMapPoint extends MapPointInput { label: string }
+
+interface Props {
+  points: readonly LabeledMapPoint[];
+  unit: string;
+  summary: string;
+  width?: number;
+  height?: number;
+}
+
+const { points, unit, summary, width = 720, height = 360 } = Astro.props;
+const geometry = buildMapPointGeometry(points, { width, height, insets: { top: 28 } });
+---
+<svg class="svg-plot map-context-plot" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${summary} Contextual locator only; not a boundary-accurate analytical map.`}>
+  <title>{summary}. Contextual locator only; not a boundary-accurate analytical map.</title>
+  <rect class="map-context-frame" x="48" y="28" width={width - 66} height={height - 64} rx="12" />
+  <g class="map-graticule" aria-hidden="true">
+    {[-120, -60, 0, 60, 120].map((longitude) => <line x1={48 + ((longitude + 180) / 360) * (width - 66)} x2={48 + ((longitude + 180) / 360) * (width - 66)} y1="28" y2={height - 36} />)}
+    {[-60, -30, 0, 30, 60].map((latitude) => <line x1="48" x2={width - 18} y1={28 + ((90 - latitude) / 180) * (height - 64)} y2={28 + ((90 - latitude) / 180) * (height - 64)} />)}
+  </g>
+  {geometry.map((point, index) => {
+    const source = points[index];
+    const tooltip = point.missing ? `${source?.label}: location shown; value missing` : `${source?.label}: ${point.value ?? 'context only'}${point.value === undefined ? '' : ` ${unit}`}`;
+    return <g class:list={['map-point', `chart-series--${index % 6}`, { 'is-missing': point.missing }]} transform={`translate(${point.x} ${point.y})`} tabindex="0" aria-label={tooltip} data-tooltip={tooltip}><circle r="8" /><path d="M 0 9 L -5 17 L 5 17 Z" /><title>{tooltip}</title></g>;
+  })}
+  <text class="map-context-note" x={width / 2} y={height - 8} text-anchor="middle">Contextual locator · boundaries and projection must be supplied by the approved source</text>
+</svg>

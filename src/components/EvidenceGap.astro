@@ -1,0 +1,33 @@
+---
+import type { OpenItemRecord } from '../lib/registry/types';
+import EvidenceBadge from './EvidenceBadge.astro';
+
+interface Props {
+  item?: OpenItemRecord;
+  title?: string;
+  decision?: string;
+  missingInputs?: readonly string[];
+  nextAction?: string;
+}
+
+const { item, title, decision, missingInputs = [], nextAction } = Astro.props;
+const resolvedTitle = title ?? item?.label ?? 'Evidence is not available';
+const resolvedNextAction = nextAction ?? item?.nextAction ?? 'Resolve the named evidence requirements before publication.';
+---
+<aside class="evidence-gap" data-evidence-gap data-open-item-id={item?.id} aria-label={resolvedTitle}>
+  <div class="evidence-gap__header">
+    <EvidenceBadge state="data_gap" />
+    {item && <span class="evidence-gap__severity">{item.severity.replaceAll('_', ' ')}</span>}
+  </div>
+  <h3>{resolvedTitle}</h3>
+  {decision && <p><strong>Decision this evidence must support:</strong> {decision}</p>}
+  {item?.blockingCondition && <p><strong>Publication gate:</strong> {item.blockingCondition}</p>}
+  {missingInputs.length > 0 && (
+    <div>
+      <strong>Required inputs:</strong>
+      <ul>{missingInputs.map((input) => <li>{input}</li>)}</ul>
+    </div>
+  )}
+  <p class="evidence-gap__next"><strong>Next research action:</strong> {resolvedNextAction}</p>
+  {item && <p class="evidence-gap__identity">Tracked as {item.id} · reviewed {item.lastReviewed}</p>}
+</aside>

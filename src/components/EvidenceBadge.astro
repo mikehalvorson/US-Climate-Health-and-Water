@@ -1,0 +1,20 @@
+---
+import { evidencePresentation } from '../lib/evidence/presentation';
+import type { EvidenceState } from '../lib/registry/values';
+
+interface Props {
+  state: EvidenceState;
+  label?: string;
+}
+
+const { state, label } = Astro.props;
+const presentation = evidencePresentation(state);
+---
+<span
+  class:list={['evidence-badge', `evidence-badge--${state}`]}
+  data-evidence-badge={state}
+  title={presentation.description}
+>
+  <span class="evidence-badge__symbol" aria-hidden="true">{presentation.symbol}</span>
+  <span>{label ?? presentation.label}</span>
+</span>

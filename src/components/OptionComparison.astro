@@ -1,0 +1,44 @@
+---
+export interface ComparisonOption {
+  id: string;
+  label: string;
+  summary: string;
+  values: Readonly<Record<string, string>>;
+}
+
+export interface ComparisonDimension {
+  id: string;
+  label: string;
+}
+
+interface Props {
+  id: string;
+  title: string;
+  question: string;
+  dimensions: readonly ComparisonDimension[];
+  options: readonly ComparisonOption[];
+}
+
+const { id, title, question, dimensions, options } = Astro.props;
+---
+<section class="option-comparison" aria-labelledby={`${id}-title`}>
+  <div class="option-comparison__intro">
+    <p class="section-kicker">Fair alternatives</p>
+    <h2 id={`${id}-title`}>{title}</h2>
+    <p>{question}</p>
+  </div>
+  <div class="data-table-scroll" tabindex="0" role="region" aria-label={`${title} comparison table`}>
+    <table>
+      <caption>{question} All options use the same comparison dimensions.</caption>
+      <thead><tr><th scope="col">Option</th>{dimensions.map((dimension) => <th scope="col">{dimension.label}</th>)}</tr></thead>
+      <tbody>
+        {options.map((option) => (
+          <tr data-option-id={option.id}>
+            <th scope="row"><strong>{option.label}</strong><span>{option.summary}</span></th>
+            {dimensions.map((dimension) => <td>{option.values[dimension.id] ?? 'Not assessed'}</td>)}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</section>

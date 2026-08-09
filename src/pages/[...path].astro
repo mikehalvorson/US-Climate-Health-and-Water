@@ -1,5 +1,8 @@
 ---
 import RouteLayout from '../layouts/RouteLayout.astro';
+import CaveatPanel from '../components/CaveatPanel.astro';
+import EvidenceBadge from '../components/EvidenceBadge.astro';
+import EvidenceGap from '../components/EvidenceGap.astro';
 import { hrefForRoute, STORY_ANCHORS } from '../lib/navigation/shell';
 import { CANONICAL_REGISTRIES } from '../lib/registry/store';
 import { ROUTES } from '../lib/registry/routes';
@@ -37,11 +40,21 @@ const statusCopy = {
               <p class="section-kicker">{anchor.label}</p>
               <h2>{copy[0]}</h2>
               <p>{copy[1]}</p>
-              <span class="publication-gate">Publication gate not yet cleared</span>
+              <EvidenceBadge state="data_gap" label="Publication gate not yet cleared" />
             </div>
           </section>
         );
       })}
+      <EvidenceGap
+        title={`${route.label} evidence remains gated`}
+        decision={route.decisionQuestion}
+        missingInputs={[
+          'A chapter-approved metric, unit, geography, period, and accounting boundary',
+          'A verified claim-to-source chain and accessible figure contract',
+          'A completed vertical-slice publication check',
+        ]}
+        nextAction={`Complete the ${route.label} evidence adapter and clear its chapter-specific publication gate.`}
+      />
       <aside class="method-link-card">
         <p>Every unavailable result is deliberate.</p>
         <a href={hrefForRoute('/methods', base)}>Inspect the current evidence and gap foundation →</a>
@@ -60,6 +73,14 @@ const statusCopy = {
         <div><dt>Datasets</dt><dd>{CANONICAL_REGISTRIES.dataset?.length ?? 0}</dd></div>
         <div><dt>Open items</dt><dd>{CANONICAL_REGISTRIES.open_item?.length ?? 0}</dd></div>
       </dl>
+      <CaveatPanel
+        title="What these counts do not establish"
+        caveats={[
+          'Registry counts describe the inspection foundation, not the number of conclusions ready for publication.',
+          'A registered source or metric can remain provisional, pending, or blocked by an open research item.',
+        ]}
+        prohibitedInterpretations={['Treating record volume as evidence quality or model readiness.']}
+      />
     </div>
   )}
 </RouteLayout>

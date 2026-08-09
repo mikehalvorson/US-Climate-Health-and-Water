@@ -1,0 +1,35 @@
+---
+import { formatEvidenceValue } from '../lib/evidence/presentation';
+import type { MetricRecord, SourceRecord } from '../lib/registry/types';
+import EvidenceBadge from './EvidenceBadge.astro';
+import SourceDrawer from './SourceDrawer.astro';
+
+interface Props {
+  metric: MetricRecord;
+  source?: SourceRecord;
+  sourceDrawerId?: string;
+  maximumFractionDigits?: number;
+  caveat?: string;
+}
+
+const { metric, source, sourceDrawerId = `source-${metric.id.toLowerCase()}`, maximumFractionDigits = 2, caveat } = Astro.props;
+const displayValue = formatEvidenceValue(metric.value, { maximumFractionDigits });
+---
+<article class:list={['metric-card', { 'metric-card--missing': metric.value === null }]} data-metric-id={metric.id}>
+  <div class="metric-card__header">
+    <p>{metric.label}</p>
+    <EvidenceBadge state={metric.evidenceState} />
+  </div>
+  <p class="metric-card__value">
+    <strong>{displayValue}</strong>
+    <span>{metric.value === null ? 'Value not published' : metric.unit}</span>
+  </p>
+  <dl class="metric-card__scope">
+    <div><dt>Geography</dt><dd>{metric.geography}</dd></div>
+    <div><dt>Period</dt><dd>{metric.period}</dd></div>
+    <div><dt>Confidence</dt><dd>{metric.confidence.replaceAll('_', ' ')}</dd></div>
+  </dl>
+  <p class="metric-card__boundary"><strong>Boundary:</strong> {metric.accountingBoundary}</p>
+  {caveat && <p class="metric-card__caveat">{caveat}</p>}
+  {source && <SourceDrawer id={sourceDrawerId} source={source} triggerLabel={`Source · ${source.publisher}`} />}
+</article>

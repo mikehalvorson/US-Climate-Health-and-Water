@@ -1,0 +1,64 @@
+---
+import type { ScenarioControlDefinition } from '../lib/scenarios/state';
+import { publishedScenarioDefaults, scenarioParameterName } from '../lib/scenarios/state';
+
+interface Props {
+  id: string;
+  title: string;
+  decision: string;
+  controls: readonly ScenarioControlDefinition[];
+  modelFamily: string;
+  seamNote: string;
+  readiness: string;
+}
+
+const { id, title, decision, controls, modelFamily, seamNote, readiness } = Astro.props;
+const defaults = publishedScenarioDefaults(controls);
+const titleId = `${id}-title`;
+const outputId = `${id}-output`;
+---
+<section class="scenario-workbench" data-scenario-workbench-container aria-labelledby={titleId}>
+  <div class="scenario-workbench__header">
+    <div>
+      <p class="section-kicker">Scenario workbench</p>
+      <h2 id={titleId}>{title}</h2>
+      <p>{decision}</p>
+    </div>
+    <dl>
+      <div><dt>Model family</dt><dd data-model-family>{modelFamily}</dd></div>
+      <div><dt>Readiness</dt><dd>{readiness}</dd></div>
+    </dl>
+  </div>
+  <form
+    class="scenario-workbench__controls"
+    method="get"
+    data-scenario-workbench
+    data-scenario-controls={JSON.stringify(controls)}
+    data-scenario-defaults={JSON.stringify(defaults)}
+    aria-controls={outputId}
+  >
+    {controls.map((control) => (
+      <div class:list={['scenario-control', { 'scenario-control--disabled': Boolean(control.disabledReason) }]}>
+        <label for={`${id}-${control.id}`}>{control.label}</label>
+        <select
+          id={`${id}-${control.id}`}
+          name={scenarioParameterName(control.id)}
+          data-scenario-control={control.id}
+          disabled={Boolean(control.disabledReason)}
+          aria-describedby={control.disabledReason ? `${id}-${control.id}-reason` : undefined}
+        >
+          {control.options.map((option) => <option value={option.value} selected={option.value === control.defaultValue}>{option.label}</option>)}
+        </select>
+        {control.disabledReason && <p id={`${id}-${control.id}-reason`}>{control.disabledReason}</p>}
+      </div>
+    ))}
+    <button type="button" class="scenario-workbench__reset" data-scenario-reset>Reset to published default</button>
+  </form>
+  <p class="scenario-workbench__seam"><strong>Model seam:</strong> {seamNote}</p>
+  <div id={outputId} class="scenario-workbench__output" aria-live="polite" aria-atomic="true">
+    <p class="scenario-workbench__state" data-scenario-summary>Published defaults are active.</p>
+    <slot />
+  </div>
+</section>
+
+<script>import '../scripts/scenario-workbench.ts';</script>

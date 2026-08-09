@@ -1,0 +1,128 @@
+---
+import type { ChartRecord, SourceRecord } from '../lib/registry/types';
+import CaveatPanel from './CaveatPanel.astro';
+import SourceDrawer from './SourceDrawer.astro';
+
+export interface LegendItem {
+  label: string;
+  className: string;
+  detail?: string;
+}
+
+type ChartStatus = 'ready' | 'loading' | 'empty' | 'error' | 'stale';
+
+interface Props {
+  chart: ChartRecord;
+  status?: ChartStatus;
+  unit?: string;
+  geography?: string;
+  period?: string;
+  sources?: readonly SourceRecord[];
+  legend?: readonly LegendItem[];
+  annotations?: readonly string[];
+  summary: string;
+  caveats?: readonly string[];
+}
+
+const {
+  chart,
+  status = 'ready',
+  unit,
+  geography,
+  period,
+  sources = [],
+  legend = [],
+  annotations = [],
+  summary,
+  caveats = [],
+} = Astro.props;
+const titleId = `${chart.id.toLowerCase()}-title`;
+const summaryId = `${chart.id.toLowerCase()}-summary`;
+const tooltipId = `${chart.id.toLowerCase()}-tooltip`;
+const allAnnotations = [...chart.mandatoryAnnotations, ...annotations];
+const hasPlot = Astro.slots.has('plot');
+const hasTable = Astro.slots.has('table');
+const published = status === 'ready' || status === 'stale';
+const sourceIds = new Set(sources.map((source) => source.id));
+const unresolvedSources = chart.sourceIds.filter((sourceId) => !sourceIds.has(sourceId));
+if (published && !hasPlot) {
+  throw new Error(`${chart.id} cannot render a ready state without a plot slot.`);
+}
+if (published && !hasTable) {
+  throw new Error(`${chart.id} cannot render a ready state without an accessible table slot.`);
+}
+if (published && (!unit || !geography || !period)) {
+  throw new Error(`${chart.id} cannot render a ready state without an explicit unit, geography, and period.`);
+}
+if (published && unresolvedSources.length > 0) {
+  throw new Error(`${chart.id} cannot render a ready state with unresolved sources: ${unresolvedSources.join(', ')}.`);
+}
+if (!summary.trim()) throw new Error(`${chart.id} requires a non-empty text summary.`);
+const displayUnit = unit ?? 'Not specified by the chart contract';
+const displayGeography = geography ?? 'Not specified by the chart contract';
+const displayPeriod = period ?? 'Not specified by the chart contract';
+---
+<figure
+  class:list={['chart-frame', `chart-frame--${status}`]}
+  data-chart-frame
+  data-chart-id={chart.id}
+  data-chart-type={chart.chartType}
+  data-chart-status={status}
+  aria-labelledby={titleId}
+  aria-describedby={summaryId}
+>
+  <figcaption class="chart-frame__caption">
+    <div>
+      <p class="section-kicker">Figure · {chart.chartType.replaceAll('_', ' ')}</p>
+      <h3 id={titleId}>{chart.label}</h3>
+      <p>{chart.decisionQuestion}</p>
+    </div>
+    <dl class="chart-frame__scope">
+      <div><dt>Unit</dt><dd>{displayUnit}</dd></div>
+      <div><dt>Geography</dt><dd>{displayGeography}</dd></div>
+      <div><dt>Period</dt><dd>{displayPeriod}</dd></div>
+    </dl>
+  </figcaption>
+
+  {legend.length > 0 && (
+    <ul class="chart-legend" aria-label="Figure legend">
+      {legend.map((item) => <li><span class:list={['chart-legend__swatch', item.className]} aria-hidden="true"></span><span>{item.label}{item.detail && <small>{item.detail}</small>}</span></li>)}
+    </ul>
+  )}
+
+  <div class="chart-frame__plot">
+    {status === 'ready' || status === 'stale' ? <slot name="plot" /> : (
+      <div class="chart-state" role="status">
+        {status === 'loading' && <><strong>Loading figure data</strong><p>The initial narrative remains available while this asset is prepared.</p></>}
+        {status === 'empty' && <><strong>No compatible evidence</strong><p>{chart.emptyState}</p></>}
+        {status === 'error' && <><strong>Figure unavailable</strong><p>{chart.errorState}</p></>}
+      </div>
+    )}
+    <div id={tooltipId} class="chart-tooltip" role="tooltip" data-chart-tooltip hidden></div>
+  </div>
+
+  {status === 'stale' && <p class="chart-frame__stale" role="status">This view is marked stale. Inspect the source vintage before use.</p>}
+  <p id={summaryId} class="chart-frame__summary"><strong>Text summary:</strong> {summary}</p>
+
+  {allAnnotations.length > 0 && <ul class="chart-annotations" aria-label="Figure annotations">{allAnnotations.map((annotation) => <li>{annotation}</li>)}</ul>}
+
+  <details class="chart-frame__table">
+    <summary>Open accessible data table</summary>
+    <slot name="table"><p>No compatible table rows are available.</p></slot>
+  </details>
+
+  {(sources.length > 0 || chart.sourceIds.length > 0) && (
+    <div class="chart-frame__sources">
+      <strong>Sources and methods</strong>
+      {sources.length > 0 ? sources.map((source, index) => (
+        <SourceDrawer id={`${chart.id.toLowerCase()}-source-${index + 1}`} source={source} triggerLabel={source.publisher} />
+      )) : <span>Registered source IDs: {chart.sourceIds.join(', ')}</span>}
+    </div>
+  )}
+
+  {(caveats.length > 0 || chart.forbiddenComparisons.length > 0) && (
+    <CaveatPanel caveats={caveats} prohibitedInterpretations={chart.forbiddenComparisons} />
+  )}
+</figure>
+
+<script>import '../scripts/chart-tooltips.ts';</script>

@@ -1,0 +1,31 @@
+---
+import { buildRangeGeometry, linePath, type RangeInput } from '../../lib/charts/geometry';
+
+interface Props {
+  values: readonly RangeInput[];
+  label: string;
+  xLabel: string;
+  yLabel: string;
+  unit: string;
+  summary: string;
+  width?: number;
+  height?: number;
+}
+
+const { values, label, xLabel, yLabel, unit, summary, width = 720, height = 360 } = Astro.props;
+const geometry = buildRangeGeometry(values, { width, height });
+const complete = values.filter((point) => point.low !== null && point.high !== null);
+---
+<svg class="svg-plot area-range-plot" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={summary}>
+  <title>{summary}</title>
+  {geometry.segments.map((segment) => <path class="range-band" d={segment.path} />)}
+  {geometry.segments.map((segment) => <path class="range-boundary" d={linePath(segment.upper)} />)}
+  {geometry.segments.map((segment) => <path class="range-boundary range-boundary--lower" d={linePath([...segment.lower].reverse())} />)}
+  {geometry.upper.map((point, index) => {
+    const value = complete[index];
+    const tooltip = `${label}; ${xLabel}: ${value?.x}; range: ${value?.low} to ${value?.high} ${unit}`;
+    return <circle class="range-focus-mark" cx={point.x} cy={point.y} r="8" tabindex="0" aria-label={tooltip} data-tooltip={tooltip}><title>{tooltip}</title></circle>;
+  })}
+  <text class="plot-axis-label" x={width / 2} y={height - 5} text-anchor="middle">{xLabel}</text>
+  <text class="plot-axis-label" transform={`translate(12 ${height / 2}) rotate(-90)`} text-anchor="middle">{yLabel} ({unit})</text>
+</svg>

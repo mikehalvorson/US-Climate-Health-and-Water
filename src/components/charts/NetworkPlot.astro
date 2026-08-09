@@ -1,0 +1,41 @@
+---
+import { buildNetworkGeometry, type NetworkEdgeInput, type NetworkNodeInput } from '../../lib/charts/geometry';
+
+export interface LabeledNetworkNode extends NetworkNodeInput { label: string }
+export interface LabeledNetworkEdge extends NetworkEdgeInput { label: string }
+
+interface Props {
+  id: string;
+  nodes: readonly LabeledNetworkNode[];
+  edges: readonly LabeledNetworkEdge[];
+  variant: 'flow' | 'sankey' | 'causal_path';
+  unit: string;
+  summary: string;
+  width?: number;
+  height?: number;
+}
+
+const { id, nodes, edges, variant, unit, summary, width = 720, height = 400 } = Astro.props;
+const geometry = buildNetworkGeometry(nodes, edges, { width, height });
+const nodeLabels = new Map(nodes.map((node) => [node.id, node.label]));
+const edgeLabels = new Map(edges.map((edge) => [edge.id, edge.label]));
+const markerId = `${id}-network-arrow`;
+---
+<svg class:list={['svg-plot', 'network-plot', `network-plot--${variant}`]} viewBox={`0 0 ${width} ${height}`} role="img" aria-label={summary}>
+  <title>{summary}</title>
+  <defs><marker id={markerId} markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M 0 0 L 8 4 L 0 8 Z" /></marker></defs>
+  <g class="network-edges">
+    {geometry.edges.map((edge) => {
+      const tooltip = edge.missing ? `${edgeLabels.get(edge.id)}: relationship recorded; magnitude missing` : `${edgeLabels.get(edge.id)}: ${edge.weight} ${unit}`;
+      return <path class:list={['network-edge', { 'is-missing': edge.missing }]} d={edge.path} stroke-width={edge.strokeWidth} marker-end={`url(#${markerId})`} tabindex="0" aria-label={tooltip} data-tooltip={tooltip}><title>{tooltip}</title></path>;
+    })}
+  </g>
+  <g class="network-nodes">
+    {geometry.nodes.map((node, index) => (
+      <g class:list={['network-node', `chart-series--${index % 6}`]} transform={`translate(${node.x} ${node.y})`}>
+        <rect x="-58" y="-22" width="116" height="44" rx="9" />
+        <text text-anchor="middle" dominant-baseline="middle">{nodeLabels.get(node.id)}</text>
+      </g>
+    ))}
+  </g>
+</svg>

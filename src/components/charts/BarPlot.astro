@@ -1,0 +1,35 @@
+---
+import { buildBarGeometry, type BarInput } from '../../lib/charts/geometry';
+
+export interface LabeledBar extends BarInput { label: string }
+
+interface Props {
+  id: string;
+  values: readonly LabeledBar[];
+  valueLabel: string;
+  unit: string;
+  summary: string;
+  width?: number;
+  height?: number;
+}
+
+const { id, values, valueLabel, unit, summary, width = 720, height = 360 } = Astro.props;
+const geometry = buildBarGeometry(values, { width, height });
+const missingPatternId = `${id}-missing-bar-pattern`;
+---
+<svg class="svg-plot bar-plot" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={summary}>
+  <title>{summary}</title>
+  <defs><pattern id={missingPatternId} width="8" height="8" patternUnits="userSpaceOnUse"><path d="M -2 2 L 2 -2 M 0 8 L 8 0 M 6 10 L 10 6" /></pattern></defs>
+  {geometry.map((bar, index) => {
+    const value = values[index];
+    const tooltip = bar.missing ? `${value?.label}: missing` : `${value?.label}: ${bar.value} ${unit}`;
+    return (
+      <g class:list={['chart-series', `chart-series--${index % 6}`, { 'is-missing': bar.missing }]}>
+        {bar.missing ? <rect class="missing-bar-mark" x={bar.x} y={height - 48} width={bar.width} height="12" fill={`url(#${missingPatternId})`} /> : <rect class="bar-mark" x={bar.x} y={bar.y} width={bar.width} height={bar.height} tabindex="0" aria-label={tooltip} data-tooltip={tooltip}><title>{tooltip}</title></rect>}
+        <text class="bar-label" x={bar.x + bar.width / 2} y={height - 18} text-anchor="middle">{value?.label}</text>
+        {bar.missing && <text class="missing-label" x={bar.x + bar.width / 2} y={height - 53} text-anchor="middle">missing</text>}
+      </g>
+    );
+  })}
+  <text class="plot-axis-label" transform={`translate(12 ${height / 2}) rotate(-90)`} text-anchor="middle">{valueLabel} ({unit})</text>
+</svg>
