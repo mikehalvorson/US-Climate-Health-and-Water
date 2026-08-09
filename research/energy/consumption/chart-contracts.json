@@ -1,0 +1,164 @@
+{
+  "catalog_id": "electricity-consumption-chart-contracts-v1",
+  "as_of": "2026-08-01",
+  "global_rules": [
+    "Every chart exposes source, vintage, unit, geography, accounting scope, and observed/estimate/forecast/scenario status.",
+    "Historical and modeled values have a visible seam and distinct line styles.",
+    "A scenario fan shows model spread; it is not converted into a probability interval.",
+    "Sparse publisher milestones are rendered as points or ranges. The application must not interpolate unless it visibly labels the interpolation as a dashboard transformation.",
+    "EV and data-center loads are overlays unless a chart uses a verified mutually exclusive decomposition.",
+    "Annual TWh charts do not claim peak capacity, reliability, or transmission requirements.",
+    "Tooltip precision may not exceed source precision; approximate and lower-bound values keep their semantic markers."
+  ],
+  "charts": [
+    {
+      "chart_id": "CH-DEM-001",
+      "title": "U.S. electricity sales and use by sector, 1949-2025",
+      "purpose": "Show the observed evolution of residential, commercial, industrial, transportation, total sales, direct use, and total use.",
+      "dataset": "timeseries/normalized/us-electricity-consumption-history.csv",
+      "filters": {"metric": ["electricity_sales", "direct_use", "electricity_use"], "geography_code": "USA"},
+      "render": "line_or_stacked_area_with_total_overlay",
+      "stack_rule": "Only the four sector electricity_sales rows are stackable. Total sales, direct use, and total use are overlays or separate panels.",
+      "annotations": ["2025 preliminary", "EV method break at 2023 applies only to EV overlay"]
+    },
+    {
+      "chart_id": "CH-DEM-001B",
+      "title": "World electricity system demand, 2000-2025",
+      "purpose": "Show observed/estimated historical growth on Ember's gross-generation-plus-net-imports basis.",
+      "dataset": "timeseries/normalized/global-electricity-demand-history-ember-owid.csv",
+      "filters": {"metric": "electricity_demand", "geography_code": "OWID_WRL"},
+      "render": "line",
+      "scope_rule": "Label as system demand = gross generation + net imports; not final consumption.",
+      "prohibited": "Connecting this line to IEA's 2030 final-consumption milestone without a visible scope break."
+    },
+    {
+      "chart_id": "CH-DEM-002",
+      "title": "U.S. generation-to-consumption balance, 2025-2050",
+      "purpose": "Compare power generation and consumption expectations without hiding direct use, imports, or the system residual.",
+      "dataset": "timeseries/normalized/us-electricity-supply-demand-aeo2026.csv",
+      "filters": {"model": "NEMS", "scenario_default": "Counterfactual Baseline"},
+      "render": "sankey_for_selected_year_plus_lines_over_time",
+      "required_nodes": ["total_electricity_generation", "direct_use", "net_generation_to_grid", "net_imports", "electricity_sales", "transmission_distribution_and_unaccounted", "total_electricity_use"],
+      "validation_equations": ["BAL-1", "BAL-2", "BAL-3", "BAL-4"],
+      "warning": "AEO cases are conditional scenarios, not predictions."
+    },
+    {
+      "chart_id": "CH-DEM-003",
+      "title": "U.S. electricity-demand range across AEO2026 cases",
+      "purpose": "Show how 2050 demand differs across eleven internally consistent EIA cases.",
+      "dataset": "timeseries/normalized/us-electricity-supply-demand-aeo2026.csv",
+      "filters": {"metric": "electricity_use", "sector": "total"},
+      "render": "spaghetti_lines_with_baseline_emphasis_and_2050_dot_plot",
+      "scenario_rule": "Do not summarize the cases as a probabilistic confidence band.",
+      "linked_driver_dataset": "timeseries/normalized/us-demand-drivers-aeo2026.csv"
+    },
+    {
+      "chart_id": "CH-DEM-004",
+      "title": "What consumes U.S. electricity by sector, 2025-2050",
+      "purpose": "Show residential, commercial, industrial, and transportation electricity sales across selected AEO cases.",
+      "dataset": "timeseries/normalized/us-electricity-supply-demand-aeo2026.csv",
+      "filters": {"metric": "electricity_sales", "sector": ["residential", "commercial", "industrial", "transportation"]},
+      "render": "stacked_area_with_case_selector",
+      "stack_rule": "The four selected sales sectors are disjoint and may be stacked.",
+      "annotation": "Most on-road EV charging appears in residential/commercial sectors according to charging location."
+    },
+    {
+      "chart_id": "CH-DEM-005",
+      "title": "Residential electricity by end use, 2025-2050",
+      "purpose": "Explain heating, cooling, water heating, appliances, electronics, lighting, and other loads.",
+      "dataset": "timeseries/normalized/us-electricity-end-use-aeo2026.csv",
+      "filters": {"metric": "sector_end_use_electricity", "sector": "residential", "exclude_end_use": ["gross_end_use_electricity", "onsite_generation_for_own_use", "purchased_electricity_at_location"]},
+      "render": "stacked_area_or_small_multiples",
+      "stack_rule": "Named physical end uses can be stacked; totals and accounting adjustment rows are excluded.",
+      "overlay": "ev_charging may be shown as a dashed overlay because its accounting relationship differs."
+    },
+    {
+      "chart_id": "CH-DEM-006",
+      "title": "Commercial electricity by end use, 2025-2050",
+      "purpose": "Explain cooling, ventilation, lighting, refrigeration, computing, server, and other loads.",
+      "dataset": "timeseries/normalized/us-electricity-end-use-aeo2026.csv",
+      "filters": {"sector": "commercial", "scenario_default": "Counterfactual Baseline"},
+      "render": "small_multiples_with_scope_badges",
+      "scope_rule": "Data Center Servers is server compute only; related facility cooling/ventilation and other overhead are not isolated from broader end uses.",
+      "prohibited": "Labeling the AEO server row total data-center facility electricity."
+    },
+    {
+      "chart_id": "CH-DEM-007",
+      "title": "Data-center electricity: observed estimates and scenario range",
+      "purpose": "Show the scale and uncertainty of global and U.S. data-center demand.",
+      "datasets": ["timeseries/normalized/global-and-us-demand-milestones.csv", "timeseries/normalized/us-electricity-end-use-aeo2026.csv"],
+      "render": "two_panels_global_and_us_with_points_ranges_and_scope_badges",
+      "us_layers": ["LBNL total-facility 2014/2018/2023 and 2028 range", "AEO server-only 2025-2050 selected cases"],
+      "comparison_rule": "Never connect total-facility and server-only points with one line.",
+      "uncertainty_labels": ["GPU shipments", "utilization", "average power", "cooling", "efficiency"]
+    },
+    {
+      "chart_id": "CH-DEM-008",
+      "title": "Electric-vehicle electricity demand",
+      "purpose": "Compare observed U.S. EV electricity, AEO charging-location scenarios, and global IEA milestones.",
+      "datasets": ["timeseries/normalized/us-electricity-consumption-history.csv", "timeseries/normalized/us-electricity-end-use-aeo2026.csv", "timeseries/normalized/global-and-us-demand-milestones.csv"],
+      "render": "three_panels_us_history_us_scenarios_global_scenarios",
+      "us_scenario_transform": "sum residential/ev_charging and commercial/ev_charging within each case/year",
+      "accounting_rule": "Overlay on total demand; do not add.",
+      "annotations": ["EIA EV method break in 2023", "CPS and NZE 2035 milestones are lower bounds", "AEO transportation sales excludes most location-assigned road charging"]
+    },
+    {
+      "chart_id": "CH-DEM-009",
+      "title": "Industrial purchased electricity by component",
+      "purpose": "Separate general industry, refining, and hydrogen-production electricity.",
+      "dataset": "timeseries/normalized/us-electricity-end-use-aeo2026.csv",
+      "filters": {"sector": "industrial", "end_use": ["excluding_refining_and_hydrogen_production", "refining", "hydrogen_production"]},
+      "render": "stacked_area_with_total_validation",
+      "stack_rule": "The three components are disjoint. The total_purchased_electricity row is validation/overlay only."
+    },
+    {
+      "chart_id": "CH-DEM-010",
+      "title": "U.S. demand drivers indexed to 2025",
+      "purpose": "Compare economic activity, population, households, floorspace, vehicle sales, and travel without mixing native units.",
+      "dataset": "timeseries/normalized/us-demand-drivers-aeo2026.csv",
+      "render": "indexed_lines_2025_equals_100",
+      "transform": "index each scenario-variable to its own 2025 value",
+      "tooltip": "Show both index and native value/unit.",
+      "warning": "Co-movement does not establish a single-variable causal coefficient."
+    },
+    {
+      "chart_id": "CH-DEM-011",
+      "title": "Global electricity consumption by sector through 2050-2070",
+      "purpose": "Show multi-model conditional pathways for total final electricity and major sectors.",
+      "dataset": "timeseries/normalized/global-electricity-consumption-ngfs-phase5.1.csv",
+      "filters": {"year_max_default": 2070, "hierarchy": "sector_total"},
+      "render": "model_lines_or_min_max_model_envelope_by_scenario",
+      "default_variables": ["total/all_electricity", "industry/all_industry", "residential_and_commercial/all_buildings", "transportation/all_transportation", "other/all_other"],
+      "hierarchy_rule": "Never stack aggregate sectors with their subsectors.",
+      "warning": "The envelope is model spread, not probability."
+    },
+    {
+      "chart_id": "CH-DEM-012",
+      "title": "Electrification stress test for U.S. 2050",
+      "purpose": "Compare AEO2026 current-law cases with NREL EFS Reference, Medium, and High electrification endpoints.",
+      "datasets": ["timeseries/normalized/us-electricity-supply-demand-aeo2026.csv", "timeseries/normalized/us-electrification-scenarios-nrel-efs.csv"],
+      "render": "2050_dot_plot_by_scenario_family_and_sector",
+      "scope_rule": "Label NREL EFS as a 2018/AEO2017-vintage scenario study and AEO2026 as a current-law conditional scenario family; do not splice their lines.",
+      "purpose_note": "The older EFS remains useful as an electrification stress test, not as a current forecast."
+    },
+    {
+      "chart_id": "CH-DEM-013",
+      "title": "Annual demand is not peak demand",
+      "purpose": "Teach why equal TWh can require different grid capacity depending on load shape.",
+      "dataset_status": "requires_hourly_load_shape_ingestion",
+      "render": "paired_annual_energy_and_normalized_hourly_profiles",
+      "required_future_data": ["hourly system load", "weather", "EV charging profile", "data-center utilization", "heat-pump load", "demand response availability"],
+      "release_gate": "Do not infer or fabricate hourly profiles from annual AEO data."
+    },
+    {
+      "chart_id": "CH-DEM-014",
+      "title": "Global electricity generation versus final consumption",
+      "purpose": "Compare matched NGFS secondary electricity generation and final electricity consumption through 2050-2070.",
+      "dataset": "timeseries/normalized/global-electricity-supply-demand-ngfs-phase5.1.csv",
+      "render": "paired_lines_with_accounting_gap_area_and_model_scenario_selectors",
+      "metrics": ["electricity_generation", "final_electricity_consumption", "generation_minus_final_consumption"],
+      "scope_rule": "The difference is a model-specific accounting gap that can include grid loss, own use, and other accounting effects; it is not technical transmission loss.",
+      "warning": "All values are conditional model scenarios, not observations or forecasts."
+    }
+  ]
+}

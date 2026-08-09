@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0.0",
+  "decision_rule": "Replace a plastic product only after defining the service, safety requirements, lifetime, geography, collection system, and counterfactual. Prevention and reuse usually deserve evaluation before one-for-one material substitution.",
+  "priority_order": [
+    "Eliminate unnecessary products and packaging",
+    "Reduce material and hazardous constituents without impairing the service",
+    "Deliver the service through reuse, refill, repair, sharing, or concentration",
+    "Use high-quality closed-loop recycling where collection and markets exist",
+    "Substitute material only after functional-unit life-cycle assessment",
+    "Use controlled compostables only where they improve organics collection and compatible infrastructure exists"
+  ],
+  "application_pathways": [
+    {
+      "application": "retail_carry_bags_and_secondary_film",
+      "dominant_resins": ["HDPE", "LLDPE", "LDPE", "PP"],
+      "preferred_changes": ["eliminate default bags", "durable bag reuse with measured trip count", "reusable transport packaging", "paper or cellulose only where moisture and reuse requirements permit"],
+      "water_questions": ["paper-pulp water and effluent", "wash water for durable bags", "reuse count", "bag mass and breakage"],
+      "do_not_claim": "A material is better from its name alone."
+    },
+    {
+      "application": "beverage_bottles",
+      "dominant_resins": ["PET", "HDPE"],
+      "preferred_changes": ["tap and public refill", "deposit-return refillable bottles", "concentrates", "high-capture bottle-to-bottle recycling"],
+      "conditional_materials": ["glass", "aluminum", "stainless steel"],
+      "water_questions": ["bottle washing", "breakage and trip count", "transport distance and weight", "replacement production", "beverage loss"],
+      "do_not_claim": "Single-use glass or metal automatically saves water."
+    },
+    {
+      "application": "takeaway_and_dine_in_foodservice",
+      "dominant_resins": ["PP", "PS_EPS", "PET", "coated_paper_composites"],
+      "preferred_changes": ["reusable dine-in serviceware", "standardized returnable takeaway containers", "bring-your-own systems with hygiene controls", "uncoated fiber for suitable dry short-contact uses"],
+      "conditional_materials": ["molded fiber", "wood", "paper", "certified compostable polymer in closed organics systems"],
+      "water_questions": ["commercial dishwasher intensity", "sanitation temperature", "return rate", "food contamination and loss", "fiber-production water"],
+      "do_not_claim": "Compostable means it will decompose in the environment."
+    },
+    {
+      "application": "food_packaging_and_barrier_films",
+      "dominant_resins": ["LLDPE", "LDPE", "PP", "PET", "PA_NYLON", "multilayer_composites"],
+      "preferred_changes": ["remove avoidable layers", "sell suitable goods loose or in bulk", "standardize reusable transport and retail containers", "design recyclable mono-material barriers", "use cellulose or seaweed coatings only after shelf-life testing"],
+      "water_questions": ["food loss embodied water", "barrier performance", "washing", "coating and extraction wastewater"],
+      "do_not_claim": "Packaging water can be evaluated without the protected food."
+    },
+    {
+      "application": "textiles_and_carpet",
+      "dominant_resins": ["PET", "PA_NYLON", "PP", "PU"],
+      "preferred_changes": ["longer product life", "repair", "fiber-to-fiber design", "microfiber capture", "leasing and take-back", "natural or regenerated cellulosic fibers where full impacts are lower"],
+      "water_questions": ["fiber cultivation or pulp water", "dyeing and finishing", "laundering", "durability", "microfiber release"],
+      "do_not_claim": "Natural fiber is universally lower-impact."
+    },
+    {
+      "application": "flexible_pvc_and_selected_medical_products",
+      "dominant_resins": ["PVC"],
+      "preferred_changes": ["eliminate nonessential PVC", "purchase products without priority phthalates", "evaluate PE, PP, EVA, silicone, thermoplastic elastomers, or non-PVC tubing by clinical function", "segregated take-back where safe"],
+      "water_questions": ["clinical infection control", "device failure risk", "replacement chemistry", "sterilization and washing"],
+      "do_not_claim": "A blanket medical substitution is safe without device-specific validation."
+    },
+    {
+      "application": "building_pipe_and_profiles",
+      "dominant_resins": ["PVC", "HDPE", "PP"],
+      "preferred_changes": ["long service life and repair", "closed-loop construction take-back", "application-specific ductile iron, copper, clay, concrete, wood, or composite comparison", "low-hazard formulations"],
+      "water_questions": ["leak rate over service life", "corrosion", "pumping energy", "installation disruption", "replacement interval"],
+      "do_not_claim": "Removing long-lived pipe necessarily reduces total water use or leakage."
+    },
+    {
+      "application": "expanded_foam_packaging_and_foodware",
+      "dominant_resins": ["PS_EPS"],
+      "preferred_changes": ["reusable totes and serviceware", "right-sized corrugated packaging", "molded fiber for compatible products", "collection only where a stable end market exists"],
+      "water_questions": ["pulp water", "product damage", "wash water", "return logistics"],
+      "do_not_claim": "Replacing protective foam is beneficial if product damage rises materially."
+    },
+    {
+      "application": "building_insulation_and_furniture_foam",
+      "dominant_resins": ["PU", "PS_EPS"],
+      "preferred_changes": ["reduce overspecification", "design for disassembly", "cellulose, mineral wool, wood fiber, cork, or other systems after fire, moisture, thermal, and durability testing"],
+      "water_questions": ["operational energy saved", "material lifetime", "fire and moisture performance", "precursor and alternative water"],
+      "do_not_claim": "Embodied impact may be assessed without operational building energy."
+    },
+    {
+      "application": "critical_medical_and_safety_products",
+      "dominant_resins": ["multiple"],
+      "preferred_changes": ["remove unnecessary secondary packaging", "substitute hazardous additives", "validated reprocessing", "supplier disclosure", "targeted take-back"],
+      "water_questions": ["sterilization", "infection risk", "failure rates", "supply resilience"],
+      "do_not_claim": "Immediate elimination is appropriate where no validated safe replacement exists."
+    }
+  ],
+  "burden_shifting_evidence": {
+    "finding": "A 2024 comparative greenhouse-gas study found plastic lower in 15 of 16 modeled applications. This does not prove plastic is preferable on water, toxicity, litter, or biodiversity; it proves that a replacement decision must retain function and examine multiple impacts.",
+    "source": {"source_id": "ACS-PLASTIC-ALTERNATIVES-GHG-2024"}
+  },
+  "data_requirements_for_dashboard_comparison": ["service delivered", "units per service", "lifetime", "reuse cycles", "return and loss rate", "washing water", "product damage or food loss", "resin and additives", "recycled content", "end-of-life capture", "geographic water scarcity", "uncertainty interval"],
+  "source_refs": [{"source_id": "UNEP-TAP-2023"}, {"source_id": "NIST-LCA-PLASTICS"}, {"source_id": "EPA-FEDERAL-LCA-COMMONS"}]
+}

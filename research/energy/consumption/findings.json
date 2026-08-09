@@ -1,0 +1,132 @@
+{
+  "findings_id": "electricity-consumption-findings-v1",
+  "as_of": "2026-08-01",
+  "findings": [
+    {
+      "finding_id": "DEM-FND-001",
+      "claim_id": "CLM-DEM-001",
+      "finding": "Global electricity demand is growing much faster than the historical mature-economy norm in the near term.",
+      "quantification": "IEA estimates global consumption at about 28,200 TWh in 2025 and forecasts about 33,600 TWh in 2030, an increase of roughly 5,400 TWh, or 3.6% per year during 2026-2030.",
+      "source_ids": ["SRC-IEA-ELECTRICITY26-DEMAND"],
+      "status": "verified",
+      "dashboard_implication": "Use the IEA series only to 2030; use labeled multi-model scenarios, not extrapolation, for 2050-2070."
+    },
+    {
+      "finding_id": "DEM-FND-002",
+      "claim_id": "CLM-DEM-002",
+      "finding": "Buildings are the largest near-term global growth contributor, while transport's share is rising rapidly.",
+      "quantification": "IEA attributes 49% of the global 2025-2030 increase to buildings; cooling, data centers, and heat pumps make up almost half of buildings growth. Transportation supplies more than 10% of total growth.",
+      "source_ids": ["SRC-IEA-ELECTRICITY26-DEMAND"],
+      "status": "verified",
+      "dashboard_implication": "The global driver view should separate building activity, cooling, computing, heat pumps, and transport electrification."
+    },
+    {
+      "finding_id": "DEM-FND-003",
+      "claim_id": "CLM-DEM-003",
+      "finding": "Near-term global demand growth is geographically concentrated in emerging economies.",
+      "quantification": "IEA attributes about 80% of 2025-2030 global growth to emerging-market and developing economies and nearly half to China; China adds roughly 2,600 TWh by 2030.",
+      "source_ids": ["SRC-IEA-ELECTRICITY26-DEMAND"],
+      "status": "verified",
+      "dashboard_implication": "A world total needs regional contribution context; the present normalized package is world-sector only and flags regional ingestion as a next step."
+    },
+    {
+      "finding_id": "DEM-FND-004",
+      "claim_id": "CLM-DEM-004",
+      "finding": "U.S. electricity demand has entered a materially higher-growth planning range.",
+      "quantification": "AEO2026 cases span about 0.9%-1.6% average annual consumption growth through 2050, or about 25%-50% total growth. EIA attributes 50%-80% of the increase to EVs and data centers, depending on case.",
+      "source_ids": ["SRC-EIA-AEO2026-TABLES"],
+      "status": "verified",
+      "dashboard_implication": "Show all eleven cases and connect differences to their macro, technology, transport, and server assumptions."
+    },
+    {
+      "finding_id": "DEM-FND-005",
+      "claim_id": "CLM-DEM-005",
+      "finding": "The U.S. generation-versus-consumption comparison requires a complete accounting bridge.",
+      "quantification": "In the AEO2026 baseline for 2050, total generation is 6,273.3 TWh, net generation delivered to the grid is 5,852.9 TWh, net imports are 63.7 TWh, total sales are 5,574.8 TWh, direct use is 420.4 TWh, and total use is 5,995.2 TWh. The 341.7 TWh residual is transmission, distribution, and unaccounted electricity.",
+      "source_ids": ["SRC-EIA-AEO2026-TABLES"],
+      "status": "verified",
+      "dashboard_implication": "Do not place total generation and sales on a balance chart without direct use, imports, and the residual."
+    },
+    {
+      "finding_id": "DEM-FND-006",
+      "claim_id": "CLM-DEM-006",
+      "finding": "Data centers are a high-growth load with a much wider uncertainty range than conventional sector aggregates.",
+      "quantification": "IEA estimates world data centers at about 415 TWh in 2024 and about 945 TWh in its 2030 Base Case. Its 2035 cases range from about 970 TWh under high efficiency to more than 1,700 TWh in Lift-Off. LBNL estimates U.S. facilities used 176 TWh in 2023 and projects 325-580 TWh in 2028.",
+      "source_ids": ["SRC-IEA-ENERGY-AI25", "SRC-LBNL-DATACENTER24"],
+      "status": "verified",
+      "dashboard_implication": "Show ranges and scenario sensitivity, plus local-grid concentration; do not imply one deterministic trend."
+    },
+    {
+      "finding_id": "DEM-FND-007",
+      "claim_id": "CLM-DEM-007",
+      "finding": "The current AEO baseline and high-demand cases imply very different U.S. server-load outcomes by 2050.",
+      "quantification": "The AEO2026 Data Center Servers row reaches 445.6 TWh in the Counterfactual Baseline and 818.7 TWh in the High Electricity Demand case in 2050.",
+      "source_ids": ["SRC-EIA-AEO2026-TABLES"],
+      "status": "verified",
+      "dashboard_implication": "Label these values server-only. They are not directly comparable to LBNL whole-facility estimates."
+    },
+    {
+      "finding_id": "DEM-FND-008",
+      "claim_id": "CLM-DEM-008",
+      "finding": "EV electricity can grow several-fold without becoming the largest global electricity sector by 2035.",
+      "quantification": "IEA estimates 250 TWh in 2025, more than 1,500 TWh in the 2035 CPS, 1,700 TWh in STEPS, and more than 3,000 TWh in NZE. The corresponding shares are about 4%, 5%, and 7% of global electricity demand in 2035.",
+      "source_ids": ["SRC-IEA-GEVO26"],
+      "status": "verified",
+      "dashboard_implication": "Use EV demand as an identifiable component and retain the lower-bound semantics for CPS and NZE."
+    },
+    {
+      "finding_id": "DEM-FND-009",
+      "claim_id": "CLM-DEM-009",
+      "finding": "Sector accounting can hide the physical driver if charging location and end-use purpose are confused.",
+      "quantification": "EIA assigns most on-road EV charging to residential or commercial sectors based on charging location; its transportation electricity-sales row is therefore not total EV charging. The MER EV estimate is already contained in sales and total use.",
+      "source_ids": ["SRC-EIA-AEO2026-TABLES", "SRC-EIA-MER-7.6"],
+      "status": "verified",
+      "dashboard_implication": "Give each value both a sector/accounting label and an end-use label."
+    },
+    {
+      "finding_id": "DEM-FND-010",
+      "claim_id": "CLM-DEM-010",
+      "finding": "Electrification increases electricity demand but does not necessarily increase total final energy.",
+      "quantification": "IEA reports heat pumps typically deliver three to five units of heat per unit of electricity, while NREL's EFS shows higher electricity use under broad electrification even as efficient electric technologies replace direct fuels.",
+      "source_ids": ["SRC-IEA-HEATPUMPS22", "SRC-NREL-EFS18"],
+      "status": "verified",
+      "dashboard_implication": "Pair electricity-demand charts with service efficiency and displaced-fuel views when evaluating sustainability."
+    },
+    {
+      "finding_id": "DEM-FND-011",
+      "claim_id": "CLM-DEM-011",
+      "finding": "A credible 2050 comparison needs an electrification stress test in addition to a current-law outlook.",
+      "quantification": "NREL EFS Table 7.1 spans 4,696-4,772 TWh in Reference electrification, 5,520-5,871 TWh in Medium, and 6,280-6,846 TWh in High electrification for 2050, depending on technology advancement.",
+      "source_ids": ["SRC-NREL-EFS18"],
+      "status": "verified",
+      "dashboard_implication": "Keep the 2018 EFS family visibly separate from AEO2026; its value is sensitivity exploration, not recency."
+    },
+    {
+      "finding_id": "DEM-FND-012",
+      "claim_id": "CLM-DEM-012",
+      "finding": "No authoritative evidence supports a single global electricity-demand line through 2050-2070.",
+      "quantification": "The normalized NGFS subset preserves three integrated-assessment models and seven scenarios at five-year intervals through 2100, including total, industry, buildings, transport, and selected subsectors.",
+      "source_ids": ["SRC-NGFS-PHASE5.1"],
+      "status": "verified",
+      "dashboard_implication": "Render model and scenario spread, not an averaged prediction or probability band."
+    },
+    {
+      "finding_id": "DEM-FND-013",
+      "claim_id": "CLM-DEM-013",
+      "finding": "Annual electricity volume is necessary but insufficient for generation and transmission planning.",
+      "quantification": "Data-center load is geographically concentrated; cooling is weather-coincident; EV and electrolysis loads may be shifted. Equal annual TWh can therefore produce different peak GW, ramps, congestion, and capacity needs.",
+      "source_ids": ["SRC-IEA-ENERGY-AI25", "SRC-EIA-AEO2026-TABLES", "SRC-IEA-COOLING18"],
+      "status": "verified",
+      "dashboard_implication": "Release hourly and geographic claims only after dedicated load-shape datasets are ingested; the current annual files must not be used to fabricate them."
+    },
+    {
+      "finding_id": "DEM-FND-014",
+      "claim_id": "CLM-DEM-014",
+      "finding": "The dashboard needs two separately labeled global electricity-demand concepts.",
+      "quantification": "The Ember/OWID historical series rises from 15,278.78 TWh in 2000 to 31,772.35 TWh in 2025 on a gross-generation-plus-net-imports basis. IEA reports about 28,200 TWh in 2025 on a final-consumption basis.",
+      "source_ids": ["SRC-OWID-ENERGY", "SRC-IEA-ELECTRICITY26-DEMAND"],
+      "status": "verified",
+      "dashboard_implication": "Show system demand and final consumption as different measures with separate definitions; do not join their 2025 values into one historical/forecast line."
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "summary_id": "energy-research-summary-v1",
+  "as_of": "2026-08-01",
+  "scope": "Global and United States energy generation/production, transmission, and consumption, including commercial, emerging, and future conversion pathways.",
+  "principal_findings": [
+    {
+      "finding_id": "FND-001",
+      "finding": "The global system is electrifying faster than total energy demand is growing.",
+      "evidence": ["CLM-GLO-001", "CLM-GLO-002", "CLM-GLO-013"],
+      "detail": "IEA estimates 2025 total energy demand growth of 1.3% (8 EJ) and electricity-demand growth of about 3% (800 TWh), with buildings the largest contributor to incremental electricity demand."
+    },
+    {
+      "finding_id": "FND-002",
+      "finding": "Low-emissions electricity is now a large plurality globally, but fossil generation remains dominant in aggregate and coal remains the largest single source under major 2025 compilations.",
+      "evidence": ["CLM-GLO-003", "CLM-GLO-005", "CLM-GLO-009"],
+      "detail": "IEA estimates low-emissions sources at 43% and renewables at 34%; Energy Institute reports coal 32.6%, gas about 22%, solar 8.7%, wind 8.4%, and nuclear 8.8%."
+    },
+    {
+      "finding_id": "FND-003",
+      "finding": "Solar is the leading source of incremental global electricity supply, while wind, hydro, nuclear, bioenergy, geothermal, and marine energy occupy very different deployment scales.",
+      "evidence": ["CLM-GLO-004", "CLM-GLO-007", "CLM-GLO-009"],
+      "detail": "IEA estimates a roughly 600 TWh solar-PV increase in 2025. IRENA reports 2,391.584 GW solar and 1,291.368 GW wind capacity, versus 15.674 GW geothermal and only 0.490 GW marine capacity."
+    },
+    {
+      "finding_id": "FND-004",
+      "finding": "Authoritative global datasets disagree materially on some latest-year totals, primarily because of timing, coverage, estimation, and accounting methods.",
+      "evidence": ["CLM-GLO-005", "CLM-GLO-008"],
+      "detail": "IRENA reports 692 GW of 2025 renewable additions while IEA estimated about 800 GW. IEA and Energy Institute also report slightly different generation shares. The dashboard must expose source/method instead of manufacturing a consensus value."
+    },
+    {
+      "finding_id": "FND-005",
+      "finding": "Oil, gas, and coal demand all still increased globally in 2025, although more slowly than in 2024.",
+      "evidence": ["CLM-GLO-010", "CLM-GLO-011", "CLM-GLO-012"],
+      "detail": "IEA estimates oil demand +0.65 mb/d, gas +40 bcm, and coal +30 Mt. Electricity and industrial/feedstock uses remain critical to interpreting these trends."
+    },
+    {
+      "finding_id": "FND-006",
+      "finding": "The United States produced substantially more primary energy than it consumed in 2025 under EIA accounting, driven by record hydrocarbon production and rising renewable output.",
+      "evidence": ["CLM-US-001", "CLM-US-002", "CLM-US-003", "CLM-US-004", "CLM-US-005"],
+      "detail": "EIA's July 2026 vintage reports 106.961 quads produced and 96.256 quads consumed. These are preliminary and use captured-energy conversions."
+    },
+    {
+      "finding_id": "FND-007",
+      "finding": "Natural gas remained the largest U.S. electricity source in 2025, but the mix is increasingly multi-source.",
+      "evidence": ["CLM-US-006", "CLM-US-007", "CLM-US-008", "CLM-US-009"],
+      "detail": "Preliminary generation was 1,807.338 TWh gas, 784.781 nuclear, 737.151 coal, 464.391 wind, 388.820 total solar, and 247.023 conventional hydro, with smaller geothermal, biomass, petroleum, waste-gas, storage, and miscellaneous categories."
+    },
+    {
+      "finding_id": "FND-008",
+      "finding": "Grid connection and transmission development are major rate-limiting steps, not background infrastructure.",
+      "evidence": ["CLM-GLO-014", "CLM-GLO-015", "CLM-US-012", "CLM-US-013", "CLM-US-015"],
+      "detail": "IEA reports more than 2,500 GW in global connection queues. Berkeley Lab reports 2,061 GW in active U.S. queues, with only 13% of historical queued projects reaching operation and development times exceeding five years."
+    },
+    {
+      "finding_id": "FND-009",
+      "finding": "Demand growth and resource retirements create a reliability planning problem even before climate or water constraints are layered in.",
+      "evidence": ["CLM-US-014", "CLM-US-015"],
+      "detail": "NERC's planning data show large ten-year summer and winter peak increases alongside more than 105 GW of peak-season retirement; DOE scenarios show widely varying transmission-expansion needs."
+    },
+    {
+      "finding_id": "FND-010",
+      "finding": "A defensible all-method dashboard must distinguish primary resources, carriers, conversion technologies, and storage.",
+      "evidence": ["CLM-TAX-001", "CLM-TAX-002", "CLM-TAX-003", "CLM-TAX-004"],
+      "detail": "Hydrogen and electricity are carriers; storage time-shifts energy; marine potential is not generation; fusion belongs in a conditional future-technology layer rather than observed supply."
+    },
+    {
+      "finding_id": "FND-011",
+      "finding": "En-ROADS is an excellent rapid scenario and causal-learning reference, but its official documentation rejects the label of predictive forecast model.",
+      "evidence": ["CLM-ENR-001", "CLM-ENR-002", "CLM-ENR-003", "CLM-ENR-004", "CLM-ENR-005"],
+      "detail": "It is a global, one-region, 1990-2100, nonlinear system-dynamics model using forward Euler at a 0.125-year timestep. It is appropriate for testing interactions, not predicting a single future or resolving U.S. grid operations."
+    },
+    {
+      "finding_id": "FND-012",
+      "finding": "A full code copy is neither necessary nor supported by the reviewed evidence; an attributed clean-room architecture-compatible model is feasible.",
+      "evidence": ["CLM-ENR-006"],
+      "detail": "The documentation is CC BY 4.0, while SDK integration is separately licensed. The project can implement the published stock-flow architecture with explicit attribution, its own code, versioned parameters, and validation tests."
+    },
+    {
+      "finding_id": "FND-013",
+      "finding": "The problems with power generation cannot be represented faithfully by one technology score.",
+      "evidence": ["CLM-SYS-001", "CLM-HLT-001", "CLM-REG-002", "CLM-SUS-001"],
+      "detail": "Operational reliability, attributable health effects, legal status, and lifecycle climate-water-land-material-waste burdens use different denominators and evidence. The dashboard should show them as linked but non-substitutable dimensions."
+    },
+    {
+      "finding_id": "FND-014",
+      "finding": "Fossil generation's controllability and existing infrastructure come with direct combustion pollution, lifecycle greenhouse gases, extraction burdens, waste, water use, and fuel-supply exposure.",
+      "evidence": ["CLM-HLT-001", "CLM-HLT-003", "CLM-SUS-001", "CLM-SUS-002", "CLM-CCS-001"],
+      "detail": "Coal occupies the highest lifecycle-emissions group in the reviewed comparative assessments. Efficient gas is lower than coal but remains fossil and adds supply-chain methane. CCS can reduce captured point-source CO2 but adds energy, cost, transport, injection, monitoring, and storage requirements."
+    },
+    {
+      "finding_id": "FND-015",
+      "finding": "Wind and solar solve combustion and fuel problems but create a different integration problem rather than a zero-problem system.",
+      "evidence": ["CLM-SYS-002", "CLM-SYS-003", "CLM-SUS-003", "CLM-SUS-004", "CLM-SUS-005"],
+      "detail": "Weather and location shape production and capacity contribution; inverter settings and models matter; interconnection and transmission are rate-limiting; land, wildlife, minerals, composites, collection, and recycling remain site- and design-specific obligations."
+    },
+    {
+      "finding_id": "FND-016",
+      "finding": "Hydropower, geothermal, bioenergy, waste-to-energy, and marine energy each require technology- and site-specific treatment.",
+      "evidence": ["CLM-SUS-006", "CLM-SUS-007", "CLM-SUS-008", "CLM-SUS-009"],
+      "detail": "Hydro's dispatchability trades against hydrology and river/ecosystem effects. Geothermal's steady low-carbon output trades against drilling, water, fluids, and induced seismicity. Bioenergy carbon depends on feedstock, counterfactual, land, boundaries, and time. Marine evidence remains sparse because the deployed fleet is very small."
+    },
+    {
+      "finding_id": "FND-017",
+      "finding": "Nuclear is a firm, high-utilization, low-lifecycle-carbon source, but those attributes do not erase construction, aging, fuel, cooling, accident, decommissioning, and waste problems.",
+      "evidence": ["CLM-NUC-002", "CLM-NUC-003", "CLM-NUC-004", "CLM-NUC-005", "CLM-NUC-006", "CLM-NUC-014"],
+      "detail": "EIA reports a 91% U.S. fleet capacity factor in 2025. New large-reactor delivery can be capital- and schedule-intensive; much of the U.S. fleet is old; many advanced concepts require a still-limited HALEU supply; and steam-cycle cooling creates water and heat-rejection constraints."
+    },
+    {
+      "finding_id": "FND-018",
+      "finding": "The U.S. nuclear waste problem is an unresolved permanent-disposal problem, not evidence that current licensed dry-cask storage is equivalent to uncontrolled waste.",
+      "evidence": ["CLM-NUC-007", "CLM-NUC-008"],
+      "detail": "More than 90,000 metric tons of commercial spent fuel are stored at sites and the inventory grows by roughly 2,000 metric tons per year. Licensed interim storage has a demonstrated record, but no permanent geologic repository is operating and proposed consolidated interim storage is not disposal."
+    },
+    {
+      "finding_id": "FND-019",
+      "finding": "Nuclear health evidence must preserve both low routine-exposure evidence and rare severe-accident consequences.",
+      "evidence": ["CLM-HLT-004", "CLM-NUC-009", "CLM-NUC-010", "CLM-NUC-011"],
+      "detail": "UNSCEAR found no documented adverse resident health effects directly attributable to Fukushima radiation and none expected to be detectable, while WHO documents evacuation, disrupted care, noncommunicable disease, social, and mental-health consequences. WHO's Chernobyl synthesis documents acute worker and thyroid-cancer effects. One slogan cannot represent all three evidence categories."
+    },
+    {
+      "finding_id": "FND-020",
+      "finding": "Several U.S. power-sector regulatory statements are volatile enough to require release-time verification.",
+      "evidence": ["CLM-REG-003", "CLM-REG-004", "CLM-REG-005"],
+      "detail": "EPA's 2026 action repealed specified 2024 MATS amendments, not MATS as a whole. Steam-electric zero-discharge requirements remained while some deadlines changed. On the verified EPA page, fossil-power greenhouse-gas repeal remained proposed as of 2026-08-01."
+    },
+    {
+      "finding_id": "FND-021",
+      "finding": "Official current U.S. nuclear reactor counts conflict and must remain source-dated.",
+      "evidence": ["CLM-NUC-001"],
+      "detail": "NRC reported 94 commercial power reactors on its June 9, 2026 page; EIA reported 96 operating reactors as of March 2026. The later NRC regulatory snapshot is preferred for current display, but the EIA disagreement is retained."
+    },
+    {
+      "finding_id": "FND-022",
+      "finding": "Global electricity demand is expected to grow rapidly through 2030, but a single deterministic line to 2050-2070 is not defensible.",
+      "evidence": ["CLM-DEM-001", "CLM-DEM-012"],
+      "detail": "IEA estimates about 28,200 TWh in 2025 and forecasts about 33,600 TWh in 2030. Beyond 2030, the corpus retains three NGFS integrated-assessment models across seven scenarios through 2100 rather than extrapolating the IEA forecast."
+    },
+    {
+      "finding_id": "FND-023",
+      "finding": "Buildings lead near-term global demand growth, while cooling, computing, heat pumps, and transport electrification are the most visible structural drivers.",
+      "evidence": ["CLM-DEM-002", "CLM-DEM-003", "CLM-DEM-010"],
+      "detail": "IEA attributes 49% of 2025-2030 global growth to buildings, with cooling, data centers, and heat pumps making up almost half of buildings growth; transport contributes more than 10%. Activity growth is concentrated in emerging economies."
+    },
+    {
+      "finding_id": "FND-024",
+      "finding": "The U.S. demand outlook has shifted from near-flat growth to a broad 2050 range driven heavily by EVs and data centers.",
+      "evidence": ["CLM-DEM-004", "CLM-DEM-007", "CLM-DEM-011"],
+      "detail": "AEO2026 cases imply about 25%-50% total growth through 2050. Its server-only load reaches 445.6 TWh in the baseline and 818.7 TWh in the high-demand case. The older NREL EFS supplies an explicit electrification stress-test range of 4,696-6,846 TWh in 2050."
+    },
+    {
+      "finding_id": "FND-025",
+      "finding": "Data-center uncertainty is both technological and definitional.",
+      "evidence": ["CLM-DEM-006", "CLM-DEM-007"],
+      "detail": "IEA's global cases and LBNL's U.S. range vary with accelerator shipments, utilization, efficiency, and cooling. LBNL/IEA total-facility values cannot be spliced with AEO's server-only row."
+    },
+    {
+      "finding_id": "FND-026",
+      "finding": "EV demand must be modeled as a contained load, not an increment added on top of total electricity consumption.",
+      "evidence": ["CLM-DEM-008", "CLM-DEM-009"],
+      "detail": "IEA sees global road-EV demand rising from about 250 TWh in 2025 to more than 1,500 TWh in the 2035 CPS and 1,700 TWh in STEPS. EIA's U.S. EV estimate is already in sales, and AEO assigns charging to residential or commercial sectors by location."
+    },
+    {
+      "finding_id": "FND-027",
+      "finding": "Generation and consumption can be compared only through a complete electrical-system balance.",
+      "evidence": ["CLM-DEM-005"],
+      "detail": "Total generation, net generation delivered to the grid, net imports, sales, direct use, and transmission/distribution/unaccounted electricity use different scopes. The normalized AEO data validates the balance for all 286 case-years."
+    },
+    {
+      "finding_id": "FND-028",
+      "finding": "Annual TWh does not determine reliability, capacity, or transmission requirements.",
+      "evidence": ["CLM-DEM-013"],
+      "detail": "Cooling, servers, charging, heating, and electrolysis differ in location, coincidence, and flexibility. Hourly and geographic datasets remain a release gate for peak, ramp, congestion, and resource-adequacy charts."
+    },
+    {
+      "finding_id": "FND-029",
+      "finding": "Historical global system demand and final electricity consumption are different measures, not conflicting estimates of one quantity.",
+      "evidence": ["CLM-DEM-014"],
+      "detail": "Ember/OWID defines electricity demand as gross generation plus net imports, while IEA's 2025/2030 milestones are final electricity consumption. The dashboard preserves both scopes and does not splice them."
+    }
+  ],
+  "dashboard_information_architecture": [
+    {"chapter": "global_energy", "required_views": ["primary supply/demand by fuel", "generation by source", "capacity by technology", "growth contributions", "observed versus estimated", "method comparison"]},
+    {"chapter": "us_energy", "required_views": ["production versus consumption", "net trade context", "generation by detailed technology", "sector consumption", "state and plant drill-down"]},
+    {"chapter": "electricity_demand", "required_views": ["historical U.S. sales and use", "generation-to-consumption accounting bridge", "AEO case range through 2050", "residential and commercial end uses", "industrial components", "data centers", "EV charging", "macro and activity drivers", "global sector scenarios through 2070", "annual energy versus peak-load explainer"]},
+    {"chapter": "grid", "required_views": ["hourly BA/region/subregion load shape", "coincident peak and ramp map", ">=230 kV context geometry", "typed major-corridor capacity map", "NECEC and CHPE status", "transmission needs versus demand growth", "graphable planning-siting-procurement-construction process", "project milestone timelines", "GETs and reconductoring", "interconnection queues", "operating versus queued capacity", "transformer and grid-equipment supply chains", "reliability and climate stress"]},
+    {"chapter": "technology", "required_views": ["resource-carrier-conversion-storage ontology", "commercial status", "capacity", "generation", "technical potential", "future pathways"]},
+    {"chapter": "impacts", "required_views": ["technical role and constraints", "health causal pathways and attribution limits", "current regulatory timeline", "lifecycle climate-water-land-material-waste ranges", "mitigation and residual risk"]},
+    {"chapter": "nuclear", "required_views": ["global and U.S. history and scenarios", "official reactor-count conflict", "fleet age and license status", "stage-gated project pipeline", "routine and accident health evidence", "fuel and HALEU", "cooling water", "spent-fuel storage and disposal chain"]},
+    {"chapter": "scenarios", "required_views": ["En-ROADS-inspired causal model", "scenario-not-forecast banner", "parameter provenance", "uncertainty", "global-to-U.S. adapter"]},
+    {"chapter": "methodology", "required_views": ["source registry", "claim ledger", "release vintage", "unit/accounting explainer", "known conflicts", "downloadable machine data"]}
+  ],
+  "nonnegotiable_display_rules": [
+    "Every metric shows unit, geography, period, release vintage, source, and observed/estimated/scenario status.",
+    "Capacity and generation never share an unlabeled axis.",
+    "Primary energy and electricity never share a denominator without an explicit accounting method.",
+    "Queued capacity is never styled as operating capacity.",
+    "EIA electrical-system losses are never labeled transmission losses.",
+    "Conflicting authoritative values are displayed side by side with method notes.",
+    "Scenario outputs are never called predictions.",
+    "All detailed 'Other' categories support drill-down or display a composition warning.",
+    "EV and data-center loads are overlays unless the chart uses verified mutually exclusive components.",
+    "Server-only and whole-facility data-center series never form one continuous line.",
+    "Annual TWh is never presented as peak GW, capacity requirement, or transmission need.",
+    "Transmission MW is always labeled as project rating, conductor capability, equipment limit, study transfer capability, capacity accreditation, service right, or directional permit limit.",
+    "MW is never inferred from nominal kV, and visible corridor MW values are never summed as national transfer capacity.",
+    "A planning selection, draft review, permit, construction milestone, energization, and commercial operation remain separate dated statuses.",
+    "Missing EIA-930 demand is not zero; cross-geography aggregation uses UTC hour ending and exposes reporting completeness."
+  ],
+  "time_series_readiness": {
+    "status": "ready_for_dashboard_ingestion",
+    "normalized_files": 21,
+    "normalized_rows": 1532424,
+    "historical": [
+      {
+        "geography": "World",
+        "generation_end_year": 2025,
+        "system_demand_start_year": 2000,
+        "system_demand_end_year": 2025,
+        "system_demand_definition": "Ember gross generation plus net imports; not final electricity consumption",
+        "detailed_capacity_end_year": 2025,
+        "detailed_generation_end_year": 2023,
+        "technology_note": "OWID supplies the broad generation history; IRENASTAT separately supplies detailed marine, geothermal, bioenergy, pumped-hydro, renewable, fossil, and nuclear series."
+      },
+      {
+        "geography": "United States",
+        "generation_start_year": 1949,
+        "generation_end_year": 2025,
+        "consumption_start_year": 1949,
+        "consumption_end_year": 2025,
+        "ev_overlay_years": "2018-2025 with a methodology break at 2023",
+        "technology_note": "EIA all-sector net generation includes coal, petroleum, gas, nuclear, conventional hydro, pumped hydro, wood, waste, geothermal, utility-scale solar, wind, and totals; a second EIA table supplies small-scale and total solar."
+      }
+    ],
+    "scenarios": [
+      {"family": "EIA AEO2026", "geography": "United States", "years": "2025-2050 annual", "models": 1, "scenarios": 11},
+      {"family": "NREL Standard Scenarios 2024", "geography": "contiguous United States", "years": "2026-2050 at nine modeled years", "models": 1, "scenarios": 61},
+      {"family": "NGFS Phase 5.1", "geography": "World", "years": "2020-2100 at five-year intervals", "models": 3, "scenarios": 7},
+      {"family": "NGFS Phase 5.1 final electricity", "geography": "World", "years": "2020-2100 at five-year intervals", "models": 3, "scenarios": 7, "sectors": ["total", "industry", "residential and commercial", "transportation", "other", "selected subsectors"]},
+      {"family": "NREL Electrification Futures Study 2018", "geography": "United States", "years": "2016 reference and 2050 endpoints", "models": 1, "scenarios": 9, "use": "electrification stress test, not current forecast"},
+      {"family": "IRENA WETO 2022 ocean energy", "geography": "World", "years": "2021 reference plus 2030 and 2050 scenario milestones", "models": 1, "scenarios": 1}
+    ],
+    "horizon_rule": "Use U.S.-specific model output only through 2050. Use global NGFS model pathways for world charts at 2060-2070; do not infer U.S. or marine-specific values beyond their documented horizons.",
+    "package_index": "timeseries/README.md",
+    "consumption_package_index": "consumption/README.md",
+    "transmission_package_index": "transmission/README.md",
+    "hourly_load_shape": {
+      "source_hourly_rows": 1264896,
+      "derived_aggregate_profile_summary_rows": 191530,
+      "calendar_year": 2024,
+      "balancing_authorities_in_source": 61,
+      "demand_reporting_balancing_authorities": 53,
+      "eia_regions": 13,
+      "ba_subregions": 83,
+      "complete_all_reporting_BA_coincident_UTC_hours": 8756,
+      "reporting_footprint_mean_MW": 478055.928,
+      "reporting_footprint_peak_MW": 745020,
+      "reporting_footprint_peak_UTC_hour_ending": "2024-07-15T22:00",
+      "scope_warning": "EIA-930 reporting footprint, not a perfectly bounded Lower-48 control total"
+    }
+  },
+  "transmission_readiness": {
+    "status": "research_and_data_package_ready_for_dashboard_ingestion",
+    "verified_source_records": 57,
+    "major_corridors": 20,
+    "hifld_features_230kV_plus": 10031,
+    "process_nodes": 25,
+    "process_edges": 34,
+    "supply_chain_nodes": 44,
+    "supply_chain_edges": 53,
+    "information_gaps": 30,
+    "core_files": {
+      "package": "transmission/README.md",
+      "findings": "transmission/findings.json",
+      "corridors": "transmission/corridors/corridor-catalog.json",
+      "map": "transmission/corridors/major-corridors.geojson",
+      "process": "transmission/process/process-graph.json",
+      "transformers": "transmission/supply-chain/transformers.json",
+      "supply_chain": "transmission/supply-chain/supply-chain-map.json",
+      "gaps": "transmission/cross-domain-gap-register.json"
+    },
+    "central_warning": "The public federal line layer contains no MW ratings. Corridor capacity must come from typed project/operator evidence and cannot be summed into a national total."
+  },
+  "impact_context_readiness": {
+    "status": "qualitative_framework_and_selected_benchmarks_ready",
+    "source_records": 114,
+    "verified_claims": 91,
+    "technology_matrix_file": "impacts/technology-impact-matrix.json",
+    "nuclear_module_file": "impacts/nuclear-generation.json",
+    "regulatory_registry_file": "impacts/regulatory-status.json",
+    "lifecycle_benchmark_file": "impacts/lifecycle-benchmarks.json",
+    "dashboard_contract_file": "impacts/dashboard-guidance.json",
+    "quantitative_impact_calculation": "disabled_pending_compatible_coefficient_ledger",
+    "reason": "Qualitative pathways and selected greenhouse-gas and water context are verified, but universal per-MWh mortality, cost, land, water, material, waste, and reliability coefficients would misstate configuration and site dependence."
+  },
+  "research_gaps_for_next_pass": [
+    "Ingest full historical global country-level series from Energy Institute, IRENA, and IAEA with checksums and data flags.",
+    "Ingest U.S. plant/generator history from EIA-923 and EIA-860 and link generators to public network zones with confidence-rated geography.",
+    "Build compatible fuel-cycle emissions, health, cost, land-use, water-use, material, waste, and reliability coefficient ledgers by technology configuration and site context.",
+    "Extend the 2024 EIA-930 load-shape foundation with additional years, weather normalization, and compatible BA/zone hourly scenarios through 2050-2070.",
+    "Ingest ISO/RTO-specific public interface limits, congestion, curtailment, ratings, planning projects, and milestone histories without exposing CEII.",
+    "Build current transformer, switchgear, cable, conductor, converter, factory-qualification, lead-time, workforce, and logistics indicators; no authoritative public national order book currently exists.",
+    "Research distribution topology, hosting capacity, substation constraints, and large-load/DER queues at state and utility level using security-aware aggregation.",
+    "Ingest reactor-level global and U.S. operating, construction, shutdown, age, license, outage, cooling, generation, spent-fuel, and decommissioning data.",
+    "Expand the federal regulatory registry into linked state, Tribal, local, regional-market, and project-specific status histories.",
+    "Ingest hourly and subhourly system load, weather, EV charging, data-center, heating, flexible industrial, and demand-response data before publishing peak or flexibility claims.",
+    "Add regional and country global demand series so the documented emerging-economy and China contributions can be plotted rather than only described.",
+    "Add survey-based U.S. historical residential, commercial, and industrial end-use benchmarks to complement forward AEO end-use scenarios.",
+    "Parameterize and validate the clean-room stock-flow model before connecting it to UI controls."
+  ]
+}

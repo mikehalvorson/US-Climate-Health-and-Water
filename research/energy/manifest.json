@@ -1,0 +1,175 @@
+{
+  "corpus_id": "energy-review-v1",
+  "version": "1.3.0",
+  "as_of": "2026-08-01",
+  "geographies": ["world", "United States"],
+  "domains": [
+    "primary_energy_production",
+    "primary_energy_consumption",
+    "electricity_capacity",
+    "electricity_generation",
+    "transmission_and_distribution",
+    "end_use",
+    "electricity_consumption",
+    "demand_drivers",
+    "sector_end_use",
+    "identifiable_loads",
+    "load_shape_and_flexibility",
+    "scenario_models",
+    "power_system_reliability",
+    "human_health",
+    "regulation_and_permitting",
+    "lifecycle_sustainability",
+    "nuclear_generation_and_fuel_cycle",
+    "hourly_and_geographic_load_shape",
+    "transmission_corridors_and_capacity_semantics",
+    "transmission_planning_siting_and_permitting",
+    "energy_supply_chains"
+  ],
+  "temporal_focus": {
+    "observed_year": 2025,
+    "historical_start_varies_by_dataset": true,
+    "scenario_horizon": 2100
+  },
+  "files": [
+    "sources.json",
+    "claims.json",
+    "technology-taxonomy.json",
+    "datasets.json",
+    "observations-global-2025.json",
+    "observations-us-2025.json",
+    "transmission.json",
+    "summary.json",
+    "en-roads/model-map.json",
+    "en-roads/reproduction-assessment.json",
+    "impacts/README.md",
+    "impacts/problem-framework.json",
+    "impacts/technology-impact-matrix.json",
+    "impacts/nuclear-generation.json",
+    "impacts/regulatory-status.json",
+    "impacts/lifecycle-benchmarks.json",
+    "impacts/dashboard-guidance.json",
+    "impacts/scripts/validate_impacts.py",
+    "timeseries/README.md",
+    "timeseries/series-schema.json",
+    "timeseries/source-access.json",
+    "timeseries/scenario-catalog.json",
+    "timeseries/chart-contracts.json",
+    "timeseries/gap-register.json",
+    "timeseries/coverage.json",
+    "timeseries/ingestion-manifest.json",
+    "timeseries/scripts/normalize_timeseries.py",
+    "timeseries/scripts/validate_timeseries.py",
+    "timeseries/normalized/global-electricity-generation-history.csv",
+    "timeseries/normalized/global-irena-capacity-and-generation-history.csv",
+    "timeseries/normalized/us-electricity-generation-history.csv",
+    "timeseries/normalized/us-electricity-projections-aeo2026.csv",
+    "timeseries/normalized/us-electricity-projections-nrel-standard-scenarios-2024.csv",
+    "timeseries/normalized/global-electricity-projections-ngfs-phase5.1.csv",
+    "timeseries/normalized/global-specialized-technology-scenarios.csv",
+    "consumption/README.md",
+    "consumption/source-verification.json",
+    "consumption/demand-drivers.json",
+    "consumption/accounting-boundaries.json",
+    "consumption/findings.json",
+    "consumption/scenario-statistics.json",
+    "consumption/chart-contracts.json",
+    "consumption/timeseries/README.md",
+    "consumption/timeseries/series-schema.json",
+    "consumption/timeseries/ingestion-manifest.json",
+    "consumption/timeseries/coverage.json",
+    "consumption/timeseries/scripts/normalize_consumption.py",
+    "consumption/timeseries/scripts/validate_consumption.py",
+    "consumption/timeseries/normalized/us-electricity-consumption-history.csv",
+    "consumption/timeseries/normalized/global-electricity-demand-history-ember-owid.csv",
+    "consumption/timeseries/normalized/us-electricity-supply-demand-aeo2026.csv",
+    "consumption/timeseries/normalized/us-electricity-end-use-aeo2026.csv",
+    "consumption/timeseries/normalized/us-demand-drivers-aeo2026.csv",
+    "consumption/timeseries/normalized/global-electricity-consumption-ngfs-phase5.1.csv",
+    "consumption/timeseries/normalized/global-electricity-supply-demand-ngfs-phase5.1.csv",
+    "consumption/timeseries/normalized/global-and-us-demand-milestones.csv",
+    "consumption/timeseries/normalized/us-electrification-scenarios-nrel-efs.csv",
+    "transmission/README.md",
+    "transmission/manifest.json",
+    "transmission/source-verification.json",
+    "transmission/source-link-check.json",
+    "transmission/findings.json",
+    "transmission/needs-and-expectations.json",
+    "transmission/infrastructure-challenges.json",
+    "transmission/cross-domain-gap-register.json",
+    "transmission/chart-contracts.json",
+    "transmission/corridors/capacity-definitions.json",
+    "transmission/corridors/corridor-catalog.json",
+    "transmission/corridors/major-corridors.geojson",
+    "transmission/corridors/base-layers/hifld-transmission-lines-230kv-plus.geojson",
+    "transmission/corridors/base-layer-acquisition.json",
+    "transmission/corridors/scripts/acquire_hifld.py",
+    "transmission/process/process-graph.json",
+    "transmission/supply-chain/transformers.json",
+    "transmission/supply-chain/supply-chain-map.json",
+    "transmission/supply-chain/bottleneck-register.json",
+    "transmission/load-shape/README.md",
+    "transmission/load-shape/coverage.json",
+    "transmission/load-shape/timeseries/scripts/normalize_eia930.py",
+    "transmission/load-shape/timeseries/scripts/validate_eia930.py",
+    "transmission/load-shape/timeseries/normalized/us-balancing-authority-hourly-demand-2024.csv.gz",
+    "transmission/load-shape/timeseries/normalized/us-subregion-hourly-demand-2024.csv.gz",
+    "transmission/load-shape/timeseries/normalized/us-region-and-reporting-footprint-hourly-demand-2024.csv.gz",
+    "transmission/load-shape/timeseries/normalized/load-shape-summary-2024.csv",
+    "transmission/load-shape/timeseries/normalized/average-hourly-load-profiles-2024.csv",
+    "transmission/scripts/validate_transmission.py"
+  ],
+  "evidence_policy": {
+    "source_identity_check_required": true,
+    "claim_fidelity_check_required": true,
+    "independent_corroboration_required_for_load_bearing_claims": true,
+    "primary_sources_preferred": true,
+    "unresolved_disagreements_are_preserved": true,
+    "citation_urls_must_be_canonical": true
+  },
+  "verification_status_vocabulary": ["verified", "provisional", "rejected", "superseded"],
+  "evidence_class_vocabulary": ["observed", "estimate", "preliminary", "derived", "scenario", "forecast", "not_observed"],
+  "confidence_vocabulary": ["high", "medium", "low"],
+  "corroboration_exceptions": [
+    {
+      "claim_ids": ["CLM-ENR-002", "CLM-ENR-004", "CLM-ENR-006"],
+      "reason": "These are claims about Climate Interactive's own model structure and licensing boundaries. The publisher is the source of record; separate official pages or chapters were checked, and outside descriptions would not be independent evidence of implementation details or license terms."
+    },
+    {
+      "claim_ids": ["CLM-GLO-001", "CLM-GLO-002", "CLM-GLO-014"],
+      "reason": "These exact latest-year estimates originate in the IEA's 2026 assessment. Separate report chapters were checked. Other compilers either use different methods or do not publish an exactly comparable value; the corpus preserves those differences instead of treating them as direct corroboration."
+    },
+    {
+      "claim_ids": ["CLM-GLO-007"],
+      "reason": "IRENA is the source of record for the exact technology-by-technology year-end renewable-capacity table. Comparable third-party totals have different technology and quality-flag definitions. Each component was rechecked in its separate IRENA table and the unit conversion is recorded."
+    },
+    {
+      "claim_ids": ["CLM-US-001", "CLM-US-002", "CLM-US-004", "CLM-US-005", "CLM-US-006", "CLM-US-007", "CLM-US-011", "CLM-TAX-001"],
+      "reason": "EIA is the U.S. federal statistical source of record for these exact production, consumption, generation, flow, and storage-accounting values. Independent tables, survey programs, or diagrams within EIA were checked; external summaries generally reproduce EIA rather than independently measure the national totals."
+    },
+    {
+      "claim_ids": ["CLM-REG-003", "CLM-REG-005"],
+      "reason": "These are exact claims about EPA's own legal-action status and scope at the recorded verification date. EPA is the source of record; third-party descriptions would not be independent evidence of agency status. Both claims carry high update risk, explicit proposal/final or partial-repeal boundaries, and mandatory reverification rules."
+    },
+    {
+      "claim_ids": ["CLM-DEM-001", "CLM-DEM-004", "CLM-DEM-005", "CLM-DEM-007", "CLM-DEM-008", "CLM-DEM-011", "CLM-DEM-012", "CLM-DEM-014"],
+      "reason": "These are exact values or structural facts from the publisher's own statistical table or model. The source of record was checked in at least two publisher-controlled representations where available, and raw cells/API responses were independently revalidated. An external source would generally reproduce rather than independently measure the same modeled or estimated values. Cross-source comparisons are retained separately instead of being presented as exact corroboration."
+    }
+  ],
+  "known_limits": [
+    "This is an exhaustive source-and-method review, not a redistribution of every row in every underlying dataset.",
+    "Several authoritative 2025 totals are preliminary and will be revised by their publishers.",
+    "IEA and Energy Institute global totals can differ because of estimation timing and primary-energy accounting methods.",
+    "The En-ROADS public documentation is sufficient for an architecture-compatible clean-room specification, not a verified bit-for-bit clone of the production simulator.",
+    "U.S.-specific AEO and ReEDS scenario series end in 2050; the corpus does not extrapolate U.S. values to 2070.",
+    "Global marine-energy scenario coverage is a sparse IRENA WETO milestone series ending in 2050; no marine-specific 2070 value is asserted."
+    ,"The impact matrix identifies pathways and tradeoffs; it is not a site-specific impact assessment or a single technology ranking."
+    ,"Quantitative mortality, land, water, material, waste, cost, and reliability calculations remain disabled until a compatible, configuration-specific coefficient ledger is built."
+    ,"U.S. regulatory status is a federal baseline as of 2026-08-01, not legal advice or a complete state, Tribal, local, regional-market, or project permit inventory."
+    ,"The NRC and EIA official operating-reactor counts conflict; both values and dates are preserved."
+    ,"The demand package contains annual energy volumes, not hourly load shapes; it cannot by itself establish peak demand, ramping, resource adequacy, or transmission requirements."
+    ,"AEO data-center values isolate server electricity, while IEA and LBNL milestones use total-facility definitions; the two scopes are not spliced."
+    ,"The EIA MER EV series is experimental, changes method beginning in 2023, and is already included in electricity sales and use."
+    ,"The 2018 NREL Electrification Futures Study is retained as an electrification stress test, not a current forecast."
+  ]
+}

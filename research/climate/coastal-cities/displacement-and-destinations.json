@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0.0",
+  "terminology": {
+    "exposed_population": "People residing on land inside a modeled hazard footprint. Exposure does not prove damage, movement, or timing.",
+    "displacement": "A forced or compelled movement associated with an event or deteriorating conditions; may be temporary, repeated, or permanent.",
+    "migration": "A residence change shaped by interacting environmental, economic, family, housing, policy, and demographic factors.",
+    "trapped_or_immobile_population": "People who want or need to move but lack resources, rights, information, health, or social networks to do so.",
+    "climate_refugee_guardrail": "Do not use as a legal category for U.S. internal movement; the Refugee Convention definition does not automatically cover climate-related movement."
+  },
+  "models": [
+    {
+      "model_id": "hauer_at_risk_2016",
+      "source_id": "NATURE-HAUER-2016",
+      "horizon": 2100,
+      "geography": "contiguous United States",
+      "adaptation": "no coastal protection",
+      "scenarios": [
+        {"sea_level_rise_m": 0.9, "projected_population_on_exposed_land": 4200000},
+        {"sea_level_rise_m": 1.8, "projected_population_on_exposed_land": 13100000}
+      ],
+      "use": "Population-at-risk scenario and input to later migration redistribution model.",
+      "do_not_use_as": ["number of certain migrants", "2070 population", "current exposed population"]
+    },
+    {
+      "model_id": "hauer_migration_2017",
+      "source_id": "NATURE-HAUER-2017",
+      "replication_source_id": "OPENICPSR-HAUER-2017",
+      "horizon": 2100,
+      "sea_level_rise_m": 1.8,
+      "adaptation_variants": ["no adaptation", "adaptation"],
+      "method": "Redistributes projected at-risk coastal population through an origin-destination migration network calibrated from historical IRS county flows.",
+      "national_structure": {"cbsas_net_gain_over_100000": 13, "cbsas_net_loss_over_100000": 10, "states_affected": "all", "counties_affected_percent": 56},
+      "selected_cbsa_net_migration": [
+        {"cbsa": "Austin, TX", "no_adaptation": {"estimate": 818938, "interval_plus_minus": 243821}, "adaptation": {"estimate": 625627, "interval_plus_minus": 179186}},
+        {"cbsa": "Orlando, FL", "no_adaptation": {"estimate": 461411, "interval_plus_minus": 62665}, "adaptation": {"estimate": 369120, "interval_plus_minus": 38834}},
+        {"cbsa": "Atlanta, GA", "no_adaptation": {"estimate": 320937, "interval_plus_minus": 131984}, "adaptation": {"estimate": 248684, "interval_plus_minus": 68868}},
+        {"cbsa": "New Orleans, LA", "no_adaptation": {"estimate": -500011, "interval_plus_minus": 24053}, "adaptation": {"estimate": -373283, "interval_plus_minus": 10733}},
+        {"cbsa": "Miami, FL", "no_adaptation": {"estimate": -2509978, "interval_plus_minus": 155119}, "adaptation": {"estimate": -2009263, "interval_plus_minus": 95845}}
+      ],
+      "interpretation": "A high-end, end-century redistribution stress test. Values are model outputs under assumptions, not a current destination forecast or guarantee.",
+      "limitations": ["Old 1.8-meter scenario framing.", "Historical migration links may change.", "No explicit annual arrival path.", "Household choice, prices, policy, protection, and immobility are simplified.", "CBSA names and boundaries must match source files before mapping."]
+    },
+    {
+      "model_id": "robinson_county_migration_2020",
+      "source_id": "PLOS-ROBINSON-2020",
+      "horizon": 2100,
+      "method": "Artificial-neural-network county migration model linked to NOAA Digital Coast exposure.",
+      "scenario_milestones": [
+        {"scenario": "medium_0.9m_by_2100", "rise_m": 0.3, "year": 2055},
+        {"scenario": "medium_0.9m_by_2100", "rise_m": 0.6, "year": 2080},
+        {"scenario": "medium_0.9m_by_2100", "rise_m": 0.9, "year": 2100},
+        {"scenario": "high_1.8m_by_2100", "rise_m": 0.3, "year": 2042},
+        {"scenario": "high_1.8m_by_2100", "rise_m": 0.6, "year": 2059},
+        {"scenario": "high_1.8m_by_2100", "rise_m": 0.9, "year": 2071},
+        {"scenario": "high_1.8m_by_2100", "rise_m": 1.2, "year": 2082},
+        {"scenario": "high_1.8m_by_2100", "rise_m": 1.5, "year": 2091},
+        {"scenario": "high_1.8m_by_2100", "rise_m": 1.8, "year": 2100}
+      ],
+      "findings": ["Almost all counties receive some additional migrants in at least one modeled scenario.", "Existing urban areas tend to receive the largest absolute totals.", "Nearby inland counties can experience larger percentage shocks.", "Miami and New Orleans exposure shapes Southeast redistribution patterns."],
+      "limitations": ["Scenario milestone dates are from the study's older curves, not current NOAA local projections.", "County resolution hides neighborhood concentration.", "Modeled moves are not observed flows."]
+    }
+  ],
+  "causal_pathways": [
+    {"pathway_id": "event_displacement", "sequence": ["storm or flood", "evacuation", "temporary shelter", "return, repeated displacement, or permanent move"], "timing": "fast", "measures": ["evacuation count", "shelter population", "FEMA assistance location", "school enrollment", "address change"]},
+    {"pathway_id": "slow_housing_exit", "sequence": ["recurrent flooding", "repair and insurance costs", "credit or mortgage constraint", "sale, abandonment, or relocation"], "timing": "slow", "measures": ["repeat loss", "nonrenewal", "premium", "mortgage delinquency", "vacancy", "parcel transaction"]},
+    {"pathway_id": "public_service_failure", "sequence": ["rising hazard", "utility or access unreliability", "public investment gap", "household relocation"], "timing": "episodic_or_slow", "measures": ["outage hours", "boil-water notice", "road closure", "sewer overflow", "emergency response time"]},
+    {"pathway_id": "fiscal_feedback", "sequence": ["selective out-migration", "tax-base and service-cost change", "higher rates or reduced service", "additional out-migration"], "timing": "slow", "evidence_status": "risk pathway, not a quantified inevitability", "source_refs": [{"source_id": "NCA5-COASTS"}, {"source_id": "NCA5-SOCIAL-SYSTEMS"}]}
+  ],
+  "dashboard_rule": "Show exposure, damage, displacement, migration, and destination strain as separate stages. Never convert one stage into the next without an explicit model and uncertainty."
+}
+

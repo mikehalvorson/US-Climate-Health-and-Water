@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0.0",
+  "metric_definition": {
+    "name": "cradle_to_resin_water_consumption",
+    "unit": "liters_per_kilogram_resin",
+    "meaning": "Freshwater removed from the immediate watershed or made unavailable to other users across the modeled supply chain.",
+    "excludes_unless_stated": ["finished-product conversion", "product use and washing", "all additives", "end of life", "water-quality damage", "local scarcity weighting"],
+    "density_conversion": "For the cited inventories, 1 kg water is displayed as approximately 1 L water.",
+    "comparability_warning": "Values from different databases, regions, years, allocation rules, and recycling assumptions are not plant coefficients and must not be silently averaged into a national total."
+  },
+  "four_database_figure_estimates": [
+    {
+      "resin_id": "PET",
+      "minimum": 3.3,
+      "maximum": 44.4,
+      "cross_database_mean_approximate": 23.5,
+      "precision": "approximate_from_figure_S3",
+      "source": {"source_id": "RCR-RESIN-WATER-SI-2023", "locator": "Figure S3, rendered page S29"}
+    },
+    {
+      "resin_id": "HDPE",
+      "minimum": 5.9,
+      "maximum": 24.1,
+      "cross_database_mean_approximate": 12.8,
+      "precision": "approximate_from_figure_S3",
+      "source": {"source_id": "RCR-RESIN-WATER-SI-2023", "locator": "Figure S3, rendered page S29"}
+    },
+    {
+      "resin_id": "PP",
+      "minimum": 5.2,
+      "maximum": 20.5,
+      "cross_database_mean_approximate": 11.7,
+      "precision": "approximate_from_figure_S3",
+      "source": {"source_id": "RCR-RESIN-WATER-SI-2023", "locator": "Figure S3, rendered page S29"}
+    },
+    {
+      "resin_id": "PLA",
+      "minimum": 35.0,
+      "maximum": 128.0,
+      "cross_database_mean_approximate": 70.0,
+      "precision": "approximate_from_figure_S3",
+      "use_rule": "Illustrates that bio-based does not automatically mean water-saving; do not treat this range as a universal PLA coefficient.",
+      "source": {"source_id": "RCR-RESIN-WATER-SI-2023", "locator": "Figure S3, rendered page S29"}
+    }
+  ],
+  "additional_industry_inventories": [
+    {
+      "material_id": "EPS",
+      "geography": "Europe",
+      "data_period": "2010-2012",
+      "boundary": "cradle_to_gate",
+      "water_withdrawal_l_per_kg": 1371.98,
+      "freshwater_consumption_l_per_kg": 11.93,
+      "source": {"source_id": "PE-EPS-2015", "locator": "Tables 7 and 8"}
+    },
+    {
+      "material_id": "S_PVC",
+      "geography": "Europe",
+      "data_period": "current profile published 2026",
+      "boundary": "cradle_to_gate",
+      "freshwater_consumption_l_per_kg": 47.97,
+      "gate_to_gate_freshwater_consumption_l_per_kg": 5.2,
+      "source": {"source_id": "ECVM-PVC-2026", "locator": "Tables 10 and 12"}
+    },
+    {
+      "material_id": "E_PVC",
+      "geography": "Europe",
+      "data_period": "current profile published 2026",
+      "boundary": "cradle_to_gate",
+      "freshwater_consumption_l_per_kg": 50.93,
+      "gate_to_gate_freshwater_consumption_l_per_kg": 14.7,
+      "source": {"source_id": "ECVM-PVC-2026", "locator": "Tables 10 and 12"}
+    },
+    {
+      "material_id": "VCM",
+      "geography": "Europe",
+      "data_period": "current profile published 2026",
+      "boundary": "cradle_to_gate_precursor",
+      "freshwater_consumption_l_per_kg": 45.01,
+      "gate_to_gate_freshwater_consumption_l_per_kg": 27.4,
+      "source": {"source_id": "ECVM-PVC-2026", "locator": "Tables 10 and 12"}
+    },
+    {
+      "material_id": "long_chain_polyether_polyol",
+      "geography": "Europe",
+      "boundary": "cradle_to_gate_precursor_only",
+      "freshwater_consumption_l_per_kg": 19.28,
+      "source": {"source_id": "ISOPA-POLYOLS-2021", "locator": "Water consumption table"}
+    },
+    {
+      "material_id": "short_chain_polyether_polyol",
+      "geography": "Europe",
+      "boundary": "cradle_to_gate_precursor_only",
+      "freshwater_consumption_l_per_kg": 33.94,
+      "source": {"source_id": "ISOPA-POLYOLS-2021", "locator": "Water consumption table"}
+    }
+  ],
+  "coverage_by_resin": [
+    {"resin_id": "PP", "status": "bounded_cross_database_range", "value_reference": "four_database_figure_estimates#PP"},
+    {"resin_id": "HDPE", "status": "bounded_cross_database_range", "value_reference": "four_database_figure_estimates#HDPE"},
+    {"resin_id": "LLDPE", "status": "no_harmonized_value_in_package", "reason": "Do not transfer the HDPE value across a different process and product mix."},
+    {"resin_id": "LDPE", "status": "no_harmonized_value_in_package", "reason": "The Argonne report shows a more energy-intensive high-pressure polymerization route, but it does not provide a comparable water coefficient."},
+    {"resin_id": "PVC", "status": "european_industry_inventory_only", "value_reference": "additional_industry_inventories#S_PVC", "reason": "Not a current U.S. coefficient."},
+    {"resin_id": "PET", "status": "bounded_cross_database_range", "value_reference": "four_database_figure_estimates#PET"},
+    {"resin_id": "PS_EPS", "status": "european_eps_industry_inventory_only", "value_reference": "additional_industry_inventories#EPS", "reason": "EPS does not represent all solid and foamed polystyrene routes."},
+    {"resin_id": "PU", "status": "precursor_only", "value_reference": "additional_industry_inventories#long_chain_polyether_polyol", "reason": "Polyol excludes isocyanate, formulation, foaming, and curing and is not a PU coefficient."},
+    {"resin_id": "ABS_SAN_ACRYLIC", "status": "no_harmonized_value_in_package"},
+    {"resin_id": "PC_EPOXY", "status": "no_harmonized_value_in_package"},
+    {"resin_id": "PA_NYLON", "status": "no_harmonized_value_in_package"},
+    {"resin_id": "FLUOROPOLYMERS", "status": "no_harmonized_value_in_package"}
+  ],
+  "known_missing_coefficients": [
+    "A harmonized current U.S. cradle-to-resin range for LLDPE, LDPE, PVC, PS, PU, ABS, nylon, polycarbonate, and fluoropolymers",
+    "Product-conversion water by application and plant",
+    "Reusable-system washing and loss rates by geography",
+    "Scarcity-weighted water and water-quality burdens",
+    "Replacement-material inventories on the same functional unit"
+  ],
+  "gross_avoidance_rule": {
+    "formula": "gross_liters = virgin_resin_mass_avoided_kg * cradle_to_resin_consumption_l_per_kg",
+    "allowed_label": "gross avoided cradle-to-resin water consumption",
+    "prohibited_label": "net water savings",
+    "reason": "Replacement manufacture, washing, logistics, product loss, and location are absent."
+  },
+  "net_service_rule": {
+    "formula": "net_liters = avoided_virgin_resin_water - replacement_material_water - washing_water - reverse_logistics_water - added_product_loss_embodied_water + reuse_and_recovery_credits",
+    "functional_unit": "A specified service delivered for a specified lifetime, geography, and performance level",
+    "minimum_sensitivity_dimensions": ["replacement mass ratio", "reuse cycles", "wash efficiency", "loss rate", "electricity mix", "water scarcity", "food or product spoilage"]
+  },
+  "source_refs": [
+    {"source_id": "RCR-RESIN-WATER-2023"},
+    {"source_id": "RCR-RESIN-WATER-SI-2023"},
+    {"source_id": "PE-EPS-2015"},
+    {"source_id": "ECVM-PVC-2026"},
+    {"source_id": "ISOPA-POLYOLS-2021"}
+  ]
+}

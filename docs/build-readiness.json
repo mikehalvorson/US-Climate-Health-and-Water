@@ -1,0 +1,119 @@
+{
+  "schemaVersion": "1.0.0",
+  "baselineDate": "2026-08-09",
+  "repository": {
+    "branch": "main",
+    "head": "8d1d3de",
+    "remote": "https://github.com/mikehalvorson/US-Climate-Health-and-Water.git",
+    "trackedFilesBeforeStep": 1,
+    "preexistingUntrackedFiles": 214,
+    "preexistingUntrackedByArea": {
+      ".gitignore": 1,
+      "docs": 4,
+      "research": 209
+    }
+  },
+  "runtime": {
+    "node": "24.14.0",
+    "pnpm": "11.16.0",
+    "python": "3.12.13",
+    "git": "2.53.0.windows.3",
+    "githubCliAvailable": false
+  },
+  "publishableCorpus": {
+    "files": 213,
+    "bytes": 228529116,
+    "mib": 217.94,
+    "areas": [
+      { "id": "docs", "files": 4, "bytes": 150963 },
+      { "id": "research", "files": 209, "bytes": 228378153 },
+      { "id": "research-energy", "files": 93, "bytes": 222492148 },
+      { "id": "research-climate", "files": 69, "bytes": 5546284 },
+      { "id": "research-water", "files": 25, "bytes": 170798 },
+      { "id": "research-plastics", "files": 20, "bytes": 165369 },
+      { "id": "research-root", "files": 2, "bytes": 3554 }
+    ],
+    "formats": [
+      { "extension": ".json", "files": 126, "bytes": 1330557 },
+      { "extension": ".csv", "files": 45, "bytes": 181067146 },
+      { "extension": ".md", "files": 18, "bytes": 183964 },
+      { "extension": ".py", "files": 16, "bytes": 193341 },
+      { "extension": ".gz", "files": 3, "bytes": 18583309 },
+      { "extension": ".geojson", "files": 2, "bytes": 26250199 },
+      { "extension": ".xlsx", "files": 1, "bytes": 433031 },
+      { "extension": ".asc", "files": 1, "bytes": 11505 },
+      { "extension": ".zip", "files": 1, "bytes": 476064 }
+    ],
+    "largestFile": {
+      "path": "research/energy/transmission/load-shape/timeseries/raw/EIA930_BALANCE_2024_Jul_Dec.csv",
+      "bytes": 47928993,
+      "mib": 45.71
+    }
+  },
+  "validators": [
+    {
+      "id": "energy-timeseries",
+      "path": "research/energy/timeseries/scripts/validate_timeseries.py",
+      "status": "pass",
+      "summary": { "jsonFiles": 49, "normalizedFiles": 7, "normalizedRows": 55001, "sources": 165, "datasets": 32, "claims": 91 }
+    },
+    {
+      "id": "energy-impacts",
+      "path": "research/energy/impacts/scripts/validate_impacts.py",
+      "status": "pass",
+      "summary": { "impactJsonFiles": 6, "technologies": 16, "regulatoryRecords": 14, "sources": 114, "claims": 91, "loadBearingClaims": 70 }
+    },
+    {
+      "id": "energy-consumption",
+      "path": "research/energy/consumption/timeseries/scripts/validate_consumption.py",
+      "status": "pass",
+      "summary": { "normalizedFiles": 9, "rows": 20997 }
+    },
+    {
+      "id": "energy-transmission",
+      "path": "research/energy/transmission/scripts/validate_transmission.py",
+      "status": "pass",
+      "summary": { "sources": 57, "corridors": 20, "hifldFeatures": 10031, "processNodes": 25, "processEdges": 34, "supplyChainNodes": 44, "supplyChainEdges": 53, "informationGaps": 30 }
+    },
+    {
+      "id": "energy-eia930",
+      "path": "research/energy/transmission/load-shape/timeseries/scripts/validate_eia930.py",
+      "status": "pass",
+      "summary": { "balancingAuthorityRows": 535824, "subregionRows": 729072, "aggregateRows": 122980, "summaryRows": 150, "profileRows": 68400, "completeNationalUtcHours": 8756 }
+    },
+    {
+      "id": "climate",
+      "path": "research/climate/scripts/validate_climate.py",
+      "status": "pass",
+      "summary": { "sources": 60, "claims": 15, "jsonFiles": 40 }
+    },
+    {
+      "id": "climate-coastal-cities",
+      "path": "research/climate/coastal-cities/scripts/validate_coastal_cities.py",
+      "status": "pass",
+      "summary": { "claims": 10, "sources": 60, "jsonFiles": 11 }
+    },
+    {
+      "id": "water",
+      "path": "research/water/scripts/validate_water.py",
+      "status": "pass",
+      "summary": { "sources": 63, "claims": 20, "risks": 14, "placeProfiles": 18, "jsonFiles": 20 }
+    },
+    {
+      "id": "plastics",
+      "path": "research/plastics/scripts/validate_plastics.py",
+      "status": "pass",
+      "summary": { "sources": 48, "claims": 21, "tripleCheckAudits": 21, "waterScenarios": 9, "jsonFiles": 17 }
+    }
+  ],
+  "readiness": {
+    "planning": "ready",
+    "domainValidators": "pass",
+    "crossDomainRegistries": "missing_release_blocking",
+    "unifiedIntegrityHarness": "missing_release_blocking",
+    "application": "missing",
+    "routes": "missing",
+    "deployment": "missing"
+  },
+  "researchValuesChanged": false
+}

@@ -1,0 +1,20 @@
+impact,metric,warming_c,value_low,value_central,value_high,unit,confidence,geography,source_id,locator,interpretation_guardrail
+extreme_heat,one_in_10_year_hot_extreme_frequency,1.1,,2.8,,multiplier,likely,global_land,IPCC-AR6-WGI-SPM,Figure SPM.6,Frequency ratio relative to 1850-1900 climate
+extreme_heat,one_in_10_year_hot_extreme_frequency,1.5,,4.1,,multiplier,likely,global_land,IPCC-AR6-WGI-SPM,Figure SPM.6,Frequency ratio relative to 1850-1900 climate
+extreme_heat,one_in_10_year_hot_extreme_frequency,2.0,,5.6,,multiplier,likely,global_land,IPCC-AR6-WGI-SPM,Figure SPM.6,Frequency ratio relative to 1850-1900 climate
+extreme_heat,one_in_10_year_hot_extreme_frequency,4.0,,9.4,,multiplier,likely,global_land,IPCC-AR6-WGI-SPM,Figure SPM.6,Frequency ratio relative to 1850-1900 climate
+heavy_precipitation,one_in_10_year_event_intensity_change,1.1,,6.7,,percent,likely,global_land,IPCC-AR6-WGI-SPM,Figure SPM.6,Relative to 1850-1900 climate
+heavy_precipitation,one_in_10_year_event_intensity_change,1.5,,10.5,,percent,likely,global_land,IPCC-AR6-WGI-SPM,Figure SPM.6,Relative to 1850-1900 climate
+heavy_precipitation,one_in_10_year_event_intensity_change,2.0,,14.0,,percent,likely,global_land,IPCC-AR6-WGI-SPM,Figure SPM.6,Relative to 1850-1900 climate
+heavy_precipitation,one_in_10_year_event_intensity_change,4.0,,30.2,,percent,likely,global_land,IPCC-AR6-WGI-SPM,Figure SPM.6,Relative to 1850-1900 climate
+drought,agricultural_ecological_drought_frequency_in_drying_regions,1.1,,1.7,,multiplier,likely,drying_regions,IPCC-AR6-WGI-SPM,Figure SPM.6,Not a global drought-frequency estimate
+drought,agricultural_ecological_drought_frequency_in_drying_regions,1.5,,2.0,,multiplier,likely,drying_regions,IPCC-AR6-WGI-SPM,Figure SPM.6,Not a global drought-frequency estimate
+drought,agricultural_ecological_drought_frequency_in_drying_regions,2.0,,2.4,,multiplier,likely,drying_regions,IPCC-AR6-WGI-SPM,Figure SPM.6,Not a global drought-frequency estimate
+drought,agricultural_ecological_drought_frequency_in_drying_regions,4.0,,4.1,,multiplier,likely,drying_regions,IPCC-AR6-WGI-SPM,Figure SPM.6,Not a global drought-frequency estimate
+biodiversity,terrestrial_species_at_very_high_extinction_risk,1.5,3,9,14,percent,assessed_range,global,IPCC-AR6-WGII-SPM,Figure SPM.3,Modeled risk category not observed extinction count
+biodiversity,terrestrial_species_at_very_high_extinction_risk,2.0,3,10,18,percent,assessed_range,global,IPCC-AR6-WGII-SPM,Figure SPM.3,Modeled risk category not observed extinction count
+biodiversity,terrestrial_species_at_very_high_extinction_risk,3.0,3,12,29,percent,assessed_range,global,IPCC-AR6-WGII-SPM,Figure SPM.3,Modeled risk category not observed extinction count
+biodiversity,terrestrial_species_at_very_high_extinction_risk,4.0,3,13,39,percent,assessed_range,global,IPCC-AR6-WGII-SPM,Figure SPM.3,Modeled risk category not observed extinction count
+biodiversity,terrestrial_species_at_very_high_extinction_risk,5.0,3,15,48,percent,assessed_range,global,IPCC-AR6-WGII-SPM,Figure SPM.3,Modeled risk category not observed extinction count
+freshwater,population_exposed_to_physical_water_scarcity,2.0,,3.0,,billion_people,low,global,IPCC-AR6-WGII-CH4,Executive Summary,Scenario-conditioned and jointly climate/socioeconomic
+freshwater,population_exposed_to_physical_water_scarcity,4.0,,4.0,,billion_people,low,global,IPCC-AR6-WGII-CH4,Executive Summary,Scenario-conditioned and jointly climate/socioeconomic

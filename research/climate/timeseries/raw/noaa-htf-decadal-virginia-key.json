@@ -1,0 +1,260 @@
+{
+  "count": 27,
+  "stnId": "8723214",
+  "stnName": "Virginia Key, FL",
+  "lat": "25.7314",
+  "lon": "-80.1618",
+  "DecadalProjection": [
+    {
+      "minor": [
+        {
+          "decade": 2020,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 3,
+          "intLow": 3,
+          "intermediate": 3,
+          "intHigh": 3,
+          "high": 3
+        },
+        {
+          "decade": 2030,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 5,
+          "intLow": 6,
+          "intermediate": 6,
+          "intHigh": 6,
+          "high": 7
+        },
+        {
+          "decade": 2040,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 9,
+          "intLow": 10,
+          "intermediate": 15,
+          "intHigh": 20,
+          "high": 25
+        },
+        {
+          "decade": 2050,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 20,
+          "intLow": 25,
+          "intermediate": 35,
+          "intHigh": 60,
+          "high": 95
+        },
+        {
+          "decade": 2060,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 30,
+          "intLow": 55,
+          "intermediate": 90,
+          "intHigh": 175,
+          "high": 270
+        },
+        {
+          "decade": 2070,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 45,
+          "intLow": 100,
+          "intermediate": 195,
+          "intHigh": 335,
+          "high": 365
+        },
+        {
+          "decade": 2080,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 65,
+          "intLow": 160,
+          "intermediate": 320,
+          "intHigh": 365,
+          "high": 365
+        },
+        {
+          "decade": 2090,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 90,
+          "intLow": 230,
+          "intermediate": 365,
+          "intHigh": 365,
+          "high": 365
+        },
+        {
+          "decade": 2100,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 125,
+          "intLow": 300,
+          "intermediate": 365,
+          "intHigh": 365,
+          "high": 365
+        }
+      ],
+      "moderate": [
+        {
+          "decade": 2020,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 0,
+          "intLow": 0,
+          "intermediate": 0,
+          "intHigh": 0,
+          "high": 0
+        },
+        {
+          "decade": 2030,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 0,
+          "intLow": 0,
+          "intermediate": 0,
+          "intHigh": 0,
+          "high": 0
+        },
+        {
+          "decade": 2040,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 0,
+          "intLow": 0,
+          "intermediate": 0,
+          "intHigh": 0,
+          "high": 0
+        },
+        {
+          "decade": 2050,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 0,
+          "intLow": 1,
+          "intermediate": 1,
+          "intHigh": 2,
+          "high": 4
+        },
+        {
+          "decade": 2060,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 1,
+          "intLow": 2,
+          "intermediate": 4,
+          "intHigh": 15,
+          "high": 45
+        },
+        {
+          "decade": 2070,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 1,
+          "intLow": 4,
+          "intermediate": 15,
+          "intHigh": 95,
+          "high": 245
+        },
+        {
+          "decade": 2080,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 2,
+          "intLow": 10,
+          "intermediate": 65,
+          "intHigh": 295,
+          "high": 365
+        },
+        {
+          "decade": 2090,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 4,
+          "intLow": 25,
+          "intermediate": 210,
+          "intHigh": 365,
+          "high": 365
+        },
+        {
+          "decade": 2100,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 6,
+          "intLow": 50,
+          "intermediate": 350,
+          "intHigh": 365,
+          "high": 365
+        }
+      ],
+      "major": [
+        {
+          "decade": 2020,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 0,
+          "intLow": 0,
+          "intermediate": 0,
+          "intHigh": 0,
+          "high": 0
+        },
+        {
+          "decade": 2030,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 0,
+          "intLow": 0,
+          "intermediate": 0,
+          "intHigh": 0,
+          "high": 0
+        },
+        {
+          "decade": 2040,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 0,
+          "intLow": 0,
+          "intermediate": 0,
+          "intHigh": 0,
+          "high": 0
+        },
+        {
+          "decade": 2050,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 0,
+          "intLow": 0,
+          "intermediate": 0,
+          "intHigh": 0,
+          "high": 0
+        },
+        {
+          "decade": 2060,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 0,
+          "intLow": 0,
+          "intermediate": 0,
+          "intHigh": 0,
+          "high": 0
+        },
+        {
+          "decade": 2070,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 0,
+          "intLow": 0,
+          "intermediate": 0,
+          "intHigh": 2,
+          "high": 15
+        },
+        {
+          "decade": 2080,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 0,
+          "intLow": 0,
+          "intermediate": 1,
+          "intHigh": 25,
+          "high": 210
+        },
+        {
+          "decade": 2090,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 0,
+          "intLow": 0,
+          "intermediate": 7,
+          "intHigh": 195,
+          "high": 365
+        },
+        {
+          "decade": 2100,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "low": 0,
+          "intLow": 0,
+          "intermediate": 70,
+          "intHigh": 360,
+          "high": 365
+        }
+      ]
+    }
+  ]
+}

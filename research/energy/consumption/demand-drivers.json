@@ -1,0 +1,152 @@
+{
+  "model_id": "electricity-demand-driver-system-v1",
+  "as_of": "2026-08-01",
+  "purpose": "Machine-readable causal inventory for explaining historical and future electricity consumption without treating any scenario as a prediction.",
+  "driver_classes": [
+    {
+      "driver_id": "DRV-ACTIVITY",
+      "name": "Population, households, floorspace, income, and economic activity",
+      "direction": "usually_increases_annual_electricity_demand",
+      "mechanism": "More people, households, floor area, appliances, commercial services, and industrial output increase energy-service demand; efficiency and structural economic change can offset part of the gross effect.",
+      "global_evidence": {
+        "finding": "IEA attributes most near-term global electricity growth to emerging-market and developing economies, with China alone contributing nearly half of the 2025-2030 increase.",
+        "source_ids": ["SRC-IEA-ELECTRICITY26-DEMAND", "SRC-IEA-WEO25-DEMAND"]
+      },
+      "us_indicators": ["real_gdp", "population", "real_disposable_personal_income", "households", "commercial_floorspace", "housing_starts"],
+      "chart_dataset": "normalized/us-demand-drivers-aeo2026.csv",
+      "confidence": "high",
+      "interaction_terms": ["equipment_efficiency", "building_shell_efficiency", "economic_structure", "climate", "electricity_price"]
+    },
+    {
+      "driver_id": "DRV-COOLING",
+      "name": "Air conditioning and cooling",
+      "direction": "increases_annual_demand_and_often_peak_demand",
+      "mechanism": "Rising incomes, urbanization, appliance ownership, and hotter weather increase cooling equipment and operating hours. Cooling is often coincident across a region and can dominate hot-weather peaks.",
+      "evidence": {
+        "finding": "IEA's 2018 structural assessment found cooling and fans used about one-tenth of global electricity at the time and projected cooling energy demand could triple by 2050 without stronger efficiency; efficient equipment could roughly halve the growth.",
+        "source_ids": ["SRC-IEA-COOLING18", "SRC-IEA-ELECTRICITY26-DEMAND"]
+      },
+      "us_series": ["residential/space_cooling", "commercial/space_cooling", "commercial/ventilation"],
+      "chart_dataset": "normalized/us-electricity-end-use-aeo2026.csv",
+      "confidence": "high_for_direction_medium_for_long_run_magnitude",
+      "vintage_warning": "The tripling result is a 2018 scenario, not a current 2026 forecast."
+    },
+    {
+      "driver_id": "DRV-DATACENTERS",
+      "name": "Data centers, cloud services, and AI compute",
+      "direction": "strong_near_term_increase_with_high_uncertainty",
+      "mechanism": "Growth in conventional compute and accelerated AI servers raises server, storage, network, power-conversion, and cooling loads. Facility siting and high utilization concentrate the effect geographically and temporally.",
+      "global_magnitudes": [
+        {"year": 2024, "value_TWh": 415, "semantics": "approximate_estimate"},
+        {"year": 2030, "value_TWh": 945, "semantics": "approximate_base_case"},
+        {"year": 2035, "value_TWh": 970, "semantics": "approximate_high_efficiency_case"},
+        {"year": 2035, "value_TWh": 1200, "semantics": "approximate_base_case"},
+        {"year": 2035, "value_TWh": 1700, "semantics": "lower_bound_lift_off_case"}
+      ],
+      "us_magnitudes": [
+        {"year": 2023, "value_TWh": 176, "scope": "total_facility", "semantics": "estimate"},
+        {"year": 2028, "low_TWh": 325, "high_TWh": 580, "scope": "total_facility", "semantics": "projection_range"},
+        {"year": 2050, "value_TWh": 445.6, "scope": "server_only", "scenario": "AEO2026 Counterfactual Baseline"},
+        {"year": 2050, "value_TWh": 818.7, "scope": "server_only", "scenario": "AEO2026 High Electricity Demand"}
+      ],
+      "source_ids": ["SRC-IEA-ENERGY-AI25", "SRC-LBNL-DATACENTER24", "SRC-EIA-AEO2026-TABLES"],
+      "chart_datasets": ["normalized/global-and-us-demand-milestones.csv", "normalized/us-electricity-end-use-aeo2026.csv"],
+      "confidence": "high_for_historical_order_of_magnitude_low_to_medium_for_2030_plus_range",
+      "comparison_rule": "Never plot AEO server-only electricity as if it were the same measure as IEA/LBNL total-facility electricity.",
+      "uncertainty_drivers": ["accelerator_shipments", "average_server_power", "utilization", "algorithmic_and_hardware_efficiency", "cooling_system", "power_usage_effectiveness", "workload_location"]
+    },
+    {
+      "driver_id": "DRV-EV",
+      "name": "Electric road vehicles",
+      "direction": "increases_electricity_demand_while_reducing_liquid_fuel_demand_and_total_transport_energy_per_mile",
+      "mechanism": "Battery-electric and plug-in-hybrid electric driving shifts energy from petroleum to electricity. Electric drivetrains are more efficient, so electricity rises while total delivered transport energy can fall.",
+      "global_magnitudes": [
+        {"year": 2025, "value_TWh": 250, "semantics": "approximate_estimate"},
+        {"year": 2035, "value_TWh": 1500, "scenario": "CPS", "semantics": "lower_bound"},
+        {"year": 2035, "value_TWh": 1700, "scenario": "STEPS", "semantics": "point"},
+        {"year": 2035, "value_TWh": 3000, "scenario": "NZE", "semantics": "lower_bound"}
+      ],
+      "us_observation_series": "EIA MER ESVHPUS, 2018-2025, with a methodology break at 2023",
+      "us_scenario_series": "AEO residential plus commercial purchased EV charging, assigned by charging location",
+      "source_ids": ["SRC-IEA-GEVO26", "SRC-EIA-MER-7.6", "SRC-EIA-AEO2026-TABLES", "SRC-NREL-EFS18"],
+      "chart_datasets": ["normalized/us-electricity-consumption-history.csv", "normalized/us-electricity-end-use-aeo2026.csv", "normalized/global-and-us-demand-milestones.csv"],
+      "confidence": "high_for_direction_medium_for_scenario_magnitude",
+      "accounting_rule": "EV charging is already included in electricity consumption. Show it as an overlay or decompose a total using mutually exclusive components; never add it to the total.",
+      "load_shape_variables": ["charging_location", "charging_power", "arrival_time", "managed_charging", "vehicle_to_grid", "fleet_duty_cycle"]
+    },
+    {
+      "driver_id": "DRV-BUILDING-ELECTRIFICATION",
+      "name": "Heat pumps, water heating, and other building electrification",
+      "direction": "increases_electricity_share_but_can_reduce_total_final_energy",
+      "mechanism": "Replacing direct combustion or resistance equipment with heat pumps shifts demand to electricity. Heat pumps move heat rather than create it entirely from input energy, so electricity consumption rises less than the displaced fuel energy on a service-equivalent basis.",
+      "evidence": {
+        "finding": "IEA found heat pumps are typically three to five times as efficient as gas boilers and, in its accelerated case, account for less than one-tenth of global electricity-demand growth to 2030 even while the electricity share of building heating doubles.",
+        "source_ids": ["SRC-IEA-HEATPUMPS22", "SRC-IEA-ELECTRICITY26-DEMAND"]
+      },
+      "us_series": ["residential/space_heating", "residential/water_heating", "commercial/space_heating", "commercial/water_heating"],
+      "chart_dataset": "normalized/us-electricity-end-use-aeo2026.csv",
+      "confidence": "high_for_direction_medium_for_deployment_path",
+      "system_effects": ["winter_peak_growth_in_cold_regions", "reduced_gas_demand", "weather_sensitivity", "thermal_storage_opportunity"]
+    },
+    {
+      "driver_id": "DRV-INDUSTRY",
+      "name": "Industrial output, reshoring, and process electrification",
+      "direction": "usually_increases_electricity_demand",
+      "mechanism": "Manufacturing expansion, semiconductor and battery plants, electrified process heat, motor systems, and new industrial loads increase consumption; efficiency and structural shifts moderate the result.",
+      "evidence": {
+        "finding": "IEA identifies semiconductor and battery manufacturing as U.S. demand-growth contributors through 2030; AEO2026 separates industrial, refining, and hydrogen-production purchased electricity.",
+        "source_ids": ["SRC-IEA-ELECTRICITY26-DEMAND", "SRC-EIA-AEO2026-TABLES"]
+      },
+      "us_series": ["electricity_sales/industrial", "industrial/excluding_refining_and_hydrogen_production", "industrial/refining", "industrial/hydrogen_production"],
+      "chart_datasets": ["normalized/us-electricity-supply-demand-aeo2026.csv", "normalized/us-electricity-end-use-aeo2026.csv"],
+      "confidence": "medium",
+      "accounting_rule": "Use either industrial total or its three disjoint AEO purchased-electricity components, not both in the same stack."
+    },
+    {
+      "driver_id": "DRV-HYDROGEN",
+      "name": "Electricity for hydrogen production",
+      "direction": "potentially_large_scenario_dependent_increase",
+      "mechanism": "Electrolysis converts electricity into hydrogen, creating a flexible or inflexible industrial load depending on technology, utilization, storage, and market design.",
+      "evidence": {
+        "finding": "AEO2026 explicitly separates purchased electricity related to hydrogen production, making the load visible without merging it into the rest of industry.",
+        "source_ids": ["SRC-EIA-AEO2026-TABLES"]
+      },
+      "us_series": ["industrial/hydrogen_production"],
+      "chart_dataset": "normalized/us-electricity-end-use-aeo2026.csv",
+      "confidence": "medium_for_direction_low_for_long_run_scale",
+      "uncertainty_drivers": ["electrolyzer_cost", "hydrogen_policy", "utilization", "hydrogen_storage", "competition_with_direct_electrification"]
+    },
+    {
+      "driver_id": "DRV-EFFICIENCY",
+      "name": "Equipment, building, industrial, and computing efficiency",
+      "direction": "reduces_energy_per_service_and_dampens_gross_load_growth",
+      "mechanism": "More efficient equipment, controls, envelopes, motors, servers, cooling systems, and processes reduce electricity required for a given service. Rebound and service growth can partly offset savings.",
+      "evidence": {
+        "finding": "Efficiency is a first-order uncertainty in cooling, heat pumps, data centers, and the NREL electrification scenarios; it changes demand even when service demand is unchanged.",
+        "source_ids": ["SRC-IEA-COOLING18", "SRC-IEA-HEATPUMPS22", "SRC-IEA-ENERGY-AI25", "SRC-NREL-EFS18"]
+      },
+      "confidence": "high",
+      "dashboard_role": "Always pair gross activity/electrification drivers with an intensity or efficiency indicator when available."
+    },
+    {
+      "driver_id": "DRV-LOAD-SHAPE",
+      "name": "Timing, coincidence, flexibility, and location",
+      "direction": "changes_peak_and_grid_requirements_even_when_annual_TWh_is_unchanged",
+      "mechanism": "Coincident cooling or server loads can increase local and system peak; managed EV charging, thermal storage, batteries, flexible electrolysis, and workload shifting can move consumption to lower-cost or lower-carbon hours.",
+      "evidence": {
+        "finding": "IEA emphasizes geographic concentration of data centers; EIA assigns distinct hourly shapes to data centers and EV charging by location.",
+        "source_ids": ["SRC-IEA-ENERGY-AI25", "SRC-EIA-AEO2026-TABLES"]
+      },
+      "confidence": "high",
+      "dashboard_rule": "Annual TWh cannot establish resource adequacy. Peak GW, hourly profile, ramp, geography, and flexibility require separate data layers."
+    }
+  ],
+  "causal_interactions": [
+    {"from": "DRV-ACTIVITY", "to": "DRV-COOLING", "relationship": "income_and_floorspace_expand_equipment_stock"},
+    {"from": "DRV-EFFICIENCY", "to": "DRV-COOLING", "relationship": "reduces_electricity_per_unit_of_cooling"},
+    {"from": "DRV-EFFICIENCY", "to": "DRV-DATACENTERS", "relationship": "reduces_compute_and_infrastructure_energy_per_workload"},
+    {"from": "DRV-EV", "to": "DRV-LOAD-SHAPE", "relationship": "managed_charging_changes_peak_effect_without_changing_mobility_service"},
+    {"from": "DRV-BUILDING-ELECTRIFICATION", "to": "DRV-LOAD-SHAPE", "relationship": "can_shift_peak_from_summer_to_winter_in_cold_regions"},
+    {"from": "DRV-HYDROGEN", "to": "DRV-LOAD-SHAPE", "relationship": "electrolyzer_utilization_and_storage_determine_flexibility"}
+  ]
+}

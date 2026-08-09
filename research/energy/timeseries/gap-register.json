@@ -1,0 +1,59 @@
+{
+  "register_id": "energy-timeseries-gaps-v1",
+  "as_of": "2026-08-01",
+  "policy": "A documented gap must remain null or absent in the dashboard. It may not be filled with an unlabeled interpolation, proxy, or extrapolation.",
+  "gaps": [
+    {
+      "gap_id": "GAP-TS-001",
+      "subject": "United States technology scenarios after 2050",
+      "status": "open",
+      "available": "EIA AEO2026 and NREL Standard Scenarios 2024 end in 2050.",
+      "missing": "A selected, validated U.S.-specific generation and capacity scenario from 2051 through approximately 2070.",
+      "dashboard_rule": "End U.S. scenario lines in 2050. Do not downscale or relabel the World NGFS series as United States data.",
+      "next_source_candidates": ["future EIA AEO releases", "DOE national studies with public 2070 outputs", "peer-reviewed U.S. integrated-assessment outputs"]
+    },
+    {
+      "gap_id": "GAP-TS-002",
+      "subject": "Wave, tidal-stream, ocean-current, OTEC, and salinity-gradient split",
+      "status": "open",
+      "available": "IRENASTAT provides a global Marine energy aggregate through 2025; IRENA WETO provides aggregate ocean-energy milestones to 2050.",
+      "missing": "A consistent official global annual history and scenario series split by each marine conversion technology.",
+      "dashboard_rule": "Label the available series Marine energy or Ocean energy. Do not label the aggregate Wave or infer technology shares.",
+      "next_source_candidates": ["future IRENASTAT technology detail", "IEA-OES annual-report deployment tables", "Joint Research Centre ocean-energy status reports"]
+    },
+    {
+      "gap_id": "GAP-TS-003",
+      "subject": "En-ROADS run output",
+      "status": "deferred",
+      "available": "The public architecture, equations, units, model boundaries, references, and clean-room implementation constraints are mapped.",
+      "missing": "A licensed, reproducible export of selected En-ROADS scenario runs or a validated local clean-room implementation.",
+      "dashboard_rule": "Use En-ROADS as an attributed architecture and interaction reference; do not present NGFS output as En-ROADS output.",
+      "next_source_candidates": ["licensed En-ROADS SDK", "documented simulator exports", "project clean-room model after validation"]
+    },
+    {
+      "gap_id": "GAP-TS-004",
+      "subject": "IEA World Energy Outlook 2025 scenario rows",
+      "status": "license_hold",
+      "available": "The official free-dataset landing page documents global scenario values through 2050.",
+      "missing": "Redistributable raw rows under terms confirmed for this public GitHub dashboard.",
+      "dashboard_rule": "Link to the IEA product but do not ship its raw data until reuse terms are resolved.",
+      "next_source_candidates": ["IEA permission or compatible data license"]
+    },
+    {
+      "gap_id": "GAP-TS-005",
+      "subject": "Global technology history before detailed source-specific coverage",
+      "status": "bounded",
+      "available": "OWID provides a processed global generation compilation with starts ranging from 1965 to 2000; IRENASTAT supplies detailed annual capacity from 2000 and generation through 2023.",
+      "missing": "A single primary-source global series with uniform definitions across all technologies back to 1949.",
+      "dashboard_rule": "Start each line at its first available observation and show the data source. Do not backfill zeros."
+    },
+    {
+      "gap_id": "GAP-TS-006",
+      "subject": "Commercial fusion generation",
+      "status": "not_applicable_as_observed_series",
+      "available": "Official research and commercialization roadmaps are cataloged in the broader energy corpus.",
+      "missing": "Observed commercial generation or a source-supported national/global generation trajectory.",
+      "dashboard_rule": "Show fusion only in a future-technology/readiness layer until actual generation or a clearly attributed scenario exists."
+    }
+  ]
+}

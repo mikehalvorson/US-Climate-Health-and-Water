@@ -1,0 +1,344 @@
+{
+  "module_id": "nuclear-generation-context-v1",
+  "as_of": "2026-08-01",
+  "scope": ["World", "United States"],
+  "technology_scope": "Commercial fission generation, existing-fleet operation and aging, new large light-water reactors, advanced fission concepts, uranium and advanced-fuel supply, occupational and accident health, cooling water, decommissioning, spent-fuel storage, and permanent disposal.",
+  "headline": "Nuclear is a high-utilization, firm, low-lifecycle-carbon source whose main unresolved problems are not routine combustion pollution but project delivery, aging and safety assurance, specialized fuel and supply chains, cooling and heat rejection, low-probability severe accidents, decommissioning, and permanent spent-fuel disposal.",
+  "observed_metrics": [
+    {
+      "metric_id": "global_nuclear_capacity_2025",
+      "geography": "World",
+      "period": 2025,
+      "value": 379,
+      "unit": "GW net approximately",
+      "status": "reported_approximate",
+      "claim_id": "CLM-GLO-009",
+      "source_id": "SRC-IAEA-PRIS-TREND"
+    },
+    {
+      "metric_id": "global_nuclear_generation_2025",
+      "geography": "World",
+      "period": 2025,
+      "value": 2635.25,
+      "unit": "TWh",
+      "status": "reported",
+      "claim_id": "CLM-GLO-009",
+      "source_id": "SRC-IAEA-PRIS-TREND"
+    },
+    {
+      "metric_id": "global_nuclear_generation_share_2025",
+      "geography": "World",
+      "period": 2025,
+      "value": 8.8,
+      "unit": "percent",
+      "status": "compiled_observation",
+      "claim_id": "CLM-GLO-005",
+      "source_id": "SRC-EI-SR26"
+    },
+    {
+      "metric_id": "us_nuclear_generation_2025",
+      "geography": "United States",
+      "period": 2025,
+      "value": 784.780718,
+      "unit": "TWh",
+      "status": "preliminary",
+      "claim_id": "CLM-US-006",
+      "source_id": "SRC-EIA-EPM-T11"
+    },
+    {
+      "metric_id": "us_nuclear_capacity_factor_2025",
+      "geography": "United States",
+      "period": 2025,
+      "value": 91,
+      "unit": "percent",
+      "status": "reported_fleet_average",
+      "claim_id": "CLM-NUC-002",
+      "source_id": "SRC-EIA-NUCLEAR-US26"
+    },
+    {
+      "metric_id": "us_operating_reactor_count_nrc",
+      "geography": "United States",
+      "period": "2026-06-09",
+      "value": 94,
+      "unit": "commercial power reactors",
+      "status": "regulatory_snapshot_preferred_current",
+      "claim_id": "CLM-NUC-001",
+      "source_id": "SRC-NRC-OPERATING26"
+    },
+    {
+      "metric_id": "us_operating_reactor_count_eia",
+      "geography": "United States",
+      "period": "2026-03",
+      "value": 96,
+      "unit": "operating reactors",
+      "status": "conflicting_official_snapshot",
+      "claim_id": "CLM-NUC-001",
+      "source_id": "SRC-EIA-NUCLEAR-US26"
+    },
+    {
+      "metric_id": "us_average_reactor_age_2026",
+      "geography": "United States",
+      "period": "2026-03",
+      "value": 44,
+      "unit": "years approximately",
+      "status": "reported_average",
+      "claim_id": "CLM-NUC-005",
+      "source_id": "SRC-EIA-NUCLEAR-US26"
+    },
+    {
+      "metric_id": "us_commercial_spent_fuel_inventory",
+      "geography": "United States",
+      "period": "2021-2024 source vintages",
+      "value": 90000,
+      "comparison": "greater_than",
+      "unit": "metric tons",
+      "status": "reported_rounded_inventory",
+      "claim_id": "CLM-NUC-007",
+      "source_ids": ["SRC-GAO-SPENT-FUEL", "SRC-DOE-SPENT-FUEL24"]
+    },
+    {
+      "metric_id": "us_spent_fuel_annual_increment",
+      "geography": "United States",
+      "period": "GAO report period",
+      "value": 2000,
+      "unit": "metric tons per year approximately",
+      "status": "reported_rounded_rate",
+      "claim_id": "CLM-NUC-007",
+      "source_id": "SRC-GAO-SPENT-FUEL"
+    },
+    {
+      "metric_id": "us_nuclear_worker_unique_monitored_2024",
+      "geography": "United States",
+      "period": 2024,
+      "value": 90579,
+      "unit": "workers",
+      "status": "observed_regulatory_reporting",
+      "claim_id": "CLM-NUC-009",
+      "source_id": "SRC-NRC-OCC-DOSE24"
+    },
+    {
+      "metric_id": "us_nuclear_worker_measurable_dose_2024",
+      "geography": "United States",
+      "period": 2024,
+      "value": 42352,
+      "unit": "workers",
+      "status": "observed_regulatory_reporting",
+      "claim_id": "CLM-NUC-009",
+      "source_id": "SRC-NRC-OCC-DOSE24"
+    },
+    {
+      "metric_id": "us_average_measurable_worker_dose_2024",
+      "geography": "United States",
+      "period": 2024,
+      "value": 0.16,
+      "unit": "rem",
+      "equivalent_value": 1.6,
+      "equivalent_unit": "mSv",
+      "denominator": "workers with measurable dose only",
+      "status": "observed_regulatory_reporting",
+      "claim_id": "CLM-NUC-009",
+      "source_id": "SRC-NRC-OCC-DOSE24"
+    }
+  ],
+  "official_count_conflict": {
+    "status": "unresolved_preserved",
+    "preferred_for_current_regulatory_display": "us_operating_reactor_count_nrc",
+    "reason": "NRC is the regulator and its snapshot is later, but the EIA figure remains an official conflicting value.",
+    "prohibited_action": "Do not average, silently reconcile, or display either value without its date and publisher.",
+    "evidence": ["CLM-NUC-001"]
+  },
+  "reactor_pathways": [
+    {
+      "pathway_id": "existing_large_light_water_reactors",
+      "status": "commercial_operating",
+      "us_types": ["pressurized-water reactor", "boiling-water reactor"],
+      "primary_questions": ["continued economic operation", "60-to-80-year aging management", "uprates", "maintenance and major-component replacement", "retirement timing", "decommissioning"],
+      "source_ids": ["SRC-EIA-NUCLEAR-US26", "SRC-NRC-SLR26"]
+    },
+    {
+      "pathway_id": "new_large_light_water_reactors",
+      "status": "commercial_design_with_high_us_project_delivery_risk",
+      "primary_questions": ["overnight cost", "financing", "schedule", "standardization", "repeat-build learning", "supply chain", "workforce", "large-unit grid integration"],
+      "source_ids": ["SRC-EIA-VOGTLE23", "SRC-DOE-NUCLEAR-LIFTOFF23"]
+    },
+    {
+      "pathway_id": "small_modular_and_microreactors",
+      "status": "licensing_demonstration_or_precommercial_by_design",
+      "primary_questions": ["factory replication", "order book", "first-of-a-kind cost", "per-kW scale penalty", "staffing", "security", "HALEU for applicable designs", "waste form", "commercial operating evidence"],
+      "source_ids": ["SRC-NRC-PART53-26", "SRC-DOE-HALEU26", "SRC-DOE-NUCLEAR-LIFTOFF23"]
+    },
+    {
+      "pathway_id": "advanced_non_light_water_reactors",
+      "status": "design_licensing_test_or_demonstration_by_design",
+      "examples": ["sodium-cooled fast", "high-temperature gas", "molten-salt", "lead-cooled fast", "heat-pipe"],
+      "primary_questions": ["fuel qualification", "HALEU availability where required", "coolant and materials behavior", "source term", "safeguards", "waste stream", "licensing basis", "component supply", "commercial operating evidence"],
+      "source_ids": ["SRC-NRC-PART53-26", "SRC-DOE-HALEU26", "SRC-DOE-NUCLEAR-LIFTOFF23"]
+    },
+    {
+      "pathway_id": "fusion",
+      "status": "research_and_conditional_pilot_roadmap",
+      "primary_questions": ["net plant performance", "materials", "tritium fuel cycle", "heat exhaust", "availability", "maintainability", "licensing", "cost"],
+      "source_ids": ["SRC-DOE-FUSION26"],
+      "dashboard_rule": "Exclude from observed fission generation and label targets as conditional roadmaps, not forecasts."
+    }
+  ],
+  "problem_register": [
+    {
+      "problem_id": "nuc_technical_project_delivery",
+      "dimension": "technical",
+      "problem": "New-project capital and schedule risk can delay emissions reductions and expose customers, owners, or governments to financing and completion risk.",
+      "drivers": ["first-of-a-kind engineering", "large project size", "custom site work", "quality assurance", "supply-chain gaps", "workforce", "regulatory changes", "financing duration"],
+      "observable_case": "Vogtle's original estimate and schedule were materially exceeded.",
+      "generalization_limit": "One large-reactor project cannot establish costs for all standardized, small, advanced, or international projects.",
+      "evidence": ["CLM-NUC-004"]
+    },
+    {
+      "problem_id": "nuc_technical_aging",
+      "dimension": "technical",
+      "problem": "Long-lived operation requires continuing management of materials degradation, cables, concrete, reactor-vessel and internals aging, obsolescence, and major components.",
+      "regulatory_response": "NRC subsequent license renewal evaluates aging-management, safety, and environmental issues for 60-to-80-year operation.",
+      "evidence": ["CLM-NUC-005"]
+    },
+    {
+      "problem_id": "nuc_technical_fuel",
+      "dimension": "technical",
+      "problem": "Advanced-reactor deployment can be gated by design-specific enriched fuel rather than aggregate uranium resources.",
+      "drivers": ["HALEU enrichment", "deconversion", "fabrication", "qualification", "transport", "safeguards", "supplier concentration"],
+      "evidence": ["CLM-NUC-006", "CLM-NUC-013"]
+    },
+    {
+      "problem_id": "nuc_technical_grid_unit_size",
+      "dimension": "technical",
+      "problem": "A large reactor trip creates a large single-contingency loss, and multi-year construction concentrates capital in one interconnection; the same unit can also provide firm energy and synchronous services while operating.",
+      "quantification_status": "requires regional contingency, reserve, and transmission data; no universal value asserted",
+      "evidence": ["CLM-SYS-001", "CLM-NUC-002"]
+    },
+    {
+      "problem_id": "nuc_health_routine",
+      "dimension": "health",
+      "problem": "Routine nuclear operation involves regulated occupational and public radiation exposure plus ordinary industrial risks.",
+      "evidence_boundary": "NRC occupational statistics measure monitored-worker doses; they do not quantify severe accidents or the full fuel cycle.",
+      "evidence": ["CLM-NUC-009"]
+    },
+    {
+      "problem_id": "nuc_health_accident",
+      "dimension": "health",
+      "problem": "Severe accidents are rare but can create direct radiation exposure, emergency-worker hazards, evacuation, disrupted care, food and land restrictions, long monitoring, economic displacement, stigma, and mental-health harms.",
+      "case_rules": [
+        "Fukushima: show UNSCEAR direct-radiation conclusion with WHO indirect public-health findings.",
+        "Chernobyl: show acute worker effects and thyroid-cancer evidence with affected-population context.",
+        "Do not combine accident cases into a universal per-kWh value without a transparent risk model."
+      ],
+      "evidence": ["CLM-HLT-004", "CLM-NUC-010", "CLM-NUC-011"]
+    },
+    {
+      "problem_id": "nuc_regulatory_licensing",
+      "dimension": "regulatory",
+      "problem": "Nuclear deployment and continued operation require technology-specific safety, environmental, security, emergency-planning, fuel-cycle, and waste findings.",
+      "current_context": "Part 53 supplies an optional technology-inclusive advanced-reactor framework; it does not prove deployment.",
+      "evidence": ["CLM-NUC-005", "CLM-NUC-012"]
+    },
+    {
+      "problem_id": "nuc_sustainability_waste",
+      "dimension": "sustainability",
+      "problem": "Commercial spent fuel is safely managed in pools and dry casks at sites, but the United States has no operating permanent geologic repository and continues accumulating inventory and federal liability.",
+      "status_chain": ["discharged fuel", "spent-fuel pool", "licensed dry cask", "site storage", "proposed consolidated interim storage", "repository license", "constructed repository", "operating disposal", "closure and monitoring"],
+      "current_status": "interim site storage exists; proposed consolidated storage is not operating; permanent disposal is not operating",
+      "evidence": ["CLM-NUC-007", "CLM-NUC-008"]
+    },
+    {
+      "problem_id": "nuc_sustainability_water",
+      "dimension": "sustainability",
+      "problem": "Steam-cycle reactors reject large amounts of heat, so cooling design and hydrology affect withdrawal, consumption, thermal discharge, intake ecology, drought exposure, and heat-wave output constraints.",
+      "evidence_boundary": "Do not assign the national thermoelectric total to nuclear; use plant-level cooling data for quantitative comparison.",
+      "evidence": ["CLM-NUC-014", "CLM-SUS-002"]
+    },
+    {
+      "problem_id": "nuc_sustainability_lifecycle",
+      "dimension": "sustainability",
+      "problem": "Nuclear is low lifecycle carbon, not zero impact; uranium mining, conversion, enrichment, fabrication, construction, operation, cooling, decommissioning, transport, storage, and disposal remain within the system boundary.",
+      "evidence": ["CLM-NUC-003", "CLM-NUC-013", "CLM-NUC-014"]
+    }
+  ],
+  "deployment_status_gates": [
+    {"order": 1, "status": "concept", "generation_credit": false},
+    {"order": 2, "status": "laboratory_component_test", "generation_credit": false},
+    {"order": 3, "status": "zero_power_criticality", "generation_credit": false, "rule": "Criticality proves a controlled chain reaction, not electricity production."},
+    {"order": 4, "status": "design_or_safety_review", "generation_credit": false},
+    {"order": 5, "status": "construction_authorized", "generation_credit": false},
+    {"order": 6, "status": "under_construction", "generation_credit": false},
+    {"order": 7, "status": "first_grid_connection", "generation_credit": true, "generation_status": "commissioning"},
+    {"order": 8, "status": "commercial_operation", "generation_credit": true, "generation_status": "operating"},
+    {"order": 9, "status": "permanently_shutdown", "generation_credit": false},
+    {"order": 10, "status": "decommissioning", "generation_credit": false}
+  ],
+  "regulatory_map": [
+    {"topic": "operating reactors", "authority": "NRC", "source_id": "SRC-NRC-OPERATING26", "update_risk": "high"},
+    {"topic": "subsequent license renewal", "authority": "NRC", "source_id": "SRC-NRC-SLR26", "update_risk": "high"},
+    {"topic": "advanced-reactor licensing", "authority": "NRC", "source_id": "SRC-NRC-PART53-26", "update_risk": "medium"},
+    {"topic": "HALEU allocation", "authority": "DOE", "source_id": "SRC-DOE-HALEU26", "update_risk": "high"},
+    {"topic": "spent-fuel interim storage", "authority": "NRC and DOE", "source_ids": ["SRC-NRC-DRY-CASK", "SRC-DOE-SPENT-FUEL24"], "update_risk": "medium"},
+    {"topic": "high-level waste disposal", "authority": "NRC and DOE under federal statute", "source_ids": ["SRC-NRC-HLW", "SRC-GAO-SPENT-FUEL"], "update_risk": "high"},
+    {"topic": "cooling-water intake", "authority": "EPA and delegated permitting authorities", "source_id": "SRC-EPA-COOLING316B", "update_risk": "medium"}
+  ],
+  "required_dashboard_views": [
+    {
+      "view_id": "nuclear_observed_history",
+      "chart": "generation and capacity over time",
+      "data": ["timeseries/normalized/global-irena-capacity-and-generation-history.csv", "timeseries/normalized/us-electricity-generation-history.csv"],
+      "rule": "Capacity and generation use separate axes or panels."
+    },
+    {
+      "view_id": "nuclear_scenario_paths",
+      "chart": "small multiples by model and scenario through 2050-2100",
+      "data": ["timeseries/normalized/us-electricity-projections-aeo2026.csv", "timeseries/normalized/us-electricity-projections-nrel-standard-scenarios-2024.csv", "timeseries/normalized/global-electricity-projections-ngfs-phase5.1.csv"],
+      "rule": "Scenario, not forecast; never splice models into one unlabeled line."
+    },
+    {
+      "view_id": "nuclear_fleet_age_and_license",
+      "chart": "reactor-level timeline or histogram",
+      "data_status": "gap_plant_level_ingestion_needed",
+      "required_sources": ["NRC operating reactor and license-renewal datasets"],
+      "rule": "License expiration is not a predicted shutdown date."
+    },
+    {
+      "view_id": "nuclear_project_pipeline",
+      "chart": "stage-gated project table",
+      "data_status": "gap_project_registry_needed",
+      "rule": "Use deployment_status_gates; never count a test reactor or zero-power criticality milestone as commercial generation."
+    },
+    {
+      "view_id": "nuclear_spent_fuel_chain",
+      "chart": "inventory and status flow",
+      "data_status": "national_context_ready_site_inventory_needed",
+      "rule": "Interim storage and disposal are different endpoints."
+    },
+    {
+      "view_id": "nuclear_health_evidence",
+      "chart": "separate routine occupational, public release, accident direct, and accident indirect panels",
+      "data_status": "context_ready_quantitative_burden_model_not_yet_built",
+      "rule": "Do not create one nuclear death total by mixing incompatible populations, evidence classes, and time periods."
+    }
+  ],
+  "nonnegotiable_display_rules": [
+    "Nuclear, renewable, fossil, and storage labels do not substitute for measured system attributes.",
+    "The NRC/EIA reactor-count conflict remains visible with dates.",
+    "Capacity factor is not reliability, flexibility, safety, or cost.",
+    "Low lifecycle carbon is not zero impact.",
+    "Part 53 is a licensing framework, not deployment evidence.",
+    "HALEU allocation is not commercial fuel supply.",
+    "Dry-cask interim safety is not permanent disposal.",
+    "Fukushima direct radiation and indirect public-health findings are displayed together.",
+    "Chernobyl evidence is not transferred mechanically to all reactor designs.",
+    "Zero-power criticality is not electricity generation."
+  ],
+  "research_gaps": [
+    "Reactor-level global and U.S. operating, construction, shutdown, age, license, ownership, cooling, uprate, outage, and generation registry.",
+    "Audited construction-cost and schedule dataset normalized by currency year, overnight versus financing cost, design, site, and project scope.",
+    "Fuel-cycle dataset for uranium origin, conversion, enrichment, fabrication, HALEU, inventories, and supplier concentration.",
+    "Site-level spent-fuel inventory, pool/cask status, decommissioning status, and transport readiness.",
+    "Plant-level water withdrawal, consumption, thermal-discharge, intake technology, drought derating, and heat-wave derating.",
+    "Health coefficient ledger with compatible denominators and explicit routine-versus-accident boundaries.",
+    "Advanced-reactor project registry with stage gates and independent verification of commercial generation."
+  ]
+}

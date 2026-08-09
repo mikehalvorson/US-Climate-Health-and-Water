@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0.0",
+  "framing": {
+    "core_rule": "Separate the polymer, residual monomer, additive, processing aid, contaminant, emitted chemical, and micro/nanoplastic particle; evidence for one entity and route does not transfer automatically to the others.",
+    "population_rule": "Separate workers, fence-line communities, consumers, pregnant people, infants, and patients because dose and route differ.",
+    "causality_rule": "Use causal language only for evidence that supports it. Biomonitoring and clinical associations identify concerns but do not prove that swallowing plastic caused the outcome."
+  },
+  "micro_and_nanoplastics": [
+    {
+      "endpoint": "human_food_exposure",
+      "evidence_type": "federal_regulatory_review",
+      "finding": "Microplastics and nanoplastics have been reported in foods and human samples, but current evidence and nonstandard analytical methods do not demonstrate that the levels detected in foods pose a human-health risk.",
+      "evidence_strength": "uncertain_insufficient_for_quantitative_risk",
+      "causal_status": "not_established",
+      "dashboard_text": "People are exposed to plastic particles, but the health risk at measured food levels is not yet quantified; methods and dose-response evidence remain major gaps.",
+      "prohibited_text": "All ingested microplastics are proven toxic at real-world doses.",
+      "source_refs": [{"source_id": "FDA-MNP-FOOD"}, {"source_id": "WHO-MNP-2022"}, {"source_id": "EPA-MNP-RESEARCH"}]
+    },
+    {
+      "endpoint": "cardiovascular_events_in_selected_carotid_surgery_cohort",
+      "evidence_type": "prospective_observational_clinical_study",
+      "finding": "Polyethylene was detected in 58.4% and PVC in 12.1% of excised carotid plaques. Patients with detected particles had an adjusted hazard ratio of 4.53 (95% CI 2.00-10.27) for myocardial infarction, stroke, or death from any cause during follow-up.",
+      "evidence_strength": "important_association_requires_replication",
+      "causal_status": "association_not_causation",
+      "dashboard_text": "Plastic particles in carotid plaque were associated with later cardiovascular events in one selected surgical cohort; the study cannot identify the exposure source or prove causation.",
+      "prohibited_text": "Ingested plastic causes a 4.53-fold cardiovascular risk in the general population.",
+      "source_refs": [{"source_id": "NEJM-MNP-2024"}]
+    }
+  ],
+  "pregnancy_vaccine_claim_audit": {
+    "verdict": "misstated_entity_and_overstated_outcome",
+    "what_the_study_measured": "Maternal serum perfluorinated compounds at pregnancy week 32 and child serum at age 5 in a prospective Faroese birth cohort; antibody concentrations after routine tetanus and diphtheria vaccination were measured at ages 5 and 7.",
+    "key_results": [
+      "A twofold higher concentration of PFCs in the child at age 5 was associated in a structural-equation model with a 49.4% lower joint tetanus/diphtheria antibody concentration (95% CI 23.0%-66.7% lower).",
+      "Twofold higher PFOS or PFOA concentrations were associated with odds ratios of 2.38-4.20 for antibody concentrations below the study's protective threshold for some outcomes.",
+      "Some exposure-outcome associations were null, and this observational study did not test whether a mother ate a large quantity of microplastic particles."
+    ],
+    "correct_dashboard_text": "Prenatal and childhood exposure to certain PFAS was associated with reduced antibody responses to tetanus and diphtheria vaccines in a Faroese cohort. This is not evidence that ingested microplastic particles broadly caused vaccines to fail.",
+    "prohibited_text": "Mothers who ate many microplastics had babies whose vaccines did not take.",
+    "why_plastics_are_relevant_but_distinct": "Some PFAS have been used in polymer processing, fluorinated containers, and food-contact applications, but PFAS are chemicals, not synonymous with plastic particles or every plastic product.",
+    "source_refs": [{"source_id": "JAMA-PFAS-VACCINE"}, {"source_id": "ATSDR-PFAS"}, {"source_id": "EPA-PFAS-PACKAGING"}, {"source_id": "FDA-PFAS-FOOD-PACKAGING"}]
+  },
+  "resin_and_chemistry_matrix": [
+    {
+      "material_group": "polyethylene_HDPE_LDPE_LLDPE",
+      "polymer_evidence": "No blanket finding in the cited sources that intact polyethylene polymer is carcinogenic through ordinary consumer contact.",
+      "priority_hazards": ["microplastic and fragment exposure remains under study", "additives and contaminants vary by formulation", "certain fluorinated HDPE containers can form and leach PFAS"],
+      "high_confidence_reason_to_act": "Large volume, packaging leakage, persistence, fragmentation, and avoidable single-use applications.",
+      "guardrail": "The PFAS finding applies to certain fluorinated containers, not all HDPE.",
+      "source_refs": [{"source_id": "EPA-PFAS-PACKAGING"}, {"source_id": "EPA-PFAS-TSCA"}, {"source_id": "FDA-MNP-FOOD"}]
+    },
+    {
+      "material_group": "polypropylene",
+      "polymer_evidence": "No resin-wide human disease conclusion is supported here for ordinary consumer contact.",
+      "priority_hazards": ["particles and fibers under study", "formulation-specific additives", "occupational dust and thermal-decomposition exposures", "persistent litter"],
+      "high_confidence_reason_to_act": "Highest modeled U.S. consumption among individual resins and extensive short-lived packaging use.",
+      "guardrail": "Do not infer toxicity from market volume alone.",
+      "source_refs": [{"source_id": "US-PLASTICS-MFA-2019"}, {"source_id": "FDA-MNP-FOOD"}]
+    },
+    {
+      "material_group": "PET_and_polyester",
+      "polymer_evidence": "The cited evidence does not establish that ordinary PET package contact causes a specific disease.",
+      "priority_hazards": ["microfibers and particles", "formulation and catalyst residues", "upstream petrochemical exposure", "persistent packaging and textile waste"],
+      "high_confidence_reason_to_act": "High-volume bottles, packaging, and textiles create capture and shedding priorities.",
+      "guardrail": "Do not transfer evidence about unrelated phthalate plasticizers to PET because of the shared word fragment.",
+      "source_refs": [{"source_id": "FDA-MNP-FOOD"}, {"source_id": "NASEM-OCEAN-2022"}]
+    },
+    {
+      "material_group": "PVC",
+      "polymer_evidence": "Vinyl chloride monomer is known to be a human carcinogen; that classification is not a quantitative risk estimate for ordinary contact with finished PVC.",
+      "priority_hazards": ["vinyl chloride occupational and fence-line exposure", "phthalate and other additive exposure in flexible formulations", "dioxin and furan formation under uncontrolled combustion", "PVC particles observed in a clinical association study"],
+      "high_confidence_reason_to_act": "Prioritize monomer emissions, high-exposure flexible formulations, unnecessary products, and combustion controls.",
+      "guardrail": "Distinguish monomer, formulation additives, particles, installed product, and combustion.",
+      "source_refs": [{"source_id": "NTP-VINYL"}, {"source_id": "FDA-PHTHALATES"}, {"source_id": "EPA-PVC-COMBUSTION"}, {"source_id": "NEJM-MNP-2024"}]
+    },
+    {
+      "material_group": "polystyrene_EPS",
+      "polymer_evidence": "Styrene is reasonably anticipated to be a human carcinogen based on the NTP evaluation; this is principally a chemical and exposure-route finding, not proof that using a polystyrene cup causes cancer.",
+      "priority_hazards": ["styrene exposure in production and fabrication", "fragmenting lightweight litter", "food-contact migration depends on conditions and formulation"],
+      "high_confidence_reason_to_act": "Avoidable foam foodware and protective packaging are leakage-prone and difficult to recover.",
+      "guardrail": "Keep styrene hazard and finished-polystyrene exposure distinct.",
+      "source_refs": [{"source_id": "NTP-STYRENE"}, {"source_id": "NASEM-OCEAN-2022"}]
+    },
+    {
+      "material_group": "polyurethane",
+      "polymer_evidence": "Isocyanates used to make PU are potent irritants and sensitizers and are a recognized cause of occupational asthma; cured PU has a different exposure profile.",
+      "priority_hazards": ["worker exposure to isocyanates during production, spraying, and curing", "flame retardants and formulation chemicals", "foam dust and end-of-life difficulty"],
+      "high_confidence_reason_to_act": "Control reactive-chemical exposure and replace nonessential foam where performance is validated.",
+      "guardrail": "Do not apply uncured isocyanate hazard directly to every cured PU article.",
+      "source_refs": [{"source_id": "NIOSH-ISOCYANATES"}]
+    },
+    {
+      "material_group": "ABS_SAN_acrylic_fiber_and_PMMA",
+      "polymer_evidence": "Acrylonitrile is reasonably anticipated to be a human carcinogen; that classification is relevant to ABS, SAN, and acrylonitrile-rich acrylic-fiber supply chains, not to methyl-methacrylate-based PMMA by name association.",
+      "priority_hazards": ["occupational monomer exposure", "thermal processing emissions", "additives and product-specific dust"],
+      "high_confidence_reason_to_act": "Tight process controls, disclosure, and product-specific substitution for high-exposure uses.",
+      "guardrail": "Do not call finished ABS carcinogenic solely from the monomer classification, and do not transfer acrylonitrile evidence to PMMA.",
+      "source_refs": [{"source_id": "NTP-ACRYLONITRILE"}]
+    },
+    {
+      "material_group": "polycarbonate_and_epoxy",
+      "polymer_evidence": "Bisphenol A is used in polycarbonate and epoxy systems. U.S. agencies publish differing risk framings and use restrictions; date and application must be shown.",
+      "priority_hazards": ["BPA migration and endocrine-related concern", "worker exposure to epoxy constituents", "substitute bisphenols may be incompletely characterized"],
+      "high_confidence_reason_to_act": "Reduce exposure in food-contact, thermal-paper, and sensitive-life-stage applications where safer validated systems exist.",
+      "guardrail": "Do not hide current FDA and EPA positions or imply that every BPA-containing article produces the same exposure.",
+      "source_refs": [{"source_id": "EPA-BPA"}, {"source_id": "FDA-BPA"}]
+    },
+    {
+      "material_group": "nylon_polyamide",
+      "polymer_evidence": "This package has no basis for a resin-wide clinical toxicity conclusion.",
+      "priority_hazards": ["textile and tire-adjacent particle exposure", "upstream monomers and energy", "additives", "persistent fishing gear"],
+      "high_confidence_reason_to_act": "Reduce shedding, extend textile and gear life, and improve retrieval and take-back.",
+      "guardrail": "Do not generalize one polyamide formulation to the whole family.",
+      "source_refs": [{"source_id": "NASEM-OCEAN-2022"}, {"source_id": "WHO-MNP-2022"}]
+    },
+    {
+      "material_group": "fluoropolymers_and_PFAS_related_processing",
+      "polymer_evidence": "The polymer and the broad PFAS family are related in some supply chains but are not interchangeable toxicological entities.",
+      "priority_hazards": ["persistent PFAS used in processing or surface treatment", "manufacturing releases", "certain fluorination processes", "difficult end-of-life management"],
+      "high_confidence_reason_to_act": "Prevent PFAS releases and prioritize essential-use evaluation and disclosure.",
+      "guardrail": "Do not call every fluoropolymer exposure equivalent to serum PFOS or PFOA exposure.",
+      "source_refs": [{"source_id": "ATSDR-PFAS"}, {"source_id": "EPA-PFAS-TSCA"}]
+    }
+  ],
+  "replacement_health_rule": "The case for replacement is strongest where the use is unnecessary, exposure or release is credible, safer alternatives are validated, leakage is likely, and loss of performance does not create a larger health risk. Critical medical, food-preservation, electrical, and infrastructure uses require application-specific transition plans."
+}

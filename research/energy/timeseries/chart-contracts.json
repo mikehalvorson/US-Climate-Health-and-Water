@@ -1,0 +1,109 @@
+{
+  "contract_id": "energy-chart-contracts-v1",
+  "as_of": "2026-08-01",
+  "global_rules": {
+    "historical_scenario_seam": "required",
+    "scenario_label_fields": ["model", "scenario", "source_vintage"],
+    "provenance_fields_retained_in_chart_data": ["dataset_id", "source_id", "source_variable", "upstream_status"],
+    "interpolation": "off by default; if enabled, identify interpolated points and method",
+    "aggregation": "aggregate only mutually exclusive technologies at the same metric, unit, geography, scope, dataset, model, scenario, and year",
+    "uncertainty": "show multi-model or multi-scenario spread; never imply probabilities unless the source provides them",
+    "missing_values": "gaps remain gaps; zero is a reported numeric zero only"
+  },
+  "charts": [
+    {
+      "chart_id": "CHART-GLOBAL-GENERATION-HISTORY",
+      "title": "World electricity generation by source",
+      "file": "normalized/global-electricity-generation-history.csv",
+      "filters": {"record_type": "historical", "metric": "electricity_generation", "geography": "World"},
+      "year_range": [1965, 2025],
+      "preferred_technologies": ["coal", "natural_gas", "oil", "nuclear", "hydropower", "wind", "solar", "bioenergy", "other_renewables"],
+      "unit": "TWh",
+      "notes": ["Fuel-specific coverage starts in different years; use coverage.json to determine each line's first valid year."]
+    },
+    {
+      "chart_id": "CHART-GLOBAL-DETAIL-HISTORY",
+      "title": "World installed capacity and generation for detailed technologies",
+      "file": "normalized/global-irena-capacity-and-generation-history.csv",
+      "filters": {"record_type": "historical", "geography": "World"},
+      "year_range": [2000, 2025],
+      "preferred_technologies": ["solar", "wind", "hydropower", "pumped_hydro_storage", "marine_energy", "bioenergy", "geothermal", "fossil_fuels_total", "nuclear"],
+      "units": {"installed_capacity": "GW", "electricity_generation": "TWh", "storage_discharge": "TWh"},
+      "notes": ["Generation ends in 2023; capacity ends in 2025.", "Render capacity and generation in separate panels or axes."]
+    },
+    {
+      "chart_id": "CHART-US-GENERATION-HISTORY",
+      "title": "U.S. electricity net generation by source",
+      "file": "normalized/us-electricity-generation-history.csv",
+      "filters": {"record_type": "historical", "metric": ["electricity_generation", "storage_net_generation"], "geography": "United States"},
+      "year_range": [1949, 2025],
+      "preferred_technologies": ["coal", "natural_gas", "petroleum", "other_fossil_gases", "nuclear", "hydropower", "wind", "solar_total", "geothermal", "wood", "waste", "pumped_hydro_storage"],
+      "unit": "TWh",
+      "notes": ["Use solar_total, not solar_total plus its utility and small-scale components.", "2025 records are preliminary."]
+    },
+    {
+      "chart_id": "CHART-US-AEO-SCENARIOS",
+      "title": "AEO2026 U.S. electricity pathways",
+      "file": "normalized/us-electricity-projections-aeo2026.csv",
+      "filters": {"record_type": "scenario", "geography": "United States"},
+      "year_range": [2025, 2050],
+      "scenario_count": 11,
+      "required_controls": ["scenario", "metric", "technology", "scope"],
+      "notes": ["Default generation scope to all_sectors.", "Do not use GW_mixed_ac_dc in arithmetic with GW or GWdc."]
+    },
+    {
+      "chart_id": "CHART-US-REEDS-SCENARIOS",
+      "title": "ReEDS U.S. technology pathways",
+      "file": "normalized/us-electricity-projections-nrel-standard-scenarios-2024.csv",
+      "filters": {"record_type": "scenario", "geography": "United States"},
+      "year_range": [2026, 2050],
+      "scenario_count": 61,
+      "required_controls": ["scenario", "scenario_family", "metric", "technology"],
+      "notes": ["Model domain is the contiguous United States.", "Only nine modeled years are present."]
+    },
+    {
+      "chart_id": "CHART-GLOBAL-NGFS-SCENARIOS",
+      "title": "World electricity pathways",
+      "file": "normalized/global-electricity-projections-ngfs-phase5.1.csv",
+      "filters": {"record_type": "scenario", "geography": "World"},
+      "year_range": [2020, 2100],
+      "dashboard_default_end_year": 2070,
+      "models": ["GCAM 6.0 NGFS", "MESSAGEix-GLOBIOM 2.0-M-R12-NGFS", "REMIND-MAgPIE 3.3-4.8"],
+      "scenario_count": 7,
+      "required_controls": ["model", "scenario", "metric", "technology"],
+      "notes": ["Choose either aggregate or component variables to prevent hierarchical double counting.", "Show model disagreement rather than averaging by default."]
+    },
+    {
+      "chart_id": "CHART-GLOBAL-MARINE",
+      "title": "World marine-energy capacity history and 1.5°C milestones",
+      "files": ["normalized/global-irena-capacity-and-generation-history.csv", "normalized/global-specialized-technology-scenarios.csv"],
+      "filters": {"metric": "installed_capacity", "technology": "marine_energy", "geography": "World"},
+      "year_range": [2000, 2050],
+      "unit": "GW",
+      "notes": ["IRENASTAT supplies annual history through 2025.", "WETO supplies only 2021, 2030, and 2050 points; style the scenario as sparse milestones.", "There is no verified marine-specific 2070 series in this package."]
+    }
+  ],
+  "technology_horizon_matrix": [
+    {
+      "geography": "World",
+      "technologies": ["coal", "natural_gas", "oil", "nuclear", "hydropower", "wind", "solar", "bioenergy", "geothermal"],
+      "historical_end": 2025,
+      "scenario_end": 2100,
+      "scenario_note": "NGFS technology availability varies by model; geothermal is present in the retrieved variable set but may not be separately reported in every run."
+    },
+    {
+      "geography": "World",
+      "technologies": ["marine_energy"],
+      "historical_end": 2025,
+      "scenario_end": 2050,
+      "scenario_note": "IRENA WETO sparse milestones only."
+    },
+    {
+      "geography": "United States",
+      "technologies": ["coal", "natural_gas", "petroleum", "nuclear", "hydropower", "wind", "solar", "bioenergy", "geothermal", "storage", "CCS", "hydrogen"],
+      "historical_end": 2025,
+      "scenario_end": 2050,
+      "scenario_note": "AEO and ReEDS provide different technology detail and model scope; keep them as separate scenario families."
+    }
+  ]
+}

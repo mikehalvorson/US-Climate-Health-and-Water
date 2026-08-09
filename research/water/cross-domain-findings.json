@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0.0",
+  "findings": [
+    {
+      "finding_id": "WTR-X-001",
+      "title": "The primary national quantity challenge is irrigation; the primary local growth challenge can be municipal or industrial",
+      "evidence": "Crop irrigation consumes about 75.7 Bgal/d in the 2010–20 model. Data-center direct water was about 0.048 Bgal/d in 2023 but is geographically concentrated and projected to grow quickly.",
+      "implication": "National policy charts and local siting charts need different denominators.",
+      "source_refs": [{"source_id": "USGS-PP1894D"}, {"source_id": "LBNL-DATA-CENTER-2024"}, {"source_id": "LBNL-DATA-CENTER-WATER-2026"}]
+    },
+    {
+      "finding_id": "WTR-X-002",
+      "title": "Energy-water accounting can easily double count",
+      "evidence": "Power-sector cooling is already counted as thermoelectric water; attributing part of that water to data centers is useful but additive national totals are invalid.",
+      "implication": "The dashboard needs attribution views and physical-sector views with an explicit switch.",
+      "source_refs": [{"source_id": "USGS-PP1894D"}, {"source_id": "LBNL-DATA-CENTER-2024"}]
+    },
+    {
+      "finding_id": "WTR-X-003",
+      "title": "Power-sector decarbonization changes water burdens as well as emissions",
+      "evidence": "Thermoelectric systems can have very high withdrawals but low consumption; desalination and AWG add electrical load, whose upstream water depends on the generation mix.",
+      "implication": "Future dashboard scenarios must link generation technology, cooling type, water source, hourly electricity, and seasonal basin stress.",
+      "source_refs": [{"source_id": "USGS-CIR1441"}, {"source_id": "USGS-PP1894D"}, {"source_id": "LBNL-DESAL-2018"}, {"source_id": "ENERGY-STAR-DEHUMIDIFIER"}]
+    },
+    {
+      "finding_id": "WTR-X-004",
+      "title": "Climate risk changes both supply and demand",
+      "evidence": "Warming alters runoff/recharge and raises evaporative and irrigation demand; drought also reduces hydropower and river dilution while heat can raise electricity and cooling demand.",
+      "implication": "A supply-only forecast understates risk; charts need paired hydrology and demand scenarios.",
+      "source_refs": [{"source_id": "NCA5-WATER"}, {"source_id": "USBR-POST2026"}, {"source_id": "NM-50Y-WATER"}]
+    },
+    {
+      "finding_id": "WTR-X-005",
+      "title": "A physically present water source may be operationally unavailable",
+      "evidence": "Salinity, contamination, treatment failure, single-source conveyance, pumping restrictions, power loss, and insufficient storage can interrupt service without basin-wide depletion.",
+      "implication": "Risk maps need quantity, quality, infrastructure, legal, and governance layers rather than one scarcity score.",
+      "source_refs": [{"source_id": "USGS-COASTAL-INTRUSION"}, {"source_id": "USGS-BRUNSWICK"}, {"source_id": "DCWATER-PURE-WATER"}, {"source_id": "NCA5-WATER"}]
+    },
+    {
+      "finding_id": "WTR-X-006",
+      "title": "Plastics policy savings must be product- and place-specific",
+      "evidence": "Industry boundaries are split, public deliveries are incomplete, and resin life-cycle water values vary across databases.",
+      "implication": "Prioritize bans or substitutions only after matching the same service and evaluating the replacement system in the affected watershed.",
+      "source_refs": [{"source_id": "USGS-INDUSTRIAL"}, {"source_id": "CENSUS-NAICS-325211"}, {"source_id": "CENSUS-NAICS-326"}, {"source_id": "RCR-PLASTICS-LCA-2023"}]
+    },
+    {
+      "finding_id": "WTR-X-007",
+      "title": "Desalination and AWG solve different scales of problem",
+      "evidence": "Operating desalination plants deliver tens of millions of gallons per day; commercial AWGs deliver liters to thousands of liters per day and become energy-intensive at full household scale.",
+      "implication": "Desalination belongs in regional portfolio planning; AWG belongs mainly in drinking-water resilience and remote/emergency applications.",
+      "source_refs": [{"source_id": "SDCWA-CARLSBAD"}, {"source_id": "TAMPA-DESAL"}, {"source_id": "EPA-AWG-2019"}, {"source_id": "WHO-DOMESTIC-WATER"}]
+    }
+  ],
+  "intervention_fit": [
+    {
+      "problem_type": "distribution_leaks_and_avoidable_outdoor_demand",
+      "preferred_interventions": ["leak repair", "efficient fixtures", "landscape and irrigation reform"],
+      "conditional_interventions": ["rate design with affordability protection"],
+      "poor_fit": ["AWG", "new seawater desalination as first response"]
+    },
+    {
+      "problem_type": "seasonal_municipal_shortage_with_wastewater_flow",
+      "preferred_interventions": ["reuse", "storage", "recharge", "conservation"],
+      "conditional_interventions": ["brackish or seawater desalination", "transfers"],
+      "poor_fit": ["utility-scale AWG"]
+    },
+    {
+      "problem_type": "coastal_source_salinity",
+      "preferred_interventions": ["pumping and canal management", "well relocation/protection", "recharge", "source diversification"],
+      "conditional_interventions": ["desalination", "potable reuse"],
+      "poor_fit": ["fixed run-out-date messaging"]
+    },
+    {
+      "problem_type": "agricultural_groundwater_depletion",
+      "preferred_interventions": ["pumping limits", "crop and acreage transition", "producer compensation", "recharge where hydrogeologically valid", "demand governance"],
+      "conditional_interventions": ["efficiency with enforceable withdrawal caps"],
+      "poor_fit": ["seawater desalination for broad commodity crops", "AWG"]
+    },
+    {
+      "problem_type": "disaster_or_remote_drinking_water",
+      "preferred_interventions": ["stored and mobile treated water", "small treatment systems"],
+      "conditional_interventions": ["AWG in humid conditions with reliable energy and disinfection"],
+      "poor_fit": ["assuming nameplate AWG output under all weather"]
+    }
+  ]
+}

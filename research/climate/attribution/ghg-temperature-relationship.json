@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "relationships": [
+    {
+      "relationship_id": "cumulative-co2-to-warming",
+      "predictor": "cumulative_anthropogenic_co2_emissions",
+      "response": "human_caused_global_surface_temperature_increase",
+      "form": "near_linear",
+      "coefficient": {
+        "name": "transient climate response to cumulative CO2 emissions",
+        "warming_c_per_1000_gtco2_best": 0.45,
+        "warming_c_per_1000_gtco2_likely_low": 0.27,
+        "warming_c_per_1000_gtco2_likely_high": 0.63
+      },
+      "confidence": "high_confidence_near_linear_relationship; likely_coefficient_range",
+      "source": "IPCC-AR6-WGI-SPM",
+      "locator": "D.1.1 and Figure SPM.10",
+      "interpretation": "Every additional tonne of net anthropogenic CO2 adds to warming. Stabilizing CO2-caused warming requires net-zero anthropogenic CO2 emissions."
+    },
+    {
+      "relationship_id": "long_lived_ghg-abundance-to-forcing",
+      "predictor": "measured_atmospheric_abundance_of_22_long_lived_greenhouse_gases",
+      "response": "effective_radiative_forcing_relative_to_preindustrial",
+      "form": "gas_specific_radiative_transfer_expressions",
+      "observed_2024": {
+        "total_effective_forcing_w_m2": 3.54,
+        "aggi_1990_equals_1": 1.54,
+        "increase_since_1990_percent": 54,
+        "co2_forcing_w_m2": 2.33,
+        "co2_share_total_percent": 66,
+        "co2_share_of_increase_since_1990_percent": 81,
+        "methane_forcing_w_m2": 0.57,
+        "methane_share_total_percent": 16
+      },
+      "source": "NOAA-AGGI-2025",
+      "locator": "2024 Results and Table 2",
+      "limitation": "AGGI covers long-lived gases and is not a complete climate projection; aerosols, solar forcing, surface albedo, feedbacks, and other agents must be included in attribution and projection models."
+    },
+    {
+      "relationship_id": "observed-co2-temperature-correlation",
+      "predictor": "NOAA_annual_global_CO2_ppm",
+      "response": "NASA_GISTEMP_annual_anomaly",
+      "period": "1979-2025",
+      "statistics_file": "../timeseries/normalized/observed-correlation-statistics.json",
+      "role": "descriptive_visualization_not_attribution",
+      "warning": "Both series trend and are autocorrelated. The dashboard must show the raw correlation only beside the physical attribution chain and a first-difference diagnostic."
+    },
+    {
+      "relationship_id": "non-co2-greenhouse-gases",
+      "predictor": "methane_nitrous_oxide_and_halogenated_gas_emissions_and_concentrations",
+      "response": "radiative_forcing_and_warming",
+      "form": "gas_specific_lifetimes_efficiencies_and_indirect_effects",
+      "dashboard_rule": "Use atmospheric abundance and gas-specific forcing for the physical chart. Use AR6-GWP100 CO2e only for the separate emissions-accounting chart.",
+      "sources": ["NOAA-AGGI-2025", "PRIMAP-HIST-V27", "IPCC-AR6-WGI-SPM"]
+    }
+  ],
+  "baseline_rule": "Temperature anomalies may be shifted between baselines only with a documented source-derived offset. This package preserves NASA 1951-1980 and NOAA 1971-2000 native baselines; correlation is invariant to a constant shift.",
+  "annual_threshold_rule": "An individual year above 1.5 C does not mean the Paris long-term warming limit has been crossed; use a sustained multi-decadal global warming level for impact ladders."
+}
+

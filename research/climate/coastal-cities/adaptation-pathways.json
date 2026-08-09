@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "principle": "Outcomes are conditional on adaptation. Every risk map or timeline must state whether defenses, drainage, building changes, ecosystem measures, land-use policy, and relocation are included.",
+  "pathways": [
+    {
+      "pathway_id": "protect",
+      "measures": ["levees and floodwalls", "surge barriers and gates", "shoreline stabilization", "pump and outfall upgrades", "raised roads or utility assets"],
+      "best_for": ["dense areas with high asset and population concentration", "life-safety and storm-surge reduction"],
+      "limitations": ["residual and exceedance risk", "maintenance and settlement", "can transfer or concentrate water", "surface barriers do not alone solve Miami groundwater", "may create induced development or false security"],
+      "source_refs": [{"source_id": "USACE-NOLA-HSDRRS"}, {"source_id": "USACE-MIAMI-BACK-BAY-2024"}]
+    },
+    {
+      "pathway_id": "accommodate",
+      "measures": ["building elevation", "floodproofing", "piles or keys", "backflow prevention", "septic-to-sewer conversion", "distributed storage", "emergency and continuity planning"],
+      "best_for": ["reducing damage below a design threshold", "maintaining selected services during transition"],
+      "limitations": ["access and utilities can fail even when a building remains dry", "cost and code enforcement", "thresholds can be exceeded", "renters may not control investment"],
+      "source_refs": [{"source_id": "MIAMI-DADE-SLR-STRATEGY"}, {"source_id": "MIAMI-DADE-SEPTIC"}]
+    },
+    {
+      "pathway_id": "restore_and_buffer",
+      "measures": ["wetlands", "mangroves", "living shorelines", "sediment and ridge restoration", "green-blue corridors"],
+      "best_for": ["wave attenuation", "ecological co-benefits", "water storage", "erosion reduction"],
+      "limitations": ["space and sediment needs", "ecological thresholds", "cannot eliminate extreme surge", "benefits vary by location and event"],
+      "source_refs": [{"source_id": "LOUISIANA-CPRA-2023"}, {"source_id": "MIAMI-DADE-SLR-STRATEGY"}]
+    },
+    {
+      "pathway_id": "avoid",
+      "measures": ["updated zoning", "freeboard and flood-resistant codes", "capital-plan screening", "high-ground and transit-oriented growth", "open-space acquisition"],
+      "best_for": ["preventing new exposure", "directing growth toward serviceable areas"],
+      "limitations": ["does not solve existing exposure", "can raise prices or displace residents without housing policy", "requires regional coordination"],
+      "source_refs": [{"source_id": "MIAMI-DADE-SLR-STRATEGY"}, {"source_id": "NCA5-COASTS"}]
+    },
+    {
+      "pathway_id": "relocate",
+      "measures": ["voluntary buyouts", "land swaps", "community-led relocation", "service consolidation", "receiving-area housing and infrastructure investment"],
+      "best_for": ["repetitive-loss locations", "areas where long-term protection or service is infeasible"],
+      "limitations": ["cultural and community loss", "unequal compensation", "title and mortgage barriers", "destination affordability", "risk of coerced or fragmented movement"],
+      "source_refs": [{"source_id": "NCA5-SOCIAL-SYSTEMS"}, {"source_id": "IPCC-AR6-WGII-CH6"}, {"source_id": "URBAN-GULF-MIGRATION-2023"}]
+    }
+  ],
+  "city_strategies": [
+    {
+      "city_id": "new_orleans",
+      "current_foundation": ["HSDRRS storm-risk reduction", "municipal pumps and drainage", "Louisiana coastal protection and restoration portfolio"],
+      "decision_triggers_to_track": ["levee elevation and settlement margin", "pump availability under design rainfall", "surge level versus design", "wetland and land-area change", "repetitive loss", "insurance affordability", "utility outage and recovery time"],
+      "source_refs": [{"source_id": "USACE-NOLA-HSDRRS"}, {"source_id": "NOLA-READY-FLOOD"}, {"source_id": "LOUISIANA-CPRA-2023"}]
+    },
+    {
+      "city_id": "miami",
+      "current_foundation": ["fill", "piles and keys", "high-ground and transit-oriented growth", "green-blue corridors", "green-blue neighborhoods", "Adaptation Action Areas", "back-bay structural, nonstructural, and nature-based planning"],
+      "decision_triggers_to_track": ["groundwater elevation", "canal and outfall head", "salt-front location", "septic impairment", "road elevation and access", "building adaptation", "insurance affordability", "storm-surge residual risk"],
+      "source_refs": [{"source_id": "MIAMI-DADE-SLR-STRATEGY"}, {"source_id": "MIAMI-DADE-LMS-2025"}, {"source_id": "USACE-MIAMI-BACK-BAY-2024"}]
+    }
+  ],
+  "timeline_rule": "Use adaptive pathways with trigger thresholds and lead times, not a single irreversible city-loss date. Show when decisions must begin as well as when physical thresholds might be crossed."
+}
+

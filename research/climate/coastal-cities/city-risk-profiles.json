@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0.0",
+  "concepts": [
+    {"concept_id": "relative_sea_level", "definition": "Sea-surface height relative to the moving land at a location; combines ocean change, vertical land motion, and regional effects.", "not_equivalent_to": ["water depth on every parcel", "global mean sea level"]},
+    {"concept_id": "topographic_exposure", "definition": "Land elevation below a specified water surface in a static elevation model, sometimes conditioned on hydraulic connection.", "not_equivalent_to": ["observed flooding", "permanent inundation when defenses are present"]},
+    {"concept_id": "high_tide_flooding", "definition": "Flooding when water levels exceed locally defined minor, moderate, or major thresholds; days are threshold-exceedance projections, not days when a whole city floods.", "not_equivalent_to": ["storm surge", "citywide permanent inundation"]},
+    {"concept_id": "permanent_inundation", "definition": "Persistent occupation of unprotected low land by mean or tidal water after accounting for hydraulic connectivity and adaptation.", "not_equivalent_to": ["temporary rainfall flood", "single tide-gauge projection"]},
+    {"concept_id": "storm_surge", "definition": "Abnormal coastal water-level rise produced by a storm, superimposed on tides and mean sea level.", "not_equivalent_to": ["mean sea-level rise"]},
+    {"concept_id": "functional_habitability", "definition": "The practical ability to live and operate safely with reliable housing, access, drainage, drinking water, wastewater, electricity, insurance, finance, health care, and emergency services.", "not_equivalent_to": ["parcel elevation alone", "a universal binary threshold"]}
+  ],
+  "cities": [
+    {
+      "city_id": "new_orleans",
+      "display_name": "New Orleans",
+      "geographic_guardrail": "Keep City of New Orleans, metropolitan New Orleans, the Ohenhen study domain, the NOAA 30 N / 90 W grid, New Canal Station, and Grand Isle separate.",
+      "physical_setting": ["Much of the city is below sea level and surrounded by levees.", "Rainfall must be removed through an engineered drainage system.", "Coastal-wetland loss and subsidence alter the regional hazard context."],
+      "risk_pathways": [
+        {"hazard": "relative_sea_level_rise", "mechanism": "Ocean rise plus high local vertical-land-motion contribution increases water levels relative to land.", "consequences": ["higher defense loads", "higher surge baseline", "less drainage head", "more frequent threshold exceedance"], "source_refs": [{"source_id": "NOAA-SLR-ITF-2022"}, {"source_id": "NATURE-OHENHEN-2024"}]},
+        {"hazard": "subsidence", "mechanism": "Natural compaction and human-influenced groundwater or sediment processes vary spatially.", "consequences": ["differential settlement", "levee and road maintenance", "structure damage", "locally faster relative rise"], "source_refs": [{"source_id": "USGS-NOLA-SUBSIDENCE-2003"}, {"source_id": "NATURE-OHENHEN-2024"}]},
+        {"hazard": "storm_surge", "mechanism": "Tropical-cyclone surge acts on the changing coastal baseline and protection system.", "consequences": ["overtopping or system exceedance", "evacuation", "prolonged utility and housing disruption", "loss of life"], "source_refs": [{"source_id": "USACE-NOLA-HSDRRS"}, {"source_id": "LOUISIANA-CPRA-2023"}]},
+        {"hazard": "extreme_rainfall", "mechanism": "Intense rainfall can exceed inlet, pipe, canal, pump, or power capacity even when surge defenses hold.", "consequences": ["street and structure flooding", "transport interruption", "pump dependence", "compound flood risk"], "source_refs": [{"source_id": "NOLA-READY-FLOOD"}]}
+      ],
+      "engineered_dependencies": [
+        {"system": "HSDRRS", "role": "storm-risk reduction", "capacity_or_standard": "1% annual-chance level of risk reduction", "guardrail": "Not zero risk and not one flood per century.", "source_id": "USACE-NOLA-HSDRRS"},
+        {"system": "municipal drainage", "role": "remove rainfall from low-lying areas", "capacity_or_standard": "24 drainage pump stations; 50,891 cubic feet per second listed by the city", "guardrail": "Nominal capacity is not equivalent to delivered capacity in every storm or neighborhood.", "source_id": "NOLA-READY-FLOOD"}
+      ],
+      "time_anchors": [
+        {"year": 2050, "metric": "additional_exposure_across_32_city_study", "value": "National Nature study horizon; do not convert to city disappearance.", "source_id": "NATURE-OHENHEN-2024"},
+        {"year": 2070, "metric": "relative_sea_level_change_since_2020_at_noaa_grid", "range_m": [0.48, 1.09], "scenario_order": ["Low", "High"], "source_id": "NOAA-SLR-ITF-2022", "guardrail": "30 N / 90 W one-degree grid, not a parcel-depth map."},
+        {"horizon": "50_year_plan", "metric": "coastal_land_change_without_action", "range_square_miles": [1100, 3000], "source_id": "LOUISIANA-CPRA-2023", "guardrail": "Louisiana coastwide scenario range, not land inside New Orleans."}
+      ],
+      "habitability_sequence": ["recurrent nuisance and rainfall flooding", "maintenance and insurance costs rise", "service interruptions and access failures become more frequent", "households with fewer resources face earlier displacement", "protection or accommodation upgrades are required", "managed relocation may become necessary in selected areas"],
+      "headline": "New Orleans' danger is protection dependence under rising relative water levels—not a defensible single date when the whole city disappears."
+    },
+    {
+      "city_id": "miami",
+      "display_name": "Miami / Miami-Dade",
+      "geographic_guardrail": "Keep City of Miami, Miami-Dade County, the Ohenhen Miami study domain, and the Virginia Key tide gauge separate. The Nature study's exposed area can exceed the City of Miami's land area because its domain is broader.",
+      "physical_setting": ["Low coastal elevations create tidal and surge exposure.", "Highly permeable limestone allows groundwater and seawater to bypass surface barriers.", "Canals connect coastal level, groundwater, and drainage performance.", "The Biscayne aquifer is the primary drinking-water source."],
+      "risk_pathways": [
+        {"hazard": "relative_sea_level_rise", "mechanism": "Higher coastal water increases tidal flooding and reduces gravity-drainage performance.", "consequences": ["road and property flooding", "outfall constraints", "higher groundwater", "infrastructure corrosion"], "source_refs": [{"source_id": "NOAA-SLR-ITF-2022"}, {"source_id": "MIAMI-DADE-LMS-2025"}]},
+        {"hazard": "groundwater_rise", "mechanism": "Permeable limestone transmits coastal water inland and raises the water table.", "consequences": ["below-ground flooding", "reduced soil storage for rainfall", "septic-system failure", "limits of perimeter barriers"], "source_refs": [{"source_id": "USGS-MIAMI-HYDROLOGY-2014"}, {"source_id": "MIAMI-DADE-SEPTIC"}]},
+        {"hazard": "saltwater_intrusion", "mechanism": "Sea-level pressure, withdrawals, canals, and freshwater levels affect the inland salt front.", "consequences": ["wellfield risk", "water-management constraints", "treatment or relocation costs"], "source_refs": [{"source_id": "MIAMI-DADE-SALTWATER"}, {"source_id": "MIAMI-DADE-LMS-2025"}]},
+        {"hazard": "storm_surge", "mechanism": "Storm water enters from the ocean and back bay; risk is modified but not removed by structural, nonstructural, and nature-based measures.", "consequences": ["life-safety risk", "building damage", "utility interruption", "evacuation"], "source_refs": [{"source_id": "USACE-MIAMI-BACK-BAY-2024"}]}
+      ],
+      "system_dependencies": [
+        {"system": "Biscayne aquifer", "role": "drinking-water source", "capacity_or_standard": "Miami-Dade reports 99% of groundwater withdrawn comes from the aquifer.", "guardrail": "Groundwater withdrawal share is not the same as total delivered water without checking system accounting.", "source_id": "MIAMI-DADE-LMS-2025"},
+        {"system": "septic systems", "role": "onsite wastewater", "capacity_or_standard": "County program cites approximately 120,000 residential and commercial properties on septic systems.", "guardrail": "Property count is countywide and program-era; do not label all systems failed.", "source_id": "MIAMI-DADE-SEPTIC"}
+      ],
+      "time_anchors": [
+        {"year": 2050, "metric": "additional_area_exposed_in_nature_miami_study_domain", "range_square_km": [340, 360], "population_range": [22000, 122000], "property_range": [13000, 81000], "source_id": "NATURE-OHENHEN-2024", "guardrail": "SSP2-4.5; study-domain exposure; defenses and estimates vary; not municipal inundation."},
+        {"year": 2070, "metric": "miami_dade_adopted_planning_sea_level_above_2000", "range_inches": [21, 54], "source_id": "MIAMI-DADE-LMS-2025", "guardrail": "Planning range referenced to Key West, not uniform water depth."},
+        {"year": 2070, "metric": "relative_sea_level_change_since_2020_at_virginia_key", "range_m": [0.24, 0.89], "scenario_order": ["Low", "High"], "source_id": "NOAA-SLR-ITF-2022", "guardrail": "Station scenario span; scenario values are not probabilities."}
+      ],
+      "habitability_sequence": ["more frequent tide and rainfall interaction", "groundwater and outfall constraints emerge in low areas", "septic, roads, utilities, and buildings require adaptation", "insurance and housing affordability pressures change who can remain", "large-scale public works and building-level adaptation expand", "selective retreat may be required where protection and accommodation are infeasible"],
+      "headline": "Miami's earliest functional risks can come through groundwater, drainage, water quality, and affordability—not only an advancing ocean shoreline."
+    }
+  ],
+  "cross_city_comparison": {
+    "shared": ["rising relative sea level", "storm-surge baseline", "infrastructure interdependence", "unequal household capacity", "insurance and housing feedbacks", "adaptation-conditioned outcomes"],
+    "new_orleans_distinctive": ["below-sea-level protected bowl", "levee/floodwall and pump dependence", "very high coastal-Louisiana relative trend and wetland context"],
+    "miami_distinctive": ["permeable limestone", "groundwater and salt-front pathways", "surface walls cannot alone isolate the urban hydrologic system"]
+  }
+}
+

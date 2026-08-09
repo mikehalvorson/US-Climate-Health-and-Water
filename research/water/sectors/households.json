@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "national_2015": {
+    "domestic_total_billion_gallons_per_day": 26.6,
+    "public_supply_delivery_billion_gallons_per_day": 23.3,
+    "self_supplied_withdrawal_billion_gallons_per_day": 3.26,
+    "self_supplied_groundwater_share_percent": 98,
+    "gallons_per_person_per_day": 82,
+    "source": {"source_id": "USGS-CIR1441", "locator": "Domestic water-use section and Table 7"}
+  },
+  "end_use_context": {
+    "outdoor_share_national_average": "greater_than_30_percent",
+    "outdoor_share_arid_regions": "as_high_as_60_percent",
+    "bathroom_share_of_indoor_use": "greater_than_50_percent",
+    "leaks_billion_gallons_per_year": 900,
+    "source": {"source_id": "EPA-WATERSENSE", "locator": "Program statistics and residential use summary"}
+  },
+  "dashboard_comparisons": [
+    {
+      "metric": "full_current_domestic_service",
+      "value_liters_per_person_per_day": 310.4,
+      "derivation": "82 U.S. gallons/person/day multiplied by 3.785411784 L/gallon",
+      "meaning": "Observed U.S. domestic-use average; includes uses far beyond drinking"
+    },
+    {
+      "metric": "drinking_only_reference",
+      "value_liters_per_person_per_day": 5.3,
+      "source": {"source_id": "WHO-DOMESTIC-WATER", "locator": "Quantity guidance"},
+      "meaning": "Basic drinking need; not a U.S. household-service replacement"
+    },
+    {
+      "metric": "basic_drinking_cooking_and_limited_hygiene",
+      "value_liters_per_person_per_day": 20,
+      "source": {"source_id": "WHO-DOMESTIC-WATER", "locator": "Quantity and service-level guidance"},
+      "meaning": "Basic health-access reference; still not full U.S. service"
+    }
+  ],
+  "priority_levers": [
+    "Outdoor irrigation efficiency and landscape change in hot/dry metros",
+    "Leak detection and fixture replacement",
+    "Rate design and targeted affordability protection",
+    "Wastewater reuse for nonpotable and, after advanced treatment, potable supply",
+    "Aquifer recharge and demand management synchronized with seasonal supply"
+  ]
+}

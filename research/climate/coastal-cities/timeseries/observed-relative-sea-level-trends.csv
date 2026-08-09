@@ -1,0 +1,4 @@
+location_id,station_id,station_name,latitude,longitude,start_date,end_date,trend_mm_per_year,trend_error_mm_per_year,original_trend_inches_per_decade,original_error_inches_per_decade,interpretation,geographic_guardrail,source_id
+virginia_key,8723214,Virginia Key,25.7314,-80.1618,06/15/1931,12/15/2025,3.2004,0.1016,1.26,0.04,observed relative trend; combines ocean change and land motion; not a forecast,Miami-area tide gauge,NOAA-COOPS-DPAPI
+new_canal_station,8761927,New Canal,30.027222,-90.113333,12/15/1982,12/15/2025,5.9944,0.4826,2.36,0.19,observed relative trend; combines ocean change and land motion; not a forecast,New Orleans station,NOAA-COOPS-DPAPI
+grand_isle,8761724,Grand Isle,29.2633,-89.956703,01/15/1947,12/15/2025,9.1186,0.1778,3.59,0.07,observed relative trend; combines ocean change and land motion; not a forecast,Coastal Louisiana station; not New Orleans,NOAA-COOPS-DPAPI

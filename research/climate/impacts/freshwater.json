@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "preferred_framing": "freshwater availability, timing, reliability, quality, and extremes",
+  "headline": "Warming intensifies the water cycle and shifts the timing and geography of water supply; scarcity is jointly determined by climate, demand, infrastructure, governance, and water quality.",
+  "current_context": [
+    {
+      "metric": "population_experiencing_severe_water_scarcity_part_of_the_year",
+      "value": "approximately_half",
+      "attribution": "climatic_and_non_climatic_factors"
+    },
+    {
+      "metric": "river_basins_with_normal_conditions_in_2024",
+      "value": "approximately_one_third",
+      "note": "single-year hydrological-status indicator, not a temperature-response coefficient"
+    }
+  ],
+  "projected_temperature_conditioned_metrics": [
+    {"metric": "population_exposed_to_physical_water_scarcity", "warming_c": 2.0, "population_billion": 3, "confidence": "low"},
+    {"metric": "population_exposed_to_physical_water_scarcity", "warming_c": 4.0, "population_billion": 4, "confidence": "low"},
+    {"metric": "land_with_simultaneous_increased_high_streamflow_and_decreased_low_streamflow", "warming_c": 4.0, "land_percent": 10, "population_affected_billion_lower_bound": 2.1, "confidence": "medium"},
+    {"metric": "direct_flood_damage_multiplier", "warming_comparison": "4C_vs_1.5C", "range": [4, 5], "confidence": "medium"}
+  ],
+  "mountain_water": [
+    {"metric": "large_glacierized_catchments_with_mean_annual_runoff_decline_over_10_percent_by_2100", "fraction": "approximately_one_third_of_56", "confidence": "low"},
+    {"metric": "people_critically_dependent_on_mountain_runoff_mid_century", "population_billion": 1.5, "scenario": "RCP6.0_SSP2", "confidence": "low"}
+  ],
+  "not_supported": [
+    "A single global freshwater-stock-loss-per-degree coefficient.",
+    "Attributing all present water scarcity to climate change.",
+    "Treating global precipitation increase as universally greater local water availability.",
+    "Combining exposure estimates from different scenarios, years, and definitions."
+  ],
+  "sources": [
+    {"source_id": "IPCC-AR6-WGII-CH4", "locator": "Executive Summary, Box 4.1, 4.4.3, and 4.5.7"},
+    {"source_id": "IPCC-AR6-WGII-SPM", "locator": "B.4 and Figure SPM.3"},
+    {"source_id": "WMO-WATER-2024", "locator": "Key messages and global hydrological status"},
+    {"source_id": "UNESCO-WWDR-2024", "locator": "Executive summary"}
+  ]
+}

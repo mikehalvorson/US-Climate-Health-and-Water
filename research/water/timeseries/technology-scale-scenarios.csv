@@ -1,0 +1,12 @@
+technology,scenario_id,service,target_mgd,water_liters_per_day,capacity_equivalent_50mgd,energy_low,energy_high,energy_unit,method,status
+seawater_reverse_osmosis,DESAL-1MGD,one_million_gallons_per_day,1,3785411.8,0.02,4.421,6.218,gigawatt_hours_per_year,"3.2-4.5 kWh/m3",scale_calculation
+seawater_reverse_osmosis,DESAL-50MGD,Carlsbad_size_capacity,50,189270589.2,1,0.221,0.311,terawatt_hours_per_year,"3.2-4.5 kWh/m3",scale_calculation
+seawater_reverse_osmosis,DESAL-DOMESTIC-2015,us_domestic_use_2015,26600,100691953454.4,532,117.6,165.4,terawatt_hours_per_year,"3.2-4.5 kWh/m3",scale_illustration_not_proposal
+seawater_reverse_osmosis,DESAL-PUBLIC-2015,us_public_supply_withdrawal_2015,39000,147631059576.0,780,172.4,242.5,terawatt_hours_per_year,"3.2-4.5 kWh/m3",scale_illustration_not_proposal
+seawater_reverse_osmosis,DESAL-IRRIGATION-2015,us_irrigation_withdrawal_2015,118000,446678590512.0,2360,521.7,733.7,terawatt_hours_per_year,"3.2-4.5 kWh/m3",scale_illustration_not_feasible_program
+seawater_reverse_osmosis,DESAL-FRESH-2015,us_freshwater_withdrawal_2015,281000,1063700711304.0,5620,1242.4,1747.1,terawatt_hours_per_year,"3.2-4.5 kWh/m3",scale_illustration_not_feasible_program
+atmospheric_water_generation,AWG-DRINKING-PERSON,drinking_only_per_person,,5.3,,1.39,3.12,kilowatt_hours_per_day,"1.70-3.81 L/kWh dehumidifier proxy",proxy_not_certified_awg
+atmospheric_water_generation,AWG-BASIC-PERSON,basic_drinking_cooking_limited_hygiene_per_person,,20,,5.25,11.76,kilowatt_hours_per_day,"1.70-3.81 L/kWh dehumidifier proxy",proxy_not_certified_awg
+atmospheric_water_generation,AWG-FULL-PERSON,current_us_domestic_average_per_person,,310.4,,81.5,182.6,kilowatt_hours_per_day,"1.70-3.81 L/kWh dehumidifier proxy",proxy_not_certified_awg
+atmospheric_water_generation,AWG-FULL-FAMILY4,four_person_household_at_us_average,,1241.6,,325.9,730.4,kilowatt_hours_per_day,"1.70-3.81 L/kWh dehumidifier proxy",proxy_not_certified_awg
+atmospheric_water_generation,AWG-1MGD,one_million_gallons_per_day,1,3785411.8,,0.994,2.227,gigawatt_hours_per_day,"1.70-3.81 L/kWh dehumidifier proxy",proxy_not_certified_awg

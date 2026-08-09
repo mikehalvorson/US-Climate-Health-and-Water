@@ -1,0 +1,147 @@
+{
+  "guidance_id": "power-generation-impact-dashboard-contract-v1",
+  "as_of": "2026-08-01",
+  "objective": "Connect observed and scenario generation pathways to technical, health, regulatory, and sustainability consequences without overstating causality or precision.",
+  "default_story_sequence": [
+    "How much energy and electricity is produced by each method?",
+    "What operating role and grid services does each method provide?",
+    "What technical constraints limit delivery at the required time and place?",
+    "What routine, upstream, accident, and distributional health pathways are supported?",
+    "Which legal status and permitting layers currently apply?",
+    "What lifecycle climate, water, land, materials, ecological, waste, and intergenerational burdens remain?",
+    "Which mitigations reduce which burden, what new burdens do they add, and what residual risks remain?"
+  ],
+  "global_filters": [
+    "geography",
+    "year or scenario period",
+    "observed versus estimate versus scenario",
+    "technology family and configuration",
+    "resource versus carrier versus conversion versus storage",
+    "operating role",
+    "lifecycle boundary",
+    "evidence confidence",
+    "source vintage",
+    "regulatory as-of date"
+  ],
+  "views": [
+    {
+      "view_id": "generation_history_and_scenarios",
+      "purpose": "Show observed history and conditional futures through 2050-2100.",
+      "visual": "small-multiple stacked areas or lines by model/scenario",
+      "data_files": [
+        "timeseries/normalized/global-electricity-generation-history.csv",
+        "timeseries/normalized/global-irena-capacity-and-generation-history.csv",
+        "timeseries/normalized/us-electricity-generation-history.csv",
+        "timeseries/normalized/us-electricity-projections-aeo2026.csv",
+        "timeseries/normalized/us-electricity-projections-nrel-standard-scenarios-2024.csv",
+        "timeseries/normalized/global-electricity-projections-ngfs-phase5.1.csv",
+        "timeseries/normalized/global-specialized-technology-scenarios.csv"
+      ],
+      "required_annotations": ["observed/scenario boundary", "model", "scenario", "geography", "unit", "source vintage"],
+      "rules": ["No model splicing into one unlabeled line", "No U.S. extrapolation after 2050", "No marine interpolation after its 2050 milestone", "Scenarios are not forecasts"]
+    },
+    {
+      "view_id": "system_role_matrix",
+      "purpose": "Prevent annual generation or capacity factor from masquerading as reliability.",
+      "visual": "technology-by-service matrix plus regional time-series context",
+      "dimensions": ["energy", "accredited capacity", "ramp", "frequency", "voltage", "inertia or grid-forming", "black start", "fuel security", "duration"],
+      "evidence": ["CLM-SYS-001"],
+      "data_status": "qualitative_framework_ready; quantitative regional service data pending"
+    },
+    {
+      "view_id": "grid_delivery_constraints",
+      "purpose": "Show interconnection, planning, siting, and operating integration as separate stages.",
+      "visual": "stage flow with queue and disturbance evidence",
+      "stages": ["resource or load proposal", "interconnection study", "network upgrades", "regional planning", "cost allocation", "siting and permitting", "construction", "commissioning", "operation and model validation"],
+      "evidence": ["CLM-US-012", "CLM-US-013", "CLM-SYS-002", "CLM-SYS-003", "CLM-REG-001", "CLM-REG-002"],
+      "rules": ["Queued is not operating", "A rule is not a built line", "An event report is not a fleet failure rate"]
+    },
+    {
+      "view_id": "health_pathways",
+      "purpose": "Trace supported causal steps and attribution limits.",
+      "visual": "pathway diagram plus pollutant and evidence panels",
+      "stages": ["hazard or emission", "transport/pathway", "concentration/contact", "dose/exposure", "response evidence", "attributable outcome"],
+      "evidence": ["CLM-HLT-001", "CLM-HLT-002", "CLM-HLT-004", "CLM-NUC-009", "CLM-NUC-010", "CLM-NUC-011"],
+      "rules": ["No death inference from generation alone", "No causal inference from proximity alone", "WHO all-source deaths are not power-sector deaths", "Separate routine and accident evidence"]
+    },
+    {
+      "view_id": "regulatory_timeline",
+      "purpose": "Represent changing legal status without converting proposals or deadline changes into final substantive outcomes.",
+      "visual": "event timeline and current-status cards",
+      "data_file": "impacts/regulatory-status.json",
+      "event_types": ["proposal", "final action", "effective date", "rehearing", "stay", "vacatur", "partial repeal", "deadline extension", "compliance filing", "project license"],
+      "rules": ["Every card has as-of date", "Proposed is visually distinct from final", "Compliance date is separate from requirement", "Federal context is not a complete local permit list"]
+    },
+    {
+      "view_id": "lifecycle_greenhouse_gas_ranges",
+      "purpose": "Compare broad lifecycle emissions while preserving uncertainty and vintage.",
+      "visual": "median and range plot; consider log axis",
+      "data_file": "impacts/lifecycle-benchmarks.json",
+      "evidence": ["CLM-SUS-001", "CLM-NUC-003", "CLM-SUS-008"],
+      "rules": ["Show source year 2014", "Medians never appear without ranges", "Do not use as current plant measurements", "Biomass requires separate land and counterfactual context", "Hydro upper tail remains visible"]
+    },
+    {
+      "view_id": "water_withdrawal_and_consumption",
+      "purpose": "Connect thermal generation and hydrology to the future water module.",
+      "visual": "separate withdrawal and consumption panels by plant cooling type and basin",
+      "evidence": ["CLM-SUS-002", "CLM-NUC-014"],
+      "national_context": {"year": 2015, "withdrawal": 133000, "unit": "Mgal/day", "share_of_us_withdrawals_percent": 41, "source_id": "SRC-USGS-THERMO-WATER"},
+      "data_status": "national_context_ready; plant_and_basin_coefficients_pending",
+      "rules": ["Withdrawal and consumption never share one value", "Do not assign the national thermoelectric total to one fuel", "Show cooling system, basin, and year"]
+    },
+    {
+      "view_id": "materials_and_circularity",
+      "purpose": "Show supply-chain exposure and distinguish recyclable from recycled.",
+      "visual": "technology-material matrix and end-of-life flow",
+      "evidence": ["CLM-SUS-003", "CLM-SUS-004", "CLM-NUC-013"],
+      "rules": ["Material-specific data only", "Technical recyclability is not collection rate", "Recycling does not eliminate primary mining", "Uranium resources are not fabricated-fuel availability"]
+    },
+    {
+      "view_id": "technology_problem_cards",
+      "purpose": "Contextualize each generation method with benefits, problems, mitigation, residual risk, and evidence.",
+      "visual": "four-dimension card with expandable provenance",
+      "data_file": "impacts/technology-impact-matrix.json",
+      "required_sections": ["system role", "technical", "health", "regulatory", "sustainability", "mitigation", "residual risk", "uncertainty", "sources"],
+      "rules": ["No single good/bad badge", "Unknown is not zero", "Site and configuration qualifiers remain visible"]
+    },
+    {
+      "view_id": "nuclear_deep_dive",
+      "purpose": "Represent nuclear generation without either promotional or catastrophizing shortcuts.",
+      "visual": "observed metrics, history/scenarios, fleet aging, stage-gated pipeline, health evidence, water, fuel, and waste chain",
+      "data_file": "impacts/nuclear-generation.json",
+      "evidence": ["CLM-NUC-001", "CLM-NUC-002", "CLM-NUC-003", "CLM-NUC-004", "CLM-NUC-007", "CLM-NUC-010", "CLM-NUC-012", "CLM-NUC-014"],
+      "rules": ["Show NRC/EIA count conflict", "Capacity factor is not safety or cost", "Part 53 is not deployment", "Zero-power criticality is not generation", "Interim storage is not disposal", "Show direct and indirect Fukushima findings together"]
+    }
+  ],
+  "impact_linkage_contract": {
+    "purpose": "Attach impacts to time-dependent generation pathways without pretending coefficients are universal.",
+    "join_keys": ["technology", "technology_detail", "geography", "year", "scenario", "plant_configuration", "fuel_supply", "cooling_configuration", "control_configuration"],
+    "coefficient_required_fields": ["metric", "value", "unit", "numerator_boundary", "denominator", "geography", "period", "technology_configuration", "central_or_range", "evidence_class", "source_id", "claim_id", "uncertainty", "version"],
+    "calculation_status": "not_authorized_until_coefficient_ledger_exists",
+    "reason": "The present corpus supports qualitative pathways and selected benchmark ranges, but not a harmonized mortality, land, water, mineral, waste, cost, or reliability coefficient for every technology and year."
+  },
+  "visual_encoding": {
+    "observed": "solid",
+    "preliminary_or_estimated": "solid_with_status_badge",
+    "scenario": "dashed_or_separate_panel",
+    "proposed_regulation": "outline",
+    "effective_regulation": "filled",
+    "evidence_sparse": "hatched",
+    "unknown": "explicit_unknown_label",
+    "conflicting_official_values": "side_by_side"
+  },
+  "prohibited_patterns": [
+    "single unlabeled clean-energy category that hides nuclear versus renewable composition",
+    "single technology score without published weights and sensitivity",
+    "capacity and generation on an unlabeled common axis",
+    "storage counted as primary generation",
+    "queue capacity styled as operating capacity",
+    "source publication date hidden",
+    "regulatory proposal shown as final",
+    "health deaths inferred from proximity or generation alone",
+    "operational emissions presented as lifecycle emissions",
+    "withdrawal presented as consumption",
+    "technical recyclability presented as actual recycling",
+    "test milestone presented as commercial nuclear generation"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "benchmark_id": "electricity-lifecycle-context-v1",
+  "as_of": "2026-08-01",
+  "status": "literature_synthesis_not_current_fleet_measurement",
+  "primary_source_id": "SRC-IPCC-AR5-LCA",
+  "corroborating_source_ids": ["SRC-NLR-LCA171", "SRC-UNECE-LCA21"],
+  "evidence": ["CLM-SUS-001", "CLM-NUC-003"],
+  "functional_unit": "grams CO2-equivalent per kilowatt-hour of electricity",
+  "system_boundary": "lifecycle; details and harmonization vary by underlying study and technology",
+  "source_locator": "IPCC AR5 WGIII Annex III, Table A.III.2",
+  "values": [
+    {"technology": "coal_pulverized", "median": 820, "min": 740, "max": 910, "unit": "gCO2e/kWh"},
+    {"technology": "natural_gas_combined_cycle", "median": 490, "min": 410, "max": 650, "unit": "gCO2e/kWh"},
+    {"technology": "dedicated_biomass", "median": 230, "min": 130, "max": 420, "unit": "gCO2e/kWh", "scope_warning": "The summarized range cannot resolve all land-use, counterfactual, carbon-stock, feedstock, or time-horizon questions; use CLM-SUS-008 for dashboard interpretation."},
+    {"technology": "geothermal", "median": 38, "min": 6, "max": 79, "unit": "gCO2e/kWh"},
+    {"technology": "hydropower", "median": 24, "min": 1, "max": 2200, "unit": "gCO2e/kWh", "scope_warning": "The extreme range is material; reservoir and site characteristics can dominate."},
+    {"technology": "nuclear", "median": 12, "min": 3.7, "max": 110, "unit": "gCO2e/kWh"},
+    {"technology": "concentrating_solar_power", "median": 27, "min": 8.8, "max": 63, "unit": "gCO2e/kWh"},
+    {"technology": "solar_pv_rooftop", "median": 41, "min": 26, "max": 60, "unit": "gCO2e/kWh"},
+    {"technology": "solar_pv_utility", "median": 48, "min": 18, "max": 180, "unit": "gCO2e/kWh"},
+    {"technology": "wind_onshore", "median": 11, "min": 7, "max": 56, "unit": "gCO2e/kWh"},
+    {"technology": "wind_offshore", "median": 12, "min": 8, "max": 35, "unit": "gCO2e/kWh"},
+    {"technology": "ocean_energy", "median": 17, "min": 5.6, "max": 28, "unit": "gCO2e/kWh", "scope_warning": "Small literature and deployment base; do not treat as a commercial-fleet average."}
+  ],
+  "excluded_from_numeric_table": [
+    {"technology": "petroleum_power", "reason": "No directly verified comparable IPCC Table A.III.2 row was transcribed in this pass; leaving it absent is preferable to inventing a value."},
+    {"technology": "waste_to_energy", "reason": "Results depend on biogenic/fossil fraction, avoided-disposal counterfactual, allocation, and heat-credit choices."},
+    {"technology": "hydrogen_power", "reason": "Hydrogen is a carrier; emissions must be calculated from production, storage, transport, leakage, and conversion pathway."},
+    {"technology": "storage", "reason": "Storage is not primary generation; climate effect depends on manufacture, losses, charging mix, displaced generation, and dispatch."}
+  ],
+  "mandatory_chart_annotations": [
+    "Source synthesis publication year: 2014",
+    "Values are literature medians and ranges, not 2026 fleet observations or forecasts",
+    "Use a logarithmic axis or explicit range treatment so hydropower's upper tail is not hidden",
+    "Do not show medians without ranges",
+    "Do not combine operational and lifecycle values in one series",
+    "Do not infer air-pollution health impact from lifecycle greenhouse-gas intensity"
+  ],
+  "update_path": {
+    "preferred": "Build a versioned coefficient ledger from NLR source-study records and final IPCC/UNECE releases, retaining geography, plant configuration, fuel supply, methane assumption, lifetime, capacity factor, allocation, and system boundary.",
+    "rejection_rule": "Reject nonfinal reports marked 'do not cite' and secondary infographics that omit ranges or boundaries."
+  }
+}

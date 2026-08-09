@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0.0",
+  "status_vocabulary": ["verified", "qualified", "rejected", "pending"],
+  "claims": [
+    {
+      "claim_id": "CLM-CAUSE-001",
+      "status": "verified",
+      "claim_type": "causal_attribution",
+      "dashboard_text": "Human activities, principally greenhouse-gas emissions, have unequivocally caused global warming.",
+      "quantification": "Global surface temperature was about 1.1 C above 1850-1900 in 2011-2020.",
+      "source_refs": [{"source_id": "IPCC-AR6-SYR-SPM", "locator": "A.1 and A.1.1"}, {"source_id": "IPCC-AR6-WGI-SPM", "locator": "A.1.3"}],
+      "prohibited_rewrite": "CO2 and temperature are correlated, therefore CO2 caused warming."
+    },
+    {
+      "claim_id": "CLM-ATTR-001",
+      "status": "verified",
+      "claim_type": "detection_and_attribution",
+      "dashboard_text": "The best estimate of total human-caused warming in 2010-2019 was 1.07 C; well-mixed greenhouse gases contributed 1.0-2.0 C of warming, partly offset by other human drivers, principally aerosol cooling.",
+      "quantification": {"observed_c": 1.06, "human_caused_best_c": 1.07, "human_caused_likely_range_c": [0.8, 1.3], "well_mixed_ghg_warming_c": [1.0, 2.0], "other_human_driver_cooling_c": [0.0, 0.8], "natural_driver_c": [-0.1, 0.1], "internal_variability_c": [-0.2, 0.2]},
+      "source_refs": [{"source_id": "IPCC-AR6-WGI-SPM", "locator": "A.1.3 and Figure SPM.2"}, {"source_id": "IPCC-AR6-WGI-FAQ31", "locator": "Figure caption"}]
+    },
+    {
+      "claim_id": "CLM-TCRE-001",
+      "status": "verified",
+      "claim_type": "physical_dose_response",
+      "dashboard_text": "Every additional 1,000 GtCO2 of cumulative anthropogenic CO2 emissions is assessed to cause 0.27-0.63 C of global warming, with a best estimate of 0.45 C.",
+      "quantification": {"emissions_gtco2": 1000, "likely_warming_c": [0.27, 0.63], "best_warming_c": 0.45},
+      "source_refs": [{"source_id": "IPCC-AR6-WGI-SPM", "locator": "D.1.1"}, {"source_id": "IPCC-AR6-SYR-SPM", "locator": "B.5.2"}],
+      "guardrail": "TCRE applies to cumulative anthropogenic CO2, not annual emissions and not all greenhouse gases expressed as CO2-equivalent."
+    },
+    {
+      "claim_id": "CLM-CORR-001",
+      "status": "qualified",
+      "claim_type": "descriptive_correlation",
+      "dashboard_text": "Annual global CO2 concentration and NASA global-temperature anomaly move closely together in levels over 1979-2025 (Pearson r approximately 0.95), but this trend correlation is not the causal attribution test.",
+      "quantification": {"period": "1979-2025", "n": 47, "pearson_r_levels": 0.9515, "pearson_r_first_differences": 0.1891},
+      "source_refs": [{"source_id": "NOAA-CO2-GLOBAL", "locator": "annual global means"}, {"source_id": "NASA-GISTEMP-V4", "locator": "global annual mean data"}],
+      "guardrail": "Use radiative physics, fingerprints, forcing experiments, and formal attribution for causal claims."
+    },
+    {
+      "claim_id": "CLM-AGGI-001",
+      "status": "verified",
+      "claim_type": "observed_radiative_forcing",
+      "dashboard_text": "In 2024, long-lived greenhouse gases produced 3.54 W/m2 of effective radiative forcing relative to 1750, 54 percent above 1990; CO2 contributed 2.33 W/m2.",
+      "quantification": {"year": 2024, "total_w_m2": 3.54, "aggi_1990_equals_1": 1.54, "co2_w_m2": 2.33, "methane_w_m2": 0.57},
+      "source_refs": [{"source_id": "NOAA-AGGI-2025", "locator": "2024 results and tables"}],
+      "guardrail": "AGGI tracks direct forcing by long-lived gases; it omits aerosols, land-use changes, ozone, and feedbacks and is not a stand-alone temperature predictor."
+    },
+    {
+      "claim_id": "CLM-HEAT-001",
+      "status": "verified",
+      "claim_type": "temperature_conditioned_projection",
+      "dashboard_text": "A land heat extreme that occurred once per decade in the 1850-1900 climate is assessed to occur 4.1 times per decade at 1.5 C warming, 5.6 times at 2 C, and 9.4 times at 4 C—and to become progressively hotter.",
+      "source_refs": [{"source_id": "IPCC-AR6-WGI-SPM", "locator": "Figure SPM.6"}]
+    },
+    {
+      "claim_id": "CLM-TC-001",
+      "status": "qualified",
+      "claim_type": "tropical_cyclone_response",
+      "dashboard_text": "With about 2 C of anthropogenic warming, assessment medians indicate roughly 14 percent more near-storm rainfall and 5 percent higher lifetime-maximum winds; total global tropical-cyclone frequency is projected to decrease or remain approximately unchanged.",
+      "source_refs": [{"source_id": "KNUTSON-ET-AL-2020", "locator": "synthesis results"}, {"source_id": "IPCC-AR6-WGI-CH11", "locator": "Executive Summary"}, {"source_id": "NOAA-GFDL-HURRICANES", "locator": "Global Projections"}],
+      "prohibited_rewrite": "Global warming will create more hurricanes everywhere."
+    },
+    {
+      "claim_id": "CLM-BIO-001",
+      "status": "qualified",
+      "claim_type": "biodiversity_risk",
+      "dashboard_text": "The assessed share of terrestrial species at very high extinction risk rises from 3-14 percent at 1.5 C to 3-18 percent at 2 C, 3-29 percent at 3 C, and 3-39 percent at 4 C warming.",
+      "source_refs": [{"source_id": "IPCC-AR6-WGII-SPM", "locator": "B.4.1 and Figure SPM.3"}, {"source_id": "IPCC-AR6-WGII-CH2", "locator": "2.5"}],
+      "guardrail": "These are modeled very-high-risk shares, not observed extinction counts; non-climate drivers must remain visible."
+    },
+    {
+      "claim_id": "CLM-FOOD-001",
+      "status": "qualified",
+      "claim_type": "historical_impact_attribution",
+      "dashboard_text": "Anthropogenic climate change is estimated to have slowed global agricultural total-factor-productivity growth by about 21 percent since 1961, equivalent to losing about seven years of recent productivity growth.",
+      "source_refs": [{"source_id": "ORTIZ-BOBEA-ET-AL-2021", "locator": "abstract and main results"}, {"source_id": "IPCC-AR6-WGII-CH5", "locator": "5.4"}],
+      "prohibited_rewrite": "Climate change has destroyed 21 percent of global food production."
+    },
+    {
+      "claim_id": "CLM-WATER-001",
+      "status": "qualified",
+      "claim_type": "water_scarcity_projection",
+      "dashboard_text": "Low-confidence estimates project about 3 billion people exposed to physical water scarcity at 2 C warming and about 4 billion at 4 C; exposure depends on both climate and socioeconomic conditions.",
+      "source_refs": [{"source_id": "IPCC-AR6-WGII-CH4", "locator": "Executive Summary and 4.4.3"}, {"source_id": "IPCC-AR6-WGII-SPM", "locator": "B.4"}],
+      "guardrail": "Do not describe this as loss of a fixed global freshwater stock."
+    },
+    {
+      "claim_id": "CLM-SLR-001",
+      "status": "verified",
+      "claim_type": "observed_change",
+      "dashboard_text": "Global mean sea level rose 0.20 m from 1901 to 2018, and the rate increased to 3.7 mm per year in 2006-2018; human influence was very likely the main driver since at least 1971.",
+      "source_refs": [{"source_id": "IPCC-AR6-WGI-SPM", "locator": "A.1.7"}, {"source_id": "NOAA-GLOBAL-SEA-LEVEL", "locator": "observations and causes"}]
+    },
+    {
+      "claim_id": "CLM-SLR-002",
+      "status": "qualified",
+      "claim_type": "scenario_projection",
+      "dashboard_text": "Likely global mean sea-level rise by 2100 relative to 1995-2014 ranges from 0.28-0.55 m under SSP1-1.9 to 0.63-1.01 m under SSP5-8.5, with larger long-term commitment after 2100.",
+      "source_refs": [{"source_id": "IPCC-AR6-WGI-SPM", "locator": "B.5.3 and B.5.4"}],
+      "guardrail": "Global mean is not a local projection; local vertical land motion and regional ocean processes matter."
+    },
+    {
+      "claim_id": "CLM-DISP-001",
+      "status": "qualified",
+      "claim_type": "observed_displacement_context",
+      "dashboard_text": "Weather-related extremes have internally displaced more than 20 million people per year on average since 2008, most commonly through storms and floods.",
+      "source_refs": [{"source_id": "IPCC-AR6-WGII-TS", "locator": "TS.B.6"}],
+      "guardrail": "This is not a count attributable solely to anthropogenic climate change."
+    },
+    {
+      "claim_id": "CLM-DISP-002",
+      "status": "qualified",
+      "claim_type": "scenario_projection",
+      "dashboard_text": "World Bank scenario modeling found up to 216 million internal climate migrants across six regions by 2050, with early climate and development action potentially reducing the scale by as much as 80 percent.",
+      "source_refs": [{"source_id": "WORLD-BANK-GROUNDSWELL-II", "locator": "overview and regional results"}],
+      "guardrail": "Scenario, not forecast; internal migrants, not refugees."
+    },
+    {
+      "claim_id": "CLM-DISP-003",
+      "status": "rejected",
+      "claim_type": "unsupported_global_coefficient",
+      "dashboard_text": null,
+      "rejected_text": "X climate refugees per degree of global warming.",
+      "reason": "No validated global empirical coefficient exists; displacement is multi-causal, most is internal, and refugee status is a legal category.",
+      "source_refs": [{"source_id": "IPCC-AR6-WGII-CH7", "locator": "7.2.6"}, {"source_id": "UNHCR-GLOSSARY", "locator": "climate refugee"}]
+    }
+  ]
+}

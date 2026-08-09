@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "generated_from": [
+    "NOAA global CO2 annual mean",
+    "NOAA Annual Greenhouse Gas Index",
+    "NASA GISTEMP v4"
+  ],
+  "statistics": [
+    {
+      "x": "co2_ppm",
+      "y": "nasa_gistemp_anomaly_c_1951_1980",
+      "period": [
+        1979,
+        2025
+      ],
+      "n_years": 47,
+      "pearson_levels": 0.9515167210222032,
+      "spearman_levels": 0.9446501436345559,
+      "pearson_first_differences": 0.18914224396393392,
+      "pearson_trailing_10_year_means": 0.9962771393076474,
+      "interpretation_guardrail": "Levels and smoothed-series correlations are descriptive and inflated by shared trends/autocorrelation; first differences emphasize short-term variability and do not estimate equilibrium climate response. Causal attribution must use the assessed physical evidence in attribution files."
+    },
+    {
+      "x": "ln_co2_ppm",
+      "y": "nasa_gistemp_anomaly_c_1951_1980",
+      "period": [
+        1979,
+        2025
+      ],
+      "n_years": 47,
+      "pearson_levels": 0.9487364276861475,
+      "spearman_levels": 0.9446501436345559,
+      "pearson_first_differences": 0.2078969775405719,
+      "pearson_trailing_10_year_means": 0.9950636528456716,
+      "interpretation_guardrail": "Levels and smoothed-series correlations are descriptive and inflated by shared trends/autocorrelation; first differences emphasize short-term variability and do not estimate equilibrium climate response. Causal attribution must use the assessed physical evidence in attribution files."
+    },
+    {
+      "x": "forcing_total_long_lived_ghg_w_m2",
+      "y": "nasa_gistemp_anomaly_c_1951_1980",
+      "period": [
+        1979,
+        2024
+      ],
+      "n_years": 46,
+      "pearson_levels": 0.9344579598760944,
+      "spearman_levels": 0.9410821793488995,
+      "pearson_first_differences": 0.1319261151926773,
+      "pearson_trailing_10_year_means": 0.9903214202606482,
+      "interpretation_guardrail": "Levels and smoothed-series correlations are descriptive and inflated by shared trends/autocorrelation; first differences emphasize short-term variability and do not estimate equilibrium climate response. Causal attribution must use the assessed physical evidence in attribution files."
+    }
+  ],
+  "not_an_attribution_model": true
+}

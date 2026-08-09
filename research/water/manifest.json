@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "package_id": "us-freshwater-availability-use-and-options",
+  "as_of": "2026-08-02",
+  "geography": "United States, with selected basin, state, aquifer, and city case studies",
+  "scope": [
+    "national_freshwater_withdrawals_and_consumptive_use",
+    "household_and_public_supply",
+    "crop_irrigation",
+    "manufacturing_and_plastics",
+    "data_centers",
+    "surface_water_and_groundwater_stress",
+    "coastal_saltwater_intrusion",
+    "city_source_dependencies",
+    "desalination",
+    "atmospheric_water_generation",
+    "risk_horizons_and_information_gaps"
+  ],
+  "normative_files": [
+    "README.md",
+    "sources.json",
+    "claims.json",
+    "source-verification.json",
+    "source-link-check.json",
+    "accounting-boundaries.json",
+    "national-water-use.json",
+    "sectors/households.json",
+    "sectors/agriculture.json",
+    "sectors/manufacturing-plastics.json",
+    "sectors/data-centers.json",
+    "risk/city-source-dependencies.json",
+    "risk/risk-register.json",
+    "technologies/desalination.json",
+    "technologies/atmospheric-water-generation.json",
+    "cross-domain-findings.json",
+    "chart-contracts.json",
+    "gaps.json",
+    "summary.json",
+    "timeseries/usgs-historical-water-use-1950-2015.csv",
+    "timeseries/risk-horizons.csv",
+    "timeseries/technology-scale-scenarios.csv",
+    "timeseries/source-access.json",
+    "scripts/validate_water.py"
+  ],
+  "verification_standard": {
+    "headline_claim_checks_required": 3,
+    "check_1": "source_identity_and_existence",
+    "check_2": "exact_claim_locator_unit_baseline_and_scope",
+    "check_3": "independent_corroboration_or_recalculation_or_boundary_check",
+    "status_values": ["verified", "qualified", "rejected", "pending"]
+  },
+  "research_method_note": "The Firecrawl deep-research workflow was used for research design and initial discovery. When Firecrawl project credits were unavailable, the review continued through direct retrieval of official agency pages, reports, datasets, and DOI records. Headline claims are retained only with a three-part audit."
+}

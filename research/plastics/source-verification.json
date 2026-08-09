@@ -1,0 +1,174 @@
+{
+  "schema_version": "1.0.0",
+  "standard": "Each dashboard claim receives three checks: source identity/existence, claim fidelity, and independent corroboration, arithmetic reproduction, or boundary challenge.",
+  "audits": [
+    {
+      "claim_id": "PLS-US-001",
+      "checks": [
+        {"check": 1, "evidence": "University of California repository record, full One Earth article, authors, journal, and DOI 10.1016/j.oneear.2024.02.005 matched."},
+        {"check": 2, "evidence": "Summary directly states over 57 MMT produced/consumed in 2019 and less than 7% recovered for reuse."},
+        {"check": 3, "evidence": "Imports, exports, disposal, and stock arithmetic were inspected; EPA/CRS scope differences were retained rather than forced to match."}
+      ]
+    },
+    {
+      "claim_id": "PLS-US-002",
+      "checks": [
+        {"check": 1, "evidence": "The peer-reviewed national MFA and DOI were verified at the institutional repository."},
+        {"check": 2, "evidence": "Results identify PP 8.6, HDPE 7.9, LLDPE 5.7, and PVC 5.2 MMT as the most-consumed individual resins."},
+        {"check": 3, "evidence": "Ordering and units were independently transcribed and checked; the four values were not misrepresented as the national total."}
+      ]
+    },
+    {
+      "claim_id": "PLS-US-003",
+      "checks": [
+        {"check": 1, "evidence": "The same verified peer-reviewed MFA provides the application flow data."},
+        {"check": 2, "evidence": "Results report packaging 17.2 MMT and building/construction 8.3 MMT flowing into use."},
+        {"check": 3, "evidence": "Application values were boundary-checked against disposal values and labeled flows into use, not same-year waste."}
+      ]
+    },
+    {
+      "claim_id": "PLS-US-004",
+      "checks": [
+        {"check": 1, "evidence": "EPA's current material-specific page and linked 2018 table were retrieved directly."},
+        {"check": 2, "evidence": "EPA reports 35.68 generated, 3.09 recycled, 5.62 combusted, and 26.97 landfilled, in million U.S. tons."},
+        {"check": 3, "evidence": "3.09 + 5.62 + 26.97 = 35.68; CRS independently warns EPA and OECD/plastics totals use different scopes."}
+      ]
+    },
+    {
+      "claim_id": "PLS-ENV-001",
+      "checks": [
+        {"check": 1, "evidence": "National Academies report DOI 10.17226/26132 and full chapter were verified on the Academy site."},
+        {"check": 2, "evidence": "The assessment states the 1.13-2.24 MMT 2016 leakage range and the 914-species ingestion/entanglement count."},
+        {"check": 3, "evidence": "The leakage range was preserved as an estimate and the wildlife count was boundary-challenged so it is not presented as mortality or extinction."}
+      ]
+    },
+    {
+      "claim_id": "PLS-MFG-001",
+      "checks": [
+        {"check": 1, "evidence": "NIST-hosted Argonne report ANL/ESIA-24/3 and DOI 10.2172/2315023 were verified."},
+        {"check": 2, "evidence": "Sections 2.3.1-2.3.5 directly describe feedstocks, monomers, and polymerization for PET, PE, PP, and PVC."},
+        {"check": 3, "evidence": "Pathways were cross-checked against the report's process diagrams and kept separate from product conversion and additive formulation."}
+      ]
+    },
+    {
+      "claim_id": "PLS-WATER-001",
+      "checks": [
+        {"check": 1, "evidence": "Publisher article DOI 10.1016/j.resconrec.2023.107168 and matching 56-page supporting-information PDF were verified."},
+        {"check": 2, "evidence": "Figure S3 explicitly plots L/kg water consumption for PET, HDPE, and PP across four databases."},
+        {"check": 3, "evidence": "The source PDF was rendered and visually inspected; approximate minima, maxima, and means were independently transcribed and deliberately labeled figure-derived."}
+      ]
+    },
+    {
+      "claim_id": "PLS-WATER-002",
+      "checks": [
+        {"check": 1, "evidence": "The peer-reviewed database comparison and NIST LCA review both exist and were retrieved from publisher/federal records."},
+        {"check": 2, "evidence": "Section 3.4 reports significant discrepancies and specifically discusses cooling-water recycling and database construction."},
+        {"check": 3, "evidence": "The NIST review independently confirms life-cycle studies vary in functional units, boundaries, data, and methods, supporting the no-silent-average guardrail."}
+      ]
+    },
+    {
+      "claim_id": "PLS-WATER-003",
+      "checks": [
+        {"check": 1, "evidence": "The values trace to the verified journal supporting-information figure."},
+        {"check": 2, "evidence": "The calculation applies the figure's L/kg intensities to exactly 1,000,000 kg and preserves each range."},
+        {"check": 3, "evidence": "All liter and U.S.-gallon conversions are recomputed by the offline validator using 3.785411784 L/gal; replacement burdens are explicitly excluded."}
+      ]
+    },
+    {
+      "claim_id": "PLS-WATER-004",
+      "checks": [
+        {"check": 1, "evidence": "The journal comparison, NIST review, and Federal LCA Commons portal were verified as real records/resources."},
+        {"check": 2, "evidence": "The sources document incompatible resin estimates and the need for explicit functional units and inventories rather than supplying a national replacement total."},
+        {"check": 3, "evidence": "A boundary audit found missing U.S. replacement mass ratios, wash cycles, losses, geography, and water-quality terms; the claim is therefore marked pending rather than assigned a number."}
+      ]
+    },
+    {
+      "claim_id": "PLS-HEALTH-001",
+      "checks": [
+        {"check": 1, "evidence": "Current FDA page, WHO review, and EPA research page were retrieved from the issuing agencies."},
+        {"check": 2, "evidence": "FDA states current evidence does not demonstrate that levels detected in foods pose a human-health risk and identifies analytical limitations."},
+        {"check": 3, "evidence": "WHO and EPA independently identify method, exposure, and health-effect gaps; wording preserves uncertainty without declaring either safety or proven harm."}
+      ]
+    },
+    {
+      "claim_id": "PLS-HEALTH-002",
+      "checks": [
+        {"check": 1, "evidence": "NEJM article, DOI 10.1056/NEJMoa2309822, methods, results, and limitations were verified."},
+        {"check": 2, "evidence": "The article reports adjusted HR 4.53 with 95% CI 2.00-10.27 for its composite endpoint among patients with detected plaque particles."},
+        {"check": 3, "evidence": "Study design was independently boundary-checked: selected surgical cohort, observational detection, unknown source/route, and no causal randomization; all limitations appear in dashboard text."}
+      ]
+    },
+    {
+      "claim_id": "PLS-HEALTH-003",
+      "checks": [
+        {"check": 1, "evidence": "JAMA article DOI 10.1001/jama.2011.2034 and ATSDR PFAS health-effects page were verified."},
+        {"check": 2, "evidence": "Methods measured maternal and child serum PFCs and tetanus/diphtheria antibodies; they did not measure maternal microplastic ingestion."},
+        {"check": 3, "evidence": "ATSDR independently lists reduced antibody response to some vaccines among reported PFAS associations; the audit rejects both the wrong entity and the phrase vaccines did not take."}
+      ]
+    },
+    {
+      "claim_id": "PLS-HEALTH-004",
+      "checks": [
+        {"check": 1, "evidence": "NTP monographs/profiles and NIOSH isocyanate guidance were retrieved from official federal sources."},
+        {"check": 2, "evidence": "NTP classifications support vinyl chloride, styrene, and acrylonitrile hazard statements; NIOSH supports irritation, sensitization, and occupational asthma for isocyanates."},
+        {"check": 3, "evidence": "Entity and route were challenged separately: monomer/reactive precursor hazard was not transferred to quantified consumer risk from every finished polymer product."}
+      ]
+    },
+    {
+      "claim_id": "PLS-HEALTH-005",
+      "checks": [
+        {"check": 1, "evidence": "EPA research and TSCA compliance pages on fluorinated containers were retrieved directly."},
+        {"check": 2, "evidence": "EPA reports formation/leaching of eight PFAS from certain fluorination processes applied to HDPE containers."},
+        {"check": 3, "evidence": "The claim was narrowed to certain fluorinated HDPE processes and not generalized to nonfluorinated HDPE or every container."}
+      ]
+    },
+    {
+      "claim_id": "PLS-POLICY-001",
+      "checks": [
+        {"check": 1, "evidence": "Official European Commission, French ministry, German UBA, and Rwanda REMA pages were retrieved."},
+        {"check": 2, "evidence": "Each source documents a distinct mix of product restrictions, reuse/refill, deposits/collection, producer obligations, or exceptions."},
+        {"check": 3, "evidence": "Cross-jurisdiction comparison found continued plastic uses and scope limits in every case; plastic-free and realized-water-saving claims were rejected."}
+      ]
+    },
+    {
+      "claim_id": "PLS-SEA-001",
+      "checks": [
+        {"check": 1, "evidence": "Official DOE Billion-Ton chapter and DOI 10.23720/BT2023/2316176 were verified."},
+        {"check": 2, "evidence": "Section 7.2.4 reports 0.38 Gt dry weight per year at <=$1,000/t using the 50% productive-area assumption."},
+        {"check": 3, "evidence": "The report's cost optimism, nutrient, siting, and engineering caveats were inspected; biomass was not equated with finished polymer or forecast output."}
+      ]
+    },
+    {
+      "claim_id": "PLS-SEA-002",
+      "checks": [
+        {"check": 1, "evidence": "Official NOAA Fisheries seaweed-aquaculture page was retrieved."},
+        {"check": 2, "evidence": "NOAA reports more than 112,000 lb produced in Alaska in 2019 and describes the U.S. industry as developing."},
+        {"check": 3, "evidence": "The unit was audited as wet product and therefore prohibited from direct comparison with DOE dry-weight model outputs."}
+      ]
+    },
+    {
+      "claim_id": "PLS-SEA-003",
+      "checks": [
+        {"check": 1, "evidence": "ACS article DOI 10.1021/acs.iecr.5c03802, abstract, process boundary, and publication record were verified."},
+        {"check": 2, "evidence": "The study reports substantial pretreatment/extraction wastewater and higher modeled water use than LDPE for its Saccharina film."},
+        {"check": 3, "evidence": "Pilot and prospective seaweed LCAs plus the technical review independently show formulation and scale dependence; the claim is kept to one case, not the entire material class."}
+      ]
+    },
+    {
+      "claim_id": "PLS-STRATEGY-001",
+      "checks": [
+        {"check": 1, "evidence": "Official UNEP roadmap and NIST plastics LCA review were verified."},
+        {"check": 2, "evidence": "UNEP prioritizes elimination of problematic/unnecessary uses, reuse, recycling, and reorientation/diversification; NIST requires functional-unit comparison."},
+        {"check": 3, "evidence": "The hierarchy was challenged against critical medical, food, infrastructure, and safety functions, producing staged validation and stop conditions rather than a blanket ban."}
+      ]
+    },
+    {
+      "claim_id": "PLS-STRATEGY-002",
+      "checks": [
+        {"check": 1, "evidence": "ACS Environmental Science & Technology article DOI 10.1021/acs.est.3c05191 was verified."},
+        {"check": 2, "evidence": "The paper reports plastics had lower greenhouse-gas impacts in 15 of 16 modeled applications."},
+        {"check": 3, "evidence": "Scope was challenged: the study is GHG-focused and cannot decide toxicity, water, litter, or biodiversity; it is used only to demonstrate burden shifting."}
+      ]
+    }
+  ]
+}

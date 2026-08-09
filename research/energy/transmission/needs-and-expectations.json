@@ -1,0 +1,142 @@
+{
+  "title": "U.S. transmission needs, load-growth expectations, and comparison rules",
+  "as_of": "2026-08-01",
+  "interpretation": "These studies answer different questions. They are juxtaposed for dashboard comparison but are not spliced into one synthetic forecast.",
+  "study_comparison": [
+    {
+      "study_id": "NTPS-2024",
+      "source_id": "SRC-DOE-NTPS24",
+      "publisher": "U.S. Department of Energy",
+      "horizon": 2050,
+      "geography": "United States",
+      "method": ["capacity expansion", "production cost", "AC power flow", "stress analysis"],
+      "scenario_count": 96,
+      "retained_results": [
+        {
+          "metric": "total_transmission_relative_to_2020",
+          "range_min": 2.4,
+          "range_max": 3.5,
+          "unit": "multiple_of_2020_grid",
+          "context": "central decarbonization futures with accelerated transmission frameworks"
+        },
+        {
+          "metric": "modeled_system_cost_savings_accelerated_expansion",
+          "range_min": 270,
+          "range_max": 490,
+          "unit": "billion_USD_through_2050",
+          "context": "study assumptions and modeled counterfactual"
+        },
+        {
+          "metric": "modeled_system_cost_savings_regional_coordination",
+          "range_min": 170,
+          "range_max": 380,
+          "unit": "billion_USD_through_2050",
+          "context": "study assumptions and modeled counterfactual"
+        }
+      ],
+      "dashboard_label": "Modeled expansion pathway—not forecast"
+    },
+    {
+      "study_id": "NEEDS-2023",
+      "source_id": "SRC-DOE-NEEDS23",
+      "publisher": "U.S. Department of Energy",
+      "horizon": 2035,
+      "geography": "United States regions and interregional interfaces",
+      "method": "review and synthesis of published planning studies",
+      "retained_results": [
+        {"metric": "median_within_region_expansion", "value": 20, "unit": "percent_by_2035", "context": "moderate_load_moderate_clean_energy"},
+        {"metric": "median_within_region_expansion", "value": 64, "unit": "percent_by_2035", "context": "high_clean_energy"},
+        {"metric": "median_within_region_expansion", "value": 128, "unit": "percent_by_2035", "context": "high_load"}
+      ],
+      "dashboard_label": "Final 2023 needs synthesis"
+    },
+    {
+      "study_id": "NEEDS-DRAFT-2026",
+      "source_id": "SRC-DOE-NEEDS-DRAFT26",
+      "publisher": "U.S. Department of Energy",
+      "status": "draft_for_comment",
+      "geography": "United States regions and interfaces",
+      "retained_results": [
+        {"metric": "load_growth", "value": "accelerating", "value_semantics": "qualitative_draft_finding"},
+        {"metric": "congestion_temporal_concentration", "value": 5, "unit": "percent_of_hours", "value_semantics": "draft_summary_says_congestion_is_often_concentrated_in_this_small_share"},
+        {"metric": "areas_highlighted_for_within_region_congestion_potential", "value": ["NYISO", "NorthernGrid South", "MISO"]}
+      ],
+      "dashboard_label": "DRAFT—subject to revision"
+    },
+    {
+      "study_id": "NERC-LTRA-2025",
+      "source_id": "SRC-NERC-LTRA25",
+      "publisher": "NERC",
+      "horizon": 2035,
+      "geography": "North American assessment areas",
+      "retained_results": [
+        {"metric": "summer_peak_growth", "value": 224, "unit": "GW_2025_to_2035"},
+        {"metric": "winter_peak_growth", "value": 246, "unit": "GW_2025_to_2035"},
+        {"metric": "retirements", "value": 105, "unit": "GW_more_than", "context": "announced or expected retirements cited in the assessment"}
+      ],
+      "major_driver": "large commercial and industrial loads, especially data centers",
+      "dashboard_label": "Reliability planning projection—not observed load"
+    },
+    {
+      "study_id": "NERC-ITCS",
+      "source_id": "SRC-NERC-ITCS",
+      "publisher": "NERC",
+      "geography": "Eastern, Western, and ERCOT interregional interfaces",
+      "method": "reliability stress cases and interface-specific transfer additions",
+      "retained_results": "Use the interface-level tables and maps; do not publish a fabricated single national GW total.",
+      "dashboard_label": "Reliability transfer study—not economic plan"
+    }
+  ],
+  "load_shape_cross_reference": {
+    "historical_dataset": "DS-EIA-930-LOAD-2024",
+    "historical_scope": "53 demand-reporting balancing authorities, 13 EIA regions, 83 reported BA-subregions",
+    "coincident_reporting_footprint_2024": {
+      "complete_utc_hours": 8756,
+      "mean_demand_mw": 478055.928,
+      "peak_demand_mw": 745020,
+      "peak_utc_hour_ending": "2024-07-15T22:00",
+      "load_factor": 0.641669,
+      "boundary": "EIA-930 reporting footprint, not a perfectly bounded Lower-48 control total"
+    },
+    "analytical_join": [
+      "Use UTC hour ending to compare coincident BA and regional demand.",
+      "Use each BA's local hour ending for customer-facing daily shape.",
+      "Join forecasts to the same geography, weather year, and accounting boundary before comparing peaks.",
+      "Compare peak MW, energy TWh, ramp MW per hour, and seasonal timing separately.",
+      "A national annual TWh forecast cannot be converted to a corridor requirement without spatial production-cost and power-flow modeling."
+    ],
+    "forecast_gap": "No public, unified BA/subregion hourly forecast through 2050-2070 was found. The dashboard must keep annual long-run projections separate from regional ten-year peak forecasts and historical hourly observations."
+  },
+  "dashboard_panels": [
+    {
+      "panel_id": "transmission-vs-load-growth",
+      "chart": "indexed_lines_and_range_band",
+      "x": "year",
+      "y": "index_or_percent_change",
+      "series": ["demand_peak_by_NERC_area", "energy_demand_by_scenario", "transmission_expansion_by_DOE_scenario"],
+      "requirements": ["common base year", "never interpolate sparse milestones without a visible line-style flag", "show scenario bands", "show horizon and geography"]
+    },
+    {
+      "panel_id": "congestion-hours",
+      "chart": "duration_curve",
+      "x": "ranked_hour",
+      "y": "congestion_cost_or_shadow_price",
+      "status": "data_gap",
+      "reason": "National public hourly interface shadow-price data are not uniform; ISO/RTO-specific acquisition is required."
+    },
+    {
+      "panel_id": "capacity-semantics",
+      "chart": "grouped_marker_plot",
+      "x": "corridor",
+      "y": "MW",
+      "series": ["project_rating", "equipment_limit", "energy_import_capability", "capacity_import_capability", "firm_service_right"],
+      "requirements": ["no stacked totals", "tooltip includes source and study year", "zero accreditation is visually distinct from missing"]
+    }
+  ],
+  "key_conclusions": [
+    "Load growth and generation siting make more transmission valuable in every major study reviewed, but the amount is scenario-dependent.",
+    "The next transmission problem is not only annual energy delivery: noncoincident regional peaks, steep ramps, winterization, and a small number of high-congestion hours determine many network needs.",
+    "Interregional transfer improves resilience only when neighboring regions have available resources during the same stress event; transfer capability is not generation.",
+    "A corridor catalog can communicate scale, but a defensible needs comparison ultimately requires nodal or zonal production-cost and AC contingency analysis."
+  ]
+}

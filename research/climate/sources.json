@@ -1,0 +1,626 @@
+{
+  "schema_version": "1.0.0",
+  "accessed_on": "2026-08-02",
+  "sources": [
+    {
+      "source_id": "IPCC-AR6-SYR-SPM",
+      "organization": "Intergovernmental Panel on Climate Change",
+      "title": "Climate Change 2023: Synthesis Report, Summary for Policymakers",
+      "year": 2023,
+      "url": "https://www.ipcc.ch/report/ar6/syr/summary-for-policymakers/",
+      "doi": "10.59327/IPCC/AR6-9789291691647",
+      "source_type": "intergovernmental_assessment",
+      "locators": ["A.1", "A.1.1", "A.1.2", "B.1.1", "B.1.2", "Figure SPM.3"],
+      "supports": ["human_causation", "attributable_warming", "risk_escalation", "future_warming"]
+    },
+    {
+      "source_id": "IPCC-AR6-WGI-SPM",
+      "organization": "Intergovernmental Panel on Climate Change",
+      "title": "Climate Change 2021: The Physical Science Basis, Summary for Policymakers",
+      "year": 2021,
+      "url": "https://www.ipcc.ch/report/ar6/wg1/chapter/summary-for-policymakers/",
+      "source_type": "intergovernmental_assessment",
+      "locators": ["A.1", "A.3.4", "A.4.1", "B.5.3", "B.5.4", "D.1.1", "Figure SPM.6", "Table SPM.1"],
+      "supports": ["attribution", "tcre", "extremes", "tropical_cyclones", "sea_level", "scenario_warming"]
+    },
+    {
+      "source_id": "IPCC-AR6-WGI-FAQ31",
+      "organization": "Intergovernmental Panel on Climate Change",
+      "title": "FAQ 3.1 Figure 1: Observed warming is only reproduced in simulations including human influence",
+      "year": 2021,
+      "url": "https://www.ipcc.ch/report/ar6/wg1/figures/chapter-3/faq-3-1-figure-1/",
+      "source_type": "assessment_figure",
+      "locators": ["figure caption"],
+      "supports": ["detection_and_attribution_fingerprint"]
+    },
+    {
+      "source_id": "IPCC-AR6-WGI-CH11",
+      "organization": "Intergovernmental Panel on Climate Change",
+      "title": "AR6 Working Group I Chapter 11: Weather and Climate Extreme Events in a Changing Climate",
+      "year": 2021,
+      "url": "https://www.ipcc.ch/report/ar6/wg1/chapter/chapter-11/",
+      "source_type": "intergovernmental_assessment_chapter",
+      "locators": ["Executive Summary: Extreme Storms, Including Tropical Cyclones", "11.7.1"],
+      "supports": ["tropical_cyclone_observations", "tropical_cyclone_projections", "extremes"]
+    },
+    {
+      "source_id": "IPCC-AR6-WGII-SPM",
+      "organization": "Intergovernmental Panel on Climate Change",
+      "title": "Climate Change 2022: Impacts, Adaptation and Vulnerability, Summary for Policymakers",
+      "year": 2022,
+      "url": "https://www.ipcc.ch/report/ar6/wg2/chapter/summary-for-policymakers/",
+      "source_type": "intergovernmental_assessment",
+      "locators": ["B.4", "B.4.1", "B.4.2", "Figure SPM.3"],
+      "supports": ["biodiversity", "water", "risk_escalation"]
+    },
+    {
+      "source_id": "IPCC-AR6-WGII-TS",
+      "organization": "Intergovernmental Panel on Climate Change",
+      "title": "Climate Change 2022: Impacts, Adaptation and Vulnerability, Technical Summary",
+      "year": 2022,
+      "url": "https://www.ipcc.ch/report/ar6/wg2/chapter/technical-summary/",
+      "source_type": "intergovernmental_assessment",
+      "locators": ["TS.B.2.4", "TS.B.6", "TS.B.6.1", "TS.C.1.5"],
+      "supports": ["displacement", "biodiversity", "compound_risk"]
+    },
+    {
+      "source_id": "IPCC-AR6-WGII-CH2",
+      "organization": "Intergovernmental Panel on Climate Change",
+      "title": "AR6 Working Group II Chapter 2: Terrestrial and Freshwater Ecosystems and Their Services",
+      "year": 2022,
+      "url": "https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-2/",
+      "source_type": "intergovernmental_assessment_chapter",
+      "locators": ["2.5", "Figure 2.6", "Figure 2.7", "Figure 2.11"],
+      "supports": ["biodiversity", "extinction_risk"]
+    },
+    {
+      "source_id": "IPCC-AR6-WGII-CH4",
+      "organization": "Intergovernmental Panel on Climate Change",
+      "title": "AR6 Working Group II Chapter 4: Water",
+      "year": 2022,
+      "url": "https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-4/",
+      "source_type": "intergovernmental_assessment_chapter",
+      "locators": ["Executive Summary", "Box 4.1", "4.4.3", "4.5.7"],
+      "supports": ["water_scarcity", "water_extremes", "water_nonclimate_drivers"]
+    },
+    {
+      "source_id": "IPCC-AR6-WGII-CH5",
+      "organization": "Intergovernmental Panel on Climate Change",
+      "title": "AR6 Working Group II Chapter 5: Food, Fibre and Other Ecosystem Products",
+      "year": 2022,
+      "url": "https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-5/",
+      "source_type": "intergovernmental_assessment_chapter",
+      "locators": ["Executive Summary", "5.4.1", "Figure 5.7"],
+      "supports": ["food_productivity", "crop_yields", "fisheries"]
+    },
+    {
+      "source_id": "IPCC-AR6-WGII-CH7",
+      "organization": "Intergovernmental Panel on Climate Change",
+      "title": "AR6 Working Group II Chapter 7: Health, Wellbeing and the Changing Structure of Communities",
+      "year": 2022,
+      "url": "https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-7/",
+      "source_type": "intergovernmental_assessment_chapter",
+      "locators": ["7.2.6.1", "Figure 7.7"],
+      "supports": ["migration_data_limits", "weather_related_displacement"]
+    },
+    {
+      "source_id": "IPCC-SR15-CH3",
+      "organization": "Intergovernmental Panel on Climate Change",
+      "title": "Global Warming of 1.5 C, Chapter 3",
+      "year": 2018,
+      "url": "https://www.ipcc.ch/sr15/chapter/chapter-3/",
+      "source_type": "intergovernmental_assessment_chapter",
+      "locators": ["3.4.4", "Box 3.4"],
+      "supports": ["coral_reef_loss", "ecosystem_risk"]
+    },
+    {
+      "source_id": "NOAA-AGGI-2025",
+      "organization": "NOAA Global Monitoring Laboratory",
+      "title": "Annual Greenhouse Gas Index",
+      "year": 2025,
+      "url": "https://gml.noaa.gov/aggi/aggi.html",
+      "source_type": "official_observational_product",
+      "locators": ["2024 Results", "Table 2", "Data Sources"],
+      "supports": ["radiative_forcing", "gas_contributions", "observational_causal_chain"]
+    },
+    {
+      "source_id": "NOAA-CO2-GLOBAL",
+      "organization": "NOAA Global Monitoring Laboratory",
+      "title": "Trends in Atmospheric Carbon Dioxide",
+      "year": 2026,
+      "url": "https://gml.noaa.gov/ccgg/trends/data.html",
+      "source_type": "official_observational_dataset",
+      "locators": ["global annual mean CO2 data", "Mauna Loa annual mean data"],
+      "supports": ["atmospheric_co2"]
+    },
+    {
+      "source_id": "NASA-GISTEMP-V4",
+      "organization": "NASA Goddard Institute for Space Studies",
+      "title": "GISS Surface Temperature Analysis version 4",
+      "year": 2026,
+      "url": "https://data.giss.nasa.gov/gistemp/",
+      "source_type": "official_observational_dataset",
+      "locators": ["Data Downloads", "Global-mean monthly, seasonal, and annual means"],
+      "supports": ["global_surface_temperature"]
+    },
+    {
+      "source_id": "NOAA-GLOBALTEMP-V61",
+      "organization": "NOAA National Centers for Environmental Information",
+      "title": "NOAAGlobalTemp version 6.1.0",
+      "year": 2026,
+      "url": "https://www.ncei.noaa.gov/products/land-based-station/noaa-global-temp",
+      "doi": "10.25921/vvaa-wq11",
+      "source_type": "official_observational_dataset",
+      "locators": ["Time Series", "Data Citation"],
+      "supports": ["independent_temperature_check"]
+    },
+    {
+      "source_id": "WMO-STATE-CLIMATE-2025",
+      "organization": "World Meteorological Organization",
+      "title": "State of the Global Climate 2025",
+      "year": 2026,
+      "url": "https://public.wmo.int/publication-series/state-of-global-climate/state-of-global-climate-2025",
+      "source_type": "intergovernmental_observational_synthesis",
+      "locators": ["Key messages", "global mean near-surface temperature"],
+      "supports": ["2025_temperature", "annual_vs_long_term_threshold", "energy_imbalance"]
+    },
+    {
+      "source_id": "GCB-2025-DATA",
+      "organization": "Global Carbon Project",
+      "title": "Global Carbon Budget v2025 dataset",
+      "year": 2025,
+      "url": "https://globalcarbonbudget.org/datahub/the-latest-gcb-data-2025/",
+      "source_type": "scientific_data_product",
+      "locators": ["Global Carbon Budget v2025 xlsx", "Fair Use Statements"],
+      "supports": ["co2_emissions", "cumulative_co2"]
+    },
+    {
+      "source_id": "GCB-2025-PAPER",
+      "organization": "Global Carbon Project / Earth System Science Data",
+      "title": "Global Carbon Budget 2025",
+      "year": 2026,
+      "url": "https://essd.copernicus.org/articles/18/3211/2026/",
+      "source_type": "peer_reviewed_data_description",
+      "locators": ["data description article"],
+      "supports": ["co2_budget_methods", "dataset_citation"]
+    },
+    {
+      "source_id": "PRIMAP-HIST-V27",
+      "organization": "Potsdam Institute lineage / Zenodo",
+      "title": "The PRIMAP-hist national historical emissions time series (1750-2024) v2.7",
+      "year": 2025,
+      "url": "https://zenodo.org/records/17090760",
+      "doi": "10.5281/zenodo.17090760",
+      "source_type": "scientific_data_product",
+      "locators": ["Description", "Files", "Notes", "Data format description"],
+      "supports": ["multi_gas_emissions"]
+    },
+    {
+      "source_id": "NOAA-GFDL-HURRICANES",
+      "organization": "NOAA Geophysical Fluid Dynamics Laboratory",
+      "title": "Global Warming and Hurricanes",
+      "year": 2024,
+      "url": "https://www.gfdl.noaa.gov/global-warming-and-hurricanes/",
+      "source_type": "official_scientific_synthesis",
+      "locators": ["Main Conclusions", "Figure 14", "2 degree Celsius global warming scenario"],
+      "supports": ["hurricane_rainfall", "hurricane_intensity", "hurricane_frequency_caveat"]
+    },
+    {
+      "source_id": "KNUTSON-ET-AL-2020",
+      "organization": "Bulletin of the American Meteorological Society / NOAA repository",
+      "title": "Tropical Cyclones and Climate Change Assessment: Part II: Projected Response to Anthropogenic Warming",
+      "year": 2020,
+      "url": "https://repository.library.noaa.gov/view/noaa/29916",
+      "doi": "10.1175/BAMS-D-18-0194.1",
+      "source_type": "peer_reviewed_expert_assessment",
+      "locators": ["Abstract", "2 C anthropogenic global warming assessment"],
+      "supports": ["hurricane_temperature_response"]
+    },
+    {
+      "source_id": "IPBES-GLOBAL-2019",
+      "organization": "Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services",
+      "title": "Global Assessment Report on Biodiversity and Ecosystem Services, Summary for Policymakers",
+      "year": 2019,
+      "url": "https://files.ipbes.net/ipbes-web-prod-public-files/inline/files/ipbes_global_assessment_report_summary_for_policymakers.pdf",
+      "doi": "10.5281/zenodo.3553458",
+      "source_type": "intergovernmental_assessment",
+      "locators": ["Section B", "five direct drivers"],
+      "supports": ["biodiversity_nonclimate_drivers"]
+    },
+    {
+      "source_id": "IPBES-IPCC-WORKSHOP-2021",
+      "organization": "IPBES and IPCC",
+      "title": "IPBES-IPCC Co-Sponsored Workshop Report on Biodiversity and Climate Change",
+      "year": 2021,
+      "url": "https://files.ipbes.net/ipbes-web-prod-public-files/2021-06/2021_IPCC-IPBES_scientific_outcome_20210612.pdf",
+      "source_type": "joint_scientific_workshop_report",
+      "locators": ["Scientific Outcome", "Sections 2-4"],
+      "supports": ["climate_biodiversity_interaction", "nonclimate_stressors"]
+    },
+    {
+      "source_id": "ORTIZ-BOBEA-ET-AL-2021",
+      "organization": "Nature Climate Change",
+      "title": "Anthropogenic climate change has slowed global agricultural productivity growth",
+      "year": 2021,
+      "url": "https://www.nature.com/articles/s41558-021-01000-1",
+      "doi": "10.1038/s41558-021-01000-1",
+      "source_type": "peer_reviewed_research",
+      "locators": ["Abstract", "baseline model"],
+      "supports": ["agricultural_productivity_attribution"]
+    },
+    {
+      "source_id": "ZHAO-ET-AL-2017",
+      "organization": "Proceedings of the National Academy of Sciences",
+      "title": "Temperature increase reduces global yields of major crops in four independent estimates",
+      "year": 2017,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28811375/",
+      "doi": "10.1073/pnas.1701762114",
+      "source_type": "peer_reviewed_meta_analysis",
+      "locators": ["Abstract"],
+      "supports": ["crop_yield_temperature_sensitivity"]
+    },
+    {
+      "source_id": "USDA-EIB-268",
+      "organization": "USDA Economic Research Service",
+      "title": "World Agricultural Production, Resource Use, and Productivity, 1961-2020",
+      "year": 2024,
+      "url": "https://ers.usda.gov/sites/default/files/_laserfiche/publications/108650/EIB-268.pdf",
+      "source_type": "government_technical_report",
+      "locators": ["discussion of Ortiz-Bobea et al. 2021"],
+      "supports": ["independent_food_productivity_check"]
+    },
+    {
+      "source_id": "WMO-WATER-2024",
+      "organization": "World Meteorological Organization",
+      "title": "State of Global Water Resources 2024",
+      "year": 2025,
+      "url": "https://wmo.int/resources/publication-series/state-of-global-water-resources/state-of-global-water-resources-2024",
+      "source_type": "intergovernmental_observational_synthesis",
+      "locators": ["Key messages", "river basin conditions", "glacier losses"],
+      "supports": ["water_cycle_observations", "glacier_water_storage"]
+    },
+    {
+      "source_id": "UNESCO-WWDR-2024",
+      "organization": "UNESCO World Water Assessment Programme",
+      "title": "United Nations World Water Development Report 2024: Water for Prosperity and Peace",
+      "year": 2024,
+      "url": "https://www.unesco.org/en/reports/wwdr/2024",
+      "source_type": "un_assessment",
+      "locators": ["Facts and figures", "water availability and stress"],
+      "supports": ["current_water_scarcity", "water_demand", "governance"]
+    },
+    {
+      "source_id": "NOAA-GLOBAL-SEA-LEVEL",
+      "organization": "NOAA Climate.gov",
+      "title": "Climate Change: Global Sea Level",
+      "year": 2023,
+      "url": "https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level",
+      "source_type": "government_scientific_synthesis",
+      "locators": ["observed global sea level", "Future sea level rise"],
+      "supports": ["sea_level_observations", "sea_level_drivers", "local_variation"]
+    },
+    {
+      "source_id": "NASA-SSH-GMSL",
+      "organization": "NASA JPL PO.DAAC",
+      "title": "NASA-SSH Global Mean Sea Level from Simple Gridded Sea Surface Height",
+      "year": 2025,
+      "url": "https://podaac.jpl.nasa.gov/dataset/NASA_SSH_GMSL_INDICATOR",
+      "source_type": "official_observational_dataset",
+      "locators": ["Description", "Coverage", "Data Access"],
+      "supports": ["satellite_sea_level_record"]
+    },
+    {
+      "source_id": "UNHCR-GLOSSARY",
+      "organization": "United Nations High Commissioner for Refugees",
+      "title": "UNHCR Master Glossary of Terms",
+      "year": 2026,
+      "url": "https://www.unhcr.org/glossary",
+      "source_type": "official_legal_terminology",
+      "locators": ["climate refugee", "person displaced in the context of disasters and climate change"],
+      "supports": ["migration_terminology", "refugee_legal_scope"]
+    },
+    {
+      "source_id": "UNHCR-MYTHS-FACTS",
+      "organization": "United Nations High Commissioner for Refugees",
+      "title": "Climate change and displacement: the myths and the facts",
+      "year": 2023,
+      "url": "https://www.unhcr.org/news/stories/climate-change-and-displacement-myths-and-facts",
+      "source_type": "official_policy_explainer",
+      "locators": ["Myth 1", "Myth 2"],
+      "supports": ["internal_displacement", "climate_refugee_caveat"]
+    },
+    {
+      "source_id": "WORLD-BANK-GROUNDSWELL-II",
+      "organization": "World Bank",
+      "title": "Groundswell Part 2: Acting on Internal Climate Migration",
+      "year": 2021,
+      "url": "https://www.worldbank.org/en/news/press-release/2021/09/13/climate-change-could-force-216-million-people-to-migrate-within-their-own-countries-by-2050",
+      "source_type": "scenario_model_report",
+      "locators": ["216 million", "six regions", "80 percent"],
+      "supports": ["internal_climate_migration_scenario"]
+    },
+    {
+      "source_id": "NATURE-OHENHEN-2024",
+      "organization": "Nature",
+      "title": "Disappearing cities on US coasts",
+      "year": 2024,
+      "url": "https://www.nature.com/articles/s41586-024-07038-3",
+      "doi": "10.1038/s41586-024-07038-3",
+      "source_type": "peer_reviewed_research",
+      "locators": ["Future socioeconomic impact", "Land subsidence is a critical driver", "Methods: Inundation model", "Extended Data Figure 5"],
+      "supports": ["us_city_2050_exposure", "miami_2050_exposure", "new_orleans_undefended_topographic_exposure", "subsidence", "claim_audit_2070"]
+    },
+    {
+      "source_id": "NATURE-KULP-STRAUSS-2019",
+      "organization": "Nature Communications",
+      "title": "New elevation data triple estimates of global vulnerability to sea-level rise and coastal flooding",
+      "year": 2019,
+      "url": "https://www.nature.com/articles/s41467-019-12808-z",
+      "doi": "10.1038/s41467-019-12808-z",
+      "source_type": "peer_reviewed_research",
+      "locators": ["Abstract", "Results: Global", "Methods", "Data availability"],
+      "supports": ["global_coastal_exposure", "elevation_model_uncertainty", "defence_caveat"]
+    },
+    {
+      "source_id": "NATURE-SEEGER-MINDERHOUD-2026",
+      "organization": "Nature",
+      "title": "Sea level much higher than assumed in most coastal hazard assessments",
+      "year": 2026,
+      "url": "https://www.nature.com/articles/s41586-026-10196-1",
+      "doi": "10.1038/s41586-026-10196-1",
+      "source_type": "peer_reviewed_systematic_review_and_meta_analysis",
+      "locators": ["Abstract", "Most coastal hazard studies lack rigour", "Coastal studies underestimate exposure"],
+      "supports": ["vertical_datum_guardrail", "global_exposure_method_uncertainty"]
+    },
+    {
+      "source_id": "NATURE-HAUER-2016",
+      "organization": "Nature Climate Change",
+      "title": "Millions projected to be at risk from sea-level rise in the continental United States",
+      "year": 2016,
+      "url": "https://www.nature.com/articles/nclimate2961",
+      "doi": "10.1038/nclimate2961",
+      "source_type": "peer_reviewed_scenario_model",
+      "locators": ["Abstract", "corrected version", "Methods", "Supplementary Information"],
+      "supports": ["us_population_at_risk_2100", "hauer_migration_input"]
+    },
+    {
+      "source_id": "NATURE-HAUER-2017",
+      "organization": "Nature Climate Change",
+      "title": "Migration induced by sea-level rise could reshape the US population landscape",
+      "year": 2017,
+      "url": "https://www.nature.com/articles/nclimate3271",
+      "doi": "10.1038/nclimate3271",
+      "source_type": "peer_reviewed_scenario_model",
+      "locators": ["Abstract", "Table 1", "Figures 1-3", "Supplementary Table 1"],
+      "supports": ["us_slr_migration_destinations_2100", "receiving_city_scenarios", "miami_new_orleans_net_migration_high_end"]
+    },
+    {
+      "source_id": "OPENICPSR-HAUER-2017",
+      "organization": "Inter-university Consortium for Political and Social Research",
+      "title": "Sea level rise induced migration could reshape the US population landscape",
+      "year": 2017,
+      "url": "https://www.openicpsr.org/openicpsr/project/100413/version/V3/view",
+      "doi": "10.3886/E100413V3",
+      "source_type": "author_deposited_replication_data",
+      "locators": ["Project Description", "origin-destination-output.txt", "Version V3"],
+      "supports": ["hauer_migration_replication_provenance"]
+    },
+    {
+      "source_id": "PLOS-ROBINSON-2020",
+      "organization": "PLOS ONE",
+      "title": "Modeling migration patterns in the USA under sea level rise",
+      "year": 2020,
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0227436",
+      "doi": "10.1371/journal.pone.0227436",
+      "source_type": "peer_reviewed_scenario_model",
+      "locators": ["SLR-based climate impacts model", "Results", "Discussion"],
+      "supports": ["slr_migration_timing_scenarios", "indirect_county_impacts", "model_uncertainty"]
+    },
+    {
+      "source_id": "NOAA-SLR-ITF-2022",
+      "organization": "U.S. Interagency Sea Level Rise Task Force / NOAA",
+      "title": "Global and Regional Sea Level Rise Scenarios for the United States: Updated Mean Projections and Extreme Water Level Probabilities Along U.S. Coastlines",
+      "year": 2022,
+      "url": "https://earth.gov/sealevel/us/resources/2022-sea-level-rise-technical-report/",
+      "source_type": "federal_interagency_technical_report_and_dataset",
+      "locators": ["Key Takeaways", "Data Download", "station and 1-degree-grid projection tables", "high-tide-flood projections"],
+      "supports": ["local_relative_sea_level_scenarios", "high_tide_flood_days", "us_2050_sea_level"]
+    },
+    {
+      "source_id": "NOAA-COOPS-DPAPI",
+      "organization": "NOAA Center for Operational Oceanographic Products and Services",
+      "title": "CO-OPS Derived Product API",
+      "year": 2026,
+      "url": "https://api.tidesandcurrents.noaa.gov/dpapi/prod/",
+      "source_type": "official_observational_and_projection_api",
+      "locators": ["Sea Level Trends", "Sea Level Rise Projections", "High Tide Flooding - Decadal Projections"],
+      "supports": ["observed_relative_sea_level_trends", "station_scenarios", "station_high_tide_flood_days"]
+    },
+    {
+      "source_id": "MIAMI-DADE-LMS-2025",
+      "organization": "Miami-Dade County",
+      "title": "2025 Local Mitigation Strategy, Part 1: The Strategy",
+      "year": 2025,
+      "url": "https://www.miamidade.gov/resources/emergency/documents/lms-part-1-the-strategy.pdf",
+      "source_type": "official_local_hazard_mitigation_plan",
+      "locators": ["Sea Level Rise, pp. 117-133", "p. 118 unified projection", "Saltwater Intrusion, pp. 107-116"],
+      "supports": ["miami_dade_2070_planning_range", "miami_dade_groundwater", "saltwater_intrusion", "drainage_and_infrastructure_impacts"]
+    },
+    {
+      "source_id": "MIAMI-DADE-SLR-STRATEGY",
+      "organization": "Miami-Dade County",
+      "title": "Sea Level Rise Strategy",
+      "year": 2021,
+      "url": "https://www.miamidade.gov/global/environment/resilience/sea-level-rise-strategy.page",
+      "source_type": "official_local_adaptation_strategy",
+      "locators": ["five complementary adaptation approaches", "Adaptation Action Areas"],
+      "supports": ["miami_adaptation_pathways", "adaptation_conditionality"]
+    },
+    {
+      "source_id": "MIAMI-DADE-SALTWATER",
+      "organization": "Miami-Dade County",
+      "title": "Saltwater Intrusion",
+      "year": 2026,
+      "url": "https://www.miamidade.gov/global/water/conservation/saltwater-intrusion.page",
+      "source_type": "official_local_water_resource_guidance",
+      "locators": ["Biscayne Aquifer", "water demand and sea-level-rise pressures"],
+      "supports": ["miami_drinking_water_risk", "water_conservation_adaptation"]
+    },
+    {
+      "source_id": "MIAMI-DADE-SEPTIC",
+      "organization": "Miami-Dade County",
+      "title": "Improve Our Sewer, Water, and Stormwater Systems",
+      "year": 2026,
+      "url": "https://www.miamidade.gov/initiative/thrive305/blue-green-jobs/action7-6.page",
+      "source_type": "official_local_infrastructure_program",
+      "locators": ["Issue Statement and Context", "approximately 120,000 properties served by septic systems"],
+      "supports": ["rising_groundwater_septic_failure", "public_health_and_water_quality"]
+    },
+    {
+      "source_id": "USGS-MIAMI-HYDROLOGY-2014",
+      "organization": "U.S. Geological Survey",
+      "title": "Hydrologic conditions in urban Miami-Dade County, Florida, and the effect of groundwater pumpage and increased sea level on canal leakage and regional groundwater flow",
+      "year": 2014,
+      "url": "https://pubs.usgs.gov/publication/sir20145162",
+      "source_type": "federal_scientific_investigation_report",
+      "locators": ["Abstract", "model scenarios", "Biscayne aquifer and canal exchange"],
+      "supports": ["miami_groundwater_response", "canal_drainage_limitations"]
+    },
+    {
+      "source_id": "USACE-MIAMI-BACK-BAY-2024",
+      "organization": "U.S. Army Corps of Engineers, Jacksonville District",
+      "title": "Miami-Dade Back Bay Coastal Storm Risk Management Final Integrated Feasibility Report and Environmental Assessment",
+      "year": 2024,
+      "url": "https://www.saj.usace.army.mil/Missions/Civil-Works/Shore-Protection/Dade-County/Miami-Dade-Back-Bay-Coastal-Storm-Risk-Management-Feasibility-Study/State-and-Agency-Review/",
+      "source_type": "federal_feasibility_report",
+      "locators": ["Final Integrated Feasibility Report", "Engineering Appendix", "recommended plan"],
+      "supports": ["miami_storm_surge_adaptation", "structural_nonstructural_nature_based_measures"]
+    },
+    {
+      "source_id": "USACE-NOLA-HSDRRS",
+      "organization": "U.S. Army Corps of Engineers, New Orleans District",
+      "title": "Hurricane and Storm Damage Risk Reduction System",
+      "year": 2026,
+      "url": "https://www.mvn.usace.army.mil/Missions/HSDRRS.aspx",
+      "source_type": "official_federal_infrastructure_description",
+      "locators": ["100-Year Level of Risk Reduction", "residual risk", "design factors"],
+      "supports": ["new_orleans_engineered_protection", "one_percent_annual_chance_definition", "residual_risk"]
+    },
+    {
+      "source_id": "NOLA-READY-FLOOD",
+      "organization": "City of New Orleans",
+      "title": "Flood",
+      "year": 2026,
+      "url": "https://ready.nola.gov/hazard-mitigation/hazards/flooding/",
+      "source_type": "official_local_hazard_plan",
+      "locators": ["coastal flooding", "below-sea-level topography", "drainage pump capacity"],
+      "supports": ["new_orleans_below_sea_level", "pump_dependence", "flood_mechanisms"]
+    },
+    {
+      "source_id": "USGS-NOLA-SUBSIDENCE-2003",
+      "organization": "U.S. Geological Survey",
+      "title": "Sea-Level Rise and Subsidence: Implications for Flooding in New Orleans, Louisiana",
+      "year": 2003,
+      "url": "https://www.usgs.gov/publications/sea-level-rise-and-subsidence-implications-flooding-new-orleans-louisiana",
+      "source_type": "federal_scientific_book_chapter",
+      "locators": ["Abstract", "1951-1995 survey epochs", "2100 depth implication"],
+      "supports": ["new_orleans_historical_subsidence", "below_sea_level_depth"]
+    },
+    {
+      "source_id": "LOUISIANA-CPRA-2023",
+      "organization": "Louisiana Coastal Protection and Restoration Authority",
+      "title": "Louisiana's 2023 Coastal Master Plan Data Viewer",
+      "year": 2023,
+      "url": "https://mpdv.coastal.la.gov/",
+      "source_type": "official_state_scenario_model_and_plan",
+      "locators": ["Land Change Without Action", "Flood Depth Without Action", "Expected Annual Damage", "77 projects"],
+      "supports": ["louisiana_50_year_land_loss", "storm_surge_damage", "adaptation_benefits"]
+    },
+    {
+      "source_id": "NCA5-COASTS",
+      "organization": "U.S. Global Change Research Program",
+      "title": "Fifth National Climate Assessment, Chapter 9: Coastal Effects",
+      "year": 2023,
+      "url": "https://nca2023.globalchange.gov/chapter/9/",
+      "doi": "10.7930/NCA5.2023.CH9",
+      "source_type": "federal_assessment_chapter",
+      "locators": ["Key Messages 9.1-9.3", "insurance and housing affordability", "coastal infrastructure"],
+      "supports": ["coastal_habitability_pathways", "insurance_affordability", "infrastructure_and_ecosystem_cascades"]
+    },
+    {
+      "source_id": "NCA5-SOUTHEAST",
+      "organization": "U.S. Global Change Research Program",
+      "title": "Fifth National Climate Assessment, Chapter 22: Southeast",
+      "year": 2023,
+      "url": "https://nca2023.globalchange.gov/chapter/22/",
+      "doi": "10.7930/NCA5.2023.CH22",
+      "source_type": "federal_assessment_chapter",
+      "locators": ["Sea Level Rise and Flooding in the Southeast", "Figure 22.5", "Key Message 22.1"],
+      "supports": ["southeast_relative_sea_level", "high_tide_flooding", "homes_and_displacement"]
+    },
+    {
+      "source_id": "NCA5-SOCIAL-SYSTEMS",
+      "organization": "U.S. Global Change Research Program",
+      "title": "Fifth National Climate Assessment, Chapter 20: Social Systems and Justice",
+      "year": 2023,
+      "url": "https://nca2023.globalchange.gov/chapter/20/",
+      "doi": "10.7930/NCA5.2023.CH20",
+      "source_type": "federal_assessment_chapter",
+      "locators": ["Migration and displacement", "Figure 20.5", "housing recovery and inequity"],
+      "supports": ["migration_multicausality", "housing_and_recovery_inequity", "governance_conditioning"]
+    },
+    {
+      "source_id": "IPCC-AR6-WGII-CH6",
+      "organization": "Intergovernmental Panel on Climate Change",
+      "title": "AR6 Working Group II Chapter 6: Cities, Settlements and Key Infrastructure",
+      "year": 2022,
+      "url": "https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-6/",
+      "source_type": "intergovernmental_assessment_chapter",
+      "locators": ["6.2.3.3 Migration and Differentiated Vulnerability", "coastal cities and infrastructure"],
+      "supports": ["slow_onset_internal_displacement", "migration_uncertainty", "urban_infrastructure_cascades"]
+    },
+    {
+      "source_id": "URBAN-GULF-MIGRATION-2023",
+      "organization": "Urban Institute",
+      "title": "Climate Migration and Community Institutional Capacity in the US Gulf Coast",
+      "year": 2023,
+      "url": "https://www.urban.org/sites/default/files/2023-02/Climate%20Migration%20and%20Receiving%20Community%20Institutional%20Capacity%20in%20the%20US%20Gulf%20Coast.pdf",
+      "source_type": "mixed_methods_policy_research",
+      "locators": ["pp. 17-20 case contexts", "Table 5", "pp. 33-45 cross-study analysis and recommendations"],
+      "supports": ["houston_katrina_reception", "receiving_city_institutional_domains", "fast_and_slow_migration", "localized_strain"]
+    },
+    {
+      "source_id": "AJPH-BRODIE-2006",
+      "organization": "American Journal of Public Health",
+      "title": "Experiences of Hurricane Katrina Evacuees in Houston Shelters: Implications for Future Planning",
+      "year": 2006,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1522113/",
+      "doi": "10.2105/AJPH.2005.084475",
+      "source_type": "peer_reviewed_survey",
+      "locators": ["Methods", "Results", "Discussion"],
+      "supports": ["evacuee_health_and_income_profile", "health_access", "evacuation_planning"]
+    },
+    {
+      "source_id": "PUBMED-KATRINA-HOUSTON-2009",
+      "organization": "Journal of Health Care for the Poor and Underserved",
+      "title": "Physical and mental health status of Hurricane Katrina evacuees in Houston in 2005 and 2006",
+      "year": 2009,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19395846/",
+      "doi": "10.1353/hpu.0.0135",
+      "source_type": "peer_reviewed_longitudinal_comparison",
+      "locators": ["Abstract: Objectives, Methods, Results, Conclusions"],
+      "supports": ["receiving_city_health_demand", "displacement_mental_health", "care_access"]
+    },
+    {
+      "source_id": "NBER-KATRINA-SCHOOLS-2009",
+      "organization": "National Bureau of Economic Research",
+      "title": "Katrina's Children: Evidence on the Structure of Peer Effects from Hurricane Evacuees",
+      "year": 2009,
+      "url": "https://www.nber.org/system/files/working_papers/w15291/w15291.pdf",
+      "doi": "10.3386/w15291",
+      "source_type": "peer_reviewed_economics_working_paper",
+      "locators": ["Houston school enrollment context", "school-level concentration", "cost and class-size findings"],
+      "supports": ["receiving_city_school_capacity", "concentrated_local_effects"]
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "framework_id": "power-generation-problem-framework-v1",
+  "as_of": "2026-08-01",
+  "scope": ["World", "United States"],
+  "purpose": "Represent problems and tradeoffs in current and future power generation without collapsing unlike evidence into a single score.",
+  "evidence": [
+    "CLM-SYS-001",
+    "CLM-HLT-001",
+    "CLM-REG-002",
+    "CLM-SUS-001",
+    "CLM-NUC-003"
+  ],
+  "unit_of_analysis": {
+    "preferred": "technology-site-vintage-configuration-operating-context",
+    "minimum_fallback": "technology family with explicit uncertainty",
+    "reason": "Fuel supply, plant design, cooling, location, grid conditions, pollution controls, operating mode, and regulation can materially change impacts within one technology family."
+  },
+  "dimensions": [
+    {
+      "dimension_id": "technical",
+      "question": "Can the resource and plant deliver the required energy and grid services when and where needed?",
+      "subdimensions": [
+        {"id": "resource_availability", "metrics": ["resource profile", "fuel availability", "hydrology", "weather correlation", "seasonality"]},
+        {"id": "operating_profile", "metrics": ["capacity factor", "dispatchability", "ramp rate", "minimum stable load", "start time", "planned outage", "forced outage"]},
+        {"id": "system_services", "metrics": ["energy", "capacity value", "frequency response", "voltage support", "inertia or grid-forming capability", "black start"]},
+        {"id": "integration", "metrics": ["interconnection time", "transmission need", "distribution upgrade", "curtailment", "storage or flexible-demand complement"]},
+        {"id": "resilience", "metrics": ["fuel-security exposure", "extreme heat", "cold weather", "drought", "wildfire", "flood", "storm", "cyber and physical security"]},
+        {"id": "delivery_risk", "metrics": ["construction duration", "schedule variance", "cost variance", "supply-chain readiness", "workforce readiness", "technology maturity"]}
+      ],
+      "non_substitutable_metrics": ["nameplate capacity", "annual generation", "capacity factor", "accredited capacity", "outage rate", "flexibility"],
+      "display_rule": "Do not infer reliability from capacity factor or nameplate capacity alone.",
+      "source_ids": ["SRC-EIA-CAPACITY-FACTORS", "SRC-NERC-LTRA25", "SRC-NERC-IBR-DIST25", "SRC-LBNL-QUEUES26"]
+    },
+    {
+      "dimension_id": "health",
+      "question": "What routine, accident, occupational, upstream, downstream, and distributional health effects are supported by evidence?",
+      "subdimensions": [
+        {"id": "routine_air_pollution", "metrics": ["SO2", "NOx", "PM2.5", "ozone precursor", "mercury", "other hazardous air pollutants"]},
+        {"id": "occupational", "metrics": ["injury", "fatality", "toxic exposure", "radiation dose", "heat and confined-space hazards"]},
+        {"id": "upstream_and_downstream", "metrics": ["mining", "drilling", "fuel processing", "transport", "waste management", "decommissioning"]},
+        {"id": "accident_and_emergency", "metrics": ["event probability", "direct injury", "direct exposure", "evacuation", "care disruption", "mental health", "long-term monitoring"]},
+        {"id": "community_distribution", "metrics": ["facility proximity", "baseline vulnerability", "exposure pathway", "cumulative burden", "Tribal and environmental-justice context"]}
+      ],
+      "attribution_hierarchy": [
+        "emission or hazard",
+        "transport or pathway",
+        "ambient concentration or contact",
+        "individual dose or exposure",
+        "dose-response or epidemiological relationship",
+        "attributable outcome with uncertainty"
+      ],
+      "display_rules": [
+        "Do not convert emissions or proximity directly into deaths.",
+        "Do not assign WHO's all-source ambient-air-pollution burden wholly to electricity.",
+        "Separate routine operation, direct accident radiation, evacuation, disrupted care, and mental-health effects for nuclear.",
+        "Show whether a health value is measured, modeled, attributable, or contextual."
+      ],
+      "source_ids": ["SRC-EPA-POWER-HEALTH", "SRC-EPA-NEIGHBORS", "SRC-WHO-AMBIENT24", "SRC-WHO-FUKUSHIMA", "SRC-UNSCEAR-FUKUSHIMA", "SRC-WHO-CHERNOBYL"]
+    },
+    {
+      "dimension_id": "regulatory",
+      "question": "Which authorities, standards, licenses, permits, market rules, and legal statuses constrain deployment and operation?",
+      "subdimensions": [
+        {"id": "air", "examples": ["criteria pollutants", "mercury and hazardous air pollutants", "greenhouse gases"]},
+        {"id": "water", "examples": ["effluent limits", "cooling-water intake", "water rights", "thermal discharge"]},
+        {"id": "waste", "examples": ["coal ash", "spent nuclear fuel", "hazardous materials", "decommissioning"]},
+        {"id": "land_and_wildlife", "examples": ["NEPA", "species consultation", "historic preservation", "federal land rights-of-way", "offshore leasing"]},
+        {"id": "grid_and_market", "examples": ["interconnection", "transmission planning", "cost allocation", "reliability standards", "capacity accreditation"]},
+        {"id": "technology_specific", "examples": ["NRC reactor licensing", "FERC hydropower licensing", "EPA Class VI storage wells"]}
+      ],
+      "status_vocabulary": ["effective", "partially_effective", "implementation_pending", "proposed", "stayed", "vacated", "repealed_in_part", "superseded", "not_applicable", "unknown_reverify"],
+      "required_fields": ["jurisdiction", "authority", "instrument", "status", "effective_date", "as_of", "technology_scope", "legal_scope_note", "source_id", "reverification_interval_days"],
+      "display_rules": [
+        "A proposal is never displayed as a final rule.",
+        "A delayed compliance date is not displayed as repeal of the underlying requirement.",
+        "A planning or licensing rule is not displayed as a constructed or operating project.",
+        "Every regulatory statement carries an as-of date and update-risk flag."
+      ],
+      "source_ids": ["SRC-FERC-ORDER2023", "SRC-FERC-ORDER1920", "SRC-EPA-MATS-REPEAL26", "SRC-EPA-ELG24", "SRC-EPA-GHG-POWER24-26", "SRC-NRC-PART53-26"]
+    },
+    {
+      "dimension_id": "sustainability",
+      "question": "What burdens and constraints appear across the full life cycle, and can the system persist without shifting unacceptable burdens across place, time, or population?",
+      "subdimensions": [
+        {"id": "climate", "metrics": ["gCO2e/kWh lifecycle", "methane leakage", "land-carbon change", "captured fraction versus lifecycle reduction"]},
+        {"id": "water", "metrics": ["withdrawal", "consumption", "thermal discharge", "water quality", "drought sensitivity"]},
+        {"id": "land_and_ecology", "metrics": ["direct footprint", "spacing area", "habitat fragmentation", "fish passage", "wildlife collision", "reservoir transformation"]},
+        {"id": "materials", "metrics": ["bulk materials", "critical minerals", "fuel-cycle material", "supply concentration", "recycling"]},
+        {"id": "waste_and_end_of_life", "metrics": ["coal ash", "combustion residuals", "spent nuclear fuel", "module and blade waste", "decommissioning", "repository status"]},
+        {"id": "intergenerational_and_distributional", "metrics": ["long-lived waste", "legacy sites", "community consent", "Indigenous and Tribal rights", "future monitoring and liability"]}
+      ],
+      "system_boundary": "cradle-to-grave unless a narrower boundary is explicitly labeled",
+      "display_rules": [
+        "Operational emissions are not lifecycle emissions.",
+        "Water withdrawal and consumption are separate metrics.",
+        "Technical recyclability is not the actual recycling rate.",
+        "Renewable classification is not a proof of low lifecycle impact.",
+        "Low-carbon classification is not a proof of zero impact.",
+        "Interim storage is not permanent disposal."
+      ],
+      "source_ids": ["SRC-IPCC-AR5-LCA", "SRC-NLR-LCA171", "SRC-UNECE-LCA21", "SRC-USGS-THERMO-WATER", "SRC-IEA-CRITICAL-MINERALS24", "SRC-IEA-RECYCLING24"]
+    }
+  ],
+  "cross_dimension_examples": [
+    {
+      "issue": "fossil dispatchability",
+      "technical_benefit": "fuel-stored generation can be scheduled and, for many gas units, ramped",
+      "health_cost": "combustion pollution and upstream exposure",
+      "regulatory_context": "air, water, ash, greenhouse-gas, pipeline, and fuel rules",
+      "sustainability_cost": "high lifecycle emissions, methane, extraction, water, and waste",
+      "evidence": ["CLM-HLT-001", "CLM-HLT-003", "CLM-SUS-001"]
+    },
+    {
+      "issue": "variable renewable integration",
+      "technical_benefit": "no fuel requirement and low marginal operating emissions",
+      "technical_cost": "weather dependence, location dependence, inverter behavior, and grid expansion",
+      "regulatory_context": "interconnection, transmission, land, offshore, wildlife, and local siting",
+      "sustainability_cost": "land, wildlife, materials, and end-of-life systems",
+      "evidence": ["CLM-SYS-002", "CLM-SYS-003", "CLM-SUS-003", "CLM-SUS-004", "CLM-SUS-005"]
+    },
+    {
+      "issue": "nuclear firm low-carbon generation",
+      "technical_benefit": "high annual utilization and fuel-stored output",
+      "technical_cost": "large-unit outage exposure, aging, capital, schedule, and specialized supply chain",
+      "health_context": "low routine monitored exposure but rare severe-accident and emergency-response consequences require separate treatment",
+      "regulatory_context": "reactor licensing, aging management, security, emergency planning, cooling water, and waste",
+      "sustainability_cost": "uranium fuel cycle, cooling water, decommissioning, and unresolved permanent spent-fuel disposal",
+      "evidence": ["CLM-NUC-002", "CLM-NUC-003", "CLM-NUC-004", "CLM-NUC-007", "CLM-NUC-010", "CLM-NUC-014"]
+    },
+    {
+      "issue": "hydropower dispatch and storage",
+      "technical_benefit": "many reservoir plants can dispatch energy and provide grid services",
+      "technical_cost": "generation depends on hydrology and project constraints",
+      "health_context": "site-specific worker, dam-safety, water-quality, and community pathways",
+      "regulatory_context": "long-lived federal licensing and environmental conditions",
+      "sustainability_cost": "river connectivity, fish passage, sediment, habitat, land, and reservoir impacts",
+      "evidence": ["CLM-SUS-006", "CLM-REG-006"]
+    }
+  ],
+  "comparison_policy": {
+    "single_composite_score": "prohibited_by_default",
+    "allowed": "Only after publishing weights, normalization, uncertainty, missing-data treatment, stakeholder rationale, and sensitivity analysis.",
+    "preferred_visuals": ["small multiples", "parallel dimensions", "technology-specific issue cards", "scenario tradeoff plots", "maps with screening caveats"],
+    "missing_data_display": "unknown or evidence sparse; never zero"
+  }
+}

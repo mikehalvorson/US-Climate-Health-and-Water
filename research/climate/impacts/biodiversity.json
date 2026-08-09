@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "headline": "Extinction and ecosystem-transformation risks rise with every increment of warming, while land and sea use, direct exploitation, pollution, and invasive species remain major non-climate drivers.",
+  "terrestrial_species_very_high_extinction_risk": [
+    {"warming_c": 1.5, "percent_range": [3, 14], "median_percent": 9},
+    {"warming_c": 2.0, "percent_range": [3, 18], "median_percent": 10},
+    {"warming_c": 3.0, "percent_range": [3, 29], "median_percent": 12},
+    {"warming_c": 4.0, "percent_range": [3, 39], "median_percent": 13},
+    {"warming_c": 5.0, "percent_range": [3, 48], "median_percent": 15}
+  ],
+  "other_temperature_responses": [
+    {"metric": "warm_water_coral_reef_additional_decline", "warming_c": 1.5, "percent_range": [70, 90]},
+    {"metric": "warm_water_coral_reef_additional_decline", "warming_c": 2.0, "percent_lower_bound": 99},
+    {"metric": "endemic_species_extinction_risk_in_biodiversity_hotspots", "comparison": "2C_vs_1.5C", "minimum_multiplier": 2},
+    {"metric": "endemic_species_extinction_risk_in_biodiversity_hotspots", "comparison": "3C_vs_1.5C", "minimum_multiplier": 10}
+  ],
+  "driver_context": {
+    "global_direct_drivers_in_descending_impact_order": [
+      "changes_in_land_and_sea_use",
+      "direct_exploitation_of_organisms",
+      "climate_change",
+      "pollution",
+      "invasive_alien_species"
+    ],
+    "interpretation": "The ranking is IPBES's global assessment across terrestrial, freshwater, and marine systems; ordering and relative importance can differ by ecosystem and region."
+  },
+  "not_supported": [
+    "Interpreting modeled very-high-risk percentages as observed extinction percentages.",
+    "Claiming climate change is the sole or currently largest driver of all global biodiversity loss.",
+    "Adding ranges from different studies as though they describe independent species sets."
+  ],
+  "sources": [
+    {"source_id": "IPCC-AR6-WGII-SPM", "locator": "B.4.1 and Figure SPM.3"},
+    {"source_id": "IPCC-AR6-WGII-CH2", "locator": "2.5 and Figures 2.6, 2.7, 2.11"},
+    {"source_id": "IPCC-SR15-CH3", "locator": "Executive Summary and 3.4.4"},
+    {"source_id": "IPBES-GLOBAL-2019", "locator": "Summary for Policymakers B.10-B.14"},
+    {"source_id": "IPBES-IPCC-WORKSHOP-2021", "locator": "Scientific outcome section 2"}
+  ]
+}

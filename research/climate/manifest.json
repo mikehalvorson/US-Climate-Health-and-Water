@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0.0",
+  "package_id": "climate-causes-and-impacts",
+  "as_of": "2026-08-01",
+  "scope": [
+    "greenhouse_gas_emissions",
+    "atmospheric_concentrations",
+    "radiative_forcing",
+    "global_temperature",
+    "causal_attribution",
+    "temperature_extremes",
+    "tropical_cyclones",
+    "biodiversity",
+    "food_systems",
+    "freshwater",
+    "sea_level",
+    "migration_and_displacement",
+    "new_orleans_and_miami_coastal_risk",
+    "coastal_city_adaptation",
+    "sea_level_migration_destinations",
+    "receiving_city_capacity"
+  ],
+  "normative_files": [
+    "sources.json",
+    "claims.json",
+    "source-verification.json",
+    "attribution/causal-chain.json",
+    "attribution/ghg-temperature-relationship.json",
+    "impacts/temperature-risk-ladder.json",
+    "impacts/hurricanes.json",
+    "impacts/biodiversity.json",
+    "impacts/food-systems.json",
+    "impacts/freshwater.json",
+    "impacts/sea-level.json",
+    "impacts/displacement.json",
+    "timeseries/source-access.json",
+    "timeseries/series-schema.json",
+    "timeseries/scenario-warming.csv",
+    "timeseries/impact-dose-response.csv",
+    "chart-contracts.json",
+    "gaps.json",
+    "summary.json",
+    "scripts/validate_climate.py",
+    "coastal-cities/README.md",
+    "coastal-cities/manifest.json",
+    "coastal-cities/scripts/validate_coastal_cities.py"
+  ],
+  "generated_files": [
+    "timeseries/normalized/observed-ghg-temperature.csv",
+    "timeseries/normalized/observed-correlation-statistics.json",
+    "timeseries/normalized/global-co2-emissions-and-cumulative-1850-2024.csv",
+    "timeseries/normalized/global-ghg-emissions-primap-hist-v2.7.csv",
+    "timeseries/normalized/raw-file-sha256.json"
+  ],
+  "verification_standard": {
+    "headline_claim_checks_required": 3,
+    "checks": [
+      "source_identity_and_existence",
+      "exact_claim_and_locator_fidelity",
+      "independent_corroboration_or_underlying_data_check"
+    ],
+    "status_values": ["verified", "qualified", "rejected", "pending"]
+  },
+  "research_method_note": "Firecrawl deep-research was used for initial multi-angle discovery and full-page extraction until its project credits were exhausted. All retained headline claims were then checked against primary IPCC, NOAA, NASA, WMO, IPBES, UNHCR, World Bank, peer-reviewed, or official dataset pages through direct browsing and local source acquisition."
+}

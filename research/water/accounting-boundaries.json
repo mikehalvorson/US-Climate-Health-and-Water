@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0.0",
+  "canonical_units": {
+    "flow_national": "million_gallons_per_day",
+    "flow_display": "billion_gallons_per_day",
+    "annual_planning": "acre_feet_per_year",
+    "volume": ["gallons", "liters", "cubic_meters", "acre_feet"],
+    "energy_intensity": "kilowatt_hours_per_cubic_meter"
+  },
+  "conversions": {
+    "liters_per_us_gallon": 3.785411784,
+    "liters_per_cubic_meter": 1000,
+    "gallons_per_acre_foot": 325851.429,
+    "days_per_year_for_scenarios": 365
+  },
+  "definitions": [
+    {
+      "term": "withdrawal",
+      "definition": "Water removed from a surface-water or groundwater source.",
+      "dashboard_guardrail": "Do not label as consumption; once-through cooling can dominate withdrawals while returning most water."
+    },
+    {
+      "term": "consumptive_use",
+      "definition": "Water evaporated, transpired, incorporated into products or crops, consumed by people or livestock, or otherwise removed from the immediate water environment.",
+      "dashboard_guardrail": "A return flow can be degraded or spatially displaced without being consumptive use; quality needs a separate indicator."
+    },
+    {
+      "term": "public_supply_withdrawal",
+      "definition": "Water withdrawn by a public supplier before treatment, distribution, and delivery to customers.",
+      "dashboard_guardrail": "Customer deliveries are components of this withdrawal and cannot be added to it."
+    },
+    {
+      "term": "self_supplied_use",
+      "definition": "Water withdrawn directly by the user from a source rather than delivered by a public supplier.",
+      "dashboard_guardrail": "USGS industrial totals cited here are self-supplied and omit public-supply deliveries."
+    },
+    {
+      "term": "direct_water_use",
+      "definition": "Water used at the facility or end-use location.",
+      "dashboard_guardrail": "For data centers, direct cooling/humidification water and indirect electricity water must be shown separately."
+    },
+    {
+      "term": "indirect_water_footprint",
+      "definition": "Upstream water attributed to electricity, fuels, materials, or other inputs.",
+      "dashboard_guardrail": "Use for attribution. Do not add to national withdrawals if upstream sector withdrawals are already included."
+    },
+    {
+      "term": "capacity",
+      "definition": "Maximum design production rate under stated conditions.",
+      "dashboard_guardrail": "Desalination and AWG capacities are not annual yields and do not demonstrate reliability."
+    },
+    {
+      "term": "natural_supply",
+      "definition": "Modeled renewable water generated or available through natural hydrologic processes for the defined spatial and temporal unit.",
+      "dashboard_guardrail": "Definitions differ by assessment; managed storage, imports, transfers, reuse, and groundwater mining require explicit treatment."
+    }
+  ],
+  "comparable_products": [
+    {
+      "product": "USGS Circular 1441",
+      "source": {"source_id": "USGS-CIR1441", "locator": "Tables 1, 7, 14 and historical summary tables"},
+      "year_or_period": "2015",
+      "geography": "United States plus territories as documented",
+      "categories": "All major withdrawal categories",
+      "best_use": "National sector/source snapshot and 1950–2015 withdrawal trend",
+      "do_not_use_for": "Claiming current 2026 use or complete national consumptive use"
+    },
+    {
+      "product": "USGS Professional Paper 1894-D",
+      "source": {"source_id": "USGS-PP1894D", "locator": "Tables 1–4 and data release"},
+      "year_or_period": "2010–2020 monthly and annual",
+      "geography": "Conterminous United States",
+      "categories": "Crop irrigation, public supply, thermoelectric power",
+      "best_use": "Time-varying withdrawal and consumptive use for three sectors",
+      "do_not_use_for": "A complete national total across manufacturing, mining, livestock, aquaculture, and self-supplied domestic use"
+    },
+    {
+      "product": "USGS National Water Availability Assessment",
+      "source": {"source_id": "USGS-NWAA-2026", "locator": "Release summary and linked data products"},
+      "year_or_period": "2009–2020",
+      "geography": "Approximately 80,000 watersheds",
+      "categories": "Natural supply, demand, and stress indicators",
+      "best_use": "Geographic screening and watershed mapping",
+      "do_not_use_for": "Predicting utility failure or assigning an aquifer depletion year"
+    }
+  ],
+  "aggregation_rules": [
+    "National 2015 category withdrawals may be summed only within a single Circular 1441 table and boundary.",
+    "PP1894-D 2010–20 modeled values may be summed across its three covered sectors but must be labeled covered-sector subtotal.",
+    "Direct data-center water may be compared with national sector flows after unit conversion; indirect electricity water must be separately allocated.",
+    "A desalination-equivalent plant count is a scale illustration, not a siting, cost, energy, brine, or permitting feasibility assessment.",
+    "Plastics water savings require a product-service counterfactual and cannot be calculated from industrial withdrawals alone."
+  ],
+  "source_refs": [
+    {"source_id": "USGS-CIR1441"},
+    {"source_id": "USGS-PP1894D"},
+    {"source_id": "USGS-NWAA-2026"}
+  ]
+}

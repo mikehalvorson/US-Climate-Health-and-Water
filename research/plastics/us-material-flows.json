@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0.0",
+  "primary_baseline": {
+    "year": 2019,
+    "geography": "United States",
+    "unit": "million_metric_tons",
+    "scope": "All durable and single-use plastics modeled in the national material-flow analysis",
+    "domestic_production": 57.0,
+    "domestic_production_qualifier": "greater_than; source text says over 57",
+    "exports": 12.1,
+    "imports_resin_and_finished_products": 12.0,
+    "domestic_consumption": 57.0,
+    "domestic_consumption_qualifier": "greater_than; source text says over 57",
+    "disposed": 48.0,
+    "addition_to_in_use_stock": 8.8,
+    "recovered_for_reuse_percent": 7.0,
+    "recovered_for_reuse_qualifier": "less_than",
+    "source": {
+      "source_id": "US-PLASTICS-MFA-2019",
+      "locator": "Summary and Results: National flows"
+    }
+  },
+  "leading_resins_by_consumption": [
+    {
+      "rank": 1,
+      "resin_id": "PP",
+      "million_metric_tons": 8.6,
+      "measurement": "modeled_consumption",
+      "source": {"source_id": "US-PLASTICS-MFA-2019", "locator": "Results: National flows"}
+    },
+    {
+      "rank": 2,
+      "resin_id": "HDPE",
+      "million_metric_tons": 7.9,
+      "measurement": "modeled_consumption",
+      "source": {"source_id": "US-PLASTICS-MFA-2019", "locator": "Results: National flows"}
+    },
+    {
+      "rank": 3,
+      "resin_id": "LLDPE",
+      "million_metric_tons": 5.7,
+      "measurement": "modeled_consumption",
+      "source": {"source_id": "US-PLASTICS-MFA-2019", "locator": "Results: National flows"}
+    },
+    {
+      "rank": 4,
+      "resin_id": "PVC",
+      "million_metric_tons": 5.2,
+      "measurement": "modeled_consumption",
+      "source": {"source_id": "US-PLASTICS-MFA-2019", "locator": "Results: National flows"}
+    }
+  ],
+  "major_use_categories": [
+    {
+      "category": "packaging",
+      "million_metric_tons_into_use": 17.2,
+      "source": {"source_id": "US-PLASTICS-MFA-2019", "locator": "Results: National flows"}
+    },
+    {
+      "category": "building_and_construction",
+      "million_metric_tons_into_use": 8.3,
+      "source": {"source_id": "US-PLASTICS-MFA-2019", "locator": "Results: National flows"}
+    },
+    {
+      "category": "other_end_use_markets",
+      "million_metric_tons_into_use": 10.4,
+      "source": {"source_id": "US-PLASTICS-MFA-2019", "locator": "Results: National flows"},
+      "quality_flag": "poorly_resolved_category"
+    }
+  ],
+  "disposal_destination_percent_of_48_mmt": [
+    {"destination": "landfill", "percent": 77},
+    {"destination": "combustion_with_energy_recovery", "percent": 13},
+    {"destination": "material_recovery_facilities", "percent": 6},
+    {"destination": "electronic_waste_recycling", "percent": 2},
+    {"destination": "scrap_film_collection", "percent": 1},
+    {"destination": "other_beneficial_reuse", "percent": 1}
+  ],
+  "disposal_source": {"source_id": "US-PLASTICS-MFA-2019", "locator": "Results: National flows"},
+  "separate_epa_msw_baseline": {
+    "year": 2018,
+    "geography": "United States",
+    "unit": "million_US_short_tons",
+    "scope": "Plastic in municipal solid waste; do not combine with the 2019 all-plastics MFA",
+    "generated": 35.68,
+    "recycled": 3.09,
+    "recycling_rate_percent": 8.7,
+    "combusted_with_energy_recovery": 5.62,
+    "landfilled": 26.97,
+    "source": {"source_id": "EPA-PLASTICS-MSW-2018", "locator": "1960-2018 table"}
+  },
+  "dashboard_rules": [
+    "Use the 2019 MFA for resin rankings and economy-wide flow structure.",
+    "Use the 2018 EPA series only for the MSW trend and label U.S. short tons.",
+    "Do not subtract EPA MSW values from MFA values or merge their recovery percentages.",
+    "Show the source year beside every number; no current-year inference is permitted."
+  ]
+}

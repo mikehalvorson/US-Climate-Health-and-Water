@@ -1,0 +1,193 @@
+{
+  "schema_version": "1.0.0",
+  "risk_type_vocabulary": ["current_condition", "observed_chronic", "episodic_hazard", "regulatory_deadline", "planning_counterfactual", "scenario_model", "infrastructure_target"],
+  "risks": [
+    {
+      "risk_id": "WRSK-NWAA-2009-2020",
+      "geography": "United States watershed screening",
+      "risk_type": "current_condition",
+      "evidence_period": "2009-2020",
+      "manifestation_horizon": "already_observed_in_assessment_period",
+      "metric": {"people_millions": 27, "population_share_percent": 8},
+      "finding": "Demand consistently approaches or exceeds natural supply in assessed areas.",
+      "severity": "high_for_exposed_areas",
+      "confidence": "high_for_indicator; utility consequences require local analysis",
+      "source_refs": [{"source_id": "USGS-NWAA-2026"}, {"source_id": "USGS-NWAA-DATA"}]
+    },
+    {
+      "risk_id": "WRSK-COLORADO-2027",
+      "geography": "Colorado River Basin",
+      "risk_type": "regulatory_deadline",
+      "manifestation_horizon": "2027",
+      "finding": "New post-2026 operating rules must govern reservoir releases and shortages beginning with water year 2027.",
+      "severity": "very_high_governance_and_allocation",
+      "confidence": "high_that_rules_change; outcome_pending",
+      "source_refs": [{"source_id": "USBR-POST2026"}]
+    },
+    {
+      "risk_id": "WRSK-COLORADO-2060-LEGACY",
+      "geography": "Colorado River Basin",
+      "risk_type": "scenario_model",
+      "manifestation_horizon": "2060",
+      "metric": {"median_supply_demand_imbalance_million_acre_feet_per_year": 3.2},
+      "finding": "Legacy basin-study scenarios illustrated a large structural imbalance if demand and supply pathways diverged.",
+      "severity": "high",
+      "confidence": "legacy_scenario_not_current_forecast",
+      "source_refs": [{"source_id": "USBR-BASIN-STUDY"}]
+    },
+    {
+      "risk_id": "WRSK-PHOENIX-AMA-100Y",
+      "geography": "Phoenix Active Management Area, Arizona",
+      "risk_type": "scenario_model",
+      "manifestation_horizon": "100_year_assured_supply_model",
+      "metric": {"unmet_groundwater_demand_million_acre_feet": 4.86},
+      "finding": "Modeled groundwater supply is insufficient for all projected groundwater-based development, leading the state to constrain new determinations.",
+      "severity": "high_for_new_groundwater_dependent_growth",
+      "confidence": "official_model; not_city_utility_failure",
+      "source_refs": [{"source_id": "USGS-PHOENIX-AMA-2026"}, {"source_id": "PHOENIX-WATER-SOURCES"}]
+    },
+    {
+      "risk_id": "WRSK-HIGH-PLAINS-2100",
+      "geography": "High Plains aquifer",
+      "risk_type": "scenario_model",
+      "manifestation_horizon": "2100",
+      "metric": {"current_irrigated_area_unable_to_support_irrigation_percent": 24, "area_square_kilometers": 22000},
+      "finding": "A substantial spatial subset of currently irrigated land loses modeled irrigation viability.",
+      "severity": "very_high_for_affected_agricultural_communities",
+      "confidence": "peer_reviewed_scenario; spatially_heterogeneous",
+      "source_refs": [{"source_id": "USDA-HPA-2020"}, {"source_id": "USGS-HPA-SIR2023"}]
+    },
+    {
+      "risk_id": "WRSK-HALE-2030-2080",
+      "geography": "Hale County, Texas",
+      "risk_type": "planning_counterfactual",
+      "manifestation_horizon": "2030-2080",
+      "metric": {"existing_supply_acre_feet_per_year_2030": 123819, "existing_supply_acre_feet_per_year_2080": 29691, "decline_percent": 76.02},
+      "finding": "Plan assumptions produce a steep decline in existing supply, primarily reflecting groundwater limits.",
+      "severity": "very_high",
+      "confidence": "official_plan; not_all_wells_fail",
+      "source_refs": [{"source_id": "TWDB-REGION-O-2026"}]
+    },
+    {
+      "risk_id": "WRSK-TEXAS-2030-2080",
+      "geography": "Texas",
+      "risk_type": "planning_counterfactual",
+      "manifestation_horizon": "2030-2080",
+      "metric": {
+        "potential_shortage_million_acre_feet_2030": 3.6,
+        "potential_shortage_million_acre_feet_2080": 5.8,
+        "existing_supply_million_acre_feet_2030": 15.5,
+        "existing_supply_million_acre_feet_2080": 14.0
+      },
+      "finding": "Under drought-of-record planning conditions and without recommended strategies, shortages grow as population and municipal demand rise while existing supply declines.",
+      "severity": "very_high_if_strategies_delayed_or_fail",
+      "confidence": "official_planning_counterfactual",
+      "source_refs": [{"source_id": "TWDB-2027-PLAN"}]
+    },
+    {
+      "risk_id": "WRSK-NEW-MEXICO-50Y",
+      "geography": "New Mexico",
+      "risk_type": "planning_counterfactual",
+      "manifestation_horizon": "approximately_2074",
+      "metric": {"water_reduction_percent": 25, "shortfall_acre_feet": 750000},
+      "finding": "State planning anticipates materially less river and aquifer water over approximately 50 years, requiring conservation and new supply.",
+      "severity": "very_high",
+      "confidence": "official_state_planning_estimate",
+      "source_refs": [{"source_id": "NM-50Y-WATER"}, {"source_id": "NCA5-WATER"}]
+    },
+    {
+      "risk_id": "WRSK-MIAMI-THROUGH-2040",
+      "geography": "Miami-Dade County, Florida",
+      "risk_type": "scenario_model",
+      "manifestation_horizon": "through_2040",
+      "finding": "Saltwater intrusion is an ongoing vulnerability, but the cited county model did not project wellfield impacts through 2040 under its evaluated high sea-level-rise case.",
+      "severity": "high_long_term_and_operational; no_modeled_wellfield_loss_through_2040",
+      "confidence": "qualified_by_model_scope",
+      "source_refs": [{"source_id": "MIAMI-SALTWATER"}, {"source_id": "USGS-MIAMI-SIR2014"}, {"source_id": "MIAMI-2040-MODEL"}]
+    },
+    {
+      "risk_id": "WRSK-LONG-ISLAND-ONGOING",
+      "geography": "Long Island, New York",
+      "risk_type": "observed_chronic",
+      "manifestation_horizon": "current_and_ongoing",
+      "finding": "Localized saltwater intrusion, contamination, and pumping impacts threaten particular wells and streams in a sole-source system.",
+      "severity": "high_locally",
+      "confidence": "high",
+      "source_refs": [{"source_id": "USGS-LONG-ISLAND"}, {"source_id": "USGS-COASTAL-INTRUSION"}]
+    },
+    {
+      "risk_id": "WRSK-BRUNSWICK-ONGOING",
+      "geography": "Brunswick–Glynn County, Georgia",
+      "risk_type": "observed_chronic",
+      "manifestation_horizon": "current_and_ongoing",
+      "metric": {"documented_chloride_milligrams_per_liter": 2000},
+      "finding": "A high-chloride plume constrains development and requires monitoring and pumping management.",
+      "severity": "high_locally",
+      "confidence": "high",
+      "source_refs": [{"source_id": "USGS-BRUNSWICK"}]
+    },
+    {
+      "risk_id": "WRSK-NEW-ORLEANS-SALT-WEDGE",
+      "geography": "Lower Mississippi River and New Orleans",
+      "risk_type": "episodic_hazard",
+      "manifestation_horizon": "during_future_extreme_low_flow_events; no_fixed_year",
+      "finding": "Salt wedges can threaten downstream intakes during extreme low flow, but the 2023 wedge did not reach New Orleans intakes in the cited event update.",
+      "severity": "potentially_high_during_event",
+      "confidence": "high_for_2023_event; future_frequency_uncertain",
+      "source_refs": [{"source_id": "SWBNO-SALT-WEDGE"}, {"source_id": "SWBNO-SOURCE"}]
+    },
+    {
+      "risk_id": "WRSK-TAMPA-2033-2043",
+      "geography": "Tampa Bay region, Florida",
+      "risk_type": "infrastructure_target",
+      "manifestation_horizon": "2033_and_2043",
+      "metric": {"additional_supply_target_mgd_by_2033": [10, 20], "additional_supply_target_mgd_by_2043": 25},
+      "finding": "Regional planning signals the date by which additional portfolio capacity may be needed, not a source-loss date.",
+      "severity": "medium_to_high_if_projects_or_demand_management_lag",
+      "confidence": "planning_study",
+      "source_refs": [{"source_id": "TAMPA-FUTURE-SUPPLY"}, {"source_id": "TAMPA-SOURCES"}]
+    },
+    {
+      "risk_id": "WRSK-CORPUS-CURRENT",
+      "geography": "Corpus Christi, Texas",
+      "risk_type": "current_condition",
+      "manifestation_horizon": "2026_access_date",
+      "finding": "Stage 3 drought restrictions show present operational stress in a surface-water-dependent system.",
+      "severity": "high_current",
+      "confidence": "high_but_volatile",
+      "source_refs": [{"source_id": "CCTEXAS-STAGE3"}, {"source_id": "TWDB-2027-PLAN"}]
+    }
+  ],
+  "cross_cutting_order_of_urgency": [
+    {
+      "rank": 1,
+      "challenge": "Existing basin and aquifer over-allocation",
+      "why": "Already measured in watershed stress, Colorado River rulemaking, High Plains storage decline, and state planning gaps.",
+      "timeframe": "now_to_2030"
+    },
+    {
+      "rank": 2,
+      "challenge": "Agricultural groundwater depletion and transition",
+      "why": "Irrigation dominates covered consumptive use and supports rural economies and food production.",
+      "timeframe": "now_to_2100_with_local_impacts_much_earlier"
+    },
+    {
+      "rank": 3,
+      "challenge": "Rapid municipal and industrial load growth in constrained locations",
+      "why": "Nationally modest loads can outrun local supply, treatment, conveyance, and permitting.",
+      "timeframe": "now_to_2040"
+    },
+    {
+      "rank": 4,
+      "challenge": "Coastal source protection and salinity management",
+      "why": "Wellfields and river intakes can fail locally through intrusion or salt wedges even without region-wide water depletion.",
+      "timeframe": "ongoing_and_site_specific"
+    },
+    {
+      "rank": 5,
+      "challenge": "Infrastructure, quality, and single-source resilience",
+      "why": "A physically available source may be unusable after contamination, power loss, treatment failure, or conveyance outage.",
+      "timeframe": "current_and_continuous"
+    }
+  ]
+}

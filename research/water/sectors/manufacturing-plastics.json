@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "companion_module": {
+    "path": "../../plastics/",
+    "status": "validated_machine_readable_evidence_package",
+    "contents": ["resin manufacturing pathways", "bounded cradle-to-resin water ranges", "gross avoidance scenarios", "functional replacement accounting", "health and environmental evidence", "seaweed scale scenarios"],
+    "boundary_rule": "The companion module preserves the no-national-net-total conclusion and does not supply a universal gallons-per-kilogram coefficient."
+  },
+  "industrial_water_2015": {
+    "self_supplied_total_withdrawal_billion_gallons_per_day": 14.8,
+    "self_supplied_freshwater_withdrawal_billion_gallons_per_day": 14.0,
+    "fresh_surface_water_share_percent": 82,
+    "excluded": "Industrial deliveries from public suppliers",
+    "source": {"source_id": "USGS-INDUSTRIAL", "locator": "2015 industrial-water summary"}
+  },
+  "plastics_boundary_problem": {
+    "status": "no_defensible_current_national_total",
+    "reasons": [
+      "Resin production is classified separately from plastics and rubber product conversion.",
+      "Upstream refining, steam, electricity, hydrogen, monomers, and other chemicals can dominate indirect water but sit outside the plastics establishment.",
+      "USGS industrial data include only self-supplied withdrawals and do not report a plastics-specific consumptive-use balance.",
+      "Public-supply deliveries to industry are missing from the cited national inventory.",
+      "Life-cycle databases produce materially different water-consumption values for the same resin because of geography, allocation, technology, and co-product assumptions.",
+      "Withdrawal volume, consumption volume, water-quality impact, and water-scarcity-weighted use are different metrics."
+    ],
+    "source_refs": [
+      {"source_id": "USGS-INDUSTRIAL"},
+      {"source_id": "CENSUS-NAICS-325211"},
+      {"source_id": "CENSUS-NAICS-326"},
+      {"source_id": "NIST-PLASTICS-REVIEW-2022"},
+      {"source_id": "RCR-PLASTICS-LCA-2023"}
+    ]
+  },
+  "historical_regulatory_context": {
+    "survey_year": 1987,
+    "surveyed_plants": 406,
+    "combined_industries": "organic chemicals, plastics, and synthetic fibers",
+    "gross_intake_million_gallons_per_day": 5677,
+    "noncontact_cooling_million_gallons_per_day": 4765,
+    "direct_process_million_gallons_per_day": 523,
+    "other_million_gallons_per_day": 389,
+    "noncontact_cooling_share_percent": 83.94,
+    "dashboard_status": "context_only_not_current_not_plastics_only_not_consumption",
+    "source": {"source_id": "EPA-INDUSTRIAL-1987", "locator": "Water use survey results"}
+  },
+  "required_method_for_plastics_policy": {
+    "functional_unit": "A quantified service delivered for a defined life, not one kilogram of material alone",
+    "system_stages": ["feedstock", "monomer_and_resin", "product_conversion", "transport", "use_and_washing", "reuse", "end_of_life"],
+    "required_dimensions": ["geography", "year", "technology", "source_water", "withdrawal", "consumption", "water_quality", "scarcity_weight", "energy_mix", "allocation", "uncertainty"],
+    "counterfactuals": ["avoidance", "reuse", "paper", "glass", "metal", "bio_based_polymer", "durable_multiuse_product"],
+    "calculation_rule": "Compute avoided product-service demand minus replacement-system impacts for each geography and scenario; never multiply national plastics tonnage by a universal gallons-per-kilogram factor.",
+    "candidate_data_portal": {"source_id": "FEDERAL-LCA-COMMONS"}
+  },
+  "next_data_actions": [
+    "Acquire facility-level TRI/DMR, state withdrawal permits, public-utility industrial deliveries, and plant production for resin and converting facilities.",
+    "Link facilities to watersheds and seasonal stress, not only annual national totals.",
+    "Construct resin-specific and product-specific life-cycle inventories with versioned substitution assumptions.",
+    "Treat water-quality loading and thermal discharge separately from quantity consumed."
+  ]
+}

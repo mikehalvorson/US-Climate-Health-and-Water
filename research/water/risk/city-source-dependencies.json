@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0.0",
+  "display_rule": "A source dependency is an exposure pathway, not a forecast of failure. Annual mixes must be refreshed when a utility supplies a dated report.",
+  "cities_and_regions": [
+    {
+      "place_id": "phoenix-az",
+      "place": "Phoenix, Arizona",
+      "supply_profile": "City retail supply is approximately 97–99 percent surface water and roughly 2 percent groundwater in the cited profile; surface portfolios include Salt/Verde and Colorado River sources.",
+      "primary_exposures": ["Colorado River allocation and operating rules", "Salt/Verde watershed drought and heat", "growth pressure in the larger Phoenix Active Management Area"],
+      "critical_qualification": "The Phoenix AMA groundwater model is not a finding that the City of Phoenix utility runs out of water.",
+      "source_refs": [{"source_id": "PHOENIX-WATER-SOURCES"}, {"source_id": "USGS-PHOENIX-AMA-2026"}, {"source_id": "USBR-POST2026"}]
+    },
+    {
+      "place_id": "las-vegas-nv",
+      "place": "Las Vegas Valley, Nevada",
+      "supply_profile": "Approximately 90 percent Colorado River water from Lake Mead and 10 percent local groundwater.",
+      "primary_exposures": ["Colorado River shortage rules", "Lake Mead intake and water-quality operations", "extreme heat and population/tourism demand"],
+      "adaptation_context": ["Strong indoor-return-flow credits", "conservation", "low-lake-level infrastructure"],
+      "source_refs": [{"source_id": "SNWA-SOURCES"}, {"source_id": "USBR-POST2026"}]
+    },
+    {
+      "place_id": "tucson-az",
+      "place": "Tucson, Arizona",
+      "supply_profile": "Water is delivered through wells, including recovered Colorado River water previously recharged into the aquifer; physical delivery is therefore not equivalent to exclusively native groundwater.",
+      "primary_exposures": ["Colorado River reliability", "recharge and recovery capacity", "groundwater quality and local well conditions"],
+      "source_refs": [{"source_id": "TUCSON-WATER-SOURCES"}, {"source_id": "USBR-POST2026"}]
+    },
+    {
+      "place_id": "el-paso-tx",
+      "place": "El Paso, Texas",
+      "supply_profile": "2024 mix: 44 percent Rio Grande, 36 percent Hueco Bolson, and 20 percent Mesilla Bolson; brackish-groundwater desalination supplements the portfolio.",
+      "primary_exposures": ["Rio Grande drought and interstate/international allocation", "fresh groundwater decline and salinity", "energy and concentrate management for desalination"],
+      "source_refs": [{"source_id": "ELPASO-BUDGET-2025"}, {"source_id": "ELPASO-AQUIFERS"}, {"source_id": "ELPASO-DESAL"}]
+    },
+    {
+      "place_id": "albuquerque-nm",
+      "place": "Albuquerque, New Mexico",
+      "supply_profile": "San Juan–Chama surface water and the Santa Fe Group aquifer are operated as a joint portfolio.",
+      "primary_exposures": ["warming-reduced river supply", "Colorado River Basin transfer dependence", "aquifer drawdown and recharge", "statewide projected supply gap"],
+      "source_refs": [{"source_id": "ALBUQUERQUE-SOURCES"}, {"source_id": "NM-50Y-WATER"}, {"source_id": "USBR-POST2026"}]
+    },
+    {
+      "place_id": "los-angeles-ca",
+      "place": "Los Angeles, California",
+      "supply_profile": "2025 deliveries: 44 percent Los Angeles Aqueduct, 52 percent Metropolitan Water District imports, 1 percent local groundwater, and 3 percent recycled water.",
+      "primary_exposures": ["Eastern Sierra hydrology and environmental constraints", "Colorado River and State Water Project reliability", "import conveyance seismic risk", "local groundwater contamination"],
+      "source_refs": [{"source_id": "LADWP-WQR-2025"}, {"source_id": "USBR-POST2026"}, {"source_id": "NCA5-WATER"}]
+    },
+    {
+      "place_id": "san-diego-ca",
+      "place": "San Diego County, California",
+      "supply_profile": "Portfolio includes Colorado River transfers, Northern California imports, local supplies, recycling, and the 50 Mgal/d Carlsbad seawater desalination plant.",
+      "primary_exposures": ["import contract and basin reliability", "desalination energy/cost/marine impacts", "drought and wildfire impacts on local sources"],
+      "source_refs": [{"source_id": "SDCWA-SOURCES"}, {"source_id": "SDCWA-CARLSBAD"}, {"source_id": "USBR-POST2026"}]
+    },
+    {
+      "place_id": "dallas-tx",
+      "place": "Dallas, Texas",
+      "supply_profile": "Surface reservoirs and connected rivers supply the system; Dallas does not use groundwater as a source.",
+      "primary_exposures": ["multi-year drought and reservoir yield", "growth in regional demand", "conveyance and treatment capacity", "extreme heat evaporation"],
+      "source_refs": [{"source_id": "DALLAS-WATER-SOURCES"}, {"source_id": "TWDB-2027-PLAN"}]
+    },
+    {
+      "place_id": "houston-tx",
+      "place": "Houston, Texas",
+      "supply_profile": "Planning profile is approximately 86 percent surface water and 14 percent groundwater.",
+      "primary_exposures": ["drought and reservoir/conveyance reliability", "subsidence constraints on groundwater pumping", "hurricane/flood contamination and infrastructure outages", "industrial demand"],
+      "source_refs": [{"source_id": "HOUSTON-WATER-CIP"}, {"source_id": "TWDB-2027-PLAN"}, {"source_id": "NCA5-WATER"}]
+    },
+    {
+      "place_id": "san-antonio-tx",
+      "place": "San Antonio, Texas",
+      "supply_profile": "Edwards Aquifer supplied approximately 47 percent in 2025, with other aquifers, surface water, reuse, and desalinated brackish water providing diversification.",
+      "primary_exposures": ["Edwards Aquifer recharge and drought pumping restrictions", "growth", "brackish-water energy and concentrate", "ecological springflow requirements"],
+      "source_refs": [{"source_id": "SAWS-EDWARDS"}, {"source_id": "TWDB-2027-PLAN"}]
+    },
+    {
+      "place_id": "miami-dade-fl",
+      "place": "Miami-Dade County, Florida",
+      "supply_profile": "The highly permeable Biscayne aquifer is the primary drinking-water source.",
+      "primary_exposures": ["saltwater intrusion", "canal and groundwater-level management", "drought and pumping", "sea-level rise", "contamination pathways"],
+      "critical_qualification": "The cited county model found no wellfield impact through 2040 under its evaluated high sea-level-rise case; this is not a guarantee after 2040 or under every operational condition.",
+      "source_refs": [{"source_id": "MIAMI-SALTWATER"}, {"source_id": "USGS-MIAMI-SIR2014"}, {"source_id": "MIAMI-2040-MODEL"}]
+    },
+    {
+      "place_id": "long-island-ny",
+      "place": "Long Island, New York",
+      "supply_profile": "Approximately 2.8 million people depend on about 400 Mgal/d pumped through roughly 1,500 wells in a sole-source aquifer system.",
+      "primary_exposures": ["localized saltwater intrusion", "nitrogen and legacy contamination", "pumping and streamflow impacts", "coastal flooding of wells and treatment assets"],
+      "critical_qualification": "Localized intrusion can close or relocate wells even when the regional freshwater volume remains large.",
+      "source_refs": [{"source_id": "USGS-LONG-ISLAND"}, {"source_id": "USGS-COASTAL-INTRUSION"}]
+    },
+    {
+      "place_id": "brunswick-ga",
+      "place": "Brunswick–Glynn County, Georgia",
+      "supply_profile": "Floridan aquifer groundwater serves the region; a chloride plume is documented in part of the aquifer system.",
+      "primary_exposures": ["pumping-induced migration", "existing high-chloride plume", "limited well-siting options"],
+      "source_refs": [{"source_id": "USGS-BRUNSWICK"}, {"source_id": "USGS-COASTAL-INTRUSION"}]
+    },
+    {
+      "place_id": "washington-dc",
+      "place": "Washington, District of Columbia",
+      "supply_profile": "Potomac River water treated by the Washington Aqueduct is the current source.",
+      "primary_exposures": ["single-source event risk", "drought/low flow", "upstream contamination", "treatment or conveyance outage"],
+      "adaptation_context": "Pure Water DC is being developed as a resilience/source-diversification strategy.",
+      "source_refs": [{"source_id": "DCWATER-SOURCE"}, {"source_id": "DCWATER-PURE-WATER"}]
+    },
+    {
+      "place_id": "new-orleans-la",
+      "place": "New Orleans, Louisiana",
+      "supply_profile": "Mississippi River water is treated for drinking supply.",
+      "primary_exposures": ["low-flow saltwater wedge", "spill/contamination events", "treatment and power outages", "hurricane flooding"],
+      "critical_qualification": "The 2023 salt wedge was episodic and did not reach city intakes during the posted event; it is not evidence of permanent source loss on a fixed date.",
+      "source_refs": [{"source_id": "SWBNO-SOURCE"}, {"source_id": "SWBNO-SALT-WEDGE"}]
+    },
+    {
+      "place_id": "new-york-city-ny",
+      "place": "New York City, New York",
+      "supply_profile": "An upstate reservoir and aqueduct system supplies approximately 1 Bgal/d to more than 9 million people.",
+      "primary_exposures": ["multi-year drought", "watershed water quality", "aqueduct/tunnel outage", "extreme precipitation and turbidity"],
+      "source_refs": [{"source_id": "NYC-WQR-2024"}, {"source_id": "NCA5-WATER"}]
+    },
+    {
+      "place_id": "tampa-bay-fl",
+      "place": "Tampa Bay region, Florida",
+      "supply_profile": "Portfolio blends groundwater, river water, off-stream storage, and a 25 Mgal/d seawater desalination plant.",
+      "primary_exposures": ["drought and seasonal river availability", "groundwater environmental limits", "desalination energy and marine/brine effects", "growth"],
+      "adaptation_context": "Regional planning evaluates additional capacity in 2033 and 2043 horizons.",
+      "source_refs": [{"source_id": "TAMPA-SOURCES"}, {"source_id": "TAMPA-DESAL"}, {"source_id": "TAMPA-FUTURE-SUPPLY"}]
+    },
+    {
+      "place_id": "corpus-christi-tx",
+      "place": "Corpus Christi, Texas",
+      "supply_profile": "Surface-water-dependent regional system under current Stage 3 drought restrictions at the access date.",
+      "primary_exposures": ["reservoir drought", "large industrial demand", "growth", "project timing and cost"],
+      "critical_qualification": "Restriction level and reservoir percentage are volatile status fields and must be automatically refreshed.",
+      "source_refs": [{"source_id": "CCTEXAS-STAGE3"}, {"source_id": "TWDB-2027-PLAN"}]
+    }
+  ]
+}

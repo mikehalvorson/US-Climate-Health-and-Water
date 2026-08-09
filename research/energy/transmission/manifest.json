@@ -1,0 +1,42 @@
+{
+  "package": "energy-transmission-load-shape-and-supply-chain",
+  "as_of": "2026-08-01",
+  "files": [
+    {"path": "source-verification.json", "role": "double-checked source identity and claim-fidelity records"},
+    {"path": "source-link-check.json", "role": "dated machine HTTP-accessibility audit for all source endpoints"},
+    {"path": "findings.json", "role": "machine-readable research synthesis"},
+    {"path": "needs-and-expectations.json", "role": "transmission needs and load-growth study comparison"},
+    {"path": "infrastructure-challenges.json", "role": "technical, health, regulatory, sustainability, equity, and security context"},
+    {"path": "cross-domain-gap-register.json", "role": "prioritized generation-consumption-transmission gaps"},
+    {"path": "chart-contracts.json", "role": "dashboard chart semantics and prohibitions"},
+    {"path": "corridors/capacity-definitions.json", "role": "capacity type ontology"},
+    {"path": "corridors/corridor-catalog.json", "role": "curated major-corridor capacity and status records"},
+    {"path": "corridors/major-corridors.geojson", "role": "approximate rated-corridor overlay"},
+    {"path": "corridors/base-layers/hifld-transmission-lines-230kv-plus.geojson", "role": "official public >=230 kV context geometry without MW ratings"},
+    {"path": "corridors/base-layer-acquisition.json", "role": "HIFLD query and limitations"},
+    {"path": "corridors/scripts/acquire_hifld.py", "role": "reproducible HIFLD acquisition"},
+    {"path": "process/process-graph.json", "role": "directed graph for development and upgrade process"},
+    {"path": "supply-chain/transformers.json", "role": "deep transformer chain and dashboard metrics"},
+    {"path": "supply-chain/supply-chain-map.json", "role": "directed dependency graph across supply and demand systems"},
+    {"path": "supply-chain/bottleneck-register.json", "role": "evidence-graded bottleneck list"},
+    {"path": "load-shape/coverage.json", "role": "EIA-930 coverage, hashes, and limitations"},
+    {"path": "load-shape/timeseries/normalized/us-balancing-authority-hourly-demand-2024.csv.gz", "role": "normalized BA hourly data"},
+    {"path": "load-shape/timeseries/normalized/us-subregion-hourly-demand-2024.csv.gz", "role": "normalized BA-subregion hourly data"},
+    {"path": "load-shape/timeseries/normalized/us-region-and-reporting-footprint-hourly-demand-2024.csv.gz", "role": "UTC-coincident regional and footprint aggregates with completeness flags"},
+    {"path": "load-shape/timeseries/normalized/load-shape-summary-2024.csv", "role": "peak, minimum, mean, load factor, and ramp summary"},
+    {"path": "load-shape/timeseries/normalized/average-hourly-load-profiles-2024.csv", "role": "chart-ready monthly, seasonal, annual, weekday, and weekend profiles"},
+    {"path": "load-shape/timeseries/scripts/normalize_eia930.py", "role": "deterministic normalization"},
+    {"path": "load-shape/timeseries/scripts/validate_eia930.py", "role": "hourly dataset validation"},
+    {"path": "scripts/validate_transmission.py", "role": "package integrity validation"}
+  ],
+  "raw_data_policy": "Official EIA downloads are preserved unmodified with SHA-256 hashes in load-shape/coverage.json.",
+  "publication_rules": [
+    "Every dashboard claim resolves to one or more verified source IDs.",
+    "Every current project status includes an evidence date.",
+    "Every MW value includes a capacity type.",
+    "Null and missing are never rendered as zero.",
+    "Draft, scenario, planned, permitted, construction, and operating are never collapsed.",
+    "Approximate geometry is never used for parcel, engineering, or environmental conclusions.",
+    "Security-sensitive and CEII detail is not reconstructed or exposed."
+  ]
+}

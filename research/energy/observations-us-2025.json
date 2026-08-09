@@ -1,0 +1,104 @@
+{
+  "dataset_id": "observations-us-energy-2025",
+  "geography": "United States (50 states and District of Columbia unless source says otherwise)",
+  "period": "2025",
+  "as_of": "2026-08-01",
+  "production_quadrillion_btu": {
+    "status": "preliminary_and_partly_estimated",
+    "accounting": "EIA captured-energy approach",
+    "source_id": "SRC-EIA-MER-T12",
+    "claim_ids": ["CLM-US-001", "CLM-US-002", "CLM-US-003"],
+    "values": {
+      "coal": 10.876,
+      "dry_natural_gas": 40.708,
+      "crude_oil_and_lease_condensate": 28.211,
+      "natural_gas_plant_liquids": 9.74,
+      "fossil_total": 89.536,
+      "nuclear_electric_power": 8.195,
+      "conventional_hydroelectric": 0.843,
+      "geothermal": 0.117,
+      "solar": 1.438,
+      "wind": 1.585,
+      "biomass": 5.247,
+      "renewable_total": 9.229,
+      "total": 106.961
+    }
+  },
+  "consumption_quadrillion_btu": {
+    "status": "preliminary_and_revised",
+    "accounting": "EIA primary energy consumption; petroleum excludes biofuels; biofuels are in biomass",
+    "source_id": "SRC-EIA-MER-T13",
+    "claim_ids": ["CLM-US-004", "CLM-US-005"],
+    "values": {
+      "coal": 8.671,
+      "natural_gas": 34.631,
+      "petroleum_excluding_biofuels": 35.899,
+      "fossil_total": 79.184,
+      "nuclear_electric_power": 8.195,
+      "conventional_hydroelectric": 0.843,
+      "geothermal": 0.117,
+      "solar": 1.438,
+      "wind": 1.585,
+      "biomass": 4.853,
+      "renewable_total": 8.835,
+      "total_including_adjustments": 96.256
+    },
+    "note": "The total includes coal-coke and electricity net-import adjustments that are not separately displayed in this compact object."
+  },
+  "electricity_generation_twh": {
+    "status": "preliminary",
+    "source_ids": ["SRC-EIA-EPM-T11", "SRC-EIA-EPM-T11A"],
+    "claim_ids": ["CLM-US-006", "CLM-US-007", "CLM-US-008", "CLM-US-009"],
+    "values": {
+      "coal": 737.151,
+      "petroleum_liquids": 14.37,
+      "petroleum_coke": 4.889,
+      "natural_gas": 1807.338,
+      "other_fossil_gas": 10.697,
+      "nuclear": 784.781,
+      "conventional_hydroelectric": 247.023,
+      "wind": 464.391,
+      "utility_scale_solar_photovoltaic": 292.817,
+      "utility_scale_solar_thermal": 2.855,
+      "estimated_small_scale_solar_photovoltaic": 93.148,
+      "total_solar_all_scales_and_solar_thermal": 388.82,
+      "wood_and_wood_derived_fuels": 31.809,
+      "landfill_gas": 7.083,
+      "biogenic_municipal_solid_waste": 5.266,
+      "other_waste_biomass": 2.029,
+      "geothermal": 15.669,
+      "pumped_storage_net": -5.32,
+      "other_heterogeneous": 6.654,
+      "utility_scale_total": 4429.502,
+      "derived_utility_plus_small_scale_solar_total": 4522.65
+    },
+    "derivation": {
+      "derived_utility_plus_small_scale_solar_total": "4429.502 + 93.148 = 4522.650 TWh",
+      "warning": "EIA publishes the two components; the sum is derived here and must retain that label."
+    },
+    "other_category_definition": ["hydrogen", "non-biogenic municipal solid waste", "batteries", "purchased steam", "sulfur", "tire-derived fuel", "miscellaneous sources"]
+  },
+  "end_use_energy_flow_quadrillion_btu": {
+    "status": "rounded_snapshot_from_april_2026_release",
+    "source_id": "SRC-EIA-FLOW25",
+    "claim_ids": ["CLM-US-010", "CLM-US-011"],
+    "values": {
+      "transportation": 28.2,
+      "industrial": 26.6,
+      "residential": 11.8,
+      "commercial": 9.9,
+      "electric_power_input": 33.5,
+      "electricity_sales_energy_content": 13.8,
+      "electrical_system_energy_losses": 19.7
+    },
+    "warning": "Electrical-system losses combine power-plant conversion losses with transmission and distribution losses; they are not a grid-loss percentage."
+  },
+  "quality_flags": [
+    "Annual 2025 MER and EPM values are preliminary and may be revised.",
+    "Dry natural gas and crude-oil production contain EIA estimates.",
+    "Small-scale solar generation is estimated from EIA-861/861M methods.",
+    "Primary-energy values cannot be divided by electricity-generation values without an explicit conversion/accounting method.",
+    "Pumped storage is negative net generation to prevent double counting.",
+    "The heterogeneous EIA Other category is not one technology."
+  ]
+}

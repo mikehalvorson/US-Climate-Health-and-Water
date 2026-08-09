@@ -1,0 +1,741 @@
+{
+  "schema_version": "1.0.0",
+  "accessed": "2026-08-02",
+  "source_count": 48,
+  "sources": [
+    {
+      "source_id": "US-PLASTICS-MFA-2019",
+      "title": "Paths to circularity for plastics in the United States",
+      "publisher": "One Earth / Lawrence Berkeley National Laboratory",
+      "url": "https://escholarship.org/uc/item/6hp508xg",
+      "doi": "10.1016/j.oneear.2024.02.005",
+      "year": 2024,
+      "source_type": "peer_reviewed_material_flow_analysis",
+      "authority": "primary_research",
+      "supports": "2019 U.S. production, imports, exports, consumption by leading resin and application, disposal, and recovery scenarios",
+      "limitations": "Uses some proprietary industry inputs; 2019 snapshot; not a toxicity or life-cycle-water study.",
+      "verification": {
+        "identity": "Full peer-reviewed CC BY article retrieved from the University of California repository; DOI, authors, journal, and date match.",
+        "fidelity": "Results section directly reports >57 MMT, top four resins, 17.2 MMT packaging, 48 MMT disposal, and <7% recovery."
+      }
+    },
+    {
+      "source_id": "EPA-PLASTICS-MSW-2018",
+      "title": "Plastics: Material-Specific Data",
+      "publisher": "U.S. Environmental Protection Agency",
+      "url": "https://www.epa.gov/facts-and-figures-about-materials-waste-and-recycling/plastics-material-specific-data",
+      "year": 2026,
+      "source_type": "official_waste_inventory_summary",
+      "authority": "primary",
+      "supports": "2018 U.S. municipal-solid-waste plastic generation, recycling, combustion, landfilling, and product examples",
+      "limitations": "MSW scope excludes some industrial and durable-product flows; latest underlying national year is 2018.",
+      "verification": {
+        "identity": "Current EPA page retrieved directly; it links the 2018 data tables and methodology.",
+        "fidelity": "Page reports 35.68 million U.S. tons generated, 3.09 recycled, 5.62 combusted, and 26.97 landfilled."
+      }
+    },
+    {
+      "source_id": "CRS-PLASTICS-2024",
+      "title": "U.S. Plastic Waste: Selected Policy Issues",
+      "publisher": "Congressional Research Service",
+      "url": "https://www.congress.gov/crs_external_products/R/HTML/R48293.html",
+      "year": 2024,
+      "source_type": "congressional_policy_synthesis",
+      "authority": "assessment",
+      "supports": "U.S. industry definitions, use estimates, policy context, and explicit comparison of incompatible EPA and OECD waste scopes",
+      "limitations": "Synthesis rather than original measurement; figures inherit source definitions.",
+      "verification": {
+        "identity": "Congress.gov hosts CRS report R48293 with report metadata and cited sources.",
+        "fidelity": "Report identifies PE, PP, PVC, PS, and PET as basic resins and warns that EPA and OECD totals use different scopes."
+      }
+    },
+    {
+      "source_id": "NASEM-OCEAN-2022",
+      "title": "Reckoning with the U.S. Role in Global Ocean Plastic Waste",
+      "publisher": "National Academies of Sciences, Engineering, and Medicine",
+      "url": "https://www.nationalacademies.org/read/26132/chapter/2",
+      "doi": "10.17226/26132",
+      "year": 2022,
+      "source_type": "national_academies_consensus_report",
+      "authority": "assessment",
+      "supports": "U.S. waste generation and leakage, persistence, ocean pathways, ingestion and entanglement evidence, and monitoring gaps",
+      "limitations": "Several global inputs predate publication; does not quantify human clinical risk.",
+      "verification": {
+        "identity": "National Academies full report and DOI retrieved directly.",
+        "fidelity": "Summary states plastics persist, U.S. leakage was estimated at 1.13-2.24 MMT/yr for 2016, and 914 species had documented ingestion or entanglement."
+      }
+    },
+    {
+      "source_id": "ARGONNE-RESIN-PATHWAYS-2024",
+      "title": "Life-Cycle Analysis Datasets for Regionalized Plastic Pathways",
+      "publisher": "Argonne National Laboratory and National Institute of Standards and Technology",
+      "url": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=957284",
+      "doi": "10.2172/2315023",
+      "year": 2024,
+      "source_type": "federal_laboratory_technical_report",
+      "authority": "primary",
+      "supports": "PET, HDPE, LDPE, PP, and PVC feedstocks, monomers, polymerization routes, energy inputs, and regional differences",
+      "limitations": "Cradle-to-gate carbon modeling, not a water or consumer-health assessment; technology assumptions are model averages.",
+      "verification": {
+        "identity": "NIST-hosted full report identifies Argonne authors, report number ANL/ESIA-24/3, and DOI.",
+        "fidelity": "Sections 2.3.1-2.3.5 directly describe monomer and polymerization pathways for the five resins."
+      }
+    },
+    {
+      "source_id": "RCR-RESIN-WATER-2023",
+      "title": "Cross-database comparisons on the greenhouse gas emissions, water consumption, and fossil-fuel use of plastic resin production and their post-use phase impacts",
+      "publisher": "Resources, Conservation and Recycling",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0921344923003038",
+      "doi": "10.1016/j.resconrec.2023.107168",
+      "year": 2023,
+      "source_type": "peer_reviewed_lca_database_comparison",
+      "authority": "primary_research",
+      "supports": "Cradle-to-resin water-consumption comparisons for PET, HDPE, PP, bio-PE, and PLA and causes of disagreement",
+      "limitations": "Does not include finished-product conversion, use, all additives, or scarcity weighting; database values are not universal plant coefficients.",
+      "verification": {
+        "identity": "Open-access publisher record, authors, volume 198 article 107168, and DOI match.",
+        "fidelity": "Section 3.4 states significant water discrepancies and identifies cooling-water recycling assumptions as a likely cause."
+      }
+    },
+    {
+      "source_id": "RCR-RESIN-WATER-SI-2023",
+      "title": "Supporting Information for Cross-database comparisons...",
+      "publisher": "Elsevier / Resources, Conservation and Recycling",
+      "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0921344923003038-mmc1.pdf",
+      "year": 2023,
+      "source_type": "peer_reviewed_supporting_information",
+      "authority": "primary_research",
+      "local_copy": ".firecrawl/plastics-water-supporting-information.pdf",
+      "supports": "Figure S3 resin water-consumption values by database",
+      "limitations": "Values digitized visually from a plot are approximate; bio-PE includes allocation credits and negative values.",
+      "verification": {
+        "identity": "Publisher CDN PDF filename and article PII match the journal article; 56-page document retrieved.",
+        "fidelity": "Rendered page S29 visibly labels water consumption in L/kg for PET, HDPE, PP, bio-PE, and PLA across GREET, USLCI, ecoinvent, and GaBi."
+      }
+    },
+    {
+      "source_id": "PE-EPS-2015",
+      "title": "Eco-profile of Expandable Polystyrene",
+      "publisher": "PlasticsEurope / EUMEPS",
+      "url": "https://www.aipe.biz/mondo-eps/wp-content/uploads/sites/2/2015/10/PlasticsEurope_Eco-profile_EPS_2015-02.pdf",
+      "year": 2015,
+      "source_type": "industry_life_cycle_inventory",
+      "authority": "industry_primary_data",
+      "supports": "European cradle-to-gate EPS water withdrawal and freshwater consumption",
+      "limitations": "European 2010-2012 production data; industry-funded; not U.S.-specific and not comparable to every database method.",
+      "verification": {
+        "identity": "Full 31-page Eco-profile retrieved with program, participating association, declared unit, and data period.",
+        "fidelity": "Tables 7-8 report 1,371.98 kg water use and 11.93 kg freshwater consumption per kg EPS."
+      }
+    },
+    {
+      "source_id": "ECVM-PVC-2026",
+      "title": "Eco-profile of Vinyl Chloride Monomer and Polyvinyl Chloride",
+      "publisher": "European Council of Vinyl Manufacturers / PlasticsEurope",
+      "url": "https://pvc.org/wp-content/uploads/2026/03/CVM-and-PVC_Eco-profile-PVC-2026.pdf",
+      "year": 2026,
+      "source_type": "industry_life_cycle_inventory",
+      "authority": "industry_primary_data",
+      "supports": "European VCM, suspension-PVC, and emulsion-PVC water withdrawal and consumption",
+      "limitations": "European industry average, not U.S.; methodology differs from the four-database comparison.",
+      "verification": {
+        "identity": "Full current ECVM/PlasticsEurope Eco-profile retrieved with methodology and declared unit.",
+        "fidelity": "Tables 10 and 12 report gate-to-gate and cradle-to-gate water consumption for VCM, S-PVC, and E-PVC."
+      }
+    },
+    {
+      "source_id": "ISOPA-POLYOLS-2021",
+      "title": "Eco-profile of Polyether Polyols",
+      "publisher": "ISOPA / PlasticsEurope",
+      "url": "https://plasticseurope.org/wp-content/uploads/2023/03/ISOPA-Eco-profile_Polyols_2021.pdf",
+      "year": 2021,
+      "source_type": "industry_life_cycle_inventory",
+      "authority": "industry_primary_data",
+      "supports": "European cradle-to-gate water consumption for long- and short-chain polyether polyols",
+      "limitations": "Polyol is a polyurethane precursor, not finished PU; European producer data; other PU inputs are excluded from the quoted number.",
+      "verification": {
+        "identity": "Full Eco-profile retrieved; participating producer and plant coverage is stated.",
+        "fidelity": "Water section reports 19.28 and 33.94 kg cradle-to-gate consumption per kg long- and short-chain polyol."
+      }
+    },
+    {
+      "source_id": "LBNL-PRIMARY-PLASTICS-2024",
+      "title": "Climate Impact of Primary Plastic Production",
+      "publisher": "Lawrence Berkeley National Laboratory",
+      "url": "https://www.osti.gov/biblio/2336722",
+      "doi": "10.2172/2336722",
+      "year": 2024,
+      "source_type": "federal_laboratory_report",
+      "authority": "primary",
+      "supports": "Bottom-up pathways and climate impacts for nine high-volume resin groups",
+      "limitations": "Climate-focused; no direct water-saving coefficient and no consumer toxicity conclusion.",
+      "verification": {
+        "identity": "OSTI bibliographic record and DOI identify the LBNL report and authors.",
+        "fidelity": "Report scope states nine groups account for about 80% of global primary plastic production."
+      }
+    },
+    {
+      "source_id": "UNEP-TAP-2023",
+      "title": "Turning off the Tap: How the world can end plastic pollution and create a circular economy",
+      "publisher": "United Nations Environment Programme",
+      "url": "https://www.unep.org/news-and-stories/press-release/un-roadmap-outlines-solutions-cut-global-plastic-pollution",
+      "year": 2023,
+      "source_type": "un_policy_scenario",
+      "authority": "assessment",
+      "supports": "Elimination, reuse, recycling, and careful substitution strategy shares through 2040",
+      "limitations": "Global modeled roadmap, not a forecast or U.S.-specific water assessment.",
+      "verification": {
+        "identity": "Official UNEP report release and report links retrieved.",
+        "fidelity": "Release attributes 30% reduction to reuse, 20% to recycling, and 17% to reorientation/diversification within an 80% pollution-reduction pathway."
+      }
+    },
+    {
+      "source_id": "EU-SUPD",
+      "title": "Single-use plastics",
+      "publisher": "European Commission",
+      "url": "https://environment.ec.europa.eu/topics/plastics/single-use-plastics_en",
+      "year": 2026,
+      "source_type": "official_regulatory_summary",
+      "authority": "primary",
+      "supports": "EU bans, separate-collection targets, recycled-content requirements, EPR, and consumption reduction",
+      "limitations": "Targets selected products, not all plastic; implementation differs by member state.",
+      "verification": {
+        "identity": "Official European Commission environment page retrieved.",
+        "fidelity": "Page lists banned products and 77%/90% bottle collection and 25%/30% recycled-content milestones."
+      }
+    },
+    {
+      "source_id": "FR-AGEC",
+      "title": "Loi anti-gaspillage pour une economie circulaire",
+      "publisher": "French Ministry for Ecological Transition",
+      "url": "https://www.ecologie.gouv.fr/loi-anti-gaspillage-economie-circulaire",
+      "year": 2026,
+      "source_type": "official_regulatory_summary",
+      "authority": "primary",
+      "supports": "France reuse and packaging targets, including reusable dine-in serviceware",
+      "limitations": "Legal requirements do not by themselves quantify compliance, water, or full environmental benefit.",
+      "verification": {
+        "identity": "Official French government ministry page retrieved.",
+        "fidelity": "Page records reusable dine-in serviceware from 2023 and packaging-reuse goals of 5% in 2023 and 10% in 2027."
+      }
+    },
+    {
+      "source_id": "DE-UBA-PACKAGING",
+      "title": "Packaging",
+      "publisher": "German Environment Agency (Umweltbundesamt)",
+      "url": "https://www.umweltbundesamt.de/en/topics/waste-resources/product-stewardship-waste-management/packaging",
+      "year": 2026,
+      "source_type": "official_policy_and_system_summary",
+      "authority": "primary",
+      "supports": "German deposit, refillable packaging, sorting, and recycling system",
+      "limitations": "Germany still uses substantial plastic; refillable share is not universal and trends vary by beverage.",
+      "verification": {
+        "identity": "Official UBA English-language packaging page retrieved.",
+        "fidelity": "Page explains deposit and reusable-container circulation and describes packaging sorting and recovery."
+      }
+    },
+    {
+      "source_id": "RW-REMA-LAW2019",
+      "title": "Authorization to single-use plastics and plastic carry bags",
+      "publisher": "Rwanda Environment Management Authority",
+      "url": "https://www.rema.gov.rw/services/authorization-to-single-use-plastics-and-plastic-carry-bags",
+      "year": 2026,
+      "source_type": "official_regulatory_summary",
+      "authority": "primary",
+      "supports": "Rwanda Law 17/2019 prohibitions and exemptions for plastic carry bags and selected single-use items",
+      "limitations": "Exemptions exist where viable alternatives are unavailable; not a plastic-free economy.",
+      "verification": {
+        "identity": "Official REMA service page and linked law/FAQ retrieved.",
+        "fidelity": "Page states manufacture, import, use, and sale restrictions with an authorization process for exceptions."
+      }
+    },
+    {
+      "source_id": "ARPAE-MARINER",
+      "title": "MARINER: Macroalgae Research Inspiring Novel Energy Resources",
+      "publisher": "Advanced Research Projects Agency-Energy",
+      "url": "https://arpa-e.energy.gov/programs-and-initiatives/view-all-programs/mariner",
+      "year": 2016,
+      "source_type": "federal_research_program",
+      "authority": "primary",
+      "supports": "U.S. theoretical macroalgae resource and cultivation goal without land, freshwater, or synthetic fertilizer",
+      "limitations": "500 million dry metric tons/year is an enabling-potential estimate, not demonstrated production or sustainable extraction.",
+      "verification": {
+        "identity": "Official ARPA-E program page retrieved with release date and project roster.",
+        "fidelity": "Program description explicitly states at least 500 million dry metric tons/year potential and the no-land/freshwater/synthetic-fertilizer design objective."
+      }
+    },
+    {
+      "source_id": "DOE-BT23-MACRO",
+      "title": "2023 Billion-Ton Report, Chapter 7.2: Macroalgae",
+      "publisher": "U.S. Department of Energy",
+      "url": "https://www.energy.gov/sites/default/files/2024-03/beto-2023-billion-ton-report_7-emerging_0.pdf",
+      "doi": "10.23720/BT2023/2316176",
+      "year": 2024,
+      "source_type": "federal_biophysical_and_technoeconomic_model",
+      "authority": "primary",
+      "supports": "Screened U.S. EEZ area, modeled dry biomass potential, cost thresholds, productivity, and limitations",
+      "limitations": "Modeled potential; costs may be optimistic; high-intensity farms face nutrient competition, permitting, ecosystem, and offshore-engineering constraints.",
+      "verification": {
+        "identity": "Official DOE chapter PDF retrieved; suggested citation and DOI appear in the report.",
+        "fidelity": "Summary and section 7.2.4 report 7.1 million km2 screened area and 0.38 Gt-DW/yr at <=$1,000/t and 50% productive-area assumption."
+      }
+    },
+    {
+      "source_id": "NOAA-SEAWEED",
+      "title": "Seaweed Aquaculture",
+      "publisher": "NOAA Fisheries",
+      "url": "https://www.fisheries.noaa.gov/national/aquaculture/seaweed-aquaculture",
+      "year": 2025,
+      "source_type": "official_sector_summary",
+      "authority": "primary",
+      "supports": "U.S. seaweed cultivation methods, Alaska 2019 harvest example, and developmental status",
+      "limitations": "Alaska example is wet product weight and not a national dry-biomass series.",
+      "verification": {
+        "identity": "Official NOAA Fisheries page retrieved.",
+        "fidelity": "Page reports more than 112,000 lb Alaska kelp in 2019 and states the U.S. industry remains developmental."
+      }
+    },
+    {
+      "source_id": "ACS-SEAWEED-LCA-2026",
+      "title": "From Seaweed Biorefinery to Bioplastics: A Life Cycle Analysis of Energy Use and Environmental Impacts",
+      "publisher": "Industrial & Engineering Chemistry Research",
+      "url": "https://pubs.acs.org/doi/10.1021/acs.iecr.5c03802",
+      "doi": "10.1021/acs.iecr.5c03802",
+      "year": 2026,
+      "source_type": "peer_reviewed_life_cycle_assessment",
+      "authority": "primary_research",
+      "supports": "Cradle-to-gate Saccharina film process, climate result, wastewater hotspots, and comparison with LDPE",
+      "limitations": "Modeled case study, not national production; one film formulation and supply chain.",
+      "verification": {
+        "identity": "ACS full record, publication history, abstract, DOI, and supporting-information link retrieved.",
+        "fidelity": "Abstract reports 3.79 kg CO2e/kg dry film, substantial pretreatment/extraction wastewater, and higher water use than LDPE."
+      }
+    },
+    {
+      "source_id": "AYALA-SEAWEED-PILOT-2023",
+      "title": "Life Cycle Assessment of pilot scale production of seaweed-based bioplastic",
+      "publisher": "Algal Research",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2211926423000693",
+      "doi": "10.1016/j.algal.2023.103036",
+      "year": 2023,
+      "source_type": "peer_reviewed_pilot_lca",
+      "authority": "primary_research",
+      "supports": "Cultivation, alginate extraction, film fabrication, coproduct and end-of-life pilot evidence",
+      "limitations": "Pilot scale; prospective industrial results can differ materially.",
+      "verification": {
+        "identity": "Publisher record and university-hosted full manuscript match title, authors, volume, article number, and DOI.",
+        "fidelity": "Abstract identifies film fabrication/glycerol as hotspot and reports composting impacts 30% below incineration in the modeled case."
+      }
+    },
+    {
+      "source_id": "AYALA-SEAWEED-UPSCALE-2024",
+      "title": "Prospective LCA of brown seaweed-based bioplastic: Upscaling from pilot to industrial scale",
+      "publisher": "Sustainable Production and Consumption",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2352550924003324",
+      "doi": "10.1016/j.spc.2024.11.020",
+      "year": 2024,
+      "source_type": "peer_reviewed_prospective_lca",
+      "authority": "primary_research",
+      "supports": "Industrial-scale process model and technology-readiness constraints for alginate film",
+      "limitations": "Prospective TRL 4-6 inputs extrapolated to TRL 9; not observed industrial performance.",
+      "verification": {
+        "identity": "Publisher and university records match title, authors, journal pages 416-426, and DOI.",
+        "fidelity": "Methods define a 1 kg film functional unit and include hatchery, cultivation, extraction, crosslinking, drying, and composting."
+      }
+    },
+    {
+      "source_id": "SEAWEED-REVIEW-2024",
+      "title": "Macroalgae Bioplastics: A Sustainable Shift to Mitigate the Ecological Impact of Petroleum-Based Plastics",
+      "publisher": "Polymers",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11085313/",
+      "doi": "10.3390/polym16091246",
+      "year": 2024,
+      "source_type": "peer_reviewed_review",
+      "authority": "research_synthesis",
+      "supports": "Seaweed polymer families, processing routes, material-property and scale barriers",
+      "limitations": "Review includes lab studies with heterogeneous formulations and no national deployment forecast.",
+      "verification": {
+        "identity": "PubMed Central full text and DOI retrieved.",
+        "fidelity": "Review identifies hydrophilicity, weak mechanical/thermal performance, extraction, cost, seasonality, and scale as constraints."
+      }
+    },
+    {
+      "source_id": "FDA-MNP-FOOD",
+      "title": "Microplastics and Nanoplastics in Foods",
+      "publisher": "U.S. Food and Drug Administration",
+      "url": "https://www.fda.gov/food/environmental-contaminants-food/microplastics-and-nanoplastics-foods",
+      "year": 2026,
+      "source_type": "official_regulatory_science_summary",
+      "authority": "primary",
+      "supports": "Current U.S. regulatory assessment of food exposure, methods, and health uncertainty",
+      "limitations": "Absence of demonstrated risk at detected food levels is not proof of no hazard at any dose or route.",
+      "verification": {
+        "identity": "Current FDA page retrieved directly.",
+        "fidelity": "FDA states current evidence does not demonstrate food levels pose human-health risk and emphasizes non-standardized detection and major data gaps."
+      }
+    },
+    {
+      "source_id": "WHO-MNP-2022",
+      "title": "Dietary and inhalation exposure to nano- and microplastic particles and potential implications for human health",
+      "publisher": "World Health Organization",
+      "url": "https://www.who.int/publications/i/item/9789240054608",
+      "year": 2022,
+      "source_type": "international_health_assessment",
+      "authority": "assessment",
+      "supports": "Evidence review through December 2021 for particles, monomers, additives, contaminants, and biofilms",
+      "limitations": "Predates several newer human observational studies and does not resolve causal risk.",
+      "verification": {
+        "identity": "Official WHO publication page, ISBN, date, and 154-page report link retrieved.",
+        "fidelity": "Overview states WHO assessed dietary/inhalation evidence and identified research needs and uncertainties."
+      }
+    },
+    {
+      "source_id": "EPA-MNP-RESEARCH",
+      "title": "Microplastics Research",
+      "publisher": "U.S. Environmental Protection Agency",
+      "url": "https://www.epa.gov/water-research/microplastics-research",
+      "year": 2026,
+      "source_type": "official_research_program_summary",
+      "authority": "primary",
+      "supports": "Environmental ubiquity, method standardization needs, and current experimental health-effects work",
+      "limitations": "Research agenda rather than completed population risk assessment.",
+      "verification": {
+        "identity": "Current EPA water-research page retrieved directly.",
+        "fidelity": "Page states no single characterization method covers all particles and describes ongoing cellular uptake, clearance, and toxicity methods."
+      }
+    },
+    {
+      "source_id": "NEJM-MNP-2024",
+      "title": "Microplastics and Nanoplastics in Atheromas and Cardiovascular Events",
+      "publisher": "New England Journal of Medicine",
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2309822",
+      "doi": "10.1056/NEJMoa2309822",
+      "year": 2024,
+      "source_type": "peer_reviewed_prospective_observational_study",
+      "authority": "primary_research",
+      "supports": "Detection of PE/PVC in carotid plaque and association with cardiovascular events in a selected surgical cohort",
+      "limitations": "Observational; selected high-risk patients; does not establish source, dose, ingestion pathway, or causation.",
+      "verification": {
+        "identity": "NEJM full article and DOI retrieved.",
+        "fidelity": "Article reports PE in 58.4%, PVC in 12.1%, and adjusted HR 4.53 (95% CI 2.00-10.27) for the composite endpoint."
+      }
+    },
+    {
+      "source_id": "NTP-STYRENE",
+      "title": "Report on Carcinogens Profile: Styrene",
+      "publisher": "National Toxicology Program",
+      "url": "https://ntp.niehs.nih.gov/sites/default/files/ntp/roc/content/profiles/styrene.pdf",
+      "year": 2021,
+      "source_type": "federal_cancer_hazard_assessment",
+      "authority": "assessment",
+      "supports": "Styrene cancer-hazard classification and occupational evidence",
+      "limitations": "Hazard classification of styrene exposure is not a risk estimate for ordinary contact with finished polystyrene.",
+      "verification": {
+        "identity": "NTP 15th Report on Carcinogens profile retrieved.",
+        "fidelity": "Profile classifies styrene as reasonably anticipated to be a human carcinogen and explains limited human evidence."
+      }
+    },
+    {
+      "source_id": "NTP-VINYL",
+      "title": "Report on Carcinogens Profile: Selected Vinyl Halides",
+      "publisher": "National Toxicology Program",
+      "url": "https://ntp.niehs.nih.gov/sites/default/files/ntp/roc/content/profiles/vinylhalides.pdf",
+      "year": 2021,
+      "source_type": "federal_cancer_hazard_assessment",
+      "authority": "assessment",
+      "supports": "Vinyl chloride human-carcinogen classification and PVC uses",
+      "limitations": "Monomer hazard is not equivalent to exposure from every finished PVC article.",
+      "verification": {
+        "identity": "NTP 15th Report on Carcinogens profile retrieved.",
+        "fidelity": "Profile classifies vinyl chloride as known to be a human carcinogen and cites hepatic angiosarcoma evidence."
+      }
+    },
+    {
+      "source_id": "NTP-ACRYLONITRILE",
+      "title": "Report on Carcinogens Profile: Acrylonitrile",
+      "publisher": "National Toxicology Program",
+      "url": "https://ntp.niehs.nih.gov/sites/default/files/ntp/roc/content/profiles/acrylonitrile.pdf",
+      "year": 2021,
+      "source_type": "federal_cancer_hazard_assessment",
+      "authority": "assessment",
+      "supports": "Acrylonitrile hazard and its use in ABS/SAN and acrylic materials",
+      "limitations": "Primarily monomer/occupational hazard; not a consumer-risk estimate for finished ABS or acrylic fiber.",
+      "verification": {
+        "identity": "NTP 15th Report on Carcinogens profile retrieved.",
+        "fidelity": "Profile classifies acrylonitrile as reasonably anticipated to be a human carcinogen and identifies ABS/SAN uses."
+      }
+    },
+    {
+      "source_id": "NIOSH-ISOCYANATES",
+      "title": "Isocyanates",
+      "publisher": "National Institute for Occupational Safety and Health",
+      "url": "https://archive.cdc.gov/www_cdc_gov/niosh/topics/isocyanates/default.html",
+      "year": 2014,
+      "source_type": "official_occupational_health_summary",
+      "authority": "primary",
+      "supports": "Diisocyanate uses in polyurethane and respiratory/dermal hazards",
+      "limitations": "Focuses on uncured/reactive occupational exposures; cured-foam risk depends on product and conditions.",
+      "verification": {
+        "identity": "CDC/NIOSH archived topic page retrieved.",
+        "fidelity": "Page describes powerful irritation, sensitization, severe asthma, and polyurethane foam/coating uses."
+      }
+    },
+    {
+      "source_id": "FDA-PHTHALATES",
+      "title": "Phthalates in Food Packaging and Food Contact Applications",
+      "publisher": "U.S. Food and Drug Administration",
+      "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/phthalates-food-packaging-and-food-contact-applications",
+      "year": 2026,
+      "source_type": "official_regulatory_science_summary",
+      "authority": "primary",
+      "supports": "Phthalate plasticizer use in flexible PVC and current food-contact review status",
+      "limitations": "Food-contact authorization status is not a complete exposure or cumulative-risk assessment.",
+      "verification": {
+        "identity": "Current FDA page retrieved directly.",
+        "fidelity": "Page states phthalates are used mainly in PVC to make it flexible and describes 2026 grouping work for future cumulative risk assessment."
+      }
+    },
+    {
+      "source_id": "EPA-BPA",
+      "title": "Biomonitoring - Bisphenol A (BPA)",
+      "publisher": "U.S. Environmental Protection Agency",
+      "url": "https://www.epa.gov/americaschildrenenvironment/biomonitoring-bisphenol-bpa",
+      "year": 2026,
+      "source_type": "official_health_indicator_summary",
+      "authority": "assessment",
+      "supports": "BPA occurrence in plastics and endocrine-disruption concern",
+      "limitations": "Concern statement is not a quantitative risk estimate for a specific product.",
+      "verification": {
+        "identity": "Current EPA America's Children and the Environment page retrieved.",
+        "fidelity": "Page states BPA occurs in many plastics and studies suggest endocrine-disrupting activity."
+      }
+    },
+    {
+      "source_id": "FDA-BPA",
+      "title": "Bisphenol A (BPA): Use in Food Contact Application",
+      "publisher": "U.S. Food and Drug Administration",
+      "url": "https://www.fda.gov/food/food-packaging-other-substances-come-contact-food-information-consumers/bisphenol-bpa-use-food-contact-application",
+      "year": 2014,
+      "source_type": "official_regulatory_position",
+      "authority": "primary",
+      "supports": "FDA position on approved BPA food-contact uses and polycarbonate/epoxy applications",
+      "limitations": "Page's safety assessment is dated; it must be displayed with date and alongside newer agency review context.",
+      "verification": {
+        "identity": "FDA page and update history retrieved.",
+        "fidelity": "Page says BPA makes polycarbonate and epoxy can linings and states FDA's then-current approved-use safety position."
+      }
+    },
+    {
+      "source_id": "EPA-PFAS-PACKAGING",
+      "title": "Per- and Polyfluoroalkyl Substances (PFAS) in Pesticide and Other Packaging",
+      "publisher": "U.S. Environmental Protection Agency",
+      "url": "https://www.epa.gov/pesticides/pfas-packaging",
+      "year": 2026,
+      "source_type": "official_regulatory_investigation",
+      "authority": "primary",
+      "supports": "PFAS formation and leaching from some fluorinated HDPE containers",
+      "limitations": "Applies to fluorinated containers/processes, not all HDPE.",
+      "verification": {
+        "identity": "Current EPA pesticides page and testing-method links retrieved.",
+        "fidelity": "Page reports eight PFAS detected and time-dependent leaching from certain fluorinated HDPE containers."
+      }
+    },
+    {
+      "source_id": "ATSDR-PFAS",
+      "title": "How PFAS Impacts Your Health",
+      "publisher": "Agency for Toxic Substances and Disease Registry",
+      "url": "https://www.atsdr.cdc.gov/pfas/about/health-effects.html",
+      "year": 2025,
+      "source_type": "official_health_assessment_summary",
+      "authority": "assessment",
+      "supports": "Specific PFAS associations with vaccine antibody response and other health outcomes",
+      "limitations": "Associations differ by compound and study; does not imply every fluoropolymer product causes every effect.",
+      "verification": {
+        "identity": "Current ATSDR page retrieved directly.",
+        "fidelity": "Page lists lower antibody response to some vaccines for PFOA, PFOS, PFHxS, and PFDA and states mixture uncertainty."
+      }
+    },
+    {
+      "source_id": "JAMA-PFAS-VACCINE",
+      "title": "Serum Vaccine Antibody Concentrations in Children Exposed to Perfluorinated Compounds",
+      "publisher": "JAMA",
+      "url": "https://jamanetwork.com/journals/jama/fullarticle/1104903",
+      "doi": "10.1001/jama.2011.2034",
+      "year": 2012,
+      "source_type": "peer_reviewed_birth_cohort_study",
+      "authority": "primary_research",
+      "supports": "Maternal/child serum PFC measurements and tetanus/diphtheria antibody associations",
+      "limitations": "Observational Faroe Islands cohort; PFC serum concentrations, not ingested microplastic dose; does not show universal vaccine failure.",
+      "verification": {
+        "identity": "JAMA full article, citation, dates, authors, and DOI retrieved.",
+        "fidelity": "Abstract and Tables 3-4 report reduced antibody concentrations and increased odds of falling below a protective threshold for some associations."
+      }
+    },
+    {
+      "source_id": "FDA-PFAS-FOOD-PACKAGING",
+      "title": "FDA, Industry Actions End Sales of PFAS Used in US Food Packaging",
+      "publisher": "U.S. Food and Drug Administration",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-industry-actions-end-sales-pfas-used-us-food-packaging",
+      "year": 2024,
+      "source_type": "official_regulatory_action",
+      "authority": "primary",
+      "supports": "End of U.S. sales of PFAS grease-proofing materials for paper food packaging",
+      "limitations": "Does not cover every PFAS use, imported article, fluoropolymer, or environmental exposure source.",
+      "verification": {
+        "identity": "Official FDA press announcement retrieved.",
+        "fidelity": "Announcement states these grease-proofing materials were no longer sold for U.S. food packaging as of February 2024."
+      }
+    },
+    {
+      "source_id": "NIST-LCA-PLASTICS",
+      "title": "LCA of polymers (plastics) to improve circularity",
+      "publisher": "National Institute of Standards and Technology",
+      "url": "https://www.nist.gov/el/applied-economics-office/lca-polymers-plastics-improve-circularity",
+      "year": 2022,
+      "source_type": "federal_research_program_and_publication_index",
+      "authority": "primary",
+      "supports": "Plastics LCA research program and linked peer-reviewed water/database studies",
+      "limitations": "Program page is an index; numerical claims must cite the linked study.",
+      "verification": {
+        "identity": "Official NIST research page retrieved.",
+        "fidelity": "Page links the cross-database water study and regionalized resin pathway work used here."
+      }
+    },
+    {
+      "source_id": "PE-ECO-PROFILES",
+      "title": "Eco-profiles set",
+      "publisher": "PlasticsEurope",
+      "url": "https://plasticseurope.org/sustainability/circularity/life-cycle-thinking/eco-profiles-set/",
+      "year": 2026,
+      "source_type": "industry_life_cycle_data_portal",
+      "authority": "industry_data_portal",
+      "supports": "Process taxonomy for PS, ABS, polyamide, polycarbonate, polyurethane, and other resin pathways",
+      "limitations": "Industry datasets; coverage and vintages vary and require individual report review.",
+      "verification": {
+        "identity": "Current PlasticsEurope portal retrieved.",
+        "fidelity": "Flow map enumerates monomer production, polymerization, compounding, and conversion processes for the resin families used in the pathway catalog."
+      }
+    },
+    {
+      "source_id": "EU-SUPD-COLLECTION-2026",
+      "title": "Ten EU countries exceeding SUPD collection targets",
+      "publisher": "European Commission",
+      "url": "https://environment.ec.europa.eu/news/ten-eu-countries-exceeding-supd-collection-targets-2026-04-16_en",
+      "year": 2026,
+      "source_type": "official_implementation_update",
+      "authority": "primary",
+      "supports": "Evidence that deposit/collection systems can meet or exceed the 77% bottle target in some countries",
+      "limitations": "Performance differs across countries and does not measure plastic avoidance or water savings.",
+      "verification": {
+        "identity": "Official European Commission dated news release retrieved.",
+        "fidelity": "Release identifies countries exceeding the SUPD separate-collection benchmark."
+      }
+    },
+    {
+      "source_id": "FR-DINEIN-ENFORCEMENT",
+      "title": "End of disposable tableware in fast-food restaurants",
+      "publisher": "French Ministry for Ecological Transition",
+      "url": "https://www.ecologie.gouv.fr/presse/fin-vaisselle-jetable-fast-foods-enseignes-ont-bien-engage-mise-conformite-leurs-restaurants",
+      "year": 2023,
+      "source_type": "official_implementation_update",
+      "authority": "primary",
+      "supports": "Implementation context for reusable fast-food dine-in serviceware",
+      "limitations": "Early compliance update, not a national life-cycle or water evaluation.",
+      "verification": {
+        "identity": "Official French ministry press page retrieved.",
+        "fidelity": "Page describes the 2023 reusable-serviceware requirement and compliance checks."
+      }
+    },
+    {
+      "source_id": "DE-UBA-REFILLABLE-2024",
+      "title": "Mehrweggetraenkeverpackungen: developments and recommendations",
+      "publisher": "German Environment Agency (Umweltbundesamt)",
+      "url": "https://www.umweltbundesamt.de/sites/default/files/medien/11850/publikationen/19_2024_texte_mehrweggetraenkeverpackungen.pdf",
+      "year": 2024,
+      "source_type": "official_system_assessment",
+      "authority": "assessment",
+      "supports": "German refillable beverage-packaging share and system conditions",
+      "limitations": "Country- and beverage-specific; reusable share has not displaced all one-way packaging.",
+      "verification": {
+        "identity": "Official UBA report PDF retrieved.",
+        "fidelity": "Report states 42.6% of beverages within the deposit scope were filled in reusable packaging in 2021."
+      }
+    },
+    {
+      "source_id": "RW-REMA-FAQ",
+      "title": "Frequently Asked Questions on the Law Banning Plastic Carry Bags and Other Single Use Plastic Items",
+      "publisher": "Rwanda Environment Management Authority",
+      "url": "https://www.rema.gov.rw/fileadmin/user_upload/REMA/Publications/FAQs/Frequently_Asked_Questions_on_the_Law_Banning_Plastic_Carry_Bags_and_other_Single_Use_Plastic_Items.pdf",
+      "year": 2020,
+      "source_type": "official_regulatory_guidance",
+      "authority": "primary",
+      "supports": "Specific prohibited items, authorization, and alternative/compostability conditions",
+      "limitations": "Guidance must be read with the law and later administrative updates.",
+      "verification": {
+        "identity": "Official REMA-hosted FAQ PDF retrieved.",
+        "fidelity": "FAQ lists wrappers, containers, straws, cutlery, cups, and plates and explains exceptions where alternatives are unavailable."
+      }
+    },
+    {
+      "source_id": "EPA-PFAS-TSCA",
+      "title": "Risk Management for Per- and Polyfluoroalkyl Substances under TSCA",
+      "publisher": "U.S. Environmental Protection Agency",
+      "url": "https://www.epa.gov/assessing-and-managing-chemicals-under-tsca/risk-management-and-polyfluoroalkyl-substances-pfas",
+      "year": 2026,
+      "source_type": "official_regulatory_summary",
+      "authority": "primary",
+      "supports": "Fluoropolymer uses, PFOA processing-aid history, persistence, and regulatory testing",
+      "limitations": "PFAS is a large class; statements about PFOA cannot be generalized to every polymer and use.",
+      "verification": {
+        "identity": "Current EPA TSCA page retrieved.",
+        "fidelity": "Page states PFOA was used as a fluoropolymer dispersing agent and lists fluoropolymer applications."
+      }
+    },
+    {
+      "source_id": "EPA-PVC-COMBUSTION",
+      "title": "Other Disposal Guidance",
+      "publisher": "U.S. Environmental Protection Agency",
+      "url": "https://iwaste.epa.gov/guidance/natural-disaster/fact-sheets/regulations-guidance-facilities/other-disposal-guidance",
+      "year": 2026,
+      "source_type": "official_disaster_waste_guidance",
+      "authority": "primary",
+      "supports": "Dioxin/furan formation concern when PVC is combusted",
+      "limitations": "Guidance concerns combustion/disaster disposal, not ordinary installed-product exposure.",
+      "verification": {
+        "identity": "EPA I-WASTE guidance page retrieved.",
+        "fidelity": "Page explicitly states dioxin and furan generation may occur when PVC is combusted."
+      }
+    },
+    {
+      "source_id": "ACS-PLASTIC-ALTERNATIVES-GHG-2024",
+      "title": "Replacing Plastics with Alternatives Is Worse for Greenhouse Gas Emissions in Most Cases",
+      "publisher": "Environmental Science & Technology",
+      "url": "https://pubs.acs.org/doi/10.1021/acs.est.3c05191",
+      "doi": "10.1021/acs.est.3c05191",
+      "year": 2024,
+      "source_type": "peer_reviewed_comparative_lca",
+      "authority": "primary_research",
+      "supports": "Evidence that material substitution can shift burdens and must be assessed by product function",
+      "limitations": "Focuses on greenhouse gases, selected applications, and modeled alternatives; does not establish water or toxicity superiority.",
+      "verification": {
+        "identity": "ACS article page and DOI retrieved.",
+        "fidelity": "Article reports plastic had lower GHG impact in 15 of 16 modeled applications, illustrating substitution tradeoffs."
+      }
+    },
+    {
+      "source_id": "EPA-FEDERAL-LCA-COMMONS",
+      "title": "Federal LCA Commons",
+      "publisher": "U.S. Federal LCA Commons",
+      "url": "https://www.lcacommons.gov/",
+      "year": 2026,
+      "source_type": "official_life_cycle_data_portal",
+      "authority": "primary_data_portal",
+      "supports": "Future product- and geography-specific life-cycle inventory ingestion",
+      "limitations": "Portal datasets require version, boundary, allocation, and geography harmonization before comparison.",
+      "verification": {
+        "identity": "Federal LCA data portal retrieved.",
+        "fidelity": "Portal exposes downloadable unit-process and product-system inventories, including U.S. resin processes."
+      }
+    }
+  ]
+}

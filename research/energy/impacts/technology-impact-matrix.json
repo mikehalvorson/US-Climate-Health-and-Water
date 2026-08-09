@@ -1,0 +1,298 @@
+{
+  "matrix_id": "power-generation-technology-impact-matrix-v1",
+  "as_of": "2026-08-01",
+  "scope_note": "Qualitative problem register for dashboard context. It does not rank technologies, estimate site-specific impacts, or replace dispatch, epidemiological, environmental-review, or lifecycle models.",
+  "comparison_rule": "Compare configurations and systems, not only technology labels. Preserve benefits, constraints, mitigation, residual risk, evidence quality, and unknowns as separate fields.",
+  "technologies": [
+    {
+      "technology_id": "coal_power",
+      "taxonomy_ids": ["resource.fossil.coal", "conversion.thermal.steam"],
+      "system_role": ["dispatchable energy", "capacity", "inertia and voltage support in synchronous configurations", "fuel stored on site"],
+      "deployment_status": "commercial_mature_declining_in_many_advanced_economies",
+      "technical": {
+        "strengths": ["dispatchable within plant constraints", "established bulk fuel and plant infrastructure", "on-site fuel inventory"],
+        "problems": ["slow starts and limited cycling efficiency for many steam units", "aging units", "heat-rate penalty from pollution controls and carbon capture", "large thermal-unit outage exposure", "fuel handling and ash systems", "cooling and drought constraints"]
+      },
+      "health": {
+        "routine": ["SO2, NOx, primary and secondary PM, mercury, and other hazardous air pollutants", "mining, transport, and occupational exposures"],
+        "waste_and_accident": ["coal-ash contamination risk", "mine, rail, fire, boiler, and industrial hazards"],
+        "attribution_note": "Use plant emissions and dispersion/exposure models; do not infer deaths from generation alone."
+      },
+      "regulatory": ["Clean Air Act standards including underlying MATS", "steam-electric effluent limits", "coal-combustion-residual rules", "cooling-water intake", "greenhouse-gas rule status", "mine and transport regulation"],
+      "sustainability": ["highest lifecycle greenhouse-gas group in comparative assessments", "land disturbance and mine waste", "large water withdrawal for many steam plants", "ash and long-lived legacy sites", "CCS adds equipment, energy, transport, injection, monitoring, and liability"],
+      "mitigation_options": ["retirement or reduced operation", "efficiency and controls", "fuel and pollution monitoring", "dry or hybrid cooling where feasible", "ash closure and groundwater remediation", "CCS with full lifecycle accounting"],
+      "residual_risks": ["CO2 remains high without CCS", "health damage persists even with partial controls", "legacy mine and ash liabilities", "CCS delivery and storage risk"],
+      "evidence": ["CLM-HLT-001", "CLM-REG-003", "CLM-REG-004", "CLM-SUS-001", "CLM-SUS-002", "CLM-CCS-001"],
+      "source_ids": ["SRC-EPA-POWER-HEALTH", "SRC-IPCC-AR5-LCA", "SRC-EPA-MATS-REPEAL26", "SRC-EPA-ELG24", "SRC-EPA-CCR24-26", "SRC-GAO-CCS21"]
+    },
+    {
+      "technology_id": "natural_gas_power",
+      "taxonomy_ids": ["resource.fossil.natural_gas", "conversion.thermal.combined_cycle", "conversion.thermal.combustion_turbine", "conversion.thermal.internal_combustion"],
+      "system_role": ["dispatchable energy", "peaking", "ramping", "capacity", "balancing"],
+      "deployment_status": "commercial_mature",
+      "technical": {
+        "strengths": ["combined-cycle efficiency", "fast starts and ramps for many simple-cycle and engine configurations", "smaller unit sizes than large steam or nuclear plants"],
+        "problems": ["pipeline and storage dependence", "extreme-cold fuel and equipment risk", "fuel-price volatility", "thermal efficiency and cooling constraints", "firm-gas and electric-gas coordination"]
+      },
+      "health": {
+        "routine": ["NOx and secondary particulate formation", "upstream drilling, processing, compressor, and community exposure pathways"],
+        "accident": ["fire and explosion hazards", "pipeline and storage events"]
+      },
+      "regulatory": ["air permits", "pipeline and gas-market regulation", "cooling and water permits for steam-cycle units", "greenhouse-gas rule status", "methane rules across supply chain"],
+      "sustainability": ["lower direct CO2 per kWh than coal in efficient plants but still fossil", "methane across production and delivery", "water and thermal discharge for combined-cycle steam systems", "lock-in and stranded-asset exposure under deep-decarbonization scenarios"],
+      "mitigation_options": ["methane detection and repair", "high-efficiency units", "lower run hours", "weatherization and firm fuel", "clean-electricity substitution", "CCS with full lifecycle accounting"],
+      "residual_risks": ["uncaptured combustion CO2", "methane uncertainty", "fuel-price and pipeline dependence", "CCS energy and infrastructure requirements"],
+      "evidence": ["CLM-HLT-001", "CLM-HLT-003", "CLM-SUS-001", "CLM-SUS-002", "CLM-CCS-001"],
+      "source_ids": ["SRC-EPA-POWER-HEALTH", "SRC-IEA-METHANE26", "SRC-IPCC-AR5-LCA", "SRC-USGS-THERMO-WATER"]
+    },
+    {
+      "technology_id": "petroleum_liquid_power",
+      "taxonomy_ids": ["resource.fossil.petroleum_products", "conversion.thermal.combustion_turbine", "conversion.thermal.internal_combustion", "conversion.thermal.steam"],
+      "system_role": ["backup", "remote or island generation", "peaking", "emergency power"],
+      "deployment_status": "commercial_mature_niche_in_large_grids",
+      "technical": {
+        "strengths": ["storable liquid fuel", "portable fuel logistics", "black-start and emergency suitability for some units"],
+        "problems": ["high fuel cost and price volatility", "delivery interruption", "low utilization and poor efficiency in many small engines", "maintenance after long standby periods"]
+      },
+      "health": ["NOx, PM, SOx depending on fuel sulfur, toxics, noise, and upstream refinery and transport exposures"],
+      "regulatory": ["air permits and emergency-engine limits", "fuel sulfur and storage rules", "spill prevention", "greenhouse-gas regulation"],
+      "sustainability": ["high lifecycle greenhouse-gas emissions", "oil extraction and refining impacts", "spill risk", "low efficiency in many distributed applications"],
+      "mitigation_options": ["replace routine use with cleaner firm resources", "use only where resilience value is demonstrated", "emission controls", "low-sulfur fuel", "maintenance and spill containment"],
+      "residual_risks": ["fossil CO2 and combustion pollution", "fuel logistics during widespread emergencies"],
+      "evidence": ["CLM-HLT-001", "CLM-SUS-001"],
+      "source_ids": ["SRC-EPA-POWER-HEALTH", "SRC-IPCC-AR5-LCA", "SRC-EIA-EPM-T11"]
+    },
+    {
+      "technology_id": "nuclear_fission_power",
+      "taxonomy_ids": ["resource.nuclear.uranium", "conversion.nuclear.fission"],
+      "system_role": ["firm low-carbon energy", "capacity", "synchronous grid services for current large reactors", "process heat in some future designs"],
+      "deployment_status": "commercial_mature_for_light_water_reactors; demonstration_or_precommercial_for_many_advanced_designs",
+      "technical": {
+        "strengths": ["high annual capacity factor", "small fuel volume", "low operational greenhouse-gas and air-pollutant emissions", "long refueling intervals"],
+        "problems": ["high capital and schedule risk for new large projects", "large-unit outage exposure", "aging management", "specialized components and workforce", "advanced-fuel availability", "cooling-water and heat-rejection constraints"]
+      },
+      "health": {
+        "routine": ["regulated worker and public radiation exposure", "industrial and fuel-cycle occupational hazards"],
+        "accident": ["rare but potentially high-consequence radiological release", "evacuation and care disruption", "long-term monitoring", "social and mental-health effects"],
+        "interpretation": "Fukushima direct radiation findings and indirect evacuation harms must be shown together; Chernobyl demonstrates that severe-accident outcomes can differ materially by event."
+      },
+      "regulatory": ["NRC operating and new-reactor licensing", "subsequent license renewal and aging management", "security and emergency planning", "cooling-water and environmental review", "fuel-cycle regulation", "spent-fuel storage and disposal"],
+      "sustainability": ["low lifecycle greenhouse-gas emissions", "uranium mining, conversion, enrichment, and fabrication", "cooling-water use", "decommissioning", "more than 90,000 metric tons of U.S. commercial spent fuel and no operating permanent repository"],
+      "mitigation_options": ["standardized repeat builds and strong project governance", "aging management", "defense in depth and emergency planning", "fuel diversification", "dry or hybrid cooling where suitable", "consent-based storage and geologic disposal", "decommissioning funds"],
+      "residual_risks": ["low-probability high-consequence accident", "long-lived waste obligation", "capital at risk", "fuel and component concentration", "water and climate exposure"],
+      "evidence": ["CLM-NUC-001", "CLM-NUC-002", "CLM-NUC-003", "CLM-NUC-004", "CLM-NUC-005", "CLM-NUC-006", "CLM-NUC-007", "CLM-NUC-008", "CLM-NUC-009", "CLM-NUC-010", "CLM-NUC-011", "CLM-NUC-012", "CLM-NUC-013", "CLM-NUC-014"],
+      "source_ids": ["SRC-NRC-OPERATING26", "SRC-EIA-NUCLEAR-US26", "SRC-NRC-SLR26", "SRC-NRC-PART53-26", "SRC-DOE-HALEU26", "SRC-GAO-SPENT-FUEL", "SRC-NRC-DRY-CASK", "SRC-UNSCEAR-FUKUSHIMA", "SRC-WHO-FUKUSHIMA", "SRC-WHO-CHERNOBYL"]
+    },
+    {
+      "technology_id": "solar_photovoltaic",
+      "taxonomy_ids": ["conversion.solar.pv"],
+      "system_role": ["variable energy", "distributed generation", "daytime production", "hybrid resource when paired with storage"],
+      "deployment_status": "commercial_mature_fast_growth",
+      "technical": {
+        "strengths": ["modular", "short construction for many projects", "no fuel", "low operating water use", "distributed and utility configurations"],
+        "problems": ["diurnal and weather variability", "seasonal and geographic profile", "inverter and protection performance", "distribution backfeed", "interconnection and transmission", "curtailment at high penetration", "capacity contribution depends on net-load shape"]
+      },
+      "health": ["low routine operational air pollution", "manufacturing, electrical, construction, fire, and occupational pathways", "community and worker exposure depends on supply chain and waste handling"],
+      "regulatory": ["interconnection", "land and local siting", "federal land right-of-way where applicable", "building and fire codes", "waste and producer-responsibility rules where applicable"],
+      "sustainability": ["low lifecycle greenhouse-gas emissions", "land and habitat for utility projects", "glass, aluminum, silicon, copper, silver and other material demand", "25-35-year expected operating life", "recycling technically possible but often economically disadvantaged versus landfill"],
+      "mitigation_options": ["appropriate siting and dual-use land", "grid-forming and ride-through capability", "storage, demand response, and transmission", "design for repair and recycling", "collection and producer-responsibility systems"],
+      "residual_risks": ["weather correlation", "seasonal adequacy", "land conflict", "actual recycling system gaps"],
+      "evidence": ["CLM-SYS-002", "CLM-SYS-003", "CLM-SUS-001", "CLM-SUS-003", "CLM-SUS-004"],
+      "source_ids": ["SRC-NERC-IBR-DIST25", "SRC-IPCC-AR5-LCA", "SRC-DOE-SOLAR-EOL26", "SRC-IEA-CRITICAL-MINERALS24"]
+    },
+    {
+      "technology_id": "concentrating_solar_power",
+      "taxonomy_ids": ["conversion.solar.csp"],
+      "system_role": ["solar thermal generation", "dispatchable solar energy when paired with thermal storage", "process heat"],
+      "deployment_status": "commercial_but_limited_geographies",
+      "technical": {
+        "strengths": ["thermal storage can shift production after sunset", "synchronous steam-cycle options", "high direct-normal-irradiance resource in suitable regions"],
+        "problems": ["resource and site specificity", "complex thermal systems", "cooling and water use for wet-cooled plants", "large project delivery risk", "competition with PV plus batteries"]
+      },
+      "health": ["low combustion pollution", "construction and industrial heat-transfer-fluid hazards", "steam-cycle occupational hazards"],
+      "regulatory": ["land and habitat review", "water and cooling permits", "aviation/glare and wildlife issues where relevant", "transmission interconnection"],
+      "sustainability": ["low lifecycle greenhouse-gas emissions", "land footprint", "bulk materials", "water dependence for some cooling and mirror washing"] ,
+      "mitigation_options": ["dry or hybrid cooling", "thermal storage", "low-impact siting", "water-efficient cleaning"],
+      "residual_risks": ["arid-region water conflict", "site limitation", "cost and execution risk"],
+      "evidence": ["CLM-SUS-001", "CLM-SUS-002", "CLM-SUS-003"],
+      "source_ids": ["SRC-IPCC-AR5-LCA", "SRC-UNECE-LCA21", "SRC-USGS-THERMO-WATER"]
+    },
+    {
+      "technology_id": "onshore_wind",
+      "taxonomy_ids": ["conversion.wind.onshore"],
+      "system_role": ["variable energy", "hybrid resource with storage", "rural lease income"],
+      "deployment_status": "commercial_mature",
+      "technical": {
+        "strengths": ["no fuel", "shorter project construction than many thermal plants", "low operational water use", "geographic complementarity with solar in some systems"],
+        "problems": ["weather variability and forecast error", "transmission from high-quality resource areas", "inverter and protection performance", "icing, extreme wind, and cold-weather exposure", "capacity contribution varies with system peak"]
+      },
+      "health": ["low routine air pollution", "construction, maintenance, height, electrical, transport, and occupational risks", "noise and shadow concerns require site-specific assessment rather than generic health claims"],
+      "regulatory": ["local and state siting", "federal wildlife laws", "aviation and radar", "interconnection and transmission", "federal land rights-of-way where applicable"],
+      "sustainability": ["very low lifecycle greenhouse-gas emissions", "large project spacing but smaller directly occupied footprint", "bird and bat collision and displacement", "steel, concrete, copper, composites, and rare-earth magnets in some designs", "85-90% of mass commercially recyclable but blade/composite and rare-earth gaps remain"],
+      "mitigation_options": ["avoidance siting", "seasonal or smart curtailment", "deterrence", "repowering", "grid-forming controls", "blade and magnet recovery", "transmission and flexible demand"],
+      "residual_risks": ["weather correlation", "wildlife impacts cannot be reduced to zero", "community and transmission siting conflict", "composite waste"],
+      "evidence": ["CLM-SYS-002", "CLM-SYS-003", "CLM-SUS-001", "CLM-SUS-003", "CLM-SUS-004", "CLM-SUS-005"],
+      "source_ids": ["SRC-NERC-IBR-DIST25", "SRC-IPCC-AR5-LCA", "SRC-DOE-WIND-RECYCLING26", "SRC-USGS-WIND-WILDLIFE19"]
+    },
+    {
+      "technology_id": "offshore_wind",
+      "taxonomy_ids": ["conversion.wind.offshore.fixed", "conversion.wind.offshore.floating"],
+      "system_role": ["variable energy", "coastal load supply", "large project blocks"],
+      "deployment_status": "commercial_mature_fixed_bottom_in_some_markets; emerging_floating",
+      "technical": {
+        "strengths": ["strong resource in many coastal areas", "large turbines", "potential proximity to coastal demand"],
+        "problems": ["marine construction and weather windows", "subsea cables and onshore interconnection", "corrosion and difficult maintenance", "port, vessel, and supply-chain needs", "large project financing and schedule exposure"]
+      },
+      "health": ["low routine air pollution", "offshore construction, vessel, diving, height, electrical, and maintenance hazards"],
+      "regulatory": ["BOEM leasing and NEPA", "ESA, fisheries, and historic-preservation consultation", "Coast Guard navigation", "state coastal review", "onshore cable and grid approvals"],
+      "sustainability": ["very low lifecycle greenhouse-gas emissions", "marine habitat, birds, bats, marine mammals, fisheries, navigation, and cultural landscapes", "steel, copper, composites, foundations, and cables", "decommissioning and seabed restoration"] ,
+      "mitigation_options": ["seasonal and spatial siting", "construction-noise mitigation", "monitoring and adaptive management", "fisheries coordination", "recyclable materials", "coordinated offshore grid"],
+      "residual_risks": ["site-specific ecological uncertainty", "storm and corrosion exposure", "port and supply concentration", "permitting and community conflict"],
+      "evidence": ["CLM-REG-006", "CLM-SUS-001", "CLM-SUS-003", "CLM-SUS-004", "CLM-SUS-005"],
+      "source_ids": ["SRC-BOEM-OFFSHORE-NEPA", "SRC-IPCC-AR5-LCA", "SRC-DOE-WIND-RECYCLING26", "SRC-USGS-WIND-WILDLIFE19"]
+    },
+    {
+      "technology_id": "hydropower",
+      "taxonomy_ids": ["conversion.hydro.reservoir", "conversion.hydro.run_of_river", "conversion.hydro.diversion", "conversion.hydro.in_stream"],
+      "system_role": ["energy", "dispatchable capacity for reservoir projects", "ramping and ancillary services", "seasonal storage for some reservoirs"],
+      "deployment_status": "commercial_mature",
+      "technical": {
+        "strengths": ["long plant life", "high flexibility for many reservoir plants", "black start and grid services", "no combustible fuel"],
+        "problems": ["hydrology and drought dependence", "multi-purpose water constraints", "sedimentation", "aging dams and equipment", "site-limited new development", "dam-safety and extreme-flood risk"]
+      },
+      "health": ["low routine air pollution", "construction and dam-operation occupational risk", "water quality and vector or community impacts at some reservoirs", "rare high-consequence dam failure"],
+      "regulatory": ["FERC licensing for jurisdictional nonfederal projects", "environmental review", "fish and wildlife conditions", "water quality certification", "dam safety", "Tribal and historic resources"],
+      "sustainability": ["low median but exceptionally broad lifecycle greenhouse-gas range", "river fragmentation", "fish passage and mortality", "sediment and nutrient changes", "reservoir land transformation", "site-specific methane, especially in some climates", "downstream flow alteration"] ,
+      "mitigation_options": ["retrofit existing nonpowered dams", "fish passage and fish-friendly turbines", "environmental flows", "sediment management", "dam removal where net benefits justify", "climate-informed operations"],
+      "residual_risks": ["basin-scale ecological transformation", "hydrologic nonstationarity", "long-lived land and community effects"],
+      "evidence": ["CLM-SUS-001", "CLM-SUS-006", "CLM-REG-006"],
+      "source_ids": ["SRC-DOE-HYDRO-ENV", "SRC-FERC-HYDRO-LICENSE", "SRC-IPCC-AR5-LCA", "SRC-EIA-CAPACITY-FACTORS"]
+    },
+    {
+      "technology_id": "geothermal_power",
+      "taxonomy_ids": ["conversion.geothermal.dry_steam", "conversion.geothermal.flash", "conversion.geothermal.binary", "conversion.geothermal.enhanced"],
+      "system_role": ["firm low-carbon energy", "capacity", "heat and electricity cogeneration"],
+      "deployment_status": "commercial_for_hydrothermal; emerging_for_enhanced_systems",
+      "technical": {
+        "strengths": ["relatively steady production", "small surface footprint", "no delivered fuel", "potential for heat and power"],
+        "problems": ["resource and drilling risk", "high upfront exploration cost", "reservoir decline if poorly managed", "corrosion and scaling", "enhanced-system stimulation and subsurface uncertainty"]
+      },
+      "health": ["low combustion pollution", "possible hydrogen sulfide and other gas or fluid exposure depending on resource", "drilling and industrial hazards", "felt induced-seismicity consequences"] ,
+      "regulatory": ["land and mineral rights", "drilling and injection", "water management", "air permits for some resources", "induced-seismicity protocols", "interconnection"],
+      "sustainability": ["low lifecycle greenhouse-gas emissions with resource-dependent range", "water withdrawal or reinjection", "brines and dissolved minerals", "induced seismicity", "localized land and habitat disturbance"] ,
+      "mitigation_options": ["closed-loop or reinjection systems where suitable", "traffic-light seismic protocols", "gas abatement", "reservoir monitoring", "resource-specific water and brine management"],
+      "residual_risks": ["subsurface uncertainty", "induced seismicity cannot be assumed zero", "resource-specific emissions and water chemistry"],
+      "evidence": ["CLM-SUS-001", "CLM-SUS-007"],
+      "source_ids": ["SRC-DOE-GEO-ENV", "SRC-EIA-CAPACITY-FACTORS", "SRC-IPCC-AR5-LCA"]
+    },
+    {
+      "technology_id": "biomass_and_biogas_power",
+      "taxonomy_ids": ["resource.renewable.biogenic", "resource.renewable.biogenic.biogas", "conversion.thermal.steam", "conversion.thermal.internal_combustion", "conversion.thermal.chp"],
+      "system_role": ["dispatchable energy", "combined heat and power", "waste and residue management", "storable renewable fuel under qualifying pathways"],
+      "deployment_status": "commercial_with_feedstock_specificity",
+      "technical": {
+        "strengths": ["dispatchable and storable fuel", "CHP potential", "can use some wastes and residues", "biogas can use existing engine and turbine technologies"],
+        "problems": ["feedstock collection, moisture, storage, and transport", "low energy density", "seasonal supply", "boiler fouling and gas cleanup", "limited sustainable feedstock", "competition with other uses"]
+      },
+      "health": ["combustion PM, NOx, carbon monoxide, organics, and toxics depend on fuel and controls", "odor, dust, bioaerosol, truck traffic, and occupational pathways"] ,
+      "regulatory": ["air permits", "waste and feedstock classification", "renewable-credit lifecycle rules", "land-use and forest policy", "water and ash management", "pipeline gas-quality rules for biomethane"] ,
+      "sustainability": ["climate outcome varies by feedstock, counterfactual, land-use change, supply chain, conversion, accounting boundary, and time horizon", "land, biodiversity, soil carbon, fertilizer, and water impacts for dedicated crops", "methane benefit possible when waste emissions are genuinely avoided", "ash and air emissions remain"] ,
+      "mitigation_options": ["prioritize verified wastes and residues", "strict lifecycle and counterfactual accounting", "high-efficiency CHP", "methane capture", "pollution controls", "sustainable harvest and soil protections"] ,
+      "residual_risks": ["carbon debt and accounting error", "feedstock leakage", "land competition", "combustion pollution"] ,
+      "evidence": ["CLM-HLT-001", "CLM-SUS-008"],
+      "source_ids": ["SRC-IPCC-AR6-BIOENERGY", "SRC-IPCC-AR5-LCA", "SRC-EPA-POWER-HEALTH"]
+    },
+    {
+      "technology_id": "municipal_and_industrial_waste_to_energy",
+      "taxonomy_ids": ["resource.waste.msw_biogenic", "resource.waste.msw_nonbiogenic", "resource.waste.tire_derived", "conversion.thermal.steam"],
+      "system_role": ["dispatchable energy", "waste-volume reduction", "district heat or CHP"],
+      "deployment_status": "commercial_niche",
+      "technical": {
+        "strengths": ["firm fuel stream", "reduces waste mass and volume", "potential CHP"],
+        "problems": ["heterogeneous fuel", "corrosion and fouling", "complex emissions controls", "feedstock contracts", "competition with waste prevention and material recycling"]
+      },
+      "health": ["PM, NOx, acid gases, metals, persistent organics, and other pollutants require stringent control", "ash handling and occupational exposure", "facility and truck-traffic community burden"] ,
+      "regulatory": ["municipal-waste combustor air standards", "solid and hazardous waste classification", "ash testing and disposal", "local siting", "renewable accounting only for eligible biogenic fraction"] ,
+      "sustainability": ["fossil CO2 from plastics and other nonbiogenic fractions", "biogenic carbon depends on accounting", "energy recovery can conflict with higher-priority waste prevention and recycling", "concentrated fly and bottom ash"] ,
+      "mitigation_options": ["waste hierarchy", "feedstock separation", "best-available controls and continuous monitoring", "metal recovery", "safe ash management", "CHP efficiency"] ,
+      "residual_risks": ["pollution-control dependence", "fossil-plastic carbon", "lock-in of waste supply", "ash liability"] ,
+      "evidence": ["CLM-HLT-001", "CLM-SUS-008"],
+      "source_ids": ["SRC-EPA-POWER-HEALTH", "SRC-IPCC-AR6-BIOENERGY", "SRC-EIA-EPM-T11"]
+    },
+    {
+      "technology_id": "marine_and_hydrokinetic_power",
+      "taxonomy_ids": ["conversion.marine.wave", "conversion.marine.tidal_stream", "conversion.marine.tidal_barrage", "conversion.marine.tidal_lagoon", "conversion.marine.ocean_current", "conversion.marine.river_current", "conversion.marine.otec", "conversion.marine.salinity_gradient"],
+      "system_role": ["predictable tidal energy", "variable wave energy", "remote and coastal applications", "future portfolio diversity"],
+      "deployment_status": "emerging_with_very_small_observed_fleet",
+      "technical": {
+        "strengths": ["tidal timing is predictable", "large theoretical resource", "possible complementarity with wind and solar"],
+        "problems": ["harsh marine environment", "corrosion, biofouling, storms, moorings, cables, and difficult maintenance", "technology diversity without standardization", "limited commercial operating record", "high installation and retrieval cost"]
+      },
+      "health": ["low routine combustion pollution", "offshore vessel, diving, electrical, lifting, and maintenance hazards"] ,
+      "regulatory": ["FERC licensing for hydrokinetic projects in its jurisdiction", "BOEM for relevant Outer Continental Shelf activity", "navigation, fisheries, species, water, and coastal review"] ,
+      "sustainability": ["low lifecycle greenhouse-gas estimates in limited literature", "collision, noise, electromagnetic fields, habitat, sediment, and navigation interactions", "limited deployment means environmental evidence remains sparse"] ,
+      "mitigation_options": ["staged deployment", "baseline monitoring", "adaptive management", "retrievable designs", "shared data repositories", "site avoidance"] ,
+      "residual_risks": ["scale-up effects are not well observed", "technology and site heterogeneity", "marine maintenance and decommissioning"] ,
+      "evidence": ["CLM-TAX-003", "CLM-SUS-001", "CLM-SUS-009"],
+      "source_ids": ["SRC-DOE-MARINE", "SRC-DOE-MARINE-SOS20", "SRC-OES-AR25", "SRC-IRENASTAT-CAP26"]
+    },
+    {
+      "technology_id": "fossil_power_with_ccs",
+      "taxonomy_ids": ["resource.fossil.coal", "resource.fossil.natural_gas", "conversion.thermal.steam", "conversion.thermal.combined_cycle"],
+      "system_role": ["dispatchable lower-emission fossil generation where capture, transport, and storage system exists"],
+      "deployment_status": "commercial_components_with_limited_integrated_power_fleet",
+      "technical": {
+        "strengths": ["can substantially reduce captured-point-source CO2", "retains dispatchable thermal generation"],
+        "problems": ["energy and capacity penalty", "capture integration", "solvent and equipment management", "CO2 compression and pipeline network", "storage-site characterization and injection", "monitoring and long-term stewardship"]
+      },
+      "health": ["does not automatically eliminate combustion air pollutants", "upstream fuel extraction continues", "additional equipment, chemical, pipeline, and injection hazards"] ,
+      "regulatory": ["plant air and water permits", "CO2 pipeline authorities", "EPA Class VI wells", "pore-space rights", "monitoring, plugging, financial assurance, and liability"] ,
+      "sustainability": ["captured fraction is not lifecycle reduction", "residual stack CO2, energy penalty, and upstream methane remain", "large transport and storage infrastructure", "long-duration storage integrity and stewardship"] ,
+      "mitigation_options": ["high capture performance", "low-carbon auxiliary energy", "methane control", "robust site selection", "monitoring and verification", "financial assurance", "community and Tribal engagement"] ,
+      "residual_risks": ["cost and delivery failure", "incomplete lifecycle reduction", "storage and pipeline acceptance", "continued extraction impacts"] ,
+      "evidence": ["CLM-CCS-001", "CLM-HLT-001", "CLM-HLT-003", "CLM-SUS-001"],
+      "source_ids": ["SRC-GAO-CCS21", "SRC-EPA-CCS-CLASSVI", "SRC-IPCC-AR5-LCA", "SRC-IEA-METHANE26"]
+    },
+    {
+      "technology_id": "hydrogen_and_fuel_cell_power",
+      "taxonomy_ids": ["carrier.hydrogen", "conversion.electrochemical.fuel_cell"],
+      "system_role": ["energy carrier", "long-duration or seasonal storage pathway", "backup and distributed power", "firm generation when fuel is available"],
+      "deployment_status": "commercial_in_niches; emerging_for_grid_scale_low_emission_fuel",
+      "technical": {
+        "strengths": ["storable carrier", "fuel cells can provide modular quiet generation", "potential cross-sector use"],
+        "problems": ["hydrogen must be produced", "round-trip losses when electricity is converted to hydrogen and back", "storage and transport difficulty", "leakage, embrittlement, compression or liquefaction energy", "limited low-emission supply"]
+      },
+      "health": ["flammability and explosion risk", "NOx possible in combustion applications", "upstream impacts depend entirely on production pathway"] ,
+      "regulatory": ["production air and water permits", "pressure vessel, pipeline, fire and building codes", "electric interconnection", "fuel carbon-intensity definitions"] ,
+      "sustainability": ["not intrinsically low carbon", "electrolysis electricity source and water matter", "fossil-derived hydrogen depends on methane and capture performance", "platinum-group and other catalyst materials for some fuel cells"] ,
+      "mitigation_options": ["pathway-specific lifecycle certification", "use where storage or molecular value justifies conversion losses", "leak detection", "appropriate materials and ventilation", "low-carbon electricity or verified low-emission production"] ,
+      "residual_risks": ["conversion loss", "fuel availability", "infrastructure cost", "misleading color labels without measured carbon intensity"] ,
+      "evidence": ["CLM-TAX-002", "CLM-HLT-003", "CLM-SUS-003"],
+      "source_ids": ["SRC-EIA-HYDROGEN", "SRC-IEA-METHANE26", "SRC-IEA-CRITICAL-MINERALS24"]
+    },
+    {
+      "technology_id": "electricity_storage_context",
+      "taxonomy_ids": ["storage"],
+      "system_role": ["time shifting", "frequency and voltage services", "reserves", "capacity depending on duration and availability", "black start in qualified systems"],
+      "deployment_status": "commercial_with_technology_specific_maturity",
+      "classification": "not_primary_generation",
+      "technical": {
+        "strengths": ["fast response for electrochemical systems", "absorbs otherwise curtailed energy", "can relieve some congestion and shift peaks", "pumped storage provides large-scale long-duration capability"],
+        "problems": ["round-trip losses", "finite power and energy duration", "state-of-charge constraints", "degradation", "charging-energy dependence", "duration-specific adequacy value", "pumped-storage geography and water constraints"]
+      },
+      "health": ["battery fire and chemical hazards", "mining and manufacturing exposure", "dam and water risks for pumped storage", "reduced combustion may yield health benefits depending on charging and dispatch"] ,
+      "regulatory": ["interconnection and market participation", "fire and building codes", "hazardous materials and emergency response", "FERC and water licensing for pumped storage", "end-of-life rules"] ,
+      "sustainability": ["mineral and manufacturing impacts", "charging mix determines operational emissions consequence", "recycling and second-life potential", "land and water impacts vary by technology"] ,
+      "mitigation_options": ["duration-matched planning", "safe siting and fire suppression", "responsible sourcing and recycling", "dispatch based on marginal emissions and grid need", "state-of-health monitoring"] ,
+      "residual_risks": ["cannot create net energy", "duration depletion during multi-day events", "supply-chain and end-of-life burdens"] ,
+      "evidence": ["CLM-TAX-001", "CLM-SYS-001", "CLM-SUS-003"],
+      "source_ids": ["SRC-EIA-STORAGE", "SRC-EIA-EPM-T11", "SRC-IEA-CRITICAL-MINERALS24", "SRC-IEA-RECYCLING24"]
+    }
+  ],
+  "matrix_limits": [
+    "The matrix does not include quantitative mortality, cost, land, water, material, or reliability coefficients because compatible denominators and system boundaries require a separate audited coefficient ledger.",
+    "A listed problem is a pathway to evaluate, not proof that every facility has the same magnitude.",
+    "Mitigation can shift burdens; residual risks remain and must be represented.",
+    "Generation portfolios must be evaluated as systems with networks, storage, demand flexibility, reserves, and fuel supply."
+  ]
+}

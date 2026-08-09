@@ -1,0 +1,84 @@
+{
+  "purpose": "Prevent unlike transmission-capacity quantities from being displayed as if they were equivalent.",
+  "canonical_unit": "MW",
+  "definitions": [
+    {
+      "code": "converter_or_project_nameplate",
+      "definition": "The nominal power rating of an HVDC converter or the project's stated design transfer quantity.",
+      "dashboard_label": "Project / converter rating",
+      "may_be_summed": false,
+      "warning": "May exceed contracted delivery, accredited capacity, available transfer capability, or an interface limit."
+    },
+    {
+      "code": "conductor_capability",
+      "definition": "A conductor thermal or design capability under stated assumptions.",
+      "dashboard_label": "Conductor capability",
+      "may_be_summed": false,
+      "warning": "Substations, series compensation, voltage, stability, protection, or contingency criteria may bind first."
+    },
+    {
+      "code": "equipment_limit",
+      "definition": "A limiting rating of terminal, converter, transformer, series-compensation, or other corridor equipment.",
+      "dashboard_label": "Equipment limit",
+      "may_be_summed": false,
+      "warning": "The most restrictive applicable system element or contingency governs actual operation."
+    },
+    {
+      "code": "nominal_transfer_capability",
+      "definition": "A stated nominal ability to transfer power over a line or interface.",
+      "dashboard_label": "Nominal transfer capability",
+      "may_be_summed": false,
+      "warning": "Actual operation may be lower and direction- or season-dependent."
+    },
+    {
+      "code": "energy_import_capability_study_assumption",
+      "definition": "An import quantity used in a dated system-operator planning or market study.",
+      "dashboard_label": "Modeled energy-import capability",
+      "may_be_summed": false,
+      "warning": "It is a study-case assumption, not a real-time operating limit."
+    },
+    {
+      "code": "capacity_import_capability_study_assumption",
+      "definition": "An import quantity eligible for capacity treatment in a dated system-operator study.",
+      "dashboard_label": "Modeled capacity-import capability",
+      "may_be_summed": false,
+      "warning": "Can differ sharply from energy capability; zero does not mean the line carries no energy."
+    },
+    {
+      "code": "firm_point_to_point_service",
+      "definition": "A contractual or tariff-based firm transmission-service right between specified points.",
+      "dashboard_label": "Firm service right",
+      "may_be_summed": false,
+      "warning": "A service right is not a physical conductor rating and may coexist with other rights and reliability reservations."
+    },
+    {
+      "code": "unforced_capacity_delivery_right",
+      "definition": "A market right to deliver a stated quantity of capacity across a constrained interface.",
+      "dashboard_label": "Capacity delivery right",
+      "may_be_summed": false,
+      "warning": "A market-right quantity is not the same as an engineering rating."
+    },
+    {
+      "code": "permitted_ultimate_configuration",
+      "definition": "The maximum quantity described in a permit or environmental-review configuration that may include later phases.",
+      "dashboard_label": "Permitted ultimate configuration",
+      "may_be_summed": false,
+      "warning": "Not proof that all phases are financed, built, or in service."
+    },
+    {
+      "code": "directional_permit_limit",
+      "definition": "A nonsimultaneous directional maximum specified by a permit.",
+      "dashboard_label": "Permitted directional maximum",
+      "may_be_summed": false,
+      "warning": "Northbound and southbound maxima cannot be added and are not simultaneously available."
+    }
+  ],
+  "prohibited_transforms": [
+    "Do not infer MW from kV.",
+    "Do not infer annual TWh from MW without an independently sourced utilization or delivery profile.",
+    "Do not add opposite-direction nonsimultaneous limits.",
+    "Do not add phased ultimate capacity to current phase capacity.",
+    "Do not label a market right or capacity accreditation as a conductor rating.",
+    "Do not treat available transfer capability as fixed; it changes with outages, reservations, generation, load, topology, and reliability criteria."
+  ]
+}

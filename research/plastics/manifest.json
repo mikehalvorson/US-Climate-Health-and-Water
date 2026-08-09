@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "package_id": "us-plastics-production-water-health-and-replacement",
+  "as_of": "2026-08-02",
+  "geography": "United States with global manufacturing, health, policy, and seaweed evidence",
+  "scope_note": "Major U.S. commodity resins plus important engineering polymers, additives, particles, alternatives, and seaweed-derived films. This is not a claim that every commercial formulation has been characterized.",
+  "normative_files": [
+    "README.md",
+    "sources.json",
+    "claims.json",
+    "source-verification.json",
+    "us-material-flows.json",
+    "resin-catalog.json",
+    "manufacturing-pathways.json",
+    "water-intensities.json",
+    "alternatives.json",
+    "country-case-studies.json",
+    "seaweed.json",
+    "health-evidence.json",
+    "environmental-evidence.json",
+    "replacement-strategy.json",
+    "chart-contracts.json",
+    "gaps.json",
+    "summary.json",
+    "scenarios/gross-water-avoidance.csv",
+    "scripts/validate_plastics.py"
+  ],
+  "verification_standard": {
+    "every_source_checks_required": 2,
+    "headline_claim_checks_required": 3,
+    "source_check_1": "identity_existence_and_primary_record",
+    "source_check_2": "claim_fidelity_scope_unit_and_locator",
+    "headline_check_3": "independent_corroboration_recalculation_or_boundary_challenge",
+    "status_values": ["verified", "qualified", "rejected", "pending"]
+  },
+  "research_method_note": "The Firecrawl deep-research workflow determined the evidence architecture. Firecrawl retrieval returned HTTP 402 because project credits were unavailable, so evidence was obtained directly from official agencies, federal laboratories, publisher records, full-text peer-reviewed papers, and source PDFs. Figure-only water values were inspected with the PDF workflow and are labeled approximate_from_figure."
+}

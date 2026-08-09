@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0.0",
+  "global_rules": {
+    "source_affordance": "Expose source ID, publisher, URL, locator, access date, year/period, geography, unit, boundary, and caveat for every mark.",
+    "metric_labels": "Withdrawal, consumptive use, delivery, capacity, and indirect footprint require different visual encodings and may not share an unlabeled axis.",
+    "dates": "Every future value must be labeled regulatory deadline, planning counterfactual, infrastructure target, or scenario/model.",
+    "nulls": "Unknown values remain null; do not convert to zero or interpolate.",
+    "volatility": "Current drought stages, reservoir levels, and restrictions require a fetched timestamp and stale-data warning.",
+    "geography": "National averages may not be used as facility or watershed impact estimates."
+  },
+  "charts": [
+    {
+      "chart_id": "us-water-withdrawals-1950-2015",
+      "title": "U.S. water withdrawals by category and source",
+      "type": "stacked_area_and_total_line",
+      "data": "timeseries/usgs-historical-water-use-1950-2015.csv",
+      "x": "year",
+      "series": ["public_supply_bgd", "self_supplied_domestic_bgd", "livestock_bgd", "irrigation_bgd", "thermoelectric_bgd", "industrial_bgd"],
+      "overlay": "total_withdrawals_bgd",
+      "constraints": ["Categories shown do not sum exactly to total because mining and aquaculture are absent in early years and reporting categories changed.", "Mark 2015 as the last fully comparable national inventory; do not extend the line to 2026."]
+    },
+    {
+      "chart_id": "withdrawal-versus-consumption",
+      "title": "Withdrawal is not consumption",
+      "type": "paired_bar_or_sankey",
+      "data": "national-water-use.json#/modeled_2010_2020/covered_sectors",
+      "categories": ["crop_irrigation", "public_supply", "thermoelectric_freshwater"],
+      "measures": ["withdrawal", "consumptive_use"],
+      "constraints": ["Use 2010–20 conterminous-U.S. values only.", "Do not mix 2015 national values into the same bars."]
+    },
+    {
+      "chart_id": "household-service-ladder",
+      "title": "Drinking water is a small part of household service",
+      "type": "log_scale_service_ladder",
+      "data": "sectors/households.json#/dashboard_comparisons",
+      "levels": ["drinking_only_reference", "basic_drinking_cooking_and_limited_hygiene", "full_current_domestic_service"],
+      "constraints": ["State that WHO references are basic-needs guidance and 82 gpcd is a U.S. average.", "Never imply that a drinking-only device replaces household water service."]
+    },
+    {
+      "chart_id": "agricultural-groundwater-transition",
+      "title": "Groundwater-dependent agriculture faces a staggered transition",
+      "type": "map_plus_declining_line",
+      "data": ["sectors/agriculture.json#/high_plains_aquifer", "sectors/agriculture.json#/llano_estacado_case"],
+      "constraints": ["Map only source-provided spatial data.", "Label Hale County as one official planning case, not the whole High Plains aquifer.", "Do not use 'aquifer empty by 2100'."]
+    },
+    {
+      "chart_id": "data-center-national-local-scale",
+      "title": "Data-center water is nationally small and locally concentrated",
+      "type": "nested_scale_and_site_map",
+      "data": "sectors/data-centers.json",
+      "required_views": ["national direct flow comparison", "2023-to-2028 projection range", "future facility/utility watershed map"],
+      "constraints": ["Keep direct and indirect water separate.", "Do not map national averages to facilities.", "Facility map requires verified campus location, water source, seasonal consumption, and utility context."]
+    },
+    {
+      "chart_id": "plastics-water-system-boundary",
+      "title": "Where plastics affect freshwater",
+      "type": "system_boundary_flow",
+      "data": "sectors/manufacturing-plastics.json#/required_method_for_plastics_policy",
+      "nodes": ["feedstock", "monomer_and_resin", "product_conversion", "transport", "use_and_washing", "reuse", "end_of_life", "replacement_system"],
+      "constraints": ["Do not show a national savings total until product-service counterfactual datasets are populated.", "Water quantity, quality, and scarcity require separate indicators."]
+    },
+    {
+      "chart_id": "city-source-dependency-map",
+      "title": "How selected U.S. cities obtain water",
+      "type": "symbol_map_with_portfolio_panel",
+      "data": "risk/city-source-dependencies.json",
+      "encode": ["source types", "single-source versus diversified", "surface versus groundwater versus reuse/desalination", "risk pathways"],
+      "constraints": ["Do not shade city-wide run-out probability.", "Use dated mixes only for the source year.", "Hover text must repeat each critical qualification."]
+    },
+    {
+      "chart_id": "freshwater-risk-horizons",
+      "title": "When freshwater risks can manifest",
+      "type": "swimlane_timeline",
+      "data": "timeseries/risk-horizons.csv",
+      "lanes": ["current_condition", "observed_chronic", "episodic_hazard", "regulatory_deadline", "planning_counterfactual", "scenario_model", "infrastructure_target"],
+      "constraints": ["Use distinct shapes and labels for every risk type.", "Open-ended hazards cannot be assigned a fabricated year.", "Planning counterfactuals must show the avoided-if-strategies-built note."]
+    },
+    {
+      "chart_id": "coastal-saltwater-intrusion-causal-model",
+      "title": "Why coastal wells become saline",
+      "type": "causal_diagram",
+      "data": "claims.json#WTR-COAST-001",
+      "nodes": ["sea_level", "pumping", "canal_stage_and_drainage", "drought_and_recharge", "aquifer_geology", "hydraulic_gradient", "salt_interface", "well_screen", "delivered_water_quality"],
+      "constraints": ["Sea level must not be the only incoming cause.", "Add place-specific pathways for Miami, Long Island, and Brunswick."]
+    },
+    {
+      "chart_id": "desalination-scale",
+      "title": "Desalination works at municipal increments; national replacement is enormous",
+      "type": "log_scale_capacity_and_energy",
+      "data": ["technologies/desalination.json#/scale_scenarios", "timeseries/technology-scale-scenarios.csv"],
+      "measures": ["target_mgd", "fifty_mgd_plant_equivalents", "electricity_twh_per_year_low", "electricity_twh_per_year_high"],
+      "constraints": ["Call plant counts capacity-equivalents.", "Energy range excludes distribution and other stated items.", "Do not imply all current freshwater must be replaced."]
+    },
+    {
+      "chart_id": "awg-service-feasibility",
+      "title": "Atmospheric water generation: drinking niche versus utility scale",
+      "type": "service_ladder_with_energy_band",
+      "data": "technologies/atmospheric-water-generation.json#/scale_scenarios",
+      "constraints": ["Label ENERGY STAR values as a condenser proxy, not certified AWG performance.", "Show humidity/temperature derating and potable-treatment requirements adjacent to the chart.", "Use logarithmic axes where needed."]
+    },
+    {
+      "chart_id": "water-portfolio-decision-matrix",
+      "title": "Match the intervention to the water problem",
+      "type": "decision_matrix",
+      "data": "cross-domain-findings.json#/intervention_fit",
+      "axes": ["problem_type", "intervention"],
+      "constraints": ["Score reliability, energy, cost, water quality, ecosystem, equity, and implementation time separately.", "No universal technology winner."]
+    }
+  ]
+}

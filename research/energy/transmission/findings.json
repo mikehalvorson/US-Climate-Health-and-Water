@@ -1,0 +1,90 @@
+{
+  "title": "Transmission research findings",
+  "as_of": "2026-08-01",
+  "findings": [
+    {
+      "finding_id": "TR-F01",
+      "finding": "Hourly shape changes the planning question.",
+      "evidence": "The complete-coincident portion of the 2024 EIA-930 reporting footprint averaged 478,055.928 MW and peaked at 745,020 MW on the UTC hour ending July 15 at 22:00, a load factor of 0.641669. Carolina, Southeast, and Tennessee regional peaks occurred in January, while many other regional peaks occurred in summer.",
+      "source_ids": ["SRC-EIA-930"],
+      "implication": "Annual electricity demand alone cannot size generation, storage, transformers, or corridors."
+    },
+    {
+      "finding_id": "TR-F02",
+      "finding": "The EIA hourly dataset is broad but not uniform.",
+      "evidence": "The 2024 balance files contain 61 BAs and 535,824 BA-hours, but only 53 BAs report demand; eight report no demand and CISO, PJM, and SEC have isolated missing hours. The subregion files contain 83 BA-subregions and 729,072 rows.",
+      "source_ids": ["SRC-EIA-930"],
+      "implication": "Missing must remain missing; geographic aggregates must disclose reporting-footprint completeness."
+    },
+    {
+      "finding_id": "TR-F03",
+      "finding": "There is no single honest 'MW capacity' for many corridors.",
+      "evidence": "NECEC is 1,200 MW for energy import in ISO-NE's 2026 study but zero for capacity import; Phase II is 2,000 MW for energy import and 1,400 MW for capacity import; Ten West reports 3,200 MW conductor capability with a 2,400 MW series-compensation equipment limit.",
+      "source_ids": ["SRC-ISONE-TRANSFER26", "SRC-CAISO-TENWEST24"],
+      "implication": "Dashboard capacity must be typed, dated, directional, and sourced."
+    },
+    {
+      "finding_id": "TR-F04",
+      "finding": "The national public geometry layer cannot answer the capacity question.",
+      "evidence": "The acquired HIFLD query contains 10,031 line features at 230-765 kV with route, owner, status, source, and voltage fields but no MW rating.",
+      "source_ids": ["SRC-HIFLD-TRANSMISSION-LINES", "SRC-EIA-TRANSMISSION-FAQ"],
+      "implication": "Use HIFLD for context and a separately verified project/operator overlay for capacity. Never infer MW from kV."
+    },
+    {
+      "finding_id": "TR-F05",
+      "finding": "Two important Northeast import projects crossed into operation by 2026.",
+      "evidence": "NECEC entered commercial operation by December 31, 2025 and Maine reported completion/power flow in January 2026; CHPE entered commercial operation May 13, 2026 and New York confirmed completion in June.",
+      "source_ids": ["SRC-MAINE-NECEC-COMPLETION26", "SRC-ISONE-TRANSFER26", "SRC-NYSERDA-CHPE26", "SRC-NY-GOV-CHPE26"],
+      "implication": "Project status must be versioned; a dashboard based on older proposal-stage material would now be wrong."
+    },
+    {
+      "finding_id": "TR-F06",
+      "finding": "Every major planning study reviewed finds material transmission value, but quantities are scenario-dependent.",
+      "evidence": "DOE's NTPS central decarbonization accelerated-framework cases reach 2.4-3.5 times the 2020 transmission system by 2050. DOE's 2023 Needs Study reports 2035 within-region median expansion of 20%, 64%, or 128% across selected scenario families. NERC projects roughly 224 GW summer and 246 GW winter peak growth from 2025 to 2035.",
+      "source_ids": ["SRC-DOE-NTPS24", "SRC-DOE-NEEDS23", "SRC-NERC-LTRA25"],
+      "implication": "Show ranges and assumptions; do not promote one result as a forecast."
+    },
+    {
+      "finding_id": "TR-F07",
+      "finding": "Transmission is slow because several partially parallel systems must all clear.",
+      "evidence": "Regional planning and cost allocation, state siting, federal environmental and resource review, Tribal and community engagement, land rights, engineering, procurement, finance, construction, outage coordination, testing, and energization have distinct authorities and failure modes.",
+      "source_ids": ["SRC-FERC-ORDER1920", "SRC-DOE-CITAP", "SRC-FERC-ORDER1977", "SRC-DOE-NEPA-TRANS25"],
+      "implication": "A graphable swimlane process is more accurate than one permitting-duration bar."
+    },
+    {
+      "finding_id": "TR-F08",
+      "finding": "Grid-enhancing technologies and reconductoring are important portfolio options, not universal replacements for new lines.",
+      "evidence": "DOE identifies dynamic ratings, power-flow controls, topology optimization, sensors, and advanced conductors as ways to increase utilization in suitable locations; FERC requires more accurate ambient-adjusted ratings. Ten West demonstrates that non-conductor equipment can still bind.",
+      "source_ids": ["SRC-DOE-GETS", "SRC-FERC-ORDER881", "SRC-CAISO-TENWEST24"],
+      "implication": "Show project-specific gain, cost, outage, and residual constraints."
+    },
+    {
+      "finding_id": "TR-F09",
+      "finding": "Transformers are a system-wide gating supply chain, not just a transmission component.",
+      "evidence": "DOE and GAO identify custom design, constrained electrical steel and accessories, limited factories/test bays, skilled labor, long procurement cycles, transport, limited interchangeability, and spares as linked issues.",
+      "source_ids": ["SRC-DOE-GRID-SC22", "SRC-DOE-LPT24", "SRC-GAO-LPT23"],
+      "implication": "Generator additions, transmission, data centers, EV charging, and buildings can compete for overlapping equipment and labor."
+    },
+    {
+      "finding_id": "TR-F10",
+      "finding": "The best current supply-chain dashboard is a staged evidence system, not a shortage leaderboard.",
+      "evidence": "Official deep dives map structural dependencies, but current national order books, factory utilization, qualification, lead-time distributions, and cancellations are often nonpublic or fragmented.",
+      "source_ids": ["SRC-DOE-GRID-SC22", "SRC-DOE-BATTERY-SC24", "SRC-DOE-GAS-TURBINE25", "SRC-GAO-LPT23"],
+      "implication": "Separate documented structure, current measured shortage, announced capacity, operating capacity, and research gap."
+    },
+    {
+      "finding_id": "TR-F11",
+      "finding": "Health and sustainability effects are real but cannot be reduced to one score.",
+      "evidence": "Worker electrical hazards, bird collision/electrocution, habitat fragmentation, materials and land use, community burdens, and enabled air-quality benefits have different mechanisms and boundaries. NCI does not support a blanket claim that power lines cause cancer.",
+      "source_ids": ["SRC-CDC-ELECTRICAL-SAFETY24", "SRC-USFWS-POWERLINES", "SRC-USGS-POWERLINES", "SRC-NCI-EMF", "SRC-DOE-TRANS-IMPACT"],
+      "implication": "Use separate technical, worker, community, ecological, lifecycle, and modeled health-benefit panels."
+    },
+    {
+      "finding_id": "TR-F12",
+      "finding": "The largest unresolved issue is cross-domain temporal and locational alignment.",
+      "evidence": "The project has long-run national generation and consumption scenarios and one full historical hourly load year, but lacks a unified public hourly, geographic generation-load-network scenario through 2050-2070.",
+      "source_ids": ["SRC-EIA-930", "SRC-DOE-NTPS24", "SRC-NERC-LTRA25"],
+      "implication": "The next analytical phase should build compatible regional hourly scenarios and explicitly model flexibility, climate stress, and network deliverability."
+    }
+  ]
+}

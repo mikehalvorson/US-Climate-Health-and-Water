@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0.0",
+  "method": {
+    "required_checks": 3,
+    "check_1": "Confirm source identity, publisher, title, and persistent official or DOI landing page.",
+    "check_2": "Read the exact table, figure, section, abstract, or data field and preserve baseline, unit, range, scenario, and confidence.",
+    "check_3": "Corroborate with an independent assessment/source or reproduce the value from the named underlying dataset.",
+    "important_note": "Three checks do not mean three interchangeable estimates. A primary assessment may synthesize many studies; corroboration checks interpretation without averaging unlike metrics."
+  },
+  "audits": [
+    {
+      "claim_id": "CLM-CAUSE-001",
+      "result": "verified",
+      "checks": [
+        {"check": 1, "evidence": "IPCC AR6 Synthesis Report official report page and DOI resolve to the 2023 assessment."},
+        {"check": 2, "evidence": "SPM A.1 and A.1.1 use the calibrated term unequivocal and report 1.1 C for 2011-2020."},
+        {"check": 3, "evidence": "AR6 WGI SPM A.1.3 and FAQ 3.1 independently show formal detection-and-attribution evidence, including model experiments with and without human influence."}
+      ]
+    },
+    {
+      "claim_id": "CLM-ATTR-001",
+      "result": "verified",
+      "checks": [
+        {"check": 1, "evidence": "Official IPCC AR6 WGI report and figure pages verified."},
+        {"check": 2, "evidence": "Figure SPM.2 values and uncertainty ranges transcribed without netting GHG warming and aerosol cooling into a false single-gas value."},
+        {"check": 3, "evidence": "FAQ 3.1 simulation comparison independently corroborates the human fingerprint; observed warming is not reproduced by natural-only forcing."}
+      ]
+    },
+    {
+      "claim_id": "CLM-TCRE-001",
+      "result": "verified",
+      "checks": [
+        {"check": 1, "evidence": "Official IPCC WGI and Synthesis Report pages verified."},
+        {"check": 2, "evidence": "WGI SPM D.1.1 reports 0.27-0.63 C per 1,000 GtCO2, best 0.45 C."},
+        {"check": 3, "evidence": "Synthesis Report B.5.2 repeats the cumulative-emissions relationship; Global Carbon Budget data independently provide the compatible cumulative-CO2 series used by the dashboard."}
+      ]
+    },
+    {
+      "claim_id": "CLM-CORR-001",
+      "result": "verified_with_causal_guardrail",
+      "checks": [
+        {"check": 1, "evidence": "NOAA Global Monitoring Laboratory CO2 and NASA GISTEMP v4 official data products verified."},
+        {"check": 2, "evidence": "Annual series were joined by year with baselines preserved; 1979-2025 n=47 Pearson r=0.9515 and first-difference r=0.1891."},
+        {"check": 3, "evidence": "Independent NOAA GlobalTemp is retained as a second temperature record; hashes, input rows, and reproducible normalizer are included."}
+      ]
+    },
+    {
+      "claim_id": "CLM-AGGI-001",
+      "result": "verified",
+      "checks": [
+        {"check": 1, "evidence": "NOAA Global Monitoring Laboratory AGGI official page and downloadable table verified."},
+        {"check": 2, "evidence": "2024 row reproduces 3.54 W/m2 total, AGGI 1.54, CO2 2.33 W/m2, and methane 0.57 W/m2."},
+        {"check": 3, "evidence": "Downloaded forcing and atmospheric mole-fraction tables are retained locally with SHA-256 hashes; values agree with NOAA page narrative."}
+      ]
+    },
+    {
+      "claim_id": "CLM-HEAT-001",
+      "result": "verified",
+      "checks": [
+        {"check": 1, "evidence": "Official IPCC AR6 WGI SPM page and Figure SPM.6 verified."},
+        {"check": 2, "evidence": "Frequency and intensity values transcribed separately at each warming level with the 1850-1900 baseline."},
+        {"check": 3, "evidence": "AR6 Synthesis Report SPM and WGI Chapter 11 corroborate monotonic escalation of heat extremes with warming."}
+      ]
+    },
+    {
+      "claim_id": "CLM-TC-001",
+      "result": "qualified",
+      "checks": [
+        {"check": 1, "evidence": "Peer-reviewed Knutson et al. 2020 review, official IPCC Chapter 11, and NOAA GFDL synthesis pages verified."},
+        {"check": 2, "evidence": "The 2 C medians retain metric definitions and study ranges; total-frequency language remains decrease or unchanged."},
+        {"check": 3, "evidence": "IPCC and NOAA independently agree on heavier rainfall and higher intensity while warning against a simple increasing-count claim."}
+      ]
+    },
+    {
+      "claim_id": "CLM-BIO-001",
+      "result": "qualified",
+      "checks": [
+        {"check": 1, "evidence": "Official IPCC WGII SPM/Chapter 2 and IPBES Global Assessment pages verified."},
+        {"check": 2, "evidence": "Very-high-risk ranges and medians transcribed by warming level and labeled as modeled risk rather than observed extinction."},
+        {"check": 3, "evidence": "IPBES independently establishes interacting non-climate drivers; IPBES-IPCC workshop corroborates climate-biodiversity interaction."}
+      ]
+    },
+    {
+      "claim_id": "CLM-FOOD-001",
+      "result": "qualified",
+      "checks": [
+        {"check": 1, "evidence": "Nature Climate Change DOI/abstract, IPCC WGII Chapter 5, and USDA productivity report verified."},
+        {"check": 2, "evidence": "The 21 percent value is described as slower TFP growth relative to a counterfactual, not food-volume loss."},
+        {"check": 3, "evidence": "IPCC cites the result in its assessment; USDA independently documents the agricultural TFP measurement framework and data revisions."}
+      ]
+    },
+    {
+      "claim_id": "CLM-WATER-001",
+      "result": "qualified_low_confidence",
+      "checks": [
+        {"check": 1, "evidence": "Official IPCC WGII Chapter 4, WMO water-status report, and UNESCO WWDR pages verified."},
+        {"check": 2, "evidence": "The 3 and 4 billion exposure values retain low confidence and their warming levels."},
+        {"check": 3, "evidence": "WMO and UNESCO independently corroborate current regional water-cycle instability and the importance of demand, infrastructure, and governance, without being misused as validation of the same projection."}
+      ]
+    },
+    {
+      "claim_id": "CLM-SLR-001",
+      "result": "verified",
+      "checks": [
+        {"check": 1, "evidence": "Official IPCC WGI, NOAA Climate.gov, and NASA/JPL dataset pages verified."},
+        {"check": 2, "evidence": "IPCC observed change, rate intervals, and attribution confidence transcribed exactly."},
+        {"check": 3, "evidence": "NOAA independently reports the observed rise and mechanisms; NASA/JPL metadata confirms the satellite global-mean sea-level observable."}
+      ]
+    },
+    {
+      "claim_id": "CLM-SLR-002",
+      "result": "verified",
+      "checks": [
+        {"check": 1, "evidence": "Official IPCC WGI SPM projection table verified."},
+        {"check": 2, "evidence": "2100 and 2150 scenario ranges preserve the 1995-2014 baseline and likely-range label."},
+        {"check": 3, "evidence": "NOAA and NASA independently verify the physical mechanisms and observed continuation; no external source is used to replace IPCC scenario ranges."}
+      ]
+    },
+    {
+      "claim_id": "CLM-DISP-001",
+      "result": "qualified",
+      "checks": [
+        {"check": 1, "evidence": "Official IPCC WGII Technical Summary and Chapter 7 pages verified."},
+        {"check": 2, "evidence": "The greater-than-20-million value remains internal, annual-average, weather-related, and since-2008."},
+        {"check": 3, "evidence": "UNHCR independently confirms that most climate-related displacement is internal and warns against the climate-refugee label."}
+      ]
+    },
+    {
+      "claim_id": "CLM-DISP-002",
+      "result": "qualified_scenario",
+      "checks": [
+        {"check": 1, "evidence": "Official World Bank Groundswell Part II report landing page verified."},
+        {"check": 2, "evidence": "216 million, six-region subtotal values, 2050 horizon, and up-to-80-percent reduction were checked; metric is internal migration."},
+        {"check": 3, "evidence": "IPCC and UNHCR corroborate the scenario-conditioned, multi-causal, mostly internal framing and reject conversion to a refugee forecast."}
+      ]
+    },
+    {
+      "claim_id": "CLM-DISP-003",
+      "result": "rejected",
+      "checks": [
+        {"check": 1, "evidence": "IPCC Chapter 7 and UNHCR legal terminology sources verified."},
+        {"check": 2, "evidence": "IPCC states global voluntary climate-migration estimates are unavailable; UNHCR does not recognize climate refugee as a legal term."},
+        {"check": 3, "evidence": "World Bank projections are scenario-based internal migration, so they cannot supply a refugee-per-degree coefficient."}
+      ]
+    }
+  ]
+}

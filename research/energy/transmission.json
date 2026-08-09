@@ -1,0 +1,75 @@
+{
+  "topic_id": "energy-transmission-review-v1",
+  "as_of": "2026-08-01",
+  "system_boundary": {
+    "generation": "Conversion of primary energy or secondary fuel into electricity.",
+    "transmission": "Bulk movement over high-voltage networks; the IEA transmission report focuses on networks above 66 kV.",
+    "distribution": "Delivery from bulk system to end users at lower voltages.",
+    "interconnection": "Technical and contractual process connecting a generator, storage facility, or large load to the grid.",
+    "losses": "Must state whether the metric covers technical transmission loss, distribution loss, nontechnical loss/pilferage, or power-plant conversion loss."
+  },
+  "global": {
+    "observations": [
+      {"metric_id": "TR-GLO-QUEUE", "measure": "projects_stalled_in_grid_connection_queues", "value": 2500, "unit": "GW", "operator": "greater_than", "status": "reported_approximate", "period": "reported in Electricity 2026", "source_id": "SRC-IEA-ELECTRICITY26-GRIDS", "claim_id": "CLM-GLO-014"},
+      {"metric_id": "TR-GLO-GRID-INVESTMENT", "measure": "annual_grid_investment", "value": 400, "unit": "billion_USD_per_year", "status": "reported_approximate", "source_id": "SRC-IEA-ELECTRICITY26-GRIDS", "claim_id": "CLM-GLO-014"},
+      {"metric_id": "TR-GLO-INVESTMENT-INCREASE-2030", "measure": "required_grid_investment_increase_by_2030", "value": 50, "unit": "percent", "status": "scenario_approximate", "source_id": "SRC-IEA-ELECTRICITY26-GRIDS", "claim_id": "CLM-GLO-014"},
+      {"metric_id": "TR-GLO-TRANSMISSION-INVESTMENT-2023", "measure": "annual_transmission_investment", "value": 140, "unit": "billion_USD_per_year", "status": "reported_approximate", "period": "2023", "source_id": "SRC-IEA-TRANSMISSION25"},
+      {"metric_id": "TR-GLO-TRANSMISSION-INVESTMENT-MID2030S-POLICY", "measure": "annual_transmission_investment", "value": 200, "unit": "billion_USD_per_year", "status": "scenario_approximate", "period": "mid-2030s", "scenario": "stated_policy_or_national_target context", "source_id": "SRC-IEA-TRANSMISSION25"},
+      {"metric_id": "TR-GLO-TRANSMISSION-INVESTMENT-MID2030S-CLIMATE", "measure": "annual_transmission_investment", "value_min": 250, "value_max": 300, "unit": "billion_USD_per_year", "status": "scenario_range", "period": "mid-2030s", "scenario": "climate_goal context", "source_id": "SRC-IEA-TRANSMISSION25"}
+    ],
+    "lead_times_years": [
+      {"asset": "grid_planning_and_construction", "min": 5, "max": 15, "source_id": "SRC-IEA-ELECTRICITY26-GRIDS", "claim_id": "CLM-GLO-015"},
+      {"asset": "renewable_generation_project", "min": 1, "max": 5, "source_id": "SRC-IEA-ELECTRICITY26-GRIDS", "claim_id": "CLM-GLO-015"},
+      {"asset": "data_center", "min": 1, "max": 3, "source_id": "SRC-IEA-ELECTRICITY26-GRIDS", "claim_id": "CLM-GLO-015"},
+      {"asset": "EV_charging_infrastructure", "min": 1, "max": 2, "source_id": "SRC-IEA-ELECTRICITY26-GRIDS", "claim_id": "CLM-GLO-015"}
+    ],
+    "loss_indicator": {
+      "indicator_code": "EG.ELC.LOSS.ZS",
+      "definition": "Electric power transmission and distribution losses as a share of electricity output, including pilferage.",
+      "publisher": "World Bank",
+      "underlying_source": "International Energy Agency",
+      "aggregation": "weighted average",
+      "latest_period_at_access": "2024",
+      "source_id": "SRC-WB-TD-LOSSES",
+      "dashboard_warning": "Not a pure physical transmission-loss metric."
+    }
+  },
+  "united_states": {
+    "interconnection_queues": {
+      "period": "end-2025",
+      "status": "active_queue_entries",
+      "source_id": "SRC-LBNL-QUEUES26",
+      "claim_ids": ["CLM-US-012", "CLM-US-013"],
+      "capacity_GW": {"generation_plus_storage_total": 2061, "solar": 773, "storage": 749, "natural_gas": 253, "wind": 220, "draft_or_executed_interconnection_agreement": 536},
+      "historical_outcomes_percent": {"commercial_operation": 13, "withdrawn": 75},
+      "duration": {"request_to_interconnection_agreement": "more than 3 years", "request_to_commercial_operation": "more than 5 years"},
+      "warnings": ["Queued capacity is not installed capacity.", "Hybrid projects can contain more than one technology.", "Historical completion rates are descriptive, not deterministic probabilities for every current project."]
+    },
+    "planning_scenarios": [
+      {"study": "2023 National Transmission Needs Study", "year": 2035, "measure": "median_within_region_transmission_expansion", "scenario": "moderate_load_moderate_clean_energy", "value": 20, "unit": "percent", "status": "scenario", "source_id": "SRC-DOE-NEEDS23", "claim_id": "CLM-US-015"},
+      {"study": "2023 National Transmission Needs Study", "year": 2035, "measure": "median_within_region_transmission_expansion", "scenario": "high_clean_energy", "value": 64, "unit": "percent", "status": "scenario", "source_id": "SRC-DOE-NEEDS23", "claim_id": "CLM-US-015"},
+      {"study": "2023 National Transmission Needs Study", "year": 2035, "measure": "median_within_region_transmission_expansion", "scenario": "high_load", "value": 128, "unit": "percent", "status": "scenario", "source_id": "SRC-DOE-NEEDS23", "claim_id": "CLM-US-015"}
+    ],
+    "modeling_stack": {
+      "study": "2024 National Transmission Planning Study",
+      "stages": ["capacity expansion", "production cost", "AC power flow", "system stress analysis"],
+      "source_id": "SRC-DOE-NTPS24",
+      "use": "Architecture reference for later dashboard scenarios; do not present model results as commitments."
+    },
+    "reliability_context": {
+      "source_id": "SRC-NERC-LTRA25",
+      "claim_id": "CLM-US-014",
+      "ten_year_peak_growth_GW": {"summer": 224, "winter": 245},
+      "projected_peak_season_retirements_GW": 105,
+      "retirement_operator": "greater_than",
+      "geographic_warning": "NERC assessment areas cover the North American bulk-power system; values are not a pure U.S.-only census."
+    }
+  },
+  "dashboard_contract": [
+    "Always separate installed, queued, planned, contracted, under-construction, and operating capacity.",
+    "Always separate transmission from distribution and interconnection processes.",
+    "Display line losses separately from generation-conversion losses.",
+    "Attach scenario name and study vintage to every future transmission value.",
+    "Show ranges and uncertainty when the source does; do not collapse to a single point estimate."
+  ]
+}

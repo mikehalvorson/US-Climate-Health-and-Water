@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mikehalvorson.github.io/US-Climate-Health-and-Water/schemas/energy-timeseries-row-v1.json",
+  "title": "Energy dashboard time-series row",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "dataset_id",
+    "source_id",
+    "record_type",
+    "model",
+    "scenario",
+    "scenario_family",
+    "geography",
+    "geography_code",
+    "region_level",
+    "year",
+    "metric",
+    "technology",
+    "technology_detail",
+    "scope",
+    "value",
+    "unit",
+    "source_value",
+    "source_unit",
+    "source_variable",
+    "upstream_status",
+    "source_vintage",
+    "source_file"
+  ],
+  "properties": {
+    "dataset_id": {"type": "string", "pattern": "^DS-[A-Z0-9][A-Z0-9._-]*$"},
+    "source_id": {"type": "string", "pattern": "^SRC-[A-Z0-9][A-Z0-9._-]*$"},
+    "record_type": {"enum": ["historical", "historical_reference", "scenario"]},
+    "model": {"type": "string"},
+    "scenario": {"type": "string"},
+    "scenario_family": {"type": "string"},
+    "geography": {"type": "string", "minLength": 1},
+    "geography_code": {"type": "string", "minLength": 1},
+    "region_level": {"enum": ["world", "country"]},
+    "year": {"type": "integer", "minimum": 1800, "maximum": 2200},
+    "metric": {
+      "enum": [
+        "electricity_generation",
+        "electricity_imports",
+        "electricity_losses",
+        "electricity_trade",
+        "installed_capacity",
+        "storage_discharge",
+        "storage_net_generation",
+        "storage_power_capacity"
+      ]
+    },
+    "technology": {"type": "string", "minLength": 1},
+    "technology_detail": {"type": "string"},
+    "scope": {"type": "string", "minLength": 1},
+    "value": {"type": "number"},
+    "unit": {"enum": ["TWh", "GW", "GWdc", "GW_mixed_ac_dc"]},
+    "source_value": {"type": "number"},
+    "source_unit": {"type": "string", "minLength": 1},
+    "source_variable": {"type": "string", "minLength": 1},
+    "upstream_status": {"type": "string", "minLength": 1},
+    "source_vintage": {"type": "string", "minLength": 1},
+    "source_file": {"type": "string", "minLength": 1}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"record_type": {"const": "scenario"}}},
+      "then": {
+        "properties": {
+          "model": {"minLength": 1},
+          "scenario": {"minLength": 1},
+          "scenario_family": {"minLength": 1}
+        }
+      }
+    }
+  ]
+}

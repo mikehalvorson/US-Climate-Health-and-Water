@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0.0",
+  "gaps": [
+    {
+      "gap_id": "WGAP-NATIONAL-2020S",
+      "priority": "critical",
+      "gap": "No fully comparable all-category national water-withdrawal and consumptive-use inventory after 2015 is present.",
+      "risk_if_ignored": "Dashboard users may read 2015 values as current or combine noncomparable modeled products.",
+      "resolution": "Use NWAA/PP1894-D time series for covered sectors and label all-category 2015 inventory; ingest future USGS category releases when available."
+    },
+    {
+      "gap_id": "WGAP-CONSUMPTION-ALL-SECTOR",
+      "priority": "critical",
+      "gap": "No complete, consistent national consumptive-use total covers every sector.",
+      "risk_if_ignored": "A fabricated national consumption denominator or misleading sector share.",
+      "resolution": "Show covered-sector subtotal and nulls; build a harmonized model only with documented return-flow and consumption methods."
+    },
+    {
+      "gap_id": "WGAP-PLASTICS-NATIONAL",
+      "priority": "critical",
+      "gap": "Current direct withdrawal, consumption, utility-delivered water, and life-cycle water are not reconciled for U.S. plastics.",
+      "risk_if_ignored": "False precision in claimed water saved by plastics bans or replacements.",
+      "resolution": "Build facility-water inventory for NAICS 325211 and relevant 326 subsectors; add upstream processes and product-service LCAs with scarcity weighting."
+    },
+    {
+      "gap_id": "WGAP-PLASTICS-SUBSTITUTION",
+      "priority": "critical",
+      "gap": "No ranked set of plastic products and service-equivalent alternatives has been modeled.",
+      "risk_if_ignored": "A substitute can use more water through farming, washing, energy, or shorter service life.",
+      "resolution": "Select priority products; define functional units and reuse counts; model avoidance plus paper/glass/metal/bio-based alternatives by watershed and scenario."
+    },
+    {
+      "gap_id": "WGAP-DATA-CENTER-SITES",
+      "priority": "high",
+      "gap": "National data-center estimates are not connected to verified campus-level withdrawals, consumption, cooling systems, utility sources, and seasonal stress.",
+      "risk_if_ignored": "Nationally small values hide local conflicts or facility estimates become speculative.",
+      "resolution": "Create a facility registry from permits, utility agreements, environmental reviews, company disclosures, and watershed data; preserve unknowns."
+    },
+    {
+      "gap_id": "WGAP-CITY-COMPARABILITY",
+      "priority": "high",
+      "gap": "Utility source mixes have different years, legal definitions, and physical-delivery accounting.",
+      "risk_if_ignored": "False city rankings and apparent totals above/below 100 percent.",
+      "resolution": "Version annual utility mix, distinguish legal entitlement/import accounting from physical source, and add reliability/yield metadata."
+    },
+    {
+      "gap_id": "WGAP-COASTAL-MODELS",
+      "priority": "high",
+      "gap": "Comparable local saltwater-intrusion projections are absent for many coastal cities and aquifers.",
+      "risk_if_ignored": "Sea-level scenarios become unsupported wellfield-failure dates.",
+      "resolution": "Ingest calibrated groundwater models, well screens, pumping scenarios, canal stages, vertical land motion, monitoring chloride, and adaptation actions for each aquifer."
+    },
+    {
+      "gap_id": "WGAP-DROUGHT-LIVE",
+      "priority": "high",
+      "gap": "Drought stages, reservoir levels, and restrictions are volatile live data.",
+      "risk_if_ignored": "A static research snapshot remains displayed after conditions change.",
+      "resolution": "Add official APIs/scrapers, fetched_at, valid_through, stale-state UI, and archived observations."
+    },
+    {
+      "gap_id": "WGAP-DESAL-COST-CURVES",
+      "priority": "medium",
+      "gap": "No normalized site-specific capital, operating, energy, brine, conveyance, financing, and permitting model is included.",
+      "risk_if_ignored": "One facility's cost is generalized nationwide.",
+      "resolution": "Build consistent 2026-dollar levelized cost scenarios by seawater/brackish source, salinity, size, energy, disposal, and distance."
+    },
+    {
+      "gap_id": "WGAP-AWG-FIELD-PERFORMANCE",
+      "priority": "high",
+      "gap": "Independent hourly field data linking AWG yield, electricity, humidity, temperature, water quality, and maintenance are sparse.",
+      "risk_if_ignored": "Nameplate capacity and lab efficiency are presented as reliable potable yield.",
+      "resolution": "Require third-party field trials across humid, temperate, and arid climates with potable treatment and lifecycle cost."
+    },
+    {
+      "gap_id": "WGAP-EQUITY",
+      "priority": "high",
+      "gap": "Affordability, tribal water rights, rural well failure, farmworker exposure, and small-utility capacity are not quantified consistently.",
+      "risk_if_ignored": "Engineering portfolios appear viable while shifting costs and failures to vulnerable communities.",
+      "resolution": "Add household burden, service shutoff, well depth/failure, rights/access, project cost allocation, and public-health layers."
+    },
+    {
+      "gap_id": "WGAP-WATER-QUALITY",
+      "priority": "critical",
+      "gap": "Quantity datasets do not fully represent PFAS, nitrate, salinity, harmful algal blooms, industrial discharge, wildfire contamination, or treatment capacity.",
+      "risk_if_ignored": "Available water is treated as usable water.",
+      "resolution": "Integrate Safe Drinking Water, discharge, groundwater-quality, harmful-algal-bloom, salinity, and treatment-capability datasets."
+    }
+  ]
+}

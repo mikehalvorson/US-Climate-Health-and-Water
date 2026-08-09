@@ -1,0 +1,11 @@
+cbsa,adaptation_variant,net_migration_estimate,interval_plus_minus,interval_low,interval_high,horizon,sea_level_rise_m,interpretation,source_id
+"Austin, TX",no_adaptation,818938,243821,575117,1062759,2100,1.8,high-end scenario model output; not forecast,NATURE-HAUER-2017
+"Austin, TX",adaptation,625627,179186,446441,804813,2100,1.8,high-end scenario model output; not forecast,NATURE-HAUER-2017
+"Orlando, FL",no_adaptation,461411,62665,398746,524076,2100,1.8,high-end scenario model output; not forecast,NATURE-HAUER-2017
+"Orlando, FL",adaptation,369120,38834,330286,407954,2100,1.8,high-end scenario model output; not forecast,NATURE-HAUER-2017
+"Atlanta, GA",no_adaptation,320937,131984,188953,452921,2100,1.8,high-end scenario model output; not forecast,NATURE-HAUER-2017
+"Atlanta, GA",adaptation,248684,68868,179816,317552,2100,1.8,high-end scenario model output; not forecast,NATURE-HAUER-2017
+"New Orleans, LA",no_adaptation,-500011,24053,-524064,-475958,2100,1.8,high-end scenario model output; not forecast,NATURE-HAUER-2017
+"New Orleans, LA",adaptation,-373283,10733,-384016,-362550,2100,1.8,high-end scenario model output; not forecast,NATURE-HAUER-2017
+"Miami, FL",no_adaptation,-2509978,155119,-2665097,-2354859,2100,1.8,high-end scenario model output; not forecast,NATURE-HAUER-2017
+"Miami, FL",adaptation,-2009263,95845,-2105108,-1913418,2100,1.8,high-end scenario model output; not forecast,NATURE-HAUER-2017

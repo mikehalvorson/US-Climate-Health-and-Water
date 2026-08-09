@@ -1,0 +1,1248 @@
+[
+  {
+    "claim_id": "CLM-ENR-001",
+    "domain": "scenario_models",
+    "claim": "En-ROADS is a global scenario-exploration model and its developers explicitly say it is not intended to produce predictions or projections of the future.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-ENR-OVERVIEW", "locator": "Overview, model-purpose discussion", "support_note": "Calls En-ROADS a global model and distinguishes scenario exploration from prediction."},
+      {"source_id": "SRC-MIT-SIMULATORS", "locator": "En-ROADS simulator description", "support_note": "MIT describes a scenario simulator with published structure, equations, and assumptions."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "purpose language read in context on both official publisher pages"},
+    "dashboard_rule": "Never label an En-ROADS result as a forecast, prediction, or expected outcome."
+  },
+  {
+    "claim_id": "CLM-ENR-002",
+    "domain": "scenario_models",
+    "claim": "En-ROADS is a globally aggregated stock-flow system-dynamics model running from 1990 to 2100 with Euler integration and a 0.125-year time step.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-ENR-STRUCTURE", "locator": "Model Structure; Time Horizon; Model Scope", "support_note": "The official technical reference specifies geography, horizon, integration method, and timestep."},
+      {"source_id": "SRC-ENR-OVERVIEW", "locator": "Overview", "support_note": "Corroborates the globally aggregated system scope."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "all numeric and method terms matched to the official structure page"}
+  },
+  {
+    "claim_id": "CLM-ENR-003",
+    "domain": "scenario_models",
+    "claim": "En-ROADS does not assume that the modeled economy is always in equilibrium or that actors optimize over the full model horizon.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": false,
+    "support": [
+      {"source_id": "SRC-ENR-STRUCTURE", "locator": "Modeling approach", "support_note": "The technical reference contrasts its disequilibrium system-dynamics approach with equilibrium/optimization models."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "claim limited to the explicit modeling contrast in the documentation"}
+  },
+  {
+    "claim_id": "CLM-ENR-004",
+    "domain": "scenario_models",
+    "claim": "En-ROADS models coal, oil, gas, bioenergy, electricity, and hydrogen as energy carriers and resolves demand through road/rail, air/water transport, buildings, industry, and data-center end uses.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-ENR-SUPPLY", "locator": "Energy carriers and electric pathways", "support_note": "Lists the carrier categories."},
+      {"source_id": "SRC-ENR-DEMAND", "locator": "End uses and carriers", "support_note": "Lists modeled end-use categories and direct-fuel/electricity/hydrogen choices."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "category names transcribed from the official supply and demand chapters"}
+  },
+  {
+    "claim_id": "CLM-ENR-005",
+    "domain": "scenario_models",
+    "claim": "The July 2026 En-ROADS calibration documentation cites IEA World Energy Balances 2025, Energy Institute Statistical Review 2025, IAEA 2024 data, Global Carbon Budget 2025, IEA World Energy Outlook 2025, and NGFS scenarios among its calibration and comparison inputs.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": false,
+    "support": [
+      {"source_id": "SRC-ENR-CALIBRATION", "locator": "Historical calibration and future scenario comparison source lists", "support_note": "The named sources and editions appear in the official calibration chapter."},
+      {"source_id": "SRC-ENR-REFERENCES", "locator": "Bibliography", "support_note": "The official bibliography confirms the referenced publications and data files."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "edition years and publisher names checked against the calibration list and bibliography"}
+  },
+  {
+    "claim_id": "CLM-ENR-006",
+    "domain": "licensing",
+    "claim": "Climate Interactive's public documentation is licensed CC BY 4.0, while software integration is offered through a separately licensed En-ROADS SDK.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-ENR-DOC-LICENSE", "locator": "License notice", "support_note": "Documentation reuse and adaptation are licensed under CC BY 4.0."},
+      {"source_id": "SRC-CI-SDK-LICENSE", "locator": "Software integrations / SDK", "support_note": "Climate Interactive offers simulator integration under an SDK license."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "documentation and SDK terms checked on separate official pages"},
+    "dashboard_rule": "Attribute adapted documentation; do not represent a clean-room model as the En-ROADS production simulator."
+  },
+  {
+    "claim_id": "CLM-GLO-001",
+    "domain": "global_energy_consumption",
+    "claim": "IEA estimates global energy demand grew 1.3%, or about 8 EJ, in 2025.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-IEA-GER26-TRENDS", "locator": "Global trends, opening section", "support_note": "Reports both the percentage and absolute change."},
+      {"source_id": "SRC-IEA-GER26", "locator": "Report scope and key findings", "support_note": "Confirms the assessment covers 2025 across all fuels and technologies."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "percentage, EJ increment, year, and estimate framing checked"}
+  },
+  {
+    "claim_id": "CLM-GLO-002",
+    "domain": "global_electricity_consumption",
+    "claim": "Global electricity demand grew by about 3%, or roughly 800 TWh, in 2025—about 2.3 times the growth rate of total energy demand.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-IEA-GER26-ELECTRICITY-DEMAND", "locator": "Electricity demand growth and sector discussion", "support_note": "Reports the roughly 3% growth rate."},
+      {"source_id": "SRC-IEA-GER26-TRENDS", "locator": "Age of Electricity section", "support_note": "Reports roughly 800 TWh and the 2.3-times comparison."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "rate, quantity, and comparison checked across two official chapters"}
+  },
+  {
+    "claim_id": "CLM-GLO-003",
+    "domain": "global_electricity_generation",
+    "claim": "IEA estimates that in 2025 low-emissions sources produced 43% of global electricity; renewables produced 34%, coal 34%, natural gas 21%, and wind plus solar 17%.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-IEA-GER26-ELECTRICITY-SUPPLY", "locator": "Global electricity generation mix", "support_note": "Reports each listed share and defines low-emissions as renewables plus nuclear."},
+      {"source_id": "SRC-EI-SR26", "locator": "Electricity section, 2025 world generation tables", "support_note": "Corroborates the overall mix while giving slightly different coal/gas shares under its compilation."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "all shares retained as rounded IEA estimates; EI differences preserved separately"}
+  },
+  {
+    "claim_id": "CLM-GLO-004",
+    "domain": "global_electricity_generation",
+    "claim": "IEA estimates solar PV generation rose about 600 TWh in 2025 to nearly 2,700 TWh, exceeding 8% of global generation.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-IEA-GER26-TRENDS", "locator": "Solar saw extraordinary growth", "support_note": "Reports the increment, level, and share."},
+      {"source_id": "SRC-EI-SR26", "locator": "Electricity generation, world solar table", "support_note": "Reports 8.7% solar share and a roughly 650 TWh increase under its data compilation."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "IEA estimate quoted as approximate; EI difference documented rather than merged"}
+  },
+  {
+    "claim_id": "CLM-GLO-005",
+    "domain": "global_electricity_generation",
+    "claim": "Energy Institute reports 32,202 TWh of global electricity generation in 2025, with coal at 32.6%, gas about 22%, solar 8.7%, wind 8.4%, and nuclear 8.8%.",
+    "status": "verified",
+    "confidence": "medium",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-EI-SR26", "locator": "Electricity section, world totals and generation-by-fuel tables", "support_note": "Provides the total and fuel shares."},
+      {"source_id": "SRC-IEA-GER26-ELECTRICITY-SUPPLY", "locator": "Global electricity generation mix", "support_note": "Independently corroborates the broad mix but uses rounded estimates and a different compilation."},
+      {"source_id": "SRC-EI-SR-METHOD", "locator": "2025 accounting-method change", "support_note": "Documents the transition to Physical Energy Content / Total Energy Supply accounting for primary-energy comparisons."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "total and shares checked in the 2026 edition; method difference retained"},
+    "caveat": "Do not combine these shares with IEA shares as if they came from one denominator."
+  },
+  {
+    "claim_id": "CLM-GLO-006",
+    "domain": "global_renewable_capacity",
+    "claim": "IRENA reports that renewables were 49% of global installed power capacity at the end of 2025 and 85.6% of net capacity additions during the year.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-IRENA-CAP26", "locator": "Highlights and global capacity-additions summary", "support_note": "Reports both shares and defines capacity as maximum net generating capacity at year end."},
+      {"source_id": "SRC-IEA-GER26", "locator": "Technology deployment overview", "support_note": "Independently corroborates record renewable additions, with a different preliminary total."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "shares, year-end definition, and data-status flags checked"}
+  },
+  {
+    "claim_id": "CLM-GLO-007",
+    "domain": "global_renewable_capacity",
+    "claim": "IRENA's end-2025 world capacity totals are 2,391.584 GW solar, 1,291.368 GW wind, 1,295.765 GW renewable hydropower excluding pumped storage, 154.399 GW bioenergy, 15.674 GW geothermal, 8.422 GW concentrating solar power, and 0.490 GW marine energy.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-IRENA-CAP26", "locator": "World tables: hydropower pp.17-20; marine p.24; wind pp.25-31; solar p.32; CSP p.40; bioenergy p.41; geothermal p.52", "support_note": "Values transcribed from the 2025 world rows; source tables use MW."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "each MW value checked in its technology table and divided by 1,000 for GW"},
+    "derivation": "GW = reported MW / 1000",
+    "caveat": "IRENA also reports 1,455.588 GW total hydropower including pumped storage; do not add that value to renewable hydro."
+  },
+  {
+    "claim_id": "CLM-GLO-008",
+    "domain": "global_renewable_capacity",
+    "claim": "IRENA's final statistical compilation reports 692 GW of renewable additions in 2025, including 510 GW solar and 159 GW wind, while IEA's earlier global review estimated about 800 GW of renewable additions, more than 600 GW solar, and about 160 GW wind.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-IRENA-CAP26", "locator": "2025 additions highlights", "support_note": "Provides the 692/510/159 GW statistical totals."},
+      {"source_id": "SRC-IEA-GER26", "locator": "Key findings and solar/wind technology chapter", "support_note": "Provides the approximate 800/>600/~160 GW estimates."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "publisher, release timing, and estimate/statistical framing checked"},
+    "dashboard_rule": "Expose source and methodology; never average these totals."
+  },
+  {
+    "claim_id": "CLM-GLO-009",
+    "domain": "global_nuclear_generation",
+    "claim": "IAEA PRIS reports approximately 379 GW of nuclear net capacity and 2,635.25 TWh of nuclear electricity production for 2025 in its world-trend table.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-IAEA-PRIS-TREND", "locator": "2025 world row; page updated 2026-07-25", "support_note": "Reports capacity and electrical production for reactors represented in the table."},
+      {"source_id": "SRC-EI-SR26", "locator": "Nuclear generation world table", "support_note": "Independently corroborates nuclear's approximately 8.8% contribution to 2025 world generation."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "year, net-capacity unit, production unit, and PRIS page scope checked"},
+    "caveat": "PRIS operational-status and country-share pages use slightly different reactor inclusion scopes."
+  },
+  {
+    "claim_id": "CLM-GLO-010",
+    "domain": "global_oil",
+    "claim": "IEA estimates global oil demand grew by 0.65 million barrels per day (0.7%, about 1.2 EJ) in 2025 while supply grew by about 3 million barrels per day.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": false,
+    "support": [
+      {"source_id": "SRC-IEA-GER26-OIL", "locator": "Oil demand growth and supply discussion", "support_note": "Reports the demand increment, rate, EJ conversion, and supply increment."},
+      {"source_id": "SRC-IEA-GER26", "locator": "Key findings", "support_note": "Corroborates the demand-growth quantities and drivers."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "demand and supply quantities kept separate and units checked"}
+  },
+  {
+    "claim_id": "CLM-GLO-011",
+    "domain": "global_natural_gas",
+    "claim": "IEA estimates global natural-gas demand increased about 1%, or 40 bcm (about 1.4 EJ), in 2025.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": false,
+    "support": [
+      {"source_id": "SRC-IEA-GER26-GAS", "locator": "Natural gas demand growth", "support_note": "Reports all three quantities."},
+      {"source_id": "SRC-IEA-GER26-TRENDS", "locator": "Demand by source", "support_note": "Corroborates the approximately 40 bcm increase."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "rate, bcm, and EJ figures checked across official report chapters"}
+  },
+  {
+    "claim_id": "CLM-GLO-012",
+    "domain": "global_coal",
+    "claim": "IEA estimates global coal demand rose about 0.4%, around 30 million tonnes or 0.7 EJ, in 2025; roughly two-thirds of coal consumption was for power generation.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": false,
+    "support": [
+      {"source_id": "SRC-IEA-GER26-COAL", "locator": "Coal demand and sector discussion", "support_note": "Reports the demand change and power-sector fraction."},
+      {"source_id": "SRC-IEA-GER26-TRENDS", "locator": "Demand by source", "support_note": "Corroborates the rate, tonnes, and EJ increment."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "rate, physical quantity, energy quantity, and sector qualifier checked"}
+  },
+  {
+    "claim_id": "CLM-GLO-013",
+    "domain": "global_end_use",
+    "claim": "Buildings contributed nearly 45% of global electricity-demand growth in 2025, transport contributed more than 10%, and data-center electricity use grew about 17% (around 70 TWh).",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": false,
+    "support": [
+      {"source_id": "SRC-IEA-GER26-ELECTRICITY-DEMAND", "locator": "Buildings sector led electricity demand growth", "support_note": "Reports the buildings, transport, and data-center quantities."},
+      {"source_id": "SRC-IEA-GER26-TRENDS", "locator": "Age of Electricity section", "support_note": "Corroborates data-center growth and broad end-use drivers."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "contribution-to-growth distinguished from share-of-total-demand"}
+  },
+  {
+    "claim_id": "CLM-GLO-014",
+    "domain": "global_transmission",
+    "claim": "IEA reports more than 2,500 GW of projects stalled in grid-connection queues worldwide and annual grid investment near USD 400 billion, with about a 50% increase needed by 2030.",
+    "status": "verified",
+    "confidence": "medium",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-IEA-ELECTRICITY26-GRIDS", "locator": "Grid queues and investment sections", "support_note": "Reports the queued capacity, current investment, and required increase."},
+      {"source_id": "SRC-IEA-TRANSMISSION25", "locator": "Investment overview", "support_note": "Corroborates rising transmission-investment needs with a transmission-specific series."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "queue status, currency, annual basis, and 2030 qualifier checked"},
+    "caveat": "Queued capacity is neither installed capacity nor a forecast of completed capacity."
+  },
+  {
+    "claim_id": "CLM-GLO-015",
+    "domain": "global_transmission",
+    "claim": "IEA reports typical grid planning and construction lead times of 5-15 years, compared with 1-5 years for renewable projects, 1-3 years for data centers, and 1-2 years for EV charging infrastructure.",
+    "status": "verified",
+    "confidence": "medium",
+    "load_bearing": false,
+    "support": [
+      {"source_id": "SRC-IEA-ELECTRICITY26-GRIDS", "locator": "Lead-time comparison", "support_note": "Provides all four ranges."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "ranges and technology labels transcribed together from the comparison"}
+  },
+  {
+    "claim_id": "CLM-US-001",
+    "domain": "us_primary_energy_production",
+    "claim": "EIA's July 2026 Monthly Energy Review reports 106.961 quadrillion Btu of U.S. primary energy production in 2025.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-EIA-MER-T12", "locator": "Table 1.2, 2025 Total row", "support_note": "Reports the total and component values; several components are estimates."},
+      {"source_id": "SRC-EIA-MER", "locator": "Revision policy", "support_note": "Confirms first annual releases are generally preliminary and revisable."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "value, unit, year, geography, and estimate flags checked"},
+    "caveat": "Preliminary/revisable."
+  },
+  {
+    "claim_id": "CLM-US-002",
+    "domain": "us_primary_energy_production",
+    "claim": "The 2025 U.S. production total comprised 10.876 quads coal, 40.708 dry natural gas, 28.211 crude oil, 9.740 natural-gas plant liquids, 8.195 nuclear electric power, and 9.229 renewable energy under EIA's captured-energy accounting.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-EIA-MER-T12", "locator": "Table 1.2, 2025 Total row and column headings", "support_note": "Reports each listed component in quadrillion Btu."},
+      {"source_id": "SRC-EIA-MER", "locator": "Primary Energy Production table catalog and definitions", "support_note": "Corroborates the official table identity and production measure."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "column order cross-checked against headings and total row"},
+    "caveat": "Dry natural gas and crude oil values are marked estimated in the source table."
+  },
+  {
+    "claim_id": "CLM-US-003",
+    "domain": "us_primary_energy_production",
+    "claim": "EIA's renewable-production components for 2025 were 0.843 quads conventional hydro, 0.117 geothermal, 1.438 solar, 1.585 wind, and 5.247 biomass.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": false,
+    "support": [
+      {"source_id": "SRC-EIA-MER-T12", "locator": "Table 1.2, 2025 Total row, renewable columns", "support_note": "Reports each value and the 9.229-quad renewable total."},
+      {"source_id": "SRC-EIA-EPM-T11A", "locator": "2025 renewable-generation row", "support_note": "Independently corroborates the source ordering and electricity-generation trends, though in different units and scope."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "renewable column headings and captured-energy units checked"}
+  },
+  {
+    "claim_id": "CLM-US-004",
+    "domain": "us_primary_energy_consumption",
+    "claim": "EIA's July 2026 Monthly Energy Review reports 96.256 quadrillion Btu of U.S. primary energy consumption in 2025.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-EIA-MER-T13", "locator": "Table 1.3, 2025 Total row", "support_note": "Reports the revised total."},
+      {"source_id": "SRC-EIA-FLOW25", "locator": "2025 total energy flow", "support_note": "Corroborates a rounded total of about 96 quads using the April 2026 vintage."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "latest table value distinguished from the rounded earlier flow diagram"},
+    "caveat": "Preliminary/revisable; the flow diagram uses an earlier Monthly Energy Review vintage."
+  },
+  {
+    "claim_id": "CLM-US-005",
+    "domain": "us_primary_energy_consumption",
+    "claim": "EIA's 2025 U.S. consumption components were 8.671 quads coal, 34.631 natural gas, 35.899 petroleum, 8.195 nuclear electric power, and 8.835 renewable energy, plus small net-import adjustments embedded in the total.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-EIA-MER-T13", "locator": "Table 1.3, 2025 Total row and notes", "support_note": "Reports the source components, renewable total, total, and net-import treatment."},
+      {"source_id": "SRC-EIA-FLOW25", "locator": "2025 source totals", "support_note": "Corroborates rounded values for the principal sources using the earlier release."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "latest revised values and source definitions checked; total not forced to equal rounded components"}
+  },
+  {
+    "claim_id": "CLM-US-006",
+    "domain": "us_electricity_generation",
+    "claim": "EIA reports 4,429.502 TWh of utility-scale U.S. net generation in 2025 and 93.148 TWh of estimated small-scale solar PV, yielding 4,522.650 TWh when those non-overlapping categories are added.",
+    "status": "verified",
+    "evidence_class": "derived",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-EIA-EPM-T11", "locator": "Table 1.1, 2025 row", "support_note": "Reports 4,429,502 and 93,148 thousand MWh."},
+      {"source_id": "SRC-EIA-EPM-T11A", "locator": "Table 1.1.A, 2025 row and small-scale solar notes", "support_note": "Corroborates the 93,148 thousand MWh small-scale estimate."}
+    ],
+    "derivation": "(4,429,502 + 93,148) thousand MWh / 1000 = 4,522.650 TWh",
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "non-overlap, unit conversion, and preliminary status checked"},
+    "caveat": "2025 values are preliminary; the EIA table does not label the derived sum as a published total."
+  },
+  {
+    "claim_id": "CLM-US-007",
+    "domain": "us_electricity_generation",
+    "claim": "EIA's preliminary 2025 generation values include 1,807.338 TWh natural gas, 784.781 nuclear, 737.151 coal, 464.391 wind, 388.820 total solar, 247.023 conventional hydro, and 15.669 geothermal.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-EIA-EPM-T11", "locator": "Table 1.1, 2025 row", "support_note": "Reports natural gas, nuclear, coal, conventional hydro, utility solar, and aggregates."},
+      {"source_id": "SRC-EIA-EPM-T11A", "locator": "Table 1.1.A, 2025 row", "support_note": "Reports wind, geothermal, and total solar including estimated small-scale PV."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "all values converted from thousand MWh to TWh; total solar used instead of double-counting PV components"},
+    "caveat": "2025 preliminary."
+  },
+  {
+    "claim_id": "CLM-US-008",
+    "domain": "us_electricity_generation",
+    "claim": "EIA's preliminary 2025 renewable generation includes 31.809 TWh wood and wood-derived fuels, 7.083 landfill gas, 5.266 biogenic municipal solid waste, and 2.029 other waste biomass.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": false,
+    "support": [
+      {"source_id": "SRC-EIA-EPM-T11A", "locator": "Table 1.1.A, 2025 row and biomass notes", "support_note": "Reports all four values and defines the biomass groupings."},
+      {"source_id": "SRC-EIA-RENEWABLE-TYPES", "locator": "Biomass types", "support_note": "Corroborates the conceptual separation of wood, waste, landfill gas/biogas, and biofuels."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "values converted from thousand MWh to TWh and category definitions checked"}
+  },
+  {
+    "claim_id": "CLM-US-009",
+    "domain": "us_electricity_generation",
+    "claim": "EIA reports 2025 utility-scale generation of 14.370 TWh from petroleum liquids, 4.889 TWh from petroleum coke, 10.697 TWh from other fossil gases, and 6.654 TWh from the heterogeneous 'Other' category.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": false,
+    "support": [
+      {"source_id": "SRC-EIA-EPM-T11", "locator": "Table 1.1, 2025 row and category notes", "support_note": "Reports values and defines Other as including hydrogen, non-biogenic MSW, batteries, purchased steam, sulfur, tire-derived fuel, and miscellaneous sources."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "values and heterogeneous category definition checked together"},
+    "dashboard_rule": "Do not display 'Other' as a single generation technology without drill-down and a warning."
+  },
+  {
+    "claim_id": "CLM-US-010",
+    "domain": "us_energy_flow",
+    "claim": "EIA's April 2026 energy-flow diagram allocates 2025 end-use energy as approximately 28.2 quads transportation, 26.6 industrial, 11.8 residential, and 9.9 commercial.",
+    "status": "verified",
+    "confidence": "medium",
+    "load_bearing": false,
+    "support": [
+      {"source_id": "SRC-EIA-FLOW25", "locator": "2025 end-use sector nodes", "support_note": "Reports the four rounded sector values."},
+      {"source_id": "SRC-EIA-MER", "locator": "Section 2 sector table catalog", "support_note": "Identifies the underlying residential, commercial, industrial, and transportation tables."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "sector values, rounded status, and diagram vintage checked"}
+  },
+  {
+    "claim_id": "CLM-US-011",
+    "domain": "us_energy_flow",
+    "claim": "EIA's 2025 flow diagram shows 33.5 quads entering the electric-power sector, 13.8 quads delivered as electricity sales, and 19.7 quads labeled electrical-system energy losses; those losses combine conversion losses with transmission and distribution losses.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-EIA-FLOW25", "locator": "Electric-power-sector branch and diagram note", "support_note": "Reports the three quantities and defines the loss category."},
+      {"source_id": "SRC-EIA-STORAGE", "locator": "Primary versus secondary generation discussion", "support_note": "Corroborates why electricity accounting must distinguish input energy, delivered electricity, and conversion processes."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "loss label and note checked to prevent misclassification as grid-line losses"},
+    "dashboard_rule": "Never display 19.7 quads as transmission loss or grid loss."
+  },
+  {
+    "claim_id": "CLM-US-012",
+    "domain": "us_interconnection",
+    "claim": "Berkeley Lab reports 2,061 GW of generation and storage in active U.S. interconnection queues at the end of 2025: 773 GW solar, 749 GW storage, 253 GW gas, and 220 GW wind.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-LBNL-QUEUES26", "locator": "2025 queue totals and technology breakdown", "support_note": "Reports the total and four technology values."},
+      {"source_id": "SRC-IEA-ELECTRICITY26-GRIDS", "locator": "Global interconnection queues", "support_note": "Independently corroborates queue congestion as a global constraint."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "active-queue status and technology totals checked; no completion inference made"},
+    "caveat": "Queued capacity is not installed capacity; historical completion is low."
+  },
+  {
+    "claim_id": "CLM-US-013",
+    "domain": "us_interconnection",
+    "claim": "Berkeley Lab finds only 13% of U.S. queued projects in its historical sample reached commercial operation, 75% withdrew, and median time from queue request to commercial operation now exceeds five years.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-LBNL-QUEUES26", "locator": "Historical outcomes and duration metrics", "support_note": "Reports completion, withdrawal, and timing results."},
+      {"source_id": "SRC-IEA-ELECTRICITY26-GRIDS", "locator": "Grid lead times and queue delays", "support_note": "Independently corroborates long grid-development timelines."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "historical-sample qualifiers retained; not applied as a deterministic forecast"}
+  },
+  {
+    "claim_id": "CLM-US-014",
+    "domain": "us_reliability",
+    "claim": "NERC's 2025 assessment projects roughly 224 GW of additional summer peak demand and 245 GW of additional winter peak demand over ten years, while more than 105 GW of peak-season capacity is slated for retirement.",
+    "status": "verified",
+    "evidence_class": "scenario",
+    "confidence": "medium",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-NERC-LTRA25", "locator": "Demand growth and projected retirements highlights", "support_note": "Reports the ten-year planning projections and notes data-center/AI load growth."},
+      {"source_id": "SRC-EIA-AEO26", "locator": "Electricity demand and capacity scenarios", "support_note": "Independently corroborates strong possible growth while using different scenario cases."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "planning projection, geography, horizon, and peak-season units retained"},
+    "caveat": "NERC covers the North American bulk-power system, not only U.S. retail load."
+  },
+  {
+    "claim_id": "CLM-US-015",
+    "domain": "us_transmission",
+    "claim": "DOE's final 2023 National Transmission Needs Study found median within-region transmission expansion of about 20% by 2035 in a moderate-load/moderate-clean-energy case, 64% in a high-clean-energy case, and 128% in a high-load case.",
+    "status": "verified",
+    "evidence_class": "scenario",
+    "confidence": "high",
+    "load_bearing": false,
+    "support": [
+      {"source_id": "SRC-DOE-NEEDS23", "locator": "2035 intraregional scenario results", "support_note": "Reports the three median expansion values and scenario labels."},
+      {"source_id": "SRC-DOE-NTPS24", "locator": "Final study scenario/model framework", "support_note": "Provides an independent later DOE transmission-planning framework."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "medians, within-region scope, year, and scenario labels retained"},
+    "caveat": "Scenario result, not a forecast or construction plan."
+  },
+  {
+    "claim_id": "CLM-TAX-001",
+    "domain": "energy_taxonomy",
+    "claim": "Electricity storage is not a primary generation source: it consumes electricity to charge, returns less electricity than it consumes, and is reported by EIA with negative net generation to avoid double counting.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-EIA-STORAGE", "locator": "Primary/secondary source and net-generation sections", "support_note": "States all three points explicitly."},
+      {"source_id": "SRC-EIA-EPM-T11", "locator": "2025 pumped-storage row", "support_note": "Shows -5.320 TWh net pumped-storage generation in the observed table."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "definition and observed accounting treatment cross-checked"}
+  },
+  {
+    "claim_id": "CLM-TAX-002",
+    "domain": "energy_taxonomy",
+    "claim": "Hydrogen is an energy carrier, not a primary energy source; it can be produced from water, fossil fuels, or biomass and converted to electricity in fuel cells.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-EIA-HYDROGEN", "locator": "Hydrogen is an energy carrier; production sources", "support_note": "Defines carrier status and production pathways."},
+      {"source_id": "SRC-ENR-SUPPLY", "locator": "Energy carriers", "support_note": "En-ROADS also models hydrogen as a carrier."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "carrier/source distinction checked across EIA and En-ROADS documentation"}
+  },
+  {
+    "claim_id": "CLM-TAX-003",
+    "domain": "marine_energy",
+    "claim": "Marine-energy pathways include wave, tidal-stream, ocean-current, river-current, ocean-thermal-gradient, and salinity-gradient conversion; resource potential must not be presented as actual generation.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-DOE-MARINE", "locator": "Resource categories and theoretical/technical/practical definitions", "support_note": "Defines wave, tidal, ocean current, river current, and ocean thermal; distinguishes potential levels."},
+      {"source_id": "SRC-OES-AR25", "locator": "Technology scope", "support_note": "Adds salinity-gradient technology and corroborates the emerging deployment status."},
+      {"source_id": "SRC-IRENA-CAP26", "locator": "Marine energy world capacity table", "support_note": "Provides observed installed capacity rather than potential."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "technology ontology reconciled across DOE, OES, and IRENA; potential and capacity kept separate"}
+  },
+  {
+    "claim_id": "CLM-TAX-004",
+    "domain": "fusion_energy",
+    "claim": "DOE's 2026 fusion roadmap targets a U.S. fusion pilot power plant in the mid-2030s, but the target depends on closing identified science, materials, fuel-cycle, and plant-engineering gaps and is not an observed generation datum or guaranteed deployment date.",
+    "status": "verified",
+    "evidence_class": "scenario",
+    "confidence": "high",
+    "load_bearing": false,
+    "support": [
+      {"source_id": "SRC-DOE-FUSION26", "locator": "Roadmap overview, challenge areas, and target language", "support_note": "States the pilot-plant target and identifies unresolved challenge areas."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "roadmap target explicitly framed as conditional and forward-looking"},
+    "dashboard_rule": "Keep fusion in research/future pathways; exclude from observed 2025 generation totals."
+  },
+  {
+    "claim_id": "CLM-SYS-001",
+    "domain": "power_system_adequacy",
+    "claim": "Installed capacity, annual generation, capacity factor, flexibility, resource adequacy, and reliability are different measures; none can be used as an unlabeled proxy for the others.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-EIA-CAPACITY-FACTORS", "locator": "capacity and capacity-factor definitions and operating explanations", "support_note": "Defines capacity and capacity factor and explains why technology operating patterns differ."},
+      {"source_id": "SRC-NERC-LTRA25", "locator": "resource-adequacy methods and risk findings", "support_note": "Assesses whether resources, transmission, fuel, and operating characteristics can meet peak and energy needs rather than equating nameplate capacity with adequacy."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "statistical definitions reconciled with reliability-planning definitions"},
+    "dashboard_rule": "Expose the metric type and never rank reliability using nameplate capacity or capacity factor alone."
+  },
+  {
+    "claim_id": "CLM-SYS-002",
+    "domain": "inverter_based_resource_reliability",
+    "claim": "NERC documented four 2024 Western Interconnection disturbances in which normally cleared faults coincided with unexpected widespread output reductions of 532-1,046 MW from solar, wind, and battery resources; its aggregated review identifies deficient models and studies as a material bulk-system risk.",
+    "status": "verified",
+    "evidence_class": "observed",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-NERC-IBR-DIST25", "locator": "executive summary and four event summaries", "support_note": "Reports the four events, resource types, fault context, and output-reduction range."},
+      {"source_id": "SRC-NERC-IBR-MODEL25", "locator": "disturbance history and modeling-deficiency findings", "support_note": "Reports ten major events since 2016 and links reliability risk to inadequate models, studies, and settings."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "event magnitudes, dates, geography, and causal scope checked in separate NERC reports"},
+    "caveat": "The evidence identifies correctable integration and modeling problems; it is not a fleet-wide failure rate and does not establish that inverter-based resources are inherently unreliable."
+  },
+  {
+    "claim_id": "CLM-SYS-003",
+    "domain": "grid_connection_and_planning",
+    "claim": "Interconnection-queue reform, long-term transmission planning, and multi-jurisdictional siting are distinct constraints; resolving one does not automatically resolve the others.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-FERC-ORDER2023", "locator": "cluster study, readiness, withdrawal, and technology reforms", "support_note": "Addresses generator-interconnection processing."},
+      {"source_id": "SRC-FERC-ORDER1920", "locator": "long-term regional planning and cost allocation", "support_note": "Addresses a separate transmission-planning function."},
+      {"source_id": "SRC-DOE-TRANS-PERMIT", "locator": "siting authorities and federal coordination", "support_note": "Documents the separate permitting and land-jurisdiction layer."},
+      {"source_id": "SRC-LBNL-QUEUES26", "locator": "active queue, completion, and timing metrics", "support_note": "Shows why queue processing is a material deployment constraint."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "three regulatory functions compared without inferring construction outcomes from rule issuance"}
+  },
+  {
+    "claim_id": "CLM-HLT-001",
+    "domain": "fossil_generation_health",
+    "claim": "Fossil-fuel combustion for electricity emits sulfur dioxide, nitrogen oxides, primary and secondary particulate matter, mercury, and greenhouse gases; the air pollutants contribute to cardiovascular, respiratory, neurological, and premature-mortality risks.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-EPA-POWER-HEALTH", "locator": "air emissions and human-health effects", "support_note": "Links power-sector pollutants to ozone, particulate matter, mercury exposure, and named health outcomes."},
+      {"source_id": "SRC-WHO-AMBIENT24", "locator": "health effects and ambient-pollution source categories", "support_note": "Independently corroborates the health outcomes and identifies fossil combustion as a major ambient-pollution source category."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "pollutant-outcome relationships checked across EPA and WHO; no national death count assigned solely to electricity"},
+    "dashboard_rule": "Never label WHO's 4.2 million global ambient-air-pollution deaths as power-sector deaths."
+  },
+  {
+    "claim_id": "CLM-HLT-002",
+    "domain": "environmental_justice_screening",
+    "claim": "Power-plant proximity and neighborhood demographic indicators are useful screening variables but do not by themselves measure exposure, dose, causation, or individual health risk.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": false,
+    "support": [
+      {"source_id": "SRC-EPA-NEIGHBORS", "locator": "mapping method and interpretation", "support_note": "EPA presents plant and demographic layers for contextual screening rather than individual risk estimation."},
+      {"source_id": "SRC-EPA-POWER-HEALTH", "locator": "emissions, exposure pathways, and health effects", "support_note": "Shows the additional pollutant and pathway evidence needed between facility presence and health outcome."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "screening use separated from epidemiological inference"},
+    "dashboard_rule": "Label proximity maps 'screening context' and do not calculate causal health burdens from distance alone."
+  },
+  {
+    "claim_id": "CLM-HLT-003",
+    "domain": "fossil_supply_chain_methane",
+    "claim": "IEA estimates fossil-fuel operations emitted about 124 million tonnes of methane in 2025, split approximately among oil (45 Mt), coal (43 Mt), and natural gas (36 Mt), with no clear sector-wide decline.",
+    "status": "verified",
+    "evidence_class": "estimate",
+    "confidence": "high",
+    "load_bearing": false,
+    "support": [
+      {"source_id": "SRC-IEA-METHANE26", "locator": "2025 fossil-fuel methane total and fuel breakdown", "support_note": "Reports the total, fuel split, and trend conclusion."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "fuel values and estimation scope checked on official IEA page"},
+    "caveat": "Supply-chain estimate across all fossil-fuel uses; it is not electricity-sector-only methane."
+  },
+  {
+    "claim_id": "CLM-HLT-004",
+    "domain": "nuclear_accident_health",
+    "claim": "Nuclear health evidence requires separate treatment of routine operation, direct radiation effects from accidents, and indirect evacuation, continuity-of-care, social, and mental-health effects.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-UNSCEAR-FUKUSHIMA", "locator": "resident health-effect conclusion and assessment scope", "support_note": "Assesses radiation-attributable effects and states that psychosocial effects were outside its mandate."},
+      {"source_id": "SRC-WHO-FUKUSHIMA", "locator": "radiation, evacuation, care disruption, noncommunicable disease, and mental health", "support_note": "Documents direct-risk conclusions alongside material indirect harms."},
+      {"source_id": "SRC-WHO-CHERNOBYL", "locator": "acute radiation syndrome, thyroid cancer, leukemia, and mental health", "support_note": "Shows that consequences differ materially by accident, exposure, response, and affected population."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "UN radiation assessment cross-checked with WHO public-health assessments; direct and indirect effects kept separate"},
+    "dashboard_rule": "Do not summarize nuclear health as either 'no health effects' or a single cross-accident death number."
+  },
+  {
+    "claim_id": "CLM-REG-001",
+    "domain": "interconnection_regulation",
+    "claim": "FERC Order No. 2023 requires cluster-based interconnection studies, stronger project-readiness requirements, withdrawal penalties, and improved consideration of alternative transmission technologies to reduce queue delay and cost uncertainty.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-FERC-ORDER2023", "locator": "final-rule requirements", "support_note": "Source of record for the rule's required reforms."},
+      {"source_id": "SRC-LBNL-QUEUES26", "locator": "2025 queue size, historical completion, and timing", "support_note": "Independently establishes the queue problem the rule addresses, without claiming the rule has already solved it."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "requirements verified on FERC page; outcomes not inferred"},
+    "dashboard_rule": "Display rule adoption and regional implementation separately from measured queue outcomes."
+  },
+  {
+    "claim_id": "CLM-REG-002",
+    "domain": "transmission_regulation",
+    "claim": "FERC Order No. 1920 requires long-term regional transmission planning and cost allocation, while actual projects still face separate siting and permitting across federal, state, local, Tribal, and private-land authorities.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-FERC-ORDER1920", "locator": "long-term regional planning and cost allocation", "support_note": "Source of record for the planning rule."},
+      {"source_id": "SRC-DOE-TRANS-PERMIT", "locator": "jurisdictional authorities and coordination mechanisms", "support_note": "Independently documents siting and permitting layers outside planning."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "planning, cost allocation, and siting treated as separate legal functions"}
+  },
+  {
+    "claim_id": "CLM-REG-003",
+    "domain": "fossil_air_regulation",
+    "claim": "EPA's February 2026 action repealed specified 2024 Mercury and Air Toxics Standards amendments for filterable particulate matter, lignite mercury, and continuous emissions monitoring; it did not repeal the underlying MATS program.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-EPA-MATS-REPEAL26", "locator": "final action and affected 2024 provisions", "support_note": "Source of record for the repeal's exact scope."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "repealed amendments distinguished from underlying standard"},
+    "dashboard_rule": "Never describe this action as repeal of MATS as a whole; carry an as-of date."
+  },
+  {
+    "claim_id": "CLM-REG-004",
+    "domain": "power_water_regulation",
+    "claim": "EPA's 2024 steam-electric effluent rule tightened wastewater requirements, while a December 2025 rule changed some compliance deadlines without changing the underlying zero-discharge requirements.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-EPA-ELG24", "locator": "2024 substantive requirements", "support_note": "Source of record for covered waste streams and treatment requirements."},
+      {"source_id": "SRC-EPA-ELG-DEADLINE25", "locator": "deadline extensions and unchanged substantive requirements", "support_note": "Source of record for later implementation timing."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "substantive limit separated from compliance schedule"},
+    "dashboard_rule": "Store effective requirements and deadline status as separate fields."
+  },
+  {
+    "claim_id": "CLM-REG-005",
+    "domain": "power_greenhouse_gas_regulation",
+    "claim": "As of 2026-08-01, EPA's repeal of the 2024 greenhouse-gas standards for fossil-fuel power plants remained a proposal on the reviewed EPA status page rather than a finalized repeal.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-EPA-GHG-POWER24-26", "locator": "2024 rule and June 2025 proposed-repeal status", "support_note": "Official EPA status page identifies the action as proposed at the verification date."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "proposal/final distinction and page update date checked"},
+    "dashboard_rule": "High-volatility legal status: reverify before every release and never convert 'proposed' to 'final' without a final agency action."
+  },
+  {
+    "claim_id": "CLM-REG-006",
+    "domain": "renewable_permitting",
+    "claim": "Low-operational-emission generation is not regulation-free: hydropower can require FERC licensing and environmental review, and offshore renewable projects require BOEM review plus consultation under wildlife, fisheries, and historic-preservation laws.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-FERC-HYDRO-LICENSE", "locator": "jurisdiction, licensing process, and environmental review", "support_note": "Documents federal nonfederal-hydropower licensing."},
+      {"source_id": "SRC-BOEM-OFFSHORE-NEPA", "locator": "NEPA and consultation requirements", "support_note": "Documents federal offshore-renewable environmental review."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "technology-specific federal pathways checked; no universal project-duration claim made"}
+  },
+  {
+    "claim_id": "CLM-SUS-001",
+    "domain": "lifecycle_greenhouse_gas_emissions",
+    "claim": "IPCC's harmonized AR5 literature medians place coal and natural-gas generation far above nuclear, wind, solar, hydro, geothermal, and ocean energy in life-cycle greenhouse-gas emissions, while also showing broad and sometimes highly skewed technology ranges.",
+    "status": "verified",
+    "evidence_class": "estimate",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-IPCC-AR5-LCA", "locator": "Table A.III.2", "support_note": "Reports harmonized lifecycle medians and ranges for the named technologies."},
+      {"source_id": "SRC-NLR-LCA171", "locator": "technology and life-cycle-phase dataset", "support_note": "Independent national-laboratory literature synthesis corroborates the general ranking and phase dependence."},
+      {"source_id": "SRC-UNECE-LCA21", "locator": "cradle-to-grave climate-change results", "support_note": "Independent intergovernmental LCA corroborates the need for lifecycle rather than stack-only comparison."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "canonical final IPCC table checked and ranking cross-checked against NLR and UNECE syntheses"},
+    "caveat": "Literature distributions are not plant-specific values and depend on system boundaries, fuel supply, technology, capacity factor, lifetime, and site."
+  },
+  {
+    "claim_id": "CLM-SUS-002",
+    "domain": "thermoelectric_water",
+    "claim": "In the 2015 USGS national snapshot, thermoelectric power accounted for about 133,000 million gallons per day and 41% of U.S. water withdrawals; once-through cooling dominated withdrawals while recirculating systems had a much larger share of consumptive use relative to their withdrawal share.",
+    "status": "verified",
+    "evidence_class": "observed",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-USGS-THERMO-WATER", "locator": "2015 withdrawals and cooling-system shares", "support_note": "Reports the national total, national share, and withdrawal-versus-consumption split."},
+      {"source_id": "SRC-EPA-COOLING316B", "locator": "cooling-water intake impacts and existing-facility rule", "support_note": "Independently confirms cooling-water intake as a regulated ecological impact pathway."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "vintage, units, national scope, withdrawal, and consumption distinctions retained"},
+    "dashboard_rule": "Never combine water withdrawal and water consumption; display 2015 prominently and do not imply it is a 2026 value."
+  },
+  {
+    "claim_id": "CLM-SUS-003",
+    "domain": "critical_materials",
+    "claim": "Energy technologies face distinct critical-mineral supply, concentration, environmental, social, and climate risks; recycling can reduce mining and supply pressure but cannot eliminate primary material demand during rapid fleet growth.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-IEA-CRITICAL-MINERALS24", "locator": "risk assessment across 37 minerals", "support_note": "Assesses supply, geopolitical, responsiveness, ESG, and climate dimensions."},
+      {"source_id": "SRC-IEA-RECYCLING24", "locator": "recycling contribution and limits", "support_note": "States that recycling is indispensable but continued primary mining remains necessary."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "supply-risk and circularity claims checked in separate IEA assessments"},
+    "dashboard_rule": "Use material- and technology-specific indicators; do not label all renewables, batteries, grids, or nuclear with one generic mineral score."
+  },
+  {
+    "claim_id": "CLM-SUS-004",
+    "domain": "renewable_end_of_life",
+    "claim": "Solar modules and wind turbines contain high technically recyclable material shares, but actual circularity is constrained by collection, economics, composite materials, specialty components, and critical-material recovery.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-DOE-SOLAR-EOL26", "locator": "module life, recycling availability, economics, and recovery opportunity", "support_note": "Documents the gap between technical processes and present economics for PV."},
+      {"source_id": "SRC-DOE-WIND-RECYCLING26", "locator": "85-90% mass and remaining component challenges", "support_note": "Documents the high recyclable mass share and composite/rare-earth gaps for wind."},
+      {"source_id": "SRC-IEA-RECYCLING24", "locator": "system-level recycling constraints", "support_note": "Provides independent supply-chain context."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "technical recyclability separated from actual collection and economic recycling"}
+  },
+  {
+    "claim_id": "CLM-SUS-005",
+    "domain": "wind_wildlife",
+    "claim": "Wind-energy wildlife impacts include collision and displacement risks, with concern varying strongly by species, site, season, turbine design, and operation; siting and mitigation therefore matter more than a single fleet-average label.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": false,
+    "support": [
+      {"source_id": "SRC-USGS-WIND-WILDLIFE19", "locator": "review findings and evidence gaps", "support_note": "Reviews bird, bat, and other wildlife impacts and the importance of siting and operation."},
+      {"source_id": "SRC-BOEM-OFFSHORE-NEPA", "locator": "wildlife and fisheries consultation", "support_note": "Shows that offshore projects require species- and habitat-specific review."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "qualitative risk factors retained; no unsupported universal mortality number used"}
+  },
+  {
+    "claim_id": "CLM-SUS-006",
+    "domain": "hydropower_sustainability",
+    "claim": "Hydropower can provide dispatchable generation and storage services, but dams, reservoirs, diversions, and flow changes can alter habitat, fish passage, sediment, water quality, land use, and downstream hydrology; impacts differ sharply by project configuration and site.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-DOE-HYDRO-ENV", "locator": "water, hydrology, land, and biological effects", "support_note": "Documents the principal environmental pathways and mitigation research."},
+      {"source_id": "SRC-FERC-HYDRO-LICENSE", "locator": "project-specific environmental analysis and license conditions", "support_note": "Corroborates that impacts and mitigation are evaluated at project level."},
+      {"source_id": "SRC-EIA-CAPACITY-FACTORS", "locator": "hydroelectric operating patterns", "support_note": "Explains hydrology dependence of generation."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "benefits and impacts kept technology- and site-specific; pumped storage not counted as primary generation"}
+  },
+  {
+    "claim_id": "CLM-SUS-007",
+    "domain": "geothermal_sustainability",
+    "claim": "Geothermal can provide relatively steady low-carbon generation, but water management, gases and dissolved constituents, subsurface uncertainty, and induced seismicity require design- and site-specific assessment, particularly for enhanced geothermal systems.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-DOE-GEO-ENV", "locator": "water, air, fluids, seismicity, and mitigation", "support_note": "Documents geothermal environmental pathways and induced seismicity."},
+      {"source_id": "SRC-EIA-CAPACITY-FACTORS", "locator": "geothermal operating pattern", "support_note": "Independently supports relatively steady production compared with weather-dependent generation."},
+      {"source_id": "SRC-IPCC-AR5-LCA", "locator": "Table A.III.2 geothermal lifecycle emissions", "support_note": "Supports the low-carbon qualification while preserving a range."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "operational profile, lifecycle emissions, and subsurface risks checked separately"}
+  },
+  {
+    "claim_id": "CLM-SUS-008",
+    "domain": "bioenergy_sustainability",
+    "claim": "Bioenergy is not automatically carbon-neutral: net climate and sustainability outcomes depend on feedstock, counterfactual land use, direct and indirect land-use change, supply-chain emissions, conversion efficiency, accounting boundary, and time horizon; combustion can also emit health-relevant air pollutants.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-IPCC-AR6-BIOENERGY", "locator": "bioenergy lifecycle, land, feedstock, and accounting assessment", "support_note": "Establishes the conditional nature of bioenergy climate performance."},
+      {"source_id": "SRC-EPA-POWER-HEALTH", "locator": "combustion-pollutant health pathways", "support_note": "Corroborates health relevance of combustion emissions."},
+      {"source_id": "SRC-IPCC-AR5-LCA", "locator": "Table A.III.2 biomass lifecycle range", "support_note": "Shows broad lifecycle variation in the assessed literature."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "carbon accounting, land use, and stack pollution treated as separate dimensions"},
+    "dashboard_rule": "Require feedstock, counterfactual, land-use, supply-chain, and time-horizon metadata before applying a bioenergy carbon label."
+  },
+  {
+    "claim_id": "CLM-SUS-009",
+    "domain": "marine_energy_sustainability",
+    "claim": "Marine-energy environmental evidence remains sparse because deployments are limited; monitoring through 2020 found little or no observed impact for several studied stressors, but that evidence cannot establish absence of commercial-scale impacts.",
+    "status": "verified",
+    "confidence": "medium",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-DOE-MARINE-SOS20", "locator": "deployment evidence, observed impacts, stressors, and research needs", "support_note": "Supports both the limited observed effects and the evidence limitations."},
+      {"source_id": "SRC-OES-AR25", "locator": "deployment status and technology scope", "support_note": "Independently confirms the sector remains emerging and small."},
+      {"source_id": "SRC-IRENASTAT-CAP26", "locator": "2025 marine installed capacity", "support_note": "Quantifies the small observed fleet relative to mature technologies."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "observed evidence separated from scale-up inference"},
+    "dashboard_rule": "Use an 'evidence sparse' badge and do not convert lack of observed effect into a zero-impact score."
+  },
+  {
+    "claim_id": "CLM-NUC-001",
+    "domain": "us_nuclear_operating_status",
+    "claim": "Two official U.S. sources disagree on the current operating-reactor count: NRC reported 94 commercial power reactors as of 2026-06-09, while EIA reported 96 operating reactors as of March 2026.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-NRC-OPERATING26", "locator": "page introduction and June 9, 2026 update", "support_note": "Reports 94 commercial power reactors."},
+      {"source_id": "SRC-EIA-NUCLEAR-US26", "locator": "March 2026 industry status", "support_note": "Reports 96 operating reactors at 57 plants."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "both official pages reopened and dates retained; discrepancy intentionally unresolved"},
+    "dashboard_rule": "Prefer the later NRC regulatory snapshot for a current count, but show the EIA disagreement and both dates in methodology."
+  },
+  {
+    "claim_id": "CLM-NUC-002",
+    "domain": "nuclear_operations",
+    "claim": "EIA reports the U.S. nuclear fleet averaged a 91% capacity factor in 2025; high annual utilization indicates steady fleet output but does not by itself measure construction risk, flexibility, safety, or system value.",
+    "status": "verified",
+    "evidence_class": "observed",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-EIA-NUCLEAR-US26", "locator": "2025 capacity factor and fleet description", "support_note": "Reports the 91% fleet average."},
+      {"source_id": "SRC-EIA-CAPACITY-FACTORS", "locator": "nuclear operating and refueling explanation", "support_note": "Explains why nuclear capacity factors are generally high and why capacity factor is a separate metric."},
+      {"source_id": "SRC-EIA-EPM-T11", "locator": "2025 nuclear net generation", "support_note": "Independently records 784.781 TWh of preliminary nuclear generation."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "year, fleet scope, and metric definition checked across EIA pages"}
+  },
+  {
+    "claim_id": "CLM-NUC-003",
+    "domain": "nuclear_lifecycle_emissions",
+    "claim": "Nuclear generation has low life-cycle greenhouse-gas emissions in major comparative assessments, but it is not impact-free because mining, conversion, enrichment, fuel fabrication, construction, decommissioning, waste management, and cooling all remain part of the life cycle.",
+    "status": "verified",
+    "evidence_class": "estimate",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-IPCC-AR5-LCA", "locator": "Table A.III.2 nuclear lifecycle median and range", "support_note": "Places nuclear in the low lifecycle-emissions group."},
+      {"source_id": "SRC-NLR-LCA171", "locator": "nuclear lifecycle phases", "support_note": "Independent literature synthesis explicitly covers fuel-cycle and plant phases."},
+      {"source_id": "SRC-UNECE-LCA21", "locator": "cradle-to-grave nuclear assessment", "support_note": "Independent multi-impact LCA corroborates that impacts extend beyond plant operation."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "low-carbon claim checked in three lifecycle syntheses; zero-impact language rejected"}
+  },
+  {
+    "claim_id": "CLM-NUC-004",
+    "domain": "nuclear_construction",
+    "claim": "New large-reactor deployment in the United States carries material capital, schedule, financing, supply-chain, and first-of-a-kind execution risk; Vogtle illustrates that risk but is not a universal cost template for every nuclear design.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-EIA-VOGTLE23", "locator": "original estimate and schedule versus later cost and operation", "support_note": "Documents a major U.S. schedule and cost overrun."},
+      {"source_id": "SRC-DOE-NUCLEAR-LIFTOFF23", "locator": "first-of-a-kind cost and commercialization barriers", "support_note": "Independently identifies financing, order-book, workforce, fuel, component, and licensing constraints."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "observed project case separated from DOE pathway assumptions and repeat-build aspirations"}
+  },
+  {
+    "claim_id": "CLM-NUC-005",
+    "domain": "nuclear_aging_and_license",
+    "claim": "Much of the U.S. nuclear fleet is old, and operation from 60 to 80 years requires subsequent license renewal with aging-management, safety, and environmental review; a renewed license does not guarantee economic operation.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-EIA-NUCLEAR-US26", "locator": "average fleet age", "support_note": "Reports an average age of about 44 years in March 2026."},
+      {"source_id": "SRC-NRC-SLR26", "locator": "60-to-80-year framework, reviews, and application list", "support_note": "Source of record for the subsequent-license-renewal process."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "fleet age separated from licensing status and economic-retirement decisions"}
+  },
+  {
+    "claim_id": "CLM-NUC-006",
+    "domain": "advanced_nuclear_fuel_supply",
+    "claim": "Many advanced-reactor designs depend on high-assay low-enriched uranium, and DOE states domestic commercial supply is not yet available at the needed scale; fuel availability can therefore delay otherwise licensed or constructed projects.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-DOE-HALEU26", "locator": "design needs, domestic-supply gap, and allocation process", "support_note": "Source of record for the current U.S. HALEU constraint."},
+      {"source_id": "SRC-DOE-NUCLEAR-LIFTOFF23", "locator": "advanced-reactor fuel and supply-chain requirements", "support_note": "Independently identifies fuel availability as a commercialization barrier."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "'many' retained; allocation rounds not equated with commercial-scale supply"}
+  },
+  {
+    "claim_id": "CLM-NUC-007",
+    "domain": "nuclear_spent_fuel",
+    "claim": "The United States has accumulated more than 90,000 metric tons of commercial spent nuclear fuel and lacks an operating permanent geologic repository; the inventory continues to grow by roughly 2,000 metric tons per year.",
+    "status": "verified",
+    "evidence_class": "estimate",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-GAO-SPENT-FUEL", "locator": "commercial inventory, annual growth, repository absence, and liability", "support_note": "Reports more than 90,000 metric tons and roughly 2,000 metric tons per year."},
+      {"source_id": "SRC-DOE-SPENT-FUEL24", "locator": "2024 inventory, more than 70 sites, and permanent-solution status", "support_note": "Independently corroborates the inventory scale and absence of a permanent solution."},
+      {"source_id": "SRC-NRC-HLW", "locator": "Yucca Mountain licensing status", "support_note": "Confirms that completed reviews have not produced construction authorization or an operating repository."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "inventory scale and repository status checked across oversight, program, and regulator sources"},
+    "dashboard_rule": "Distinguish spent-fuel inventory, interim storage, proposed consolidated storage, repository licensing, and operating disposal."
+  },
+  {
+    "claim_id": "CLM-NUC-008",
+    "domain": "nuclear_interim_storage",
+    "claim": "Licensed dry-cask systems provide a demonstrated interim storage method after pool cooling, but interim-storage safety does not resolve the permanent-disposal obligation.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-NRC-DRY-CASK", "locator": "storage sequence, cask design, oversight, and operating record", "support_note": "Supports licensed interim-storage performance."},
+      {"source_id": "SRC-GAO-SPENT-FUEL", "locator": "repository absence and federal responsibility", "support_note": "Independently establishes the unresolved permanent-disposal problem."},
+      {"source_id": "SRC-DOE-SPENT-FUEL24", "locator": "interim-storage proposal and statutory constraint", "support_note": "Confirms interim and permanent pathways are separate."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "interim safety evidence explicitly separated from disposal policy"}
+  },
+  {
+    "claim_id": "CLM-NUC-009",
+    "domain": "nuclear_routine_exposure",
+    "claim": "NRC's 2024 occupational report recorded 90,579 uniquely monitored workers across covered nuclear facilities, 42,352 with measurable dose, and a 0.16 rem average among workers with measurable dose; these occupational data do not quantify severe-accident or population fuel-cycle risk.",
+    "status": "verified",
+    "evidence_class": "observed",
+    "confidence": "high",
+    "load_bearing": false,
+    "support": [
+      {"source_id": "SRC-NRC-OCC-DOSE24", "locator": "2024 summary tables", "support_note": "Reports monitored population, measurable-dose population, and average measurable dose."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "population scope, dose subgroup, unit, and year retained"},
+    "caveat": "All covered facility categories are included in the first counts; 0.16 rem is the mean only among workers with measurable dose."
+  },
+  {
+    "claim_id": "CLM-NUC-010",
+    "domain": "fukushima_health",
+    "claim": "UNSCEAR found no documented adverse resident health effects directly attributable to Fukushima accident radiation and none expected to be detectable, while WHO documents substantial evacuation, disrupted-care, noncommunicable-disease, social, and mental-health consequences.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-UNSCEAR-FUKUSHIMA", "locator": "resident health-effect conclusion", "support_note": "Source for the direct radiation-attribution conclusion."},
+      {"source_id": "SRC-WHO-FUKUSHIMA", "locator": "evacuation and public-health consequences", "support_note": "Source for indirect health and social consequences."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "two assessments reconciled by respecting their different scopes"},
+    "dashboard_rule": "Present the two findings together; neither cancels the other."
+  },
+  {
+    "claim_id": "CLM-NUC-011",
+    "domain": "chernobyl_health",
+    "claim": "WHO reports that the Chernobyl accident caused acute radiation syndrome among emergency workers and a large increase in thyroid cancer among people exposed as children or adolescents, alongside persistent mental-health effects and uncertainty for some longer-term outcomes.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": false,
+    "support": [
+      {"source_id": "SRC-WHO-CHERNOBYL", "locator": "acute, thyroid, leukemia, and mental-health sections", "support_note": "Official WHO synthesis of the accident's health evidence."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "outcomes and affected populations retained; no cross-accident extrapolation made"},
+    "caveat": "Historical severe-accident evidence cannot be transferred directly to reactors with different designs, containment, emergency response, and exposure conditions."
+  },
+  {
+    "claim_id": "CLM-NUC-012",
+    "domain": "advanced_nuclear_regulation",
+    "claim": "NRC's Part 53 provides a risk-informed, performance-based, technology-inclusive optional licensing framework for advanced reactors, but an available licensing framework is not evidence of commercial deployment, cost, or generation.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-NRC-PART53-26", "locator": "framework purpose and final-rule status", "support_note": "Source of record for Part 53's design and status."},
+      {"source_id": "SRC-DOE-NUCLEAR-LIFTOFF23", "locator": "remaining commercialization barriers", "support_note": "Independently shows that licensing is only one of several deployment conditions."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "regulatory availability separated from physical and commercial operation"},
+    "dashboard_rule": "Zero-power criticality, test milestones, design certification, construction permits, and commercial generation must be separate statuses."
+  },
+  {
+    "claim_id": "CLM-NUC-013",
+    "domain": "nuclear_fuel_sustainability",
+    "claim": "Published uranium resource inventories and projections are inputs to fuel-security analysis, not proof that suitable enriched fuel will be available at the required price, location, specification, and schedule.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": false,
+    "support": [
+      {"source_id": "SRC-OECD-URANIUM24", "locator": "resource, production, demand, and 2050 projection scope", "support_note": "Distinguishes resource inventories from production and requirements."},
+      {"source_id": "SRC-DOE-HALEU26", "locator": "domestic HALEU supply gap", "support_note": "Demonstrates that aggregate uranium resources do not guarantee design-specific fabricated fuel supply."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "geological resource, mined production, enrichment, and design-specific fuel availability separated"}
+  },
+  {
+    "claim_id": "CLM-NUC-014",
+    "domain": "nuclear_water",
+    "claim": "Nuclear plants with steam-cycle cooling share thermoelectric water-withdrawal, consumption, thermal-discharge, drought, and intake-ecology concerns with other thermal plants; cooling configuration and site hydrology determine the magnitude.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-USGS-THERMO-WATER", "locator": "thermoelectric cooling-system withdrawals and consumption", "support_note": "Provides the system-level water distinction across thermal generation."},
+      {"source_id": "SRC-EPA-COOLING316B", "locator": "intake ecological impacts and regulatory requirements", "support_note": "Documents fish and shellfish impacts and site-specific requirements."},
+      {"source_id": "SRC-UNECE-LCA21", "locator": "nuclear water-use and lifecycle impact categories", "support_note": "Corroborates inclusion of water within lifecycle comparison."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "nuclear not assigned the entire thermoelectric total; site and cooling dependence retained"}
+  },
+  {
+    "claim_id": "CLM-CCS-001",
+    "domain": "carbon_capture_and_storage",
+    "claim": "Carbon capture and geologic storage can reduce captured-point-source emissions, but it adds equipment, energy, cost, transport, injection, monitoring, liability, and long-term storage requirements; U.S. demonstration history includes major cancellations and overruns.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-GAO-CCS21", "locator": "DOE demonstration outcomes, costs, economics, and management", "support_note": "Documents historical cancellation and overrun evidence."},
+      {"source_id": "SRC-EPA-CCS-CLASSVI", "locator": "CO2 properties, site characterization, monitoring, plugging, seismicity, and financial assurance", "support_note": "Documents geologic-storage regulatory and physical requirements."},
+      {"source_id": "SRC-IPCC-AR5-LCA", "locator": "fossil generation with and without CCS lifecycle estimates", "support_note": "Places capture within lifecycle emissions rather than treating captured fraction as total reduction."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "captured fraction, lifecycle emissions, project delivery, and storage integrity treated as separate metrics"},
+    "dashboard_rule": "Never display capture rate as plant-wide or lifecycle emissions reduction without accounting for energy penalty and upstream emissions."
+  },
+  {
+    "claim_id": "CLM-DEM-001",
+    "domain": "global_electricity_consumption",
+    "claim": "IEA estimates global electricity consumption at about 28,200 TWh in 2025 and forecasts about 33,600 TWh in 2030, with average annual growth of 3.6% during 2026-2030.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-IEA-ELECTRICITY26-DEMAND", "locator": "Demand overview and 2026-2030 forecast", "support_note": "Provides both rounded consumption milestones and the average annual growth rate."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "both milestones, unit, forecast horizon, and growth-rate period checked in the official chapter"},
+    "dashboard_rule": "Display 2025 as an estimate and 2030 as a forecast; do not extrapolate the IEA line past 2030."
+  },
+  {
+    "claim_id": "CLM-DEM-002",
+    "domain": "global_electricity_demand_drivers",
+    "claim": "IEA attributes 49% of the global electricity-demand increase from 2025 to 2030 to buildings; cooling, data centers, and heat pumps account for almost half of buildings growth, while transportation contributes more than 10% of total growth.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": false,
+    "support": [
+      {"source_id": "SRC-IEA-ELECTRICITY26-DEMAND", "locator": "Global demand growth by sector", "support_note": "Provides the buildings contribution, named building drivers, and transport share."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "sector shares were kept attached to the 2025-2030 increase rather than total consumption"}
+  },
+  {
+    "claim_id": "CLM-DEM-003",
+    "domain": "global_electricity_demand_drivers",
+    "claim": "IEA expects emerging-market and developing economies to provide about 80% of global electricity-demand growth from 2025 to 2030, with China contributing nearly half and adding about 2,600 TWh.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": false,
+    "support": [
+      {"source_id": "SRC-IEA-ELECTRICITY26-DEMAND", "locator": "Regional demand-growth discussion", "support_note": "Provides the EMDE share, China's share, and approximate TWh addition."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "regional values checked in the same 2025-2030 forecast frame"}
+  },
+  {
+    "claim_id": "CLM-DEM-004",
+    "domain": "us_electricity_consumption",
+    "claim": "Across AEO2026 cases, U.S. electricity consumption grows by about 0.9%-1.6% per year through 2050, or about 25%-50% in total; electric vehicles and data centers account for about 50%-80% of the increase and 10%-25% of total 2050 demand, depending on the case.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-EIA-AEO2026-TABLES", "locator": "AEO2026 consumption narrative and all eleven full year-by-year workbooks", "support_note": "The narrative states the ranges; workbooks provide annual series and case endpoints."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "growth ranges, contribution shares, horizon, and case-dependent qualifier checked against narrative and workbook series"},
+    "dashboard_rule": "Call these conditional case ranges, not a confidence interval or prediction."
+  },
+  {
+    "claim_id": "CLM-DEM-005",
+    "domain": "electricity_accounting",
+    "claim": "In AEO accounting, total generation minus direct use equals net generation to the grid; grid generation plus net imports equals electricity sales plus transmission, distribution, and unaccounted electricity; and sales plus direct use equals total electricity use.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-EIA-AEO2026-TABLES", "locator": "Table 8 rows ESD000:ga_TotalElectric through ESD000:ia_TotalConsumpt for all eleven cases, 2025-2050", "support_note": "Labels and values support all three accounting identities; identities were validated for every case-year."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "286 case-years were recalculated with a 0.002 TWh rounding tolerance"},
+    "dashboard_rule": "Never compare total generation directly with sales without displaying direct use, net imports, and the system residual."
+  },
+  {
+    "claim_id": "CLM-DEM-006",
+    "domain": "data_center_electricity",
+    "claim": "Data-center electricity is a rapidly growing but highly uncertain load: IEA estimates about 415 TWh globally in 2024 and about 945 TWh in its 2030 Base Case, while LBNL estimates 176 TWh in the United States in 2023 and projects a 325-580 TWh range for 2028.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-IEA-ENERGY-AI25", "locator": "Base Case global data-center electricity", "support_note": "Provides 2024 and 2030 world estimates."},
+      {"source_id": "SRC-LBNL-DATACENTER24", "locator": "Executive Summary and Results", "support_note": "Provides 2023 U.S. estimate and 2028 projection range."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "geography, year, total-facility scope, estimate versus scenario, and range semantics independently checked"},
+    "dashboard_rule": "Render 2028 as a range and preserve global/U.S. geography; do not combine it with server-only values."
+  },
+  {
+    "claim_id": "CLM-DEM-007",
+    "domain": "data_center_electricity",
+    "claim": "AEO2026 projects U.S. commercial data-center server electricity at 445.6 TWh in the 2050 Counterfactual Baseline and 818.7 TWh in the 2050 High Electricity Demand case.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-EIA-AEO2026-TABLES", "locator": "Table 5 code CKI000:ga_DataCtrServ in baseline and higheldmd year-by-year workbooks; AEO narrative high-demand discussion", "support_note": "Workbook source values are 1.5204612 and 2.7934072 quads; normalized with the recorded quad-to-TWh conversion."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "both raw workbook cells, row label, footnote scope, conversion, case identity, and narrative high-case value checked"},
+    "dashboard_rule": "The measure is server electricity only, not total facility electricity."
+  },
+  {
+    "claim_id": "CLM-DEM-008",
+    "domain": "electric_vehicle_electricity",
+    "claim": "IEA estimates global road-EV electricity demand at about 250 TWh in 2025 and projects that it exceeds 1,500 TWh in the 2035 Current Policies Scenario, reaches 1,700 TWh in the Stated Policies Scenario, and exceeds 3,000 TWh in the Net Zero Emissions by 2050 Scenario.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-IEA-GEVO26", "locator": "Electricity demand section, paragraphs accompanying the 2025/2030/2035 mode-and-scenario chart", "support_note": "Provides all four milestones and their scenario/threshold wording."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "year, scenario, units, and 'exceeds/surpasses' qualifiers retained; ambiguous mode-row mapping excluded"},
+    "dashboard_rule": "Encode CPS and NZE values as lower bounds, not exact points."
+  },
+  {
+    "claim_id": "CLM-DEM-009",
+    "domain": "electricity_accounting",
+    "claim": "EIA's separately estimated EV electricity series is already included in electricity sales and total use, and AEO assigns on-road EV charging to residential or commercial demand according to charging location; transportation-sector sales therefore do not measure all EV charging.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-EIA-MER-7.6", "locator": "Table 7.6 EV-use notes", "support_note": "States that sales include EV electricity and the EV series is independently estimated."},
+      {"source_id": "SRC-EIA-AEO2026-TABLES", "locator": "Tables 4, 5, and 8 EV footnotes plus consumption narrative", "support_note": "Assigns charging to residential/commercial location and describes hourly treatment."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "historical total inclusion and model sector attribution checked separately"},
+    "dashboard_rule": "EV demand is an overlay unless the parent total is decomposed into mutually exclusive components."
+  },
+  {
+    "claim_id": "CLM-DEM-010",
+    "domain": "electrification_efficiency",
+    "claim": "Electrification can raise electricity use while lowering total final energy per unit of service; IEA reports heat pumps are typically three to five times as energy efficient as gas boilers, and their accelerated deployment adds power demand while reducing direct-fuel heating.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-IEA-HEATPUMPS22", "locator": "Executive Summary efficiency and electricity-demand sections", "support_note": "Provides efficiency comparison, added electricity demand, and displaced fossil heating."},
+      {"source_id": "SRC-NREL-EFS18", "locator": "Scenario method and Table 7.1", "support_note": "Independently demonstrates higher electricity consumption under wider adoption of efficient electric technologies."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "electricity demand, final energy, and energy-service efficiency kept as separate quantities"}
+  },
+  {
+    "claim_id": "CLM-DEM-011",
+    "domain": "us_electrification_scenarios",
+    "claim": "NREL's 2018 Electrification Futures Study Table 7.1 places 2050 U.S. electricity consumption at 4,696-4,772 TWh under Reference electrification, 5,520-5,871 TWh under Medium electrification, and 6,280-6,846 TWh under High electrification, depending on technology advancement.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-NREL-EFS18", "locator": "Table 7.1", "support_note": "Provides sector and total values for Rapid, Moderate, and Slow technology advancement within each electrification level."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "all nine 2050 totals transcribed, sector sums checked, and publication-vintage limitation retained"},
+    "dashboard_rule": "Use as an older electrification stress test, not a current forecast and not a continuation of AEO2026."
+  },
+  {
+    "claim_id": "CLM-DEM-012",
+    "domain": "global_electricity_scenarios",
+    "claim": "NGFS Phase 5.1 provides conditional World final-electricity pathways through 2100 from three integrated-assessment models across seven transition scenarios; the outputs are scenarios rather than forecasts and their model spread must be preserved.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-NGFS-PHASE5.1", "locator": "Official portal and model, scenario, run, variable, unit, node, and bulk time-series API metadata", "support_note": "Confirms three models, seven scenarios, five-year data, units, variables, and scenario status."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "bulk values sampled against separate metadata; 3,193-row narrow demand subset validated"},
+    "dashboard_rule": "Never average the models into a prediction or label a model envelope as a probability interval."
+  },
+  {
+    "claim_id": "CLM-DEM-013",
+    "domain": "power_system_planning",
+    "claim": "Annual electricity consumption does not by itself determine peak demand, capacity need, or transmission need because the timing, coincidence, flexibility, and location of cooling, data-center, EV, heating, and industrial loads differ.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-IEA-ENERGY-AI25", "locator": "Geographic concentration and grid-impact discussion", "support_note": "Shows that a modest global share can create large local system effects."},
+      {"source_id": "SRC-EIA-AEO2026-TABLES", "locator": "Consumption narrative load-shape assumptions", "support_note": "Distinguishes constant data-center load and time/location-dependent EV charging."},
+      {"source_id": "SRC-IEA-COOLING18", "locator": "Cooling demand and system implications", "support_note": "Establishes weather-sensitive cooling as a major demand driver."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "annual energy volume, local load, and peak/timing effects separated"},
+    "dashboard_rule": "Do not manufacture hourly profiles or reliability conclusions from annual TWh."
+  },
+  {
+    "claim_id": "CLM-DEM-014",
+    "domain": "electricity_accounting",
+    "claim": "Ember defines its historical electricity-demand measure as gross electricity generation plus net imports; it is a system-demand measure and is not directly comparable to IEA final electricity consumption.",
+    "status": "verified",
+    "confidence": "high",
+    "load_bearing": true,
+    "support": [
+      {"source_id": "SRC-OWID-ENERGY", "locator": "OWID Electricity demand data page and Ember Data Methodology v1.5, Definitions", "support_note": "OWID identifies Ember as the source; Ember explicitly defines demand as generation plus net imports and targets gross generation."}
+    ],
+    "fidelity_check": {"status": "verified", "checked_at": "2026-08-01", "method": "publisher identity, OWID processing, Ember definition, gross-generation basis, unit, and 2025 source row checked separately"},
+    "dashboard_rule": "Do not splice Ember/OWID historical system demand to IEA final-consumption milestones or imply that their 2025 totals conflict on the same definition."
+  }
+]

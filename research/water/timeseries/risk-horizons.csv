@@ -1,0 +1,17 @@
+risk_id,geography,risk_type,start_year,end_year,horizon_label,metric,value,unit,evidence_interpretation,source_id
+WRSK-NWAA-2009-2020,United States,current_condition,2009,2020,assessment_period,population_exposed,27,million_people,"Observed/model-integrated watershed stress indicator; not tap-water loss",USGS-NWAA-2026
+WRSK-CORPUS-CURRENT,"Corpus Christi, Texas",current_condition,2026,2026,access_date,drought_restriction_stage,3,stage,"Volatile operating status; refresh before display",CCTEXAS-STAGE3
+WRSK-COLORADO-2027,Colorado River Basin,regulatory_deadline,2027,2027,water_year_2027,new_operating_framework_required,1,binary,"Governance transition; not river exhaustion",USBR-POST2026
+WRSK-TEXAS-2030-2080,Texas,planning_counterfactual,2030,2030,2030_drought_of_record,potential_shortage,3.6,million_acre_feet_per_year,"If recommended strategies are not implemented",TWDB-2027-PLAN
+WRSK-TAMPA-2033-2043,Tampa Bay region,infrastructure_target,2033,2033,2033_target,additional_supply_need_low,10,million_gallons_per_day,"Planning study target; not source-loss date",TAMPA-FUTURE-SUPPLY
+WRSK-TAMPA-2033-2043,Tampa Bay region,infrastructure_target,2033,2033,2033_target,additional_supply_need_high,20,million_gallons_per_day,"Planning study target; not source-loss date",TAMPA-FUTURE-SUPPLY
+WRSK-MIAMI-THROUGH-2040,"Miami-Dade County, Florida",scenario_model,2022,2040,model_horizon,modeled_wellfield_impact,0,binary,"No impact in evaluated cases through 2040; no claim after 2040",MIAMI-2040-MODEL
+WRSK-TAMPA-2033-2043,Tampa Bay region,infrastructure_target,2043,2043,2043_target,additional_supply_need,25,million_gallons_per_day,"Planning study target; not source-loss date",TAMPA-FUTURE-SUPPLY
+WRSK-COLORADO-2060-LEGACY,Colorado River Basin,scenario_model,2060,2060,legacy_2060_scenario,median_supply_demand_imbalance,3.2,million_acre_feet_per_year,"Legacy basin-study scenario; not current forecast",USBR-BASIN-STUDY
+WRSK-NEW-MEXICO-50Y,New Mexico,planning_counterfactual,2024,2074,approximately_50_year_plan,projected_water_reduction,25,percent,"Statewide planning basis; local timing varies",NM-50Y-WATER
+WRSK-HALE-2030-2080,"Hale County, Texas",planning_counterfactual,2030,2080,regional_plan_supply_change,existing_supply_decline,76.02,percent,"Planning estimate; not all wells fail",TWDB-REGION-O-2026
+WRSK-TEXAS-2030-2080,Texas,planning_counterfactual,2080,2080,2080_drought_of_record,potential_shortage,5.8,million_acre_feet_per_year,"If recommended strategies are not implemented",TWDB-2027-PLAN
+WRSK-HIGH-PLAINS-2100,High Plains aquifer,scenario_model,2100,2100,2100_model_horizon,current_irrigated_area_unable_to_support_irrigation,24,percent,"Agricultural viability model; not aquifer-wide exhaustion",USDA-HPA-2020
+WRSK-LONG-ISLAND-ONGOING,"Long Island, New York",observed_chronic,,,current_and_ongoing,localized_intrusion,1,qualitative_presence,"Individual wells/areas; not region-wide exhaustion",USGS-LONG-ISLAND
+WRSK-BRUNSWICK-ONGOING,"Brunswick-Glynn County, Georgia",observed_chronic,,,current_and_ongoing,chloride_concentration_greater_than,2000,milligrams_per_liter,"Observed local plume",USGS-BRUNSWICK
+WRSK-NEW-ORLEANS-SALT-WEDGE,Lower Mississippi River,episodic_hazard,,,future_low_flow_events,fixed_failure_year,,none,"No defensible fixed year; 2023 wedge did not reach New Orleans intakes",SWBNO-SALT-WEDGE

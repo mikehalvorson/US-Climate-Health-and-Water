@@ -1,0 +1,99 @@
+{
+  "title": "Transformer supply-chain investigation",
+  "as_of": "2026-08-01",
+  "answer": "Yes. Large power transformers and distribution transformers are credible gating components, but they are different products with different designs, factories, transport, and replacement strategies.",
+  "product_classes": [
+    {
+      "class_id": "LPT",
+      "name": "large power transformer",
+      "definition_used_by_source": "DOE's 2022 deep dive commonly uses 100 MVA or greater for analysis; industry and regulatory definitions vary.",
+      "applications": ["generator step-up", "bulk transmission substations", "interties", "large-load service"],
+      "characteristics": ["custom engineered", "high-voltage insulation design", "large factory test burden", "extreme mass and transport constraints", "limited interchangeability"]
+    },
+    {
+      "class_id": "MPT",
+      "name": "medium power and subtransmission transformer",
+      "definition_used_by_source": "No single project-wide threshold adopted.",
+      "applications": ["subtransmission", "industrial and campus substations", "large data centers", "renewable collector substations"]
+    },
+    {
+      "class_id": "DT",
+      "name": "distribution transformer",
+      "definition_used_by_source": "Pole- and pad-mounted utility distribution equipment; kept separate from LPTs.",
+      "applications": ["homes and commercial buildings", "EV charging", "distributed generation", "distribution feeders"],
+      "characteristics": ["higher unit volume", "more standardized than LPTs but still utility-specification dependent", "efficiency-standard and material tradeoffs"]
+    },
+    {
+      "class_id": "HVDC_CONVERTER_TRANSFORMER",
+      "name": "HVDC converter transformer",
+      "definition_used_by_source": "Specialized transformer between AC systems and converter valves.",
+      "applications": ["long-distance HVDC", "asynchronous interties", "submarine and underground HVDC links"],
+      "characteristics": ["very high electrical and insulation complexity", "few qualified suppliers", "coupled to converter design and project-specific testing"]
+    }
+  ],
+  "supply_chain_stages": [
+    {"stage_id": "T01", "stage": "requirements_and_design", "inputs": ["MVA", "voltage ratio", "impedance", "tap range", "loss guarantees", "sound limits", "seismic and temperature design", "transport envelope"], "failure_modes": ["late specification changes", "nonstandard utility requirements", "incompatibility with spares"]},
+    {"stage_id": "T02", "stage": "electrical_steel", "inputs": ["grain-oriented electrical steel", "amorphous metal for some distribution designs"], "failure_modes": ["limited qualified mills", "trade exposure", "efficiency-rule material substitution", "long qualification cycles"]},
+    {"stage_id": "T03", "stage": "conductors", "inputs": ["copper", "aluminum", "continuous-transposed conductor", "insulation paper"], "failure_modes": ["commodity volatility", "specialized CTC capacity", "quality defects"]},
+    {"stage_id": "T04", "stage": "active_part_manufacture", "inputs": ["core cutting and stacking", "coil winding", "drying", "clamping", "lead assembly"], "failure_modes": ["skilled-labor scarcity", "factory slot scarcity", "moisture or insulation defects", "rework"]},
+    {"stage_id": "T05", "stage": "tank_and_thermal_system", "inputs": ["fabricated steel tank", "radiators", "pumps and fans", "mineral or alternative insulating fluid", "conservator"], "failure_modes": ["large fabrication constraints", "leaks", "cooling-system derating"]},
+    {"stage_id": "T06", "stage": "critical_accessories", "inputs": ["high-voltage bushings", "on-load tap changer", "sensors", "relays", "valves", "surge arresters"], "failure_modes": ["small supplier base", "accessory lead time gates whole unit", "compatibility and quality failures"]},
+    {"stage_id": "T07", "stage": "assembly_and_factory_test", "inputs": ["high-bay factory", "vacuum processing", "test laboratory", "impulse and heat-run testing"], "failure_modes": ["test-bay bottleneck", "failed acceptance test", "rework and schedule cascade"]},
+    {"stage_id": "T08", "stage": "heavy_transport", "inputs": ["special railcar", "barge or heavy-haul trailer", "route survey", "bridge and clearance analysis", "permits"], "failure_modes": ["rail and bridge limits", "port or barge access", "route changes", "damage in transit"]},
+    {"stage_id": "T09", "stage": "site_installation", "inputs": ["foundation", "crane", "oil processing", "bushing assembly", "protection integration", "planned outage"], "failure_modes": ["weather", "crane and workforce constraints", "outage window", "site acceptance failure"]},
+    {"stage_id": "T10", "stage": "operations_and_spares", "inputs": ["dissolved-gas analysis", "condition monitoring", "bushing and tap-changer maintenance", "strategic spare", "mutual assistance"], "failure_modes": ["catastrophic failure", "spare incompatibility", "simultaneous-event demand", "cyber or physical attack"]},
+    {"stage_id": "T11", "stage": "end_of_life", "inputs": ["oil handling", "metals recovery", "hazardous-material screening", "transport"], "failure_modes": ["contaminated legacy fluids", "loss of reusable core metals", "insufficient replacement outage"]}
+  ],
+  "evidence": [
+    {
+      "evidence_id": "TF-E01",
+      "finding": "DOE's 2022 assessment described strained or nearly absent U.S. capacity in important LPT and HVDC segments and mapped electrical steel, copper/CTC, bushings, tap changers, insulation, cooling, converters, and cable as interdependent inputs.",
+      "source_ids": ["SRC-DOE-GRID-SC22"],
+      "vintage": "2022",
+      "current_use": "structural supply-chain map, not current lead-time number"
+    },
+    {
+      "evidence_id": "TF-E02",
+      "finding": "GAO identified long and increasing transformer lead times, limited manufacturing capacity, labor and material shortages, high cost, and transport challenges. GAO's recommendation for a coordinated supply-chain strategy remained open in its 2026 status update.",
+      "source_ids": ["SRC-GAO-LPT23"],
+      "vintage": "2023 evidence; recommendation status reviewed 2026"
+    },
+    {
+      "evidence_id": "TF-E03",
+      "finding": "DOE's 2024 resilience report treats limited interchangeability, logistics, spares, standardization, and manufacturing resilience as linked problems rather than a single factory-output metric.",
+      "source_ids": ["SRC-DOE-LPT24"],
+      "vintage": "2024"
+    },
+    {
+      "evidence_id": "TF-E04",
+      "finding": "DOE's distribution-transformer rule retained material flexibility, while the accompanying announcement cited a national-laboratory projection of roughly tripled installations by 2050.",
+      "source_ids": ["SRC-DOE-DT-RULE24"],
+      "vintage": "2024",
+      "warning": "Installation projection is not a current backlog measurement."
+    }
+  ],
+  "why_capacity_is_hard_to_expand": [
+    "LPTs are engineered to a utility's electrical, dimensional, loss, sound, protection, and transport constraints; adding a production line does not instantly create interchangeable products.",
+    "Core steel, CTC, bushings, and tap changers can gate a transformer even when a main assembly plant has space.",
+    "High-voltage test bays and experienced winding, insulation, design, and test personnel are difficult to scale quickly.",
+    "A finished unit can be too large for ordinary road or rail movement; transport-route feasibility must be designed in from the start.",
+    "Stockpiling helps only if the spare matches voltage ratio, impedance, dimensions, bushings, cooling, protection, and site constraints; over-standardization can also concentrate demand on a few configurations.",
+    "Utilities, generators, data centers, electrified industry, and transmission projects draw on overlapping transformer, breaker, switchgear, copper, and engineering capacity."
+  ],
+  "dashboard_metrics": [
+    {"metric_id": "transformer_lead_time", "unit": "months", "required_dimensions": ["product_class", "MVA_band", "voltage_class", "domestic_or_import", "order_date", "delivery_date", "source_type"], "status": "critical_data_gap", "warning": "No authoritative public national order book was found."},
+    {"metric_id": "qualified_factory_capacity", "unit": "units_and_MVA_per_year", "required_dimensions": ["product_class", "factory", "test_capability", "announced_or_operating"], "status": "critical_data_gap"},
+    {"metric_id": "import_dependency", "unit": "percent_or_value", "required_dimensions": ["HS_code", "product_class", "country", "year"], "status": "build_from_Census_trade_data_with_crosswalk"},
+    {"metric_id": "fleet_age_condition", "unit": "years_and_condition_score", "required_dimensions": ["voltage_class", "region", "owner_type"], "status": "nonpublic_or_fragmented"},
+    {"metric_id": "strategic_spares", "unit": "units", "required_dimensions": ["configuration_family", "region", "mutual_assistance_eligibility"], "status": "security_sensitive_aggregate_only"},
+    {"metric_id": "delivery_logistics_feasibility", "unit": "categorical", "required_dimensions": ["site", "rail", "barge", "bridge", "road", "last_verified"], "status": "project_specific"},
+    {"metric_id": "factory_failure_and_rework_rate", "unit": "percent", "required_dimensions": ["product_class", "year"], "status": "proprietary_data_gap"}
+  ],
+  "policy_and_procurement_options": [
+    {"option": "common functional specifications and modular/spare designs", "benefit": "greater interchangeability and emergency recovery", "tradeoff": "may reduce optimization or concentrate orders on common sizes", "source_ids": ["SRC-DOE-LPT24", "SRC-GAO-LPT23"]},
+    {"option": "multi-year pooled procurement and demand visibility", "benefit": "supports factory investment and supplier planning", "tradeoff": "requires credible schedules and allocation of cancellation risk", "source_ids": ["SRC-GAO-LPT23"]},
+    {"option": "domestic electrical-steel, accessory, assembly, and test capacity", "benefit": "shorter and more resilient chain", "tradeoff": "capital intensive and slow to qualify", "source_ids": ["SRC-DOE-GRID-SC22"]},
+    {"option": "strategic spares and mutual assistance", "benefit": "faster restoration", "tradeoff": "carrying cost, compatibility, transport, and simultaneous-event risk", "source_ids": ["SRC-DOE-LPT24"]},
+    {"option": "condition monitoring and life extension", "benefit": "targets replacement and reduces surprise failure", "tradeoff": "cannot eliminate aging or catastrophic-event risk", "source_ids": ["SRC-DOE-LPT24"]}
+  ]
+}

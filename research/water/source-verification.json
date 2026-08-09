@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.0.0",
+  "method": {
+    "required_checks": 3,
+    "check_1": "Confirm official/DOI identity, publisher, title, and existence.",
+    "check_2": "Inspect the exact table, abstract, section, or data field; preserve year, geography, unit, boundary, range, and scenario.",
+    "check_3": "Corroborate interpretation independently, reproduce arithmetic, or explicitly test for boundary and double-counting errors."
+  },
+  "audits": [
+    {
+      "claim_id": "WTR-NAT-001",
+      "result": "verified",
+      "checks": [
+        {"check": 1, "evidence": "USGS publication page and DOI 10.3133/cir1441 identify the national 2015 inventory."},
+        {"check": 2, "evidence": "Abstract and Table 1 report 322 Bgal/d total and 281 Bgal/d freshwater withdrawals."},
+        {"check": 3, "evidence": "Category/source components and historical tables were reconciled; the 0.7 Bgal/d fresh-source difference is retained as rounding, and the date is labeled 2015."}
+      ]
+    },
+    {
+      "claim_id": "WTR-ACC-001",
+      "result": "verified",
+      "checks": [
+        {"check": 1, "evidence": "Circular 1441 and Professional Paper 1894-D are official USGS products with explicit definitions."},
+        {"check": 2, "evidence": "2015 estimates show thermoelectric consumption 4.31 of 133 Bgal/d total withdrawal versus irrigation consumption 73.2 of 118 Bgal/d."},
+        {"check": 3, "evidence": "PP1894-D independently models the same contrast: 4 percent freshwater thermoelectric versus 72 percent crop-irrigation consumptive fractions for 2010–20."}
+      ]
+    },
+    {
+      "claim_id": "WTR-MODEL-001",
+      "result": "verified",
+      "checks": [
+        {"check": 1, "evidence": "USGS PP1894-D page and DOI 10.3133/pp1894D resolve to the 2010–20 national model."},
+        {"check": 2, "evidence": "Tables 1–3 report 105,497/75,698, 35,440/4,219, and 82,656/2,904 Mgal/d withdrawal/consumption averages."},
+        {"check": 3, "evidence": "The three-sector arithmetic was recomputed to 223,593 Mgal/d withdrawal and 82,821 Mgal/d consumption, and the package forbids calling these all-sector totals."}
+      ]
+    },
+    {
+      "claim_id": "WTR-HOUSEHOLD-001",
+      "result": "verified",
+      "checks": [
+        {"check": 1, "evidence": "USGS Circular 1441 domestic section and EPA WaterSense official program page were verified."},
+        {"check": 2, "evidence": "USGS reports 26.6 Bgal/d total, 23.3 public deliveries, 3.26 self-supplied, and 82 gpcd."},
+        {"check": 3, "evidence": "23.3 + 3.26 = 26.56 Bgal/d, consistent with the rounded 26.6; EPA independently repeats the 82 gpcd national household reference."}
+      ]
+    },
+    {
+      "claim_id": "WTR-AG-001",
+      "result": "verified",
+      "checks": [
+        {"check": 1, "evidence": "USGS PP1894-D is the primary 2010–20 consumptive-use source."},
+        {"check": 2, "evidence": "Table 1 reports crop irrigation 105,497 Mgal/d withdrawal and 75,698 Mgal/d consumption, rounded to 72 percent."},
+        {"check": 3, "evidence": "75,698 divided by 105,497 reproduces 71.75 percent; Circular 1441 independently reports high 2015 irrigation consumption."}
+      ]
+    },
+    {
+      "claim_id": "WTR-MFG-001",
+      "result": "qualified",
+      "checks": [
+        {"check": 1, "evidence": "USGS industrial-water page and Circular 1441 identify the 2015 self-supplied industrial category."},
+        {"check": 2, "evidence": "The official summary reports 14.8 Bgal/d total, 14.0 freshwater, and 82 percent surface water."},
+        {"check": 3, "evidence": "USGS documentation states public-supply industrial deliveries have not been estimated nationally since 1995; the claim explicitly preserves the omission."}
+      ]
+    },
+    {
+      "claim_id": "WTR-PLASTICS-001",
+      "result": "qualified",
+      "checks": [
+        {"check": 1, "evidence": "Census NAICS pages establish distinct resin (325211) and downstream plastics/rubber product (326) boundaries; NIST and DOI sources exist."},
+        {"check": 2, "evidence": "USGS industrial data are not plastics-specific and exclude public deliveries; the historical EPA survey combines organic chemicals, plastics, and synthetic fibers."},
+        {"check": 3, "evidence": "NIST review documents data gaps and the 2023 cross-database study finds divergent water results for identical resins, invalidating a universal coefficient."}
+      ]
+    },
+    {
+      "claim_id": "WTR-DC-001",
+      "result": "qualified",
+      "checks": [
+        {"check": 1, "evidence": "LBNL 2024 report DOI 10.71468/P1WC7Q and LBNL 2026 analysis page were verified."},
+        {"check": 2, "evidence": "Sources report 66 billion liters in 2023 and 0.14–0.28 billion m3 in 2028."},
+        {"check": 3, "evidence": "Conversions reproduce 47.77 Mgal/d for 2023 and 101.3–202.7 Mgal/d for 2028; projection status is explicit."}
+      ]
+    },
+    {
+      "claim_id": "WTR-DC-002",
+      "result": "verified",
+      "checks": [
+        {"check": 1, "evidence": "LBNL defines direct facility and indirect electricity water; USGS separately accounts for thermoelectric water."},
+        {"check": 2, "evidence": "The LBNL indirect estimate is attributed to electricity generation rather than a second direct facility withdrawal."},
+        {"check": 3, "evidence": "A national sum including both full power-sector water and data-center allocated electricity water counts the same upstream flow twice; validator requires separate display."}
+      ]
+    },
+    {
+      "claim_id": "WTR-STRESS-001",
+      "result": "qualified",
+      "checks": [
+        {"check": 1, "evidence": "USGS 2026 official release and NWAA data catalog exist and identify the assessment."},
+        {"check": 2, "evidence": "Release reports nearly 27 million people, about 8 percent, and roughly 80,000 watersheds for 2009–20."},
+        {"check": 3, "evidence": "Method scope was checked against the data catalog; claim is constrained to demand versus modeled natural supply and not converted to utility failure."}
+      ]
+    },
+    {
+      "claim_id": "WTR-COAST-001",
+      "result": "verified",
+      "checks": [
+        {"check": 1, "evidence": "USGS coastal synthesis DOI 10.1007/s10040-009-0514-3, Miami SIR, and NCA5 water chapter were verified."},
+        {"check": 2, "evidence": "Sources identify lateral, vertical, and well pathways and control by pumping/hydraulic conditions, with sea-level rise as an aggravating driver."},
+        {"check": 3, "evidence": "Contrasting Miami, Long Island, and Brunswick evidence confirms consequences range from managed interfaces to local closures and existing plumes, so no universal date is defensible."}
+      ]
+    },
+    {
+      "claim_id": "WTR-MIAMI-001",
+      "result": "qualified",
+      "checks": [
+        {"check": 1, "evidence": "Miami-Dade official vulnerability page, county model memorandum, and USGS SIR were verified."},
+        {"check": 2, "evidence": "County model memorandum states evaluated wellfields are not impacted through 2040 even under the high sea-level-rise case."},
+        {"check": 3, "evidence": "USGS independently confirms ongoing intrusion controls; package preserves the 2040 model horizon and refuses both a run-out claim and post-2040 extrapolation."}
+      ]
+    },
+    {
+      "claim_id": "WTR-COLORADO-001",
+      "result": "verified",
+      "checks": [
+        {"check": 1, "evidence": "Bureau of Reclamation post-2026 official process page was verified."},
+        {"check": 2, "evidence": "The process page establishes expiration of current guidelines and need for water-year 2027 operations; January 2026 draft EIS had no preferred alternative."},
+        {"check": 3, "evidence": "The regulatory date was checked against Reclamation process milestones and is encoded as governance, not hydrologic exhaustion."}
+      ]
+    },
+    {
+      "claim_id": "WTR-TEXAS-001",
+      "result": "qualified",
+      "checks": [
+        {"check": 1, "evidence": "TWDB official 2027 State Water Plan page and adopted plan record were verified."},
+        {"check": 2, "evidence": "Plan reports potential shortages of 3.6 million acre-feet in 2030 and 5.8 million in 2080 under drought-of-record planning conditions."},
+        {"check": 3, "evidence": "Plan's thousands of recommended strategies show the numbers are no-action planning counterfactuals; dashboard language preserves that condition."}
+      ]
+    },
+    {
+      "claim_id": "WTR-NM-001",
+      "result": "qualified",
+      "checks": [
+        {"check": 1, "evidence": "New Mexico Office of the State Engineer official rulemaking record and technical planning materials were verified."},
+        {"check": 2, "evidence": "Planning record uses approximately 25 percent less river/aquifer water and a roughly 750,000 acre-foot gap over 50 years."},
+        {"check": 3, "evidence": "NCA5 independently supports Southwest runoff/groundwater and demand risks; the state values remain labeled planning estimates rather than observations."}
+      ]
+    },
+    {
+      "claim_id": "WTR-HPA-001",
+      "result": "qualified",
+      "checks": [
+        {"check": 1, "evidence": "USGS SIR 2023-5143 and Agricultural Water Management DOI 10.1016/j.agwat.2020.106061 were verified."},
+        {"check": 2, "evidence": "USGS reports 286.4 million acre-feet decline and 2.91 billion remaining recoverable storage in 2019; model reports 24 percent affected irrigated area by 2100."},
+        {"check": 3, "evidence": "Storage decline and agricultural-viability model were kept as different metrics; large remaining regional storage prevents an aquifer-empty interpretation."}
+      ]
+    },
+    {
+      "claim_id": "WTR-DESAL-001",
+      "result": "verified",
+      "checks": [
+        {"check": 1, "evidence": "DOE/USGS technology pages and official Carlsbad, Tampa, El Paso, and California sources were verified."},
+        {"check": 2, "evidence": "Operating profiles report 50, 25, and 27.5 Mgal/d capacities and different intake/concentrate arrangements."},
+        {"check": 3, "evidence": "California strategy independently catalogs energy, brine, environmental, permitting, cost, and equity constraints, supporting site-specific rather than universal viability."}
+      ]
+    },
+    {
+      "claim_id": "WTR-DESAL-002",
+      "result": "verified",
+      "checks": [
+        {"check": 1, "evidence": "Peer-reviewed LBNL/Desalination DOI source and USGS 2015 domestic-use inventory were verified."},
+        {"check": 2, "evidence": "Source interval is 3.2–4.5 kWh/m3 and domestic use is 26.6 Bgal/d."},
+        {"check": 3, "evidence": "Independent unit calculation converts 26.6 Bgal/d to annual cubic meters and produces 117.6–165.4 TWh/year; exclusions are explicit."}
+      ]
+    },
+    {
+      "claim_id": "WTR-AWG-001",
+      "result": "qualified",
+      "checks": [
+        {"check": 1, "evidence": "EPA 2019 brief, Nature DOI 10.1038/s41586-021-03900-w, ENERGY STAR criteria, and WHO quantity guidance were verified."},
+        {"check": 2, "evidence": "EPA capacities, Nature 5 L drinking target, WHO 5.3/20 L references, and USGS/EPA 82 gpcd full-use reference were kept distinct."},
+        {"check": 3, "evidence": "Capacity and energy proxy calculations show a 10,000 L/day unit supports about 1,887 drinking-only person-equivalents but only 32 full U.S.-use equivalents; proxy is labeled non-certified."}
+      ]
+    },
+    {
+      "claim_id": "WTR-AWG-002",
+      "result": "verified",
+      "checks": [
+        {"check": 1, "evidence": "EPA technical brief and 2024 EPA research record were verified."},
+        {"check": 2, "evidence": "EPA reports microbial growth/contaminant pathways and real-world heterotrophic bacteria with opportunistic-pathogen evidence."},
+        {"check": 3, "evidence": "Both technology guidance and empirical field evidence require treatment/disinfection and ongoing maintenance; no raw-condensate safety claim is retained."}
+      ]
+    }
+  ]
+}

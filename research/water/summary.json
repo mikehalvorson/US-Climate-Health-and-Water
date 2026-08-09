@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "as_of": "2026-08-02",
+  "headline": "The United States has a distribution, timing, quality, infrastructure, and governance problem as much as a national-volume problem; irrigation dominates consumptive use, while urban and industrial risks are intensely local.",
+  "key_findings": [
+    "The latest fully comparable all-category inventory is 2015: 281 Bgal/d freshwater withdrawal out of 322 Bgal/d total.",
+    "For modeled 2010–20 covered sectors, irrigation consumed 75.698 Bgal/d versus 4.219 for public supply and 2.904 for freshwater thermoelectric power.",
+    "Nearly 27 million people lived in watersheds where demand approached or exceeded modeled natural supply during 2009–20.",
+    "The most urgent horizons begin now: current watershed stress and drought restrictions; Colorado River rule changes in 2027; Texas/New Mexico supply gaps and project needs in the 2030s onward; agricultural groundwater transitions continuing through 2100.",
+    "Coastal freshwater loss is not governed by sea level alone. Pumping, canals, drought, recharge, well design, and geology determine whether and when individual wellfields become saline.",
+    "Miami-Dade is vulnerable, but the cited model does not support a claim of wellfield failure through 2040; Long Island and Brunswick show why localized current impacts still matter.",
+    "Direct data-center water was about 47.8 Mgal/d nationally in 2023 and is projected at about 101–203 Mgal/d in 2028; national percentages are small, local siting effects can be large.",
+    "Manufacturing withdrawals are incompletely measured and plastics cannot yet be assigned a credible national water total or ban-savings coefficient.",
+    "Desalination is viable for selected municipal increments and brackish sources, but replacing all 2015 domestic use would imply roughly 532 Carlsbad-size capacity equivalents and 118–165 TWh/year before several additional burdens.",
+    "Atmospheric water generators can support drinking/emergency niches; current output, energy, climate dependence, and water-quality requirements make whole-house or community-base supply implausible."
+  ],
+  "priority_dashboard_messages": [
+    "Show withdrawal and consumptive use side by side.",
+    "Map dependence and failure pathways, not unsupported 'runs out by' dates.",
+    "Connect every future year to its evidence type and assumptions.",
+    "Make local seasonal stress the denominator for new facilities.",
+    "Treat water quality and infrastructure outages as availability failures.",
+    "Compare interventions as portfolios with energy, brine, ecosystem, cost, time, and equity."
+  ],
+  "near_term_research_priority": "Build facility- and watershed-resolved plastics and data-center water inventories, then integrate them with NWAA supply-demand layers and utility source portfolios."
+}

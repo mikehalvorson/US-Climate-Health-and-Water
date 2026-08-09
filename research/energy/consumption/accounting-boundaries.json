@@ -1,0 +1,112 @@
+{
+  "accounting_id": "electricity-supply-demand-accounting-v1",
+  "as_of": "2026-08-01",
+  "purpose": "Prevent false generation-versus-consumption comparisons and additive double counting.",
+  "us_aeo_balance": {
+    "units": "TWh; AEO source unit billion kWh is numerically identical",
+    "equations": [
+      {
+        "equation_id": "BAL-1",
+        "expression": "total_electricity_generation - direct_use = net_generation_to_grid",
+        "tolerance_TWh": 0.002,
+        "meaning": "Some electricity is generated and consumed on site rather than delivered to the grid."
+      },
+      {
+        "equation_id": "BAL-2",
+        "expression": "net_generation_to_grid + net_imports = electricity_sales + transmission_distribution_and_unaccounted",
+        "tolerance_TWh": 0.002,
+        "meaning": "The residual includes transmission and distribution losses and unaccounted electricity; it is not technical transmission loss alone."
+      },
+      {
+        "equation_id": "BAL-3",
+        "expression": "electricity_sales + direct_use = total_electricity_use",
+        "tolerance_TWh": 0.002,
+        "meaning": "Total use includes both sales and generation used directly by the producer."
+      },
+      {
+        "equation_id": "BAL-4",
+        "expression": "residential_sales + commercial_sales + industrial_sales + transportation_sales = total_sales",
+        "tolerance_TWh": 0.002,
+        "meaning": "These four sales sectors are mutually exclusive in Table 8."
+      }
+    ],
+    "baseline_examples": [
+      {"year": 2025, "total_generation_TWh": 4517.562, "net_generation_to_grid_TWh": 4288.566, "net_imports_TWh": 24.115, "total_sales_TWh": 4069.278, "direct_use_TWh": 228.995, "total_use_TWh": 4298.273, "td_and_unaccounted_TWh": 343.403},
+      {"year": 2050, "total_generation_TWh": 6273.274, "net_generation_to_grid_TWh": 5852.875, "net_imports_TWh": 63.684, "total_sales_TWh": 5574.816, "direct_use_TWh": 420.399, "total_use_TWh": 5995.215, "td_and_unaccounted_TWh": 341.743}
+    ],
+    "source_id": "SRC-EIA-AEO2026-TABLES"
+  },
+  "non_additive_overlays": [
+    {
+      "load": "on_road_light_duty_ev_charging",
+      "source_id": "SRC-EIA-MER-7.6",
+      "contained_in": ["sector electricity sales", "total electricity sales", "total electricity use"],
+      "display": "overlay, indexed share, or mutually exclusive decomposition",
+      "prohibited": "adding EV electricity to a total that already contains it"
+    },
+    {
+      "load": "AEO residential and commercial EV charging",
+      "source_id": "SRC-EIA-AEO2026-TABLES",
+      "contained_in": ["residential or commercial location electricity", "sector sales"],
+      "display": "sum residential and commercial charging for a national charging overlay",
+      "prohibited": "using AEO transportation-sector electricity sales as total on-road EV charging"
+    },
+    {
+      "load": "data centers",
+      "contained_in": ["commercial electricity", "total electricity"],
+      "display": "overlay or share of compatible total",
+      "prohibited": "adding data-center electricity to a total that already contains commercial demand"
+    }
+  ],
+  "scope_incompatibilities": [
+    {
+      "left": "AEO Data Center Servers",
+      "right": "IEA/LBNL total data-center facility electricity",
+      "difference": "AEO isolates server electricity; IEA/LBNL include servers, storage, networking, and infrastructure such as cooling and power conversion.",
+      "allowed_comparison": "side-by-side with an explicit scope badge",
+      "disallowed_comparison": "single uninterrupted line or direct growth calculation across the two measures"
+    },
+    {
+      "left": "EIA electricity sales",
+      "right": "NGFS final-energy electricity",
+      "difference": "Different models, geography, sector boundaries, and final-energy accounting.",
+      "allowed_comparison": "separate U.S. and world views with definitions",
+      "disallowed_comparison": "splicing into one continuous series"
+    },
+    {
+      "left": "Ember/OWID electricity demand",
+      "right": "IEA final electricity consumption",
+      "difference": "Ember defines demand as gross generation plus net imports; IEA's Electricity 2026 milestone is final consumption.",
+      "allowed_comparison": "parallel historical-system-demand and final-consumption views with scope labels",
+      "disallowed_comparison": "joining the two values into one continuous historical/forecast line or presenting the difference as an error"
+    },
+    {
+      "left": "annual electricity consumption TWh",
+      "right": "peak demand GW",
+      "difference": "Energy volume does not identify hourly coincidence or capacity requirement.",
+      "allowed_comparison": "linked annual-energy and load-shape panels",
+      "disallowed_comparison": "inferring peak or reliability directly from annual TWh"
+    },
+    {
+      "left": "AEO scenario output",
+      "right": "EIA MER historical observations",
+      "difference": "Model baseline/conditional values are not observations and may differ in definition or vintage.",
+      "allowed_comparison": "visible historical/scenario seam at 2025 with separate source styling",
+      "disallowed_comparison": "continuous observed-looking line without a seam"
+    }
+  ],
+  "hierarchy_rules": [
+    {
+      "dataset_id": "DS-NGFS-PHASE5.1",
+      "rule": "Stack exactly one hierarchy level: total sectors, buildings subsectors, transportation subsectors, or industry subsectors. Do not stack sector totals with their children."
+    },
+    {
+      "dataset_id": "DS-EIA-AEO2026",
+      "rule": "For industrial purchased electricity, use total or the three disjoint components (excluding refining/hydrogen, refining, hydrogen production), never both."
+    },
+    {
+      "dataset_id": "DS-EIA-AEO2026",
+      "rule": "Residential and commercial gross end-use subtotals, purchased electricity, on-site generation, and named end uses are accounting layers, not a single additive stack."
+    }
+  ]
+}

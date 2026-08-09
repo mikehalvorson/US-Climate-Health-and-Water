@@ -1,0 +1,130 @@
+{
+  "catalog_id": "energy-scenario-catalog-v1",
+  "as_of": "2026-08-01",
+  "interpretation": "Every entry is a conditional scenario family unless explicitly marked historical_reference. None is a probability-weighted forecast.",
+  "scenario_families": [
+    {
+      "scenario_family_id": "SCF-EIA-AEO2026",
+      "dataset_id": "DS-EIA-AEO2026",
+      "model": "National Energy Modeling System (NEMS)",
+      "geography": "United States",
+      "geography_limit": "national all sectors with sector-specific renewable rows",
+      "years": {"minimum": 2025, "maximum": 2050, "frequency": "annual"},
+      "scenario_count": 11,
+      "scenarios": [
+        "Counterfactual Baseline",
+        "High Oil and Gas Supply",
+        "Low Oil and Gas Supply",
+        "High Economic Growth",
+        "Low Economic Growth",
+        "High Zero-Carbon Technology Cost",
+        "Low Zero-Carbon Technology Cost",
+        "Alternative Electricity",
+        "Alternative Transportation",
+        "Alternative Electricity and Transportation",
+        "High Electricity Demand"
+      ],
+      "local_status": "ingested",
+      "use": "Annual U.S. generation and renewable-capacity scenario charts through 2050.",
+      "constraints": [
+        "Do not combine electric-power, end-use, and all-sector scopes.",
+        "Solar all-sector capacity mixes AC utility capacity and DC end-use capacity.",
+        "The 2025 model year is not a substitute for the EIA historical observation."
+      ]
+    },
+    {
+      "scenario_family_id": "SCF-NREL-STANDARD-2024",
+      "dataset_id": "DS-NREL-STANDARD-SCENARIOS-2024",
+      "model": "Regional Energy Deployment System (ReEDS)",
+      "geography": "contiguous United States",
+      "geography_limit": "model domain excludes non-contiguous U.S. areas",
+      "years": {"minimum": 2026, "maximum": 2050, "values": [2026, 2029, 2032, 2035, 2038, 2041, 2044, 2047, 2050]},
+      "scenario_count": 61,
+      "scenario_names_source": "normalized CSV scenario column",
+      "local_status": "ingested",
+      "use": "Technology-rich U.S. capacity and generation comparison, including CCS, SMR, storage, distributed PV, offshore wind, and hydrogen combustion turbines.",
+      "constraints": [
+        "Scenario outputs are not forecasts.",
+        "Do not infer annual values between model years without visibly labeled interpolation.",
+        "Storage discharge and Canadian imports are not generation technologies."
+      ]
+    },
+    {
+      "scenario_family_id": "SCF-NGFS-PHASE5.1",
+      "dataset_id": "DS-NGFS-PHASE5.1",
+      "models": ["GCAM 6.0 NGFS", "MESSAGEix-GLOBIOM 2.0-M-R12-NGFS", "REMIND-MAgPIE 3.3-4.8"],
+      "geography": "World",
+      "years": {"minimum": 2020, "maximum": 2100, "frequency": "five-year", "required_dashboard_years_present": [2050, 2060, 2070]},
+      "scenario_count": 7,
+      "scenarios": [
+        "Below 2°C",
+        "Current Policies",
+        "Delayed transition",
+        "Fragmented World",
+        "Low demand",
+        "Nationally Determined Contributions (NDCs)",
+        "Net Zero 2050"
+      ],
+      "local_status": "ingested_narrow_world_electricity_subset",
+      "use": "Global generation and capacity pathways through 2070 and optional extension to 2100, with explicit model spread.",
+      "constraints": [
+        "Never collapse model spread into a single unlabeled pathway.",
+        "Some technology variables are aggregates or overlap with component variables; choose one hierarchy level.",
+        "The Phase V physical-risk damage-function issue does not apply to this transition-electricity subset, but the release vintage must remain visible.",
+        "Respect the NGFS adapted-material redistribution restriction."
+      ]
+    },
+    {
+      "scenario_family_id": "SCF-IRENA-WETO2022-OCEAN",
+      "dataset_id": "DS-IRENA-WETO2022-OCEAN",
+      "model": "IRENA World Energy Transitions Outlook 2022",
+      "geography": "World",
+      "years": {"historical_reference": [2021], "scenario_milestones": [2030, 2050]},
+      "scenario_count": 1,
+      "scenarios": ["1.5°C Scenario"],
+      "local_status": "ingested_three_points",
+      "use": "Ocean-energy capacity milestone annotation or sparse scenario line.",
+      "constraints": [
+        "Do not interpolate the sparse milestone values without an explicit visual label.",
+        "Do not extend the series past 2050.",
+        "Capacity is not annual generation or economically recoverable resource."
+      ]
+    },
+    {
+      "scenario_family_id": "SCF-ENROADS",
+      "source_ids": ["SRC-ENR-OVERVIEW", "SRC-ENR-STRUCTURE", "SRC-ENR-SUPPLY", "SRC-ENR-DEMAND", "SRC-ENR-CALIBRATION"],
+      "model": "En-ROADS",
+      "publishers": ["Climate Interactive", "MIT Sloan Sustainability Initiative"],
+      "geography": "World",
+      "years": {"minimum": 1990, "maximum": 2100},
+      "local_status": "architecture_mapped_not_bulk_output_ingested",
+      "use": "Gold-standard interaction and causal-structure reference for the future dashboard simulator.",
+      "constraints": [
+        "Public documentation supports a clean-room, architecture-compatible model, not a verified bit-for-bit clone.",
+        "Do not copy proprietary simulator code or imply MIT/Climate Interactive endorsement.",
+        "Validate future implementation against documented equations, units, reference points, and scenario behavior."
+      ],
+      "local_model_files": ["../en-roads/model-map.json", "../en-roads/reproduction-assessment.json"]
+    },
+    {
+      "scenario_family_id": "SCF-IPCC-AR6-PUBLIC",
+      "model": "multiple integrated-assessment models",
+      "geography": "World and model regions",
+      "years": {"maximum": 2100},
+      "canonical_url": "https://data.ece.iiasa.ac.at/ar6/",
+      "local_status": "registered_not_ingested",
+      "use": "Independent long-horizon research comparison if a later dashboard view needs the full IPCC scenario ensemble.",
+      "constraints": ["Apply the AR6 Scenario Explorer license and vetting metadata before ingesting."]
+    },
+    {
+      "scenario_family_id": "SCF-IEA-WEO2025",
+      "model": "World Energy Model",
+      "geography": "World and selected regions",
+      "years": {"historical": [2010, 2023, 2024], "scenario": [2035, 2040, 2050]},
+      "canonical_url": "https://www.iea.org/data-and-statistics/data-product/world-energy-outlook-2025-free-dataset",
+      "local_status": "registered_not_redistributed",
+      "use": "High-authority global 2050 comparison layer when licensing and automated access are resolved.",
+      "constraints": ["Do not redistribute the raw dataset until its current license permits the intended dashboard use."]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mikehalvorson.github.io/US-Climate-Health-and-Water/schemas/electricity-consumption-row-v1.json",
+  "title": "Electricity consumption and demand-driver time-series row",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "dataset_id", "source_id", "record_type", "model", "scenario", "scenario_family",
+    "geography", "geography_code", "region_level", "year", "metric", "sector",
+    "end_use", "accounting_scope", "value", "unit", "value_semantics", "source_value",
+    "source_unit", "source_variable", "upstream_status", "source_vintage", "source_file"
+  ],
+  "properties": {
+    "dataset_id": {"type": "string", "pattern": "^DS-[A-Z0-9][A-Z0-9._-]*$"},
+    "source_id": {"type": "string", "pattern": "^SRC-[A-Z0-9][A-Z0-9._-]*$"},
+    "record_type": {"enum": ["historical", "historical_reference", "estimate", "forecast", "scenario"]},
+    "model": {"type": "string"},
+    "scenario": {"type": "string"},
+    "scenario_family": {"type": "string"},
+    "geography": {"type": "string", "minLength": 1},
+    "geography_code": {"type": "string", "minLength": 1},
+    "region_level": {"enum": ["world", "country"]},
+    "year": {"type": "integer", "minimum": 1800, "maximum": 2200},
+    "metric": {
+      "enum": [
+        "electricity_consumption", "electricity_demand", "final_electricity_consumption", "electricity_sales",
+        "electricity_use", "electricity_generation", "net_generation_to_grid", "net_imports",
+        "direct_use", "transmission_distribution_and_unaccounted", "generation_minus_final_consumption", "sector_end_use_electricity",
+        "identifiable_load", "demand_driver_indicator"
+      ]
+    },
+    "sector": {"type": "string", "minLength": 1},
+    "end_use": {"type": "string", "minLength": 1},
+    "accounting_scope": {"type": "string", "minLength": 1},
+    "value": {"type": "number"},
+    "unit": {"type": "string", "minLength": 1},
+    "value_semantics": {"enum": ["point", "derived_point", "approximate", "lower_bound", "range_low", "range_high"]},
+    "source_value": {"type": "number"},
+    "source_unit": {"type": "string", "minLength": 1},
+    "source_variable": {"type": "string", "minLength": 1},
+    "upstream_status": {"type": "string", "minLength": 1},
+    "source_vintage": {"type": "string", "minLength": 1},
+    "source_file": {"type": "string", "minLength": 1}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"record_type": {"enum": ["forecast", "scenario"]}}},
+      "then": {"properties": {"model": {"minLength": 1}, "scenario": {"minLength": 1}, "scenario_family": {"minLength": 1}}}
+    }
+  ]
+}

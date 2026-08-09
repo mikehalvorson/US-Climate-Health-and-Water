@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "acquired_on": "2026-08-01",
+  "sources": [
+    {
+      "source_id": "NASA-GISTEMP-V4",
+      "raw_file": "raw/nasa-gistemp-v4-global.csv",
+      "download_url": "https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv",
+      "refresh": "monthly",
+      "license_or_use": "NASA data citation and image/media guidance apply"
+    },
+    {
+      "source_id": "NOAA-GLOBALTEMP-V61",
+      "raw_file": "raw/noaa-globaltemp-v6.1-annual.asc",
+      "download_url": "https://www.ncei.noaa.gov/data/noaa-global-surface-temperature/v6.1/access/timeseries/aravg.ann.land_ocean.90S.90N.v6.1.0.202606.asc",
+      "refresh": "update URL version/date when NOAA revises product",
+      "incomplete_year_rule": "exclude 2026 until complete"
+    },
+    {
+      "source_id": "NOAA-CO2-GLOBAL",
+      "raw_file": "raw/noaa-global-co2-annual.csv",
+      "download_url": "https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_annmean_gl.csv",
+      "refresh": "annual with revisions"
+    },
+    {
+      "source_id": "NOAA-AGGI-2025",
+      "raw_file": "raw/noaa-aggi-radiative-forcing.csv",
+      "download_url": "https://gml.noaa.gov/aggi/AGGI_Table.csv",
+      "refresh": "annual"
+    },
+    {
+      "source_id": "NOAA-AGGI-2025",
+      "raw_file": "raw/noaa-aggi-annual-mean-mole-fractions.csv",
+      "download_url": "https://gml.noaa.gov/aggi/NOAA_Annual_Mean_MoleFractions.csv",
+      "refresh": "annual"
+    },
+    {
+      "source_id": "GCB-2025-DATA",
+      "raw_file": "raw/global-carbon-budget-2025.xlsx",
+      "download_url": "https://globalcarbonbudget.org/download/2341/?tmstv=1762815901",
+      "refresh": "annual; discover current download URL from data hub",
+      "sheet_used": "Historical Budget"
+    },
+    {
+      "source_id": "PRIMAP-HIST-V27",
+      "raw_file": "raw/primap-hist-v2.7-earth-selected.csv",
+      "download_url": "https://zenodo.org/records/17090760/files/Guetschow_et_al_2025a-PRIMAP-hist_v2.7_final_22-Aug-2025.csv?download=1",
+      "refresh": "versioned release",
+      "transformation": "stream source; retain EARTH / M.0.EL / selected gas rows",
+      "license": "CC BY-NC-SA 4.0; non-commercial restrictions apply"
+    },
+    {
+      "source_id": "NASA-SSH-GMSL",
+      "raw_file": null,
+      "download_url": "https://podaac.jpl.nasa.gov/dataset/NASA_SSH_GMSL_INDICATOR",
+      "status": "metadata_verified_data_requires_Earthdata_access",
+      "gap_id": "GAP-SEA-001"
+    }
+  ],
+  "integrity_file": "normalized/raw-file-sha256.json"
+}

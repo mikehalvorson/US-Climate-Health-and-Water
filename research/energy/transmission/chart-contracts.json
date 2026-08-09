@@ -1,0 +1,152 @@
+{
+  "title": "Transmission, load-shape, process, and supply-chain chart contracts",
+  "contracts": [
+    {
+      "chart_id": "TR-CH-001",
+      "title": "Hourly demand",
+      "chart_type": "multi_line_or_small_multiples",
+      "data": "load-shape/timeseries/normalized/us-balancing-authority-hourly-demand-2024.csv.gz",
+      "x": {"field": "utc_time_end", "type": "datetime", "semantics": "hour_ending_UTC"},
+      "y": {"field": "demand_selected_mw", "unit": "MW"},
+      "filters": ["balancing_authority", "region", "date_range"],
+      "tooltip": ["balancing_authority", "region", "local_time_end", "utc_time_end", "selection_basis", "source_id"],
+      "required_annotations": ["EIA adjusted demand preferred", "missing is not zero", "operational demand is not sector consumption"],
+      "forbidden": ["stack BAs without UTC alignment", "label as consumption by sector"]
+    },
+    {
+      "chart_id": "TR-CH-002",
+      "title": "Average daily load shape",
+      "chart_type": "profile_lines",
+      "data": "load-shape/timeseries/normalized/average-hourly-load-profiles-2024.csv",
+      "x": {"field": "hour_ending", "domain": [1, 24]},
+      "y": {"field": "mean_demand_mw", "unit": "MW"},
+      "series": ["geography_code", "period", "day_type"],
+      "filters": ["geography_type", "geography_code", "period_type", "period", "day_type"],
+      "required_annotations": ["BA/subregion profiles use local clock", "region/national profiles use UTC", "DST produces unequal local-hour observation counts"],
+      "forbidden": ["compare local-clock curves across time zones without labeling", "force every bucket to equal observation counts"]
+    },
+    {
+      "chart_id": "TR-CH-003",
+      "title": "Load calendar heatmap",
+      "chart_type": "calendar_hour_heatmap",
+      "data": "load-shape/timeseries/normalized/us-balancing-authority-hourly-demand-2024.csv.gz",
+      "x": "local_hour_ending",
+      "y": "data_date",
+      "color": {"field": "demand_selected_mw", "unit": "MW_or_percent_of_geography_peak"},
+      "filters": ["one_balancing_authority"],
+      "required_annotations": ["hour ending", "timezone from source", "missing values patterned distinctly from zero"]
+    },
+    {
+      "chart_id": "TR-CH-004",
+      "title": "Peak demand geography",
+      "chart_type": "symbol_map",
+      "data": "load-shape/timeseries/normalized/load-shape-summary-2024.csv",
+      "location_join": "balancing_authority_or_subregion_geometry_to_be_ingested",
+      "size": {"field": "peak_demand_mw", "unit": "MW"},
+      "color": "peak_month_or_season",
+      "tooltip": ["geography_code", "peak_demand_mw", "peak_time_end", "mean_demand_mw", "load_factor_mean_divided_by_peak", "observation_count"],
+      "status": "requires_public_BA_geometry_adapter"
+    },
+    {
+      "chart_id": "TR-CH-005",
+      "title": "Major transmission corridors",
+      "chart_type": "interactive_line_map",
+      "base_data": "corridors/base-layers/hifld-transmission-lines-230kv-plus.geojson",
+      "overlay_data": "corridors/major-corridors.geojson",
+      "base_style": {"color": "VOLT_CLASS", "width": "nominal_voltage_only"},
+      "overlay_style": {"color": "status", "width": "sqrt_primary_capacity_mw", "dash": "operating_vs_development"},
+      "tooltip": ["name", "status", "primary_capacity_mw", "primary_capacity_type", "secondary_capacity_mw", "secondary_capacity_type", "source_id", "geometry_quality"],
+      "required_annotations": ["HIFLD has no MW ratings", "overlay geometry is approximate", "capacity types are not additive", "map is not an operational power-flow model"],
+      "forbidden": ["infer MW from kV", "sum visible corridor capacities", "hide draft/proposed status"]
+    },
+    {
+      "chart_id": "TR-CH-006",
+      "title": "What does 'capacity' mean?",
+      "chart_type": "grouped_dot_plot",
+      "data": "corridors/corridor-catalog.json",
+      "x": "corridor_name",
+      "y": {"field": "capacity_records.value_mw", "unit": "MW"},
+      "color": "capacity_records.capacity_type",
+      "facet": "status",
+      "required_annotations": ["zero capacity accreditation is not missing", "opposite-direction nonsimultaneous limits are not additive", "ultimate phase is not current phase"],
+      "forbidden": ["stack capacity types", "select maximum as operational capability by default"]
+    },
+    {
+      "chart_id": "TR-CH-007",
+      "title": "Transmission need versus demand growth",
+      "chart_type": "indexed_scenario_fan",
+      "data": ["needs-and-expectations.json", "../consumption/timeseries/normalized/us-electricity-supply-demand-aeo2026.csv", "../consumption/timeseries/normalized/us-demand-drivers-aeo2026.csv"],
+      "x": "year",
+      "y": "index_with_explicit_base_year",
+      "series": ["demand_energy", "peak_demand", "transmission_extent"],
+      "required_annotations": ["scenario not forecast", "different model families", "energy, peak, and line extent have different units", "do not interpolate sparse study endpoints as observations"],
+      "forbidden": ["dual axis without index normalization", "splice study families into one line"]
+    },
+    {
+      "chart_id": "TR-CH-008",
+      "title": "Transmission development process",
+      "chart_type": "swimlane_directed_graph",
+      "data": "process/process-graph.json",
+      "lanes": ["planning", "commercial", "siting and engagement", "federal review", "engineering and procurement", "construction and operation"],
+      "node_color": "phase",
+      "node_border": "required_or_conditional",
+      "edge_style": "normal_conditional_iteration",
+      "required_annotations": ["parallel branches", "CITAP clock is not total project duration", "FERC backstop is limited"],
+      "forbidden": ["single universal duration", "showing plan selection as construction approval"]
+    },
+    {
+      "chart_id": "TR-CH-009",
+      "title": "Project milestone timelines",
+      "chart_type": "event_timeline",
+      "data": "future project-event registry",
+      "x": "event_date",
+      "y": "corridor",
+      "symbol": "event_type",
+      "status": "data_gap",
+      "required_events": ["need", "planning_selection", "cost_allocation", "state_approval", "federal_review", "ROW", "finance", "procurement", "construction", "energization", "commercial_operation", "suspension", "cancellation"]
+    },
+    {
+      "chart_id": "TR-CH-010",
+      "title": "Supply-chain dependency network",
+      "chart_type": "layered_directed_network",
+      "data": "supply-chain/supply-chain-map.json",
+      "lanes": ["materials", "components", "delivery", "generation/transmission/consumption", "end of life"],
+      "node_size": "number_of_downstream_dependencies",
+      "edge_color": "criticality",
+      "edge_dash": "evidence_status",
+      "filters": ["system", "technology", "layer"],
+      "required_annotations": ["qualitative criticality is not a failure probability", "empty source means research gap", "shared component demand is not additive without scenario accounting"]
+    },
+    {
+      "chart_id": "TR-CH-011",
+      "title": "Transformer chain and delay points",
+      "chart_type": "stage_funnel_with_parallel_inputs",
+      "data": "supply-chain/transformers.json",
+      "x": "stage_order",
+      "nodes": "supply_chain_stages",
+      "tooltip": ["inputs", "failure_modes"],
+      "required_annotations": ["large power and distribution transformers are separate products", "no authoritative current national order book", "reported lead times require observation dates"]
+    },
+    {
+      "chart_id": "TR-CH-012",
+      "title": "Supply-chain bottleneck matrix",
+      "chart_type": "matrix",
+      "data": "supply-chain/bottleneck-register.json",
+      "rows": "item",
+      "columns": "system",
+      "color": "evidence_status",
+      "tooltip": ["constraint", "source_ids", "dashboard_metric"],
+      "forbidden": ["convert qualitative criticality to numeric probability without data"]
+    },
+    {
+      "chart_id": "TR-CH-013",
+      "title": "Information-gap heatmap",
+      "chart_type": "priority_domain_matrix",
+      "data": "cross-domain-gap-register.json",
+      "rows": "domain",
+      "columns": "priority",
+      "detail": ["gap", "why_it_matters", "recommended_path", "dashboard_treatment"],
+      "required_annotations": ["null is not zero", "gap status is a dashboard result"]
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0.0",
+  "evidence_summary": {
+    "headline": "Receiving-city impacts are real but spatially, institutionally, and temporally uneven.",
+    "source_refs": [
+      {"source_id": "URBAN-GULF-MIGRATION-2023", "locator": "Table 5 and cross-study analysis"},
+      {"source_id": "AJPH-BRODIE-2006", "locator": "Houston shelter survey"},
+      {"source_id": "PUBMED-KATRINA-HOUSTON-2009", "locator": "Houston longitudinal health comparison"},
+      {"source_id": "NBER-KATRINA-SCHOOLS-2009", "locator": "Houston schools analysis"}
+    ],
+    "guardrail": "Do not infer inevitable citywide overload from a migration model. Combine arrivals with existing capacity, funding, spatial concentration, duration, and the socioeconomic and health needs of arriving households."
+  },
+  "katrina_houston_case": {
+    "event_year": 2005,
+    "immediate_evacuees_received": {"value": 200000, "qualifier": "more_than", "source_id": "URBAN-GULF-MIGRATION-2023"},
+    "estimated_permanent_settlers": {"range": [25000, 40000], "source_id": "URBAN-GULF-MIGRATION-2023"},
+    "astrodome_shelter_population": {"approximate": 25000, "source_id": "URBAN-GULF-MIGRATION-2023"},
+    "school_context": {
+      "houston_isd_evacuee_students": 5000,
+      "average_school_share_percent": 2.5,
+      "selected_school_share_up_to_percent": 25,
+      "estimated_extra_cost_2005_06_usd": 20000000,
+      "federal_aid_per_student_usd": 6000,
+      "result": "The study found concentrated school-level peer effects but no significant districtwide increase in class size or per-pupil expenditure attributable to evacuees.",
+      "source_id": "NBER-KATRINA-SCHOOLS-2009"
+    },
+    "health_context": {
+      "estimated_evacuees_to_houston": 200000,
+      "self_reported_health_worse_after_hurricane_percent": 28,
+      "frequent_psychological_symptoms_percent": "approximately 60",
+      "interpretation": "Low income, lack of insurance, chronic disease, disrupted medication and care, and psychological distress create specific service needs; demand is not represented by headcount alone.",
+      "source_id": "PUBMED-KATRINA-HOUSTON-2009"
+    },
+    "aggregate_results": [
+      "Urban Institute's synthesis did not find clear lasting PUMA-level housing, financial-health, or local-economy damage caused by the arrivals.",
+      "Initial rental occupancy and affordability pressures occurred, while two-year aggregate housing effects were not sustained in the reviewed evidence.",
+      "Acute and localized shortages affected affordable and transitional housing, health and mental-health services, transport, documents, employment matching, schools, nonprofits, and faith organizations.",
+      "Longer-term support often receded before all displaced households had stabilized."
+    ],
+    "transferability_limits": ["A sudden hurricane evacuation differs from slow sea-level migration.", "Houston's scale, labor market, housing stock, federal aid, and institutional networks are not universal.", "Citywide averages can mask neighborhood and provider-level overload.", "Temporary evacuees and permanent settlers must be separated."]
+  },
+  "capacity_domains": [
+    {
+      "domain_id": "housing",
+      "failure_modes": ["acute shelter shortage", "rental vacancy compression", "rent escalation", "overcrowding", "longer commute", "informal or unsafe housing", "displacement of existing low-income residents"],
+      "minimum_indicators": ["arrivals by month and tract", "rental vacancy rate", "asking rent by unit size", "rent-burden rate", "subsidized-unit waitlist", "eviction filings", "homelessness entries", "building permits and completions"],
+      "capacity_denominators": ["available rental units", "rapid-rehousing slots", "shelter beds", "permitted units in pipeline"],
+      "equity_slices": ["income", "tenure", "race and ethnicity", "disability", "household size", "language"],
+      "source_refs": [{"source_id": "URBAN-GULF-MIGRATION-2023"}, {"source_id": "NCA5-COASTS"}]
+    },
+    {
+      "domain_id": "health_and_behavioral_health",
+      "failure_modes": ["medication interruption", "uninsured demand", "emergency-department crowding", "behavioral-health waitlists", "loss of medical records", "provider burnout"],
+      "minimum_indicators": ["primary-care appointments", "behavioral-health appointments", "ED visits and boarding", "uninsured share", "dialysis capacity", "pharmacy access", "suicide-crisis calls"],
+      "capacity_denominators": ["clinician full-time equivalents", "licensed beds", "mobile-clinic teams", "charity-care funding"],
+      "source_refs": [{"source_id": "AJPH-BRODIE-2006"}, {"source_id": "PUBMED-KATRINA-HOUSTON-2009"}]
+    },
+    {
+      "domain_id": "schools_and_childcare",
+      "failure_modes": ["high enrollment concentration", "teacher or classroom shortage", "records and placement delays", "transport burden", "trauma-related learning needs", "childcare shortage"],
+      "minimum_indicators": ["new enrollment by school and grade", "student-to-teacher ratio", "classroom seats", "homeless-student identification", "counselor ratio", "transport time", "childcare slots"],
+      "capacity_denominators": ["seats by school", "teachers and counselors", "federal/state emergency funding", "bus routes"],
+      "source_refs": [{"source_id": "NBER-KATRINA-SCHOOLS-2009"}, {"source_id": "URBAN-GULF-MIGRATION-2023"}]
+    },
+    {
+      "domain_id": "employment_and_income",
+      "failure_modes": ["skill mismatch", "lost credentials", "documentation delay", "wage competition in constrained sectors", "commute mismatch", "income interruption"],
+      "minimum_indicators": ["labor-force participation", "unemployment", "job openings by occupation", "median wage", "credential processing", "commute accessibility", "income-support caseload"],
+      "capacity_denominators": ["job openings", "workforce-program slots", "credential evaluators", "public transit access"],
+      "source_refs": [{"source_id": "URBAN-GULF-MIGRATION-2023"}]
+    },
+    {
+      "domain_id": "utilities_and_transport",
+      "failure_modes": ["water or wastewater capacity limit", "electric peak-load growth", "road and transit crowding", "development beyond planned service areas", "capital backlog"],
+      "minimum_indicators": ["water treatment headroom", "wastewater flow headroom", "electric coincident peak", "feeder or substation headroom", "road delay", "transit crowding", "capital-plan funding gap"],
+      "capacity_denominators": ["permitted plant capacity", "reliable electric capacity", "lane and transit capacity", "funded capital projects"],
+      "source_refs": [{"source_id": "IPCC-AR6-WGII-CH6"}, {"source_id": "URBAN-GULF-MIGRATION-2023"}]
+    },
+    {
+      "domain_id": "social_services_and_civic_capacity",
+      "failure_modes": ["caseworker overload", "document replacement delay", "language-access gap", "legal-aid shortage", "nonprofit burnout", "declining long-term support"],
+      "minimum_indicators": ["caseload per worker", "benefit processing time", "document replacement time", "legal-aid wait", "211 requests", "nonprofit funding", "language-service demand"],
+      "capacity_denominators": ["caseworkers", "funded service slots", "interpreters", "legal-aid attorneys", "unrestricted nonprofit funding"],
+      "source_refs": [{"source_id": "URBAN-GULF-MIGRATION-2023"}]
+    },
+    {
+      "domain_id": "municipal_finance_and_governance",
+      "failure_modes": ["capital demand ahead of tax receipts", "mismatch between jurisdiction of arrivals and funding", "bond or insurance pressure", "planning uncertainty", "losses in sending jurisdictions"],
+      "minimum_indicators": ["net fiscal impact", "assessed value", "sales and income tax receipts", "capital needs", "debt service", "insurance cost", "intergovernmental aid", "population estimate revision"],
+      "capacity_denominators": ["general-fund reserve", "borrowing capacity", "capital budget", "state/federal formula funding"],
+      "source_refs": [{"source_id": "NCA5-SOCIAL-SYSTEMS"}, {"source_id": "URBAN-GULF-MIGRATION-2023"}]
+    }
+  ],
+  "dashboard_metrics": {
+    "arrival_pressure_ratio": {"formula": "new_arrivals_in_period / relevant_available_capacity_at_period_start", "required_breakdown": ["domain", "neighborhood", "arrival pace", "temporary versus permanent"], "warning": "A cross-domain ratio must not combine incomparable units."},
+    "service_recovery_time": {"formula": "date_service_indicator_returns_to_pre_arrival_or_target_band - arrival_date", "warning": "Pre-event conditions may already be inequitable or inadequate."},
+    "distributional_effect": {"formula": "change for vulnerable subgroup minus metropolitan average change", "warning": "Require sample-size and uncertainty disclosure."}
+  },
+  "planning_actions": ["Create sending-receiving jurisdiction agreements before events.", "Maintain population gain and loss scenarios for fast and slow movement.", "Predefine data-sharing, enrollment, medical-record, credential, and benefit-continuity procedures.", "Tie flexible funding to arrival pace and spatial concentration.", "Track incumbent resident displacement and service crowding alongside newcomer outcomes.", "Plan for support beyond the emergency shelter phase."]
+}
+

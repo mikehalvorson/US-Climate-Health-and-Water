@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0.0",
+  "status_vocabulary": ["verified", "qualified", "rejected"],
+  "claims": [
+    {
+      "claim_id": "CC-CLAIM-001",
+      "candidate_claim": "A Nature study shows that the entire city of New Orleans will be underwater by 2070.",
+      "status": "rejected",
+      "reason": "No such finding was identified. Ohenhen et al. map exposure in 32 coastal cities for 2050. Their 2070 statement concerns the duration for which subsidence may exceed geocentric sea-level rise at three Gulf Coast tide gauges: Galveston Pier 21, Eugene Island, and Grand Isle. It does not establish total New Orleans inundation.",
+      "source_refs": [
+        {"source_id": "NATURE-OHENHEN-2024", "locator": "Abstract; main text, tide-gauge analysis; Extended Data Fig. 5"},
+        {"source_id": "NOAA-SLR-ITF-2022", "locator": "local relative sea-level scenario tables"},
+        {"source_id": "USACE-NOLA-HSDRRS", "locator": "100-Year Level of Risk Reduction and residual risk"}
+      ],
+      "dashboard_safe_text": "New Orleans faces increasing relative sea level, subsidence, storm-surge risk, and dependence on levees and pumps; no authoritative source establishes 2070 as a date when the entire city is underwater.",
+      "prohibited_transformations": ["Do not use 2070 as an inundation deadline.", "Do not treat a tide-gauge result at Grand Isle as a citywide New Orleans result.", "Do not omit existing defenses from the headline."]
+    },
+    {
+      "claim_id": "CC-CLAIM-002",
+      "candidate_claim": "A Nature study shows that the entire city of Miami will be underwater by 2070.",
+      "status": "rejected",
+      "reason": "No such finding was identified. Ohenhen et al. assess additional 2050 exposure in a Miami study domain, while Miami-Dade's 2070 value is a county planning range for sea level above a 2000 reference—not a map of permanent citywide inundation.",
+      "source_refs": [
+        {"source_id": "NATURE-OHENHEN-2024", "locator": "Miami exposure results and Fig. 3"},
+        {"source_id": "MIAMI-DADE-LMS-2025", "locator": "Sea Level Rise section, unified projections"},
+        {"source_id": "NOAA-SLR-ITF-2022", "locator": "Virginia Key local scenario projections"}
+      ],
+      "dashboard_safe_text": "Miami-Dade plans for 21-54 inches of sea-level rise by 2070 relative to 2000 at the Key West reference. This range indicates serious and uneven flood, groundwater, water-quality, infrastructure, and adaptation pressures; it does not mean every part of Miami is underwater in 2070.",
+      "prohibited_transformations": ["Do not display 21-54 inches as a uniform water depth across Miami.", "Do not call a planning range a probability forecast.", "Do not equate Miami-Dade County, the City of Miami, and a research study domain."]
+    },
+    {
+      "claim_id": "CC-CLAIM-003",
+      "candidate_claim": "The 2024 Nature paper's only 2070 result is a subsidence-versus-geocentric-sea-level comparison at three Gulf Coast tide gauges.",
+      "status": "verified",
+      "source_refs": [
+        {"source_id": "NATURE-OHENHEN-2024", "locator": "main text tide-gauge paragraph and Extended Data Fig. 5"}
+      ],
+      "dashboard_safe_text": "At Galveston Pier 21, Eugene Island, and Grand Isle, measured subsidence rates may remain larger than geocentric sea-level rise through 2045 or 2070 if the measured linear rates continue. This is not a city-disappearance forecast.",
+      "limitations": ["Linear continuation of observed vertical land motion.", "Point locations, not city polygons.", "Geocentric sea level is not the same as relative sea level experienced locally."]
+    },
+    {
+      "claim_id": "CC-CLAIM-004",
+      "candidate_claim": "By 2050, land subsidence materially increases exposure in many U.S. coastal cities.",
+      "status": "verified",
+      "source_refs": [
+        {"source_id": "NATURE-OHENHEN-2024", "locator": "Abstract; exposure results; Methods"},
+        {"source_id": "NOAA-SLR-ITF-2022", "locator": "regional relative sea-level methods and local projections"}
+      ],
+      "dashboard_safe_text": "Under SSP2-4.5 and absent defenses, Ohenhen et al. estimate an additional 1,334-1,813 square kilometers, 176,000-518,000 people, and 94,000-288,000 properties exposed across 32 U.S. coastal-city study domains by 2050 when vertical land motion is included.",
+      "limitations": ["2010 population and property baselines.", "Static connected-inundation model.", "Scenario exposure, not predicted displacement.", "Study domains are not always municipal boundaries."]
+    },
+    {
+      "claim_id": "CC-CLAIM-005",
+      "candidate_claim": "Large parts of New Orleans and its population are currently underwater.",
+      "status": "rejected",
+      "reason": "The large values in Ohenhen et al. describe topographic exposure in an undefended static model. The city is protected and drained by engineered systems; people in the protected bowl are not presently living underwater.",
+      "source_refs": [
+        {"source_id": "NATURE-OHENHEN-2024", "locator": "current exposure and defended/undefended methods"},
+        {"source_id": "USACE-NOLA-HSDRRS", "locator": "system description"},
+        {"source_id": "NOLA-READY-FLOOD", "locator": "levees and drainage pumps"}
+      ],
+      "dashboard_safe_text": "In a no-defense elevation model, 318-426 square kilometers and 386,000-448,000 people in the New Orleans study domain are topographically below high tide. This quantifies protection dependence, not current actual inundation.",
+      "prohibited_transformations": ["Do not map the undefended footprint as present water.", "Do not describe exposed residents as already displaced."]
+    },
+    {
+      "claim_id": "CC-CLAIM-006",
+      "candidate_claim": "Miami-Dade's 2070 planning range is 21-54 inches above 2000 mean sea level at the Key West reference.",
+      "status": "verified",
+      "source_refs": [
+        {"source_id": "MIAMI-DADE-LMS-2025", "locator": "Sea Level Rise section, projection table"},
+        {"source_id": "NOAA-SLR-ITF-2022", "locator": "Virginia Key local scenario dataset used as an independent local comparison"}
+      ],
+      "dashboard_safe_text": "Miami-Dade's adopted planning range is 10-17 inches in 2040, 21-54 inches in 2070, and 40-136 inches in 2120, each above 2000 mean sea level at the Key West reference.",
+      "limitations": ["Planning envelope, not event probability.", "County planning reference, not a uniform depth map.", "Must not be mixed directly with NOAA's 2020-change series without baseline conversion."]
+    },
+    {
+      "claim_id": "CC-CLAIM-007",
+      "candidate_claim": "Observed relative sea-level trends are substantially higher at coastal Louisiana gauges than at Virginia Key.",
+      "status": "verified",
+      "source_refs": [
+        {"source_id": "NOAA-COOPS-DPAPI", "locator": "Sea Level Trends responses through December 2025"}
+      ],
+      "dashboard_safe_text": "NOAA's record-wide relative trends through December 2025 are about 3.20 millimeters per year at Virginia Key, 5.99 at New Canal Station, and 9.12 at Grand Isle. These trends combine ocean change and local land motion and must not be linearly extrapolated as forecasts.",
+      "limitations": ["Different record start dates.", "Trend uncertainty differs by station.", "Grand Isle is not New Orleans.", "Observed linear trend is not an official future scenario."]
+    },
+    {
+      "claim_id": "CC-CLAIM-008",
+      "candidate_claim": "A 100-year protection system eliminates New Orleans flood risk.",
+      "status": "rejected",
+      "reason": "The designation refers to a 1% annual-chance event level of risk reduction, not zero probability and not permanent protection under all future conditions.",
+      "source_refs": [
+        {"source_id": "USACE-NOLA-HSDRRS", "locator": "100-Year Level of Risk Reduction; residual risk"},
+        {"source_id": "NCA5-COASTS", "locator": "coastal infrastructure and compounding risk"}
+      ],
+      "dashboard_safe_text": "New Orleans' HSDRRS provides a 1% annual-chance level of storm-risk reduction. Residual risk remains, and performance depends on maintenance, settlement, subsidence, sea level, storm conditions, and future upgrades.",
+      "prohibited_transformations": ["Do not call the system flood-proof.", "Do not interpret 1% annual chance as one event per century."]
+    },
+    {
+      "claim_id": "CC-CLAIM-009",
+      "candidate_claim": "Thirteen million Americans will definitely be climate refugees by 2100.",
+      "status": "rejected",
+      "reason": "Hauer et al. estimate 13.1 million people living on land exposed under a 1.8-meter, no-protection, 2100 scenario. Exposure is not guaranteed movement, and climate refugee is not a U.S. legal classification for these internal movements.",
+      "source_refs": [
+        {"source_id": "NATURE-HAUER-2016", "locator": "Abstract and corrected estimates"},
+        {"source_id": "NATURE-HAUER-2017", "locator": "migration model assumptions"},
+        {"source_id": "IPCC-AR6-WGII-CH6", "locator": "migration and differentiated vulnerability"}
+      ],
+      "dashboard_safe_text": "In a high-end 1.8-meter 2100 scenario without protection, Hauer et al. estimate 13.1 million U.S. residents on exposed land and model how associated migration could redistribute population. It is a stress test, not a forecast of guaranteed migrants.",
+      "prohibited_transformations": ["Do not label exposed people as refugees.", "Do not present the 1.8-meter scenario as most likely.", "Do not assign the modeled 2100 total to 2070."]
+    },
+    {
+      "claim_id": "CC-CLAIM-010",
+      "candidate_claim": "Receiving cities will necessarily be overwhelmed by sea-level migration.",
+      "status": "rejected",
+      "reason": "Evidence shows heterogeneous and often localized pressures rather than inevitable citywide collapse. Capacity, funding, spatial concentration, pace of arrival, and duration are decisive.",
+      "source_refs": [
+        {"source_id": "URBAN-GULF-MIGRATION-2023", "locator": "Table 5 and cross-study synthesis"},
+        {"source_id": "NBER-KATRINA-SCHOOLS-2009", "locator": "Houston school concentration, expenditures, and class size"},
+        {"source_id": "PUBMED-KATRINA-HOUSTON-2009", "locator": "evacuee health and mental-health results"}
+      ],
+      "dashboard_safe_text": "Large arrivals can create acute and neighborhood-level pressures in affordable housing, health and mental-health care, schools, transport, documentation, employment, and social services. Aggregate citywide outcomes depend on capacity and support; Houston's Katrina experience does not support a universal collapse claim.",
+      "prohibited_transformations": ["Do not use a single capacity ratio as proof of collapse.", "Do not assume all arrivals remain permanently.", "Do not erase neighborhood-level concentration with citywide averages."]
+    }
+  ]
+}
+

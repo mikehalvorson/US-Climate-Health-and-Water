@@ -1,0 +1,133 @@
+{
+  "ingestion_id": "electricity-consumption-ingestion-v1",
+  "as_of": "2026-08-01",
+  "normalizer": "scripts/normalize_consumption.py",
+  "validator": "scripts/validate_consumption.py",
+  "raw_files": [
+    {
+      "file": "../../timeseries/raw/eia-mer-table-7.6.csv",
+      "source_id": "SRC-EIA-MER-7.6",
+      "acquisition_url": "https://www.eia.gov/totalenergy/data/browser/csv.php?tbl=T07.06",
+      "bytes": 596088,
+      "sha256": "aa61df5182e5b497efa3ef687e69676365510e880736b097b7bea9ce6f9e3cd9"
+    },
+    {
+      "file": "../../timeseries/raw/owid-energy-data.csv",
+      "source_id": "SRC-OWID-ENERGY",
+      "acquisition_url": "https://github.com/owid/energy-data/raw/master/owid-energy-data.csv",
+      "bytes": 9229369,
+      "sha256": "266f2e2baad7975351bc9bb4aa061d22b1da9fe4c47d51d2ac6071e01e171f76",
+      "scope": "World electricity_demand rows, 2000-2025",
+      "definition": "Underlying Ember measure: gross electricity generation plus net imports."
+    },
+    {
+      "file": "../../timeseries/raw/ngfs-phase5-world-electricity-demand-2020-2100.json",
+      "source_id": "SRC-NGFS-PHASE5.1",
+      "acquisition_url": "https://db1.ene.iiasa.ac.at/ngfs-phase-5-api/rest/v2.1/runs/bulk/ts",
+      "bytes": 799301,
+      "sha256": "bddd934854aca0ec914c91890d6de599d44037ac62f37f97e6b760986635af27",
+      "scope": "World; 21 runs; 15 final-electricity variables; 2020-2100 at five-year intervals",
+      "redistribution_note": "Narrow subset retained rather than a substantial database extract."
+    },
+    {
+      "file": "../../timeseries/raw/eia-aeo2026-yearbyyear.xlsx",
+      "source_id": "SRC-EIA-AEO2026-TABLES",
+      "case": "Counterfactual Baseline",
+      "acquisition_url": "https://www.eia.gov/outlooks/aeo/excel/sidecases/cb2026/yearbyyear.xlsx",
+      "bytes": 515457,
+      "sha256": "cb051f6c3d98ba5acda5f787eb2fb880c1e5cd4fe46020a3306beca761812766"
+    },
+    {
+      "file": "../../timeseries/raw/eia-aeo2026-highogs-yearbyyear.xlsx",
+      "source_id": "SRC-EIA-AEO2026-TABLES",
+      "case": "High Oil and Gas Supply",
+      "acquisition_url": "https://www.eia.gov/outlooks/aeo/excel/sidecases/highogs/yearbyyear.xlsx",
+      "bytes": 515083,
+      "sha256": "babb12cdd492099d928bbe679103a6f19ce12d00de3f4263c04f85fd4be865fd"
+    },
+    {
+      "file": "../../timeseries/raw/eia-aeo2026-lowogs-yearbyyear.xlsx",
+      "source_id": "SRC-EIA-AEO2026-TABLES",
+      "case": "Low Oil and Gas Supply",
+      "acquisition_url": "https://www.eia.gov/outlooks/aeo/excel/sidecases/lowogs/yearbyyear.xlsx",
+      "bytes": 518081,
+      "sha256": "051f1bee53f6044629fe85117e4c5328673828cbcd02ca06aec6dd48f1166ffc"
+    },
+    {
+      "file": "../../timeseries/raw/eia-aeo2026-highmacro-yearbyyear.xlsx",
+      "source_id": "SRC-EIA-AEO2026-TABLES",
+      "case": "High Economic Growth",
+      "acquisition_url": "https://www.eia.gov/outlooks/aeo/excel/sidecases/highmacro/yearbyyear.xlsx",
+      "bytes": 515739,
+      "sha256": "0101d4fd884d0d7ad5b451af29199f4f398d475f91361116bd245027a4397130"
+    },
+    {
+      "file": "../../timeseries/raw/eia-aeo2026-lowmacro-yearbyyear.xlsx",
+      "source_id": "SRC-EIA-AEO2026-TABLES",
+      "case": "Low Economic Growth",
+      "acquisition_url": "https://www.eia.gov/outlooks/aeo/excel/sidecases/lowmacro/yearbyyear.xlsx",
+      "bytes": 515267,
+      "sha256": "c6f7a9102518224663d8d940084175bcbf42aed62e2f5429846f4a1ab74f89de"
+    },
+    {
+      "file": "../../timeseries/raw/eia-aeo2026-highZTC-yearbyyear.xlsx",
+      "source_id": "SRC-EIA-AEO2026-TABLES",
+      "case": "High Zero-Carbon Technology Cost",
+      "acquisition_url": "https://www.eia.gov/outlooks/aeo/excel/sidecases/highZTC/yearbyyear.xlsx",
+      "bytes": 515116,
+      "sha256": "3a041b44662a56a5963a93a0ab2b0a9baed72ec58993cd24ed28725053cfb57b"
+    },
+    {
+      "file": "../../timeseries/raw/eia-aeo2026-lowZTC-yearbyyear.xlsx",
+      "source_id": "SRC-EIA-AEO2026-TABLES",
+      "case": "Low Zero-Carbon Technology Cost",
+      "acquisition_url": "https://www.eia.gov/outlooks/aeo/excel/sidecases/lowZTC/yearbyyear.xlsx",
+      "bytes": 516135,
+      "sha256": "9a5a7ddf0dd9149c6d148db4193228e690712be028440a5b932979ad1959ef5b"
+    },
+    {
+      "file": "../../timeseries/raw/eia-aeo2026-altelec-yearbyyear.xlsx",
+      "source_id": "SRC-EIA-AEO2026-TABLES",
+      "case": "Alternative Electricity",
+      "acquisition_url": "https://www.eia.gov/outlooks/aeo/excel/sidecases/altelec/yearbyyear.xlsx",
+      "bytes": 514328,
+      "sha256": "b020742e43edb5c36376f4784bbd0c7442a8582885654fb5d13d5a7ea4836470"
+    },
+    {
+      "file": "../../timeseries/raw/eia-aeo2026-alttrnp-yearbyyear.xlsx",
+      "source_id": "SRC-EIA-AEO2026-TABLES",
+      "case": "Alternative Transportation",
+      "acquisition_url": "https://www.eia.gov/outlooks/aeo/excel/sidecases/alttrnp/yearbyyear.xlsx",
+      "bytes": 514170,
+      "sha256": "a4e1bcfcbb99bafaffde039dc34b3b2a7d6bf2f8fe78dbfeb50c188fc7a475db"
+    },
+    {
+      "file": "../../timeseries/raw/eia-aeo2026-electrnp-yearbyyear.xlsx",
+      "source_id": "SRC-EIA-AEO2026-TABLES",
+      "case": "Alternative Electricity and Transportation",
+      "acquisition_url": "https://www.eia.gov/outlooks/aeo/excel/sidecases/electrnp/yearbyyear.xlsx",
+      "bytes": 513216,
+      "sha256": "6be24c479b0164fb40ec7ae948e18d536ad04ce2e81edbbd27d11bab9a0cf695"
+    },
+    {
+      "file": "../../timeseries/raw/eia-aeo2026-higheldmd-yearbyyear.xlsx",
+      "source_id": "SRC-EIA-AEO2026-TABLES",
+      "case": "High Electricity Demand",
+      "acquisition_url": "https://www.eia.gov/outlooks/aeo/excel/sidecases/higheldmd/yearbyyear.xlsx",
+      "bytes": 515080,
+      "sha256": "8af4bdb590e9cd35be28b04002052fdf79473711e51989e9b1a3adc8727124b3"
+    }
+  ],
+  "derived_outputs": "coverage.json",
+  "normalized_dependency": {
+    "file": "../../timeseries/normalized/global-electricity-projections-ngfs-phase5.1.csv",
+    "purpose": "Provides matched NGFS Secondary Energy|Electricity rows for the global generation-to-final-consumption bridge.",
+    "validation": "Model, scenario, year, source, and unit must match the demand subset."
+  },
+  "conversion_constants": [
+    {"from": "million kWh", "to": "TWh", "multiplier": 0.001},
+    {"from": "billion kWh", "to": "TWh", "multiplier": 1.0},
+    {"from": "quadrillion Btu", "to": "TWh", "formula": "1e15 / 3412 / 1e9", "multiplier": 293.083235639},
+    {"from": "EJ/yr", "to": "TWh", "multiplier": 277.77777777777777}
+  ]
+}

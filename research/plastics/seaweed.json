@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0.0",
+  "definition": "Seaweed-derived plastic is not one material. Routes include extracted alginate, carrageenan, agar, cellulose, whole-biomass composites, coatings, and fermentation feedstocks blended with plasticizers, crosslinkers, fillers, or other polymers.",
+  "process_chain": ["hatchery and seeding", "marine cultivation", "harvest and transport", "washing and dewatering", "drying or wet stabilization", "pretreatment", "polymer extraction or conversion", "plasticizer and crosslinker addition", "casting, extrusion, or coating", "drying", "use", "controlled end of life"],
+  "resource_context": {
+    "arpa_e_enabling_potential": {
+      "dry_biomass_million_metric_tons_per_year": 500,
+      "qualifier": "at_least_theoretical_suitable_geography_not_demonstrated_output",
+      "program_goal": "Cultivation without land, freshwater, or synthetic fertilizer input",
+      "source": {"source_id": "ARPAE-MARINER"}
+    },
+    "doe_screened_model": {
+      "screened_area_million_square_km": 7.1,
+      "high_end_biophysical_potential_billion_dry_metric_tons_per_year": 3.3,
+      "modeled_supply_at_or_below_1000_usd_per_dry_ton_billion_metric_tons_per_year": 0.38,
+      "productive_area_assumption_percent": 50,
+      "average_cost_usd_per_dry_metric_ton_for_0_38_gt": 739,
+      "qualifier": "modeled_potential_not_forecast_costs_may_be_optimistic",
+      "constraints": ["nutrient competition at high farm density", "permitting and ocean-use conflict", "storms and offshore engineering", "hatchery and seed capacity", "harvest and ports", "seasonality and storage", "ecosystem monitoring", "processing capacity and markets"],
+      "source": {"source_id": "DOE-BT23-MACRO", "locator": "Chapter 7.2 summary and section 7.2.4"}
+    },
+    "current_us_scale_indicator": {
+      "example": "Alaska farmed seaweed harvest exceeded 112,000 lb in 2019, reported as wet product weight.",
+      "interpretation": "This is a developmental-sector indicator and cannot be compared directly with modeled dry biomass.",
+      "source": {"source_id": "NOAA-SEAWEED"}
+    }
+  },
+  "illustrative_conversion_scenarios_not_forecasts": [
+    {
+      "scenario_id": "low_allocation_low_yield",
+      "doe_modeled_dry_biomass_mmt_per_year": 380,
+      "share_to_bioplastic_percent": 5,
+      "finished_polymer_yield_percent_of_dry_biomass": 20,
+      "finished_material_mmt_per_year": 3.8,
+      "share_of_2019_us_plastic_consumption_percent": 6.67
+    },
+    {
+      "scenario_id": "moderate_allocation_yield",
+      "doe_modeled_dry_biomass_mmt_per_year": 380,
+      "share_to_bioplastic_percent": 10,
+      "finished_polymer_yield_percent_of_dry_biomass": 30,
+      "finished_material_mmt_per_year": 11.4,
+      "share_of_2019_us_plastic_consumption_percent": 20.0
+    },
+    {
+      "scenario_id": "stress_test_high_allocation",
+      "doe_modeled_dry_biomass_mmt_per_year": 380,
+      "share_to_bioplastic_percent": 25,
+      "finished_polymer_yield_percent_of_dry_biomass": 30,
+      "finished_material_mmt_per_year": 28.5,
+      "share_of_2019_us_plastic_consumption_percent": 50.0
+    }
+  ],
+  "scenario_exclusions": ["additives and blending", "product-performance losses", "competing food, feed, fuel, and chemical uses", "ecological carrying capacity", "conversion wastewater", "capital buildout", "collection and end of life", "price and demand response"],
+  "life_cycle_findings": [
+    {
+      "study_system": "Saccharina-derived dry film",
+      "climate_kg_co2e_per_kg_dry_film": 3.79,
+      "hotspots_percent": {"crosslinking": 47, "cultivation": 29},
+      "water_finding": "Pretreatment and extraction created substantial wastewater; modeled water use and freshwater ecotoxicity exceeded the LDPE comparator.",
+      "interpretation": "Marine cultivation may avoid irrigation, yet the conversion process is not water-free and may not save water.",
+      "source": {"source_id": "ACS-SEAWEED-LCA-2026"}
+    },
+    {
+      "study_system": "Pilot alginate-based film",
+      "finding": "Film fabrication and glycerol were important hotspots; modeled composting impacts were 30% below incineration in that case.",
+      "source": {"source_id": "AYALA-SEAWEED-PILOT-2023"}
+    },
+    {
+      "study_system": "Prospective industrial upscaling",
+      "finding": "The analysis extrapolates a low-readiness pilot system toward industrial scale; scale assumptions remain uncertain.",
+      "source": {"source_id": "AYALA-SEAWEED-UPSCALE-2024"}
+    }
+  ],
+  "technical_constraints": ["hydrophilicity and moisture sensitivity", "mechanical strength", "thermal stability", "barrier performance", "extraction cost", "seasonal composition", "standardized food-contact safety", "home versus industrial biodegradation claims", "contaminant and additive disclosure"],
+  "best_near_term_roles": ["coatings and soluble films where release is controlled", "dry-food and short-life packaging after shelf-life validation", "blends and composites that reduce fossil resin", "high-value chemicals that finance cultivation", "regional pilots paired with wastewater recovery"],
+  "national_scale_conclusion": "The ocean resource is large enough to justify national research and regional demonstration, but current evidence does not establish that seaweed plastics can replace most U.S. plastics sustainably, economically, or with net water savings.",
+  "source_refs": [{"source_id": "SEAWEED-REVIEW-2024"}, {"source_id": "US-PLASTICS-MFA-2019"}]
+}

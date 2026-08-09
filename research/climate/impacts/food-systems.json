@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "headline": "Warming has already slowed agricultural productivity growth and generally reduces major-crop yields, but outcomes depend on crop, location, CO2 fertilization, water, adaptation, pests, markets, and socioeconomic conditions.",
+  "historical_attribution": {
+    "metric": "global_agricultural_total_factor_productivity_growth_since_1961",
+    "estimated_slowdown_percent": 21,
+    "equivalent_recent_productivity_growth_years_lost": 7,
+    "study_interpretation": "A modeled slowing of cumulative productivity growth relative to a no-anthropogenic-climate-change counterfactual; not 21 percent less current food production.",
+    "source_id": "ORTIZ-BOBEA-ET-AL-2021"
+  },
+  "projected_yield_effects": {
+    "ipcc_no_adaptation_median_percent_per_decade_with_co2_fertilization": [
+      {"crop": "maize", "percent_per_decade": -2.3},
+      {"crop": "soybean", "percent_per_decade": -3.3},
+      {"crop": "rice", "percent_per_decade": -0.7},
+      {"crop": "wheat", "percent_per_decade": -1.3}
+    ],
+    "multi_method_isolated_effect_percent_per_1c": {
+      "excludes": ["co2_fertilization", "effective_adaptation", "genetic_improvement"],
+      "values": [
+        {"crop": "wheat", "percent_per_c": -6.0},
+        {"crop": "rice", "percent_per_c": -3.2},
+        {"crop": "maize", "percent_per_c": -7.4},
+        {"crop": "soybean", "percent_per_c": -3.1}
+      ]
+    }
+  },
+  "additional_channels": [
+    "heat_stress_on_livestock_and_workers",
+    "drought_flood_and_water_reliability",
+    "pests_diseases_and_pollinators",
+    "ocean_warming_acidification_and_deoxygenation_affecting_fisheries",
+    "supply_chain_price_access_and_conflict"
+  ],
+  "not_supported": [
+    "A universal food-loss-per-degree coefficient.",
+    "Describing the 21 percent productivity-growth slowdown as a 21 percent loss of food.",
+    "Applying the Zhao et al. per-degree values while silently assuming CO2 fertilization or adaptation.",
+    "Equating crop yield with food security; access, prices, distribution, nutrition, and conflict also matter."
+  ],
+  "sources": [
+    {"source_id": "IPCC-AR6-WGII-CH5", "locator": "Executive Summary, 5.4, and 5.5"},
+    {"source_id": "ORTIZ-BOBEA-ET-AL-2021", "locator": "abstract and main results"},
+    {"source_id": "ZHAO-ET-AL-2017", "locator": "abstract and Figure 1"},
+    {"source_id": "USDA-EIB-268", "locator": "global productivity methods and results"}
+  ]
+}

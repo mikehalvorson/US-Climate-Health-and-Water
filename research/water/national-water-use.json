@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0.0",
+  "inventory_2015": {
+    "geography": "United States inventory boundary defined by USGS Circular 1441",
+    "year": 2015,
+    "unit": "billion_gallons_per_day",
+    "total_withdrawals_fresh_and_saline": 322.0,
+    "freshwater_withdrawals": 281.0,
+    "fresh_surface_water_withdrawals": 198.0,
+    "fresh_groundwater_withdrawals": 82.3,
+    "saline_water_withdrawals": 41.0,
+    "rounding_note": "Fresh surface plus fresh groundwater differs from the rounded freshwater total by 0.7 Bgal/d.",
+    "categories": [
+      {
+        "category": "thermoelectric_power",
+        "total_withdrawal": 133.0,
+        "freshwater_withdrawal": 96.0,
+        "estimated_consumptive_use": 4.31,
+        "consumptive_fraction_percent": 3,
+        "boundary": "Self-supplied plant withdrawals; includes fresh and saline total"
+      },
+      {
+        "category": "crop_and_golf_course_irrigation",
+        "total_withdrawal": 118.0,
+        "freshwater_withdrawal": 118.0,
+        "estimated_consumptive_use": 73.2,
+        "consumptive_fraction_percent": 62,
+        "boundary": "Irrigation withdrawals; surface 60.9 and groundwater 57.2 Bgal/d"
+      },
+      {
+        "category": "public_supply",
+        "total_withdrawal": 39.0,
+        "freshwater_withdrawal": 39.0,
+        "estimated_consumptive_use": null,
+        "boundary": "Supplier withdrawal before customer deliveries"
+      },
+      {
+        "category": "domestic_total",
+        "total_withdrawal_or_delivery": 26.6,
+        "freshwater_withdrawal_or_delivery": 26.6,
+        "components": {"public_supply_delivery": 23.3, "self_supplied_withdrawal": 3.26},
+        "boundary": "End-use total; do not add to public-supply withdrawal"
+      },
+      {
+        "category": "self_supplied_industrial",
+        "total_withdrawal": 14.8,
+        "freshwater_withdrawal": 14.0,
+        "estimated_consumptive_use": null,
+        "boundary": "Excludes public-supply deliveries to industry"
+      },
+      {"category": "aquaculture", "total_withdrawal": 7.55, "boundary": "Self-supplied"},
+      {"category": "mining", "total_withdrawal": 4.0, "boundary": "Self-supplied"},
+      {"category": "self_supplied_domestic", "total_withdrawal": 3.26, "boundary": "More than 98 percent groundwater; already included in domestic total"},
+      {"category": "livestock", "total_withdrawal": 2.0, "boundary": "Self-supplied"}
+    ],
+    "population_and_service": {
+      "population_millions": 325.0,
+      "public_supply_population_millions": 283.0,
+      "public_supply_share_percent": 87,
+      "domestic_gallons_per_person_per_day": 82
+    },
+    "source": {"source_id": "USGS-CIR1441", "locator": "Abstract; Tables 1, 7, 9, 11, 12, and 14"}
+  },
+  "modeled_2010_2020": {
+    "geography": "Conterminous United States",
+    "period": "2010-2020 average",
+    "unit": "million_gallons_per_day",
+    "covered_sectors": [
+      {"sector": "crop_irrigation", "withdrawal": 105497, "consumptive_use": 75698, "consumptive_fraction_percent": 72},
+      {"sector": "public_supply", "withdrawal": 35440, "consumptive_use": 4219, "consumptive_fraction_percent": 12},
+      {"sector": "thermoelectric_freshwater", "withdrawal": 82656, "consumptive_use": 2904, "consumptive_fraction_percent": 4}
+    ],
+    "covered_sector_subtotals": {"withdrawal": 223593, "consumptive_use": 82821},
+    "year_2020": [
+      {"sector": "crop_irrigation", "withdrawal": 108723, "consumptive_use": 78400},
+      {"sector": "public_supply", "withdrawal": 35943, "consumptive_use": 4157},
+      {"sector": "thermoelectric_freshwater", "withdrawal": 61399, "consumptive_use": 2382},
+      {"sector": "thermoelectric_saline_water", "withdrawal": 19033, "consumptive_use": null}
+    ],
+    "boundary_note": "The covered-sector subtotal is not total U.S. water use. It excludes multiple sectors and uses a different method and geography from the 2015 inventory.",
+    "source": {"source_id": "USGS-PP1894D", "locator": "Tables 1–4"}
+  },
+  "interpretation": [
+    "Thermoelectric power is withdrawal-intensive but comparatively low-consumption because much cooling water is returned.",
+    "Irrigation is both withdrawal-intensive and consumption-intensive because evapotranspiration removes water from immediate reuse.",
+    "Public-supply withdrawals include household, commercial, institutional, and some industrial deliveries; only the domestic portion is separately reported here.",
+    "No authoritative all-category national consumptive-use total is produced by summing the two products."
+  ]
+}

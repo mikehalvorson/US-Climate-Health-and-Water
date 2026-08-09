@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0.0",
+  "as_of": "2026-08-02",
+  "access_routes": [
+    {
+      "dataset_id": "usgs-circular-1441-2015",
+      "landing_page": "https://pubs.usgs.gov/publication/cir1441",
+      "source_id": "USGS-CIR1441",
+      "update_class": "historical_static",
+      "ingestion": "Curated tables; preserve original workbook/PDF filename and SHA-256 when raw acquisition is added",
+      "dashboard_use": "National 2015 snapshot and 1950–2015 history"
+    },
+    {
+      "dataset_id": "usgs-pp1894d-2010-2020",
+      "landing_page": "https://pubs.usgs.gov/publication/pp1894D/full",
+      "source_id": "USGS-PP1894D",
+      "update_class": "historical_static_model",
+      "ingestion": "Acquire linked data release; retain monthly geography, variable definitions, and model version",
+      "dashboard_use": "Withdrawal and consumptive-use time series for three sectors"
+    },
+    {
+      "dataset_id": "usgs-nwaa",
+      "landing_page": "https://water.usgs.gov/nwaa-data/data-catalog/",
+      "web_services": "https://water.usgs.gov/nwaa-data/web-services",
+      "source_id": "USGS-NWAA-DATA",
+      "update_class": "versioned_official_dataset",
+      "ingestion": "Use official web services where available; record product, layer, period, watershed identifier, retrieved_at, and version",
+      "dashboard_use": "Watershed supply-demand map and local denominators"
+    },
+    {
+      "dataset_id": "usgs-high-plains-aquifer",
+      "landing_page": "https://pubs.usgs.gov/publication/sir20235143",
+      "source_id": "USGS-HPA-SIR2023",
+      "update_class": "periodic_assessment",
+      "ingestion": "Acquire linked water-level and storage data; retain well/area uncertainty and predevelopment baseline",
+      "dashboard_use": "Groundwater trend and spatial variability"
+    },
+    {
+      "dataset_id": "twdb-state-water-plan",
+      "landing_page": "https://www.twdb.texas.gov/waterplanning/swp/2027/",
+      "source_id": "TWDB-2027-PLAN",
+      "update_class": "five_year_plan",
+      "ingestion": "Prefer TWDB plan data downloads; retain region, county, water-user group, scenario, decade, strategy inclusion, and units",
+      "dashboard_use": "2030–2080 demand, existing supply, needs, and strategies"
+    },
+    {
+      "dataset_id": "colorado-post-2026",
+      "landing_page": "https://www.usbr.gov/ColoradoRiverBasin/post2026/",
+      "source_id": "USBR-POST2026",
+      "update_class": "active_regulatory_process",
+      "ingestion": "Monitor official alternatives, final EIS, record of decision, operating criteria, and effective date; archive each version",
+      "dashboard_use": "Governance timeline and scenario rules"
+    },
+    {
+      "dataset_id": "corpus-stage3",
+      "landing_page": "https://stage3.cctexas.com/",
+      "source_id": "CCTEXAS-STAGE3",
+      "update_class": "volatile_current_status",
+      "ingestion": "Fetch restriction stage and reservoir status with timestamp; mark stale after seven days or sooner if source updates",
+      "dashboard_use": "Current operational status only"
+    },
+    {
+      "dataset_id": "utility-annual-water-quality-reports",
+      "landing_pages": [
+        "https://www.ladwp.com/sites/default/files/2026-07/2026_DWQR_Print_Rev2_Digital-remediated.pdf",
+        "https://home4.nyc.gov/assets/dep/downloads/pdf/water/drinking-water/drinking-water-supply-quality-report/2024-drinking-water-supply-quality-report.pdf"
+      ],
+      "source_ids": ["LADWP-WQR-2025", "NYC-WQR-2024"],
+      "update_class": "annual",
+      "ingestion": "Extract source portfolio and service metrics; tag report year separately from publication year",
+      "dashboard_use": "Dated city source portfolios"
+    },
+    {
+      "dataset_id": "federal-lca-commons",
+      "landing_page": "https://www.lcacommons.gov/",
+      "source_id": "FEDERAL-LCA-COMMONS",
+      "update_class": "versioned_data_portal",
+      "ingestion": "Future plastics module must pin database, process, geography, allocation, functional unit, and version",
+      "dashboard_use": "Product-service and substitution life-cycle modeling"
+    }
+  ]
+}

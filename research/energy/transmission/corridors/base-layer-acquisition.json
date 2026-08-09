@@ -1,0 +1,32 @@
+{
+  "dataset_id": "DS-HIFLD-TRANSMISSION-LINES",
+  "source_id": "SRC-HIFLD-TRANSMISSION-LINES",
+  "acquired_at": "2026-08-02T03:55:03+00:00",
+  "service": "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Power_Transmission_Lines/FeatureServer/0",
+  "query": "VOLTAGE >= 230 AND VOLTAGE <= 765",
+  "fields": [
+    "OBJECTID",
+    "ID",
+    "TYPE",
+    "STATUS",
+    "SOURCE",
+    "SOURCEDATE",
+    "VAL_METHOD",
+    "VAL_DATE",
+    "OWNER",
+    "VOLTAGE",
+    "VOLT_CLASS",
+    "INFERRED",
+    "SUB_1",
+    "SUB_2"
+  ],
+  "feature_count": 10031,
+  "geometry_crs": "EPSG:4326",
+  "rating_field_present": false,
+  "limitations": [
+    "The federal catalog says the dataset was last updated in 2022; individual feature source dates vary.",
+    "The public layer omits MW ratings and contingency-specific transfer capability.",
+    "EIA states that it and HIFLD do not publish substation locations.",
+    "Use as context geometry, not as an authoritative real-time network model."
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0.0",
+  "bottom_line": "Desalination is technically mature and can provide valuable drought-resistant municipal increments where source water, energy, intake, concentrate disposal, financing, and permits align. It is not a practical one-for-one replacement for U.S. irrigation or all freshwater withdrawals.",
+  "technology_context": {
+    "dominant_us_configuration": "Reverse osmosis treating brackish groundwater",
+    "us_share_more_than_two_thirds": true,
+    "historical_2010_facility_count": 649,
+    "historical_2010_capacity_million_gallons_per_day": 402,
+    "historical_2010_inland_share_percent": 95,
+    "public_supply_saline_withdrawal_2015_million_gallons_per_day": 270,
+    "public_supply_share_2015": "less_than_1_percent",
+    "source_refs": [{"source_id": "DOE-DESAL-BASICS"}, {"source_id": "USGS-BRACKISH-ASSESSMENT"}, {"source_id": "USGS-DESAL-2015"}]
+  },
+  "seawater_reverse_osmosis_energy": {
+    "range_kilowatt_hours_per_cubic_meter": [3.2, 4.5],
+    "one_mgd_annual_electricity_gigawatt_hours": [4.421, 6.218],
+    "one_mgd_average_megawatts": [0.505, 0.71],
+    "excluded_from_range": ["intake and long-distance conveyance outside reported system boundary", "distribution pumping", "embodied construction energy", "site-specific pretreatment and concentrate management"],
+    "source": {"source_id": "LBNL-DESAL-2018", "locator": "Installed seawater reverse-osmosis energy range"}
+  },
+  "operating_examples": [
+    {
+      "facility": "Carlsbad Desalination Plant",
+      "location": "San Diego County, California",
+      "feedwater": "seawater",
+      "product_capacity_million_gallons_per_day": 50,
+      "annual_capacity_acre_feet": 56000,
+      "regional_demand_share_percent": [7, 10],
+      "people_equivalent": 400000,
+      "source": {"source_id": "SDCWA-CARLSBAD"}
+    },
+    {
+      "facility": "Tampa Bay Seawater Desalination Plant",
+      "location": "Tampa Bay, Florida",
+      "feedwater": "power-plant-related seawater intake",
+      "feedwater_million_gallons_per_day": 44,
+      "product_capacity_million_gallons_per_day": 25,
+      "regional_supply_share_percent_max": 10,
+      "source": {"source_id": "TAMPA-DESAL"}
+    },
+    {
+      "facility": "Kay Bailey Hutchison Desalination Plant",
+      "location": "El Paso, Texas",
+      "feedwater": "brackish groundwater",
+      "product_capacity_million_gallons_per_day": 27.5,
+      "concentrate_disposal": "deep_well_injection",
+      "source": {"source_id": "ELPASO-DESAL"}
+    }
+  ],
+  "scale_scenarios": [
+    {
+      "target": "Carlsbad-size 50 Mgal/d municipal increment",
+      "target_million_gallons_per_day": 50,
+      "fifty_mgd_plant_equivalents": 1,
+      "electricity_terawatt_hours_per_year": [0.221, 0.311],
+      "interpretation": "Demonstrated regional scale; site feasibility remains decisive."
+    },
+    {
+      "target": "2015 U.S. domestic end use",
+      "target_million_gallons_per_day": 26600,
+      "fifty_mgd_plant_equivalents": 532,
+      "electricity_terawatt_hours_per_year": [117.6, 165.4],
+      "interpretation": "Scale illustration only; domestic use is not supplied entirely by desalination and demand management/reuse are alternatives."
+    },
+    {
+      "target": "2015 U.S. public-supply withdrawal",
+      "target_million_gallons_per_day": 39000,
+      "fifty_mgd_plant_equivalents": 780,
+      "electricity_terawatt_hours_per_year": [172.4, 242.5],
+      "interpretation": "National capacity-equivalent, not a feasible build program."
+    },
+    {
+      "target": "2015 U.S. irrigation withdrawal",
+      "target_million_gallons_per_day": 118000,
+      "fifty_mgd_plant_equivalents": 2360,
+      "electricity_terawatt_hours_per_year": [521.7, 733.7],
+      "interpretation": "Energy, cost, inland conveyance, and concentrate make broad irrigation replacement implausible."
+    },
+    {
+      "target": "2015 U.S. freshwater withdrawal",
+      "target_million_gallons_per_day": 281000,
+      "fifty_mgd_plant_equivalents": 5620,
+      "electricity_terawatt_hours_per_year": [1242.4, 1747.1],
+      "interpretation": "Order-of-magnitude scale demonstration; not a proposal or necessity."
+    }
+  ],
+  "context_viability": [
+    {
+      "context": "coastal_municipal_increment",
+      "technical_viability": "high",
+      "economic_viability": "site_specific_medium",
+      "key_constraints": ["intake and marine impacts", "electricity price and emissions", "brine diffusion", "permitting", "ratepayer equity", "coastal hazard exposure"]
+    },
+    {
+      "context": "inland_brackish_municipal_supply",
+      "technical_viability": "high_where_aquifer_and_treatment_fit",
+      "economic_viability": "medium",
+      "key_constraints": ["aquifer yield and drawdown", "concentrate disposal", "scaling/pretreatment", "energy", "water rights"]
+    },
+    {
+      "context": "emergency_or_island_supply",
+      "technical_viability": "high",
+      "economic_viability": "often_favorable_relative_to_import_or_failure",
+      "key_constraints": ["energy resilience", "storage", "maintenance", "storm exposure"]
+    },
+    {
+      "context": "large_scale_irrigation_replacement",
+      "technical_viability": "physically_possible_but_systemically_poor",
+      "economic_viability": "low_for_most_crops",
+      "key_constraints": ["very large volume", "farm-gate affordability", "conveyance", "energy", "brine", "soil salinity"]
+    }
+  ],
+  "cost_and_project_examples": {
+    "tampa_expansion": {
+      "increment_million_gallons_per_day": 10.4,
+      "capital_cost_million_2026_dollars": [310, 365],
+      "planning_cost_dollars_per_thousand_gallons": 8.56,
+      "source": {"source_id": "TAMPA-DESAL-EXPANSION"}
+    },
+    "california_brackish_goals_acre_feet_per_year": {
+      "2030_additional": 28000,
+      "2040_additional": 84000,
+      "source": {"source_id": "CA-DWR-DESAL-2025"}
+    },
+    "guardrail": "Do not generalize either planning cost to another site without energy, financing, salinity, intake, brine, permitting, and conveyance adjustments."
+  },
+  "portfolio_order": [
+    "Protect source water and repair leaks",
+    "Reduce avoidable demand while protecting basic access",
+    "Expand nonpotable and potable reuse where justified",
+    "Improve conjunctive use, recharge, storage, and transfers",
+    "Add brackish or seawater desalination where marginal reliability value exceeds full lifecycle cost and impacts"
+  ]
+}

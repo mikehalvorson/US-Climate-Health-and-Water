@@ -1,0 +1,174 @@
+{
+  "model_map_id": "en-roads-public-architecture-map-v1",
+  "title": "Attributed public architecture map for an En-ROADS-inspired clean-room model",
+  "as_of": "2026-08-01",
+  "attribution": "Adapted from Climate Interactive's En-ROADS Technical Reference, licensed CC BY 4.0. En-ROADS is developed by Climate Interactive and Ventana Systems with MIT Sloan and other partners.",
+  "notices": [
+    "This file is not the En-ROADS production model and does not claim output equivalence.",
+    "Only architecture and statements verified in the public technical reference are marked source_fidelity=direct.",
+    "Dashboard extensions and implementation interfaces are marked source_fidelity=project_design."
+  ],
+  "simulation": {
+    "paradigm": "system_dynamics",
+    "mathematical_form": "nonlinear ordinary differential equations represented as stocks, flows, auxiliaries, constants, data, and initial values",
+    "integration_method": "forward Euler",
+    "start_year": 1990,
+    "end_year": 2100,
+    "time_step_years": 0.125,
+    "stored_output_interval_years": 1,
+    "geography": "single global region",
+    "equation_template": "stock[t + dt] = stock[t] + dt * sum(inflows[t] - outflows[t])",
+    "source_fidelity": "direct",
+    "source_ids": ["SRC-ENR-STRUCTURE"],
+    "claim_ids": ["CLM-ENR-002", "CLM-ENR-003"]
+  },
+  "purpose": {
+    "type": "rapid_scenario_exploration",
+    "not_for": ["prediction", "point forecasting", "regional dispatch", "unit commitment", "project finance"],
+    "source_fidelity": "direct",
+    "source_ids": ["SRC-ENR-OVERVIEW", "SRC-MIT-SIMULATORS"],
+    "claim_id": "CLM-ENR-001"
+  },
+  "top_level_causal_chain": [
+    {"from": "population_and_consumption_per_person", "to": "total_consumption", "source_fidelity": "direct"},
+    {"from": "total_consumption_and_energy_intensity", "to": "energy_demand", "source_fidelity": "direct"},
+    {"from": "energy_demand_and_source_choice", "to": "energy_and_industry_emissions", "source_fidelity": "direct"},
+    {"from": "energy_land_industry_emissions", "to": "greenhouse_gas_concentrations", "source_fidelity": "direct"},
+    {"from": "greenhouse_gas_concentrations", "to": "radiative_forcing_and_climate", "source_fidelity": "direct"},
+    {"from": "climate_change", "to": "GDP_agriculture_biosphere_and_other_impacts", "source_fidelity": "direct"}
+  ],
+  "user_selected_exogenous_inputs": [
+    {"id": "population_scenario", "source_fidelity": "direct"},
+    {"id": "base_GDP_growth", "source_fidelity": "direct"},
+    {"id": "technology_breakthrough", "source_fidelity": "direct"},
+    {"id": "policy_choices", "source_fidelity": "direct"}
+  ],
+  "endogenous_outputs_and_dynamics": [
+    "energy source choice",
+    "energy carrier choice",
+    "energy intensity",
+    "energy variable and capital costs",
+    "fuel price, capacity, and utilization",
+    "electricity price, capacity, and utilization by source",
+    "hydrogen price, capacity, and utilization by source",
+    "learning by doing",
+    "nonrenewable resource depletion",
+    "renewable resource saturation",
+    "energy storage",
+    "carbon capture and storage",
+    "greenhouse gas and climate dynamics",
+    "agriculture and land use",
+    "sea-level rise and other climate impacts",
+    "GDP adjusted for climate impacts"
+  ],
+  "explicit_exclusions": ["inventories", "labor"],
+  "submodels": [
+    {"file": "En-ROADS.mdl", "responsibility": "collect and organize model output for testing; includes all sectors", "source_fidelity": "direct"},
+    {"file": "Constants.mdl", "responsibility": "cross-sector constants and unit conversions", "source_fidelity": "direct"},
+    {"file": "Calibration.mdl", "responsibility": "historical calibration interfaces and comparison with other projections", "source_fidelity": "direct"},
+    {"file": "Population.mdl", "responsibility": "user-selected population scenarios", "source_fidelity": "direct"},
+    {"file": "GDP.mdl", "responsibility": "base economic growth and climate-impact feedbacks", "source_fidelity": "direct"},
+    {"file": "EnergyDemand.mdl", "responsibility": "desired and chosen capital types and capital use", "source_fidelity": "direct"},
+    {"file": "EnergySupply.mdl", "responsibility": "investment, construction, use, and retirement of fuel, electricity, and hydrogen capacity", "source_fidelity": "direct"},
+    {"file": "EnergyCostsRevenues.mdl", "responsibility": "cost dynamics, learning, taxes/subsidies, efficiency, and storage", "source_fidelity": "direct"},
+    {"file": "EnergyPricing.mdl", "responsibility": "price adjustment to balance supply and demand", "source_fidelity": "direct"},
+    {"file": "Emissions.mdl", "responsibility": "energy, end-use-capital, and waste emissions for CO2, CH4, N2O, and F-gases", "source_fidelity": "direct"},
+    {"file": "CDR.mdl", "responsibility": "carbon dioxide removal, afforestation, and CCS responses", "source_fidelity": "direct"},
+    {"file": "BioenergyAgriculture.mdl", "responsibility": "food, land, agricultural CH4/N2O, and bioenergy material cost/land", "source_fidelity": "direct"},
+    {"file": "TerrestrialBiosphere.mdl", "responsibility": "land area, biomass/soil carbon, and air-biomass-soil transfers", "source_fidelity": "direct"},
+    {"file": "CarbonCycle.mdl", "responsibility": "carbon and other GHG stocks/flows among emissions, removals, atmosphere, and oceans", "source_fidelity": "direct"},
+    {"file": "Climate.mdl", "responsibility": "radiative forcing, heat flows, and atmosphere/ocean temperature change", "source_fidelity": "direct"},
+    {"file": "ClimateImpacts.mdl", "responsibility": "temperature-dependent impacts and temperature-proxy impacts", "source_fidelity": "direct"},
+    {"file": "PM25.mdl", "responsibility": "non-GHG pollution from fuel combustion", "source_fidelity": "direct"},
+    {"file": "OceanSystems.mdl", "responsibility": "ocean heat/carbon layers, thermal expansion, water/ice contributions to sea level, and acidification", "source_fidelity": "direct"}
+  ],
+  "energy_demand": {
+    "end_uses": ["road_and_rail_transport", "air_and_water_transport", "buildings", "industry", "data_centers"],
+    "carriers": ["direct_fuel", "electricity", "hydrogen"],
+    "core_structure": "stocks of energy-consuming capital determine carrier demand; desired capital and carrier choices respond to relative attractiveness and policies",
+    "source_fidelity": "direct",
+    "source_ids": ["SRC-ENR-DEMAND"],
+    "claim_id": "CLM-ENR-004"
+  },
+  "energy_supply": {
+    "supply_chains": [
+      {"id": "fuel", "paths": ["coal", "oil", "gas", "biofuel"]},
+      {"id": "electricity", "paths": ["coal", "oil", "gas", "biofuel", "nuclear", "hydro", "wind", "solar", "geothermal", "other_renewables", "new_zero_carbon"]},
+      {"id": "hydrogen", "paths": ["grid_electricity", "dedicated_renewables", "dedicated_nuclear", "gas", "coal", "biomass"]}
+    ],
+    "carrier_labels": ["coal", "oil", "gas", "bio", "electricity", "hydrogen"],
+    "capacity_pipeline": ["desired", "development", "construction", "usable_operating_capacity", "retirement"],
+    "capacity_notes": [
+      "Installed usable capital depreciates at a constant fractional rate without age vintaging on the supply side.",
+      "Profitability affects depreciation.",
+      "Development and construction create delay.",
+      "Desired capacity covers demand, delivery losses, reserve margin, and expected growth.",
+      "Completion capacity represents supply-chain constraints; pressure can increase effective lead time and cost.",
+      "Capacity factor maps constructed energy supply capacity to dispatchable/actual supply capacity."
+    ],
+    "source_fidelity": "direct",
+    "source_ids": ["SRC-ENR-SUPPLY"]
+  },
+  "supply_cost_drivers": {
+    "drivers": [
+      "reference cost",
+      "learning by doing from cumulative installation",
+      "exogenous R&D breakthrough",
+      "fuel market price and conversion efficiency",
+      "resource constraints",
+      "source taxes and subsidies",
+      "variable-renewable storage cost",
+      "renewable soft costs",
+      "carbon price",
+      "qualifying electricity standard costs and penalties",
+      "supply-chain pipeline-overheating premium"
+    ],
+    "resource_feedbacks": [
+      "fossil depletion can raise cost as cumulative production grows",
+      "unconventional discovery can reduce depletion pressure but can change carbon intensity",
+      "biomass is constrained by feedstock supply rather than depletion",
+      "hydro and renewables can face supply-curve/site saturation costs"
+    ],
+    "source_fidelity": "direct",
+    "source_ids": ["SRC-ENR-SUPPLY"]
+  },
+  "variable_renewable_storage": {
+    "variable_sources": ["wind", "solar"],
+    "more_constant_renewable_examples": ["geothermal", "other_renewables"],
+    "duration_classes_hours": [
+      {"id": "hourly", "min_exclusive": 0, "max_inclusive": 12},
+      {"id": "daily", "min_exclusive": 12, "max_inclusive": 72},
+      {"id": "seasonal", "min_exclusive": 72, "max_inclusive": null}
+    ],
+    "technology_examples": ["batteries", "compressed_air", "pumped_hydropower", "hydrogen", "other_novel_options"],
+    "round_trip_efficiency_relation": "required coverage scales inversely with round-trip efficiency",
+    "charging_energy_treatment": "electricity exceeding discharged output is added to industrial electric-carrier demand",
+    "source_fidelity": "direct",
+    "source_ids": ["SRC-ENR-SUPPLY"]
+  },
+  "market": {
+    "mechanism": "prices adjust to balance global supply and demand; capacity utilization responds within available capacity",
+    "electricity_retail_price_components": ["busbar_price", "transmission_and_distribution_markup"],
+    "default_transmission_and_distribution_markup": {"value": 0.02, "unit": "USD_per_kWh", "currency_year": "as defined by model documentation"},
+    "source_fidelity": "direct",
+    "source_ids": ["SRC-ENR-MARKET"]
+  },
+  "calibration": {
+    "historical_source_families": ["EIA", "IEA World Energy Balances", "Energy Institute Statistical Review", "IAEA", "Global Carbon Budget"],
+    "future_comparison_families": ["IEA World Energy Outlook", "NGFS GCAM", "NGFS MESSAGEix-GLOBIOM", "NGFS REMIND-MAgPIE", "SSP database"],
+    "default_scenario_guidance": ["historical behavior", "IEA Stated Policies Scenario", "NGFS Current Policies"],
+    "testing": ["historical calibration", "future scenario comparison", "sensitivity testing", "extreme-condition testing"],
+    "source_fidelity": "direct",
+    "source_ids": ["SRC-ENR-CALIBRATION", "SRC-ENR-REFERENCES"],
+    "claim_id": "CLM-ENR-005"
+  },
+  "project_extension_interfaces": [
+    {"interface_id": "regional_adapter", "description": "Map global results to regional/U.S. evidence without implying En-ROADS itself is regional.", "source_fidelity": "project_design"},
+    {"interface_id": "technology_disaggregation", "description": "Map aggregated renewable/bioenergy/other pathways to the detailed technology taxonomy.", "source_fidelity": "project_design"},
+    {"interface_id": "transmission_constraint", "description": "Attach queue, build-rate, interregional transfer, and loss constraints from IEA/DOE/LBNL evidence.", "source_fidelity": "project_design"},
+    {"interface_id": "water_use", "description": "Attach withdrawal, consumption, thermal-discharge, hydrologic, and fuel-cycle water coefficients in a later research phase.", "source_fidelity": "project_design"},
+    {"interface_id": "health_impact", "description": "Attach PM2.5, heat, occupational, and community-health pathways in a later research phase.", "source_fidelity": "project_design"},
+    {"interface_id": "provenance", "description": "Every parameter and output carries source_id, claim_id, unit, geography, period, status, and model-version metadata.", "source_fidelity": "project_design"}
+  ]
+}
+

@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "as_of": "2026-08-02",
+  "headline_findings": [
+    "A 2019 national material-flow analysis estimated more than 57 million metric tons of U.S. plastic production and consumption and less than 7% recovery for reuse; polypropylene, HDPE, LLDPE, and PVC were the four leading individually reported resins.",
+    "Packaging was the largest named application at 17.2 MMT, making unnecessary packaging, reuse, and high capture the most scalable near-term intervention family.",
+    "Cradle-to-resin water is real but highly model dependent: approximate cross-database ranges were 3.3-44.4 L/kg PET, 5.9-24.1 HDPE, and 5.2-20.5 PP.",
+    "No credible national net water-saving number can be published until the replacement service, washing, logistics, product loss, geography, and water quality are modeled.",
+    "The reported vaccine finding concerns prenatal and childhood PFAS serum concentrations and reduced tetanus/diphtheria antibody response, not maternal ingestion of many microplastic particles or universal vaccine failure.",
+    "Human exposure to plastic particles is documented, but FDA and WHO assessments identify major method and causal dose-response gaps; a notable carotid-plaque study is associative, not causal.",
+    "Specific high-confidence hazards exist for production chemicals and formulations, including vinyl chloride, styrene, acrylonitrile, isocyanates, some phthalates, BPA questions, and PFAS; these must not be generalized to every finished polymer article.",
+    "Plastic leakage causes well-established wildlife ingestion, entanglement, persistence, and fragmentation; prevention and reuse are necessary because U.S. disposal and recovery remain poor.",
+    "Other jurisdictions combine targeted restrictions with reusable serviceware, deposits, refillable containers, producer responsibility, and carefully defined exceptions; none has eliminated all plastic needs.",
+    "Seaweed cultivation could avoid farmland and irrigation and DOE models a very large offshore resource, but U.S. production is developmental and conversion wastewater, cost, yield, performance, ecology, and infrastructure prevent a claim of national-scale replacement today."
+  ],
+  "recommended_message": "Replace unnecessary and high-exposure plastic uses first; scale reuse and high capture; control hazardous chemistry and emissions; validate substitutes by the service they deliver; and report both gross avoided resin water and the complete replacement-system water balance.",
+  "highest_priority_dashboard_modules": ["U.S. material-flow Sankey", "resin process explorer", "water uncertainty ranges", "health evidence ladder", "PFAS-vaccine claim correction", "country policy matrix", "seaweed scale funnel", "functional-unit water balance", "data-gap heatmap"],
+  "red_lines": ["No fake precision", "No claim that all plastics are equally toxic", "No claim that detected particles prove causation", "No claim that a jurisdiction is plastic-free", "No claim that modeled seaweed potential is forecast production", "No net water claim from gross resin intensity"]
+}

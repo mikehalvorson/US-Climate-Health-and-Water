@@ -1,0 +1,236 @@
+{
+  "manifest_id": "energy-timeseries-ingestion-v1",
+  "as_of": "2026-08-01",
+  "normalizer": "scripts/normalize_timeseries.py",
+  "raw_directory_policy": "Raw downloads are retained locally and gitignored; normalized subsets and provenance are versioned.",
+  "raw_inputs": [
+    {
+      "file": "eia-aeo2026-altelec-table16.xlsx",
+      "bytes": 21897,
+      "sha256": "1bd60df366eb8300709c926d61cec9e29ec5b780e211787521c83cb652052f84"
+    },
+    {
+      "file": "eia-aeo2026-altelec-table8.xlsx",
+      "bytes": 28616,
+      "sha256": "80cba19890932bb32330aae7e110cc430d7370b6fdfd0a81cac8ebde76a493f0"
+    },
+    {
+      "file": "eia-aeo2026-alttrnp-table16.xlsx",
+      "bytes": 21941,
+      "sha256": "060cd9ff6178a4147473702486d8093a0de75a6096dca320da8faab35380e981"
+    },
+    {
+      "file": "eia-aeo2026-alttrnp-table8.xlsx",
+      "bytes": 28880,
+      "sha256": "ccdbf38ef70acde4a125691ed5ee80b81cc850c7e17f9b59a46a4e57f7160ac5"
+    },
+    {
+      "file": "eia-aeo2026-electrnp-table16.xlsx",
+      "bytes": 21971,
+      "sha256": "99d17766b153e2866dadfcb8bb366d6f8cb40163990145f8c3fe2d6e1bfd6ba9"
+    },
+    {
+      "file": "eia-aeo2026-electrnp-table8.xlsx",
+      "bytes": 28599,
+      "sha256": "8ba270cb691bede82204ea79159f143e3abd29b43543377007cb697445d84b15"
+    },
+    {
+      "file": "eia-aeo2026-highZTC-table16.xlsx",
+      "bytes": 21946,
+      "sha256": "ed2a54b8ea5b4f8ab82ad946e3c3682715898f1f840d6ff8f8008323e0794bed"
+    },
+    {
+      "file": "eia-aeo2026-highZTC-table8.xlsx",
+      "bytes": 28807,
+      "sha256": "88ce47578ad9e216760cdd91f44e66255a7c0850dcdf58416b62dd4d66fae5d3"
+    },
+    {
+      "file": "eia-aeo2026-higheldmd-table16.xlsx",
+      "bytes": 22010,
+      "sha256": "8bc598499298269ee4d53e5059b7c86da27fe077052fe5864105d784cbb84c08"
+    },
+    {
+      "file": "eia-aeo2026-higheldmd-table8.xlsx",
+      "bytes": 28789,
+      "sha256": "c85b731ea60a00643343a3aeae2bb2e0ed30506a648b33f55f476f35edca17a8"
+    },
+    {
+      "file": "eia-aeo2026-highmacro-table16.xlsx",
+      "bytes": 22043,
+      "sha256": "408df194df6a704bca07fe067182ccc429b7b2d9de6870cc498a0052a84c1643"
+    },
+    {
+      "file": "eia-aeo2026-highmacro-table8.xlsx",
+      "bytes": 28791,
+      "sha256": "d41e083155fb76a77c032e4f52fbc985e1e3ae807101cbd319d4c6629594c8e4"
+    },
+    {
+      "file": "eia-aeo2026-highogs-table16.xlsx",
+      "bytes": 21915,
+      "sha256": "d620d08cdefe5b6947b69a90a346106476ac6a5ae7fa1c12adc92c273d6df31a"
+    },
+    {
+      "file": "eia-aeo2026-highogs-table8.xlsx",
+      "bytes": 28833,
+      "sha256": "4a51504e31cae96750ea791090231ed341771b86cd0bfff7b6340153b792e12d"
+    },
+    {
+      "file": "eia-aeo2026-lowZTC-table16.xlsx",
+      "bytes": 22185,
+      "sha256": "5504a6eefec0ec67bd8ee8d507343e8d728f1bc256b293e3286144cb56a3ce67"
+    },
+    {
+      "file": "eia-aeo2026-lowZTC-table8.xlsx",
+      "bytes": 29011,
+      "sha256": "0b591c909970be6bd85d14785337254a253df12157fa2caf4113713487a56722"
+    },
+    {
+      "file": "eia-aeo2026-lowmacro-table16.xlsx",
+      "bytes": 21923,
+      "sha256": "e482d9dd2d07b446fe75921f1ff5269729228a9561574298cf91d86623272be8"
+    },
+    {
+      "file": "eia-aeo2026-lowmacro-table8.xlsx",
+      "bytes": 28918,
+      "sha256": "3ea95507ecf260ada7e00dfa6513b84ef8dd67c61a68e797574e4797180a4e2a"
+    },
+    {
+      "file": "eia-aeo2026-lowogs-table16.xlsx",
+      "bytes": 22305,
+      "sha256": "76d1dbc35abd96191eae003d9d33bd23606d9fb6cfc94f8e03689f6f03ee469d"
+    },
+    {
+      "file": "eia-aeo2026-lowogs-table8.xlsx",
+      "bytes": 29005,
+      "sha256": "c9d1ece62482e98084c3f9143ecc75903c3bfaefb2d185e603ca89e6e48108ca"
+    },
+    {
+      "file": "eia-aeo2026-table16-renewables.xlsx",
+      "bytes": 21984,
+      "sha256": "6367977ca296f3a3f90c8b5b0d23d4a00acbc099cbed9ed6750846bb5ac87e62"
+    },
+    {
+      "file": "eia-aeo2026-table8-electricity.xlsx",
+      "bytes": 28739,
+      "sha256": "be1418a11ad0e5882f0210b7932695b3dc0be0b6b27f0dcc88ce8198052ca976"
+    },
+    {
+      "file": "eia-mer-table-10.6.csv",
+      "bytes": 597019,
+      "sha256": "203aae1a91b3a698c0c47d9917bbfdcd8f774e20de2e29001bf42d3a1830fe50"
+    },
+    {
+      "file": "eia-mer-table-7.2a.csv",
+      "bytes": 1140993,
+      "sha256": "e55a40ba283d7c6f18f7753f9fa914c04f8e6bb76e75530b5f1aa50c6b04d478"
+    },
+    {
+      "file": "irena-world-capacity-2000-2025.csv",
+      "bytes": 36158,
+      "sha256": "bc2ff550b3e52f67f607762b001c9b5c4343b6c3c92897c1627a335a117be1f0"
+    },
+    {
+      "file": "irena-world-generation-2000-2023.csv",
+      "bytes": 21900,
+      "sha256": "5cc4e76044f842d078a6f5076112c8b6c0c2448028e6e5a1a2a404aca81918a7"
+    },
+    {
+      "file": "ngfs-phase5-world-electricity-2020-2100.json",
+      "bytes": 3355042,
+      "sha256": "9c02d2bb749bc1953178d4050cec6b73ec32787a040076f6e733be04e14a47c1"
+    },
+    {
+      "file": "nrel-standard-scenarios-2024-nations.csv",
+      "bytes": 439374,
+      "sha256": "5cf0aded739488606c663e253e0e5f0cc5d8bcc0ef6e4b655162ef555c90b9b8"
+    },
+    {
+      "file": "owid-energy-data.csv",
+      "bytes": 9229369,
+      "sha256": "266f2e2baad7975351bc9bb4aa061d22b1da9fe4c47d51d2ac6071e01e171f76"
+    }
+  ],
+  "normalized_outputs": [
+    {
+      "file": "normalized/global-electricity-generation-history.csv",
+      "bytes": 140231,
+      "sha256": "4f40cc3bb5962dd1ed2625f9705dca2bd51d5fb0cd48431643a037f21b7d17b9",
+      "rows": 460
+    },
+    {
+      "file": "normalized/global-irena-capacity-and-generation-history.csv",
+      "bytes": 186261,
+      "sha256": "7ad6bb48ca991845f919e3fc08e42bf5ed50003def3b4b2b9bee44610475d228",
+      "rows": 626
+    },
+    {
+      "file": "normalized/us-electricity-generation-history.csv",
+      "bytes": 292459,
+      "sha256": "a2c3b42e556934c46824dc3091ec20672ff98f02ce094ad0638bede114a45287",
+      "rows": 940
+    },
+    {
+      "file": "normalized/us-electricity-projections-aeo2026.csv",
+      "bytes": 5296288,
+      "sha256": "2eda31eb240ca57cb2b31ccd6facd4b24edd22537ffd24799f06cb4be475ad48",
+      "rows": 14872
+    },
+    {
+      "file": "normalized/us-electricity-projections-nrel-standard-scenarios-2024.csv",
+      "bytes": 8720104,
+      "sha256": "97e3af5a34739c3691dd96ff76e4bd4f326aa3d7afd260ad7f65cab660ddaf90",
+      "rows": 24156
+    },
+    {
+      "file": "normalized/global-electricity-projections-ngfs-phase5.1.csv",
+      "bytes": 5275367,
+      "sha256": "0bac6415241ac3cc5a11ef7c7cc6712d36e3defc384a90f427be5f0c12186268",
+      "rows": 13944
+    },
+    {
+      "file": "normalized/global-specialized-technology-scenarios.csv",
+      "bytes": 1460,
+      "sha256": "0d744c680e8821a0f8c117d8c4a98c71d5ecde46d19afad676a909e7d3c8d694",
+      "rows": 3
+    }
+  ],
+  "unit_conversions": [
+    {
+      "from": "million kilowatthours",
+      "to": "TWh",
+      "factor": 0.001
+    },
+    {
+      "from": "billion kilowatthours",
+      "to": "TWh",
+      "factor": 1
+    },
+    {
+      "from": "GWh",
+      "to": "TWh",
+      "factor": 0.001
+    },
+    {
+      "from": "MWh",
+      "to": "TWh",
+      "factor": 1e-06
+    },
+    {
+      "from": "MW",
+      "to": "GW",
+      "factor": 0.001
+    },
+    {
+      "from": "EJ/yr",
+      "to": "TWh",
+      "factor": 277.7777777778
+    }
+  ],
+  "known_limits": [
+    "OWID is a processed compilation; source definitions and revisions must be retained.",
+    "IRENA generation is gross and includes self-consumption; EIA generation is net. Do not compare without labeling.",
+    "AEO and ReEDS outputs are scenarios, not predictions.",
+    "NGFS public-license terms prohibit redistribution of a substantial portion of the database; this repository stores only a narrow world-electricity subset and links to the current explorer.",
+    "AEO all-sector solar capacity mixes utility-scale AC and end-use DC measures and is labeled GW_mixed_ac_dc."
+  ]
+}

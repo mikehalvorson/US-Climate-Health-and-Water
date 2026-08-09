@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "algorithm": "sha256",
+  "files": [
+    {
+      "path": "timeseries/raw/noaa-sea-level-rise-datasets-2022/SLR_TF U.S. Sea Level Projections.csv",
+      "bytes": 3800785,
+      "sha256": "95dded406d4ec7c076c29c4aa7c5fb5cbae4857ef0ca2134bdedb8ceb4e84ac6"
+    },
+    {
+      "path": "timeseries/raw/noaa-sea-level-trend-virginia-key.json",
+      "bytes": 2423,
+      "sha256": "cae3f0efeb7e70e3cbcdc5e4a5e06cab43050dd616690a9984c60bfc394ef6fc"
+    },
+    {
+      "path": "timeseries/raw/noaa-sea-level-trend-new-canal.json",
+      "bytes": 2242,
+      "sha256": "a127741600b690e5971644288789ac997452f066dde7e78cadb3eb5ebbbf9ef1"
+    },
+    {
+      "path": "timeseries/raw/noaa-sea-level-trend-grand-isle.json",
+      "bytes": 2327,
+      "sha256": "8afe62cfe8b76f4bb43ef325aa1b585d9c18e95d853b5bcbcc1d483a890dbad5"
+    },
+    {
+      "path": "timeseries/raw/noaa-htf-decadal-virginia-key.json",
+      "bytes": 8397,
+      "sha256": "b316ad5999fd626dc1834f3c56f8d3195c296204fe72af81752069497396b9cd"
+    },
+    {
+      "path": "timeseries/raw/noaa-htf-decadal-grand-isle.json",
+      "bytes": 8454,
+      "sha256": "864e167e558c11db7bfbc21ed11edd2a9e0b0aa58ad6c1d75c2e6e9a922f3bae"
+    }
+  ]
+}

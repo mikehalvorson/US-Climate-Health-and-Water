@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "direct_water": {
+    "year_2023_billion_liters": 66,
+    "year_2023_billion_gallons": 17.435,
+    "year_2023_million_gallons_per_day": 47.77,
+    "year_2028_projection_billion_cubic_meters": [0.14, 0.28],
+    "year_2028_projection_billion_liters": [140, 280],
+    "year_2028_projection_million_gallons_per_day": [101.3, 202.7],
+    "direct_wue_liters_per_kilowatt_hour": {"2023": 0.36, "2028_projection": [0.45, 0.48]},
+    "source_refs": [
+      {"source_id": "LBNL-DATA-CENTER-2024", "locator": "Water-use chapter"},
+      {"source_id": "LBNL-DATA-CENTER-WATER-2026", "locator": "2028 scenario summary"}
+    ]
+  },
+  "indirect_electricity_water": {
+    "year_2023_billion_liters": 800,
+    "year_2023_million_gallons_per_day": 579.0,
+    "average_liters_per_kilowatt_hour": 4.52,
+    "includes": "Water attributed to electricity generation, including thermoelectric consumption and modeled hydropower-reservoir evaporation",
+    "accounting_rule": "Display as reallocated upstream water. Do not add it to a national total that already contains the power sector.",
+    "source": {"source_id": "LBNL-DATA-CENTER-2024", "locator": "Indirect water footprint discussion"}
+  },
+  "electricity_context": {
+    "year_2023_terawatt_hours": 176,
+    "year_2028_projection_terawatt_hours": [325, 580],
+    "year_2028_us_electricity_share_percent": [6.7, 12.0],
+    "source": {"source_id": "LBNL-DATA-CENTER-2024", "locator": "Executive summary"}
+  },
+  "scale_comparisons": [
+    {
+      "comparison": "2023 direct data-center water / 2010–20 covered-sector withdrawal subtotal",
+      "percent": 0.0214,
+      "denominator_million_gallons_per_day": 223593,
+      "denominator_source": {"source_id": "USGS-PP1894D"}
+    },
+    {
+      "comparison": "2023 direct data-center water / 2010–20 covered-sector consumptive-use subtotal",
+      "percent": 0.0577,
+      "denominator_million_gallons_per_day": 82821,
+      "denominator_source": {"source_id": "USGS-PP1894D"}
+    },
+    {
+      "comparison": "2028 direct projection / covered-sector withdrawal subtotal",
+      "percent_range": [0.0453, 0.0907],
+      "interpretation": "Small nationally but potentially material in a constrained watershed or utility because demand is spatially concentrated and fast-growing."
+    }
+  ],
+  "site_level_drivers": [
+    "Cooling system and set points",
+    "Climate and humidity",
+    "Workload type, utilization, and hardware efficiency",
+    "Electricity mix and power-plant cooling",
+    "Water source, treatment, reuse, and discharge",
+    "Coincidence of demand with seasonal watershed stress"
+  ],
+  "coefficient_guardrail": {
+    "finding": "Published workload footprints vary by more than 10,000-fold.",
+    "rule": "No universal gallons-per-query or gallons-per-AI-response metric may be shown.",
+    "source": {"source_id": "LBNL-WORKLOAD-WATER-2025", "locator": "Abstract and harmonized results"}
+  }
+}

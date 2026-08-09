@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "package_id": "coastal-city-risk-migration-and-receiving-capacity",
+  "as_of": "2026-08-02",
+  "geographies": ["Miami-Dade County", "Miami study domains", "Virginia Key tide gauge", "City of New Orleans", "New Orleans study domains", "coastal Louisiana", "Grand Isle tide gauge", "United States counties and CBSAs"],
+  "normative_files": [
+    "claim-audit.json",
+    "city-risk-profiles.json",
+    "displacement-and-destinations.json",
+    "receiving-city-strain.json",
+    "adaptation-pathways.json",
+    "chart-contracts.json",
+    "gaps.json",
+    "summary.json",
+    "source-verification.json",
+    "timeseries/README.md",
+    "timeseries/scripts/normalize_coastal_cities.py",
+    "scripts/validate_coastal_cities.py"
+  ],
+  "generated_files": [
+    "timeseries/noaa-relative-sea-level-scenarios.csv",
+    "timeseries/noaa-high-tide-flood-days.csv",
+    "timeseries/observed-relative-sea-level-trends.csv",
+    "timeseries/hauer-2100-cbsa-net-migration.csv",
+    "timeseries/scenario-milestones.csv",
+    "timeseries/raw-file-sha256.json"
+  ],
+  "source_registry": "../sources.json",
+  "claim_policy": {
+    "required_checks_for_headline_claim": 3,
+    "status_values": ["verified", "qualified", "rejected"],
+    "forbidden_shortcut": "Do not translate a point projection, undefended elevation exposure, county planning range, or high-end migration scenario into a citywide submergence date."
+  }
+}

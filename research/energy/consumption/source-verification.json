@@ -1,0 +1,213 @@
+{
+  "verification_id": "electricity-demand-source-verification-v1",
+  "as_of": "2026-08-01",
+  "method": {
+    "identity_check": "Publisher-controlled landing page, title, date, artifact, and where applicable machine endpoint were inspected.",
+    "fidelity_check": "The exact table, chapter, note, or workbook row used by each finding was read in context; units, scope, status, and qualifiers were retained.",
+    "second_check": "Load-bearing numbers were checked against a second publisher-controlled representation, an independent official source, or the downloaded source table itself. Same-artifact checks are explicitly labeled.",
+    "rejection_rule": "A value is excluded when its scenario/year mapping, denominator, or accounting boundary cannot be verified. No interpolation is performed between sparse milestones."
+  },
+  "sources": [
+    {
+      "source_id": "SRC-OWID-ENERGY",
+      "publisher": "Our World in Data; underlying electricity-demand source Ember",
+      "title": "Electricity demand",
+      "canonical_url": "https://ourworldindata.org/grapher/electricity-demand",
+      "artifact_url": "https://github.com/owid/energy-data/",
+      "publication_vintage": "Ember 2026; OWID updated 2026-04-24",
+      "identity_check": "verified",
+      "fidelity_check": "verified",
+      "locators": ["OWID About this data and Sources and processing", "Ember Data Methodology v1.5, Definitions and Electricity Generation and Net Imports"],
+      "verified_scope": "World historical electricity demand from 2000-2025 in the retained OWID file.",
+      "critical_notes": [
+        "Ember defines electricity demand as gross electricity generation plus net imports.",
+        "This system-demand boundary is not IEA final electricity consumption and produces a larger total.",
+        "World and latest-year figures can include estimates; the 2025 value is not treated as final."
+      ],
+      "second_check": "The OWID data page's source attribution, units, update date, and World records were checked against Ember's official methodology definition and the retained raw CSV."
+    },
+    {
+      "source_id": "SRC-EIA-MER-7.6",
+      "publisher": "U.S. Energy Information Administration",
+      "title": "Monthly Energy Review, Table 7.6: Electricity End Use",
+      "canonical_url": "https://www.eia.gov/totalenergy/data/browser/?tbl=T07.06",
+      "artifact_url": "https://www.eia.gov/totalenergy/data/browser/csv.php?tbl=T07.06",
+      "publication_vintage": "2026-07",
+      "identity_check": "verified",
+      "fidelity_check": "verified",
+      "locators": ["Table 7.6 CSV series ESRCPUS, ESCCPUS, ESICPUS, ESACPUS, ESTCPUS, ELDUPUS, ELTCPUS, and ESVHPUS", "Monthly Energy Review section 7 PDF, Table 7.6 notes"],
+      "verified_scope": "U.S. electricity sales by sector, direct use, total use, and experimental on-road light-duty EV electricity use.",
+      "critical_notes": [
+        "EV use is independently estimated but already included in electricity sales and total use; it must not be added to either total.",
+        "The EV method changes beginning in 2023, so the 2018-2022 and 2023-forward segments are not strictly comparable.",
+        "The EV series excludes gasoline used by plug-in hybrids and covers on-road light-duty vehicle electricity."
+      ],
+      "second_check": "CSV values were checked against the publisher's table definitions and notes in https://www.eia.gov/totalenergy/data/monthly/pdf/sec7.pdf."
+    },
+    {
+      "source_id": "SRC-EIA-AEO2026-TABLES",
+      "publisher": "U.S. Energy Information Administration",
+      "title": "Annual Energy Outlook 2026 Reference and Side-Case Tables",
+      "canonical_url": "https://www.eia.gov/outlooks/aeo/tables_ref.php",
+      "artifact_url": "https://www.eia.gov/outlooks/aeo/excel/sidecases/cb2026/yearbyyear.xlsx",
+      "publication_vintage": "2026-04",
+      "identity_check": "verified",
+      "fidelity_check": "verified",
+      "locators": ["yearbyyear.xlsx Tables 4-8, 19, and 20 for baseline and ten side cases", "AEO2026 narrative: Consumption and Electricity chapters", "AEO2026 Case Descriptions"],
+      "verified_scope": "Annual U.S. conditional scenario output for 2025-2050: sales, use, generation, sector end uses, data-center servers, EV charging by location, industrial components, and macro drivers.",
+      "critical_notes": [
+        "AEO cases are alternative conditional futures, not probability-weighted forecasts or predictions.",
+        "Residential and commercial EV charging is assigned by charging location; transportation-sector sales therefore do not represent all on-road EV charging.",
+        "The commercial Data Center Servers row is server electricity, not whole-facility data-center electricity.",
+        "Generation, net generation to grid, sales, direct use, and total use have different accounting boundaries."
+      ],
+      "second_check": "Every normalized value is read from the full official case workbook; key endpoint values and case descriptions were cross-checked against EIA narrative text and workbook footnotes."
+    },
+    {
+      "source_id": "SRC-IEA-ELECTRICITY26-DEMAND",
+      "publisher": "International Energy Agency",
+      "title": "Electricity 2026: Demand",
+      "canonical_url": "https://www.iea.org/reports/electricity-2026/demand",
+      "publication_vintage": "2026-02",
+      "identity_check": "verified",
+      "fidelity_check": "verified",
+      "locators": ["Demand overview", "Global demand growth by sector and region", "United States discussion"],
+      "verified_scope": "World electricity consumption estimate for 2025, forecast through 2030, and sector/region contributions to growth.",
+      "critical_notes": ["Forecast horizon ends in 2030.", "Reported totals are rounded milestones, not a complete annual series."],
+      "second_check": "Headline totals, growth rate, regional contributions, and sector shares were checked in separate subsections of the same official report; long-run scenario context is supplied separately by NGFS."
+    },
+    {
+      "source_id": "SRC-IEA-ENERGY-AI25",
+      "publisher": "International Energy Agency",
+      "title": "Energy and AI: Energy demand from AI",
+      "canonical_url": "https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai",
+      "publication_vintage": "2025-04",
+      "identity_check": "verified",
+      "fidelity_check": "verified",
+      "locators": ["Data centre electricity consumption in the Base Case", "United States and China growth discussion", "2035 sensitivity cases"],
+      "verified_scope": "Global total data-center electricity, historical estimate, Base Case to 2035, and high-efficiency/lift-off sensitivities.",
+      "critical_notes": ["Global share is small relative to total demand but load is spatially concentrated.", "The report's total facility boundary must not be compared as if identical to AEO's server-only row."],
+      "second_check": "2024, 2030, and 2035 figures were checked in the chapter and official executive-summary framing; facility scope was checked against report definitions."
+    },
+    {
+      "source_id": "SRC-LBNL-DATACENTER24",
+      "publisher": "Lawrence Berkeley National Laboratory",
+      "title": "2024 United States Data Center Energy Usage Report",
+      "canonical_url": "https://escholarship.org/uc/item/32d6m0d1",
+      "artifact_url": "https://escholarship.org/content/qt32d6m0d1/qt32d6m0d1.pdf",
+      "doi": "10.71468/P1WC7Q",
+      "publication_vintage": "2024-12-20",
+      "identity_check": "verified",
+      "fidelity_check": "verified",
+      "locators": ["Executive Summary", "Results", "Methods and limitations"],
+      "verified_scope": "U.S. total data-center facility electricity, including servers, storage, networking, and infrastructure, with 2028 range.",
+      "critical_notes": ["2028 is a range, not a point forecast.", "Major uncertainties include GPU shipments, operating practice, cooling technology, and efficiency.", "The model is constrained by proprietary and limited public data."],
+      "second_check": "Landing-page metadata, DOI record, PDF executive summary, component definition, and methods limitations were independently checked within the publisher's repository."
+    },
+    {
+      "source_id": "SRC-IEA-GEVO26",
+      "publisher": "International Energy Agency",
+      "title": "Global EV Outlook 2026: Outlook for electric mobility",
+      "canonical_url": "https://www.iea.org/reports/global-ev-outlook-2026/outlook-for-electric-mobility-chap-9-11",
+      "publication_vintage": "2026-04-13",
+      "identity_check": "verified",
+      "fidelity_check": "verified",
+      "locators": ["Electricity demand, paragraphs accompanying the chart Electricity demand by mode and scenario, 2025, 2030 and 2035", "Scenario and mode notes"],
+      "verified_scope": "Global road-EV electricity demand in 2025 and CPS, STEPS, and NZE scenario milestones for 2035.",
+      "critical_notes": ["The CPS and NZE values are stated as exceeding thresholds and are encoded as lower bounds.", "EV electricity is a component of total electricity demand, not an additional system total."],
+      "second_check": "Narrative milestones were checked against the official CC BY 4.0 chart page and its scenario/mode notes. Ambiguously mapped chart rows were not ingested."
+    },
+    {
+      "source_id": "SRC-IEA-WEO25-DEMAND",
+      "publisher": "International Energy Agency",
+      "title": "World Energy Outlook 2025: Executive summary",
+      "canonical_url": "https://www.iea.org/reports/world-energy-outlook-2025/executive-summary",
+      "publication_vintage": "2025",
+      "identity_check": "verified",
+      "fidelity_check": "verified",
+      "locators": ["Electricity-demand and electrification discussion"],
+      "verified_scope": "Scenario-level direction and driver list through 2035; detailed proprietary scenario tables are not redistributed.",
+      "critical_notes": ["CPS, STEPS, and NZE are conditional scenarios, not predictions."],
+      "second_check": "Driver statements were checked against IEA Electricity 2026 and the sector detail in IEA Energy and AI and Global EV Outlook 2026."
+    },
+    {
+      "source_id": "SRC-IEA-COOLING18",
+      "publisher": "International Energy Agency",
+      "title": "Air conditioning use emerges as one of the key drivers of global electricity-demand growth",
+      "canonical_url": "https://www.iea.org/news/air-conditioning-use-emerges-as-one-of-the-key-drivers-of-global-electricity-demand-growth",
+      "publication_vintage": "2018-05-15",
+      "identity_check": "verified",
+      "fidelity_check": "verified",
+      "locators": ["Global cooling demand, installed-unit, and efficiency findings"],
+      "verified_scope": "Structural cooling driver and 2050 sensitivity from the Future of Cooling assessment.",
+      "critical_notes": ["This is an older structural scenario, not a current 2026 forecast.", "Efficiency can materially reduce load growth."],
+      "second_check": "The article's values were checked against the official IEA Future of Cooling report framing linked by the publisher."
+    },
+    {
+      "source_id": "SRC-IEA-HEATPUMPS22",
+      "publisher": "International Energy Agency",
+      "title": "The Future of Heat Pumps: Executive summary",
+      "canonical_url": "https://www.iea.org/reports/the-future-of-heat-pumps/executive-summary",
+      "publication_vintage": "2022-11",
+      "identity_check": "verified",
+      "fidelity_check": "verified",
+      "locators": ["Electricity-demand implications", "Efficiency comparison", "2030 policy-pledge case"],
+      "verified_scope": "Heat-pump electrification as a power-demand driver and final-energy efficiency mechanism.",
+      "critical_notes": ["Heat pumps increase electricity use but can reduce total final energy required per unit of heat."],
+      "second_check": "Demand and efficiency statements were checked in separate sections of the official executive summary."
+    },
+    {
+      "source_id": "SRC-NREL-EFS18",
+      "publisher": "National Renewable Energy Laboratory",
+      "title": "Electrification Futures Study: Scenarios of Electric Technology Adoption and Power Consumption for the United States",
+      "canonical_url": "https://www.nrel.gov/docs/fy18osti/71500.pdf",
+      "publication_vintage": "2018-06",
+      "identity_check": "verified",
+      "fidelity_check": "verified",
+      "locators": ["Table 7.1", "Appendix F Table F.1", "sector accounting notes"],
+      "verified_scope": "U.S. 2016 reference electricity and 2050 sector consumption under Reference, Medium, and High electrification with three technology-advancement cases.",
+      "critical_notes": ["This is an older scenario stress test based on an AEO2017-era baseline, not a current forecast.", "Behind-the-meter EV charging can be attributed to buildings rather than transportation."],
+      "second_check": "All normalized endpoints were independently transcribed and re-summed from Table 7.1; scenario interpretation was checked against the official NREL study page."
+    },
+    {
+      "source_id": "SRC-NGFS-PHASE5.1",
+      "publisher": "Network for Greening the Financial System; hosted by International Institute for Applied Systems Analysis",
+      "title": "NGFS Long-term Scenarios Phase 5.1",
+      "canonical_url": "https://data.ene.iiasa.ac.at/ngfs/",
+      "publication_vintage": "2026-03-20",
+      "identity_check": "verified",
+      "fidelity_check": "verified",
+      "locators": ["Official portal configuration", "model/scenario/run/unit/variable metadata", "bulk time-series API"],
+      "verified_scope": "Narrow World final-electricity subset for three IAMs, seven scenarios, 15 aggregate/subsector variables, and five-year intervals through 2100.",
+      "critical_notes": ["Scenarios are not forecasts.", "Models are not observations and should be shown as a spread.", "Aggregate and subaggregate variables overlap and cannot all be stacked together.", "The subset is intentionally narrow to comply with database redistribution limits."],
+      "second_check": "A sampled bulk response was checked against separate official run, model, node, unit, and variable metadata before the narrow subset was downloaded."
+    },
+    {
+      "source_id": "SRC-ENR-DEMAND",
+      "publisher": "Climate Interactive",
+      "title": "En-ROADS Technical Reference: Energy Demand",
+      "canonical_url": "https://docs.climateinteractive.org/projects/en-roads-reference-guide/en/latest/pages/demand.html",
+      "publication_vintage": "2026-07",
+      "identity_check": "verified",
+      "fidelity_check": "verified",
+      "locators": ["Capital-stock demand equations", "End-use categories", "Carrier-choice structure", "Data-center demand"],
+      "verified_scope": "Architecture reference for a global stock-flow demand module, not permission or code for a bit-for-bit simulator copy.",
+      "critical_notes": ["En-ROADS is for scenario exploration and explicitly is not a forecast.", "The dashboard implementation must remain a clean-room, attributed model unless a separate SDK license is obtained."],
+      "second_check": "Demand categories were cross-checked against the official En-ROADS model-structure, supply, market, and calibration chapters."
+    }
+  ],
+  "excluded_or_deferred": [
+    {
+      "item": "IEA EV chart mode-by-mode CSV rows",
+      "reason": "The downloaded numeric rows were visible but their ordered scenario/year categories were not exposed reliably in the accessible page representation. Narrative totals are retained; row mapping is deferred rather than guessed."
+    },
+    {
+      "item": "AEO Case Descriptions standalone data-center numeric table",
+      "reason": "Extracted table labels were ambiguous relative to the workbook and official narrative. The complete workbooks and narrative are the source of record for normalized values."
+    },
+    {
+      "item": "A single global forecast to 2050",
+      "reason": "No single future is scientifically justified. The package provides an IEA near-term forecast and multi-model NGFS conditional scenarios, retaining model spread."
+    }
+  ]
+}

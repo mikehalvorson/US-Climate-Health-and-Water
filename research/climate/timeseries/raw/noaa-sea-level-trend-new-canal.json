@@ -1,0 +1,96 @@
+{
+  "count": 1,
+  "SeaLvlTrends": [
+    {
+      "stationId": "8761927",
+      "stationName": "New Canal",
+      "affil": "US",
+      "annotation": null,
+      "trendUnits": "inches/decade",
+      "units": null,
+      "seasonalUnits": "inches",
+      "seasonalAverage": 1.1,
+      "latitude": 30.027222,
+      "longitude": -90.113333,
+      "trendType": "SINGLE",
+      "autoregressive": 0.34,
+      "autoregressiveError": 0.05,
+      "trend": 2.36,
+      "trendError": 0.19,
+      "y2000_offset": 0.0,
+      "startDate": "12/15/1982",
+      "endDate": "12/15/2025",
+      "trend0": null,
+      "trendError0": null,
+      "y2000_offset0": null,
+      "startDate0": null,
+      "endDate0": null,
+      "monthlyMeans": "https://api.tidesandcurrents.noaa.gov/dpapi/prod/webapi/product/sealvltrends.json?station=8761927&details=monthlymeans&units=english&trendType=SINGLE",
+      "numberEvents": 0,
+      "events": [],
+      "seasonalCycleMonth": [
+        {
+          "month": 1,
+          "seasonalVar": -0.39,
+          "seasonalErr": 0.06
+        },
+        {
+          "month": 2,
+          "seasonalVar": -0.34,
+          "seasonalErr": 0.06
+        },
+        {
+          "month": 3,
+          "seasonalVar": -0.18,
+          "seasonalErr": 0.06
+        },
+        {
+          "month": 4,
+          "seasonalVar": -0.01,
+          "seasonalErr": 0.06
+        },
+        {
+          "month": 5,
+          "seasonalVar": 0.15,
+          "seasonalErr": 0.06
+        },
+        {
+          "month": 6,
+          "seasonalVar": 0.03,
+          "seasonalErr": 0.06
+        },
+        {
+          "month": 7,
+          "seasonalVar": -0.24,
+          "seasonalErr": 0.06
+        },
+        {
+          "month": 8,
+          "seasonalVar": -0.02,
+          "seasonalErr": 0.06
+        },
+        {
+          "month": 9,
+          "seasonalVar": 0.53,
+          "seasonalErr": 0.06
+        },
+        {
+          "month": 10,
+          "seasonalVar": 0.45,
+          "seasonalErr": 0.06
+        },
+        {
+          "month": 11,
+          "seasonalVar": 0.18,
+          "seasonalErr": 0.06
+        },
+        {
+          "month": 12,
+          "seasonalVar": -0.18,
+          "seasonalErr": 0.06
+        }
+      ],
+      "trends": null
+    }
+  ]
+}

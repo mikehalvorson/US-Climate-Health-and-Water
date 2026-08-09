@@ -1,0 +1,271 @@
+location_id,station_id,station_name,latitude,longitude,severity,severity_definition,decade,scenario,days_per_year,geographic_guardrail,source_id
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2020,High,0,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2020,Intermediate,0,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2020,Intermediate-High,0,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2020,Intermediate-Low,0,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2020,Low,0,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2030,High,0,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2030,Intermediate,0,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2030,Intermediate-High,0,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2030,Intermediate-Low,0,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2030,Low,0,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2040,High,1,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2040,Intermediate,0,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2040,Intermediate-High,0,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2040,Intermediate-Low,0,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2040,Low,0,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2050,High,2,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2050,Intermediate,1,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2050,Intermediate-High,1,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2050,Intermediate-Low,1,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2050,Low,1,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2060,High,20,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2060,Intermediate,2,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2060,Intermediate-High,7,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2060,Intermediate-Low,2,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2060,Low,1,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2070,High,210,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2070,Intermediate,15,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2070,Intermediate-High,85,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2070,Intermediate-Low,4,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2070,Low,2,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2080,High,360,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2080,Intermediate,90,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2080,Intermediate-High,295,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2080,Intermediate-Low,20,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2080,Low,5,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2090,High,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2090,Intermediate,270,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2090,Intermediate-High,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2090,Intermediate-Low,70,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2090,Low,15,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2100,High,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2100,Intermediate,360,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2100,Intermediate-High,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2100,Intermediate-Low,165,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,major,often destructive,2100,Low,40,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2020,High,6,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2020,Intermediate,6,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2020,Intermediate-High,6,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2020,Intermediate-Low,6,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2020,Low,5,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2030,High,25,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2030,Intermediate,25,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2030,Intermediate-High,25,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2030,Intermediate-Low,25,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2030,Low,20,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2040,High,115,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2040,Intermediate,85,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2040,Intermediate-High,100,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2040,Intermediate-Low,80,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2040,Low,65,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2050,High,275,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2050,Intermediate,200,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2050,Intermediate-High,245,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2050,Intermediate-Low,180,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2050,Low,145,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2060,High,360,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2060,Intermediate,315,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2060,Intermediate-High,350,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2060,Intermediate-Low,285,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2060,Low,245,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2070,High,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2070,Intermediate,360,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2070,Intermediate-High,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2070,Intermediate-Low,345,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2070,Low,315,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2080,High,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2080,Intermediate,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2080,Intermediate-High,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2080,Intermediate-Low,360,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2080,Low,350,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2090,High,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2090,Intermediate,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2090,Intermediate-High,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2090,Intermediate-Low,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2090,Low,360,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2100,High,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2100,Intermediate,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2100,Intermediate-High,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2100,Intermediate-Low,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,minor,disruptive,2100,Low,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2020,High,1,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2020,Intermediate,1,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2020,Intermediate-High,1,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2020,Intermediate-Low,1,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2020,Low,1,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2030,High,2,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2030,Intermediate,1,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2030,Intermediate-High,1,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2030,Intermediate-Low,1,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2030,Low,1,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2040,High,7,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2040,Intermediate,4,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2040,Intermediate-High,5,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2040,Intermediate-Low,4,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2040,Low,3,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2050,High,60,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2050,Intermediate,20,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2050,Intermediate-High,35,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2050,Intermediate-Low,15,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2050,Low,10,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2060,High,245,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2060,Intermediate,90,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2060,Intermediate-High,175,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2060,Intermediate-Low,55,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2060,Low,30,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2070,High,360,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2070,Intermediate,235,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2070,Intermediate-High,335,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2070,Intermediate-Low,140,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2070,Low,85,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2080,High,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2080,Intermediate,340,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2080,Intermediate-High,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2080,Intermediate-Low,260,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2080,Low,165,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2090,High,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2090,Intermediate,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2090,Intermediate-High,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2090,Intermediate-Low,335,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2090,Low,245,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2100,High,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2100,Intermediate,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2100,Intermediate-High,365,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2100,Intermediate-Low,360,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+grand_isle,8761724,"Grand Isle, LA",29.2633,-89.9567,moderate,typically damaging,2100,Low,315,Coastal Louisiana tide gauge; not New Orleans,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2020,High,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2020,Intermediate,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2020,Intermediate-High,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2020,Intermediate-Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2020,Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2030,High,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2030,Intermediate,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2030,Intermediate-High,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2030,Intermediate-Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2030,Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2040,High,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2040,Intermediate,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2040,Intermediate-High,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2040,Intermediate-Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2040,Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2050,High,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2050,Intermediate,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2050,Intermediate-High,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2050,Intermediate-Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2050,Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2060,High,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2060,Intermediate,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2060,Intermediate-High,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2060,Intermediate-Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2060,Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2070,High,15,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2070,Intermediate,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2070,Intermediate-High,2,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2070,Intermediate-Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2070,Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2080,High,210,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2080,Intermediate,1,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2080,Intermediate-High,25,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2080,Intermediate-Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2080,Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2090,High,365,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2090,Intermediate,7,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2090,Intermediate-High,195,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2090,Intermediate-Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2090,Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2100,High,365,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2100,Intermediate,70,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2100,Intermediate-High,360,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2100,Intermediate-Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,major,often destructive,2100,Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2020,High,3,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2020,Intermediate,3,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2020,Intermediate-High,3,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2020,Intermediate-Low,3,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2020,Low,3,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2030,High,7,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2030,Intermediate,6,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2030,Intermediate-High,6,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2030,Intermediate-Low,6,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2030,Low,5,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2040,High,25,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2040,Intermediate,15,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2040,Intermediate-High,20,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2040,Intermediate-Low,10,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2040,Low,9,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2050,High,95,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2050,Intermediate,35,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2050,Intermediate-High,60,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2050,Intermediate-Low,25,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2050,Low,20,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2060,High,270,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2060,Intermediate,90,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2060,Intermediate-High,175,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2060,Intermediate-Low,55,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2060,Low,30,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2070,High,365,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2070,Intermediate,195,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2070,Intermediate-High,335,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2070,Intermediate-Low,100,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2070,Low,45,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2080,High,365,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2080,Intermediate,320,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2080,Intermediate-High,365,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2080,Intermediate-Low,160,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2080,Low,65,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2090,High,365,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2090,Intermediate,365,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2090,Intermediate-High,365,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2090,Intermediate-Low,230,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2090,Low,90,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2100,High,365,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2100,Intermediate,365,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2100,Intermediate-High,365,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2100,Intermediate-Low,300,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,minor,disruptive,2100,Low,125,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2020,High,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2020,Intermediate,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2020,Intermediate-High,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2020,Intermediate-Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2020,Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2030,High,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2030,Intermediate,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2030,Intermediate-High,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2030,Intermediate-Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2030,Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2040,High,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2040,Intermediate,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2040,Intermediate-High,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2040,Intermediate-Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2040,Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2050,High,4,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2050,Intermediate,1,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2050,Intermediate-High,2,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2050,Intermediate-Low,1,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2050,Low,0,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2060,High,45,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2060,Intermediate,4,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2060,Intermediate-High,15,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2060,Intermediate-Low,2,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2060,Low,1,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2070,High,245,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2070,Intermediate,15,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2070,Intermediate-High,95,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2070,Intermediate-Low,4,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2070,Low,1,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2080,High,365,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2080,Intermediate,65,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2080,Intermediate-High,295,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2080,Intermediate-Low,10,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2080,Low,2,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2090,High,365,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2090,Intermediate,210,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2090,Intermediate-High,365,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2090,Intermediate-Low,25,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2090,Low,4,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2100,High,365,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2100,Intermediate,350,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2100,Intermediate-High,365,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2100,Intermediate-Low,50,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI
+virginia_key,8723214,"Virginia Key, FL",25.7314,-80.1618,moderate,typically damaging,2100,Low,6,Miami-area tide gauge; threshold days are not citywide flood days,NOAA-COOPS-DPAPI

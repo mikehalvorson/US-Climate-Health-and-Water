@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0.0",
+  "status_vocabulary": ["verified", "qualified", "rejected", "pending"],
+  "claims": [
+    {
+      "claim_id": "PLS-US-001", "topic": "us_material_flow", "status": "verified",
+      "dashboard_text": "The United States produced and consumed more than 57 million metric tons of plastic in 2019, while less than 7% was recovered for reuse.",
+      "source_refs": [{"source_id": "US-PLASTICS-MFA-2019", "locator": "Summary and Results"}],
+      "misuse_guardrail": "This is a modeled 2019 economy-wide material-flow result, not a 2026 annual statistic or EPA MSW total."
+    },
+    {
+      "claim_id": "PLS-US-002", "topic": "leading_resins", "status": "verified",
+      "dashboard_text": "The leading individually reported U.S. resin consumption estimates for 2019 were PP 8.6, HDPE 7.9, LLDPE 5.7, and PVC 5.2 million metric tons.",
+      "source_refs": [{"source_id": "US-PLASTICS-MFA-2019", "locator": "Results: National flows"}],
+      "misuse_guardrail": "Do not infer current rank or sum these values as total plastic consumption."
+    },
+    {
+      "claim_id": "PLS-US-003", "topic": "applications", "status": "verified",
+      "dashboard_text": "Packaging was the largest named 2019 U.S. application at 17.2 MMT; building and construction used 8.3 MMT.",
+      "source_refs": [{"source_id": "US-PLASTICS-MFA-2019", "locator": "Results: National flows"}],
+      "misuse_guardrail": "Use categories are modeled flows into use and do not equal same-year waste."
+    },
+    {
+      "claim_id": "PLS-US-004", "topic": "municipal_waste", "status": "verified",
+      "dashboard_text": "EPA's 2018 municipal-solid-waste series reports 35.68 million U.S. tons of plastic generated, 3.09 recycled, 5.62 combusted for energy, and 26.97 landfilled.",
+      "source_refs": [{"source_id": "EPA-PLASTICS-MSW-2018", "locator": "1960-2018 table"}],
+      "misuse_guardrail": "Units are U.S. short tons and scope is MSW; do not combine with the 2019 economy-wide MFA."
+    },
+    {
+      "claim_id": "PLS-ENV-001", "topic": "ocean_leakage", "status": "verified",
+      "dashboard_text": "The National Academies estimated 1.13-2.24 MMT of U.S. plastic waste entered the environment in 2016 and documented ingestion or entanglement among 914 species.",
+      "source_refs": [{"source_id": "NASEM-OCEAN-2022", "locator": "Summary and Chapter 2"}],
+      "misuse_guardrail": "The range is an estimate with uncertainty; the species count is documentation of exposure/effect pathways, not an extinction count."
+    },
+    {
+      "claim_id": "PLS-MFG-001", "topic": "manufacturing", "status": "verified",
+      "dashboard_text": "Commodity plastics are produced through distinct precursor chains: ethylene to PE, propylene to PP, ethylene glycol plus terephthalic acid to PET, and chlorine/ethylene through EDC and VCM to PVC.",
+      "source_refs": [{"source_id": "ARGONNE-RESIN-PATHWAYS-2024", "locator": "Sections 2.3.1-2.3.5"}],
+      "misuse_guardrail": "These are pathway summaries; plant technology, regional feedstock, coproduct allocation, and additives vary."
+    },
+    {
+      "claim_id": "PLS-WATER-001", "topic": "resin_water", "status": "qualified",
+      "dashboard_text": "Approximate cross-database cradle-to-resin water-consumption ranges are 3.3-44.4 L/kg for PET, 5.9-24.1 for HDPE, and 5.2-20.5 for PP.",
+      "source_refs": [{"source_id": "RCR-RESIN-WATER-2023"}, {"source_id": "RCR-RESIN-WATER-SI-2023", "locator": "Figure S3"}],
+      "misuse_guardrail": "Values were read approximately from a figure; they are database results, not universal plant coefficients."
+    },
+    {
+      "claim_id": "PLS-WATER-002", "topic": "water_uncertainty", "status": "verified",
+      "dashboard_text": "Life-cycle databases can produce materially different water results for the same resin because geography, allocation, technology, cooling-water recycling, and system boundaries differ.",
+      "source_refs": [{"source_id": "RCR-RESIN-WATER-2023", "locator": "Section 3.4"}, {"source_id": "NIST-LCA-PLASTICS"}],
+      "misuse_guardrail": "Do not average incompatible values without a harmonization protocol."
+    },
+    {
+      "claim_id": "PLS-WATER-003", "topic": "gross_avoidance", "status": "qualified",
+      "dashboard_text": "Avoiding one million kilograms of virgin resin corresponds to gross cradle-to-resin water ranges of about 3.3-44.4 million L PET, 5.9-24.1 million L HDPE, or 5.2-20.5 million L PP.",
+      "source_refs": [{"source_id": "RCR-RESIN-WATER-SI-2023", "locator": "Figure S3"}],
+      "misuse_guardrail": "This multiplication excludes replacement production, washing, logistics, product loss, and end of life, so it is not net water savings."
+    },
+    {
+      "claim_id": "PLS-WATER-004", "topic": "national_water_total", "status": "pending",
+      "dashboard_text": "A national net water-saving estimate for plastic replacement remains unavailable because dominant replacement systems lack harmonized functional-unit and geographic inventories.",
+      "source_refs": [{"source_id": "RCR-RESIN-WATER-2023"}, {"source_id": "EPA-FEDERAL-LCA-COMMONS"}, {"source_id": "NIST-LCA-PLASTICS"}],
+      "misuse_guardrail": "Do not turn this evidence gap into a zero-impact assumption."
+    },
+    {
+      "claim_id": "PLS-HEALTH-001", "topic": "particles", "status": "qualified",
+      "dashboard_text": "Plastic particles have been reported in foods and human samples, but current evidence does not yet establish quantitative health risk at measured food levels.",
+      "source_refs": [{"source_id": "FDA-MNP-FOOD"}, {"source_id": "WHO-MNP-2022"}, {"source_id": "EPA-MNP-RESEARCH"}],
+      "misuse_guardrail": "Neither declare safety nor claim all real-world exposure is proven harmful; show the method and dose-response gaps."
+    },
+    {
+      "claim_id": "PLS-HEALTH-002", "topic": "cardiovascular_association", "status": "qualified",
+      "dashboard_text": "In one carotid-surgery cohort, detected plaque micro/nanoplastics were associated with a higher composite risk of heart attack, stroke, or death (adjusted HR 4.53; 95% CI 2.00-10.27).",
+      "source_refs": [{"source_id": "NEJM-MNP-2024"}],
+      "misuse_guardrail": "This selected observational cohort cannot prove causation, ingestion route, source, or general-population risk."
+    },
+    {
+      "claim_id": "PLS-HEALTH-003", "topic": "pfas_vaccine", "status": "qualified",
+      "dashboard_text": "A Faroese cohort linked higher prenatal and childhood PFAS serum concentrations to lower tetanus and diphtheria antibody responses; it did not measure maternal microplastic ingestion or show universal vaccine failure.",
+      "source_refs": [{"source_id": "JAMA-PFAS-VACCINE"}, {"source_id": "ATSDR-PFAS"}],
+      "misuse_guardrail": "PFAS chemicals are not synonymous with microplastic particles or all plastics; findings are observational and outcome-specific."
+    },
+    {
+      "claim_id": "PLS-HEALTH-004", "topic": "production_chemicals", "status": "verified",
+      "dashboard_text": "High-confidence chemical hazards exist in plastic supply chains, including carcinogenic classifications for vinyl chloride and concerns for styrene and acrylonitrile, plus occupational isocyanate sensitization and asthma.",
+      "source_refs": [{"source_id": "NTP-VINYL"}, {"source_id": "NTP-STYRENE"}, {"source_id": "NTP-ACRYLONITRILE"}, {"source_id": "NIOSH-ISOCYANATES"}],
+      "misuse_guardrail": "A monomer or reactive-precursor hazard does not establish the same exposure or risk from every cured finished article."
+    },
+    {
+      "claim_id": "PLS-HEALTH-005", "topic": "pfas_packaging", "status": "verified",
+      "dashboard_text": "EPA found that certain fluorination processes used on HDPE containers can form and leach PFAS; this finding does not apply to every HDPE product.",
+      "source_refs": [{"source_id": "EPA-PFAS-PACKAGING"}, {"source_id": "EPA-PFAS-TSCA"}],
+      "misuse_guardrail": "Always retain the qualifiers certain, fluorinated, and process-specific."
+    },
+    {
+      "claim_id": "PLS-POLICY-001", "topic": "international_policy", "status": "verified",
+      "dashboard_text": "The EU, France, Germany, and Rwanda use combinations of targeted restrictions, reuse, deposits, producer responsibility, collection, and exceptions rather than eliminating every plastic use.",
+      "source_refs": [{"source_id": "EU-SUPD"}, {"source_id": "FR-AGEC"}, {"source_id": "DE-UBA-PACKAGING"}, {"source_id": "RW-REMA-LAW2019"}],
+      "misuse_guardrail": "Do not describe any listed jurisdiction as plastic-free or treat legal targets as achieved water savings."
+    },
+    {
+      "claim_id": "PLS-SEA-001", "topic": "seaweed_resource", "status": "qualified",
+      "dashboard_text": "DOE modeled 0.38 billion dry metric tons per year of U.S. macroalgae supply at or below $1,000 per dry ton under a 50% productive-area assumption.",
+      "source_refs": [{"source_id": "DOE-BT23-MACRO", "locator": "Chapter 7.2.4"}],
+      "misuse_guardrail": "This is modeled potential, not production, a forecast, sustainable harvest, or finished bioplastic output."
+    },
+    {
+      "claim_id": "PLS-SEA-002", "topic": "seaweed_current_scale", "status": "verified",
+      "dashboard_text": "U.S. seaweed aquaculture remains developmental; NOAA reports an Alaska example exceeding 112,000 lb in 2019, in wet rather than dry weight.",
+      "source_refs": [{"source_id": "NOAA-SEAWEED"}],
+      "misuse_guardrail": "Do not compare this wet harvest directly with DOE dry-biomass potential."
+    },
+    {
+      "claim_id": "PLS-SEA-003", "topic": "seaweed_water", "status": "qualified",
+      "dashboard_text": "Seaweed cultivation may avoid irrigation, but one 2026 film LCA found substantial conversion wastewater and higher water use than its LDPE comparator.",
+      "source_refs": [{"source_id": "ACS-SEAWEED-LCA-2026"}],
+      "misuse_guardrail": "One formulation does not represent all seaweed materials; never call seaweed plastic water-free."
+    },
+    {
+      "claim_id": "PLS-STRATEGY-001", "topic": "replacement_hierarchy", "status": "verified",
+      "dashboard_text": "A defensible transition starts with unnecessary products, scales reuse and high capture, controls hazardous chemistry, and evaluates substitution on a product-service functional unit.",
+      "source_refs": [{"source_id": "UNEP-TAP-2023"}, {"source_id": "NIST-LCA-PLASTICS"}],
+      "misuse_guardrail": "This is a decision framework, not evidence that every reuse or substitute system is lower-impact."
+    },
+    {
+      "claim_id": "PLS-STRATEGY-002", "topic": "burden_shifting", "status": "qualified",
+      "dashboard_text": "Material substitution can shift burdens: a 2024 study found plastics had lower greenhouse-gas impacts in 15 of 16 modeled applications, while not resolving water, toxicity, litter, or biodiversity tradeoffs.",
+      "source_refs": [{"source_id": "ACS-PLASTIC-ALTERNATIVES-GHG-2024"}],
+      "misuse_guardrail": "Do not use a greenhouse-gas comparison to dismiss other impacts or endorse all plastic uses."
+    }
+  ]
+}

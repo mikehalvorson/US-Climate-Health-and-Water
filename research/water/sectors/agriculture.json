@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "national_significance": {
+    "inventory_2015_withdrawal_billion_gallons_per_day": 118.0,
+    "inventory_2015_consumptive_use_billion_gallons_per_day": 73.2,
+    "modeled_2010_2020_average_withdrawal_billion_gallons_per_day": 105.497,
+    "modeled_2010_2020_average_consumptive_use_billion_gallons_per_day": 75.698,
+    "interpretation": "Irrigation is the dominant covered consumptive-use sector and couples food production to basin and aquifer depletion.",
+    "source_refs": [
+      {"source_id": "USGS-CIR1441", "locator": "Irrigation section and Table 9"},
+      {"source_id": "USGS-PP1894D", "locator": "Table 1"}
+    ]
+  },
+  "high_plains_aquifer": {
+    "recoverable_storage_2019_billion_acre_feet": 2.91,
+    "storage_decline_since_predevelopment_million_acre_feet": 286.4,
+    "modeled_current_irrigated_area_unable_to_support_irrigation_by_2100_percent": 24,
+    "modeled_area_square_kilometers": 22000,
+    "subset_also_unsuitable_for_dryland_percent_of_affected": 13,
+    "interpretation": "The risk is spatially uneven loss of economic irrigation capacity, not a single aquifer-empty date.",
+    "source_refs": [
+      {"source_id": "USGS-HPA-SIR2023", "locator": "Abstract and storage-change results"},
+      {"source_id": "USDA-HPA-2020", "locator": "Abstract"}
+    ]
+  },
+  "llano_estacado_case": {
+    "geography": "Hale County, Texas",
+    "metric": "existing_supply_acre_feet_per_year",
+    "values": [
+      {"year": 2030, "value": 123819},
+      {"year": 2040, "value": 82253},
+      {"year": 2050, "value": 60406},
+      {"year": 2060, "value": 40695},
+      {"year": 2070, "value": 33853},
+      {"year": 2080, "value": 29691}
+    ],
+    "change_2030_to_2080_percent": -76.02,
+    "interpretation": "A regional-planning estimate illustrating local supply decline; it is not an all-wells-fail prediction.",
+    "source": {"source_id": "TWDB-REGION-O-2026", "locator": "County supply tables"}
+  },
+  "management_context": [
+    "Efficient irrigation can reduce withdrawals but may not reduce basin consumption if saved water expands irrigated acreage or reduces return flow.",
+    "Crop switching, deficit irrigation, fallowing compensation, pumping limits, recharge, and water-right administration affect outcomes.",
+    "Food-security charts must separate physical crop output, producer income, groundwater storage, and community economic effects."
+  ]
+}

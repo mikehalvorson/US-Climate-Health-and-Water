@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0.0",
+  "objective": "Reduce unnecessary virgin plastic production, hazardous exposure, leakage, and life-cycle water burden while preserving health, food, infrastructure, and safety services.",
+  "governance_principles": [
+    "Define essentiality and service performance before setting a ban or material target.",
+    "Require chemical, additive, recycled-content, and intentionally added PFAS disclosure.",
+    "Use prevention, reuse, and safe design before relying on downstream recovery.",
+    "Make producers fund collection, verified processing, litter prevention, and public reporting.",
+    "Protect workers and fence-line communities during both current production and replacement manufacturing.",
+    "Assess water quantity, quality, and scarcity at the watershed and season where they occur.",
+    "Publish uncertainty and stop calling gross avoided resin water a net saving."
+  ],
+  "tiers": [
+    {
+      "tier": 1,
+      "name": "eliminate_or_reuse_now",
+      "eligibility": "Unnecessary, short-lived, leakage-prone uses with validated service alternatives",
+      "candidate_applications": ["default carry bags", "hotel toiletry minis", "avoidable secondary film", "dine-in disposables", "selected EPS foodware", "unnecessary single-portion packaging"],
+      "instruments": ["default opt-out", "fees", "targeted restrictions", "reusable procurement", "standardized return systems", "public refill infrastructure"],
+      "water_measurement": "Meter replacement-system production and washing; count product loss and sanitation."
+    },
+    {
+      "tier": 2,
+      "name": "scale_reuse_and_high_capture",
+      "eligibility": "Standardizable products with frequent turns and recoverable logistics",
+      "candidate_applications": ["beverage containers", "takeaway containers", "transport packaging", "e-commerce totes", "commercial refill products"],
+      "instruments": ["deposit return", "pool interoperability", "minimum return-rate gates", "wash-center standards", "producer responsibility", "verified recycled content"],
+      "water_measurement": "Report liters per completed service and break-even reuse count, not liters per container."
+    },
+    {
+      "tier": 3,
+      "name": "hazard_and_exposure_substitution",
+      "eligibility": "Credible chemical or particle exposure with safer functionally validated alternatives",
+      "candidate_applications": ["certain PFAS-treated or fluorinated packaging", "priority phthalate uses", "high-exposure styrene or isocyanate processes", "uncontrolled PVC combustion", "shedding-prone products"],
+      "instruments": ["essential-use review", "emission limits", "safer-chemistry procurement", "worker controls", "formulation disclosure", "microfiber and pellet-loss controls"],
+      "water_measurement": "Include replacement chemical synthesis and wastewater toxicity, not volume alone."
+    },
+    {
+      "tier": 4,
+      "name": "application_specific_transition",
+      "eligibility": "Long-lived infrastructure, medical, electrical, insulation, and food-preservation uses",
+      "candidate_applications": ["pipe", "wire and cable", "insulation", "sterile devices", "protective packaging", "high-barrier food packaging"],
+      "instruments": ["performance standards", "pilot substitution", "take-back", "design for disassembly", "hazardous-additive phaseout", "contingency supply"],
+      "water_measurement": "Use lifetime service, leakage or energy performance, failure risk, and replacement interval."
+    }
+  ],
+  "modeled_global_policy_context_not_us_forecast": {
+    "unep_pollution_reduction_by_2040_percent": 80,
+    "contributions_percentage_points": {"reuse": 30, "recycle": 20, "reorient_and_diversify": 17},
+    "note": "The remaining modeled reduction includes elimination of problematic and unnecessary uses and system changes. Values are a global UNEP roadmap, not additive U.S. statutory targets.",
+    "source": {"source_id": "UNEP-TAP-2023"}
+  },
+  "water_accounting_protocol": {
+    "baseline": "Current product-service system with virgin/recycled resin shares, loss, transport, and end of life",
+    "counterfactual": "Specified prevention, reuse, recycling, or substitute system",
+    "functional_unit_examples": ["1,000 liters of beverage delivered and consumed", "1,000 sanitary meals served", "one square meter of insulation meeting thermal and fire requirements for 50 years", "1,000 sterile procedures completed safely"],
+    "required_terms": ["avoided virgin resin water", "replacement material water", "conversion water", "washing and sanitation water", "reverse logistics", "added loss of protected product", "end-of-life credits", "watershed scarcity", "water-quality burden"],
+    "reporting": ["gross avoided resin water", "replacement-system water", "net modeled difference", "range and sensitivity", "geography and year", "data-quality grade"],
+    "national_estimate_gate": "Do not publish a national net water-saving total until at least the dominant replacement systems have harmonized functional-unit inventories and geographically resolved adoption volumes."
+  },
+  "minimum_dashboard_kpis": [
+    "virgin resin avoided by resin and application",
+    "completed reuse turns and return rate",
+    "liters consumed per completed service",
+    "gross avoided cradle-to-resin water with range",
+    "modeled net water by watershed and scarcity class",
+    "priority chemical releases and worker exposure",
+    "litter and leakage rate",
+    "verified final recycling rate",
+    "product or food loss",
+    "cost and household distributional impact"
+  ],
+  "stop_conditions": ["higher infection or safety failure", "materially higher protected-product loss", "uncontrolled hazardous substitute", "no end-of-life route for a claimed compostable", "water burden shifted into a highly stressed basin", "return rate below modeled reuse break-even"]
+}

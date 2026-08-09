@@ -1,0 +1,121 @@
+{
+  "assessment_id": "en-roads-reproduction-assessment-v1",
+  "as_of": "2026-08-01",
+  "decision": "build_an_attributed_clean_room_architecture_compatible_model_not_a_code_copy",
+  "current_status": "architecture_specified_not_numerically_calibrated",
+  "rationale": [
+    "The public technical reference supplies a detailed system-dynamics architecture, equations by sector, source bibliography, and calibration discussion under CC BY 4.0.",
+    "Climate Interactive separately offers a licensed SDK for software integration.",
+    "The reviewed sources do not establish that the full production Vensim model and its complete calibrated parameter set can be copied into this repository under the documentation license.",
+    "A clean-room implementation can be transparent, modular, independently testable, and extended to U.S. transmission, health, and water without implying affiliation or numerical identity."
+  ],
+  "evidence": [
+    {"source_id": "SRC-ENR-DOC-LICENSE", "finding": "Documentation materials are CC BY 4.0."},
+    {"source_id": "SRC-CI-SDK-LICENSE", "finding": "Software integrations are offered through a licensed SDK."},
+    {"source_id": "SRC-ENR-STRUCTURE", "finding": "Public architecture specifies ODE stock-flow structure, Euler integration, timestep, horizon, aggregation, and module organization."},
+    {"source_id": "SRC-ENR-SUPPLY", "finding": "Public supply chapter specifies pathways, capacity pipeline, cost drivers, resources, storage, and investment-choice behavior."},
+    {"source_id": "SRC-ENR-DEMAND", "finding": "Public demand chapter specifies end uses, carrier choice, and capital-stock framing."},
+    {"source_id": "SRC-ENR-CALIBRATION", "finding": "Public calibration chapter identifies calibration datasets and model-comparison families."}
+  ],
+  "prohibited_representations": [
+    "Do not call the clean-room implementation En-ROADS.",
+    "Do not state or imply that Climate Interactive, MIT, or Ventana validated this implementation.",
+    "Do not claim numerical equivalence until a documented validation suite demonstrates it, and even then describe only tested outputs and tolerances.",
+    "Do not label scenarios as predictions or forecasts.",
+    "Do not copy SDK or simulator code without an applicable license."
+  ],
+  "attribution_template": "This model is inspired by and adapts concepts from the En-ROADS Technical Reference by Climate Interactive (CC BY 4.0). It is an independent implementation and is not the En-ROADS simulator.",
+  "implementation_contract": {
+    "runtime": "TypeScript module usable from Astro pages and Web Workers",
+    "numerics": {
+      "integrator": "forward_euler",
+      "default_dt_years": 0.125,
+      "start_year": 1990,
+      "end_year": 2100,
+      "annual_output_sampling": true,
+      "requirements": ["deterministic", "unit-tested", "dimensionally checked", "versioned parameter sets", "no hidden mutable global state"]
+    },
+    "model_definition_schema": {
+      "stock": ["id", "unit", "initial_value", "inflow_ids", "outflow_ids", "source_ids"],
+      "flow": ["id", "unit_per_year", "expression", "dependencies", "source_ids"],
+      "auxiliary": ["id", "unit", "expression", "dependencies", "source_ids"],
+      "parameter": ["id", "value", "unit", "geography", "period", "status", "source_ids", "claim_ids", "uncertainty"],
+      "scenario_input": ["id", "allowed_range", "default", "unit", "policy_meaning"],
+      "output": ["id", "unit", "sampling", "interpretation", "source_or_derivation"]
+    },
+    "required_subsystems_for_energy_v1": [
+      "population_and_GDP",
+      "energy_service_demand",
+      "end_use_capital_stocks",
+      "carrier_choice",
+      "fuel_supply_capacity",
+      "electric_generation_capacity",
+      "hydrogen_supply_capacity",
+      "construction_and_retirement_delays",
+      "learning_curves",
+      "resource_depletion_and_saturation",
+      "electricity_market_clearing",
+      "transmission_delivery_losses_and_constraints",
+      "storage_duration_and_round_trip_losses",
+      "energy_CO2_CH4_N2O_emissions",
+      "minimal_carbon_cycle_and_temperature_response"
+    ],
+    "later_extension_subsystems": ["land_use_and_agriculture", "carbon_dioxide_removal", "full_GHG_cycles", "ocean_systems", "climate_impacts", "PM2.5_health", "water_withdrawal_and_consumption"]
+  },
+  "phases": [
+    {
+      "phase": 0,
+      "name": "Evidence freeze",
+      "deliverables": ["versioned source registry", "claim ledger", "technology ontology", "unit registry", "parameter provenance schema"],
+      "exit_tests": ["all JSON validates", "all load-bearing claims have corroboration", "no unresolved value is silently selected"]
+    },
+    {
+      "phase": 1,
+      "name": "Numerical kernel",
+      "deliverables": ["Euler solver", "dependency graph", "dimensional checks", "annual sampler", "scenario serialization"],
+      "exit_tests": ["analytic one-stock tests", "mass-balance tests", "timestep convergence smoke tests", "deterministic replay"]
+    },
+    {
+      "phase": 2,
+      "name": "Observed energy baseline",
+      "deliverables": ["1990-2025 global calibration dataset", "2025 U.S. detailed baseline adapter", "generation/capacity/primary-energy crosswalk"],
+      "exit_tests": ["matches cited historical totals within declared tolerance", "no capacity-generation conflation", "all residual categories explained"]
+    },
+    {
+      "phase": 3,
+      "name": "Supply-demand dynamics",
+      "deliverables": ["capital turnover", "capacity pipeline", "cost/learning", "resource constraints", "carrier and technology choice", "market clearing"],
+      "exit_tests": ["stock-flow conservation", "extreme-condition tests", "monotonicity tests where theory requires", "sensitivity report"]
+    },
+    {
+      "phase": 4,
+      "name": "Transmission and storage",
+      "deliverables": ["connection queue state", "build-rate delay", "delivery loss", "reserve margin", "hourly/daily/seasonal storage cost approximations"],
+      "exit_tests": ["charging losses conserved", "queued capacity never treated as operating", "transmission scenarios labeled"]
+    },
+    {
+      "phase": 5,
+      "name": "Climate coupling",
+      "deliverables": ["emissions", "carbon cycle", "radiative forcing", "temperature", "uncertainty ensembles"],
+      "exit_tests": ["emissions mass balance", "benchmark against published simple-climate-model tests", "scenario comparisons with En-ROADS and established IAM ranges without overfitting"]
+    },
+    {
+      "phase": 6,
+      "name": "Dashboard integration",
+      "deliverables": ["Web Worker API", "scenario URLs", "provenance drawer", "source/confidence badges", "downloadable scenario JSON"],
+      "exit_tests": ["responsive run time", "reproducible scenario hash", "accessible chart alternatives", "every chart value traces to evidence or derivation"]
+    }
+  ],
+  "validation_matrix": [
+    {"test_family": "identity", "question": "Does each cited source exist at the recorded canonical URL and match the named publisher/title?"},
+    {"test_family": "claim_fidelity", "question": "Does the cited locator support the claim with the same scope, unit, geography, period, and status?"},
+    {"test_family": "dimensional", "question": "Are expressions dimensionally consistent?"},
+    {"test_family": "conservation", "question": "Do stocks conserve energy, carbon, capacity, and material where applicable?"},
+    {"test_family": "historical", "question": "Does the model reproduce selected historical series within declared tolerances?"},
+    {"test_family": "extreme_conditions", "question": "Does the model remain stable and plausible at slider limits and zero/large inputs?"},
+    {"test_family": "sensitivity", "question": "Are output sensitivities traceable to documented causal pathways?"},
+    {"test_family": "cross_model", "question": "Do results sit within explained ranges from En-ROADS, NEMS/AEO, IEA, NGFS, and IPCC model families?"},
+    {"test_family": "provenance", "question": "Can every displayed number be traced to a source observation or a versioned formula?"}
+  ],
+  "next_implementation_artifact": "A small TypeScript system-dynamics kernel and schema should be built only after the parameter/unit registry and 1990-2025 calibration series are ingested."
+}

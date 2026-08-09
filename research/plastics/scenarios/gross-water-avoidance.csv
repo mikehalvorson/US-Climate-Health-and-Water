@@ -1,0 +1,10 @@
+scenario_id,material_id,mass_avoided_kg,intensity_low_l_per_kg,intensity_central_l_per_kg,intensity_high_l_per_kg,gross_low_liters,gross_central_liters,gross_high_liters,gross_low_us_gallons,gross_central_us_gallons,gross_high_us_gallons,source_id,status
+per_million_kg_pet,PET,1000000,3.3,23.5,44.4,3300000,23500000,44400000,871767.773,6208043.230,11729239.125,RCR-RESIN-WATER-SI-2023,illustrative_gross_not_net
+per_million_kg_hdpe,HDPE,1000000,5.9,12.8,24.1,5900000,12800000,24100000,1558615.109,3381402.270,6366546.462,RCR-RESIN-WATER-SI-2023,illustrative_gross_not_net
+per_million_kg_pp,PP,1000000,5.2,11.7,20.5,5200000,11700000,20500000,1373694.672,3090813.013,5415527.073,RCR-RESIN-WATER-SI-2023,illustrative_gross_not_net
+per_million_kg_eps,EPS,1000000,11.93,11.93,11.93,11930000,11930000,11930000,3151572.585,3151572.585,3151572.585,PE-EPS-2015,european_inventory_gross_not_net
+per_million_kg_s_pvc,S_PVC,1000000,47.97,47.97,47.97,47970000,47970000,47970000,12672333.352,12672333.352,12672333.352,ECVM-PVC-2026,european_inventory_gross_not_net
+per_million_kg_long_chain_polyol,LONG_CHAIN_POLYOL,1000000,19.28,19.28,19.28,19280000,19280000,19280000,5093237.169,5093237.169,5093237.169,ISOPA-POLYOLS-2021,precursor_only_gross_not_net
+per_million_kg_short_chain_polyol,SHORT_CHAIN_POLYOL,1000000,33.94,33.94,33.94,33940000,33940000,33940000,8965999.457,8965999.457,8965999.457,ISOPA-POLYOLS-2021,precursor_only_gross_not_net
+ten_percent_2019_pp_consumption,PP,860000000,5.2,11.7,20.5,4472000000,10062000000,17630000000,1181377418.146,2658099190.828,4657353283.074,RCR-RESIN-WATER-SI-2023,illustrative_gross_not_net
+ten_percent_2019_hdpe_consumption,HDPE,790000000,5.9,12.8,24.1,4661000000,10112000000,19039000000,1231305936.041,2671307793.446,5029571704.847,RCR-RESIN-WATER-SI-2023,illustrative_gross_not_net

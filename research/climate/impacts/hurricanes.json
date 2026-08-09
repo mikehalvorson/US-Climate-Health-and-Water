@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "preferred_term": "tropical_cyclones",
+  "headline": "Warming makes the strongest tropical cyclones and their rainfall more hazardous, but the evidence does not support saying that global tropical-cyclone counts must increase.",
+  "observed_assessment": {
+    "category_3_to_5_global_proportion": {"direction": "increase", "confidence": "likely", "period": "past_four_decades"},
+    "all_category_global_frequency_long_term_trend": {"direction": null, "confidence": "low", "reason": "observational inhomogeneity and natural variability"},
+    "human_influence_on_heavy_precipitation_associated_with_tropical_cyclones": {"direction": "increase", "confidence": "high"}
+  },
+  "projected_response_at_2c_anthropogenic_warming": [
+    {"metric": "near_storm_precipitation_rate", "median_percent_change": 14, "assessed_range_percent": [6, 22]},
+    {"metric": "lifetime_maximum_surface_wind_speed", "median_percent_change": 5, "assessed_range_percent": [1, 10]},
+    {"metric": "category_4_to_5_storm_proportion", "median_percent_change": 13, "note": "positive median response; individual studies span a wider range"}
+  ],
+  "additional_hazard": "Sea-level rise increases coastal inundation reached by a given storm surge even without a change in storm meteorology.",
+  "not_supported": [
+    "A universal hurricanes-per-degree coefficient.",
+    "A claim that the total number of tropical cyclones globally will increase.",
+    "Attributing any individual storm to climate change without a dedicated event-attribution study.",
+    "Using storm damage trends as a pure physical climate metric without normalizing for exposure, wealth, construction, and protection."
+  ],
+  "sources": [
+    {"source_id": "IPCC-AR6-WGI-SPM", "locator": "A.3.4 and C.2.6"},
+    {"source_id": "IPCC-AR6-WGI-CH11", "locator": "Executive Summary and 11.7.1"},
+    {"source_id": "KNUTSON-ET-AL-2020", "locator": "abstract, Tables 1-3, and synthesis results"},
+    {"source_id": "NOAA-GFDL-HURRICANES", "locator": "Global Projections and Summary Statement"}
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "as_of": "2026-08-01",
+  "core_findings": [
+    "Human causation of contemporary global warming is unequivocal; the causal evidence is physical and attribution-based, not a simple time-series correlation.",
+    "Cumulative CO2 is the cleanest emissions-to-temperature dashboard relationship: best estimate 0.45 C per 1,000 GtCO2, likely 0.27-0.63 C.",
+    "Every additional increment of warming raises hazards; extreme heat shows one of the clearest and strongest temperature-conditioned responses.",
+    "Tropical cyclones are expected to become wetter and more intense on average, while total global frequency decreases or remains approximately unchanged.",
+    "Biodiversity risk rises steeply with warming, but climate operates alongside land/sea-use change, exploitation, pollution, and invasive species.",
+    "Food impacts are crop- and context-specific; climate has slowed productivity growth, but crop yield is not identical to food security.",
+    "Freshwater risk is about availability, timing, reliability, quality, and extremes—not disappearance of a fixed global freshwater stock.",
+    "Sea-level rise is observed, accelerating, human-driven, and committed for centuries to millennia; global values require localization before community use.",
+    "Climate-related displacement is real and increasing in importance, but no defensible global climate-refugees-per-degree coefficient exists."
+  ],
+  "highest_confidence_dashboard_relationships": [
+    "cumulative_co2_to_global_temperature",
+    "warming_level_to_extreme_heat_frequency_and_intensity",
+    "warming_scenario_to_global_mean_sea_level",
+    "warming_level_to_biodiversity_risk"
+  ],
+  "relationships_requiring_multivariate_context": [
+    "tropical_cyclone_damage",
+    "food_security",
+    "water_scarcity",
+    "migration_and_displacement"
+  ],
+  "unsupported_headline_metrics": [
+    "global_hurricane_count_per_degree",
+    "global_food_loss_per_degree",
+    "global_freshwater_stock_loss_per_degree",
+    "global_climate_refugees_per_degree"
+  ]
+}

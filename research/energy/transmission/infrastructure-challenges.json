@@ -1,0 +1,121 @@
+{
+  "title": "Transmission infrastructure challenges: technical, health, regulatory, and sustainability context",
+  "as_of": "2026-08-01",
+  "records": [
+    {
+      "challenge_id": "TR-TECH-001",
+      "perspective": "technical",
+      "challenge": "A line's voltage and nameplate rating do not determine usable transfer capability.",
+      "mechanisms": ["N-1 contingency limits", "transient and small-signal stability", "voltage stability and reactive power", "thermal limits", "substation and transformer ratings", "protection settings", "parallel-path flows", "outages and topology"],
+      "dashboard_evidence": ["Ten West: 3,200 MW conductor capability versus 2,400 MW series-compensation equipment limit", "Phase II: 2,000 MW energy-import study capability versus 1,400 MW capacity-import capability", "NECEC: 1,200 MW energy-import capability versus zero modeled capacity-import capability"],
+      "source_ids": ["SRC-CAISO-TENWEST24", "SRC-ISONE-TRANSFER26"],
+      "dashboard_treatment": "Show typed capacity markers, never one unlabeled MW bar."
+    },
+    {
+      "challenge_id": "TR-TECH-002",
+      "perspective": "technical",
+      "challenge": "Demand and renewable output are time- and geography-dependent.",
+      "mechanisms": ["noncoincident regional peaks", "weather-correlated demand", "solar sunset ramps", "wind droughts", "hydrologic variation", "generator and line outages", "electrified winter heating"],
+      "evidence": "The normalized 2024 EIA-930 reporting footprint peaked at 745,020 MW on the UTC hour ending 2024-07-15 22:00, while several regional peaks occurred on different summer or winter dates.",
+      "source_ids": ["SRC-EIA-930"],
+      "dashboard_treatment": "Pair annual TWh charts with hourly profiles, peak calendars, coincident-demand maps, and ramp distributions."
+    },
+    {
+      "challenge_id": "TR-TECH-003",
+      "perspective": "technical",
+      "challenge": "High transfer during one extreme does not guarantee help during another.",
+      "mechanisms": ["neighboring regions may be stressed simultaneously", "source generation may be unavailable", "interfaces may derate or trip", "deliverability can be limited beyond the named corridor"],
+      "source_ids": ["SRC-NERC-ITCS"],
+      "dashboard_treatment": "Show stress case, source-region surplus, receiving-region deficit, and interface addition together."
+    },
+    {
+      "challenge_id": "TR-TECH-004",
+      "perspective": "technical",
+      "challenge": "Existing-grid upgrades can be faster but are not a universal substitute for new corridors.",
+      "mechanisms": ["dynamic ratings depend on weather and monitoring", "power-flow controls redirect rather than create generation", "reconductoring needs outages and structure checks", "downstream bottlenecks can remain"],
+      "source_ids": ["SRC-DOE-GETS", "SRC-FERC-ORDER881"],
+      "dashboard_treatment": "Display upgrade potential as site-specific range or project result, not a national percentage multiplier."
+    },
+    {
+      "challenge_id": "TR-REG-001",
+      "perspective": "regulatory",
+      "challenge": "Planning, cost allocation, siting, environmental review, land rights, and construction authorization are separate gates.",
+      "mechanisms": ["multi-state beneficiaries and cost allocation", "state CPCN and route approvals", "federal land or resource permits", "Tribal consultation", "landowner easements", "international permits", "rate recovery and financing"],
+      "source_ids": ["SRC-FERC-ORDER1920", "SRC-DOE-CITAP", "SRC-FERC-ORDER1977", "SRC-DOE-NEPA-TRANS25"],
+      "dashboard_treatment": "Use the process graph and project milestone timelines; never label a planning selection as approved or operating."
+    },
+    {
+      "challenge_id": "TR-REG-002",
+      "perspective": "regulatory",
+      "challenge": "Federal coordination targets do not equal total project duration.",
+      "evidence": "DOE describes transmission project development as potentially exceeding ten years, while the CITAP standard schedule targets roughly two years for coordinated federal review after defined entry steps.",
+      "source_ids": ["SRC-DOE-CITAP"],
+      "dashboard_treatment": "Show both clocks with distinct start and stop definitions."
+    },
+    {
+      "challenge_id": "TR-REG-003",
+      "perspective": "regulatory",
+      "challenge": "Long-term regional planning rules are still moving through region-specific compliance schedules.",
+      "evidence": "FERC's March 2026 schedule lists first and interregional Order No. 1920 compliance dates extending through 2027.",
+      "source_ids": ["SRC-FERC-1920-SCHEDULE26"],
+      "dashboard_treatment": "Status tracker by planning region: filed, deficiency response, accepted, implementation pending."
+    },
+    {
+      "challenge_id": "TR-HEALTH-001",
+      "perspective": "health_and_safety",
+      "challenge": "Construction and maintenance expose workers to severe electrical and physical hazards.",
+      "mechanisms": ["electrocution", "arc flash and burns", "falls", "heavy equipment", "helicopter and elevated work", "storms and wildfire conditions"],
+      "source_ids": ["SRC-CDC-ELECTRICAL-SAFETY24"],
+      "dashboard_treatment": "Track worker-safety requirements and incidents separately from community health claims."
+    },
+    {
+      "challenge_id": "TR-HEALTH-002",
+      "perspective": "health_and_safety",
+      "challenge": "Power-line EMF risk needs careful, non-alarmist communication.",
+      "evidence": "NCI describes power-frequency fields as non-ionizing and reports no consistent evidence linking non-ionizing EMF sources with cancer overall; it also preserves the limited epidemiologic evidence behind IARC's 'possibly carcinogenic' classification for extremely low-frequency magnetic fields and childhood leukemia at uncommon high exposures.",
+      "source_ids": ["SRC-NCI-EMF"],
+      "dashboard_treatment": "State the evidence and uncertainty together; do not claim that transmission lines have been shown to cause cancer."
+    },
+    {
+      "challenge_id": "TR-HEALTH-003",
+      "perspective": "health_and_safety",
+      "challenge": "Transmission can yield public-health benefits only through the generation and exposure changes it enables.",
+      "evidence": "DOE's enhanced-transmission scenario estimates $50 billion in avoided health damages through 2050, but this is a modeled consequence of system dispatch and emissions changes, not an intrinsic property of wire miles.",
+      "source_ids": ["SRC-DOE-TRANS-IMPACT"],
+      "dashboard_treatment": "Link health benefit to displaced pollutant emissions, exposed population, scenario, and uncertainty."
+    },
+    {
+      "challenge_id": "TR-SUST-001",
+      "perspective": "sustainability",
+      "challenge": "Routes can fragment habitat and create bird collision or electrocution risks.",
+      "mechanisms": ["collision", "electrocution", "habitat avoidance", "fragmentation", "predator access", "vegetation management"],
+      "source_ids": ["SRC-USFWS-POWERLINES", "SRC-USGS-POWERLINES", "SRC-DOE-NEPA-TRANS25"],
+      "dashboard_treatment": "Map sensitive habitat and mitigation status; distinguish transmission collision from distribution electrocution mechanisms."
+    },
+    {
+      "challenge_id": "TR-SUST-002",
+      "perspective": "sustainability",
+      "challenge": "Material and land impacts occur before operation and at end of life.",
+      "mechanisms": ["steel and aluminum production", "copper and electrical steel", "concrete foundations", "access roads", "right-of-way clearing", "transformer oil and switchgear gases", "component disposal and recycling"],
+      "source_ids": ["SRC-DOE-GRID-SC22"],
+      "dashboard_treatment": "Use lifecycle boundaries and material quantities when available; do not compare line impacts with generation emissions using inconsistent scopes."
+    },
+    {
+      "challenge_id": "TR-EQUITY-001",
+      "perspective": "community_and_equity",
+      "challenge": "Benefits, land burdens, and bill impacts may fall on different communities.",
+      "mechanisms": ["regional cost allocation", "local visual and land impacts", "Tribal cultural resources", "property and farming disruption", "community benefit agreements", "energy affordability"],
+      "source_ids": ["SRC-FERC-ORDER1920", "SRC-DOE-CITAP", "SRC-DOE-NEPA-TRANS25"],
+      "dashboard_treatment": "Show beneficiaries, payers, host communities, engagement milestones, and mitigations as separate fields."
+    },
+    {
+      "challenge_id": "TR-SEC-001",
+      "perspective": "security_and_resilience",
+      "challenge": "A more networked grid expands both resilience options and cyber/physical attack surfaces.",
+      "mechanisms": ["critical substation concentration", "digital control dependencies", "vendor and firmware provenance", "spares and recovery logistics", "geomagnetic disturbance", "wildfire and severe weather"],
+      "source_ids": ["SRC-DOE-DIGITAL-SC22", "SRC-DOE-LPT24"],
+      "dashboard_treatment": "Publish aggregate resilience indicators; do not expose sensitive asset-level vulnerability or CEII."
+    }
+  ],
+  "cross_cutting_message": "The central transmission tradeoff is not wires versus no wires. It is choosing among new corridors, upgrades, storage, generation, flexible demand, and operating changes while comparing reliability, cost, health, land, time, and supply-chain risk on consistent boundaries."
+}

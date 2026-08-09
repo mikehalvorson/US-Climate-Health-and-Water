@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "impact_pathways": [
+    {
+      "pathway": "fossil_and_mineral_feedstock_extraction",
+      "effects": ["greenhouse-gas emissions", "air pollutants", "water withdrawal and consumption", "land and habitat disturbance", "spill and waste risks"],
+      "evidence_scope": "Resin pathway dependent; fossil carbon dominates commodity plastics but bio-based and mineral-filled systems have different upstream burdens.",
+      "source_refs": [{"source_id": "ARGONNE-RESIN-PATHWAYS-2024"}, {"source_id": "LBNL-PRIMARY-PLASTICS-2024"}]
+    },
+    {
+      "pathway": "monomer_resin_and_product_manufacturing",
+      "effects": ["worker and fence-line chemical exposure", "combustion and process emissions", "wastewater", "energy and cooling demand", "pellet and powder loss"],
+      "evidence_scope": "Facility, process, and chemistry specific; a national resin total cannot substitute for facility monitoring.",
+      "source_refs": [{"source_id": "ARGONNE-RESIN-PATHWAYS-2024"}, {"source_id": "RCR-RESIN-WATER-2023"}]
+    },
+    {
+      "pathway": "use_phase_release",
+      "effects": ["microfibers", "tire and coating particles", "abrasion fragments", "additive and residual-chemical migration"],
+      "evidence_scope": "Release is established for many products; human dose-response and ecosystem effects vary and remain incompletely quantified.",
+      "source_refs": [{"source_id": "WHO-MNP-2022"}, {"source_id": "EPA-MNP-RESEARCH"}]
+    },
+    {
+      "pathway": "mismanaged_waste_and_leakage",
+      "effects": ["wildlife ingestion", "entanglement", "habitat alteration", "fragmentation into smaller particles", "transport of associated chemicals and organisms"],
+      "evidence_scope": "A National Academies assessment reports 914 species documented with ingestion or entanglement and estimates 1.13-2.24 MMT of U.S. plastic waste entered the environment in 2016.",
+      "source_refs": [{"source_id": "NASEM-OCEAN-2022"}]
+    },
+    {
+      "pathway": "landfill_combustion_and_recycling",
+      "effects": ["long-term material loss", "combustion emissions and ash", "PVC dioxin/furan risk under uncontrolled combustion", "recycling-worker exposure", "quality loss and residual waste"],
+      "evidence_scope": "Technology and controls matter; recycling is useful but cannot offset unlimited growth or unsuitable product design.",
+      "source_refs": [{"source_id": "EPA-PLASTICS-MSW-2018"}, {"source_id": "EPA-PVC-COMBUSTION"}, {"source_id": "UNEP-TAP-2023"}]
+    }
+  ],
+  "us_scale_indicators": {
+    "epa_2018_msw_million_us_short_tons": {"generated": 35.68, "recycled": 3.09, "combusted": 5.62, "landfilled": 26.97},
+    "national_academies_2016_environmental_leakage_mmt_range": [1.13, 2.24],
+    "national_academies_documented_species_with_ingestion_or_entanglement": 914,
+    "scope_warning": "EPA MSW, the National Academies leakage estimate, and the 2019 economy-wide material-flow analysis use different years and boundaries."
+  },
+  "high_confidence_replacement_reasons": [
+    "Avoidable short-lived products consume material and create persistent waste without an essential service.",
+    "Lightweight and mobile products are leakage-prone and can fragment after escape.",
+    "Some supply chains use hazardous monomers, additives, or processing aids that warrant exposure reduction.",
+    "Low U.S. recovery and large landfilling flows make prevention and reuse necessary complements to recycling.",
+    "Fossil resin production adds climate and resource burdens even when litter is controlled."
+  ],
+  "guardrails": [
+    "Do not equate environmental persistence with a quantified human disease risk.",
+    "Do not call every polymer or formulation equally hazardous.",
+    "Do not count collection as recycling without a verified final destination.",
+    "Do not assume a bio-based or biodegradable substitute disappears in seawater or home compost.",
+    "Do not omit food loss, building energy, infection control, or infrastructure lifetime from the functional unit."
+  ]
+}

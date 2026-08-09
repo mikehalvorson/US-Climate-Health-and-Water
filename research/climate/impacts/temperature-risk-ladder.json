@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0.0",
+  "temperature_reference": "global_surface_temperature_change_relative_to_1850_1900",
+  "purpose": "Cross-impact lookup for dashboard views. Values may be compared only when their metric definitions, regions, time horizons, and confidence statements match.",
+  "levels": [
+    {
+      "warming_c": 1.1,
+      "label": "approximately the 2011-2020 assessed level",
+      "metrics": {
+        "one_in_10_year_hot_extreme_frequency_multiplier": 2.8,
+        "one_in_10_year_hot_extreme_intensity_change_c": 1.2,
+        "one_in_50_year_hot_extreme_frequency_multiplier": 4.8,
+        "one_in_50_year_hot_extreme_intensity_change_c": 1.2,
+        "one_in_10_year_heavy_precipitation_frequency_multiplier": 1.3,
+        "one_in_10_year_heavy_precipitation_intensity_change_percent": 6.7,
+        "agricultural_ecological_drought_frequency_multiplier_in_drying_regions": 1.7,
+        "agricultural_ecological_drought_intensity_change_standard_deviations": 0.3
+      }
+    },
+    {
+      "warming_c": 1.5,
+      "metrics": {
+        "one_in_10_year_hot_extreme_frequency_multiplier": 4.1,
+        "one_in_10_year_hot_extreme_intensity_change_c": 1.9,
+        "one_in_50_year_hot_extreme_frequency_multiplier": 8.6,
+        "one_in_50_year_hot_extreme_intensity_change_c": 2.0,
+        "one_in_10_year_heavy_precipitation_frequency_multiplier": 1.5,
+        "one_in_10_year_heavy_precipitation_intensity_change_percent": 10.5,
+        "agricultural_ecological_drought_frequency_multiplier_in_drying_regions": 2.0,
+        "agricultural_ecological_drought_intensity_change_standard_deviations": 0.5,
+        "terrestrial_species_very_high_extinction_risk_percent_range": [3, 14],
+        "terrestrial_species_very_high_extinction_risk_percent_median": 9,
+        "warm_water_coral_reef_additional_decline_percent_range": [70, 90]
+      }
+    },
+    {
+      "warming_c": 2.0,
+      "metrics": {
+        "one_in_10_year_hot_extreme_frequency_multiplier": 5.6,
+        "one_in_10_year_hot_extreme_intensity_change_c": 2.6,
+        "one_in_50_year_hot_extreme_frequency_multiplier": 13.9,
+        "one_in_50_year_hot_extreme_intensity_change_c": 2.7,
+        "one_in_10_year_heavy_precipitation_frequency_multiplier": 1.7,
+        "one_in_10_year_heavy_precipitation_intensity_change_percent": 14.0,
+        "agricultural_ecological_drought_frequency_multiplier_in_drying_regions": 2.4,
+        "agricultural_ecological_drought_intensity_change_standard_deviations": 0.6,
+        "terrestrial_species_very_high_extinction_risk_percent_range": [3, 18],
+        "terrestrial_species_very_high_extinction_risk_percent_median": 10,
+        "warm_water_coral_reef_additional_decline_percent": ">99",
+        "physical_water_scarcity_population_exposed_billion": 3
+      }
+    },
+    {
+      "warming_c": 3.0,
+      "metrics": {
+        "terrestrial_species_very_high_extinction_risk_percent_range": [3, 29],
+        "terrestrial_species_very_high_extinction_risk_percent_median": 12
+      }
+    },
+    {
+      "warming_c": 4.0,
+      "metrics": {
+        "one_in_10_year_hot_extreme_frequency_multiplier": 9.4,
+        "one_in_10_year_hot_extreme_intensity_change_c": 5.1,
+        "one_in_50_year_hot_extreme_frequency_multiplier": 39.2,
+        "one_in_50_year_hot_extreme_intensity_change_c": 5.3,
+        "one_in_10_year_heavy_precipitation_frequency_multiplier": 2.7,
+        "one_in_10_year_heavy_precipitation_intensity_change_percent": 30.2,
+        "agricultural_ecological_drought_frequency_multiplier_in_drying_regions": 4.1,
+        "agricultural_ecological_drought_intensity_change_standard_deviations": 1.0,
+        "terrestrial_species_very_high_extinction_risk_percent_range": [3, 39],
+        "terrestrial_species_very_high_extinction_risk_percent_median": 13,
+        "physical_water_scarcity_population_exposed_billion": 4
+      }
+    },
+    {
+      "warming_c": 5.0,
+      "metrics": {
+        "terrestrial_species_very_high_extinction_risk_percent_range": [3, 48],
+        "terrestrial_species_very_high_extinction_risk_percent_median": 15
+      }
+    }
+  ],
+  "qualifications": [
+    "Extreme-event values compare future global-warming levels with an 1850-1900 climate and describe land-region events; drought values apply to drying regions.",
+    "Extinction-risk ranges synthesize multiple model and taxonomic studies and are not counts of species already extinct.",
+    "Water-scarcity population estimates have low confidence and combine climate, population, demand, and management assumptions.",
+    "Missing cells are deliberately null: this file does not interpolate across unrelated assessments."
+  ],
+  "sources": [
+    {"source_id": "IPCC-AR6-WGI-SPM", "locator": "Figure SPM.6"},
+    {"source_id": "IPCC-AR6-WGII-SPM", "locator": "B.4.1, Figure SPM.3"},
+    {"source_id": "IPCC-AR6-WGII-CH4", "locator": "Executive Summary and 4.4.3"}
+  ]
+}

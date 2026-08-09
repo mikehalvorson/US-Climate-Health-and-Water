@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0.0",
+  "global_rules": {
+    "source_affordance": "Every chart must expose source_id, title, publisher, URL, locator, access date, baseline, unit, confidence, and caveats.",
+    "uncertainty": "Render assessed ranges as bands or error bars; never hide them only in a tooltip.",
+    "nulls": "Render unavailable values as gaps; never replace null with zero or interpolate without a source-authorized method.",
+    "precision": "Do not display more precision than the source.",
+    "baseline": "Temperature and sea-level baselines must be visible adjacent to the axis or subtitle.",
+    "language": "Label observations, causal attribution, projections, scenarios, and correlations distinctly."
+  },
+  "charts": [
+    {
+      "chart_id": "climate-causal-chain",
+      "title": "How human emissions warm the climate",
+      "type": "causal_flow",
+      "data": "attribution/causal-chain.json",
+      "required_nodes": ["human_activity", "emissions", "atmospheric_concentration", "radiative_forcing", "energy_imbalance", "warming", "impacts"],
+      "annotation": "Natural drivers and internal variability affect individual years but do not explain the multi-decadal warming trend."
+    },
+    {
+      "chart_id": "ghg-temperature-observed",
+      "title": "Greenhouse gases, forcing, and temperature",
+      "type": "small_multiples_time_series",
+      "data": "timeseries/normalized/observed-ghg-temperature.csv",
+      "panels": ["co2_ppm", "forcing_total_long_lived_ghg_w_m2", "nasa_gistemp_anomaly_c_1951_1980", "noaa_globaltemp_anomaly_c_1971_2000"],
+      "constraints": ["Do not put unlike units on an unlabeled dual axis.", "Preserve each temperature series' native baseline or explicitly rebase both using a documented overlap method."],
+      "annotation": "Co-movement is descriptive; causal attribution comes from physics and formal forcing experiments."
+    },
+    {
+      "chart_id": "observed-correlation-diagnostics",
+      "title": "Why a high trend correlation is not the attribution test",
+      "type": "diagnostic_comparison",
+      "data": "timeseries/normalized/observed-correlation-statistics.json",
+      "show": ["levels_pearson", "levels_spearman", "first_differences_pearson", "rolling_10_year_means_pearson"],
+      "annotation": "Both concentration and temperature trend upward; first differences are dominated by short-term variability and measurement timing."
+    },
+    {
+      "chart_id": "attribution-waterfall",
+      "title": "What caused observed warming",
+      "type": "range_waterfall",
+      "data": "attribution/ghg-temperature-relationship.json",
+      "required_series": ["observed", "total_human_caused", "well_mixed_greenhouse_gases", "other_human_drivers", "natural_drivers", "internal_variability"],
+      "constraints": ["Other human drivers must be drawn as cooling, not missing warming.", "Retain likelihood ranges."],
+      "source": {"source_id": "IPCC-AR6-WGI-SPM", "locator": "Figure SPM.2"}
+    },
+    {
+      "chart_id": "cumulative-co2-tcre",
+      "title": "Cumulative carbon dioxide commits warming",
+      "type": "time_series_with_response_scale",
+      "data": "timeseries/normalized/global-co2-emissions-and-cumulative-1850-2024.csv",
+      "response": {"best_c_per_1000_gtco2": 0.45, "likely_range_c_per_1000_gtco2": [0.27, 0.63]},
+      "constraints": ["The observed cumulative series is context; do not claim it exactly reproduces the IPCC attribution estimate.", "Do not apply TCRE to CO2e or annual emissions."]
+    },
+    {
+      "chart_id": "future-warming-scenarios",
+      "title": "Assessed warming under five emissions pathways",
+      "type": "period_range",
+      "data": "timeseries/scenario-warming.csv",
+      "x": "period",
+      "y": "best_estimate_c_above_1850_1900",
+      "range": ["very_likely_low_c", "very_likely_high_c"],
+      "constraints": ["Show 20-year assessment periods, not invented annual points.", "Do not label scenarios as forecasts or probabilities."]
+    },
+    {
+      "chart_id": "temperature-risk-ladder",
+      "title": "Risks compound with every increment of warming",
+      "type": "aligned_small_multiples",
+      "data": "timeseries/impact-dose-response.csv",
+      "facet": "impact",
+      "x": "warming_c",
+      "y": "metric_specific",
+      "constraints": ["Separate units into panels.", "Do not connect missing warming levels.", "Display confidence and geography."]
+    },
+    {
+      "chart_id": "tropical-cyclone-evidence",
+      "title": "Tropical-cyclone risk: intensity and rainfall, not a simple count",
+      "type": "evidence_matrix",
+      "data": "impacts/hurricanes.json",
+      "columns": ["observed_assessment", "projected_response_at_2c_anthropogenic_warming", "confidence", "guardrail"],
+      "annotation": "Rising sea level independently raises coastal inundation."
+    },
+    {
+      "chart_id": "biodiversity-risk-by-warming",
+      "title": "Species at very high extinction risk",
+      "type": "range_and_median",
+      "data": "impacts/biodiversity.json",
+      "x": "warming_c",
+      "y_range": "percent_range",
+      "y_point": "median_percent",
+      "constraints": ["Label as modeled risk, not observed extinction.", "Pair with the five IPBES direct drivers."]
+    },
+    {
+      "chart_id": "crop-yield-sensitivities",
+      "title": "Major-crop yield sensitivity to warming",
+      "type": "grouped_dot_plot",
+      "data": "impacts/food-systems.json",
+      "groups": ["ipcc_no_adaptation_median_percent_per_decade_with_co2_fertilization", "multi_method_isolated_effect_percent_per_1c"],
+      "constraints": ["Never place the two groups on one numeric scale without distinct units.", "Expose CO2-fertilization and adaptation assumptions.", "Do not relabel yield as food security."]
+    },
+    {
+      "chart_id": "freshwater-risk",
+      "title": "Freshwater risk changes by place, season, and demand",
+      "type": "metric_cards_and_map",
+      "data": "impacts/freshwater.json",
+      "constraints": ["Map only with spatial source data; current global values are not mappable.", "Keep low-confidence labels adjacent to 3-billion and 4-billion estimates.", "Do not use global freshwater loss as a numeric metric."]
+    },
+    {
+      "chart_id": "sea-level-past-future",
+      "title": "Sea level: observed acceleration and future commitment",
+      "type": "observed_plus_scenario_ranges",
+      "data": "impacts/sea-level.json",
+      "constraints": ["Visually break historical and projection periods.", "State the 1995-2014 projection baseline.", "Do not show global mean as a local forecast."],
+      "future_localization_dependency": "regional relative sea-level projections with vertical land motion"
+    },
+    {
+      "chart_id": "climate-mobility-evidence",
+      "title": "Displacement observations and internal-migration scenarios",
+      "type": "separated_observed_and_scenario_panels",
+      "data": "impacts/displacement.json",
+      "constraints": ["Never sum observed displacement flows with modeled migration stocks.", "Label Groundswell as internal and scenario-based.", "Do not use climate refugee as a chart category."]
+    }
+  ]
+}

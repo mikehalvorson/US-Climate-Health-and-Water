@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "causal_question": "Have human greenhouse-gas emissions caused the observed industrial-era global warming?",
+  "assessment_answer": "yes_unequivocal",
+  "chain": [
+    {
+      "order": 1,
+      "node": "human_activities_emit_greenhouse_gases",
+      "evidence": "emissions inventories, fuel and industry statistics, land-use estimates",
+      "sources": ["GCB-2025-DATA", "PRIMAP-HIST-V27", "IPCC-AR6-SYR-SPM"]
+    },
+    {
+      "order": 2,
+      "node": "atmospheric_abundances_increase",
+      "evidence": "direct atmospheric measurements and historical ice-air records",
+      "sources": ["NOAA-CO2-GLOBAL", "NOAA-AGGI-2025"]
+    },
+    {
+      "order": 3,
+      "node": "infrared_absorption_increases_effective_radiative_forcing",
+      "evidence": "spectroscopy, radiative-transfer calculations, observed gas abundance",
+      "sources": ["NOAA-AGGI-2025", "IPCC-AR6-WGI-SPM"]
+    },
+    {
+      "order": 4,
+      "node": "earth_energy_imbalance_accumulates_heat",
+      "evidence": "ocean heat, land warming, ice loss, atmospheric warming",
+      "sources": ["IPCC-AR6-WGI-SPM", "WMO-STATE-CLIMATE-2025"]
+    },
+    {
+      "order": 5,
+      "node": "global_surface_temperature_rises",
+      "evidence": "multiple independently produced observational temperature datasets",
+      "sources": ["NASA-GISTEMP-V4", "NOAA-GLOBALTEMP-V61", "WMO-STATE-CLIMATE-2025"]
+    },
+    {
+      "order": 6,
+      "node": "fingerprints_and_models_separate_human_from_natural_drivers",
+      "evidence": "observed warming is reproduced by simulations with human and natural forcing, not natural forcing alone",
+      "sources": ["IPCC-AR6-WGI-FAQ31", "IPCC-AR6-WGI-SPM", "IPCC-AR6-SYR-SPM"]
+    }
+  ],
+  "counterfactual_attribution": {
+    "period": "2010-2019 relative to 1850-1900",
+    "observed_warming_c": {"best_estimate": 1.06, "likely_low": 0.88, "likely_high": 1.21},
+    "total_human_caused_warming_c": {"best_estimate": 1.07, "likely_low": 0.8, "likely_high": 1.3},
+    "well_mixed_ghg_warming_c": {"likely_low": 1.0, "likely_high": 2.0},
+    "other_human_drivers_principally_aerosols_cooling_c": {"likely_low": 0.0, "likely_high": 0.8},
+    "natural_drivers_change_c": {"likely_low": -0.1, "likely_high": 0.1},
+    "internal_variability_change_c": {"likely_low": -0.2, "likely_high": 0.2},
+    "source": "IPCC-AR6-SYR-SPM",
+    "locator": "A.1.2"
+  },
+  "dashboard_conclusion": "Greenhouse gases caused more warming than the net observed amount; cooling from aerosols offset part of that warming. Natural drivers and internal variability cannot explain the industrial-era global trend.",
+  "invalid_inferences": [
+    "A high raw time-series correlation alone proves attribution.",
+    "Every warm or cool year must track annual emissions.",
+    "CO2 is the only climate driver.",
+    "All greenhouse gases can be physically collapsed into annual CO2-equivalent emissions without specifying the metric and time horizon."
+  ]
+}
+

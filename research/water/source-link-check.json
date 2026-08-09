@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "checked_at": "2026-08-02",
+  "method": {
+    "automated": "Concurrent HTTPS GET with browser user-agent and a small byte range against every sources.json URL.",
+    "content": "Retained facts were checked during research against the named official page, report table/section, abstract, or DOI record. Headline interpretations additionally have three-part audits in source-verification.json.",
+    "interpretation": "HTTP 403, a local certificate-chain failure, or environment DNS failure is an automation exception and not evidence that a source is nonexistent. HTTP 404 is treated as broken and corrected or removed."
+  },
+  "results": {
+    "source_count": 63,
+    "automated_http_200_or_206_initial": 52,
+    "broken_http_404_initial": 1,
+    "broken_link_corrected_and_rechecked_http_200": 1,
+    "automated_http_200_or_206_final": 53,
+    "automation_exceptions_final": 10,
+    "known_http_404_remaining": 0
+  },
+  "corrected": [
+    {
+      "source_id": "ELPASO-DESAL",
+      "old_url_result": "HTTP 404 for a retired fact-sheet path",
+      "new_url": "https://www.epwater.org/our-water/water-resources/desalination",
+      "new_url_result": "HTTP 200",
+      "content_adjustment": "The live official page supports up to 27.5 Mgal/d and deep-well concentrate disposal. An 83 percent recovery value from the retired fact sheet was removed because it was not present on the replacement page."
+    }
+  ],
+  "automation_exceptions": [
+    {
+      "category": "server_denied_automated_request_http_403",
+      "source_ids": ["CENSUS-NAICS-325211", "CENSUS-NAICS-326", "RCR-PLASTICS-LCA-2023", "USGS-PHOENIX-AMA-2026", "TUCSON-WATER-SOURCES", "SDCWA-SOURCES", "SDCWA-CARLSBAD"],
+      "count": 7,
+      "resolution": "Existence and retained content were checked through direct browser/official or DOI records; keep a browser-based link checker for production QA."
+    },
+    {
+      "category": "local_tls_certificate_chain_failure",
+      "source_ids": ["NM-50Y-WATER", "DALLAS-WATER-SOURCES"],
+      "count": 2,
+      "resolution": "Official pages and content were checked directly; failure is specific to the automated runtime certificate chain."
+    },
+    {
+      "category": "runtime_dns_failure",
+      "source_ids": ["NCA5-WATER"],
+      "count": 1,
+      "resolution": "Official USGCRP report and DOI identity were checked directly; retry from production network and retain a local report hash when raw acquisition is added."
+    }
+  ]
+}

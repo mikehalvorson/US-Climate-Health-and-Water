@@ -1,0 +1,167 @@
+{
+  "coverage_id": "electricity-consumption-timeseries-v1",
+  "generated_at": "2026-08-01",
+  "files": [
+    {
+      "file": "normalized/us-electricity-consumption-history.csv",
+      "rows": 507,
+      "year_min": 1949,
+      "year_max": 2025,
+      "sha256": "e073aa5efcd25508f3e1558f5e78037dbd38efa0a6c0582b9e81b850a9d00954",
+      "datasets": [
+        "DS-EIA-MER-7.6"
+      ],
+      "geographies": [
+        "United States"
+      ],
+      "models": [],
+      "scenarios": 0
+    },
+    {
+      "file": "normalized/global-electricity-demand-history-ember-owid.csv",
+      "rows": 26,
+      "year_min": 2000,
+      "year_max": 2025,
+      "sha256": "b1fd94c88425c1d31a75d0fffbb4985f7ca40f68adbefd3314831bdbbaa54c11",
+      "datasets": [
+        "DS-OWID-ENERGY"
+      ],
+      "geographies": [
+        "World"
+      ],
+      "models": [],
+      "scenarios": 0
+    },
+    {
+      "file": "normalized/us-electricity-supply-demand-aeo2026.csv",
+      "rows": 3146,
+      "year_min": 2025,
+      "year_max": 2050,
+      "sha256": "550bbb648618a6d53432ff30d297fd9ac00b785fd1b7d64683e5b4ae3763483d",
+      "datasets": [
+        "DS-EIA-AEO2026"
+      ],
+      "geographies": [
+        "United States"
+      ],
+      "models": [
+        "NEMS"
+      ],
+      "scenarios": 11
+    },
+    {
+      "file": "normalized/us-electricity-end-use-aeo2026.csv",
+      "rows": 10296,
+      "year_min": 2025,
+      "year_max": 2050,
+      "sha256": "181514d4f012a8334974727b8186cf67a4f5dc0a876183ae632ae32f8181cafd",
+      "datasets": [
+        "DS-EIA-AEO2026"
+      ],
+      "geographies": [
+        "United States"
+      ],
+      "models": [
+        "NEMS"
+      ],
+      "scenarios": 11
+    },
+    {
+      "file": "normalized/us-demand-drivers-aeo2026.csv",
+      "rows": 2860,
+      "year_min": 2025,
+      "year_max": 2050,
+      "sha256": "6e1ecf29ddf13a51c06b1c8b8e301a86b2c3b0ae6c4850b3602b18607241d00c",
+      "datasets": [
+        "DS-EIA-AEO2026"
+      ],
+      "geographies": [
+        "United States"
+      ],
+      "models": [
+        "NEMS"
+      ],
+      "scenarios": 11
+    },
+    {
+      "file": "normalized/global-electricity-consumption-ngfs-phase5.1.csv",
+      "rows": 3193,
+      "year_min": 2020,
+      "year_max": 2100,
+      "sha256": "bd515fe0611f78d3a4a849addefdd86b726ec92e84010976717e98b035b5bd51",
+      "datasets": [
+        "DS-NGFS-PHASE5.1"
+      ],
+      "geographies": [
+        "World"
+      ],
+      "models": [
+        "GCAM 6.0 NGFS",
+        "MESSAGEix-GLOBIOM 2.0-M-R12-NGFS",
+        "REMIND-MAgPIE 3.3-4.8"
+      ],
+      "scenarios": 21
+    },
+    {
+      "file": "normalized/global-electricity-supply-demand-ngfs-phase5.1.csv",
+      "rows": 903,
+      "year_min": 2020,
+      "year_max": 2100,
+      "sha256": "6cc59b59d399c08299690450b11163ee307ac42ca15edb1361f2df697cd7f5dc",
+      "datasets": [
+        "DS-NGFS-PHASE5.1"
+      ],
+      "geographies": [
+        "World"
+      ],
+      "models": [
+        "GCAM 6.0 NGFS",
+        "MESSAGEix-GLOBIOM 2.0-M-R12-NGFS",
+        "REMIND-MAgPIE 3.3-4.8"
+      ],
+      "scenarios": 21
+    },
+    {
+      "file": "normalized/global-and-us-demand-milestones.csv",
+      "rows": 16,
+      "year_min": 2014,
+      "year_max": 2035,
+      "sha256": "b379cedfea632042d25454d9c711362e6fd04719c14051ff9f2f9ad5541ce1a0",
+      "datasets": [
+        "DS-IEA-ELECTRICITY26-DEMAND",
+        "DS-IEA-ENERGY-AI25",
+        "DS-IEA-GEVO26",
+        "DS-LBNL-DATACENTER24"
+      ],
+      "geographies": [
+        "United States",
+        "World"
+      ],
+      "models": [
+        "IEA Electricity 2026",
+        "IEA Energy and AI",
+        "IEA Global EV Outlook",
+        "LBNL Data Center Energy Usage Report"
+      ],
+      "scenarios": 12
+    },
+    {
+      "file": "normalized/us-electrification-scenarios-nrel-efs.csv",
+      "rows": 50,
+      "year_min": 2016,
+      "year_max": 2050,
+      "sha256": "27077c16dec1dc9b005ae3f1837fac495d4bdbd111796e9e7975963e2e523e56",
+      "datasets": [
+        "DS-NREL-EFS18"
+      ],
+      "geographies": [
+        "United States"
+      ],
+      "models": [
+        "NREL Electrification Futures Study"
+      ],
+      "scenarios": 10
+    }
+  ],
+  "total_rows": 20997
+}

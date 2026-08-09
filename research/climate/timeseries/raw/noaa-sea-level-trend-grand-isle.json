@@ -1,0 +1,96 @@
+{
+  "count": 1,
+  "SeaLvlTrends": [
+    {
+      "stationId": "8761724",
+      "stationName": "Grand Isle",
+      "affil": "US",
+      "annotation": "Combined with station 8761720 from 01/15/1947 to 10/15/1979 with an adjustment of 0 m.",
+      "trendUnits": "inches/decade",
+      "units": null,
+      "seasonalUnits": "inches",
+      "seasonalAverage": -5.31,
+      "latitude": 29.263300,
+      "longitude": -89.956703,
+      "trendType": "SINGLE",
+      "autoregressive": 0.59,
+      "autoregressiveError": 0.03,
+      "trend": 3.59,
+      "trendError": 0.07,
+      "y2000_offset": 0.0,
+      "startDate": "01/15/1947",
+      "endDate": "12/15/2025",
+      "trend0": null,
+      "trendError0": null,
+      "y2000_offset0": null,
+      "startDate0": null,
+      "endDate0": null,
+      "monthlyMeans": "https://api.tidesandcurrents.noaa.gov/dpapi/prod/webapi/product/sealvltrends.json?station=8761724&details=monthlymeans&units=english&trendType=SINGLE",
+      "numberEvents": 0,
+      "events": [],
+      "seasonalCycleMonth": [
+        {
+          "month": 1,
+          "seasonalVar": -0.37,
+          "seasonalErr": 0.03
+        },
+        {
+          "month": 2,
+          "seasonalVar": -0.33,
+          "seasonalErr": 0.03
+        },
+        {
+          "month": 3,
+          "seasonalVar": -0.19,
+          "seasonalErr": 0.03
+        },
+        {
+          "month": 4,
+          "seasonalVar": -0.03,
+          "seasonalErr": 0.03
+        },
+        {
+          "month": 5,
+          "seasonalVar": 0.1,
+          "seasonalErr": 0.03
+        },
+        {
+          "month": 6,
+          "seasonalVar": 0.09,
+          "seasonalErr": 0.03
+        },
+        {
+          "month": 7,
+          "seasonalVar": -0.02,
+          "seasonalErr": 0.03
+        },
+        {
+          "month": 8,
+          "seasonalVar": 0.12,
+          "seasonalErr": 0.03
+        },
+        {
+          "month": 9,
+          "seasonalVar": 0.45,
+          "seasonalErr": 0.03
+        },
+        {
+          "month": 10,
+          "seasonalVar": 0.34,
+          "seasonalErr": 0.03
+        },
+        {
+          "month": 11,
+          "seasonalVar": 0.06,
+          "seasonalErr": 0.03
+        },
+        {
+          "month": 12,
+          "seasonalVar": -0.23,
+          "seasonalErr": 0.03
+        }
+      ],
+      "trends": null
+    }
+  ]
+}

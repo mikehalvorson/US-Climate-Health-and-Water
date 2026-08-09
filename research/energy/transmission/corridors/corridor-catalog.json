@@ -1,0 +1,331 @@
+{
+  "title": "Selected major U.S. transmission corridors with sourced capacity semantics",
+  "as_of": "2026-08-01",
+  "scope": "Curated high-information corridors and controllable ties for dashboard comparison. This is not an inventory of every U.S. transmission line or interface.",
+  "base_map": "base-layers/hifld-transmission-lines-230kv-plus.geojson",
+  "rated_overlay": "major-corridors.geojson",
+  "records": [
+    {
+      "corridor_id": "COR-NECEC",
+      "name": "New England Clean Energy Connect",
+      "technology": "HVDC overhead plus AC interconnection",
+      "voltage_kv_dc": 320,
+      "length_miles": 145,
+      "from": "Quebec-Maine border",
+      "to": "Lewiston, Maine",
+      "states": ["ME"],
+      "international": true,
+      "status": "operating",
+      "status_date": "2025-12-31",
+      "capacity_records": [
+        {"value_mw": 1200, "capacity_type": "converter_or_project_nameplate", "direction": "Quebec_to_New_England", "source_id": "SRC-DOE-NECEC-EA21"},
+        {"value_mw": 1200, "capacity_type": "energy_import_capability_study_assumption", "direction": "Quebec_to_New_England", "study_years": "2026-2035", "source_id": "SRC-ISONE-TRANSFER26"},
+        {"value_mw": 0, "capacity_type": "capacity_import_capability_study_assumption", "direction": "Quebec_to_New_England", "study_years": "2026-2035", "source_id": "SRC-ISONE-TRANSFER26"}
+      ],
+      "source_ids": ["SRC-MAINE-NECEC-COMPLETION26", "SRC-MPUC-NECEC20", "SRC-DOE-NECEC-EA21", "SRC-ISONE-TRANSFER26"],
+      "capacity_note": "A 1,200 MW operating energy path can still show zero modeled capacity-import capability; those quantities answer different questions."
+    },
+    {
+      "corridor_id": "COR-CHPE",
+      "name": "Champlain Hudson Power Express",
+      "technology": "HVDC underground and submarine cable",
+      "length_miles": 339,
+      "from": "Hertel, Quebec",
+      "to": "Astoria, New York City",
+      "states": ["NY"],
+      "international": true,
+      "status": "operating",
+      "status_date": "2026-05-13",
+      "capacity_records": [
+        {"value_mw": 1250, "capacity_type": "converter_or_project_nameplate", "direction": "Quebec_to_New_York_City", "source_id": "SRC-NYSERDA-CHPE26"}
+      ],
+      "expected_annual_delivery_twh": 10.4,
+      "annual_delivery_semantics": "project_expected_not_hourly_guarantee",
+      "source_ids": ["SRC-NYSERDA-CHPE26", "SRC-NY-GOV-CHPE26"]
+    },
+    {
+      "corridor_id": "COR-PDCI",
+      "name": "Pacific Direct Current Intertie",
+      "technology": "HVDC overhead",
+      "voltage_kv_dc": 500,
+      "from": "Celilo, Oregon",
+      "to": "Sylmar, California",
+      "states": ["OR", "CA"],
+      "status": "operating_with_upgrade",
+      "capacity_records": [
+        {"value_mw": 3100, "capacity_type": "nominal_transfer_capability", "status": "current", "source_id": "SRC-BPA-PDCI"},
+        {"value_mw": 3220, "capacity_type": "nominal_transfer_capability", "status": "BPA_portion_upgrade_target", "source_id": "SRC-BPA-PDCI"}
+      ],
+      "source_ids": ["SRC-BPA-PDCI"]
+    },
+    {
+      "corridor_id": "COR-HQ-PHASEII",
+      "name": "Hydro-Quebec Phase II HVDC",
+      "technology": "HVDC",
+      "from": "Quebec interconnection",
+      "to": "Sandy Pond, Massachusetts",
+      "states": ["VT", "NH", "MA"],
+      "international": true,
+      "status": "operating",
+      "capacity_records": [
+        {"value_mw": 2000, "capacity_type": "nominal_transfer_capability", "direction": "Quebec_to_New_England", "source_id": "SRC-ISONE-HQ-PHASEII"},
+        {"value_mw": 2000, "capacity_type": "energy_import_capability_study_assumption", "direction": "Quebec_to_New_England", "study_years": "2026-2035", "source_id": "SRC-ISONE-TRANSFER26"},
+        {"value_mw": 1400, "capacity_type": "capacity_import_capability_study_assumption", "direction": "Quebec_to_New_England", "study_years": "2026-2035", "source_id": "SRC-ISONE-TRANSFER26"}
+      ],
+      "source_ids": ["SRC-ISONE-HQ-PHASEII", "SRC-ISONE-TRANSFER26"],
+      "capacity_note": "ISO-NE agreement material says actual operation can be below nominal capability."
+    },
+    {
+      "corridor_id": "COR-CROSS-SOUND",
+      "name": "Cross Sound Cable",
+      "technology": "submarine HVDC cable",
+      "from": "New Haven, Connecticut",
+      "to": "Long Island, New York",
+      "states": ["CT", "NY"],
+      "status": "operating",
+      "capacity_records": [
+        {"value_mw": 330, "capacity_type": "unforced_capacity_delivery_right", "source_id": "SRC-NYISO-UDR"}
+      ],
+      "source_ids": ["SRC-NYISO-UDR"]
+    },
+    {
+      "corridor_id": "COR-NEPTUNE",
+      "name": "Neptune Regional Transmission System",
+      "technology": "submarine HVDC cable",
+      "from": "Sayreville, New Jersey",
+      "to": "Long Island, New York",
+      "states": ["NJ", "NY"],
+      "status": "operating",
+      "capacity_records": [
+        {"value_mw": 660, "capacity_type": "unforced_capacity_delivery_right", "source_id": "SRC-NYISO-UDR"}
+      ],
+      "source_ids": ["SRC-NYISO-UDR"]
+    },
+    {
+      "corridor_id": "COR-LINDEN-VFT",
+      "name": "Linden Variable Frequency Transformer",
+      "technology": "controllable AC intertie",
+      "from": "Linden, New Jersey",
+      "to": "New York City zone",
+      "states": ["NJ", "NY"],
+      "status": "operating",
+      "capacity_records": [
+        {"value_mw": 315, "capacity_type": "unforced_capacity_delivery_right", "source_id": "SRC-NYISO-UDR"}
+      ],
+      "source_ids": ["SRC-NYISO-UDR"]
+    },
+    {
+      "corridor_id": "COR-HUDSON",
+      "name": "Hudson Transmission Project",
+      "technology": "HVDC cable",
+      "from": "Ridgefield, New Jersey",
+      "to": "Manhattan, New York",
+      "states": ["NJ", "NY"],
+      "status": "operating",
+      "capacity_records": [
+        {"value_mw": 660, "capacity_type": "unforced_capacity_delivery_right", "source_id": "SRC-NYISO-UDR"}
+      ],
+      "source_ids": ["SRC-NYISO-UDR"]
+    },
+    {
+      "corridor_id": "COR-TRANS-BAY",
+      "name": "Trans Bay Cable",
+      "technology": "submarine HVDC cable",
+      "length_miles": 53,
+      "from": "Pittsburg, California",
+      "to": "San Francisco, California",
+      "states": ["CA"],
+      "status": "operating",
+      "capacity_records": [
+        {"value_mw": 400, "capacity_type": "converter_or_project_nameplate", "direction": "Pittsburg_to_San_Francisco", "source_id": "SRC-CAISO-TRANSBAY"}
+      ],
+      "source_ids": ["SRC-CAISO-TRANSBAY"]
+    },
+    {
+      "corridor_id": "COR-MATL",
+      "name": "Montana-Alberta Tie Line",
+      "technology": "AC overhead",
+      "voltage_kv_ac": 230,
+      "length_miles_us": 130,
+      "from": "Great Falls area, Montana",
+      "to": "Lethbridge area, Alberta",
+      "states": ["MT"],
+      "international": true,
+      "status": "operating",
+      "capacity_records": [
+        {"value_mw": 300, "capacity_type": "directional_permit_limit", "direction": "northbound", "source_id": "SRC-DOE-MATL"},
+        {"value_mw": 325, "capacity_type": "directional_permit_limit", "direction": "southbound", "source_id": "SRC-DOE-MATL"}
+      ],
+      "source_ids": ["SRC-DOE-MATL"],
+      "capacity_note": "Permit maxima are nonsimultaneous and must not be added. Downstream Path 80 constraints can limit usable transfer."
+    },
+    {
+      "corridor_id": "COR-GREAT-NORTHERN",
+      "name": "Great Northern Transmission Line",
+      "technology": "AC overhead",
+      "voltage_kv_ac": 500,
+      "length_miles": 224,
+      "from": "Dorsey, Manitoba",
+      "to": "Iron Range, Minnesota",
+      "states": ["MN"],
+      "international": true,
+      "status": "operating",
+      "status_date": "2020-06",
+      "capacity_records": [
+        {"value_mw": 883, "capacity_type": "converter_or_project_nameplate", "source_id": "SRC-DOE-GNTL"}
+      ],
+      "source_ids": ["SRC-DOE-GNTL", "SRC-MNPOWER-GNTL"],
+      "capacity_note": "The DOE case-study value is a design quantity; Minnesota Power confirms energization, not an 883 MW real-time limit."
+    },
+    {
+      "corridor_id": "COR-ONELINE",
+      "name": "One Nevada Line",
+      "technology": "AC overhead",
+      "voltage_kv_ac": 500,
+      "length_miles": 235,
+      "from": "Robinson Summit, Nevada",
+      "to": "Harry Allen, Nevada",
+      "states": ["NV"],
+      "status": "operating",
+      "status_date": "2014-01",
+      "capacity_records": [
+        {"value_mw": 600, "capacity_type": "converter_or_project_nameplate", "source_id": "SRC-DOE-ONELINE"}
+      ],
+      "source_ids": ["SRC-DOE-ONELINE"]
+    },
+    {
+      "corridor_id": "COR-TEN-WEST",
+      "name": "Ten West Link",
+      "technology": "AC overhead",
+      "voltage_kv_ac": 500,
+      "length_miles": 125,
+      "from": "Delaney, Arizona",
+      "to": "Colorado River substation near Blythe, California",
+      "states": ["AZ", "CA"],
+      "status": "operating",
+      "status_date": "2024-06",
+      "capacity_records": [
+        {"value_mw": 3200, "capacity_type": "conductor_capability", "source_id": "SRC-CAISO-TENWEST24"},
+        {"value_mw": 2400, "capacity_type": "equipment_limit", "equipment": "series_compensation_station", "source_id": "SRC-CAISO-TENWEST24"}
+      ],
+      "source_ids": ["SRC-CAISO-TENWEST24"],
+      "capacity_note": "The lower equipment quantity illustrates why conductor capability is not a corridor's universal operating limit."
+    },
+    {
+      "corridor_id": "COR-SUNZIA",
+      "name": "SunZia Transmission",
+      "technology": "AC overhead",
+      "voltage_kv_ac": 500,
+      "length_miles": 520,
+      "from": "Central New Mexico",
+      "to": "Pinal County, Arizona",
+      "states": ["NM", "AZ"],
+      "status": "under_construction",
+      "capacity_records": [
+        {"value_mw": 3000, "capacity_type": "converter_or_project_nameplate", "status": "current_phase", "source_id": "SRC-BLM-SUNZIA"},
+        {"value_mw": 4500, "capacity_type": "permitted_ultimate_configuration", "status": "ultimate_two_line_proposal", "source_id": "SRC-BLM-SUNZIA"}
+      ],
+      "source_ids": ["SRC-BLM-SUNZIA"],
+      "capacity_note": "Current phase and ultimate configuration are not additive."
+    },
+    {
+      "corridor_id": "COR-TRANSWEST",
+      "name": "TransWest Express",
+      "technology": "HVDC overhead",
+      "length_miles": 728,
+      "from": "Carbon County, Wyoming",
+      "to": "southern Nevada",
+      "states": ["WY", "CO", "UT", "NV"],
+      "status": "under_construction",
+      "capacity_records": [
+        {"value_mw": 3000, "capacity_type": "converter_or_project_nameplate", "source_id": "SRC-WAPA-TRANSWEST"}
+      ],
+      "source_ids": ["SRC-WAPA-TRANSWEST"]
+    },
+    {
+      "corridor_id": "COR-GRAIN-BELT-P1",
+      "name": "Grain Belt Express Phase 1",
+      "technology": "HVDC overhead plus AC connector",
+      "voltage_kv_dc": 600,
+      "length_miles": 578,
+      "from": "western Kansas",
+      "to": "Missouri injection points",
+      "states": ["KS", "MO"],
+      "status": "development_and_permitting",
+      "capacity_records": [
+        {"value_mw": 2500, "capacity_type": "converter_or_project_nameplate", "status": "phase_1", "source_id": "SRC-DOE-GBX-FEIS25"},
+        {"value_mw": 5000, "capacity_type": "permitted_ultimate_configuration", "status": "full_bipolar_two_phase_design", "source_id": "SRC-DOE-GBX-FEIS25"}
+      ],
+      "source_ids": ["SRC-DOE-GBX-FEIS25"],
+      "capacity_note": "Phase 1 is limited by injection rights; the 5,000 MW full design includes a later phase and is not current capacity."
+    },
+    {
+      "corridor_id": "COR-NORTH-PLAINS",
+      "name": "North Plains Connector",
+      "technology": "HVDC overhead",
+      "voltage_kv_dc": 525,
+      "length_miles": 420,
+      "from": "Colstrip, Montana",
+      "to": "North Dakota terminals",
+      "states": ["MT", "ND"],
+      "status": "draft_federal_environmental_review",
+      "status_date": "2026-01",
+      "capacity_records": [
+        {"value_mw": 3000, "capacity_type": "converter_or_project_nameplate", "direction": "bidirectional", "source_id": "SRC-DOE-NPC26"}
+      ],
+      "source_ids": ["SRC-DOE-NPC26"],
+      "status_note": "The cited DOE artifact is a draft EIS, not a final approval."
+    },
+    {
+      "corridor_id": "COR-SOUTHERN-SPIRIT",
+      "name": "Southern Spirit Transmission",
+      "technology": "HVDC overhead",
+      "voltage_kv_dc": 525,
+      "length_miles": 320,
+      "from": "Rusk County, Texas",
+      "to": "Choctaw County, Mississippi",
+      "states": ["TX", "LA", "MS"],
+      "status": "development_program_selection",
+      "capacity_records": [
+        {"value_mw": 3000, "capacity_type": "converter_or_project_nameplate", "direction": "bidirectional", "source_id": "SRC-DOE-TFP-PROJECTS"},
+        {"value_mw": 2000, "capacity_type": "firm_point_to_point_service", "qualifier": "DOE capacity contract exceeds this amount", "source_id": "SRC-DOE-TFP-PROJECTS"}
+      ],
+      "source_ids": ["SRC-DOE-TFP-PROJECTS"]
+    },
+    {
+      "corridor_id": "COR-AROOSTOOK",
+      "name": "Aroostook Renewable Project",
+      "technology": "AC overhead",
+      "length_miles": 111,
+      "from": "Aroostook County, Maine",
+      "to": "ISO New England grid in Maine",
+      "states": ["ME"],
+      "status": "development_program_selection",
+      "capacity_records": [
+        {"value_mw": 1200, "capacity_type": "converter_or_project_nameplate", "source_id": "SRC-DOE-TFP-PROJECTS"}
+      ],
+      "source_ids": ["SRC-DOE-TFP-PROJECTS"]
+    },
+    {
+      "corridor_id": "COR-CIMARRON",
+      "name": "Cimarron Link",
+      "technology": "HVDC overhead",
+      "length_miles": 400,
+      "from": "Oklahoma Panhandle",
+      "to": "eastern Oklahoma",
+      "states": ["OK"],
+      "status": "development_program_selection",
+      "capacity_records": [
+        {"value_mw": 1900, "capacity_type": "firm_point_to_point_service", "source_id": "SRC-DOE-TFP-PROJECTS"}
+      ],
+      "source_ids": ["SRC-DOE-TFP-PROJECTS"]
+    }
+  ],
+  "limitations": [
+    "A named physical line is not always identical to the planning interface whose limit appears in market studies.",
+    "Ratings change with ambient conditions, outages, topology, system stability, voltage, and N-1 contingency criteria.",
+    "Many detailed ratings and substation data are CEII, proprietary, or otherwise nonpublic.",
+    "Approximate map geometry is for orientation; use the official HIFLD layer or project GIS for route-level analysis.",
+    "Do not sum the catalog to claim total national transfer capacity."
+  ]
+}

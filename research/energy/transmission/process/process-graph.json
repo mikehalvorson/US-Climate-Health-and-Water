@@ -1,0 +1,69 @@
+{
+  "title": "Graphable U.S. transmission development and upgrade process",
+  "as_of": "2026-08-01",
+  "graph_semantics": {
+    "directed": true,
+    "acyclic_except_iteration_edges": true,
+    "duration_rule": "No universal total duration is assigned. DOE says development can exceed ten years; CITAP's standard two-year clock covers coordinated federal review after defined entry milestones, not the whole project.",
+    "parallelism_rule": "Routing, stakeholder engagement, engineering, procurement, financing, and some permit work commonly overlap; graph layout must show parallel branches."
+  },
+  "nodes": [
+    {"node_id": "N01", "label": "Need identified", "phase": "need", "actors": ["ISO/RTO", "utility", "state", "merchant developer", "customer"], "outputs": ["reliability violation", "economic congestion case", "public-policy need", "generation or large-load interconnection need"]},
+    {"node_id": "N02", "label": "Define planning cases", "phase": "planning", "actors": ["planning authority"], "outputs": ["load forecasts", "resource assumptions", "weather and contingency cases"]},
+    {"node_id": "N03", "label": "Screen alternatives", "phase": "planning", "actors": ["planning authority", "stakeholders"], "outputs": ["new line", "reconductoring", "GETs", "storage", "generation", "demand response", "topology or operating change"]},
+    {"node_id": "N04", "label": "Benefit, reliability, and power-flow studies", "phase": "planning", "actors": ["ISO/RTO", "transmission planner"], "outputs": ["contingency performance", "production-cost benefits", "losses", "resilience", "deliverability"]},
+    {"node_id": "N05", "label": "Select into regional or local plan", "phase": "planning", "actors": ["planning authority"], "source_ids": ["SRC-FERC-ORDER1920"]},
+    {"node_id": "N06", "label": "Allocate costs or define merchant revenue", "phase": "commercial", "actors": ["FERC-jurisdictional planner", "states", "developer", "customers"], "outputs": ["regional allocation", "participant funding", "merchant contract", "capacity contract"]},
+    {"node_id": "N07", "label": "Select developer / establish rights", "phase": "commercial", "actors": ["incumbent utility", "competitive developer", "ISO/RTO", "contracting parties"], "outputs": ["developer selection", "ROFR outcome", "interconnection and transmission-service path"]},
+    {"node_id": "N08", "label": "Route and substation alternatives", "phase": "siting", "actors": ["developer", "engineers", "landowners", "communities", "Tribes"]},
+    {"node_id": "N09", "label": "State CPCN / need and route review", "phase": "siting", "actors": ["state utility commission", "state siting board"], "conditional": true},
+    {"node_id": "N10", "label": "Federal preapplication and lead-agency coordination", "phase": "federal_review", "actors": ["DOE", "federal agencies", "developer"], "conditional": true, "source_ids": ["SRC-DOE-CITAP"]},
+    {"node_id": "N11", "label": "NEPA environmental review", "phase": "federal_review", "actors": ["lead federal agency", "cooperating agencies"], "conditional": true, "outputs": ["EA/FONSI or EIS/ROD"]},
+    {"node_id": "N12", "label": "Resource-specific federal authorizations", "phase": "federal_review", "actors": ["USACE", "USFWS", "SHPO/THPO", "BLM", "USFS", "other agencies"], "conditional": true, "outputs": ["CWA 404", "ESA consultation", "NHPA 106", "federal land ROW", "species and cultural conditions"]},
+    {"node_id": "N13", "label": "International Presidential permit", "phase": "federal_review", "actors": ["DOE"], "conditional": true},
+    {"node_id": "N14", "label": "NIETC / FERC backstop pathway", "phase": "siting", "actors": ["DOE", "FERC"], "conditional": true, "source_ids": ["SRC-DOE-NIETC", "SRC-FERC-ORDER1977"], "warning": "Limited statutory pathway, not general federal siting."},
+    {"node_id": "N15", "label": "Tribal consultation and community engagement", "phase": "engagement", "actors": ["Tribal governments", "communities", "developer", "agencies"], "parallel": true},
+    {"node_id": "N16", "label": "Land and right-of-way control", "phase": "land", "actors": ["developer", "landowners", "land-management agencies"], "outputs": ["easements", "leases", "ROW grants", "condemnation proceedings where lawful"]},
+    {"node_id": "N17", "label": "Detailed engineering and system-protection design", "phase": "engineering", "actors": ["developer", "equipment vendors", "system operators"], "parallel": true},
+    {"node_id": "N18", "label": "Procure long-lead equipment", "phase": "procurement", "actors": ["developer", "transformer", "cable", "conductor", "breaker", "converter suppliers"], "parallel": true, "outputs": ["factory slots", "design approvals", "factory acceptance tests", "heavy-haul plan"]},
+    {"node_id": "N19", "label": "Finance and rate recovery", "phase": "commercial", "actors": ["developer", "lenders", "FERC", "state commissions", "offtakers"], "parallel": true},
+    {"node_id": "N20", "label": "Construction authorization / notice to proceed", "phase": "construction_gate", "actors": ["developer", "authorities", "financiers"]},
+    {"node_id": "N21", "label": "Construct line, substations, and mitigation", "phase": "construction", "actors": ["contractors", "utilities", "inspectors"]},
+    {"node_id": "N22", "label": "Outage coordination, testing, and energization", "phase": "commissioning", "actors": ["system operator", "transmission owner", "reliability coordinator"]},
+    {"node_id": "N23", "label": "Commercial operation", "phase": "operation", "actors": ["transmission owner", "system operator"]},
+    {"node_id": "N24", "label": "Monitor, maintain, and update ratings", "phase": "operation", "actors": ["transmission owner", "system operator"], "source_ids": ["SRC-FERC-ORDER881"]},
+    {"node_id": "N25", "label": "Re-study changed load, generation, outages, or climate risk", "phase": "iteration", "actors": ["planner", "operator"]}
+  ],
+  "edges": [
+    {"from": "N01", "to": "N02"}, {"from": "N02", "to": "N03"}, {"from": "N03", "to": "N04"},
+    {"from": "N04", "to": "N05", "condition": "selected_solution"}, {"from": "N04", "to": "N02", "condition": "revise_cases_or_solution", "iteration": true},
+    {"from": "N05", "to": "N06"}, {"from": "N06", "to": "N07"}, {"from": "N07", "to": "N08"},
+    {"from": "N08", "to": "N09", "condition": "state_review_required"}, {"from": "N08", "to": "N10", "condition": "qualifying_federal_authorizations"},
+    {"from": "N10", "to": "N11"}, {"from": "N10", "to": "N12"}, {"from": "N08", "to": "N13", "condition": "crosses_international_border"},
+    {"from": "N09", "to": "N14", "condition": "statutory_NIETC_and_FPA216_conditions_met"},
+    {"from": "N08", "to": "N15"}, {"from": "N08", "to": "N16"}, {"from": "N07", "to": "N17"}, {"from": "N07", "to": "N18"}, {"from": "N06", "to": "N19"},
+    {"from": "N09", "to": "N20", "condition": "required_state_approvals_complete"}, {"from": "N11", "to": "N20", "condition": "required_federal_review_complete"},
+    {"from": "N12", "to": "N20", "condition": "resource_authorizations_complete"}, {"from": "N13", "to": "N20", "condition": "international_permit_complete"},
+    {"from": "N15", "to": "N20", "condition": "engagement_and_mitigation_requirements_satisfied"}, {"from": "N16", "to": "N20"},
+    {"from": "N17", "to": "N20"}, {"from": "N18", "to": "N21", "condition": "equipment_available"}, {"from": "N19", "to": "N20"},
+    {"from": "N20", "to": "N21"}, {"from": "N21", "to": "N22"}, {"from": "N22", "to": "N23"}, {"from": "N23", "to": "N24"},
+    {"from": "N24", "to": "N25"}, {"from": "N25", "to": "N02", "iteration": true}
+  ],
+  "alternative_fast_paths": [
+    {
+      "path_id": "UPGRADE_GET",
+      "description": "Reconductoring, dynamic line ratings, topology optimization, or power-flow controls can reuse rights-of-way and avoid some new-line steps, but still require engineering, outages, protection studies, equipment, and approvals.",
+      "source_ids": ["SRC-DOE-GETS", "SRC-FERC-ORDER881"],
+      "skippable_nodes": ["N08", "N13", "N14"],
+      "always_context_dependent": true
+    }
+  ],
+  "dashboard_encoding": {
+    "recommended_visual": "swimlane directed graph",
+    "lanes": ["planning", "commercial", "siting and engagement", "federal review", "engineering and procurement", "construction and operation"],
+    "node_color": "phase",
+    "node_border": "required versus conditional",
+    "edge_style": "solid normal; dashed conditional; dotted iteration",
+    "tooltip_fields": ["actors", "outputs", "condition", "source_ids", "warning"]
+  }
+}

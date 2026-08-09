@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0.0",
+  "bottom_line": "Atmospheric water generation can provide drinking water for emergency, remote, military, disaster, or humid-site uses. Current condensing systems are not credible replacements for ordinary U.S. household or community utility volumes because output falls in cool/dry air, electricity requirements scale steeply, and condensate needs potable-water treatment and maintenance.",
+  "technology_classes": [
+    {
+      "class": "refrigeration_condensation",
+      "maturity": "commercial",
+      "strengths": ["simple concept", "available products", "useful in warm humid conditions"],
+      "limits": ["dehumidifier-like electricity use", "reduced output in dry/cool air", "filters/disinfection/cleaning", "rated output often measured under favorable conditions"]
+    },
+    {
+      "class": "desiccant_or_sorbent",
+      "maturity": "commercial_niche_and_research",
+      "strengths": ["can operate at lower humidity", "can use thermal or solar regeneration"],
+      "limits": ["sorbent cycling and heat", "material durability", "low demonstrated area yield", "scale-up and potable treatment"]
+    },
+    {
+      "class": "passive_radiative_or_fog_dew_collection",
+      "maturity": "site_specific",
+      "strengths": ["low operating energy in favorable microclimates"],
+      "limits": ["weather dependent", "large collection area", "intermittent output", "storage and water quality"]
+    }
+  ],
+  "reported_capacity": {
+    "home_units_liters_per_day": [1, 20],
+    "commercial_units_liters_per_day": [1000, 10000],
+    "dependency": "temperature_and_relative_humidity",
+    "source": {"source_id": "EPA-AWG-2019", "locator": "Technology sizes and operating conditions"}
+  },
+  "solar_research_target": {
+    "device_area_square_meters": 1,
+    "modeled_water_productivity_liters_per_kilowatt_hour": [0.2, 2.5],
+    "relative_humidity_percent": [30, 90],
+    "drinking_target_liters_per_person_per_day": 5,
+    "interpretation": "A global potential model under continued technology development, not a validated commercial household appliance specification.",
+    "source": {"source_id": "NATURE-AWG-2021", "locator": "Abstract, model assumptions, and competing-interests statement"}
+  },
+  "transparent_energy_proxy": {
+    "proxy": "ENERGY STAR dehumidifier integrated energy factor",
+    "liters_per_kilowatt_hour_range": [1.7, 3.81],
+    "why_proxy_only": "Both condense atmospheric moisture, but a potable AWG adds air/water treatment, pumping, standby losses, and operating constraints; no claim is made that an AWG will meet the dehumidifier rating.",
+    "source": {"source_id": "ENERGY-STAR-DEHUMIDIFIER", "locator": "Certified minimum IEF by class"}
+  },
+  "scale_scenarios": [
+    {
+      "service": "drinking_only_per_person",
+      "water_liters_per_day": 5.3,
+      "proxy_electricity_kilowatt_hours_per_day": [1.39, 3.12],
+      "interpretation": "Potentially manageable for high-value emergency/remote use; excludes treatment, storage, and low-humidity derating.",
+      "water_reference": {"source_id": "WHO-DOMESTIC-WATER"}
+    },
+    {
+      "service": "basic_drinking_cooking_limited_hygiene_per_person",
+      "water_liters_per_day": 20,
+      "proxy_electricity_kilowatt_hours_per_day": [5.25, 11.76],
+      "interpretation": "Much larger than drinking-only and still below full U.S. domestic service."
+    },
+    {
+      "service": "current_us_domestic_average_per_person",
+      "water_liters_per_day": 310.4,
+      "proxy_electricity_kilowatt_hours_per_day": [81.5, 182.6],
+      "interpretation": "Not viable as routine full household supply."
+    },
+    {
+      "service": "four_person_household_at_us_average",
+      "water_liters_per_day": 1241.6,
+      "proxy_electricity_kilowatt_hours_per_day": [325.9, 730.4],
+      "interpretation": "Exceeds rated capacity of home AWGs by orders of magnitude and imposes extreme electricity demand."
+    },
+    {
+      "service": "one_million_gallons_per_day_community_supply",
+      "water_liters_per_day": 3785411.8,
+      "proxy_electricity_gigawatt_hours_per_day": [0.994, 2.227],
+      "proxy_average_megawatts": [41.4, 92.8],
+      "interpretation": "An impractical community base-supply energy burden before treatment, storage, distribution, and dry-air derating."
+    }
+  ],
+  "capacity_equivalences": [
+    {
+      "rated_output_liters_per_day": 10000,
+      "us_gallons_per_day": 2642,
+      "drinking_only_people_at_5_3_liters": 1887,
+      "full_us_domestic_average_people": 32,
+      "guardrail": "Rated commercial maximum under favorable conditions; not reliable yield."
+    },
+    {
+      "rated_home_output_liters_per_day": [1, 20],
+      "drinking_only_people_equivalent": [0.19, 3.77],
+      "guardrail": "Does not meet a household's full-service demand."
+    }
+  ],
+  "water_quality": {
+    "finding": "Condensate is not inherently sterile or automatically potable. Air contaminants, wetted surfaces, storage, biofilms, and maintenance create chemical and microbial risks.",
+    "observations": "EPA field work found heterotrophic bacteria and evidence of opportunistic pathogens in real-world systems.",
+    "requirements": ["appropriate air filtration", "water treatment and disinfection", "sanitary storage", "monitoring", "maintenance and replacement schedules", "waste-stream handling"],
+    "source_refs": [{"source_id": "EPA-AWG-2019"}, {"source_id": "EPA-AWG-WQ-2024"}]
+  },
+  "viability_by_use": [
+    {"use": "disaster_drinking_water", "viability": "medium_to_high_if_power_or_solar_and_humidity_available", "reason": "High value per liter and small service target"},
+    {"use": "remote_humid_site", "viability": "medium", "reason": "Can avoid hauled water but needs lifecycle cost and maintenance analysis"},
+    {"use": "arid_west_household_full_supply", "viability": "very_low", "reason": "Low humidity coincides with highest need and full-service volume is large"},
+    {"use": "community_or_city_base_supply", "viability": "very_low", "reason": "Energy, footprint, maintenance, and reliability scale poorly compared with reuse, conservation, storage, transfers, or desalination"}
+  ]
+}

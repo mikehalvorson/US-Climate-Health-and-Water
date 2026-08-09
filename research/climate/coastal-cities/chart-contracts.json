@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0.0",
+  "global_rules": {
+    "source_fields": ["source_id", "publisher", "title", "URL", "locator", "access_date"],
+    "projection_fields": ["scenario", "baseline", "geography", "year_or_horizon", "adaptation_assumption", "uncertainty_or_range"],
+    "map_rule": "Never shade a municipal polygon as submerged using a tide-gauge value, one-degree grid, county planning range, or broader study-domain total.",
+    "language_rule": "Use observed, projected, scenario, planning range, exposed, displaced, and migrated as distinct labels.",
+    "adaptation_rule": "Place included and excluded defenses next to the title, not only in a tooltip.",
+    "boundary_rule": "Display the exact geographic boundary or point used by the source.",
+    "precision_rule": "Retain source precision; do not interpolate between decadal scenarios for animation unless explicitly labeled as visualization-only."
+  },
+  "charts": [
+    {
+      "chart_id": "local-relative-sea-level-fan",
+      "title": "Local relative sea-level scenarios",
+      "type": "scenario_lines_or_fan",
+      "data": "timeseries/noaa-relative-sea-level-scenarios.csv",
+      "x": "year",
+      "y": "change_from_2020_m",
+      "series": ["location_id", "scenario"],
+      "required_controls": ["Virginia Key", "Grand Isle", "30 N / 90 W grid near New Orleans"],
+      "annotations": ["Relative sea level combines ocean and land motion.", "Grand Isle is not New Orleans.", "The one-degree New Orleans grid is not a parcel-depth map."],
+      "prohibited": ["probability labels for scenarios", "citywide water-depth coloring"]
+    },
+    {
+      "chart_id": "observed-local-rsl-trends",
+      "title": "Observed relative sea-level trends",
+      "type": "dot_and_error_bar",
+      "data": "timeseries/observed-relative-sea-level-trends.csv",
+      "x": "trend_mm_per_year",
+      "error": "trend_error_mm_per_year",
+      "category": "station_name",
+      "annotations": ["Station records start in different years.", "Trend includes vertical land motion.", "Do not extrapolate the linear trend as a forecast."]
+    },
+    {
+      "chart_id": "high-tide-flood-days",
+      "title": "Days per year above local flood thresholds",
+      "type": "small_multiple_scenario_lines",
+      "data": "timeseries/noaa-high-tide-flood-days.csv",
+      "facets": ["location_id", "severity"],
+      "x": "decade",
+      "y": "days_per_year",
+      "series": "scenario",
+      "required_threshold_labels": ["minor: disruptive", "moderate: typically damaging", "major: often destructive"],
+      "constraints": ["A projected threshold day does not imply an entire city floods.", "Show saturation at 365 rather than drawing beyond the physical maximum."]
+    },
+    {
+      "chart_id": "city-habitability-cascade",
+      "title": "How rising water can erode urban habitability before permanent inundation",
+      "type": "causal_flow",
+      "data": "city-risk-profiles.json",
+      "required_branches": ["coastal water", "groundwater", "rainfall", "storm surge", "infrastructure", "insurance and housing", "household displacement"],
+      "city_specificity": {"new_orleans": ["levees and floodwalls", "pumps", "wetland and subsidence context"], "miami": ["porous limestone", "groundwater", "salt front", "outfall and septic constraints"]},
+      "prohibited": ["single universal tipping year", "linear inevitability without adaptation branch"]
+    },
+    {
+      "chart_id": "nature-2050-exposure",
+      "title": "Land motion changes 2050 coastal exposure",
+      "type": "range_bars_and_map",
+      "data": "claim-audit.json",
+      "required_subtitle": "SSP2-4.5; static connected-inundation exposure; 2010 people/property baseline; defended and undefended results are not interchangeable.",
+      "required_geography_label": "research study domain",
+      "prohibited": ["renaming the Miami study domain City of Miami", "portraying New Orleans undefended exposure as observed floodwater", "using 2050 values as displaced population"]
+    },
+    {
+      "chart_id": "miami-dade-planning-range",
+      "title": "Miami-Dade sea-level planning range",
+      "type": "range_by_year",
+      "data": "claim-audit.json",
+      "values": [{"year": 2040, "low_in": 10, "high_in": 17}, {"year": 2070, "low_in": 21, "high_in": 54}, {"year": 2120, "low_in": 40, "high_in": 136}],
+      "required_subtitle": "Inches above 2000 mean sea level at the Key West reference; adopted planning range, not uniform flood depth or probability interval.",
+      "prohibited": ["overlay on a parcel map as water depth", "comparison to NOAA change-since-2020 without baseline conversion"]
+    },
+    {
+      "chart_id": "migration-stress-test",
+      "title": "Where U.S. sea-level migration could redistribute population under a high-end 2100 scenario",
+      "type": "diverging_bars_or_origin_destination_flow",
+      "data": "timeseries/hauer-2100-cbsa-net-migration.csv",
+      "required_subtitle": "Modeled net migration under 1.8 m sea-level rise by 2100; scenario stress test, not a destination forecast.",
+      "range": ["interval_low", "interval_high"],
+      "required_toggle": ["no_adaptation", "adaptation"],
+      "prohibited": ["climate refugees", "assigning 2100 net migration to 2070", "omitting negative origin-city values"]
+    },
+    {
+      "chart_id": "migration-model-timing",
+      "title": "Sea-level milestones used in a county migration model",
+      "type": "step_timeline",
+      "data": "timeseries/scenario-milestones.csv",
+      "required_subtitle": "Dates are from Robinson et al.'s study scenarios and are not NOAA local projections or city-loss dates.",
+      "prohibited": ["interpolated population values", "combining medium and high scenario points"]
+    },
+    {
+      "chart_id": "receiving-city-capacity",
+      "title": "Arrivals and receiving-system capacity",
+      "type": "domain_scorecard",
+      "data": "receiving-city-strain.json",
+      "domains": ["housing", "health_and_behavioral_health", "schools_and_childcare", "employment_and_income", "utilities_and_transport", "social_services_and_civic_capacity", "municipal_finance_and_governance"],
+      "required_views": ["absolute arrival volume", "arrival pace", "capacity denominator", "neighborhood concentration", "vulnerable groups", "duration and recovery"],
+      "prohibited": ["one composite overload score without component units", "citywide average only", "assuming each migrant creates identical demand"]
+    },
+    {
+      "chart_id": "adaptation-pathway-timeline",
+      "title": "Protect, accommodate, avoid, restore, or relocate",
+      "type": "adaptive_pathways_map",
+      "data": "adaptation-pathways.json",
+      "required_elements": ["decision trigger", "implementation lead time", "design life", "residual risk", "distributional effect", "next pathway"],
+      "prohibited": ["fixed retirement year without a source", "calling any single measure a complete solution"]
+    }
+  ]
+}
+

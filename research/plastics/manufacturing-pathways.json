@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0.0",
+  "shared_upstream_stages": [
+    "oil and natural-gas extraction and processing",
+    "refining or natural-gas-liquids separation",
+    "steam cracking, fluid catalytic cracking, dehydrogenation, or aromatic production",
+    "monomer and comonomer production",
+    "polymerization and resin finishing",
+    "compounding with stabilizers, pigments, fillers, plasticizers, flame retardants, or processing aids",
+    "conversion by extrusion, injection molding, blow molding, thermoforming, fiber spinning, casting, foaming, or curing"
+  ],
+  "pathways": [
+    {
+      "resin_id": "PET",
+      "primary_inputs": ["ethylene", "p-xylene"],
+      "steps": [
+        "Steam crack natural-gas liquids or petroleum feedstocks to ethylene.",
+        "Oxidize ethylene to ethylene oxide and hydrolyze it to ethylene glycol.",
+        "Recover p-xylene from refinery/aromatics streams and oxidize it to purified terephthalic acid (PTA), or convert to dimethyl terephthalate (DMT).",
+        "React ethylene glycol with PTA or DMT by esterification/transesterification and melt polycondensation.",
+        "Use solid-state polymerization when higher molecular weight is required; dry and pelletize resin.",
+        "Convert to bottles/trays by injection-stretch-blow molding or thermoforming, or spin into polyester fiber."
+      ],
+      "principal_water_nodes": ["upstream extraction/refining", "steam and electricity", "cooling", "ethylene-oxide hydrolysis", "polymerization and resin finishing", "product conversion"],
+      "source_refs": [{"source_id": "ARGONNE-RESIN-PATHWAYS-2024"}, {"source_id": "RCR-RESIN-WATER-2023"}]
+    },
+    {
+      "resin_id": "HDPE",
+      "primary_inputs": ["ethylene"],
+      "steps": [
+        "Steam crack natural-gas liquids or petroleum feedstocks to ethylene.",
+        "Purify ethylene and polymerize it using low-pressure catalytic slurry, solution, or gas-phase processes.",
+        "Separate unreacted monomer, stabilize, extrude, cool, and pelletize resin.",
+        "Blow mold bottles, extrude pipe/sheet/film, or injection mold durable parts."
+      ],
+      "principal_water_nodes": ["feedstock extraction/refining", "steam-cracker cooling and utilities", "electricity generation", "polymerization cooling", "pellet cooling", "product conversion"],
+      "source_refs": [{"source_id": "ARGONNE-RESIN-PATHWAYS-2024"}]
+    },
+    {
+      "resin_id": "LDPE_LLDPE",
+      "primary_inputs": ["ethylene", "alpha-olefin comonomers for LLDPE"],
+      "steps": [
+        "Produce and purify ethylene through the same upstream routes used for HDPE.",
+        "For LDPE, use high-pressure free-radical polymerization in tubular or autoclave reactors.",
+        "For LLDPE, use lower-pressure catalytic copolymerization of ethylene with butene, hexene, or octene in solution, slurry, or gas phase.",
+        "Recover monomer, add stabilizers/slip/antiblock agents as needed, pelletize, and extrude into film or coatings."
+      ],
+      "principal_water_nodes": ["upstream olefins", "electricity and compression", "cooling", "pelletizing", "film extrusion"],
+      "process_note": "The cited GREET-based report assigns more polymerization energy to LDPE than HDPE because LDPE uses high-pressure reactors.",
+      "source_refs": [{"source_id": "ARGONNE-RESIN-PATHWAYS-2024"}, {"source_id": "PE-ECO-PROFILES"}]
+    },
+    {
+      "resin_id": "PP",
+      "primary_inputs": ["propylene"],
+      "steps": [
+        "Source propylene as a steam-cracker or fluid-catalytic-cracker coproduct, or make it by propane dehydrogenation above 500 C.",
+        "Purify propylene and polymerize it catalytically in bulk, slurry, solution, or gas-phase reactors.",
+        "Remove residual monomer/catalyst, compound with stabilizers and fillers, extrude, cool, and pelletize.",
+        "Convert by injection molding, film extrusion/orientation, melt-blown/spun-bond fiber, or thermoforming."
+      ],
+      "principal_water_nodes": ["refining/cracking or PDH", "steam and electricity", "cooling", "polymer finishing", "fiber/film/product conversion"],
+      "source_refs": [{"source_id": "ARGONNE-RESIN-PATHWAYS-2024"}]
+    },
+    {
+      "resin_id": "PVC",
+      "primary_inputs": ["ethylene", "sodium chloride brine"],
+      "steps": [
+        "Electrolyze purified brine in a chlor-alkali plant to chlorine, caustic soda, and hydrogen.",
+        "React ethylene and chlorine to ethylene dichloride (EDC); recover HCl through oxychlorination loops.",
+        "Crack EDC to vinyl chloride monomer (VCM) and purify the monomer.",
+        "Polymerize VCM by suspension, emulsion, or bulk polymerization; strip residual monomer, dewater, dry, and classify resin.",
+        "Compound rigid PVC with stabilizers/fillers or flexible PVC with plasticizers, then extrude, calender, mold, or coat."
+      ],
+      "regional_note": "The ethylene/EDC route dominates the cited U.S. model; coal/calcium-carbide acetylene routes have been more important in China.",
+      "principal_water_nodes": ["brine purification and electrolysis", "EDC/VCM cooling", "suspension/emulsion media", "resin dewatering and drying", "upstream electricity"],
+      "source_refs": [{"source_id": "ARGONNE-RESIN-PATHWAYS-2024"}, {"source_id": "ECVM-PVC-2026"}]
+    },
+    {
+      "resin_id": "PS_EPS",
+      "primary_inputs": ["benzene", "ethylene", "styrene", "pentane or another blowing agent for EPS"],
+      "steps": [
+        "Alkylate benzene with ethylene to ethylbenzene and dehydrogenate it to styrene.",
+        "Polymerize styrene by mass, suspension, or emulsion methods; add rubber phase for high-impact polystyrene.",
+        "For EPS, impregnate beads with blowing agent, pre-expand with steam, age, and mold with additional steam.",
+        "For solid PS, extrude or injection mold; for extruded foam, combine melt with blowing agent."
+      ],
+      "principal_water_nodes": ["aromatics/ethylene production", "steam and cooling", "suspension processing", "EPS steam expansion and molding", "electricity"],
+      "source_refs": [{"source_id": "PE-ECO-PROFILES"}, {"source_id": "PE-EPS-2015"}]
+    },
+    {
+      "resin_id": "PU",
+      "primary_inputs": ["polyether or polyester polyol", "MDI or TDI diisocyanate", "catalysts", "blowing agents for foam"],
+      "steps": [
+        "Produce propylene oxide/ethylene oxide and initiate ring-opening reactions to make polyether polyols, or esterify acids and glycols for polyester polyols.",
+        "Produce aniline-derived MDI or toluene-derived TDI through nitration/hydrogenation and phosgenation routes.",
+        "Meter polyol, isocyanate, catalyst, surfactant, additives, and water/physical blowing agent into a reactive mix.",
+        "Foam, cast, spray, coat, or mold while urethane linkages form and the product cures."
+      ],
+      "principal_water_nodes": ["propylene-oxide/polyol upstream chain", "isocyanate precursor chain", "steam/cooling", "water-reacted blowing for some foams", "equipment cleaning and emissions control"],
+      "source_refs": [{"source_id": "PE-ECO-PROFILES"}, {"source_id": "ISOPA-POLYOLS-2021"}, {"source_id": "NIOSH-ISOCYANATES"}]
+    },
+    {
+      "resin_id": "ABS_SAN_ACRYLIC",
+      "primary_inputs": ["acrylonitrile", "butadiene", "styrene", "methyl methacrylate for PMMA"],
+      "steps": [
+        "Make acrylonitrile by catalytic ammoxidation of propylene; source butadiene and styrene from petrochemical routes.",
+        "For SAN, copolymerize styrene and acrylonitrile; for ABS, graft SAN phases onto polybutadiene rubber by emulsion or mass polymerization and compound.",
+        "For PMMA, make methyl methacrylate and polymerize it by bulk, suspension, solution, or emulsion routes.",
+        "For acrylic fiber, polymerize acrylonitrile-rich copolymers, dissolve, spin, wash, draw, and dry fibers."
+      ],
+      "principal_water_nodes": ["monomer production", "emulsion/suspension media", "fiber solvent recovery and washing", "cooling", "wastewater treatment"],
+      "source_refs": [{"source_id": "PE-ECO-PROFILES"}, {"source_id": "NTP-ACRYLONITRILE"}, {"source_id": "NTP-STYRENE"}]
+    },
+    {
+      "resin_id": "PC_EPOXY",
+      "primary_inputs": ["bisphenol A", "phosgene or diphenyl carbonate for PC", "epichlorohydrin for epoxy"],
+      "steps": [
+        "React phenol and acetone to bisphenol A.",
+        "Produce polycarbonate by interfacial phosgene chemistry or melt transesterification with diphenyl carbonate, then pelletize.",
+        "Produce common epoxy resin by reacting bisphenol A with epichlorohydrin, then formulate with curing agents and fillers.",
+        "Mold/extrude PC or apply/cure epoxy as coating, adhesive, composite matrix, or can lining."
+      ],
+      "principal_water_nodes": ["phenol/acetone and chlorine chemistry", "solvent/process-water separation", "washing", "cooling", "electricity and steam"],
+      "source_refs": [{"source_id": "PE-ECO-PROFILES"}, {"source_id": "EPA-BPA"}, {"source_id": "FDA-BPA"}]
+    },
+    {
+      "resin_id": "PA_NYLON",
+      "primary_inputs": ["caprolactam for nylon 6", "adipic acid and hexamethylenediamine for nylon 6,6"],
+      "steps": [
+        "Make caprolactam from cyclohexanone oxime and ring-open/polymerize it to nylon 6, with extraction of residual monomer/oligomer.",
+        "For nylon 6,6, make adipic acid and hexamethylenediamine, form nylon salt, and perform melt polycondensation with water removal.",
+        "Pelletize for molded products or melt-spin into fibers, then draw, finish, and textile-process."
+      ],
+      "principal_water_nodes": ["nitric-acid/adipic-acid chain", "caprolactam processing", "monomer extraction", "fiber washing/finishing", "steam and cooling"],
+      "source_refs": [{"source_id": "PE-ECO-PROFILES"}]
+    },
+    {
+      "resin_id": "FLUOROPOLYMERS",
+      "primary_inputs": ["fluorinated monomers", "polymerization media and processing aids"],
+      "steps": [
+        "Make fluorinated monomers through halogen chemistry.",
+        "Polymerize in suspension, emulsion, or other controlled systems; some historical and current routes use nonpolymer PFAS processing aids.",
+        "Recover, wash, dry, sinter, extrude, coat, or fabricate high-performance articles.",
+        "Manage residuals, air/water emissions, and end-of-life because persistent nonpolymer PFAS may be associated with production and processing."
+      ],
+      "principal_water_nodes": ["halogen/monomer chemistry", "aqueous polymerization", "washing", "emissions control", "wastewater treatment"],
+      "source_refs": [{"source_id": "EPA-PFAS-TSCA"}]
+    }
+  ],
+  "manufacturing_water_rule": "A process flow identifies where water can enter; it is not a quantitative coefficient. Quantitative values belong only in water-intensities.json with boundary, region, year, and source."
+}

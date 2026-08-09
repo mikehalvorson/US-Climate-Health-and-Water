@@ -1,0 +1,92 @@
+{
+  "statistics_id": "electricity-demand-scenario-statistics-v1",
+  "as_of": "2026-08-01",
+  "derivation": {
+    "method": "Deterministic filters, sums, minima, and maxima over the normalized CSV package.",
+    "precision": "Values are rounded here for display planning; normalized CSVs retain source-derived precision.",
+    "probability_warning": "Scenario minima and maxima are not confidence intervals, probabilities, or predictions."
+  },
+  "us_observed_2025": {
+    "dataset_id": "DS-EIA-MER-7.6",
+    "status": "preliminary_except_ev_experimental_estimate",
+    "unit": "TWh",
+    "electricity_sales": {
+      "residential": 1514.993,
+      "commercial": 1493.486,
+      "industrial": 1042.217,
+      "transportation": 7.311,
+      "total": 4058.007
+    },
+    "direct_use": 137.077,
+    "total_electricity_use": 4195.085,
+    "on_road_light_duty_ev_overlay": 23.533,
+    "ev_note": "Already contained in sales/use; experimental and separated by a methodology break beginning in 2023."
+  },
+  "global_historical_system_demand": {
+    "dataset_id": "DS-OWID-ENERGY",
+    "unit": "TWh",
+    "definition": "Ember gross electricity generation plus net imports",
+    "values": [{"year": 2000, "value": 15278.78}, {"year": 2025, "value": 31772.35, "status": "latest-year estimate"}],
+    "comparison_warning": "Not final electricity consumption and therefore not directly comparable to IEA's 28,200 TWh 2025 final-consumption estimate."
+  },
+  "us_aeo2026_2050": {
+    "dataset_id": "DS-EIA-AEO2026",
+    "unit": "TWh",
+    "scenario_count": 11,
+    "system_ranges": [
+      {"metric": "electricity_generation", "minimum": 5683.999, "minimum_scenario": "Alternative Transportation", "maximum": 6775.515, "maximum_scenario": "High Electricity Demand"},
+      {"metric": "electricity_use", "minimum": 5439.089, "minimum_scenario": "Alternative Transportation", "maximum": 6469.614, "maximum_scenario": "High Electricity Demand"},
+      {"metric": "electricity_sales", "minimum": 5015.936, "minimum_scenario": "Alternative Transportation", "maximum": 6045.131, "maximum_scenario": "High Electricity Demand"}
+    ],
+    "counterfactual_baseline": {
+      "total_generation": 6273.274,
+      "net_generation_to_grid": 5852.875,
+      "net_imports": 63.684,
+      "residential_sales": 2016.698,
+      "commercial_sales": 2298.146,
+      "industrial_sales": 1250.877,
+      "transportation_sales": 9.095,
+      "total_sales": 5574.816,
+      "direct_use": 420.399,
+      "total_use": 5995.215,
+      "transmission_distribution_and_unaccounted": 341.743
+    },
+    "sector_sales_ranges": [
+      {"sector": "residential", "minimum": 1743.712, "maximum": 2058.741},
+      {"sector": "commercial", "minimum": 1996.143, "maximum": 2774.005},
+      {"sector": "industrial", "minimum": 1120.531, "maximum": 1435.296},
+      {"sector": "transportation", "minimum": 8.521, "maximum": 9.728, "note": "Most modeled road-EV charging is assigned to residential/commercial sectors by location."}
+    ],
+    "identifiable_loads": [
+      {"load": "data_center_servers", "scope": "server_only", "minimum": 427.067, "minimum_scenario": "Low Economic Growth", "maximum": 818.701, "maximum_scenario": "High Electricity Demand", "baseline": 445.622},
+      {"load": "ev_charging", "scope": "residential_plus_commercial_charging_locations", "minimum": 285.882, "minimum_scenario": "Alternative Transportation", "maximum": 870.135, "maximum_scenario": "High Economic Growth", "baseline": 829.871}
+    ]
+  },
+  "global_ngfs_final_electricity": {
+    "dataset_id": "DS-NGFS-PHASE5.1",
+    "unit": "TWh",
+    "model_count": 3,
+    "scenario_count": 7,
+    "ranges_across_all_model_scenario_pairs": [
+      {"year": 2030, "minimum": 26876.422, "minimum_model": "MESSAGEix-GLOBIOM 2.0-M-R12-NGFS", "minimum_scenario": "Low demand", "maximum": 34782.475, "maximum_model": "GCAM 6.0 NGFS", "maximum_scenario": "Nationally Determined Contributions (NDCs)"},
+      {"year": 2050, "minimum": 32109.734, "minimum_model": "MESSAGEix-GLOBIOM 2.0-M-R12-NGFS", "minimum_scenario": "Low demand", "maximum": 83736.705, "maximum_model": "GCAM 6.0 NGFS", "maximum_scenario": "Net Zero 2050"},
+      {"year": 2070, "minimum": 34690.418, "minimum_model": "MESSAGEix-GLOBIOM 2.0-M-R12-NGFS", "minimum_scenario": "Low demand", "maximum": 117900.327, "maximum_model": "GCAM 6.0 NGFS", "maximum_scenario": "Net Zero 2050"}
+    ],
+    "2050_ranges_by_scenario": [
+      {"scenario": "Below 2°C", "minimum": 48948, "maximum": 67746, "median": 56546},
+      {"scenario": "Current Policies", "minimum": 40616, "maximum": 54202, "median": 49957},
+      {"scenario": "Delayed transition", "minimum": 47572, "maximum": 69255, "median": 56452},
+      {"scenario": "Fragmented World", "minimum": 45300, "maximum": 59901, "median": 52916},
+      {"scenario": "Low demand", "minimum": 32110, "maximum": 74065, "median": 42570},
+      {"scenario": "Nationally Determined Contributions (NDCs)", "minimum": 46500, "maximum": 56685, "median": 55310},
+      {"scenario": "Net Zero 2050", "minimum": 48708, "maximum": 83737, "median": 61254}
+    ],
+    "interpretation": "Large within-scenario model ranges show that technology, sector, and energy-system assumptions matter alongside scenario label."
+  },
+  "sparse_external_milestones": {
+    "world_total_electricity": [{"year": 2025, "value": 28200, "status": "IEA estimate"}, {"year": 2030, "value": 33600, "status": "IEA forecast"}],
+    "world_data_centers": [{"year": 2024, "value": 415, "status": "IEA estimate"}, {"year": 2030, "value": 945, "status": "IEA Base Case"}],
+    "us_total_data_centers": [{"year": 2023, "value": 176, "status": "LBNL estimate"}, {"year": 2028, "low": 325, "high": 580, "status": "LBNL projection range"}],
+    "world_road_ev": [{"year": 2025, "value": 250, "status": "IEA estimate"}, {"year": 2035, "value": 1500, "status": "CPS lower bound"}, {"year": 2035, "value": 1700, "status": "STEPS"}, {"year": 2035, "value": 3000, "status": "NZE lower bound"}]
+  }
+}

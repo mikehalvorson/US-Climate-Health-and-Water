@@ -1,0 +1,96 @@
+{
+  "count": 1,
+  "SeaLvlTrends": [
+    {
+      "stationId": "8723214",
+      "stationName": "Virginia Key",
+      "affil": "US",
+      "annotation": "Combined with station 8723080 from 08/15/1981 to 08/15/1992 with an adjustment of 2.041 m.Combined with station 8723170 from 06/15/1931 to 06/15/1981 with an adjustment of 2.222 m.",
+      "trendUnits": "inches/decade",
+      "units": null,
+      "seasonalUnits": "inches",
+      "seasonalAverage": 1.46,
+      "latitude": 25.73140,
+      "longitude": -80.16180,
+      "trendType": "SINGLE",
+      "autoregressive": 0.48,
+      "autoregressiveError": 0.03,
+      "trend": 1.26,
+      "trendError": 0.04,
+      "y2000_offset": 0.0,
+      "startDate": "06/15/1931",
+      "endDate": "12/15/2025",
+      "trend0": null,
+      "trendError0": null,
+      "y2000_offset0": null,
+      "startDate0": null,
+      "endDate0": null,
+      "monthlyMeans": "https://api.tidesandcurrents.noaa.gov/dpapi/prod/webapi/product/sealvltrends.json?station=8723214&details=monthlymeans&units=english&trendType=SINGLE",
+      "numberEvents": 0,
+      "events": [],
+      "seasonalCycleMonth": [
+        {
+          "month": 1,
+          "seasonalVar": -0.19,
+          "seasonalErr": 0.02
+        },
+        {
+          "month": 2,
+          "seasonalVar": -0.23,
+          "seasonalErr": 0.02
+        },
+        {
+          "month": 3,
+          "seasonalVar": -0.22,
+          "seasonalErr": 0.02
+        },
+        {
+          "month": 4,
+          "seasonalVar": -0.17,
+          "seasonalErr": 0.02
+        },
+        {
+          "month": 5,
+          "seasonalVar": -0.08,
+          "seasonalErr": 0.02
+        },
+        {
+          "month": 6,
+          "seasonalVar": -0.1,
+          "seasonalErr": 0.02
+        },
+        {
+          "month": 7,
+          "seasonalVar": -0.14,
+          "seasonalErr": 0.02
+        },
+        {
+          "month": 8,
+          "seasonalVar": -0.01,
+          "seasonalErr": 0.02
+        },
+        {
+          "month": 9,
+          "seasonalVar": 0.31,
+          "seasonalErr": 0.02
+        },
+        {
+          "month": 10,
+          "seasonalVar": 0.53,
+          "seasonalErr": 0.02
+        },
+        {
+          "month": 11,
+          "seasonalVar": 0.33,
+          "seasonalErr": 0.02
+        },
+        {
+          "month": 12,
+          "seasonalVar": -0.03,
+          "seasonalErr": 0.02
+        }
+      ],
+      "trends": null
+    }
+  ]
+}

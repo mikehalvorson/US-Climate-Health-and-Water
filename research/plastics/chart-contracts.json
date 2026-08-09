@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0.0",
+  "charts": [
+    {
+      "chart_id": "us_plastic_material_flow_2019",
+      "type": "sankey",
+      "data": "us-material-flows.json",
+      "question": "How did more than 57 MMT of U.S. plastic move from production and trade into use, stock, disposal, and recovery?",
+      "required_labels": ["2019", "million metric tons", "economy-wide MFA", "modeled", "less than 7% recovered"],
+      "do_not_combine": "EPA 2018 MSW series"
+    },
+    {
+      "chart_id": "leading_us_resins_2019",
+      "type": "ranked_bar",
+      "data": "us-material-flows.json#leading_resins_by_consumption",
+      "question": "Which individual resins had the highest modeled U.S. consumption?",
+      "required_labels": ["PP 8.6", "HDPE 7.9", "LLDPE 5.7", "PVC 5.2", "MMT", "2019"]
+    },
+    {
+      "chart_id": "resin_manufacturing_pathways",
+      "type": "interactive_process_flow",
+      "data": "manufacturing-pathways.json",
+      "question": "Which feedstocks, monomers, reactions, and water nodes create each resin?",
+      "interaction": "Select resin; expose precursor and hazard boundaries separately from the finished polymer."
+    },
+    {
+      "chart_id": "resin_water_database_range",
+      "type": "range_dot_plot",
+      "data": "water-intensities.json#four_database_figure_estimates",
+      "question": "How widely do cradle-to-resin water estimates vary across databases?",
+      "required_labels": ["L/kg resin", "approximate from Figure S3", "not plant coefficients", "not net product savings"]
+    },
+    {
+      "chart_id": "gross_avoided_water_scenarios",
+      "type": "uncertainty_bar",
+      "data": "scenarios/gross-water-avoidance.csv",
+      "question": "What gross resin-production water could be avoided at specified virgin-resin reductions?",
+      "required_labels": ["gross", "cradle-to-resin", "low-central-high", "replacement system excluded"],
+      "prohibited_title": "Water saved by banning plastic"
+    },
+    {
+      "chart_id": "health_evidence_ladder",
+      "type": "evidence_matrix",
+      "data": "health-evidence.json",
+      "question": "Which health findings concern monomers, additives, PFAS, particles, workers, or patients—and how strong is the evidence?",
+      "required_interactions": ["filter entity", "filter route", "show causal status", "show misuse guardrail"]
+    },
+    {
+      "chart_id": "pfas_vaccine_claim_correction",
+      "type": "claim_evidence_comparison",
+      "data": "health-evidence.json#pregnancy_vaccine_claim_audit",
+      "question": "What did the Faroese vaccine study actually measure and conclude?",
+      "required_panels": ["viral claim", "measured exposure", "measured outcome", "qualified finding"],
+      "required_title": "PFAS association is not evidence that eating microplastics made vaccines fail"
+    },
+    {
+      "chart_id": "country_policy_mechanisms",
+      "type": "policy_matrix_timeline",
+      "data": "country-case-studies.json",
+      "question": "How do the EU, France, Germany, and Rwanda reduce selected plastic uses?",
+      "required_labels": ["targeted uses", "exceptions", "reuse", "deposit", "EPR", "not plastic-free"]
+    },
+    {
+      "chart_id": "seaweed_scale_funnel",
+      "type": "funnel_with_scenarios",
+      "data": "seaweed.json",
+      "question": "How does modeled ocean biomass potential narrow through allocation, conversion yield, performance, and infrastructure?",
+      "required_labels": ["modeled potential", "not forecast", "dry biomass", "illustrative conversion", "processing uses water"]
+    },
+    {
+      "chart_id": "replacement_decision_tree",
+      "type": "decision_flow",
+      "data": "replacement-strategy.json",
+      "question": "Should an application be eliminated, reused, recycled, substituted, or retained pending validation?",
+      "required_gates": ["essential service", "exposure or leakage", "validated alternative", "functional LCA", "water scarcity", "safety stop condition"]
+    },
+    {
+      "chart_id": "functional_unit_water_balance",
+      "type": "waterfall_with_uncertainty",
+      "data": "replacement-strategy.json#water_accounting_protocol",
+      "question": "Where does water rise or fall when a product-service system changes?",
+      "required_terms": ["virgin resin avoided", "replacement production", "washing", "logistics", "product loss", "end of life", "net range"]
+    },
+    {
+      "chart_id": "evidence_and_data_gap_map",
+      "type": "heatmap",
+      "data": "gaps.json",
+      "question": "Which decisions lack U.S.-specific, comparable evidence?",
+      "dimensions": ["decision importance", "data maturity", "geographic resolution", "time horizon", "next action"]
+    }
+  ]
+}

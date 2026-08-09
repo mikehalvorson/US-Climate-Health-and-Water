@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0.0",
+  "status_vocabulary": ["verified", "qualified", "rejected", "pending"],
+  "claims": [
+    {
+      "claim_id": "WTR-NAT-001",
+      "status": "verified",
+      "topic": "national_withdrawals",
+      "dashboard_text": "In 2015, U.S. withdrawals averaged 322 billion gallons per day; 281 billion gallons per day were freshwater.",
+      "scope": "USGS 2015 national inventory",
+      "source_refs": [{"source_id": "USGS-CIR1441", "locator": "Abstract and Table 1"}],
+      "misuse_guardrail": "2015 is the latest fully comparable all-category inventory in this package, not a 2026 current-use estimate; withdrawal is not consumption."
+    },
+    {
+      "claim_id": "WTR-ACC-001",
+      "status": "verified",
+      "topic": "accounting",
+      "dashboard_text": "Water withdrawal and consumptive use measure different burdens: power plants can withdraw very large cooling flows and return most of them, while irrigation consumes a much larger fraction through evapotranspiration.",
+      "source_refs": [{"source_id": "USGS-CIR1441", "locator": "Thermoelectric and irrigation consumptive-use estimates"}, {"source_id": "USGS-PP1894D", "locator": "Tables 1 and 3"}],
+      "misuse_guardrail": "Do not rank sectors using one unlabeled metric."
+    },
+    {
+      "claim_id": "WTR-MODEL-001",
+      "status": "verified",
+      "topic": "national_consumptive_use",
+      "dashboard_text": "For 2010–2020 in the conterminous United States, modeled crop irrigation averaged 105.497 Bgal/d withdrawn and 75.698 Bgal/d consumed; public supply 35.440 and 4.219; freshwater thermoelectric power 82.656 and 2.904.",
+      "source_refs": [{"source_id": "USGS-PP1894D", "locator": "Tables 1–3"}],
+      "misuse_guardrail": "These three sectors do not form an all-sector U.S. total and are not directly interchangeable with Circular 1441."
+    },
+    {
+      "claim_id": "WTR-HOUSEHOLD-001",
+      "status": "verified",
+      "topic": "household_use",
+      "dashboard_text": "U.S. domestic use in 2015 averaged 26.6 Bgal/d, or 82 gallons per person per day, including 23.3 Bgal/d delivered by public suppliers and 3.26 Bgal/d self-supplied.",
+      "source_refs": [{"source_id": "USGS-CIR1441", "locator": "Domestic section and Table 7"}, {"source_id": "EPA-WATERSENSE", "locator": "Residential average"}],
+      "misuse_guardrail": "Do not add domestic deliveries to public-supply withdrawals; they are a customer use of the same water."
+    },
+    {
+      "claim_id": "WTR-AG-001",
+      "status": "verified",
+      "topic": "agriculture",
+      "dashboard_text": "Irrigation is the dominant covered consumptive-use sector: the 2010–2020 model averaged 75.698 Bgal/d consumed, 72 percent of its withdrawals.",
+      "source_refs": [{"source_id": "USGS-PP1894D", "locator": "Table 1"}, {"source_id": "USGS-CIR1441", "locator": "2015 irrigation section"}],
+      "misuse_guardrail": "The word covered refers to the three sectors modeled by PP1894-D; do not claim this is a complete all-sector consumption share."
+    },
+    {
+      "claim_id": "WTR-MFG-001",
+      "status": "qualified",
+      "topic": "manufacturing",
+      "dashboard_text": "Self-supplied U.S. industrial facilities withdrew 14.8 Bgal/d in 2015, including 14.0 Bgal/d of freshwater; the total excludes water delivered to industry by public suppliers.",
+      "source_refs": [{"source_id": "USGS-INDUSTRIAL"}, {"source_id": "USGS-CIR1441", "locator": "Industrial section"}],
+      "misuse_guardrail": "Not a complete manufacturing total and not a consumptive-use estimate."
+    },
+    {
+      "claim_id": "WTR-PLASTICS-001",
+      "status": "qualified",
+      "topic": "plastics",
+      "dashboard_text": "No defensible current national plastics-water total or universal water-per-kilogram factor was identified; resin, product conversion, upstream inputs, public deliveries, direct withdrawals, consumption, water quality, and local scarcity require separate accounting.",
+      "source_refs": [{"source_id": "USGS-INDUSTRIAL"}, {"source_id": "CENSUS-NAICS-325211"}, {"source_id": "CENSUS-NAICS-326"}, {"source_id": "NIST-PLASTICS-REVIEW-2022"}, {"source_id": "RCR-PLASTICS-LCA-2023"}],
+      "misuse_guardrail": "Never calculate ban savings by multiplying national resin mass by one literature coefficient."
+    },
+    {
+      "claim_id": "WTR-DC-001",
+      "status": "qualified",
+      "topic": "data_centers",
+      "dashboard_text": "U.S. data centers directly used about 66 billion liters of water in 2023—47.8 Mgal/d on average—with a 2028 scenario range of 140–280 billion liters per year, or about 101–203 Mgal/d.",
+      "source_refs": [{"source_id": "LBNL-DATA-CENTER-2024", "locator": "Water-use chapter"}, {"source_id": "LBNL-DATA-CENTER-WATER-2026", "locator": "2028 direct-water range"}],
+      "misuse_guardrail": "2028 is a projection range; annual national average can conceal intense local seasonal demand."
+    },
+    {
+      "claim_id": "WTR-DC-002",
+      "status": "verified",
+      "topic": "data_center_accounting",
+      "dashboard_text": "Data-center indirect electricity water must be shown as an upstream allocation, not added to national water totals that already include power generation.",
+      "source_refs": [{"source_id": "LBNL-DATA-CENTER-2024", "locator": "Direct and indirect water definitions"}, {"source_id": "USGS-PP1894D", "locator": "Thermoelectric sector boundary"}],
+      "misuse_guardrail": "Adding both produces double counting."
+    },
+    {
+      "claim_id": "WTR-STRESS-001",
+      "status": "qualified",
+      "topic": "water_availability",
+      "dashboard_text": "Nearly 27 million Americans—about 8 percent—live in watersheds where demand consistently approaches or exceeds modeled natural supply during the assessment period.",
+      "source_refs": [{"source_id": "USGS-NWAA-2026"}, {"source_id": "USGS-NWAA-DATA"}],
+      "misuse_guardrail": "A national watershed screening indicator is not a prediction that 27 million people will lose tap water."
+    },
+    {
+      "claim_id": "WTR-COAST-001",
+      "status": "verified",
+      "topic": "saltwater_intrusion",
+      "dashboard_text": "Coastal saltwater intrusion is site-specific and commonly responds to pumping, hydraulic gradients, canals, drought, wells, and geology; sea-level rise can worsen the hazard but does not supply a universal breakthrough date.",
+      "source_refs": [{"source_id": "USGS-COASTAL-INTRUSION"}, {"source_id": "USGS-MIAMI-SIR2014"}, {"source_id": "NCA5-WATER"}],
+      "misuse_guardrail": "Do not transfer a date or salinity response from one aquifer to another."
+    },
+    {
+      "claim_id": "WTR-MIAMI-001",
+      "status": "qualified",
+      "topic": "miami",
+      "dashboard_text": "Miami-Dade's Biscayne aquifer is vulnerable to saltwater intrusion, but the cited county model did not project wellfield impacts through 2040 under its evaluated high sea-level-rise case.",
+      "source_refs": [{"source_id": "MIAMI-SALTWATER"}, {"source_id": "USGS-MIAMI-SIR2014"}, {"source_id": "MIAMI-2040-MODEL"}],
+      "misuse_guardrail": "Do not state that Miami loses freshwater by 2040; do not extend the model result beyond 2040."
+    },
+    {
+      "claim_id": "WTR-COLORADO-001",
+      "status": "verified",
+      "topic": "colorado_river",
+      "dashboard_text": "Colorado River operations enter a critical governance transition in water year 2027 because the current operating framework expires after 2026.",
+      "source_refs": [{"source_id": "USBR-POST2026"}],
+      "misuse_guardrail": "This is a rulemaking deadline, not the date the river dries up."
+    },
+    {
+      "claim_id": "WTR-TEXAS-001",
+      "status": "qualified",
+      "topic": "texas",
+      "dashboard_text": "Texas's 2027 plan estimates potential drought-of-record shortages of 3.6 million acre-feet in 2030 and 5.8 million in 2080 if recommended strategies are not implemented.",
+      "source_refs": [{"source_id": "TWDB-2027-PLAN"}],
+      "misuse_guardrail": "This is a planning counterfactual designed to motivate projects and conservation, not a forecast of delivered shortages."
+    },
+    {
+      "claim_id": "WTR-NM-001",
+      "status": "qualified",
+      "topic": "new_mexico",
+      "dashboard_text": "New Mexico's 50-year planning basis anticipates roughly 25 percent less water in rivers and aquifers and an approximately 750,000 acre-foot shortfall without offsetting action.",
+      "source_refs": [{"source_id": "NM-50Y-WATER"}, {"source_id": "NCA5-WATER"}],
+      "misuse_guardrail": "Statewide planning estimate; local timing and magnitude vary by basin."
+    },
+    {
+      "claim_id": "WTR-HPA-001",
+      "status": "qualified",
+      "topic": "high_plains_aquifer",
+      "dashboard_text": "The High Plains aquifer lost an estimated 286.4 million acre-feet of recoverable storage from predevelopment to 2019; one peer-reviewed scenario finds 24 percent of current irrigated area unable to support irrigation by 2100.",
+      "source_refs": [{"source_id": "USGS-HPA-SIR2023"}, {"source_id": "USDA-HPA-2020"}],
+      "misuse_guardrail": "Do not describe the entire aquifer as empty in 2100; storage and irrigation viability are spatially heterogeneous."
+    },
+    {
+      "claim_id": "WTR-DESAL-001",
+      "status": "verified",
+      "topic": "desalination",
+      "dashboard_text": "Desalination is mature for selected coastal and brackish municipal supplies; U.S. examples operate at 25–50 Mgal/d, while energy, concentrate disposal, permitting, environmental effects, and cost constrain deployment.",
+      "source_refs": [{"source_id": "DOE-DESAL-BASICS"}, {"source_id": "SDCWA-CARLSBAD"}, {"source_id": "TAMPA-DESAL"}, {"source_id": "ELPASO-DESAL"}, {"source_id": "CA-DWR-DESAL-2025"}],
+      "misuse_guardrail": "Facility capacity is not constant output or proof that the technology fits another site."
+    },
+    {
+      "claim_id": "WTR-DESAL-002",
+      "status": "verified",
+      "topic": "desalination_scale",
+      "dashboard_text": "At 3.2–4.5 kWh/m³, producing the volume of 2015 U.S. domestic use by seawater reverse osmosis would require roughly 118–165 TWh/year before distribution and other excluded energy, illustrating why desalination is a portfolio increment rather than a universal replacement.",
+      "source_refs": [{"source_id": "LBNL-DESAL-2018"}, {"source_id": "USGS-CIR1441"}],
+      "misuse_guardrail": "Order-of-magnitude capacity calculation, not a build proposal, cost estimate, or claim that desalination must supply all domestic use."
+    },
+    {
+      "claim_id": "WTR-AWG-001",
+      "status": "qualified",
+      "topic": "atmospheric_water_generation",
+      "dashboard_text": "Commercial atmospheric water generators are sized for liters to thousands of liters per day and can serve drinking or emergency needs, but current systems do not scale credibly to ordinary U.S. household or community utility volumes.",
+      "source_refs": [{"source_id": "EPA-AWG-2019"}, {"source_id": "NATURE-AWG-2021"}, {"source_id": "ENERGY-STAR-DEHUMIDIFIER"}, {"source_id": "WHO-DOMESTIC-WATER"}],
+      "misuse_guardrail": "Do not compare drinking-only yield with full household demand or use dehumidifier efficiency as a certified AWG performance claim."
+    },
+    {
+      "claim_id": "WTR-AWG-002",
+      "status": "verified",
+      "topic": "atmospheric_water_quality",
+      "dashboard_text": "Atmospheric condensate is not automatically potable; real-world systems require treatment, disinfection, sanitary storage, monitoring, and maintenance.",
+      "source_refs": [{"source_id": "EPA-AWG-2019"}, {"source_id": "EPA-AWG-WQ-2024"}],
+      "misuse_guardrail": "Never present raw condensate production as safe delivered drinking water."
+    }
+  ]
+}

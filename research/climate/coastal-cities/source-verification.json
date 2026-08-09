@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0.0",
+  "method": {
+    "required_checks": 3,
+    "check_1": "Verify source identity, publication venue, title, date, DOI or official persistent page.",
+    "check_2": "Read the exact passage, table, figure, methods, or data field and retain geography, scenario, baseline, unit, defense assumption, and uncertainty.",
+    "check_3": "Corroborate interpretation with an independent authoritative source or reproduce the value from the official underlying data.",
+    "rule": "Corroboration tests meaning; it does not make unlike estimates interchangeable."
+  },
+  "audits": [
+    {
+      "claim_id": "CC-CLAIM-001",
+      "result": "rejected",
+      "checks": [
+        {"check": 1, "evidence": "Nature DOI 10.1038/s41586-024-07038-3 and article identity verified."},
+        {"check": 2, "evidence": "Article horizon for mapped city exposure is 2050; the text and Extended Data Fig. 5 name the three 2070 tide-gauge cases as Galveston Pier 21, Eugene Island, and Grand Isle."},
+        {"check": 3, "evidence": "NOAA local scenario data and USACE's HSDRRS description independently show scenario ranges and protection dependence rather than a total-city 2070 inundation finding."}
+      ]
+    },
+    {
+      "claim_id": "CC-CLAIM-002",
+      "result": "rejected",
+      "checks": [
+        {"check": 1, "evidence": "Nature article and official Miami-Dade 2025 Local Mitigation Strategy verified."},
+        {"check": 2, "evidence": "Nature reports 2050 additional exposure for a Miami study domain; the county reports a 2070 sea-level planning range relative to a 2000 reference."},
+        {"check": 3, "evidence": "NOAA Virginia Key scenarios independently confirm a range of local relative sea-level outcomes but provide no citywide inundation date."}
+      ]
+    },
+    {
+      "claim_id": "CC-CLAIM-003",
+      "result": "verified",
+      "checks": [
+        {"check": 1, "evidence": "Nature DOI and published article verified."},
+        {"check": 2, "evidence": "The main-text paragraph says subsidence can outpace geocentric rise until 2045 or 2070 at three stations; Extended Data Fig. 5 identifies the stations."},
+        {"check": 3, "evidence": "The article's Methods confirm tide-gauge and InSAR point/area analysis, while NOAA station geography confirms Grand Isle is distinct from New Orleans."}
+      ]
+    },
+    {
+      "claim_id": "CC-CLAIM-004",
+      "result": "verified",
+      "checks": [
+        {"check": 1, "evidence": "Nature article and supplementary methods verified."},
+        {"check": 2, "evidence": "Abstract and results provide additional exposed area, people, and property ranges under SSP2-4.5 by 2050; Methods specify static connected inundation, elevation/VLM inputs, and 2010 baselines."},
+        {"check": 3, "evidence": "NOAA's 2022 report independently supports the need for local relative sea-level projections including vertical land motion, without being used to duplicate the Nature exposure totals."}
+      ]
+    },
+    {
+      "claim_id": "CC-CLAIM-005",
+      "result": "rejected",
+      "checks": [
+        {"check": 1, "evidence": "Nature article, USACE HSDRRS page, and City of New Orleans flood page verified."},
+        {"check": 2, "evidence": "Nature's large current New Orleans estimate is explicitly model exposure; its defended sensitivity differs from the undefended analysis."},
+        {"check": 3, "evidence": "USACE and city sources independently document levees, floodwalls, gates, and pumped drainage, disproving a literal current-underwater interpretation."}
+      ]
+    },
+    {
+      "claim_id": "CC-CLAIM-006",
+      "result": "verified",
+      "checks": [
+        {"check": 1, "evidence": "Official 2025 Miami-Dade Local Mitigation Strategy PDF verified."},
+        {"check": 2, "evidence": "The Sea Level Rise section reports 10-17 inches for 2040, 21-54 for 2070, and 40-136 for 2120 above 2000 mean sea level at the Key West reference."},
+        {"check": 3, "evidence": "Official NOAA Virginia Key scenario data provide an independent local comparison and confirm that baseline and scenario labels must be preserved."}
+      ]
+    },
+    {
+      "claim_id": "CC-CLAIM-007",
+      "result": "verified",
+      "checks": [
+        {"check": 1, "evidence": "Official NOAA CO-OPS Derived Product API documentation and station responses verified."},
+        {"check": 2, "evidence": "API values are 1.26, 2.36, and 3.59 inches per decade at Virginia Key, New Canal, and Grand Isle; reproducing script converts by 2.54 to millimeters per year."},
+        {"check": 3, "evidence": "Raw JSON responses are retained with SHA-256 hashes and the output validator checks exact conversion and record end date."}
+      ]
+    },
+    {
+      "claim_id": "CC-CLAIM-008",
+      "result": "rejected",
+      "checks": [
+        {"check": 1, "evidence": "Official USACE New Orleans District HSDRRS page verified."},
+        {"check": 2, "evidence": "USACE defines the standard as a 1% annual-chance level of risk reduction and explicitly describes residual risk and design factors."},
+        {"check": 3, "evidence": "NCA5 coastal infrastructure assessment independently supports compounding and changing coastal risk rather than permanent risk elimination."}
+      ]
+    },
+    {
+      "claim_id": "CC-CLAIM-009",
+      "result": "rejected",
+      "checks": [
+        {"check": 1, "evidence": "Nature Climate Change 2016 and 2017 articles, corrected 2016 estimate, and replication repository verified."},
+        {"check": 2, "evidence": "The 13.1-million value is population at risk under 1.8 meters by 2100 without protection; the 2017 paper separately models redistribution."},
+        {"check": 3, "evidence": "IPCC WGII Chapter 6 independently confirms multi-causal, uncertain urban migration and potential immobility; it does not support relabeling exposed population as refugees."}
+      ]
+    },
+    {
+      "claim_id": "CC-CLAIM-010",
+      "result": "rejected",
+      "checks": [
+        {"check": 1, "evidence": "Urban Institute Gulf Coast report and underlying peer-reviewed Houston health/school evidence verified."},
+        {"check": 2, "evidence": "Urban Institute Table 5 separates aggregate outcomes from acute, localized institutional strain; Houston arrival and settlement values retain their qualifiers."},
+        {"check": 3, "evidence": "The NBER school analysis finds spatially concentrated exposure but no significant districtwide class-size or per-pupil spending increase; the health study confirms substantial needs among evacuees. Together they support a differentiated capacity claim."}
+      ]
+    }
+  ]
+}
+

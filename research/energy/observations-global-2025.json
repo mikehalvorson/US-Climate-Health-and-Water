@@ -1,0 +1,67 @@
+{
+  "dataset_id": "observations-global-energy-2025",
+  "geography": "world",
+  "period": "2025",
+  "as_of": "2026-08-01",
+  "observations": [
+    {"observation_id": "GLO-DEM-GROWTH-PCT", "measure": "total_energy_demand_annual_change", "value": 1.3, "unit": "percent", "status": "estimate", "source_id": "SRC-IEA-GER26-TRENDS", "claim_id": "CLM-GLO-001"},
+    {"observation_id": "GLO-DEM-GROWTH-EJ", "measure": "total_energy_demand_annual_change", "value": 8, "unit": "EJ", "status": "estimate_approximate", "source_id": "SRC-IEA-GER26-TRENDS", "claim_id": "CLM-GLO-001"},
+    {"observation_id": "GLO-ELC-DEM-GROWTH-PCT", "measure": "electricity_demand_annual_change", "value": 3, "unit": "percent", "status": "estimate_approximate", "source_id": "SRC-IEA-GER26-ELECTRICITY-DEMAND", "claim_id": "CLM-GLO-002"},
+    {"observation_id": "GLO-ELC-DEM-GROWTH-TWH", "measure": "electricity_demand_annual_change", "value": 800, "unit": "TWh", "status": "estimate_approximate", "source_id": "SRC-IEA-GER26-TRENDS", "claim_id": "CLM-GLO-002"},
+    {"observation_id": "GLO-ELC-DEM-VS-ENERGY", "measure": "electricity_demand_growth_multiple_of_total_energy_demand_growth", "value": 2.3, "unit": "ratio", "status": "estimate_approximate", "source_id": "SRC-IEA-GER26-TRENDS", "claim_id": "CLM-GLO-002"},
+
+    {"observation_id": "GLO-GEN-TOTAL-EI", "measure": "electricity_net_generation", "value": 32202, "unit": "TWh", "status": "compiled_observation", "method_family": "Energy Institute Statistical Review", "source_id": "SRC-EI-SR26", "claim_id": "CLM-GLO-005"},
+    {"observation_id": "GLO-GEN-SHARE-LOW-IEA", "measure": "generation_share", "technology": "low_emissions_renewables_plus_nuclear", "value": 43, "unit": "percent", "status": "estimate_rounded", "method_family": "IEA Global Energy Review", "source_id": "SRC-IEA-GER26-ELECTRICITY-SUPPLY", "claim_id": "CLM-GLO-003"},
+    {"observation_id": "GLO-GEN-SHARE-REN-IEA", "measure": "generation_share", "technology": "renewables", "value": 34, "unit": "percent", "status": "estimate_rounded", "method_family": "IEA Global Energy Review", "source_id": "SRC-IEA-GER26-ELECTRICITY-SUPPLY", "claim_id": "CLM-GLO-003"},
+    {"observation_id": "GLO-GEN-SHARE-COAL-IEA", "measure": "generation_share", "technology": "coal", "value": 34, "unit": "percent", "status": "estimate_rounded", "method_family": "IEA Global Energy Review", "source_id": "SRC-IEA-GER26-ELECTRICITY-SUPPLY", "claim_id": "CLM-GLO-003"},
+    {"observation_id": "GLO-GEN-SHARE-GAS-IEA", "measure": "generation_share", "technology": "natural_gas", "value": 21, "unit": "percent", "status": "estimate_rounded", "method_family": "IEA Global Energy Review", "source_id": "SRC-IEA-GER26-ELECTRICITY-SUPPLY", "claim_id": "CLM-GLO-003"},
+    {"observation_id": "GLO-GEN-SHARE-WIND-SOLAR-IEA", "measure": "generation_share", "technology": "wind_plus_solar", "value": 17, "unit": "percent", "status": "estimate_rounded", "method_family": "IEA Global Energy Review", "source_id": "SRC-IEA-GER26-ELECTRICITY-SUPPLY", "claim_id": "CLM-GLO-003"},
+    {"observation_id": "GLO-GEN-SOLAR-IEA", "measure": "electricity_generation", "technology": "solar_photovoltaic", "value": 2700, "unit": "TWh", "status": "estimate_approximate", "method_family": "IEA Global Energy Review", "source_id": "SRC-IEA-GER26-TRENDS", "claim_id": "CLM-GLO-004"},
+    {"observation_id": "GLO-GEN-SOLAR-CHANGE-IEA", "measure": "electricity_generation_annual_change", "technology": "solar_photovoltaic", "value": 600, "unit": "TWh", "status": "estimate_approximate", "method_family": "IEA Global Energy Review", "source_id": "SRC-IEA-GER26-TRENDS", "claim_id": "CLM-GLO-004"},
+    {"observation_id": "GLO-GEN-SHARE-COAL-EI", "measure": "generation_share", "technology": "coal", "value": 32.6, "unit": "percent", "status": "compiled_observation", "method_family": "Energy Institute Statistical Review", "source_id": "SRC-EI-SR26", "claim_id": "CLM-GLO-005"},
+    {"observation_id": "GLO-GEN-SHARE-GAS-EI", "measure": "generation_share", "technology": "natural_gas", "value": 22, "unit": "percent", "status": "compiled_observation_rounded", "method_family": "Energy Institute Statistical Review", "source_id": "SRC-EI-SR26", "claim_id": "CLM-GLO-005"},
+    {"observation_id": "GLO-GEN-SHARE-SOLAR-EI", "measure": "generation_share", "technology": "solar", "value": 8.7, "unit": "percent", "status": "compiled_observation", "method_family": "Energy Institute Statistical Review", "source_id": "SRC-EI-SR26", "claim_id": "CLM-GLO-005"},
+    {"observation_id": "GLO-GEN-SHARE-WIND-EI", "measure": "generation_share", "technology": "wind", "value": 8.4, "unit": "percent", "status": "compiled_observation", "method_family": "Energy Institute Statistical Review", "source_id": "SRC-EI-SR26", "claim_id": "CLM-GLO-005"},
+    {"observation_id": "GLO-GEN-SHARE-NUCLEAR-EI", "measure": "generation_share", "technology": "nuclear_fission", "value": 8.8, "unit": "percent", "status": "compiled_observation", "method_family": "Energy Institute Statistical Review", "source_id": "SRC-EI-SR26", "claim_id": "CLM-GLO-005"},
+
+    {"observation_id": "GLO-CAP-SOLAR", "measure": "year_end_maximum_net_generating_capacity", "technology": "solar_total", "value": 2391.584, "unit": "GW", "status": "statistical_compilation", "source_id": "SRC-IRENA-CAP26", "claim_id": "CLM-GLO-007"},
+    {"observation_id": "GLO-CAP-CSP", "measure": "year_end_maximum_net_generating_capacity", "technology": "concentrating_solar_power", "value": 8.422, "unit": "GW", "status": "statistical_compilation", "source_id": "SRC-IRENA-CAP26", "claim_id": "CLM-GLO-007"},
+    {"observation_id": "GLO-CAP-WIND", "measure": "year_end_maximum_net_generating_capacity", "technology": "wind_total", "value": 1291.368, "unit": "GW", "status": "statistical_compilation", "source_id": "SRC-IRENA-CAP26", "claim_id": "CLM-GLO-007"},
+    {"observation_id": "GLO-CAP-WIND-ONSHORE", "measure": "year_end_maximum_net_generating_capacity", "technology": "wind_onshore", "value": 1199.987, "unit": "GW", "status": "statistical_compilation", "source_id": "SRC-IRENA-CAP26", "claim_id": "CLM-GLO-007"},
+    {"observation_id": "GLO-CAP-WIND-OFFSHORE", "measure": "year_end_maximum_net_generating_capacity", "technology": "wind_offshore", "value": 91.38, "unit": "GW", "status": "statistical_compilation", "source_id": "SRC-IRENA-CAP26", "claim_id": "CLM-GLO-007"},
+    {"observation_id": "GLO-CAP-HYDRO-RENEWABLE", "measure": "year_end_maximum_net_generating_capacity", "technology": "renewable_hydropower_excluding_pumped_storage", "value": 1295.765, "unit": "GW", "status": "statistical_compilation", "source_id": "SRC-IRENA-CAP26", "claim_id": "CLM-GLO-007"},
+    {"observation_id": "GLO-CAP-HYDRO-INCL-PUMPED", "measure": "year_end_maximum_net_generating_capacity", "technology": "hydropower_including_pumped_storage", "value": 1455.588, "unit": "GW", "status": "statistical_compilation", "source_id": "SRC-IRENA-CAP26", "claim_id": "CLM-GLO-007"},
+    {"observation_id": "GLO-CAP-BIOENERGY", "measure": "year_end_maximum_net_generating_capacity", "technology": "bioenergy", "value": 154.399, "unit": "GW", "status": "statistical_compilation", "source_id": "SRC-IRENA-CAP26", "claim_id": "CLM-GLO-007"},
+    {"observation_id": "GLO-CAP-GEOTHERMAL", "measure": "year_end_maximum_net_generating_capacity", "technology": "geothermal", "value": 15.674, "unit": "GW", "status": "statistical_compilation", "source_id": "SRC-IRENA-CAP26", "claim_id": "CLM-GLO-007"},
+    {"observation_id": "GLO-CAP-MARINE", "measure": "year_end_maximum_net_generating_capacity", "technology": "marine_energy", "value": 0.49, "unit": "GW", "status": "statistical_compilation", "source_id": "SRC-IRENA-CAP26", "claim_id": "CLM-GLO-007"},
+    {"observation_id": "GLO-CAP-NUCLEAR", "measure": "net_electrical_capacity", "technology": "nuclear_fission", "value": 379, "unit": "GW", "status": "reported_approximate", "source_id": "SRC-IAEA-PRIS-TREND", "claim_id": "CLM-GLO-009"},
+    {"observation_id": "GLO-GEN-NUCLEAR", "measure": "electricity_generation", "technology": "nuclear_fission", "value": 2635.25, "unit": "TWh", "status": "reported", "source_id": "SRC-IAEA-PRIS-TREND", "claim_id": "CLM-GLO-009"},
+
+    {"observation_id": "GLO-ADD-REN-IRENA", "measure": "annual_capacity_addition", "technology": "renewables", "value": 692, "unit": "GW", "status": "statistical_compilation", "method_family": "IRENA Renewable Capacity Statistics", "source_id": "SRC-IRENA-CAP26", "claim_id": "CLM-GLO-008"},
+    {"observation_id": "GLO-ADD-SOLAR-IRENA", "measure": "annual_capacity_addition", "technology": "solar", "value": 510, "unit": "GW", "status": "statistical_compilation", "method_family": "IRENA Renewable Capacity Statistics", "source_id": "SRC-IRENA-CAP26", "claim_id": "CLM-GLO-008"},
+    {"observation_id": "GLO-ADD-WIND-IRENA", "measure": "annual_capacity_addition", "technology": "wind", "value": 159, "unit": "GW", "status": "statistical_compilation", "method_family": "IRENA Renewable Capacity Statistics", "source_id": "SRC-IRENA-CAP26", "claim_id": "CLM-GLO-008"},
+    {"observation_id": "GLO-ADD-REN-IEA", "measure": "annual_capacity_addition", "technology": "renewables", "value": 800, "unit": "GW", "status": "estimate_approximate", "method_family": "IEA Global Energy Review", "source_id": "SRC-IEA-GER26", "claim_id": "CLM-GLO-008"},
+
+    {"observation_id": "GLO-OIL-DEMAND-CHANGE", "measure": "demand_annual_change", "technology": "oil", "value": 0.65, "unit": "million_barrels_per_day", "status": "estimate", "source_id": "SRC-IEA-GER26-OIL", "claim_id": "CLM-GLO-010"},
+    {"observation_id": "GLO-OIL-SUPPLY-CHANGE", "measure": "supply_annual_change", "technology": "oil", "value": 3, "unit": "million_barrels_per_day", "status": "estimate_approximate", "source_id": "SRC-IEA-GER26-OIL", "claim_id": "CLM-GLO-010"},
+    {"observation_id": "GLO-GAS-DEMAND-CHANGE", "measure": "demand_annual_change", "technology": "natural_gas", "value": 40, "unit": "billion_cubic_metres", "status": "estimate_approximate", "source_id": "SRC-IEA-GER26-GAS", "claim_id": "CLM-GLO-011"},
+    {"observation_id": "GLO-COAL-DEMAND-CHANGE", "measure": "demand_annual_change", "technology": "coal", "value": 30, "unit": "million_tonnes", "status": "estimate_approximate", "source_id": "SRC-IEA-GER26-COAL", "claim_id": "CLM-GLO-012"}
+  ],
+  "method_conflicts": [
+    {
+      "conflict_id": "MC-GLO-RENEWABLE-ADDITIONS-2025",
+      "measure": "renewable_capacity_additions",
+      "values": ["GLO-ADD-REN-IRENA", "GLO-ADD-REN-IEA"],
+      "resolution": "preserve_both",
+      "reason": "IRENA's later statistical compilation and IEA's earlier estimate differ in coverage and timing; averaging would create an unsupported number."
+    },
+    {
+      "conflict_id": "MC-GLO-GENERATION-MIX-2025",
+      "measure": "electricity_generation_share_by_source",
+      "values": ["GLO-GEN-SHARE-COAL-IEA", "GLO-GEN-SHARE-COAL-EI", "GLO-GEN-SHARE-GAS-IEA", "GLO-GEN-SHARE-GAS-EI"],
+      "resolution": "preserve_source_specific_series",
+      "reason": "IEA uses rounded first-assessment estimates; Energy Institute uses its own statistical compilation."
+    }
+  ]
+}
+

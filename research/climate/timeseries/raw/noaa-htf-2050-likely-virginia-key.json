@@ -1,0 +1,41 @@
+{
+  "count": 3,
+  "stnId": "8723214",
+  "stnName": "Virginia Key, FL",
+  "lat": "25.7314",
+  "lon": "-80.1618",
+  "LikelyDecadalScenarios": [
+    {
+      "minor": [
+        {
+          "year": 2050,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "lower_bound": 35,
+          "upper_bound": 60,
+          "lower_scenario": "int",
+          "upper_scenario": "int high"
+        }
+      ],
+      "moderate": [
+        {
+          "year": 2050,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "lower_bound": 1,
+          "upper_bound": 2,
+          "lower_scenario": "int",
+          "upper_scenario": "int high"
+        }
+      ],
+      "major": [
+        {
+          "year": 2050,
+          "source": "https://sealevel.globalchange.gov/internal_resources/756/noaa-nos-techrpt01-global-regional-SLR-scenarios-US.pdf",
+          "lower_bound": 0,
+          "upper_bound": 0,
+          "lower_scenario": "int",
+          "upper_scenario": "int high"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "series": [
+    {
+      "file": "normalized/observed-ghg-temperature.csv",
+      "grain": "one row per calendar year",
+      "coverage": "1850-2025 with source-specific nulls",
+      "fields": {
+        "nasa_gistemp_anomaly_c_1951_1980": "NASA annual global land-ocean anomaly; native 1951-1980 baseline",
+        "noaa_globaltemp_anomaly_c_1971_2000": "NOAA annual global land-ocean anomaly; native 1971-2000 baseline",
+        "co2_ppm": "NOAA annual global surface marine boundary layer dry-air CO2 mole fraction",
+        "forcing_total_long_lived_ghg_w_m2": "NOAA AGGI effective radiative forcing relative to preindustrial",
+        "ch4_ppb": "NOAA annual global methane dry-air mole fraction",
+        "n2o_ppb": "NOAA annual global nitrous oxide dry-air mole fraction"
+      }
+    },
+    {
+      "file": "normalized/global-co2-emissions-and-cumulative-1850-2024.csv",
+      "grain": "one row per calendar year",
+      "coverage": "1850-2024",
+      "fields": {
+        "anthropogenic_co2_sources_gtco2": "Global Carbon Budget fossil/industry plus net land-use-change source estimate",
+        "cumulative_anthropogenic_co2_sources_since_1850_gtco2": "arithmetic cumulative sum of annual source estimates"
+      },
+      "warning": "This cumulative source series is a transparent dashboard approximation. Do not use it to recalculate IPCC TCRE or carbon budgets without applying the exact IPCC net-emissions definitions and uncertainty treatment."
+    },
+    {
+      "file": "normalized/global-ghg-emissions-primap-hist-v2.7.csv",
+      "grain": "one row per year and PRIMAP priority scenario",
+      "coverage": "1750-2024",
+      "boundary": "National totals excluding LULUCF; international aviation and shipping excluded; 2024 includes extrapolation where source inventories are unavailable",
+      "preferred_display_scenario": "HISTTP",
+      "accounting_metric": "AR6 GWP100 for Kyoto-gas and F-gas aggregate fields",
+      "warning": "CO2e is an emissions-accounting metric, not an atmospheric concentration or radiative-forcing measurement."
+    },
+    {
+      "file": "scenario-warming.csv",
+      "grain": "scenario and IPCC assessment period",
+      "coverage": "2021-2100 assessment windows",
+      "warning": "Do not linearly interpolate annual temperatures from period means without a model-derived annual scenario series."
+    }
+  ],
+  "null_policy": "Null means unavailable or outside source coverage; never coerce to zero.",
+  "precision_policy": "Display no more precision than the source assessment supports."
+}
+

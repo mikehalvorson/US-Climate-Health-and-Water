@@ -1,0 +1,570 @@
+{
+  "checked_at": "2026-08-02T04:20:18+00:00",
+  "purpose": "HTTP accessibility check; claim fidelity remains documented in source-verification.json",
+  "endpoints_checked": 61,
+  "accessible_endpoints": 56,
+  "inaccessible_or_script_blocked_endpoints": 5,
+  "secondary_browser_verified_endpoints": 5,
+  "effective_endpoint_identity_verified": 61,
+  "secondary_browser_checks": [
+    {"source_id": "SRC-CDC-ELECTRICAL-SAFETY24", "result": "official page exists; scripted request returned 403", "checked_at": "2026-08-02T04:22:00+00:00"},
+    {"source_id": "SRC-FERC-ORDER1920", "result": "official page opened and supporting sections inspected; scripted request returned 403", "checked_at": "2026-08-02T04:22:00+00:00"},
+    {"source_id": "SRC-FERC-ORDER1977", "result": "official page opened and supporting sections inspected; scripted request returned 403", "checked_at": "2026-08-02T04:22:00+00:00"},
+    {"source_id": "SRC-GAO-LPT23", "result": "official GAO product page opened and recommendation/status text inspected; scripted request returned 403", "checked_at": "2026-08-02T04:22:00+00:00"},
+    {"source_id": "SRC-WAPA-TRANSWEST", "result": "official WAPA page exists and project length/capacity text was inspected; scripted client encountered a TLS handshake failure", "checked_at": "2026-08-02T04:22:00+00:00"}
+  ],
+  "records": [
+    {
+      "source_id": "SRC-BLM-SUNZIA",
+      "url_field": "url",
+      "requested_url": "https://eplanning.blm.gov/Project-Home/?id=a7fe02c5-a7f2-f011-8407-001dd806295a",
+      "status": 200,
+      "accessible": true,
+      "final_url": "https://eplanning.blm.gov/Project-Home/?id=a7fe02c5-a7f2-f011-8407-001dd806295a",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "source_id": "SRC-BPA-PDCI",
+      "url_field": "url",
+      "requested_url": "https://www.bpa.gov/learn-and-participate/public-involvement-decisions/project-reviews/pacific-direct-current-intertie",
+      "status": 200,
+      "accessible": true,
+      "final_url": "https://www.bpa.gov/learn-and-participate/public-involvement-decisions/project-reviews/pacific-direct-current-intertie",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "source_id": "SRC-CAISO-TENWEST24",
+      "url_field": "url",
+      "requested_url": "https://www.caiso.com/Documents/DCRT-Presentation-Transmission-Development-Forum-Jan312024.pdf",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.caiso.com/Documents/DCRT-Presentation-Transmission-Development-Forum-Jan312024.pdf",
+      "content_type": "application/pdf"
+    },
+    {
+      "source_id": "SRC-CAISO-TRANSBAY",
+      "url_field": "url",
+      "requested_url": "https://www.caiso.com/Documents/Decision_2011-12TransmissionPlan-Plan-MAR2012.pdf",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.caiso.com/Documents/Decision_2011-12TransmissionPlan-Plan-MAR2012.pdf",
+      "content_type": "application/pdf"
+    },
+    {
+      "source_id": "SRC-CDC-ELECTRICAL-SAFETY24",
+      "url_field": "url",
+      "requested_url": "https://www.cdc.gov/niosh/electrical-safety/index.html",
+      "status": 403,
+      "accessible": false,
+      "final_url": "https://www.cdc.gov/niosh/electrical-safety/index.html",
+      "content_type": "text/html",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "source_id": "SRC-DOE-BATTERY-SC24",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/sites/default/files/2024-12/20212024-Four%20Year%20Review%20of%20Supply%20Chains%20for%20the%20Advanced%20Batteries%20Sector.pdf",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/sites/default/files/2024-12/20212024-Four%20Year%20Review%20of%20Supply%20Chains%20for%20the%20Advanced%20Batteries%20Sector.pdf",
+      "content_type": "application/pdf"
+    },
+    {
+      "source_id": "SRC-DOE-CCS-SC22",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/hgeo/carbon-capture-transport-and-storage-supply-chain-review-deep-dive-assessment",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/hgeo/carbon-capture-transport-and-storage-supply-chain-review-deep-dive-assessment",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-DOE-CITAP",
+      "url_field": "artifact_url",
+      "requested_url": "https://www.energy.gov/sites/default/files/2024-05/CITAPStandardSchedule.pdf",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/sites/default/files/2024-05/CITAPStandardSchedule.pdf",
+      "content_type": "application/pdf"
+    },
+    {
+      "source_id": "SRC-DOE-CITAP",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/oe/coordinated-interagency-transmission-authorizations-and-permits-program",
+      "status": 200,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/oe/coordinated-interagency-transmission-authorizations-and-permits-program",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-DOE-DIGITAL-SC22",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/ceser/articles/ceser-releases-supply-chain-assessment-digital-components",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/ceser/articles/ceser-releases-supply-chain-assessment-digital-components",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-DOE-DT-RULE24",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/articles/doe-finalizes-energy-efficiency-standards-distribution-transformers-protect-domestic",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/articles/doe-finalizes-energy-efficiency-standards-distribution-transformers-protect-domestic",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-DOE-ELECTROLYZER-SC22",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/cmei/fuels/water-electrolyzers-and-fuel-cells-supply-chain-deep-dive-assessment",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/cmei/fuels/water-electrolyzers-and-fuel-cells-supply-chain-deep-dive-assessment",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-DOE-GAS-TURBINE25",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/sites/default/files/2025-12/Bottleneck%20to%20Breakthrough_2025-12-3.pdf",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/sites/default/files/2025-12/Bottleneck%20to%20Breakthrough_2025-12-3.pdf",
+      "content_type": "application/pdf"
+    },
+    {
+      "source_id": "SRC-DOE-GBX-FEIS25",
+      "url_field": "artifact_url",
+      "requested_url": "https://www.energy.gov/sites/default/files/2025-07/GBX_FEIS_Compiled_text_0.pdf",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/sites/default/files/2025-07/GBX_FEIS_Compiled_text_0.pdf",
+      "content_type": "application/pdf"
+    },
+    {
+      "source_id": "SRC-DOE-GBX-FEIS25",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/nepa/articles/doeeis-0554-final-environmental-impact-statement-july-2025",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/nepa/articles/doeeis-0554-final-environmental-impact-statement-july-2025",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-DOE-GETS",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/oe/grid-enhancing-technologies-improve-existing-power-lines",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/oe/grid-enhancing-technologies-improve-existing-power-lines",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-DOE-GNTL",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/sites/default/files/2017/01/f34/Building%20Electric%20Transmission%20Lines--A%20Review%20of%20Recent%20Transmission%20Projects.pdf",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/sites/default/files/2017/01/f34/Building%20Electric%20Transmission%20Lines--A%20Review%20of%20Recent%20Transmission%20Projects.pdf",
+      "content_type": "application/pdf"
+    },
+    {
+      "source_id": "SRC-DOE-GRID-SC22",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/sites/default/files/2022-02/Electric%20Grid%20Supply%20Chain%20Report%20-%20Final.pdf",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/sites/default/files/2022-02/Electric%20Grid%20Supply%20Chain%20Report%20-%20Final.pdf",
+      "content_type": "application/pdf"
+    },
+    {
+      "source_id": "SRC-DOE-HYDRO-SC22",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/cmei/water/hydropower-supply-chain-deep-dive-assessment",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/cmei/water/hydropower-supply-chain-deep-dive-assessment",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-DOE-LPT24",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/sites/default/files/2024-10/EXEC-2022-001242%20-%20Large%20Power%20Transformer%20Resilience%20Report%20signed%20by%20Secretary%20Granholm%20on%207-10-24.pdf",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/sites/default/files/2024-10/EXEC-2022-001242%20-%20Large%20Power%20Transformer%20Resilience%20Report%20signed%20by%20Secretary%20Granholm%20on%207-10-24.pdf",
+      "content_type": "application/pdf"
+    },
+    {
+      "source_id": "SRC-DOE-MATL",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/oe/articles/pp-305-montana-alberta-tie-ltd",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/oe/articles/pp-305-montana-alberta-tie-ltd",
+      "content_type": "application/pdf"
+    },
+    {
+      "source_id": "SRC-DOE-NECEC-EA21",
+      "url_field": "artifact_url",
+      "requested_url": "https://www.energy.gov/sites/prod/files/2021/01/f82/ea-2155-necec-2021-01-14_0.pdf",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/sites/prod/files/2021/01/f82/ea-2155-necec-2021-01-14_0.pdf",
+      "content_type": "application/pdf"
+    },
+    {
+      "source_id": "SRC-DOE-NECEC-EA21",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/nepa/doeea-2155-new-england-clean-energy-connect-maine",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/nepa/doeea-2155-new-england-clean-energy-connect-maine",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-DOE-NEEDS-DRAFT26",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/oe/national-transmission-needs-study",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/oe/national-transmission-needs-study",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-DOE-NEEDS23",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/sites/default/files/2023-12/National%20Transmission%20Needs%20Study%20-%20Final_2023.12.1.pdf",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/sites/default/files/2023-12/National%20Transmission%20Needs%20Study%20-%20Final_2023.12.1.pdf",
+      "content_type": "application/pdf"
+    },
+    {
+      "source_id": "SRC-DOE-NEPA-TRANS25",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/nepa/articles/interim-guidance-nepa-reviews-electric-transmission-projects-january-2025",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/nepa/articles/interim-guidance-nepa-reviews-electric-transmission-projects-january-2025",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-DOE-NIETC",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/oe/national-interest-electric-transmission-corridor-designation-process",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/oe/national-interest-electric-transmission-corridor-designation-process",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-DOE-NPC26",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/nepa/doeeis-0568-north-plains-connector-multiple-locations",
+      "status": 200,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/nepa/doeeis-0568-north-plains-connector-multiple-locations",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-DOE-NTPS24",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/sites/default/files/2024-10/NationalTransmissionPlanningStudy-ExecutiveSummary.pdf",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/sites/default/files/2024-10/NationalTransmissionPlanningStudy-ExecutiveSummary.pdf",
+      "content_type": "application/pdf"
+    },
+    {
+      "source_id": "SRC-DOE-NUCLEAR-SC22",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/sites/default/files/2022-02/Nuclear%20Energy%20Supply%20Chain%20Report%20-%20Final.pdf",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/sites/default/files/2022-02/Nuclear%20Energy%20Supply%20Chain%20Report%20-%20Final.pdf",
+      "content_type": "application/pdf"
+    },
+    {
+      "source_id": "SRC-DOE-ONELINE",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/edf/one-nevada-line",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/edf/one-nevada-line",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-DOE-SEMICONDUCTOR-SC22",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/sites/default/files/2022-02/Semiconductor%20Supply%20Chain%20Report%20-%20Final.pdf",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/sites/default/files/2022-02/Semiconductor%20Supply%20Chain%20Report%20-%20Final.pdf",
+      "content_type": "application/pdf"
+    },
+    {
+      "source_id": "SRC-DOE-SOLAR-SC22",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/sites/default/files/2022-02/Solar%20Energy%20Supply%20Chain%20Report%20-%20Final.pdf",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/sites/default/files/2022-02/Solar%20Energy%20Supply%20Chain%20Report%20-%20Final.pdf",
+      "content_type": "application/pdf"
+    },
+    {
+      "source_id": "SRC-DOE-STORAGE-SC22",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/sites/default/files/2022-02/Energy%20Storage%20Supply%20Chain%20Report%20-%20final.pdf",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/sites/default/files/2022-02/Energy%20Storage%20Supply%20Chain%20Report%20-%20final.pdf",
+      "content_type": "application/pdf"
+    },
+    {
+      "source_id": "SRC-DOE-TFP-PROJECTS",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/node/4834686",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/oe/transmission-facilitation-program-selections",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-DOE-TRANS-IMPACT",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/oe/transmission-impact-assessment",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/oe/transmission-impact-assessment",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-DOE-WIND-SC22",
+      "url_field": "url",
+      "requested_url": "https://www.energy.gov/sites/default/files/2022-02/Wind%20Supply%20Chain%20Report%20-%20Final%202.25.22.pdf",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.energy.gov/sites/default/files/2022-02/Wind%20Supply%20Chain%20Report%20-%20Final%202.25.22.pdf",
+      "content_type": "application/pdf"
+    },
+    {
+      "source_id": "SRC-EIA-930",
+      "url_field": "url",
+      "requested_url": "https://www.eia.gov/electricity/gridmonitor/",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.eia.gov/electricity/gridmonitor/",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-EIA-CCGT25",
+      "url_field": "url",
+      "requested_url": "https://www.eia.gov/todayinenergy/detail.php?id=65464",
+      "status": 200,
+      "accessible": true,
+      "final_url": "https://www.eia.gov/todayinenergy/detail.php?id=65464",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-EIA-TRANSMISSION-FAQ",
+      "url_field": "url",
+      "requested_url": "https://www.eia.gov/tools/faqs/faq.php?id=567&t=3",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.eia.gov/tools/faqs/faq.php?id=567&t=3",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-FERC-1920-SCHEDULE26",
+      "url_field": "url",
+      "requested_url": "https://www.ferc.gov/news-events/news/order-no-1920-compliance-filings-schedule",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.ferc.gov/news-events/news/order-no-1920-compliance-filings-schedule",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-FERC-ORDER1920",
+      "url_field": "url",
+      "requested_url": "https://www.ferc.gov/explainer-transmission-planning-and-cost-allocation-final-rule",
+      "status": 403,
+      "accessible": false,
+      "final_url": "https://www.ferc.gov/explainer-transmission-planning-and-cost-allocation-final-rule",
+      "content_type": "text/html; charset=UTF-8",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "source_id": "SRC-FERC-ORDER1977",
+      "url_field": "url",
+      "requested_url": "https://www.ferc.gov/explainer-siting-interstate-electric-transmission-facilities",
+      "status": 403,
+      "accessible": false,
+      "final_url": "https://www.ferc.gov/explainer-siting-interstate-electric-transmission-facilities",
+      "content_type": "text/html; charset=UTF-8",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "source_id": "SRC-FERC-ORDER881",
+      "url_field": "url",
+      "requested_url": "https://www.ferc.gov/news-events/news/ferc-rule-improve-transmission-line-ratings-will-help-lower-transmission-costs",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.ferc.gov/news-events/news/ferc-rule-improve-transmission-line-ratings-will-help-lower-transmission-costs",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-GAO-LPT23",
+      "url_field": "url",
+      "requested_url": "https://www.gao.gov/products/gao-23-106180",
+      "status": 403,
+      "accessible": false,
+      "final_url": "https://www.gao.gov/products/gao-23-106180",
+      "content_type": "text/html",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "source_id": "SRC-HIFLD-TRANSMISSION-LINES",
+      "url_field": "service_url",
+      "requested_url": "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Power_Transmission_Lines/FeatureServer/0",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Power_Transmission_Lines/FeatureServer/0",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "source_id": "SRC-HIFLD-TRANSMISSION-LINES",
+      "url_field": "url",
+      "requested_url": "https://catalog.data.gov/dataset/electric-power-transmission-lines",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://catalog.data.gov/dataset/electric-power-transmission-lines",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "source_id": "SRC-ISONE-HQ-PHASEII",
+      "url_field": "url",
+      "requested_url": "https://www.iso-ne.com/static-assets/documents/2022/07/order_881_hvdc_toa_att_m.pdf",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.iso-ne.com/static-assets/documents/2022/07/order_881_hvdc_toa_att_m.pdf",
+      "content_type": "application/pdf"
+    },
+    {
+      "source_id": "SRC-ISONE-TRANSFER26",
+      "url_field": "url",
+      "requested_url": "https://www.iso-ne.com/static-assets/documents/100035/2026_transmission_transfer_capabilities_update_pac_final.pdf",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.iso-ne.com/static-assets/documents/100035/2026_transmission_transfer_capabilities_update_pac_final.pdf",
+      "content_type": "application/pdf"
+    },
+    {
+      "source_id": "SRC-MAINE-NECEC-COMPLETION26",
+      "url_field": "url",
+      "requested_url": "https://www.maine.gov/governor/mills/news/governor-mills-welcomes-completion-new-england-clean-energy-connect-project-2026-01-16",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.maine.gov/governor/mills/news/governor-mills-welcomes-completion-new-england-clean-energy-connect-project-2026-01-16",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-MNPOWER-GNTL",
+      "url_field": "url",
+      "requested_url": "https://www.mnpower.com/Company/Transmission",
+      "status": 200,
+      "accessible": true,
+      "final_url": "https://www.mnpower.com/Company/Transmission",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "source_id": "SRC-MPUC-NECEC20",
+      "url_field": "url",
+      "requested_url": "https://www.maine.gov/mpuc/sites/maine.gov.mpuc/files/inline-files/2020-Annual-Report-Final-Version.pdf",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.maine.gov/mpuc/sites/maine.gov.mpuc/files/inline-files/2020-Annual-Report-Final-Version.pdf",
+      "content_type": "application/pdf"
+    },
+    {
+      "source_id": "SRC-NCI-EMF",
+      "url_field": "url",
+      "requested_url": "https://www.cancer.gov/about-cancer/causes-prevention/risk/radiation/electromagnetic-fields-fact-sheet",
+      "status": 200,
+      "accessible": true,
+      "final_url": "https://www.cancer.gov/about-cancer/causes-prevention/risk/radiation/electromagnetic-fields-fact-sheet",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-NERC-ITCS",
+      "url_field": "url",
+      "requested_url": "https://www.nerc.com/pa/RAPA/Documents/ITCS_Final_Report.pdf",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.nerc.com/globalassets/initiatives/itcs/itcs_final_report.pdf",
+      "content_type": "application/pdf"
+    },
+    {
+      "source_id": "SRC-NERC-LTRA25",
+      "url_field": "url",
+      "requested_url": "https://www.nerc.com/our-work/assessments/long-term-reliability-assessments",
+      "status": 200,
+      "accessible": true,
+      "final_url": "https://www.nerc.com/our-work/assessments/long-term-reliability-assessments",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "source_id": "SRC-NY-GOV-CHPE26",
+      "url_field": "url",
+      "requested_url": "https://www.governor.ny.gov/news/governor-hochul-celebrates-completion-champlain-hudson-power-express-project",
+      "status": 206,
+      "accessible": true,
+      "final_url": "https://www.governor.ny.gov/news/governor-hochul-celebrates-completion-champlain-hudson-power-express-project",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-NYISO-UDR",
+      "url_field": "url",
+      "requested_url": "https://www.nyiso.com/documents/20142/3036383/Amount-of-Capacity-Suppliers-are-Qualified-to-Offer.pdf/57f56a99-3293-d795-8584-21a70c495a5a",
+      "status": 200,
+      "accessible": true,
+      "final_url": "https://www.nyiso.com/documents/20142/3036383/Amount-of-Capacity-Suppliers-are-Qualified-to-Offer.pdf/57f56a99-3293-d795-8584-21a70c495a5a",
+      "content_type": "application/pdf"
+    },
+    {
+      "source_id": "SRC-NYSERDA-CHPE26",
+      "url_field": "url",
+      "requested_url": "https://www.nyserda.ny.gov/All-Programs/Large-Scale-Renewables/Tier-Four",
+      "status": 200,
+      "accessible": true,
+      "final_url": "https://www.nyserda.ny.gov/All-Programs/Large-Scale-Renewables/Tier-Four",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "source_id": "SRC-USFWS-POWERLINES",
+      "url_field": "url",
+      "requested_url": "https://www.fws.gov/story/avoidance-and-minimization-measures-power-lines",
+      "status": 200,
+      "accessible": true,
+      "final_url": "https://www.fws.gov/story/avoidance-and-minimization-measures-power-lines",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-USGS-POWERLINES",
+      "url_field": "url",
+      "requested_url": "https://www.usgs.gov/programs/energy-and-wildlife-%2528unpublished%2529/science/power-lines",
+      "status": 200,
+      "accessible": true,
+      "final_url": "https://www.usgs.gov/programs/energy-and-wildlife-%2528unpublished%2529/science/power-lines",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "source_id": "SRC-WAPA-TRANSWEST",
+      "url_field": "url",
+      "requested_url": "https://www.wapa.gov/transmission/transmission-environmental-review-nepa/transwest-express-nepa/",
+      "status": null,
+      "accessible": false,
+      "error": "URLError: <urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] ssl/tls alert handshake failure (_ssl.c:1010)>"
+    }
+  ]
+}

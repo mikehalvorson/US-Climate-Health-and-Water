@@ -1,0 +1,280 @@
+{
+  "title": "Generation-consumption-transmission information-gap register",
+  "as_of": "2026-08-01",
+  "purpose": "Make missing evidence visible so the dashboard never fills a gap with an inference disguised as a measurement.",
+  "priority_meaning": {"P0": "blocks a central comparison or can materially mislead", "P1": "important for planning or contextual interpretation", "P2": "valuable refinement"},
+  "gaps": [
+    {
+      "gap_id": "XG-P0-001",
+      "priority": "P0",
+      "domain": ["consumption", "transmission"],
+      "gap": "Unified hourly load projections by BA, zone, or bus through 2050-2070",
+      "why_it_matters": "Annual TWh does not establish peak MW, ramping, weather coincidence, or which corridor is needed.",
+      "current_evidence": "2024 EIA-930 hourly history; NERC ten-year seasonal peaks; AEO annual national scenarios.",
+      "missing_dimensions": ["hour", "weather_year", "geography", "sector", "scenario", "flexibility", "behind-the-meter supply"],
+      "recommended_path": "Acquire public ISO/RTO and utility load-forecast cases; create weather-normalized load-shape synthesis with transparent end-use models. Do not fabricate hourly data from annual totals.",
+      "dashboard_treatment": "Visible gap card; keep historical hourly and long-run annual panels separate."
+    },
+    {
+      "gap_id": "XG-P0-002",
+      "priority": "P0",
+      "domain": ["transmission"],
+      "gap": "Public, machine-readable line and interface ratings with seasonal, directional, outage, and contingency context",
+      "why_it_matters": "Voltage and project nameplate are not usable transfer capability.",
+      "current_evidence": "HIFLD public geometry plus a small curated set of official project and operator ratings.",
+      "missing_dimensions": ["TTC", "ATC", "emergency rating", "N-1 element", "season", "direction", "outage", "rating method"],
+      "recommended_path": "Ingest ISO/RTO planning tables and OASIS interface data region by region; publish only non-CEII aggregates.",
+      "dashboard_treatment": "Typed capacity fields; unknown remains null."
+    },
+    {
+      "gap_id": "XG-P0-003",
+      "priority": "P0",
+      "domain": ["transmission"],
+      "gap": "Current national project inventory with stable IDs, route geometry, milestone dates, costs, status, and cancellation history",
+      "why_it_matters": "Announcements and permits are often mistaken for operating capacity, while route and scope change over time.",
+      "current_evidence": "Curated major-corridor catalog and HIFLD base layer.",
+      "recommended_path": "Build a versioned project registry from FERC, DOE, state commissions, ISO/RTO plans, and developer filings with status evidence dates.",
+      "dashboard_treatment": "Status timeline with operating, construction, permitted, proposed, suspended, and canceled as mutually exclusive dated states."
+    },
+    {
+      "gap_id": "XG-P0-004",
+      "priority": "P0",
+      "domain": ["generation", "consumption", "transmission"],
+      "gap": "Distribution topology, hosting capacity, feeder/substation constraints, and transformer inventory",
+      "why_it_matters": "EVs, heat pumps, rooftop solar, batteries, and data centers often bind at distribution or subtransmission assets before bulk generation does.",
+      "current_evidence": "National aggregate transformer reports; no public unified substation inventory.",
+      "recommended_path": "Ingest utility hosting-capacity maps and public distribution plans; maintain aggregate security rules and avoid sensitive asset disclosure.",
+      "dashboard_treatment": "Coverage map that distinguishes public, aggregated, restricted, and missing data."
+    },
+    {
+      "gap_id": "XG-P0-005",
+      "priority": "P0",
+      "domain": ["consumption", "transmission"],
+      "gap": "Deduplicated large-load and data-center interconnection queue with probability, timing, site, power quality, backup, and flexibility",
+      "why_it_matters": "Announced requests can be speculative or duplicated, but omitting them understates local capacity and transformer needs.",
+      "current_evidence": "National data-center electricity scenarios and NERC assessment-level load growth.",
+      "recommended_path": "Join ISO/RTO, utility, state economic-development, permit, land, and corporate filings; assign confidence tiers and never sum raw announcements.",
+      "dashboard_treatment": "Pipeline funnel: announced, study, contract, equipment ordered, construction, energized, canceled."
+    },
+    {
+      "gap_id": "XG-P0-006",
+      "priority": "P0",
+      "domain": ["consumption", "transmission"],
+      "gap": "Geographic EV charging load shapes under managed and unmanaged charging",
+      "why_it_matters": "The same annual EV TWh can have very different feeder and system peaks.",
+      "current_evidence": "National historical/annual EV energy and scenario endpoints; no unified local hourly series.",
+      "recommended_path": "Combine vehicle registrations, travel survey profiles, charger inventory, tariffs, managed-charging trials, temperature effects, and adoption scenarios.",
+      "dashboard_treatment": "Scenario fan by geography and charger class; mark EV load as contained in total demand."
+    },
+    {
+      "gap_id": "XG-P0-007",
+      "priority": "P0",
+      "domain": ["generation", "consumption", "transmission"],
+      "gap": "Scenario harmonization across AEO, NREL, NGFS, DOE transmission studies, NERC, and ISO/RTO forecasts",
+      "why_it_matters": "Different policies, weather years, geographic boundaries, end-use accounting, and model vintages cannot be combined as one trajectory.",
+      "current_evidence": "Separate scenario catalogs and boundary documentation.",
+      "recommended_path": "Create a scenario ontology with policy, technology cost, demand, fuel price, climate, geography, time resolution, and model lineage fields.",
+      "dashboard_treatment": "Faceted comparison; default to within-family ranges and explicit cross-family warnings."
+    },
+    {
+      "gap_id": "XG-P0-008",
+      "priority": "P0",
+      "domain": ["generation", "transmission"],
+      "gap": "Generation-to-network locational linkage and realistic interconnection deliverability",
+      "why_it_matters": "National generation capacity does not show whether output can reach load or satisfy resource adequacy.",
+      "current_evidence": "Plant/generator data and national/regional transmission studies are not yet joined at a stable network node.",
+      "recommended_path": "Join EIA-860/923, queue records, public bus/zone mappings, transmission upgrades, and commercial-operation milestones with confidence-rated geocoding.",
+      "dashboard_treatment": "Plant-to-zone links with deliverability status; no implied line-level injection when only county coordinates exist."
+    },
+    {
+      "gap_id": "XG-P0-009",
+      "priority": "P0",
+      "domain": ["generation", "consumption", "transmission", "climate"],
+      "gap": "Common weather and climate stress years across load, renewable output, thermal derates, hydrology, wildfire, and outages",
+      "why_it_matters": "Reliability depends on coincident events; separate average datasets hide compound stress.",
+      "current_evidence": "Historical load shape and scenario averages; no common project-wide weather ensemble.",
+      "recommended_path": "Define historical and climate-adjusted weather-year ensembles; compute load and resource profiles from the same timestamps and preserve model uncertainty.",
+      "dashboard_treatment": "Stress-event explorer, not one typical-year line."
+    },
+    {
+      "gap_id": "XG-P0-010",
+      "priority": "P0",
+      "domain": ["supply_chain"],
+      "gap": "Current transformer, breaker, switchgear, cable, conductor, and HVDC converter order books and lead times",
+      "why_it_matters": "Shared equipment can delay generation, transmission, data centers, and electrification simultaneously.",
+      "current_evidence": "DOE and GAO structural assessments; no authoritative public national order book.",
+      "recommended_path": "Collect anonymized quarterly utility and manufacturer surveys by product class and specification band; separate quote, order, factory slot, delivery, and commissioning dates.",
+      "dashboard_treatment": "Show only sourced distributions by product class and observation date; never recycle a 2022 lead time as current."
+    },
+    {
+      "gap_id": "XG-P0-011",
+      "priority": "P0",
+      "domain": ["supply_chain"],
+      "gap": "Operating qualified manufacturing capacity versus announced factory capacity",
+      "why_it_matters": "Announcements, awards, construction, qualification, ramp, and actual output are different states.",
+      "current_evidence": "Technology deep dives and government project announcements.",
+      "recommended_path": "Facility registry with product, specification, nameplate, actual output, qualification, start date, ownership, funding, and source confidence.",
+      "dashboard_treatment": "Factory pipeline waterfall, never a single summed 'domestic capacity' number."
+    },
+    {
+      "gap_id": "XG-P0-012",
+      "priority": "P0",
+      "domain": ["supply_chain", "generation", "consumption"],
+      "gap": "Scenario-consistent critical-material demand and supply by technology and chemistry",
+      "why_it_matters": "Battery, wind, solar, grid, nuclear, and hydrogen scenarios can compete for copper, electrical steel, lithium, graphite, rare earths, and specialized catalysts.",
+      "current_evidence": "Technology-specific qualitative maps; no linked project scenario material balance.",
+      "recommended_path": "Apply source-specific material-intensity ranges to capacity scenarios with recycling, substitution, yield, and geography; retain uncertainty and avoid fixed coefficients across decades.",
+      "dashboard_treatment": "Material demand bands by scenario with supply pipeline and recycling overlays."
+    },
+    {
+      "gap_id": "XG-P1-013",
+      "priority": "P1",
+      "domain": ["generation", "consumption"],
+      "gap": "Behind-the-meter solar, storage, backup generation, and flexible-load visibility",
+      "why_it_matters": "Metered grid demand is net of some customer resources and can move differently from gross consumption.",
+      "recommended_path": "Combine EIA, state interconnection, utility AMI studies, and survey estimates with explicit gross/net accounting.",
+      "dashboard_treatment": "Waterfall from gross end use to onsite generation, charging, exports, and grid demand."
+    },
+    {
+      "gap_id": "XG-P1-014",
+      "priority": "P1",
+      "domain": ["generation", "transmission"],
+      "gap": "Time-varying capacity credit and effective load-carrying capability by region",
+      "why_it_matters": "Nameplate MW cannot be compared directly across variable renewables, storage durations, thermal units, imports, and demand response.",
+      "recommended_path": "Ingest accredited-capacity and ELCC results from each ISO/RTO and document method, season, vintage, and portfolio dependence.",
+      "dashboard_treatment": "Nameplate and accredited capacity as separate nonstacked metrics."
+    },
+    {
+      "gap_id": "XG-P1-015",
+      "priority": "P1",
+      "domain": ["generation"],
+      "gap": "Hourly forced outages, derates, fuel limitations, and maintenance by technology",
+      "why_it_matters": "Installed capacity and annual generation hide availability during peaks and extreme events.",
+      "recommended_path": "Use public ISO/RTO outage aggregates, NERC GADS where licensable, EIA fuel data, and weather-event reports; do not publish sensitive unit-level details."
+    },
+    {
+      "gap_id": "XG-P1-016",
+      "priority": "P1",
+      "domain": ["transmission"],
+      "gap": "Hourly losses, congestion, curtailment, and marginal transmission value on consistent national geography",
+      "why_it_matters": "A small share of hours can drive large benefits, but ISO/RTO definitions and market designs differ.",
+      "recommended_path": "Build operator-specific adapters for LMP congestion components, shadow prices, curtailment, and loss factors; aggregate only after semantic reconciliation."
+    },
+    {
+      "gap_id": "XG-P1-017",
+      "priority": "P1",
+      "domain": ["transmission", "consumption"],
+      "gap": "Who pays and who benefits from each transmission project",
+      "why_it_matters": "Regional reliability, generator access, local land burden, and retail bill impacts fall on different groups.",
+      "recommended_path": "Normalize cost allocation, revenue requirement, participant funding, contracts, tax benefits, community benefits, and modeled production-cost savings by payer and beneficiary."
+    },
+    {
+      "gap_id": "XG-P1-018",
+      "priority": "P1",
+      "domain": ["transmission"],
+      "gap": "Empirical project duration by milestone and reason for delay",
+      "why_it_matters": "A single average hides routing, litigation, procurement, financing, and construction bottlenecks.",
+      "current_evidence": "Case studies and current project pages, not a comprehensive database.",
+      "recommended_path": "Versioned milestone event log from proposal through operation/cancellation with pause and litigation flags."
+    },
+    {
+      "gap_id": "XG-P1-019",
+      "priority": "P1",
+      "domain": ["health", "transmission", "generation"],
+      "gap": "Project-level health and air-quality changes attributable to enabled dispatch",
+      "why_it_matters": "Transmission health benefits depend on which generators run less or more and where people are exposed.",
+      "recommended_path": "Link scenario dispatch to emissions, reduced-complexity air-quality models, demographic exposure, uncertainty, and baseline year.",
+      "dashboard_treatment": "Never assign a generic health benefit per mile of line."
+    },
+    {
+      "gap_id": "XG-P1-020",
+      "priority": "P1",
+      "domain": ["water", "generation", "consumption", "transmission"],
+      "gap": "Watershed-resolved water withdrawal, consumption, thermal discharge, hydropower, cooling, hydrogen, and data-center coupling",
+      "why_it_matters": "National averages hide local scarcity and seasonal competition.",
+      "recommended_path": "Join EIA plant cooling, USGS water use, hydrology and drought, watershed boundaries, data-center cooling design, and scenario operations on consistent time and space."
+    },
+    {
+      "gap_id": "XG-P1-021",
+      "priority": "P1",
+      "domain": ["transmission", "climate"],
+      "gap": "Climate-adjusted line, transformer, substation, and wildfire vulnerability",
+      "why_it_matters": "Ambient heat reduces equipment ratings; wildfire, flood, ice, wind, and sea-level hazards alter failure and maintenance risk.",
+      "recommended_path": "Combine public asset aggregates with climate hazard layers and engineering vulnerability functions; protect CEII."
+    },
+    {
+      "gap_id": "XG-P1-022",
+      "priority": "P1",
+      "domain": ["security", "supply_chain"],
+      "gap": "Digital component provenance, firmware vulnerability, and supplier concentration",
+      "why_it_matters": "Inverters, relays, sensors, chargers, data centers, and grid controls share opaque digital supply chains.",
+      "current_evidence": "DOE qualitative digital-component assessment.",
+      "recommended_path": "Publish aggregate vendor-concentration and lifecycle-management indicators; keep exploitable asset detail restricted."
+    },
+    {
+      "gap_id": "XG-P1-023",
+      "priority": "P1",
+      "domain": ["supply_chain"],
+      "gap": "Workforce pipeline by occupation, certification, region, retirement, training time, and project demand",
+      "why_it_matters": "Lineworkers, electricians, planners, protection engineers, transformer winders/testers, welders, nuclear QA staff, and heavy-haul specialists are not interchangeable.",
+      "recommended_path": "Combine BLS, apprenticeship, licensing, union, employer, and project labor estimates by detailed occupation."
+    },
+    {
+      "gap_id": "XG-P1-024",
+      "priority": "P1",
+      "domain": ["supply_chain", "sustainability"],
+      "gap": "End-of-life volumes, reuse, recycling yield, and destination for grid and generation equipment",
+      "why_it_matters": "Retirements can return copper, aluminum, steel, battery materials, and components, but recovery timing and quality are uncertain.",
+      "recommended_path": "Stock-and-flow model by installation vintage, lifetime distribution, reuse eligibility, collection, recovery yield, and processing location."
+    },
+    {
+      "gap_id": "XG-P1-025",
+      "priority": "P1",
+      "domain": ["generation", "transmission"],
+      "gap": "Cross-border imports with hourly source mix, contractual firmness, hydrology, and environmental accounting",
+      "why_it_matters": "An import corridor's MW rating does not reveal annual energy, winter availability, capacity accreditation, or generation impacts abroad.",
+      "recommended_path": "Join EIA-930 interchange, Canadian operator data, contracts, water/hydrology, certificates, and system-operator capacity treatment."
+    },
+    {
+      "gap_id": "XG-P2-026",
+      "priority": "P2",
+      "domain": ["transmission"],
+      "gap": "Public validation of approximate corridor geometry",
+      "why_it_matters": "Schematic waypoints are adequate for a national overview but not local impact analysis.",
+      "recommended_path": "Replace approximate paths with official developer or agency GIS where licensing permits; retain geometry source and resolution."
+    },
+    {
+      "gap_id": "XG-P2-027",
+      "priority": "P2",
+      "domain": ["consumption"],
+      "gap": "Heat-pump and electrified-building load shapes by climate zone and building stock",
+      "why_it_matters": "Cold-climate peak and backup-heat assumptions can dominate winter demand.",
+      "recommended_path": "Use building-stock models, AMI studies, equipment performance, envelope retrofits, and weather ensembles."
+    },
+    {
+      "gap_id": "XG-P2-028",
+      "priority": "P2",
+      "domain": ["generation"],
+      "gap": "Commercialization pathways for marine, enhanced geothermal, advanced nuclear, long-duration storage, and other emerging technologies",
+      "why_it_matters": "Resource potential and demonstration capacity are often mistaken for commercial generation.",
+      "recommended_path": "Track technology-readiness level, demonstration, order, financing, construction, qualification, and operation separately."
+    },
+    {
+      "gap_id": "XG-P2-029",
+      "priority": "P2",
+      "domain": ["generation", "transmission", "consumption"],
+      "gap": "Consistent uncertainty distributions rather than point forecasts",
+      "why_it_matters": "Data-center growth, fuel prices, policies, technology cost, weather, and construction timing are deeply uncertain.",
+      "recommended_path": "Retain source scenario ensembles and quantified ranges; do not average incompatible scenarios into a false central case."
+    },
+    {
+      "gap_id": "XG-P2-030",
+      "priority": "P2",
+      "domain": ["governance"],
+      "gap": "Automated source-vintage, link, checksum, and claim-evidence monitoring",
+      "why_it_matters": "Project status, draft studies, compliance schedules, and forecasts change after publication.",
+      "recommended_path": "Build scheduled link checks and content hashes; route material changes to human claim review before dashboard publication.",
+      "dashboard_treatment": "Every metric shows source vintage, accessed date, and verification status."
+    }
+  ]
+}

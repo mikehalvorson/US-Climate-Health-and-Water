@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0.0",
+  "headline": "Climate hazards already contribute to displacement and migration, mostly within countries, but no scientifically defensible global number of climate refugees per degree of warming exists.",
+  "observed_context": {
+    "people_internally_displaced_annually_by_weather_related_extremes_since_2008": ">20_million",
+    "most_common_hazards": ["storms", "floods"],
+    "confidence": "high",
+    "attribution_guardrail": "This is a weather-related displacement count, not a count attributable solely to anthropogenic climate change."
+  },
+  "scenario_based_projection": {
+    "study": "World Bank Groundswell Part II",
+    "year": 2050,
+    "upper_scenario_internal_climate_migrants_million": 216,
+    "regions_million": [
+      {"region": "Sub-Saharan Africa", "value": 86},
+      {"region": "East Asia and the Pacific", "value": 49},
+      {"region": "South Asia", "value": 40},
+      {"region": "North Africa", "value": 19},
+      {"region": "Latin America", "value": 17},
+      {"region": "Eastern Europe and Central Asia", "value": 5}
+    ],
+    "potential_reduction_percent": 80,
+    "interpretation": "Scenario modeling of internal migration under specified climate and development pathways; not a forecast and not a refugee count."
+  },
+  "terminology": {
+    "climate_refugee": "not_a_defined_or_legally_recognized_category_under_international_refugee_law",
+    "preferred_terms": ["climate_related_displacement", "internal_climate_migration", "cross_border_movement_in_the_context_of_climate_change_and_disasters"]
+  },
+  "temperature_response_coefficient": null,
+  "why_no_coefficient": [
+    "Migration is multi-causal and mediated by income, conflict, governance, adaptation, social networks, and the ability to move.",
+    "Many people displaced by hazards return; stock, flow, repeated displacement, and migration are different measures.",
+    "Most estimates are scenario-conditioned and regional, not empirical global dose-response functions.",
+    "Refugee status is a legal determination, not a climate-model output."
+  ],
+  "not_supported": [
+    "Calling all weather-related displaced people climate refugees.",
+    "Presenting 216 million as a forecast or as international refugees.",
+    "Dividing a displacement estimate by degrees of warming to invent a per-degree coefficient.",
+    "Attributing every observed move after a disaster solely to anthropogenic warming."
+  ],
+  "sources": [
+    {"source_id": "IPCC-AR6-WGII-TS", "locator": "TS.B.6 and TS.B.6.1"},
+    {"source_id": "IPCC-AR6-WGII-CH7", "locator": "7.2.6 and 7.3.1"},
+    {"source_id": "UNHCR-GLOSSARY", "locator": "climate refugee entry"},
+    {"source_id": "UNHCR-MYTHS-FACTS", "locator": "myths on terminology and cross-border movement"},
+    {"source_id": "WORLD-BANK-GROUNDSWELL-II", "locator": "overview, regional results, and policy scenarios"}
+  ]
+}

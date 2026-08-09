@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "interpretation": "These jurisdictions reduce selected plastic uses with bans, reuse, deposits, procurement, extended producer responsibility, and collection. None demonstrates an economy meeting every modern material need without plastic.",
+  "cases": [
+    {
+      "jurisdiction": "European_Union",
+      "mechanisms": ["market restrictions for selected single-use products", "consumption reduction", "extended producer responsibility", "labeling", "separate collection", "recycled content"],
+      "targets": [
+        {"metric": "separate collection of plastic beverage bottles", "value_percent": 77, "year": 2025},
+        {"metric": "separate collection of plastic beverage bottles", "value_percent": 90, "year": 2029},
+        {"metric": "recycled plastic in PET bottles", "value_percent": 25, "year": 2025},
+        {"metric": "recycled plastic in all covered beverage bottles", "value_percent": 30, "year": 2030}
+      ],
+      "observed_note": "The Commission reported in 2026 that ten member states exceeded applicable collection targets; this is not a Union-wide claim.",
+      "replacement_pattern": ["reusable foodware and containers", "fiber or wood in selected items", "deposit-return collection", "continued plastic with recycled content"],
+      "source_refs": [{"source_id": "EU-SUPD"}, {"source_id": "EU-SUPD-COLLECTION-2026"}]
+    },
+    {
+      "jurisdiction": "France",
+      "mechanisms": ["reusable dine-in serviceware", "reuse targets", "single-use restrictions", "waste-prevention policy"],
+      "milestones": [
+        {"requirement": "reusable serviceware for on-premises dining in covered establishments", "year": 2023},
+        {"requirement": "reusable packaging share target", "value_percent": 5, "year": 2023},
+        {"requirement": "reusable packaging share target", "value_percent": 10, "year": 2027}
+      ],
+      "replacement_pattern": ["washable serviceware", "reuse and refill systems", "nonplastic alternatives for selected disposables"],
+      "caution": "A legal mandate is not evidence of realized national water savings; washing and substitute manufacturing must be measured.",
+      "source_refs": [{"source_id": "FR-AGEC"}, {"source_id": "FR-DINEIN-ENFORCEMENT"}]
+    },
+    {
+      "jurisdiction": "Germany",
+      "mechanisms": ["deposit-return", "refillable beverage containers", "producer responsibility", "sorting and recovery"],
+      "observed_metric": {"metric": "refillable share within the report's beverage scope", "value_percent": 42.6, "year": 2021},
+      "replacement_pattern": ["refillable glass and PET", "crate and reverse-logistics networks", "high capture of one-way containers through deposits"],
+      "caution": "The 42.6% value is within a defined beverage scope and is not the share of all packaging or all beverages.",
+      "source_refs": [{"source_id": "DE-UBA-PACKAGING"}, {"source_id": "DE-UBA-REFILLABLE-2024"}]
+    },
+    {
+      "jurisdiction": "Rwanda",
+      "mechanisms": ["prohibitions on plastic carry bags and selected single-use plastic products", "authorization process for exceptions", "enforcement and importer/manufacturer obligations"],
+      "replacement_pattern": ["reusable bags and containers", "paper and other nonplastic materials for selected applications", "exempt plastic where a viable alternative is unavailable"],
+      "caution": "Rwanda is not plastic-free; Law 17/2019 covers defined products and provides exceptions.",
+      "source_refs": [{"source_id": "RW-REMA-LAW2019"}, {"source_id": "RW-REMA-FAQ"}]
+    }
+  ],
+  "transferable_lessons": [
+    "Target avoidable short-lived applications rather than every polymer use.",
+    "Build reuse logistics, sanitation standards, and convenient return before imposing scale targets.",
+    "Use deposits and producer responsibility to fund high capture.",
+    "Pair restrictions with narrow safety and no-viable-alternative exemptions.",
+    "Measure water, energy, product loss, litter, toxicity, cost, and equity instead of reporting item counts alone."
+  ]
+}
