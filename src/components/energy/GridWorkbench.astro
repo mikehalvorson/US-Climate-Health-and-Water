@@ -1,0 +1,41 @@
+---
+import { GRID_SOURCES, GRID_WORKBENCH } from '../../lib/data/grid';
+import type { ScenarioControlDefinition } from '../../lib/scenarios/state';
+import ScenarioWorkbench from '../ScenarioWorkbench.astro';
+import SourceDrawer from '../SourceDrawer.astro';
+
+const cisoDates = GRID_WORKBENCH.daily.filter((item) => item.balancingAuthority === 'CISO');
+const defaultDate = cisoDates.find((item) => item.date === '2024-09-06') ?? cisoDates[0];
+const defaultRegion = GRID_WORKBENCH.regions.find((item) => item.id === 'CISO');
+const defaultCorridor = GRID_WORKBENCH.corridorStatuses[0];
+const defaultCapacity = GRID_WORKBENCH.capacityTypes[0];
+const defaultStage = GRID_WORKBENCH.processStages[0];
+const controls: readonly ScenarioControlDefinition[] = [
+  { id: 'region', label: 'Balancing authority', defaultValue: 'CISO', options: GRID_WORKBENCH.regions.map((item) => ({ value: item.id, label: item.label })) },
+  { id: 'date', label: '2024 local date', defaultValue: defaultDate?.date ?? '2024-09-06', options: cisoDates.map((item) => ({ value: item.date, label: item.date })) },
+  { id: 'corridor', label: 'Corridor status', defaultValue: defaultCorridor?.id ?? '', options: GRID_WORKBENCH.corridorStatuses.map((item) => ({ value: item.id, label: item.label })) },
+  { id: 'capacity', label: 'Capacity meaning', defaultValue: defaultCapacity?.id ?? '', options: GRID_WORKBENCH.capacityTypes.map((item) => ({ value: item.id, label: item.label })) },
+  { id: 'stage', label: 'Development stage', defaultValue: defaultStage?.id ?? '', options: GRID_WORKBENCH.processStages.map((item) => ({ value: item.id, label: `${item.id} · ${item.label}` })) },
+];
+---
+<div data-grid-workbench data-workbench-records={JSON.stringify(GRID_WORKBENCH)}>
+  <ScenarioWorkbench
+    id="grid-delivery-filter"
+    title="Inspect demand, corridor, capacity, and process evidence"
+    decision="Filter independent evidence lenses. Hourly observations stay at the selected balancing authority and local date; corridor status, capacity meaning, and process stage do not become an operational power-flow result."
+    controls={controls}
+    modelFamily="EIA-930 observations plus DOE, FERC, HIFLD, and project-catalog context"
+    seamNote="Demand, corridor capacity records, project status, and process stages have different boundaries. They are displayed together but never summed."
+    readiness="Observed and reported lookup · missing remains missing"
+  >
+    <div class="workbench-result-grid infrastructure-workbench-output">
+      <section><h3 data-grid-region>{defaultRegion?.label}</h3><p class="workbench-result__value"><span data-grid-region-peak>{defaultRegion?.peakMw.toLocaleString('en-US')}</span> <small>MW annual peak</small></p><p data-grid-region-time>{defaultRegion?.peakTime}</p><small data-grid-region-clock>{defaultRegion?.clockBasis}</small></section>
+      <section><h3 data-grid-date>{defaultDate?.date}</h3><p class="workbench-result__value"><span data-grid-date-peak>{defaultDate?.peakMw?.toLocaleString('en-US') ?? 'Unavailable'}</span> <small>MW daily peak</small></p><p><span data-grid-date-missing>{defaultDate?.missingHours}</span> missing hourly observations · never filled with zero</p></section>
+      <section><h3 data-grid-corridor-status>{defaultCorridor?.label}</h3><p data-grid-corridor-names>{defaultCorridor?.corridors.join('; ')}</p></section>
+      <section><h3 data-grid-capacity-label>{defaultCapacity?.label}</h3><p data-grid-capacity-definition>{defaultCapacity?.definition}</p><small data-grid-capacity-warning>{defaultCapacity?.warning}</small></section>
+      <section><h3 data-grid-stage-label>{defaultStage?.label}</h3><p><strong data-grid-stage-lane>{defaultStage?.lane}</strong> · <span data-grid-stage-status>{defaultStage?.status}</span></p><p data-grid-stage-actors>{defaultStage?.actors}</p><small data-grid-stage-warning>{defaultStage?.warning}</small></section>
+    </div>
+    <div class="workbench-sources"><span>Core evidence:</span><SourceDrawer id="grid-workbench-hourly-source" source={GRID_SOURCES.hourly} triggerLabel="EIA hourly demand" /><SourceDrawer id="grid-workbench-planning-source" source={GRID_SOURCES.planning} triggerLabel="FERC planning rule" /><SourceDrawer id="grid-workbench-permitting-source" source={GRID_SOURCES.permitting} triggerLabel="DOE permitting context" /></div>
+  </ScenarioWorkbench>
+</div>
+<script>import '../../scripts/infrastructure-workbenches.ts';</script>

@@ -14722,6 +14722,60 @@
       ],
       "useClass": "trend",
       "participation": "display_only"
+    },
+    {
+      "id": "DAT-000107",
+      "registryKind": "dataset",
+      "label": "research/energy/impacts/nuclear-generation.json",
+      "description": "Research dataset represented by research/energy/impacts/nuclear-generation.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-421842a4d82482f75c4a",
+      "legacyIds": [
+        "path:research/energy/impacts/nuclear-generation.json"
+      ],
+      "path": "research/energy/impacts/nuclear-generation.json",
+      "paths": [
+        "research/energy/impacts/nuclear-generation.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000108",
+      "registryKind": "dataset",
+      "label": "research/energy/impacts/technology-impact-matrix.json",
+      "description": "Research dataset represented by research/energy/impacts/technology-impact-matrix.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-a2cf69b4bd1ea406bbea",
+      "legacyIds": [
+        "path:research/energy/impacts/technology-impact-matrix.json"
+      ],
+      "path": "research/energy/impacts/technology-impact-matrix.json",
+      "paths": [
+        "research/energy/impacts/technology-impact-matrix.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
     }
   ],
   "metric": [
@@ -24356,6 +24410,239 @@
           "Do not convert the relationship into deaths, costs, or a local forecast without exposure and vulnerability evidence."
         ]
       }
+    },
+    {
+      "id": "CHT-000085",
+      "registryKind": "chart",
+      "label": "Capacity and generation answer different questions",
+      "description": "Chart contract imported from research/energy/impacts/chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-fbed020fe7ec3297e2f3",
+      "legacyIds": [
+        "generation-capacity-versus-output"
+      ],
+      "chartType": "bar",
+      "decisionQuestion": "Capacity and generation answer different questions",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Capacity and generation answer different questions.",
+      "dataReferences": [
+        "research/energy/timeseries/normalized/global-irena-capacity-and-generation-history.csv"
+      ],
+      "legacyContract": {
+        "chart_id": "generation-capacity-versus-output",
+        "title": "Capacity and generation answer different questions",
+        "type": "bar",
+        "data": "../timeseries/normalized/global-irena-capacity-and-generation-history.csv",
+        "constraints": [
+          "Capacity uses GW and generation uses TWh in separate panels.",
+          "Storage discharge is not primary generation."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000086",
+      "registryKind": "chart",
+      "label": "From hazard to attributable health outcome",
+      "description": "Chart contract imported from research/energy/impacts/chart-contracts.json.",
+      "status": "pending",
+      "semanticFingerprint": "fp-c9e23cf43d6c83f775be",
+      "legacyIds": [
+        "generation-health-causal-pathway"
+      ],
+      "chartType": "causal_path",
+      "decisionQuestion": "From hazard to attributable health outcome",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for From hazard to attributable health outcome.",
+      "dataReferences": [],
+      "legacyContract": {
+        "chart_id": "generation-health-causal-pathway",
+        "title": "From hazard to attributable health outcome",
+        "type": "causal_path",
+        "data": "dashboard-guidance.json#/views/health_pathways",
+        "constraints": [
+          "No death inference from generation alone.",
+          "Separate routine, occupational, waste, and accident pathways."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000087",
+      "registryKind": "chart",
+      "label": "Lifecycle greenhouse-gas medians and ranges",
+      "description": "Chart contract imported from research/energy/impacts/chart-contracts.json.",
+      "status": "pending",
+      "semanticFingerprint": "fp-644631b0ed21916186c2",
+      "legacyIds": [
+        "generation-lifecycle-greenhouse-ranges"
+      ],
+      "chartType": "dot_range",
+      "decisionQuestion": "Lifecycle greenhouse-gas medians and ranges",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Lifecycle greenhouse-gas medians and ranges.",
+      "dataReferences": [],
+      "legacyContract": {
+        "chart_id": "generation-lifecycle-greenhouse-ranges",
+        "title": "Lifecycle greenhouse-gas medians and ranges",
+        "type": "dot_range",
+        "data": "lifecycle-benchmarks.json#/values",
+        "constraints": [
+          "Show the 2014 source-synthesis vintage.",
+          "Never publish medians without ranges or hide hydropower's upper tail."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000088",
+      "registryKind": "chart",
+      "label": "Nuclear evidence with official conflicts preserved",
+      "description": "Chart contract imported from research/energy/impacts/chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-304b8e9cc74ec4611785",
+      "legacyIds": [
+        "generation-nuclear-evidence"
+      ],
+      "chartType": "matrix",
+      "decisionQuestion": "Nuclear evidence with official conflicts preserved",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Nuclear evidence with official conflicts preserved.",
+      "dataReferences": [
+        "research/energy/impacts/nuclear-generation.json"
+      ],
+      "legacyContract": {
+        "chart_id": "generation-nuclear-evidence",
+        "title": "Nuclear evidence with official conflicts preserved",
+        "type": "matrix",
+        "data": "nuclear-generation.json",
+        "constraints": [
+          "Show NRC and EIA reactor counts side by side with dates.",
+          "Capacity factor is not safety, cost, or project-delivery performance."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000089",
+      "registryKind": "chart",
+      "label": "Portfolio roles and missing compatible coefficients",
+      "description": "Chart contract imported from research/energy/impacts/chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-ec37790cf4ad02afa934",
+      "legacyIds": [
+        "generation-portfolio-comparison"
+      ],
+      "chartType": "matrix",
+      "decisionQuestion": "Portfolio roles and missing compatible coefficients",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Portfolio roles and missing compatible coefficients.",
+      "dataReferences": [
+        "research/energy/impacts/technology-impact-matrix.json"
+      ],
+      "legacyContract": {
+        "chart_id": "generation-portfolio-comparison",
+        "title": "Portfolio roles and missing compatible coefficients",
+        "type": "matrix",
+        "data": [
+          "technology-impact-matrix.json",
+          "dashboard-guidance.json#/impact_linkage_contract"
+        ],
+        "constraints": [
+          "Do not publish a one-number clean score.",
+          "Unavailable harmonized reliability, health, water, land, material, waste, and cost coefficients remain gaps."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000090",
+      "registryKind": "chart",
+      "label": "Technology roles are not interchangeable",
+      "description": "Chart contract imported from research/energy/impacts/chart-contracts.json.",
+      "status": "pending",
+      "semanticFingerprint": "fp-46b39ee7729be0e7d703",
+      "legacyIds": [
+        "generation-system-role-matrix"
+      ],
+      "chartType": "matrix",
+      "decisionQuestion": "Technology roles are not interchangeable",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Technology roles are not interchangeable.",
+      "dataReferences": [],
+      "legacyContract": {
+        "chart_id": "generation-system-role-matrix",
+        "title": "Technology roles are not interchangeable",
+        "type": "matrix",
+        "data": "technology-impact-matrix.json#/technologies",
+        "constraints": [
+          "Qualitative service roles are not accredited capacity values.",
+          "Do not add role classes into a technology score."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000091",
+      "registryKind": "chart",
+      "label": "Technical, health, regulatory, and sustainability burdens",
+      "description": "Chart contract imported from research/energy/impacts/chart-contracts.json.",
+      "status": "pending",
+      "semanticFingerprint": "fp-e9651b7c56d4645adce5",
+      "legacyIds": [
+        "generation-technology-problem-cards"
+      ],
+      "chartType": "matrix",
+      "decisionQuestion": "Technical, health, regulatory, and sustainability burdens",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Technical, health, regulatory, and sustainability burdens.",
+      "dataReferences": [],
+      "legacyContract": {
+        "chart_id": "generation-technology-problem-cards",
+        "title": "Technical, health, regulatory, and sustainability burdens",
+        "type": "matrix",
+        "data": "technology-impact-matrix.json#/technologies",
+        "constraints": [
+          "No single good-or-bad score.",
+          "Unknown and configuration-specific evidence must remain visible."
+        ]
+      }
     }
   ],
   "transformation": [
@@ -27659,6 +27946,13 @@
         "CHT-000040",
         "CHT-000041",
         "CHT-000042",
+        "CHT-000085",
+        "CHT-000086",
+        "CHT-000087",
+        "CHT-000088",
+        "CHT-000089",
+        "CHT-000090",
+        "CHT-000091",
         "CHT-000043",
         "CHT-000044",
         "CHT-000045",

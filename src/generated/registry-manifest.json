@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "evidenceVintage": "2026-08-01",
-  "trackedInputCount": 209,
+  "trackedInputCount": 210,
   "hashAlgorithm": "sha256",
   "inputs": {
     "research/README.md": "92a64e1e02ddb6e45c96d573c39f0bba36588ea0d360d30872a1deca3b859e8f",
@@ -102,6 +102,7 @@
     "research/energy/en-roads/model-map.json": "e014a423c9b35252d9ae07519bbf7eaaa645fcdebef43309208518c29ebcaa28",
     "research/energy/en-roads/reproduction-assessment.json": "de1fcc9bea1e0679837088d758224474ef07f2d216f7b18f6ff3f917f973b7c8",
     "research/energy/impacts/README.md": "1357ee7a465be7716e555efa331f33a51f49bae11cfd6ed6dd135774dbd454d9",
+    "research/energy/impacts/chart-contracts.json": "b59f241e7f761d825843aabfbec3fd37a6ad87fe1805887464d653836a0cfe36",
     "research/energy/impacts/dashboard-guidance.json": "9aced6ab29b4aee15dec97023333be93b77b2c80c8b2caa2ce07d0f615cba3c0",
     "research/energy/impacts/lifecycle-benchmarks.json": "1e0688ea5e6426de378ac7fa1432f31a97106e5426d999b8763e10ca00423c78",
     "research/energy/impacts/nuclear-generation.json": "1f59957d77ae514c95b7435af232e6b91d6bba3fed63158448bb2f083877dedc",
@@ -109,7 +110,7 @@
     "research/energy/impacts/regulatory-status.json": "b52e408e0b8afc886e4dcfb3c6d524a82b244d86cf2c73597b208cbbfd732d79",
     "research/energy/impacts/scripts/validate_impacts.py": "d37886c07f00588925564f07a5a4a190a7f30d66f57f044025c1b95c1d7fd114",
     "research/energy/impacts/technology-impact-matrix.json": "1fbd2b52cb7fbbd1bb3582df89f0e5e236c892e13ecd11d3965636ae4bb19012",
-    "research/energy/manifest.json": "39da499dec265dc404761c17737d341517b84c3412fd0e9990906b4227f340b5",
+    "research/energy/manifest.json": "e3fbc660f985c2bacc563a93583a259e59794bb80c08fe5e86cb6de4762fc864",
     "research/energy/observations-global-2025.json": "fd785efeb9dc245f8b50a97ba61e83a086bf9a41964ecf9735385ef3e86ba2d8",
     "research/energy/observations-us-2025.json": "997826c6ecc8d5c71cadad1165ff4312e17412a2c15db75229b88a421795eb6f",
     "research/energy/sources.json": "1bd1f872e9b18abc042ba3c8f38a2104a809e90b138920957d08ed093c045684",
@@ -215,8 +216,8 @@
     "research/water/timeseries/usgs-historical-water-use-1950-2015.csv": "a59f1009c8c3941099f3ae8a07848324307d6c5c3f4ad8508cc7891f653209c0"
   },
   "outputs": {
-    "src/data/registry/id-map.json": "b0865afba8157536a5b87dd62436b42201d1f4bde54d6466ce3cd93ef4c2bad9",
-    "src/generated/registry.json": "7f0fef0ce8bca7a741d91de9ff35bc70e002fec277f5e47792659d3c5738d8c0",
-    "src/generated/registry-audit.json": "95907f67845650554a5d7059b6121b36165f59aa9ed4937d9c4b65dd70217aec"
+    "src/data/registry/id-map.json": "fc77575465aafda8ba2eeaad20972f6668a8444299cd3bfee87e9859120b583f",
+    "src/generated/registry.json": "0dde5e89b326972e41f5a99732061e55dd6e7e3fbc7e4ddc6f1924617c5a6a15",
+    "src/generated/registry-audit.json": "12977d9108ad15e902ae41655f8602e9cdfbefbf7787db69928f8d6424010622"
   }
 }

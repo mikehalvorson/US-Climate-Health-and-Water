@@ -1,0 +1,125 @@
+---
+import BarPlot from '../charts/BarPlot.astro';
+import DotRangePlot from '../charts/DotRangePlot.astro';
+import HeatmapPlot from '../charts/HeatmapPlot.astro';
+import NetworkPlot from '../charts/NetworkPlot.astro';
+import CaveatPanel from '../CaveatPanel.astro';
+import ChartFrame from '../ChartFrame.astro';
+import DataTable from '../DataTable.astro';
+import EvidenceBadge from '../EvidenceBadge.astro';
+import EvidenceGap from '../EvidenceGap.astro';
+import RecommendationPanel from '../RecommendationPanel.astro';
+import ViewpointGrid from '../ViewpointGrid.astro';
+import {
+  approvedGenerationChart,
+  GENERATION_CAPACITY_BARS,
+  GENERATION_CAPACITY_OUTPUT_TABLE,
+  GENERATION_HEALTH_PATHWAY,
+  GENERATION_HEALTH_TABLE,
+  GENERATION_LIFECYCLE_RANGES,
+  GENERATION_LIFECYCLE_TABLE,
+  GENERATION_OUTPUT_BARS,
+  GENERATION_PORTFOLIO_COLUMNS,
+  GENERATION_PORTFOLIO_MATRIX,
+  GENERATION_PORTFOLIO_ROWS,
+  GENERATION_PORTFOLIO_TABLE,
+  GENERATION_ROLE_COLUMNS,
+  GENERATION_ROLE_MATRIX,
+  GENERATION_ROLE_ROWS,
+  GENERATION_ROLE_TABLE,
+  GENERATION_SOURCES,
+  GENERATION_TECHNOLOGY_CARDS,
+  GENERATION_TECHNOLOGY_TABLE,
+  NUCLEAR_COUNT_CONFLICT,
+  NUCLEAR_EVIDENCE_TABLE,
+  NUCLEAR_HEADLINE_METRICS,
+} from '../../lib/data/generation';
+import { hrefForRoute } from '../../lib/navigation/shell';
+import GenerationWorkbench from './GenerationWorkbench.astro';
+
+const roleChart = approvedGenerationChart('generation-system-role-matrix', 'matrix');
+const capacityChart = approvedGenerationChart('generation-capacity-versus-output', 'bar');
+const lifecycleChart = approvedGenerationChart('generation-lifecycle-greenhouse-ranges', 'dot_range');
+const problemChart = approvedGenerationChart('generation-technology-problem-cards', 'matrix');
+const healthChart = approvedGenerationChart('generation-health-causal-pathway', 'causal_path');
+const nuclearChart = approvedGenerationChart('generation-nuclear-evidence', 'matrix');
+const portfolioChart = approvedGenerationChart('generation-portfolio-comparison', 'matrix');
+const base = import.meta.env.BASE_URL;
+const headlineMetric = (id: string) => NUCLEAR_HEADLINE_METRICS.find((item) => item.metric_id === id);
+---
+<article class="chapter-content" data-chapter-content="generation-choices">
+  <section id="current-system" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">01 · Current system</p><h2>Generation technologies provide different system services</h2><p>Energy output, dependable capacity, flexibility, grid services, stored fuel, and storage duration are separate roles. A technology can contribute to several roles without clearing a regional reliability test by itself.</p></div>
+    <ChartFrame chart={roleChart} unit="Ordinal role evidence: 3 primary, 2 conditional, 1 supporting, patterned cell unavailable" geography="Technology-class context; no regional accreditation" period="Current evidence package through 2026-08-01" sources={[GENERATION_SOURCES.capacity]} summary="Nine generation and storage classes are compared across five distinct system roles. The cells are qualitative evidence flags and are not added into a technology score." caveats={['Firm-capacity contribution depends on configuration, fuel, hydrology, weather, outages, duration, and regional accreditation.', 'Storage shifts electricity and provides services; it is not a primary energy source.']}>
+      <HeatmapPlot slot="plot" id="generation-role-matrix" values={GENERATION_ROLE_MATRIX} rows={GENERATION_ROLE_ROWS} columns={GENERATION_ROLE_COLUMNS} unit="role evidence" summary="Qualitative system roles for nine generation and storage technology classes." variant="matrix" width={820} height={500} />
+      <DataTable slot="table" caption="Generation and storage system roles" columns={[{ key: 'technology', label: 'Technology' }, { key: 'roles', label: 'Documented roles' }, { key: 'deploymentStatus', label: 'Deployment status' }, { key: 'boundary', label: 'Interpretive boundary' }]} rows={GENERATION_ROLE_TABLE} />
+    </ChartFrame>
+    <ChartFrame chart={capacityChart} unit="GW installed capacity and TWh annual generation, shown in separate panels" geography="World" period="2023" sources={[GENERATION_SOURCES.capacity]} summary="Installed capacity and annual electricity generation are shown as separate 2023 measures. Their different units and utilization patterns make a shared ranking misleading." caveats={['GW is not TWh and neither measure is a reliability accreditation.', 'The bars are global totals and do not describe a U.S. regional portfolio.']}>
+      <div slot="plot" class="split-plot"><section><h4>Installed capacity</h4><BarPlot id="generation-capacity" values={GENERATION_CAPACITY_BARS} valueLabel="Installed capacity" unit="GW" summary="Global installed generation capacity by technology in 2023." height={350} /></section><section><h4>Annual generation</h4><BarPlot id="generation-output" values={GENERATION_OUTPUT_BARS} valueLabel="Annual generation" unit="TWh" summary="Global electricity generation by technology in 2023." height={350} /></section></div>
+      <DataTable slot="table" caption="Global installed capacity and generation, retained as separate measures" columns={[{ key: 'technology', label: 'Technology' }, { key: 'measure', label: 'Measure' }, { key: 'value', label: 'Value', numeric: true }, { key: 'unit', label: 'Unit' }, { key: 'year', label: 'Year', numeric: true }, { key: 'boundary', label: 'Boundary' }]} rows={GENERATION_CAPACITY_OUTPUT_TABLE} />
+    </ChartFrame>
+  </section>
+
+  <section id="problems" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">02 · Why this is a problem</p><h2>Every technology moves burdens across lifecycle stages and communities</h2><p>Operational emissions alone do not establish lifecycle climate, health, water, land, material, waste, accident, or occupational performance.</p></div>
+    <ChartFrame chart={lifecycleChart} unit="g CO₂-eq/kWh lifecycle literature value" geography="Global literature synthesis" period="IPCC AR5 harmonized evidence vintage" sources={[GENERATION_SOURCES.lifecycle]} summary="Lifecycle greenhouse-gas medians for coal and natural gas are far above nuclear, wind, solar, hydro, geothermal, and ocean energy, while the full literature ranges remain broad and technology-specific." caveats={['Ranges reflect different sites, fuels, methods, configurations, and system boundaries.', 'This figure measures lifecycle greenhouse gases only; it is not an all-impact score.']}>
+      <DotRangePlot slot="plot" values={GENERATION_LIFECYCLE_RANGES} valueLabel="Lifecycle greenhouse gas" unit="g CO₂-eq/kWh" summary="Minimum, median, and maximum lifecycle greenhouse-gas literature values by technology." labelWidth={220} width={820} height={500} />
+      <DataTable slot="table" caption="Lifecycle greenhouse-gas literature ranges" columns={[{ key: 'technology', label: 'Technology' }, { key: 'minimum', label: 'Minimum', numeric: true }, { key: 'median', label: 'Median', numeric: true }, { key: 'maximum', label: 'Maximum', numeric: true }, { key: 'unit', label: 'Unit' }, { key: 'status', label: 'Evidence state' }, { key: 'scopeWarning', label: 'Scope warning' }]} rows={GENERATION_LIFECYCLE_TABLE} />
+    </ChartFrame>
+    <ChartFrame chart={healthChart} unit="Qualitative causal pathway; no attributable-outcome estimate" geography="Technology- and site-specific pathway framework" period="Current evidence framework" sources={[GENERATION_SOURCES.health, GENERATION_SOURCES.nuclearWorkers, GENERATION_SOURCES.thermoelectricWater]} summary="A credible health result requires a traceable chain from hazard through pathway, contact, dose, response evidence, and attributable outcome. Generation alone does not supply population exposure or causality." caveats={['Routine, occupational, waste, water, and accident pathways require different denominators and evidence.', 'A hazard is not an exposure, and an exposure is not an attributable health outcome.']}>
+      <NetworkPlot slot="plot" id="generation-health-pathway" nodes={GENERATION_HEALTH_PATHWAY.nodes} edges={GENERATION_HEALTH_PATHWAY.edges} variant="causal_path" unit="qualitative link" summary="Causal chain required before an attributable generation-health outcome can be stated." width={900} height={380} />
+      <DataTable slot="table" caption="Generation-health evidence pathways and boundaries" columns={[{ key: 'pathway', label: 'Pathway' }, { key: 'evidence', label: 'Required evidence' }, { key: 'boundary', label: 'Publication boundary' }]} rows={GENERATION_HEALTH_TABLE} />
+    </ChartFrame>
+    <ChartFrame chart={problemChart} unit="Qualitative source-linked problem dimensions" geography="Sixteen generation, conversion, and storage classes" period="Evidence reviewed through 2026-08-01" sources={[GENERATION_SOURCES.health, GENERATION_SOURCES.thermoelectricWater]} summary="Technology cards retain system role, deployment status, technical constraints, health pathways, regulatory scope, sustainability burdens, mitigation options, and residual risks rather than naming a universal winner." caveats={['A class-level card cannot establish a site-specific impact.', 'Mitigation reduces a pathway; it does not imply zero residual risk.']}>
+      <div slot="plot" class="technology-card-grid" aria-label="Technology problem cards">{GENERATION_TECHNOLOGY_CARDS.map((item) => <article><p class="section-kicker">{item.deployment}</p><h4>{item.label}</h4><p><strong>Role:</strong> {item.role}</p><p><strong>Technical:</strong> {item.technicalProblems}</p><small><strong>Residual:</strong> {item.residual}</small></article>)}</div>
+      <DataTable slot="table" caption="Technology problem, mitigation, and residual-risk register" columns={[{ key: 'technology', label: 'Technology' }, { key: 'systemRole', label: 'System role' }, { key: 'technicalProblems', label: 'Technical problems' }, { key: 'healthPathways', label: 'Health pathways' }, { key: 'regulatoryScope', label: 'Regulatory scope' }, { key: 'sustainabilityBurdens', label: 'Sustainability burdens' }, { key: 'mitigation', label: 'Mitigation' }, { key: 'residualRisks', label: 'Residual risks' }]} rows={GENERATION_TECHNOLOGY_TABLE} />
+    </ChartFrame>
+    <ViewpointGrid id="generation-viewpoints" title="Portfolio choices distribute different burdens" items={[
+      { viewpoint: 'people_and_households', label: 'People and households', problem: 'Bills, outages, air quality, land use, and local construction affect households differently.', evidenceState: 'qualitative_evidence', consequence: 'Affordability and reliability must remain separate from technology branding.' },
+      { viewpoint: 'workers_and_operators', label: 'Workers and operators', problem: 'Mining, manufacturing, construction, operation, maintenance, and waste create distinct hazards.', evidenceState: 'qualitative_evidence', consequence: 'Training, monitoring, exposure controls, and transition support belong in delivery plans.' },
+      { viewpoint: 'host_communities_and_tribes', label: 'Host communities and Tribes', problem: 'Facilities, mines, corridors, reservoirs, cooling, and waste affect rights and place-based values.', evidenceState: 'qualitative_evidence', consequence: 'Participation, consent where applicable, benefit sharing, and mitigation must begin early.' },
+      { viewpoint: 'ecosystems_and_nonhuman_life', label: 'Ecosystems', problem: 'Land conversion, water use, thermal effects, extraction, waste, and wildlife interactions vary by site.', evidenceState: 'qualitative_evidence', consequence: 'Siting and operations need cumulative, place-specific review.' },
+    ]} />
+  </section>
+
+  <section id="choices" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">03 · Choices</p><h2>Nuclear evidence needs both performance and problem registers</h2><p>High fleet utilization, fuel density, worker-dose monitoring, cooling needs, waste inventories, cost, construction, and regulatory obligations belong in one evidence frame without erasing official-definition conflicts.</p></div>
+    <ChartFrame chart={nuclearChart} unit="Source-native metric or qualitative problem record" geography="United States commercial nuclear generation" period="Latest cited official periods through 2026-08-01" sources={[GENERATION_SOURCES.nuclearRegulator, GENERATION_SOURCES.nuclearStatistics, GENERATION_SOURCES.nuclearWorkers, GENERATION_SOURCES.nuclearWaste, GENERATION_SOURCES.thermoelectricWater]} summary={`The evidence ledger retains NRC and EIA operating-reactor counts separately (${NUCLEAR_COUNT_CONFLICT.nrc?.value} and ${NUCLEAR_COUNT_CONFLICT.eia?.value}) because their reporting conventions differ. It also covers utilization, occupational dose, cooling water, fuel, spent fuel, health, waste, cost, construction, and regulation.`} caveats={[NUCLEAR_COUNT_CONFLICT.reason, NUCLEAR_COUNT_CONFLICT.guardrail, 'Fleet averages do not establish the economics, cooling feasibility, or safety case of a particular plant or new design.']}>
+      <div slot="plot" class="nuclear-evidence-grid">
+        <article><EvidenceBadge state="observed" /><p>2025 capacity factor</p><strong>{headlineMetric('us_nuclear_capacity_factor_2025')?.value}%</strong></article>
+        <article><EvidenceBadge state="observed" /><p>NRC operating count</p><strong>{NUCLEAR_COUNT_CONFLICT.nrc?.value}</strong></article>
+        <article><EvidenceBadge state="reported_estimate" /><p>EIA operating count</p><strong>{NUCLEAR_COUNT_CONFLICT.eia?.value}</strong></article>
+        <article><EvidenceBadge state="reported_estimate" /><p>Commercial spent fuel</p><strong>&gt;{headlineMetric('us_commercial_spent_fuel_inventory')?.value?.toLocaleString('en-US')} <span>metric tons</span></strong></article>
+        <article><EvidenceBadge state="observed" /><p>Average measurable worker dose</p><strong>{headlineMetric('us_average_measurable_worker_dose_2024')?.value} <span>rem</span></strong></article>
+      </div>
+      <DataTable slot="table" caption="U.S. nuclear performance and problem evidence" columns={[{ key: 'evidenceType', label: 'Evidence type' }, { key: 'item', label: 'Item' }, { key: 'dimension', label: 'Dimension' }, { key: 'value', label: 'Value', numeric: true }, { key: 'unit', label: 'Unit' }, { key: 'period', label: 'Period' }, { key: 'qualification', label: 'Qualification' }]} rows={NUCLEAR_EVIDENCE_TABLE} />
+    </ChartFrame>
+  </section>
+
+  <section id="recommendation" class="chapter-act" data-chapter-section>
+    <RecommendationPanel id="generation-recommendation" title="Build a diversified low-carbon generation portfolio" conclusion="Rapid renewables, preservation of safe and economical existing firm low-carbon assets, storage and flexibility, development of additional firm low-carbon options, and an orderly reduction of unabated fossil generation." rationale={['Lifecycle greenhouse-gas evidence strongly favors moving away from unabated fossil generation.', 'Energy, firm capacity, flexibility, grid services, and duration are different needs, so a portfolio is more robust than a universal technology claim.', 'Preserving safe economical assets and developing options reduces dependence on one construction path or resource pattern.']} tradeoffs={['More technologies increase planning, siting, supply-chain, and operating coordination', 'Firm low-carbon options can face long lead times, cost, waste, cooling, or site constraints', 'Renewables, storage, and transmission require land, materials, manufacturing, and community participation']} residualRisks={['Extreme weather, correlated outages, fuel constraints, and long low-output periods', 'Project delay, cost escalation, local ecological harm, and inequitable burden', 'A missing compatible coefficient ledger prevents an all-impact portfolio rank']} />
+    <ChartFrame chart={portfolioChart} unit="Ordinal role fit: 3 strong, 2 supporting, 1 limited, patterned cell unavailable" geography="Illustrative portfolio architecture; not a regional resource plan" period="Current evidence and recurring review" sources={[GENERATION_SOURCES.capacity, GENERATION_SOURCES.lifecycle, GENERATION_SOURCES.health]} summary="The diversified portfolio covers low-carbon energy, firm capacity, flexibility, and delivery diversity most broadly. Every portfolio retains a patterned gap for a compatible reliability and all-impact coefficient ledger." caveats={['Ordinal cells are qualitative design evidence, not a weighted score.', 'Portfolio labels do not specify regional quantities, build order, dispatch, reliability, cost, or permitting feasibility.']}>
+      <HeatmapPlot slot="plot" id="generation-portfolio-matrix" values={GENERATION_PORTFOLIO_MATRIX} rows={GENERATION_PORTFOLIO_ROWS} columns={GENERATION_PORTFOLIO_COLUMNS} unit="role fit" summary="Qualitative generation-portfolio roles with the all-impact coefficient ledger shown as unavailable." variant="matrix" width={820} height={360} />
+      <DataTable slot="table" caption="Generation portfolio role and evidence comparison" columns={[{ key: 'portfolio', label: 'Portfolio' }, { key: 'benefit', label: 'Benefit' }, { key: 'dependencies', label: 'Dependencies' }, { key: 'residualRisk', label: 'Residual risk' }, { key: 'quantitativeComparison', label: 'Quantitative comparison' }]} rows={GENERATION_PORTFOLIO_TABLE} />
+    </ChartFrame>
+    <EvidenceGap title="Compatible portfolio coefficients do not exist in this evidence package" decision="Quantitatively compare reliability, health, water, land, material, waste, cost, and delivery performance across internally consistent portfolios." missingInputs={['Scenario-consistent technology quantities, locations, configurations, and hourly operations', 'Compatible lifecycle, exposure, reliability, cost, water, land, material, and waste coefficients', 'Transparent weighting or a multi-objective decision rule approved for the decision context']} nextAction="Build a scenario-specific coefficient ledger and reliability model; until then, preserve each evidence dimension separately." />
+  </section>
+
+  <section id="model" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">05 · Model-supported case</p><h2>Filter evidence dimensions without manufacturing a winner</h2><p>The working view changes technology and evidence dimension only. It does not score, optimize, dispatch, or estimate an attributable health outcome.</p></div>
+    <GenerationWorkbench />
+    <CaveatPanel title="This working view is not a portfolio model" caveats={['Class-level findings retain their original technology and lifecycle boundary.', 'Deployment status is context, not a forecast.', 'Mitigation and residual-risk text cannot be converted to numeric weights without evidence and a decision rule.']} prohibitedInterpretations={['The selected technology is universally clean, safe, firm, cheapest, or preferred.', 'A low lifecycle greenhouse-gas median proves low impact on every other dimension.']} />
+  </section>
+
+  <section id="delivery" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">06 · Delivery</p><h2>Sequence retirement, preservation, new supply, and enabling systems</h2></div>
+    <ol class="delivery-sequence">
+      <li><strong>Define the regional service need.</strong><span>Separate annual energy, seasonal and hourly capacity, flexibility, grid services, duration, fuel security, and restoration.</span></li>
+      <li><strong>Preserve valuable safe assets.</strong><span>Evaluate maintenance, life extension, fuel, cooling, safety, waste, workforce, and economics before irreversible closure.</span></li>
+      <li><strong>Build rapid and firm options.</strong><span>Coordinate renewables, storage, demand flexibility, transmission, and qualified firm low-carbon projects with supply-chain and community plans.</span></li>
+      <li><strong>Retire unabated fossil generation orderly.</strong><span>Use enforceable emissions milestones, worker and community transition, reliability gates, and public burden tracking.</span></li>
+    </ol>
+    <div class="delivery-gates"><article><h3>Reliability gate</h3><p>Accredited capacity, hourly stress testing, reserves, restoration, fuel, transmission, and correlated-event performance.</p></article><article><h3>Burden gate</h3><p>Lifecycle emissions, exposure, water, land, materials, waste, biodiversity, affordability, and host-community agreements.</p></article><article><h3>Revise or stop</h3><p>A project misses safety, cost, schedule, reliability, environmental, or participation thresholds—or merely shifts unabated burden.</p></article></div>
+    <aside class="continuation-card"><p>Infrastructure continuation</p><a href={hrefForRoute('/energy/grid', base)}>Continue into grid capacity, corridors, process, and equipment delivery →</a></aside>
+  </section>
+</article>

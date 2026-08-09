@@ -1,0 +1,32 @@
+---
+interface CorridorLine {
+  id: string;
+  name: string;
+  status: string;
+  technology: string;
+  primary_capacity_mw: number;
+  primary_capacity_type: string;
+  geometry_quality: string;
+  coordinates: readonly (readonly [number, number])[];
+}
+
+interface Props { lines: readonly CorridorLine[]; summary: string; width?: number; height?: number }
+const { lines, summary, width = 820, height = 460 } = Astro.props;
+const x = (longitude: number) => 44 + ((longitude + 130) / 65) * (width - 74);
+const y = (latitude: number) => 28 + ((56 - latitude) / 33) * (height - 72);
+const path = (coordinates: CorridorLine['coordinates']) => coordinates.map(([longitude, latitude], index) => `${index ? 'L' : 'M'}${x(longitude).toFixed(1)} ${y(latitude).toFixed(1)}`).join(' ');
+const statusClass = (status: string) => status.toLowerCase().replaceAll('_', '-').replaceAll(' ', '-');
+---
+<svg class="svg-plot corridor-map" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${summary} Approximate context geometry; not a power-flow model.`}>
+  <title>{summary}. Approximate context geometry; not a power-flow model.</title>
+  <rect class="corridor-map__frame" x="44" y="28" width={width - 74} height={height - 72} rx="12" />
+  <g class="map-graticule" aria-hidden="true">
+    {[-125, -115, -105, -95, -85, -75, -65].map((longitude) => <line x1={x(longitude)} x2={x(longitude)} y1="28" y2={height - 44} />)}
+    {[25, 30, 35, 40, 45, 50, 55].map((latitude) => <line x1="44" x2={width - 30} y1={y(latitude)} y2={y(latitude)} />)}
+  </g>
+  {lines.map((line) => {
+    const tooltip = `${line.name}: ${line.status.replaceAll('_', ' ')}, ${line.primary_capacity_mw.toLocaleString('en-US')} MW ${line.primary_capacity_type.replaceAll('_', ' ')}; ${line.geometry_quality.replaceAll('_', ' ')}`;
+    return <path class:list={['corridor-line', `corridor-line--${statusClass(line.status)}`]} d={path(line.coordinates)} tabindex="0" aria-label={tooltip} data-tooltip={tooltip}><title>{tooltip}</title></path>;
+  })}
+  <text class="map-context-note" x={width / 2} y={height - 10} text-anchor="middle">20 catalog corridors · approximate or schematic geometry · capacities are not additive</text>
+</svg>

@@ -267,6 +267,48 @@
     },
     {
       "kind": "chart",
+      "legacyId": "generation-capacity-versus-output",
+      "canonicalId": "CHT-000085",
+      "semanticHash": "e7c3846a479d993da7796564fbe3b1fc6052d0ebe799e2a5f691ef8f9ebefe27"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "generation-health-causal-pathway",
+      "canonicalId": "CHT-000086",
+      "semanticHash": "f90482a9aa74162d1daec05394d52abdea32b8018c1eda95cfdeb49ab951e962"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "generation-lifecycle-greenhouse-ranges",
+      "canonicalId": "CHT-000087",
+      "semanticHash": "e300b396a3da7c74acad91b35dcbb1481e84463dd3c99f0b65f6e1479cf408a5"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "generation-nuclear-evidence",
+      "canonicalId": "CHT-000088",
+      "semanticHash": "772ab9815a35a4275db46849d5de59a2a8479c97b9fd8535f1a8806158b07eaf"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "generation-portfolio-comparison",
+      "canonicalId": "CHT-000089",
+      "semanticHash": "0439d04a376efab80e089f1359b2d23d84b926d63538b52029c84f9889c160f8"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "generation-system-role-matrix",
+      "canonicalId": "CHT-000090",
+      "semanticHash": "2944bbb0eb9d26363b4d0cc3be3ca9f09d471b7dc1f4fab541d503771b99e6bc"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "generation-technology-problem-cards",
+      "canonicalId": "CHT-000091",
+      "semanticHash": "5facdb6117f0ed2536b9a8bd6c75543cda6d2175ea7d65025fa14805393b762d"
+    },
+    {
+      "kind": "chart",
       "legacyId": "ghg-temperature-observed",
       "canonicalId": "CHT-000043",
       "semanticHash": "a1140df22250272cc631e9d2411d48ecf012eb8f7e1913cadec34577ad68495d"
@@ -1863,6 +1905,18 @@
     },
     {
       "kind": "dataset",
+      "legacyId": "path:research/energy/impacts/nuclear-generation.json",
+      "canonicalId": "DAT-000107",
+      "semanticHash": "11166917988196870c0b5751996b4c7c5ece48ab8d265cc74ef8a095f9100136"
+    },
+    {
+      "kind": "dataset",
+      "legacyId": "path:research/energy/impacts/technology-impact-matrix.json",
+      "canonicalId": "DAT-000108",
+      "semanticHash": "235c725d66a75109904890820336680c2d724a0902b5c128baf162f497efb8a0"
+    },
+    {
+      "kind": "dataset",
       "legacyId": "path:research/energy/timeseries/normalized/global-electricity-generation-history.csv",
       "canonicalId": "DAT-000069",
       "semanticHash": "46e9846307ab401aba375462352d4324ebe1a6b890e55fa1dcfb0242fefef87a"
@@ -2975,7 +3029,7 @@
       "kind": "open_item",
       "legacyId": "chart-data-bindings",
       "canonicalId": "OPN-000090",
-      "semanticHash": "59c55dac70da746e5e9474f057188165448e06bfe6a00c364927be0c06577c4c"
+      "semanticHash": "a2ae8ca3fd339c5d61d6ca07132fc30b19e0acec4c6685f265fc66fd51f25cb4"
     },
     {
       "kind": "open_item",

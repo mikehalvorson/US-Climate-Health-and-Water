@@ -1,0 +1,121 @@
+---
+import CalendarHeatmapPlot from '../charts/CalendarHeatmapPlot.astro';
+import CapacitySemanticsPlot from '../charts/CapacitySemanticsPlot.astro';
+import CorridorMapPlot from '../charts/CorridorMapPlot.astro';
+import DotRangePlot from '../charts/DotRangePlot.astro';
+import LinePlot from '../charts/LinePlot.astro';
+import NetworkPlot from '../charts/NetworkPlot.astro';
+import CaveatPanel from '../CaveatPanel.astro';
+import ChartFrame from '../ChartFrame.astro';
+import DataTable from '../DataTable.astro';
+import EvidenceGap from '../EvidenceGap.astro';
+import RecommendationPanel from '../RecommendationPanel.astro';
+import ViewpointGrid from '../ViewpointGrid.astro';
+import {
+  approvedGridChart,
+  GRID_CALENDAR_TABLE,
+  GRID_CALENDAR_VALUES,
+  GRID_CAPACITY_RECORDS,
+  GRID_CONTEXT,
+  GRID_CORRIDOR_LINES,
+  GRID_CORRIDOR_TABLE,
+  GRID_HOURLY_SERIES,
+  GRID_HOURLY_TABLE,
+  GRID_INDEX_RANGES,
+  GRID_INDEX_TABLE,
+  GRID_PROCESS_LANES,
+  GRID_PROCESS_NODES,
+  GRID_SOURCES,
+  GRID_SUPPLY_NETWORK,
+  GRID_SUPPLY_TABLE,
+  GRID_TRANSFORMER_GAPS,
+  GRID_TRANSFORMER_STAGES,
+} from '../../lib/data/grid';
+import { hrefForRoute } from '../../lib/navigation/shell';
+import GridWorkbench from './GridWorkbench.astro';
+
+const hourlyChart = approvedGridChart('TR-CH-001', 'line');
+const calendarChart = approvedGridChart('TR-CH-003', 'heatmap');
+const corridorChart = approvedGridChart('TR-CH-005', 'map');
+const capacityChart = approvedGridChart('TR-CH-006', 'dot_range');
+const needChart = approvedGridChart('TR-CH-007', 'dot_range');
+const processChart = approvedGridChart('TR-CH-008', 'flow');
+const supplyChart = approvedGridChart('TR-CH-010', 'causal_path');
+const transformerChart = approvedGridChart('TR-CH-011', 'flow');
+const base = import.meta.env.BASE_URL;
+---
+<article class="chapter-content" data-chapter-content="grid-delivery">
+  <section id="current-system" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">01 · Current system</p><h2>Grid demand is hourly, regional, and clock-specific</h2><p>Annual energy does not reveal peak hours, ramps, congestion, reserves, or local equipment constraints. The observed views keep EIA adjusted-demand selection, balancing-authority boundaries, UTC and local clocks, and missing observations explicit.</p></div>
+    <ChartFrame chart={hourlyChart} unit="MW adjusted demand; missing observations remain null" geography="California ISO balancing authority" period="2024-09-01 through 2024-09-07 local hour-ending observations" sources={[GRID_SOURCES.hourly]} summary="The California ISO peak-week trace contains 168 local hour-ending records. Gaps would break the line rather than being plotted as zero; this selected week is complete." caveats={['EIA adjusted demand is preferred where available.', 'Operational balancing-authority demand is not end-use consumption by sector.', 'Do not stack balancing authorities without UTC alignment.']}>
+      <LinePlot slot="plot" series={GRID_HOURLY_SERIES} xLabel="Local hour-ending sequence" yLabel="Adjusted demand" unit="MW" summary="California ISO adjusted hourly demand during the selected September 2024 peak week." width={900} height={420} />
+      <DataTable slot="table" caption="California ISO peak-week hourly demand" columns={[{ key: 'localTimeEnd', label: 'Local hour end' }, { key: 'utcTimeEnd', label: 'UTC hour end' }, { key: 'demandMw', label: 'Demand', unit: 'MW', numeric: true }, { key: 'selectionBasis', label: 'Selection basis' }, { key: 'status', label: 'Missingness status' }]} rows={GRID_HOURLY_TABLE} />
+    </ChartFrame>
+    <ChartFrame chart={calendarChart} unit="MW daily peak from observed local hours" geography="California ISO balancing authority" period="Calendar year 2024" sources={[GRID_SOURCES.hourly]} summary="The calendar view shows one daily peak for each valid 2024 local date. November 2 is patterned because all 24 source observations are missing; the value is not filled, interpolated, or shown as zero." caveats={['Color compares daily peaks within one balancing authority only.', 'A partial day would retain the available peak with a missing-hour flag.', 'Local-hour daylight-saving conventions remain source-native.']}>
+      <CalendarHeatmapPlot slot="plot" id="ciso-2024-calendar" values={GRID_CALENDAR_VALUES} unit="MW" summary="California ISO 2024 daily peak-demand calendar with source gaps patterned separately from zero." />
+      <DataTable slot="table" caption="California ISO daily peak-demand calendar records" columns={[{ key: 'date', label: 'Local date' }, { key: 'dailyPeakMw', label: 'Daily peak', unit: 'MW', numeric: true }, { key: 'dailyMeanMw', label: 'Daily mean', unit: 'MW', numeric: true }, { key: 'missingHours', label: 'Missing hours', numeric: true }, { key: 'status', label: 'Status' }]} rows={GRID_CALENDAR_TABLE} />
+    </ChartFrame>
+  </section>
+
+  <section id="problems" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">02 · Why this is a problem</p><h2>Corridor labels and megawatts conceal different physical meanings</h2><p>A project overlay can show location context, status, and reported capacity. It cannot reveal operational power flow, infer MW from voltage, or authorize summing project records.</p></div>
+    <ChartFrame chart={corridorChart} unit="Context line and source-native primary MW record" geography="Contiguous United States context extent" period="Project-source vintages through 2026-08-01" sources={[GRID_SOURCES.hifld, GRID_SOURCES.transmissionStudy]} legend={[{ label: 'Operating', className: 'legend-corridor-operating' }, { label: 'Construction or development', className: 'legend-corridor-development' }, { label: 'Proposed or planned', className: 'legend-corridor-proposed' }]} summary={`The released overlay contains exactly ${GRID_CONTEXT.corridorCount} major-corridor features and the accessible table contains the same ${GRID_CORRIDOR_TABLE.length} records. The ${GRID_CONTEXT.hifldFeatureCount.toLocaleString('en-US')}-feature HIFLD 230-kV-plus layer is cited as context but is not rendered or treated as a capacity layer.`} caveats={['Overlay geometry is approximate or schematic and does not establish rights-of-way.', 'HIFLD nominal voltage does not provide MW ratings.', 'Visible capacities are not additive and the map is not an operational power-flow model.']}>
+      <CorridorMapPlot slot="plot" lines={GRID_CORRIDOR_LINES} summary="Major U.S. transmission corridor project context by reported status." />
+      <DataTable slot="table" caption="Major transmission corridor overlay—exactly 20 released features" columns={[{ key: 'name', label: 'Corridor' }, { key: 'status', label: 'Status' }, { key: 'technology', label: 'Technology' }, { key: 'primaryCapacityMw', label: 'Primary record', unit: 'MW', numeric: true }, { key: 'capacityType', label: 'Capacity type' }, { key: 'geometryQuality', label: 'Geometry quality' }, { key: 'sourceId', label: 'Source identity' }]} rows={GRID_CORRIDOR_TABLE} />
+    </ChartFrame>
+    <ChartFrame chart={capacityChart} unit="MW, one source-native capacity record per mark" geography="Cataloged U.S. corridor projects" period="Project-specific source vintages" sources={[GRID_SOURCES.transmissionStudy]} summary="Each mark is a reported capacity record with its own type, direction, status, phase, and study years. Opposite-direction limits, transfer capability, converter ratings, design goals, and phased ultimate capacities remain separate." caveats={['Zero capacity accreditation is valid data, not missing.', 'Opposite-direction nonsimultaneous limits are not additive.', 'An ultimate phase is not current operating capability.']}>
+      <CapacitySemanticsPlot slot="plot" values={GRID_CAPACITY_RECORDS} unit="MW" summary="Corridor capacity records plotted without stacking incompatible capacity meanings." />
+      <DataTable slot="table" caption="Corridor capacity records and semantics" columns={[{ key: 'corridor', label: 'Corridor' }, { key: 'corridorStatus', label: 'Project status' }, { key: 'value', label: 'Record', unit: 'MW', numeric: true }, { key: 'capacityType', label: 'Capacity type' }, { key: 'direction', label: 'Direction' }, { key: 'recordStatus', label: 'Record status' }, { key: 'studyYears', label: 'Study years' }, { key: 'qualification', label: 'Qualification' }]} rows={GRID_CAPACITY_RECORDS} />
+    </ChartFrame>
+    <ViewpointGrid id="grid-viewpoints" title="Grid delivery links national needs to local burdens" items={[
+      { viewpoint: 'people_and_households', label: 'People and households', problem: 'Outages, bills, construction, and land impacts are experienced locally.', evidenceState: 'qualitative_evidence', consequence: 'Reliability and affordability benefits need measurable local delivery terms.' },
+      { viewpoint: 'utilities_and_infrastructure_owners', label: 'Utilities and operators', problem: 'Planning, interconnection, protection, equipment, operations, and cost allocation cross institutions.', evidenceState: 'qualitative_evidence', consequence: 'Owners need interoperable milestones and clear operational responsibility.' },
+      { viewpoint: 'host_communities_and_tribes', label: 'Host communities and Tribes', problem: 'Corridors can affect land, cultural resources, ecosystems, and sovereign interests.', evidenceState: 'qualitative_evidence', consequence: 'Participation and route alternatives must begin before a preferred alignment hardens.' },
+      { viewpoint: 'national_security_and_supply_chains', label: 'Supply chains and security', problem: 'Transformers, steel, copper, transport, and skilled labor are shared dependencies.', evidenceState: 'reported_estimate', consequence: 'Equipment expansion and resilience must accompany corridor plans.' },
+    ]} />
+  </section>
+
+  <section id="choices" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">03 · Choices</p><h2>Demand growth and grid need come from different model families</h2><p>Indexing makes scale comparable without pretending that annual electricity use, peak demand, within-region expansion, and total transmission extent are the same metric or share a base year.</p></div>
+    <ChartFrame chart={needChart} unit="Index; base year printed in every series label and table boundary" geography="United States study contexts" period="2025–2050 AEO endpoints; 2035 and 2050 DOE study endpoints" sources={[GRID_SOURCES.transmissionStudy]} summary="AEO electricity-use scenarios rise relative to their 2025 values, while DOE studies report much larger transmission-expansion ranges relative to distinct 2020 or study baselines. These endpoints remain separate source scenarios, not one forecast line." caveats={['Different model families, metrics, base years, and scenarios are not spliced together.', 'Sparse study endpoints are not interpolated as observations.', 'An index supports scale comparison but does not erase the underlying unit difference.']}>
+      <DotRangePlot slot="plot" values={GRID_INDEX_RANGES} valueLabel="Within-series index" unit="index" summary="Demand and transmission-need endpoints indexed within their own explicitly labeled source bases." labelWidth={360} width={900} height={390} />
+      <DataTable slot="table" caption="Indexed demand and transmission-need evidence" columns={[{ key: 'series', label: 'Series' }, { key: 'lowIndex', label: 'Low index', numeric: true }, { key: 'centralIndex', label: 'Central index', numeric: true }, { key: 'highIndex', label: 'High index', numeric: true }, { key: 'boundary', label: 'Metric and base' }, { key: 'status', label: 'Status' }]} rows={GRID_INDEX_TABLE} />
+    </ChartFrame>
+    <ChartFrame chart={processChart} unit="Ordered and parallel process stages; no universal duration" geography="Illustrative U.S. interregional transmission development process" period="Current planning and permitting framework through 2026-08-01" sources={[GRID_SOURCES.planning, GRID_SOURCES.permitting]} summary="Twenty-five stages span planning, commercial agreements, siting and engagement, federal review, engineering and procurement, and construction and operations. Multiple branches proceed in parallel and may iterate." caveats={[GRID_CONTEXT.processDurationRule, GRID_CONTEXT.processParallelismRule, 'The CITAP coordination clock is not total project duration and FERC backstop authority is limited.']}>
+      <div slot="plot" class="process-swimlane" aria-label="Transmission development process swimlane">{GRID_PROCESS_LANES.map((lane) => <section><h4>{lane}</h4><ol>{GRID_PROCESS_NODES.filter((item) => item.lane === lane).map((item) => <li data-stage-status={item.status}><span>{item.id}</span><strong>{item.label}</strong><small>{item.status}</small></li>)}</ol></section>)}</div>
+      <DataTable slot="table" caption="Transmission development stages" columns={[{ key: 'id', label: 'Stage' }, { key: 'label', label: 'Stage name' }, { key: 'lane', label: 'Lane' }, { key: 'phase', label: 'Phase' }, { key: 'actors', label: 'Actors' }, { key: 'outputs', label: 'Outputs' }, { key: 'status', label: 'Branch status' }, { key: 'warning', label: 'Timing warning' }]} rows={GRID_PROCESS_NODES} />
+    </ChartFrame>
+  </section>
+
+  <section id="recommendation" class="chapter-act" data-chapter-section>
+    <RecommendationPanel id="grid-recommendation" title="Expand grid capability and delivery capacity together" conclusion="Combine grid-enhancing technologies and reconductoring with new interregional corridors, queue reform, regional planning, community participation, and equipment-capacity expansion." rationale={['Operational improvements and reconductoring can use parts of the existing network while new corridors address larger geographic transfer needs.', 'Planning and queue reform connect regional need to executable projects and cost allocation.', 'Equipment, workforce, logistics, and early community participation are delivery constraints, not side issues.']} tradeoffs={['New corridors and equipment require capital, land, permits, manufacturing, and long schedules', 'Grid-enhancing technologies do not substitute for every new-line need', 'Regional benefits and local burdens require transparent allocation and enforceable participation']} residualRisks={['Queue, siting, procurement, construction, and energization delay', 'Transformer and material bottlenecks shared across generation and load growth', 'No quantitative reliability model yet links the released corridor catalog to hourly power flows']} />
+    <ChartFrame chart={supplyChart} unit="Qualitative dependency link; no failure probability" geography="Representative shared U.S. grid supply dependencies" period="Current evidence package through 2026-08-01" sources={[GRID_SOURCES.gridSupplyChain, GRID_SOURCES.transformerGao, GRID_SOURCES.transformerDoe]} summary="Electrical steel, copper, heavy logistics, and skilled labor feed transformers and the transmission system, which in turn serves data centers, electric vehicles, and buildings. Shared demand is not additive without a scenario." caveats={['Qualitative criticality is not a failure probability.', 'An empty source identity is displayed as a research gap.', 'The representative subgraph does not quantify national inventories or orders.']}>
+      <NetworkPlot slot="plot" id="grid-supply-network" nodes={GRID_SUPPLY_NETWORK.nodes} edges={GRID_SUPPLY_NETWORK.edges} variant="causal_path" unit="qualitative dependency" summary="Representative shared material, equipment, labor, transmission, and end-use dependency network." width={900} height={480} />
+      <DataTable slot="table" caption="Representative grid supply-dependency links" columns={[{ key: 'from', label: 'Dependency' }, { key: 'to', label: 'Downstream system' }, { key: 'dependency', label: 'Relationship' }, { key: 'criticality', label: 'Qualitative criticality' }, { key: 'substitutability', label: 'Substitutability' }, { key: 'sourceStatus', label: 'Source status' }]} rows={GRID_SUPPLY_TABLE} />
+    </ChartFrame>
+    <ChartFrame chart={transformerChart} unit="Supply-chain stage and documented failure mode" geography="U.S. transformer supply context" period="Latest cited public evidence through 2026-08-01" sources={[GRID_SOURCES.transformerGao, GRID_SOURCES.transformerDoe]} summary="Transformer delivery moves through raw materials, specialized components, design, manufacturing, testing, heavy transport, installation, commissioning, and operation. Large-power and distribution transformers are separate product classes." caveats={['No authoritative current national order book is available.', 'Reported lead times require observation dates and product definitions.', 'A transformer count without voltage, rating, product class, and application is not a capacity measure.']}>
+      <ol slot="plot" class="transformer-chain" aria-label="Transformer supply chain">{GRID_TRANSFORMER_STAGES.map((item) => <li><span>{String(item.order).padStart(2, '0')}</span><div><strong>{item.stage}</strong><p>{item.inputs}</p><small>{item.failureModes}</small></div></li>)}</ol>
+      <DataTable slot="table" caption="Transformer supply stages and delay points" columns={[{ key: 'order', label: 'Order', numeric: true }, { key: 'stage', label: 'Stage' }, { key: 'inputs', label: 'Inputs' }, { key: 'failureModes', label: 'Failure modes' }]} rows={GRID_TRANSFORMER_STAGES} />
+    </ChartFrame>
+    <EvidenceGap title="Transformer order-book and lead-time metrics remain fragmented" decision="Sequence product-specific transformer procurement against project milestones and national demand." missingInputs={GRID_TRANSFORMER_GAPS.map((item) => `${item.metric} (${item.unit}): ${item.warning}`)} nextAction="Acquire dated, product-class-specific orders, manufacturing capacity, lead times, deliveries, and inventory observations before publishing a national procurement schedule." />
+  </section>
+
+  <section id="model" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">05 · Model-supported case</p><h2>Filter native records without simulating the grid</h2><p>The working view exposes region and date, corridor status, capacity meaning, and process stage. Each output retains its own source boundary.</p></div>
+    <GridWorkbench />
+    <EvidenceGap title="Quantitative grid reliability effects remain unavailable" decision="Estimate hourly regional reliability, congestion, transfer, curtailment, outage, and cost effects of a specified corridor and portfolio." missingInputs={['Topology and impedance with validated operational limits and contingency definitions', 'Hourly generation, load, storage, outages, weather, reserves, and dispatch assumptions', 'Project in-service configuration, directional capability, and scenario-consistent regional model']} nextAction="Build and validate a scenario-specific production-cost and reliability model before publishing quantitative corridor effects." />
+    <CaveatPanel title="The corridor layer is context geometry" caveats={GRID_CONTEXT.corridorLimits} prohibitedInterpretations={GRID_CONTEXT.prohibitedCapacityTransforms} />
+  </section>
+
+  <section id="delivery" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">06 · Delivery</p><h2>Advance fast upgrades and long corridors through explicit gates</h2></div>
+    <ol class="delivery-sequence">
+      <li><strong>Measure need and unlock existing assets.</strong><span>Publish hourly regional needs, use grid-enhancing technologies, reconductoring, storage, flexible demand, and transparent queue information.</span></li>
+      <li><strong>Select regional portfolios.</strong><span>Run scenario-consistent planning, benefit and cost allocation, interconnection reform, and alternatives analysis across regions.</span></li>
+      <li><strong>Engage, site, permit, and procure.</strong><span>Coordinate state, Tribal, federal, land, environmental, community, equipment, workforce, logistics, and financing tracks in parallel.</span></li>
+      <li><strong>Construct, commission, and review.</strong><span>Track milestones, energization, reliability performance, local commitments, equipment delivery, costs, and triggers for revision.</span></li>
+    </ol>
+    <div class="delivery-gates"><article><h3>Operational gate</h3><p>Validated capability type, contingencies, protection, reserves, restoration, and hourly stress performance.</p></article><article><h3>Participation gate</h3><p>Route alternatives, Tribal and community participation, environmental review, mitigation, benefits, and grievance mechanisms.</p></article><article><h3>Delivery gate</h3><p>Cost allocation, finance, transformer and material orders, logistics, workforce, construction schedule, and commissioning evidence.</p></article></div>
+    <aside class="continuation-card"><p>System continuation</p><a href={hrefForRoute('/climate/cause', base)}>Continue into the climate evidence chapters →</a></aside>
+  </section>
+</article>

@@ -1,0 +1,47 @@
+---
+interface CalendarCell {
+  month: string;
+  day: number;
+  value: number | null;
+  missingHours: number;
+  date: string | null;
+}
+
+interface Props {
+  id: string;
+  values: readonly CalendarCell[];
+  unit: string;
+  summary: string;
+  width?: number;
+  height?: number;
+}
+
+const { id, values, unit, summary, width = 820, height = 420 } = Astro.props;
+const months = [...new Set(values.map((item) => item.month))];
+const numericValues = values.flatMap((item) => item.value === null ? [] : [item.value]);
+const minimum = Math.min(...numericValues);
+const maximum = Math.max(...numericValues);
+const intensity = (value: number | null) => value === null || maximum === minimum ? 0 : (value - minimum) / (maximum - minimum);
+const left = 78;
+const top = 48;
+const plotWidth = width - left - 22;
+const plotHeight = height - top - 44;
+const cellWidth = plotWidth / 31;
+const cellHeight = plotHeight / months.length;
+const patternId = `${id}-missing`;
+---
+<svg class="svg-plot calendar-heatmap" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={summary}>
+  <title>{summary}</title>
+  <defs><pattern id={patternId} width="7" height="7" patternUnits="userSpaceOnUse"><path d="M-2 2L2-2M0 7L7 0M5 9L9 5" /></pattern></defs>
+  {[1, 5, 10, 15, 20, 25, 31].map((day) => <text x={left + (day - 0.5) * cellWidth} y="34" text-anchor="middle">{day}</text>)}
+  {months.map((month, monthIndex) => <text x={left - 10} y={top + (monthIndex + 0.55) * cellHeight} text-anchor="end">{month}</text>)}
+  {values.map((cell) => {
+    const monthIndex = months.indexOf(cell.month);
+    const invalid = cell.date === null;
+    const missing = !invalid && cell.value === null;
+    const partial = !missing && cell.missingHours > 0;
+    const tooltip = invalid ? `${cell.month} ${cell.day}: not a calendar date` : missing ? `${cell.date}: all hourly observations missing; not zero` : `${cell.date}: ${cell.value?.toLocaleString('en-US', { maximumFractionDigits: 0 })} ${unit}${partial ? `; ${cell.missingHours} hourly observations missing` : ''}`;
+    return <rect class:list={['calendar-cell', { 'is-invalid': invalid, 'is-missing': missing, 'is-partial': partial }]} x={left + (cell.day - 1) * cellWidth} y={top + monthIndex * cellHeight} width={Math.max(1, cellWidth - 1)} height={Math.max(1, cellHeight - 1)} style={missing ? `fill:url(#${patternId})` : invalid ? undefined : `--cell-opacity:${0.16 + intensity(cell.value) * 0.8}`} tabindex={invalid ? undefined : '0'} aria-label={invalid ? undefined : tooltip} data-tooltip={invalid ? undefined : tooltip}><title>{tooltip}</title></rect>;
+  })}
+  <text class="plot-axis-label" x={left + plotWidth / 2} y={height - 8} text-anchor="middle">2024 local calendar day · color is daily peak ({unit})</text>
+</svg>

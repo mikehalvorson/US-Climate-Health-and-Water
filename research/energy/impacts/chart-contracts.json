@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "charts": [
+    {
+      "chart_id": "generation-system-role-matrix",
+      "title": "Technology roles are not interchangeable",
+      "type": "matrix",
+      "data": "technology-impact-matrix.json#/technologies",
+      "constraints": ["Qualitative service roles are not accredited capacity values.", "Do not add role classes into a technology score."]
+    },
+    {
+      "chart_id": "generation-capacity-versus-output",
+      "title": "Capacity and generation answer different questions",
+      "type": "bar",
+      "data": "../timeseries/normalized/global-irena-capacity-and-generation-history.csv",
+      "constraints": ["Capacity uses GW and generation uses TWh in separate panels.", "Storage discharge is not primary generation."]
+    },
+    {
+      "chart_id": "generation-lifecycle-greenhouse-ranges",
+      "title": "Lifecycle greenhouse-gas medians and ranges",
+      "type": "dot_range",
+      "data": "lifecycle-benchmarks.json#/values",
+      "constraints": ["Show the 2014 source-synthesis vintage.", "Never publish medians without ranges or hide hydropower's upper tail."]
+    },
+    {
+      "chart_id": "generation-technology-problem-cards",
+      "title": "Technical, health, regulatory, and sustainability burdens",
+      "type": "matrix",
+      "data": "technology-impact-matrix.json#/technologies",
+      "constraints": ["No single good-or-bad score.", "Unknown and configuration-specific evidence must remain visible."]
+    },
+    {
+      "chart_id": "generation-health-causal-pathway",
+      "title": "From hazard to attributable health outcome",
+      "type": "causal_path",
+      "data": "dashboard-guidance.json#/views/health_pathways",
+      "constraints": ["No death inference from generation alone.", "Separate routine, occupational, waste, and accident pathways."]
+    },
+    {
+      "chart_id": "generation-nuclear-evidence",
+      "title": "Nuclear evidence with official conflicts preserved",
+      "type": "matrix",
+      "data": "nuclear-generation.json",
+      "constraints": ["Show NRC and EIA reactor counts side by side with dates.", "Capacity factor is not safety, cost, or project-delivery performance."]
+    },
+    {
+      "chart_id": "generation-portfolio-comparison",
+      "title": "Portfolio roles and missing compatible coefficients",
+      "type": "matrix",
+      "data": ["technology-impact-matrix.json", "dashboard-guidance.json#/impact_linkage_contract"],
+      "constraints": ["Do not publish a one-number clean score.", "Unavailable harmonized reliability, health, water, land, material, waste, and cost coefficients remain gaps."]
+    }
+  ]
+}

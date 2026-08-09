@@ -1,8 +1,10 @@
-export type ChapterContentKey = 'energy-system' | 'energy-demand' | 'climate-cause' | 'climate-risks' | 'freshwater-security' | 'plastics-materials';
+export type ChapterContentKey = 'energy-system' | 'energy-demand' | 'generation-choices' | 'grid-delivery' | 'climate-cause' | 'climate-risks' | 'freshwater-security' | 'plastics-materials';
 
 const RELEASED_CHAPTERS: Readonly<Record<string, ChapterContentKey>> = {
   'RTE-000002': 'energy-system',
   'RTE-000003': 'energy-demand',
+  'RTE-000004': 'generation-choices',
+  'RTE-000005': 'grid-delivery',
   'RTE-000007': 'climate-cause',
   'RTE-000008': 'climate-risks',
   'RTE-000011': 'freshwater-security',

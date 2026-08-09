@@ -1,0 +1,19 @@
+---
+interface CapacityRecord { id: string; corridor: string; value: number; capacityType: string; direction: string; recordStatus: string; studyYears: string; qualification: string }
+interface Props { values: readonly CapacityRecord[]; summary: string; unit: string; width?: number }
+const { values, summary, unit, width = 820 } = Astro.props;
+const height = Math.max(420, 76 + values.length * 24);
+const left = 260;
+const maximum = Math.max(...values.map((item) => item.value), 1);
+const x = (value: number) => left + (value / maximum) * (width - left - 48);
+---
+<svg class="svg-plot capacity-semantics-plot" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={summary}>
+  <title>{summary}</title>
+  {[0, 0.25, 0.5, 0.75, 1].map((fraction) => <g class="capacity-grid"><line x1={x(maximum * fraction)} x2={x(maximum * fraction)} y1="38" y2={height - 34} /><text x={x(maximum * fraction)} y="25" text-anchor="middle">{Math.round(maximum * fraction).toLocaleString('en-US')}</text></g>)}
+  {values.map((item, index) => {
+    const rowY = 52 + index * 24;
+    const tooltip = `${item.corridor}: ${item.value.toLocaleString('en-US')} ${unit}, ${item.capacityType}; ${item.direction}; ${item.recordStatus}; ${item.qualification}`;
+    return <g class:list={['capacity-record', `chart-series--${index % 6}`]} tabindex="0" aria-label={tooltip} data-tooltip={tooltip}><text x={left - 12} y={rowY + 4} text-anchor="end">{item.corridor}</text><line x1={left} x2={x(item.value)} y1={rowY} y2={rowY} /><circle cx={x(item.value)} cy={rowY} r="6" /><title>{tooltip}</title></g>;
+  })}
+  <text class="plot-axis-label" x={left + (width - left) / 2} y={height - 8} text-anchor="middle">Reported capacity record ({unit}) · types remain separate</text>
+</svg>

@@ -49,6 +49,7 @@
     "impacts/regulatory-status.json",
     "impacts/lifecycle-benchmarks.json",
     "impacts/dashboard-guidance.json",
+    "impacts/chart-contracts.json",
     "impacts/scripts/validate_impacts.py",
     "timeseries/README.md",
     "timeseries/series-schema.json",

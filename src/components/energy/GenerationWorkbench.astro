@@ -1,0 +1,34 @@
+---
+import { GENERATION_SOURCES, GENERATION_WORKBENCH } from '../../lib/data/generation';
+import type { ScenarioControlDefinition } from '../../lib/scenarios/state';
+import ScenarioWorkbench from '../ScenarioWorkbench.astro';
+import SourceDrawer from '../SourceDrawer.astro';
+
+const controls: readonly ScenarioControlDefinition[] = [
+  { id: 'technology', label: 'Generation or storage technology', defaultValue: 'solar_photovoltaic', options: GENERATION_WORKBENCH.technologies.map((item) => ({ value: item.id, label: item.label })) },
+  { id: 'dimension', label: 'Evidence dimension', defaultValue: 'technical', options: GENERATION_WORKBENCH.dimensions.map((item) => ({ value: item.id, label: item.label })) },
+];
+const initialTechnology = GENERATION_WORKBENCH.technologies.find((item) => item.id === 'solar_photovoltaic');
+const initialDimension = GENERATION_WORKBENCH.dimensions.find((item) => item.id === 'technical');
+const initialFinding = initialTechnology && initialDimension ? initialTechnology[initialDimension.field] : null;
+---
+<div data-generation-workbench data-workbench-records={JSON.stringify(GENERATION_WORKBENCH)}>
+  <ScenarioWorkbench
+    id="generation-evidence-filter"
+    title="Inspect a technology without producing a clean score"
+    decision="Select a technology and one evidence dimension. System role, deployment, mitigation, and residual risk remain visible so unlike burdens are not collapsed into one rank."
+    controls={controls}
+    modelFamily="Verified qualitative technology-impact lookup with source-native quantitative figures outside the filter"
+    seamNote="This is a filter, not a dispatch, reliability, cost, health, or lifecycle model. No dimension is weighted or added to another."
+    readiness="Source-linked evidence lookup · no universal winner"
+  >
+    <div class="workbench-result-grid infrastructure-workbench-output">
+      <section><h3 data-generation-label>{initialTechnology?.label}</h3><p><strong data-generation-deployment>{initialTechnology?.deployment}</strong></p><small data-generation-role>{initialTechnology?.role}</small></section>
+      <section><h3 data-generation-dimension>{initialDimension?.label}</h3><p data-generation-finding>{initialFinding}</p></section>
+      <section><h3>Mitigation</h3><p data-generation-mitigation>{initialTechnology?.mitigation}</p></section>
+      <section><h3>Residual risk</h3><p data-generation-residual>{initialTechnology?.residual}</p></section>
+    </div>
+    <div class="workbench-sources"><span>Core evidence:</span><SourceDrawer id="generation-workbench-lifecycle-source" source={GENERATION_SOURCES.lifecycle} triggerLabel="IPCC lifecycle evidence" /><SourceDrawer id="generation-workbench-health-source" source={GENERATION_SOURCES.health} triggerLabel="EPA health pathway" /></div>
+  </ScenarioWorkbench>
+</div>
+<script>import '../../scripts/infrastructure-workbenches.ts';</script>

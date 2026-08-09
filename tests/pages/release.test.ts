@@ -7,6 +7,8 @@ describe('chapter release mapping', () => {
   it('releases the completed Energy, Climate, Freshwater, and Plastics vertical slices', () => {
     expect(chapterContentFor('RTE-000002')).toBe('energy-system');
     expect(chapterContentFor('RTE-000003')).toBe('energy-demand');
+    expect(chapterContentFor('RTE-000004')).toBe('generation-choices');
+    expect(chapterContentFor('RTE-000005')).toBe('grid-delivery');
     expect(chapterContentFor('RTE-000007')).toBe('climate-cause');
     expect(chapterContentFor('RTE-000008')).toBe('climate-risks');
     expect(chapterContentFor('RTE-000011')).toBe('freshwater-security');
@@ -14,6 +16,8 @@ describe('chapter release mapping', () => {
     expect(ROUTES.filter((route) => releaseStatusFor(route.id) === 'chapter').map((route) => route.id)).toEqual([
       'RTE-000002',
       'RTE-000003',
+      'RTE-000004',
+      'RTE-000005',
       'RTE-000007',
       'RTE-000008',
       'RTE-000011',
@@ -22,7 +26,7 @@ describe('chapter release mapping', () => {
   });
 
   it('keeps every unreleased route on the honest shell state', () => {
-    for (const route of ROUTES.filter((candidate) => !['RTE-000002', 'RTE-000003', 'RTE-000007', 'RTE-000008', 'RTE-000011', 'RTE-000014'].includes(candidate.id))) {
+    for (const route of ROUTES.filter((candidate) => !['RTE-000002', 'RTE-000003', 'RTE-000004', 'RTE-000005', 'RTE-000007', 'RTE-000008', 'RTE-000011', 'RTE-000014'].includes(candidate.id))) {
       expect(chapterContentFor(route.id)).toBeNull();
       expect(releaseStatusFor(route.id)).toBe('shell');
     }
