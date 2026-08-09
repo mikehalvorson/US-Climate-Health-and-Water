@@ -72,6 +72,14 @@
       "constraints": ["Separate units into panels.", "Do not connect missing warming levels.", "Display confidence and geography."]
     },
     {
+      "chart_id": "extreme-heat-response",
+      "title": "Extreme heat becomes more frequent and more intense",
+      "type": "aligned_small_multiples",
+      "data": "impacts/temperature-risk-ladder.json",
+      "panels": ["one_in_10_year_hot_extreme_frequency_multiplier", "one_in_10_year_hot_extreme_intensity_change_c"],
+      "constraints": ["Keep frequency and intensity in separate unit panels.", "State that values apply to global land relative to an 1850-1900 climate.", "Do not convert the relationship into deaths, costs, or a local forecast without exposure and vulnerability evidence."]
+    },
+    {
       "chart_id": "tropical-cyclone-evidence",
       "title": "Tropical-cyclone risk: intensity and rainfall, not a simple count",
       "type": "evidence_matrix",
@@ -118,6 +126,14 @@
       "type": "separated_observed_and_scenario_panels",
       "data": "impacts/displacement.json",
       "constraints": ["Never sum observed displacement flows with modeled migration stocks.", "Label Groundswell as internal and scenario-based.", "Do not use climate refugee as a chart category."]
+    },
+    {
+      "chart_id": "climate-risk-priority-matrix",
+      "title": "Prioritize action by hazard, exposure, vulnerability, and adaptive capacity",
+      "type": "evidence_matrix",
+      "data": ["impacts/temperature-risk-ladder.json", "impacts/hurricanes.json", "impacts/biodiversity.json", "impacts/food-systems.json", "impacts/freshwater.json", "impacts/displacement.json"],
+      "columns": ["risk", "exposure", "priority_action", "evidence_boundary"],
+      "constraints": ["Do not collapse unlike risks into a common numeric damage score.", "Retain place-specific exposure, vulnerability, adaptation, and confidence requirements.", "Use the matrix for sequencing, not as a universal ranking of human value."]
     }
   ]
 }

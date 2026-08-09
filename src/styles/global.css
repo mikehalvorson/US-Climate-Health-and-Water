@@ -437,6 +437,47 @@ a:hover { text-decoration-thickness: 0.13em; }
 .annual-peak-explainer > p { color: var(--ink-soft); }
 .workbench-result { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .workbench-evidence { padding: 0.65rem 0.8rem; border-left: 0.2rem solid var(--evidence-scenario); background: var(--water-soft); color: var(--water); font-size: 0.75rem; font-weight: 720; }
+.evidence-stat-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; margin: 1.5rem 0 2rem; }
+.evidence-stat-grid--four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.evidence-stat { min-width: 0; padding: 1rem; border: 1px solid var(--line); border-top: 0.22rem solid var(--climate); border-radius: var(--radius-md); background: var(--surface); box-shadow: var(--shadow); }
+.evidence-stat p { min-height: 2.4em; margin: 0.8rem 0 0.35rem; color: var(--ink-soft); font-size: 0.75rem; font-weight: 720; }
+.evidence-stat strong { display: block; font-family: ui-serif, Georgia, serif; font-size: clamp(1.45rem, 3vw, 2.25rem); line-height: 1; }
+.evidence-stat strong span { font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 0.72rem; }
+.evidence-stat small { display: block; margin-top: 0.65rem; color: var(--ink-muted); font-size: 0.66rem; line-height: 1.4; }
+.chart-small-multiples--two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.chart-small-multiples--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.chart-small-multiples--two section:nth-last-child(-n + 2), .chart-small-multiples--three section:nth-last-child(-n + 3) { border-bottom: 0; }
+.panel-scope { margin: 0.25rem 0 0; padding-left: 0.7rem; color: var(--ink-muted); font-size: 0.65rem; }
+.workbench-result-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; margin: 1rem 0; }
+.workbench-result-grid section { padding: 1rem; border: 1px solid var(--line); border-radius: var(--radius-md); background: color-mix(in srgb, var(--surface) 82%, var(--page)); }
+.workbench-result-grid h3 { margin: 0; font-size: 0.78rem; }
+.workbench-result__value { margin: 0.6rem 0 1rem; font-family: ui-serif, Georgia, serif; font-size: clamp(1.8rem, 4vw, 2.7rem); font-weight: 750; }
+.workbench-result-grid dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.6rem; margin: 0; }
+.workbench-result-grid dt { color: var(--ink-muted); font-size: 0.62rem; font-weight: 800; text-transform: uppercase; }
+.workbench-result-grid dd { margin: 0.15rem 0 0; font-size: 0.8rem; font-weight: 720; }
+.evidence-matrix-plot { display: grid; grid-template-columns: minmax(14rem, 0.72fr) minmax(0, 1.28fr); gap: 1rem; padding: 1rem; }
+.evidence-matrix-plot > section { min-width: 0; padding: 1rem; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); }
+.evidence-matrix-plot h4 { margin: 0.75rem 0; font-family: ui-serif, Georgia, serif; font-size: 1.25rem; }
+.evidence-matrix-plot p { padding-bottom: 0.55rem; border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: 0.76rem; }
+.biodiversity-plot-layout, .mobility-plot-layout { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(15rem, 0.7fr); gap: 1rem; align-items: center; padding: 1rem; }
+.driver-context, .observed-mobility-card { padding: 1rem; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); }
+.driver-context h4, .observed-mobility-card h4 { margin: 0 0 0.8rem; font-family: ui-serif, Georgia, serif; font-size: 1.1rem; }
+.driver-context ol { padding-left: 1.3rem; color: var(--ink-soft); font-size: 0.76rem; }
+.driver-context p, .observed-mobility-card small { color: var(--ink-muted); font-size: 0.68rem; }
+.observed-mobility-card strong { display: block; margin-top: 1rem; color: var(--climate); font-family: ui-serif, Georgia, serif; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1; }
+.observed-mobility-card p { color: var(--ink-soft); }
+.risk-priority-plot { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; padding: 1rem; }
+.risk-priority-plot article { padding: 1rem; border: 1px solid var(--line); border-left: 0.28rem solid var(--climate); border-radius: var(--radius-md); background: var(--surface); }
+.risk-priority-plot h4 { margin: 0.7rem 0 0; font-family: ui-serif, Georgia, serif; font-size: 1.2rem; }
+.risk-priority-plot p { color: var(--ink-soft); font-size: 0.78rem; }
+.risk-priority-plot small { color: var(--ink-muted); font-size: 0.66rem; }
+.delivery-gates { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; margin-top: 1.2rem; }
+.delivery-gates article { padding: 1rem; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); }
+.delivery-gates h3 { margin: 0; font-size: 0.88rem; }
+.delivery-gates p { margin-bottom: 0; color: var(--ink-soft); font-size: 0.75rem; }
+.continuation-card { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1rem; align-items: center; margin-top: 1.2rem; padding: 1rem 1.2rem; border: 1px solid var(--climate); border-radius: var(--radius-md); background: var(--climate-soft); }
+.continuation-card p { margin: 0; color: var(--climate); font-size: 0.68rem; font-weight: 850; letter-spacing: 0.08em; text-transform: uppercase; }
+.continuation-card a { font-family: ui-serif, Georgia, serif; font-weight: 720; text-decoration: none; }
 .method-link-card { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin-top: 0.4rem; padding: 1.2rem 1.4rem; border: 1px dashed var(--line-strong); border-radius: var(--radius-md); }
 .method-link-card p { margin: 0; font-weight: 720; }
 .method-link-card a { color: var(--water); font-size: 0.85rem; font-weight: 750; }
@@ -508,6 +549,12 @@ a:hover { text-decoration-thickness: 0.13em; }
   .chart-frame__caption, .scenario-workbench__header { grid-template-columns: 1fr; }
   .scenario-workbench__controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .workbench-result { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .evidence-stat-grid--four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .chart-small-multiples--three { grid-template-columns: 1fr; }
+  .chart-small-multiples--three section { border-bottom: 1px solid var(--line); }
+  .chart-small-multiples--three section:last-child { border-bottom: 0; }
+  .evidence-matrix-plot, .biodiversity-plot-layout, .mobility-plot-layout { grid-template-columns: 1fr; }
+  .delivery-gates { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 44rem) {
@@ -539,6 +586,11 @@ a:hover { text-decoration-thickness: 0.13em; }
   .integrity-footer__links { display: grid; }
   .source-drawer__metadata, .metric-card__scope, .viewpoint-grid__items, .scenario-workbench__controls { grid-template-columns: 1fr; }
   .metric-grid, .annual-peak-explainer dl, .workbench-result { grid-template-columns: 1fr; }
+  .evidence-stat-grid, .chart-small-multiples--two, .workbench-result-grid, .risk-priority-plot { grid-template-columns: 1fr; }
+  .chart-small-multiples--two section { border-bottom: 1px solid var(--line); }
+  .chart-small-multiples--two section:last-child { border-bottom: 0; }
+  .workbench-result-grid dl { grid-template-columns: 1fr; }
+  .continuation-card { grid-template-columns: 1fr; }
   .delivery-sequence li { grid-template-columns: 1fr; gap: 0.35rem; }
   .chart-frame { padding: 0.85rem; }
   .chart-frame__scope dd { text-align: left; }

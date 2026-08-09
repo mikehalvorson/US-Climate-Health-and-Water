@@ -8,7 +8,7 @@
     "research/climate/README.md": "ebe9e751993d0280099d3e2d25dfea952deb98871fef753b91044575d812a339",
     "research/climate/attribution/causal-chain.json": "8f294a16c684166b4de9d4c76be54b38b3839ead2c1f8d64c13e2b45e44b2c05",
     "research/climate/attribution/ghg-temperature-relationship.json": "d8ed40d826c5386c30ef1c2a7ecba1514892dec7b5c69f267ef85b48eca6e96e",
-    "research/climate/chart-contracts.json": "6d1bbca4d33e4eb3f8834048744dad432a0129de6dde1c624128a9887265dcd1",
+    "research/climate/chart-contracts.json": "7f15da1bacad354edcf953039a9e34837634a1976ab0458d8554057b4f5228dc",
     "research/climate/claims.json": "9e6194319671f15e5623dd3f9c116fedf4d3f719bc71f72adee4a4ff4b70339c",
     "research/climate/coastal-cities/README.md": "def9b31672e469dd3958c80351b016c080b007b84d62b4c46a9c690738fa4564",
     "research/climate/coastal-cities/adaptation-pathways.json": "dd513c5421baeee3e5868d3af7e9a9fee731a650d12bf4bc57e4f7b8b86fd181",
@@ -215,8 +215,8 @@
     "research/water/timeseries/usgs-historical-water-use-1950-2015.csv": "a59f1009c8c3941099f3ae8a07848324307d6c5c3f4ad8508cc7891f653209c0"
   },
   "outputs": {
-    "src/data/registry/id-map.json": "ba8b8b1d6e615a3b4cda037d6b3f2669db9fd0251deab3b0f04d23840c493c1e",
-    "src/generated/registry.json": "3cfe3192e6bcbb572b36e74a89cdd6a22bcc03bbf1a9587689e35ad4c7639b11",
-    "src/generated/registry-audit.json": "be8df94d0280221dc4c78c99ce4cd6534f5d026deb5283b31ebeb94ecd7e984e"
+    "src/data/registry/id-map.json": "b0865afba8157536a5b87dd62436b42201d1f4bde54d6466ce3cd93ef4c2bad9",
+    "src/generated/registry.json": "7f0fef0ce8bca7a741d91de9ff35bc70e002fec277f5e47792659d3c5738d8c0",
+    "src/generated/registry-audit.json": "95907f67845650554a5d7059b6121b36165f59aa9ed4937d9c4b65dd70217aec"
   }
 }

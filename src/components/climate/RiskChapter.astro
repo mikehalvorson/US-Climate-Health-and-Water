@@ -1,0 +1,273 @@
+---
+import BarPlot from '../charts/BarPlot.astro';
+import DotRangePlot from '../charts/DotRangePlot.astro';
+import LinePlot from '../charts/LinePlot.astro';
+import NetworkPlot from '../charts/NetworkPlot.astro';
+import CaveatPanel from '../CaveatPanel.astro';
+import ChartFrame from '../ChartFrame.astro';
+import DataTable from '../DataTable.astro';
+import EvidenceBadge from '../EvidenceBadge.astro';
+import OptionComparison from '../OptionComparison.astro';
+import RecommendationPanel from '../RecommendationPanel.astro';
+import ViewpointGrid from '../ViewpointGrid.astro';
+import {
+  approvedClimateChart,
+  BIODIVERSITY_DRIVERS,
+  BIODIVERSITY_RANGES,
+  BIODIVERSITY_TABLE,
+  CLIMATE_SOURCES,
+  CROP_IPCC_BARS,
+  CROP_ISOLATED_BARS,
+  CROP_PRODUCTIVITY_CONTEXT,
+  CROP_TABLE,
+  CYCLONE_EVIDENCE_TABLE,
+  CYCLONE_PROJECTION_RANGES,
+  DISPLACEMENT_OBSERVED,
+  DISPLACEMENT_SCENARIO_BARS,
+  DISPLACEMENT_TABLE,
+  EXTREME_HEAT_PANELS,
+  EXTREME_HEAT_TABLE,
+  FRESHWATER_FRAMEWORK,
+  FRESHWATER_TABLE,
+  RISK_HEADLINE_METRICS,
+  RISK_LADDER_PANELS,
+  RISK_LADDER_TABLE,
+  RISK_PRIORITY_MATRIX,
+} from '../../lib/data/climate';
+import { hrefForRoute } from '../../lib/navigation/shell';
+import RiskWorkbench from './RiskWorkbench.astro';
+
+const ladderChart = approvedClimateChart('temperature-risk-ladder', 'line');
+const heatChart = approvedClimateChart('extreme-heat-response', 'line');
+const cycloneChart = approvedClimateChart('tropical-cyclone-evidence', 'matrix');
+const biodiversityChart = approvedClimateChart('biodiversity-risk-by-warming', 'dot_range');
+const cropChart = approvedClimateChart('crop-yield-sensitivities', 'bar');
+const freshwaterChart = approvedClimateChart('freshwater-risk', 'flow');
+const mobilityChart = approvedClimateChart('climate-mobility-evidence', 'bar');
+const priorityChart = approvedClimateChart('climate-risk-priority-matrix', 'matrix');
+const base = import.meta.env.BASE_URL;
+---
+<article class="chapter-content" data-chapter-content="climate-risks">
+  <section id="current-system" class="chapter-act" data-chapter-section>
+    <div class="act-heading">
+      <p class="section-kicker">01 · Current system</p>
+      <h2>Risk rises with warming, but temperature is not the whole equation</h2>
+      <p>Climate risk emerges from a hazard meeting exposed people, ecosystems, and assets under specific vulnerability and adaptation conditions. Temperature-conditioned relationships describe hazards or assessed exposure—not universal damages.</p>
+    </div>
+
+    <div class="evidence-stat-grid evidence-stat-grid--four" aria-label="Climate impacts and risk headline evidence">
+      {RISK_HEADLINE_METRICS.map((metric, index) => (
+        <article class="evidence-stat">
+          <EvidenceBadge state={index === 2 ? 'observed' : 'reported_estimate'} />
+          <p>{metric.label}</p>
+          <strong>{metric.value ?? 'Unavailable'} <span>{metric.unit}</span></strong>
+          <small>{metric.scope}</small>
+        </article>
+      ))}
+    </div>
+
+    <ChartFrame
+      chart={ladderChart}
+      unit="Metric-specific; separated by panel"
+      geography="Global land, drying regions, and global assessments as labeled"
+      period="Assessed global warming levels above 1850–1900"
+      sources={[CLIMATE_SOURCES.physical, CLIMATE_SOURCES.impacts, CLIMATE_SOURCES.freshwater]}
+      summary="Hot-extreme frequency, heavy-precipitation intensity, and drought frequency in drying regions increase across assessed warming levels. Biodiversity and freshwater rows remain in the table because their units, geography, and confidence differ."
+      caveats={['Panels do not share a y-axis or common damage unit.', 'Missing warming levels remain gaps; they are not interpolated.', 'Water-scarcity exposure estimates have low confidence and combine climate with socioeconomic and management assumptions.']}
+    >
+      <div slot="plot" class="chart-small-multiples chart-small-multiples--three">
+        {RISK_LADDER_PANELS.map((panel) => <section><h4>{panel.label}</h4><LinePlot series={panel.series} xLabel="Global warming above 1850–1900" yLabel={panel.label} unit={panel.unit} focusX={[1.1, 1.5, 2, 4]} summary={`${panel.label} across assessed warming levels, with unavailable levels left as gaps.`} height={260} /></section>)}
+      </div>
+      <DataTable slot="table" caption="Temperature-conditioned climate risk relationships" columns={[
+        { key: 'risk', label: 'Risk family' }, { key: 'metric', label: 'Metric' }, { key: 'warming', label: 'Warming', unit: '°C', numeric: true }, { key: 'low', label: 'Low', numeric: true }, { key: 'central', label: 'Central', numeric: true }, { key: 'high', label: 'High', numeric: true }, { key: 'unit', label: 'Unit' }, { key: 'confidence', label: 'Confidence' }, { key: 'geography', label: 'Geography' },
+      ]} rows={RISK_LADDER_TABLE} />
+    </ChartFrame>
+  </section>
+
+  <section id="problems" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">02 · Why this is a problem</p><h2>Clear hazard signals interact with unequal exposure and protection</h2><p>Extreme heat has one of the strongest assessed responses to warming. Cyclone risk is more specific: rainfall and the strongest storms intensify on average, while a simple increase in global storm count is not supported.</p></div>
+
+    <ChartFrame
+      chart={heatChart}
+      unit="Frequency multiplier and °C intensity in separate panels"
+      geography="Global land"
+      period="Assessed warming levels relative to an 1850–1900 climate"
+      sources={[CLIMATE_SOURCES.physical]}
+      summary="At 1.5°C warming, a hot extreme that occurred once per decade in the preindustrial climate is assessed to occur about 4.1 times per decade and to be about 1.9°C hotter. Both responses rise further at higher warming levels."
+      caveats={['These are global-land assessments, not local forecasts.', 'Health consequences require local exposure, vulnerability, acclimatization, labor, housing, and adaptation evidence.']}
+    >
+      <div slot="plot" class="chart-small-multiples chart-small-multiples--two">
+        {EXTREME_HEAT_PANELS.map((panel) => <section><h4>{panel.label}</h4><LinePlot series={panel.series} xLabel="Global warming above 1850–1900" yLabel={panel.label} unit={panel.unit} focusX={[1.1, 1.5, 2, 4]} summary={`${panel.label} across assessed warming levels.`} /></section>)}
+      </div>
+      <DataTable slot="table" caption="Assessed changes in one-in-ten-year hot extremes" columns={[
+        { key: 'warming', label: 'Global warming', unit: '°C', numeric: true }, { key: 'frequencyMultiplier', label: 'Frequency multiplier', numeric: true }, { key: 'intensityChange', label: 'Intensity increase', unit: '°C', numeric: true }, { key: 'geography', label: 'Geography' }, { key: 'confidence', label: 'Confidence' },
+      ]} rows={EXTREME_HEAT_TABLE} />
+    </ChartFrame>
+
+    <ChartFrame
+      chart={cycloneChart}
+      unit="Percent response at 2°C anthropogenic warming; qualitative observed assessments"
+      geography="Global tropical cyclones"
+      period="Past four decades observed assessment; modeled 2°C response"
+      sources={[CLIMATE_SOURCES.physical, CLIMATE_SOURCES.extremes, CLIMATE_SOURCES.cyclones, CLIMATE_SOURCES.cycloneSynthesis]}
+      summary="At 2°C anthropogenic warming, assessed modeling finds higher near-storm rainfall, maximum wind speed, and Category 4–5 storm proportion on average. Observations support an increasing proportion of Category 3–5 storms, but no robust long-term direction for all-category global frequency."
+      caveats={['Sea-level rise independently raises coastal inundation reached by a given storm surge.', 'Damage trends also reflect exposure, wealth, construction, and protection.']}
+    >
+      <div slot="plot" class="evidence-matrix-plot">
+        <section><EvidenceBadge state="observed" /><h4>Observed assessment</h4><p>Strongest-storm proportion: likely increase</p><p>All-category global count: no robust direction</p><p>Cyclone-associated heavy precipitation: high-confidence increase</p></section>
+        <section><EvidenceBadge state="source_scenario" /><h4>Modeled response at 2°C</h4><DotRangePlot values={CYCLONE_PROJECTION_RANGES} valueLabel="Median response" unit="%" summary="Projected tropical-cyclone precipitation, maximum wind, and strongest-storm proportion responses at two degrees anthropogenic warming." labelWidth={190} height={260} /></section>
+      </div>
+      <DataTable slot="table" caption="Observed and projected tropical-cyclone evidence kept in separate classes" columns={[
+        { key: 'evidenceClass', label: 'Evidence class' }, { key: 'metric', label: 'Metric' }, { key: 'result', label: 'Assessment result' }, { key: 'confidence', label: 'Confidence' }, { key: 'guardrail', label: 'Guardrail' },
+      ]} rows={CYCLONE_EVIDENCE_TABLE} />
+    </ChartFrame>
+
+    <ViewpointGrid id="risk-viewpoints" title="Risk is distributed through people, systems, and ecosystems" items={[
+      { viewpoint: 'people_and_households', label: 'People and households', problem: 'Heat, flood, smoke, water stress, food disruption, and displacement burdens fall unevenly.', evidenceState: 'qualitative_evidence', consequence: 'Protection and resilient services reduce risk, but housing, health, income, and location still shape outcomes.' },
+      { viewpoint: 'workers_and_operators', label: 'Workers and operators', problem: 'Outdoor and indoor heat, emergencies, and cascading infrastructure failures raise occupational risk.', evidenceState: 'reported_estimate', consequence: 'Standards, staffing, training, and reliable cooling help; dangerous conditions and service tradeoffs remain.' },
+      { viewpoint: 'utilities_and_infrastructure_owners', label: 'Utilities and infrastructure owners', problem: 'Assets face compound hazards that can exceed historical design conditions.', evidenceState: 'qualitative_evidence', consequence: 'Stress testing and adaptive standards improve resilience, while costs and uncertain local extremes persist.' },
+      { viewpoint: 'host_communities_and_tribes', label: 'Host communities and Tribes', problem: 'Place-based cultural, subsistence, sovereignty, and relocation risks are not captured by global averages.', evidenceState: 'qualitative_evidence', consequence: 'Community authority and locally grounded adaptation improve legitimacy; some losses cannot be fully replaced.' },
+      { viewpoint: 'public_health', label: 'Public health', problem: 'Heat, air quality, infectious disease, mental health, and disrupted care interact with existing inequities.', evidenceState: 'qualitative_evidence', consequence: 'Early warning, cooling, surveillance, and continuity planning save lives; attribution and burden estimates remain outcome-specific.' },
+      { viewpoint: 'ecosystems_and_nonhuman_life', label: 'Ecosystems and nonhuman life', problem: 'Warming compounds habitat conversion, exploitation, pollution, and invasive species.', evidenceState: 'reported_estimate', consequence: 'Lower warming plus direct protection reduces pressure; extinction and transformation risks are not eliminated.' },
+    ]} />
+  </section>
+
+  <section id="choices" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">03 · Choices</p><h2>Mitigation and adaptation solve different parts of the risk equation</h2></div>
+    <OptionComparison id="risk-options" title="Three plausible climate-risk strategies" question="How should institutions allocate effort between limiting hazards and reducing present vulnerability?" dimensions={[
+      { id: 'benefit', label: 'Benefit' }, { id: 'cost', label: 'Cost and lead time' }, { id: 'dependency', label: 'Dependencies' }, { id: 'residual', label: 'Residual risk' }, { id: 'maturity', label: 'Evidence maturity' },
+    ]} options={[
+      { id: 'mitigation-led', label: 'Mitigation-led', summary: 'Prioritize emissions reduction to limit future hazard escalation.', values: { benefit: 'Reduces added long-term hazard across systems', cost: 'Rapid economy-wide transition', dependency: 'Energy, land, industry, and governance delivery', residual: 'Near-term and already-committed risks remain', maturity: 'Strong physical basis; sector delivery varies' } },
+      { id: 'adaptation-led', label: 'Adaptation-led', summary: 'Prioritize immediate protection of exposed people and systems.', values: { benefit: 'Reduces current vulnerability and service disruption', cost: 'Place-specific recurring investment', dependency: 'Local data, authority, finance, maintenance', residual: 'Adaptation limits and escalating hazards', maturity: 'Many proven measures; performance is contextual' } },
+      { id: 'paired', label: 'Paired mitigation and adaptation', summary: 'Limit future hazards while protecting people and essential systems now.', values: { benefit: 'Addresses both sides of the risk equation', cost: 'Highest coordination and near-term financing need', dependency: 'National-to-local alignment and community authority', residual: 'Irreversible losses and extreme residual cases', maturity: 'Strong rationale; packages remain place-specific' } },
+    ]} />
+
+    <ChartFrame
+      chart={biodiversityChart}
+      unit="Percent of terrestrial species in modeled very-high-risk category"
+      geography="Global synthesis"
+      period="Assessed warming levels above 1850–1900"
+      sources={[CLIMATE_SOURCES.impacts, CLIMATE_SOURCES.biodiversity, CLIMATE_SOURCES.ipbes]}
+      summary="The median share of terrestrial species in a modeled very-high extinction-risk category rises from 9% at 1.5°C to 15% at 5°C, while the assessed upper range expands much more sharply."
+      caveats={['These are modeled risk categories, not observed extinction percentages.', 'Climate change acts alongside land and sea use, exploitation, pollution, and invasive species.']}
+    >
+      <div slot="plot" class="biodiversity-plot-layout">
+        <DotRangePlot values={BIODIVERSITY_RANGES} valueLabel="Modeled very-high-risk share" unit="%" summary="Assessed range and median of terrestrial species in a modeled very-high extinction-risk category across warming levels." labelWidth={130} />
+        <section class="driver-context"><h4>Five direct drivers in the IPBES global assessment</h4><ol>{BIODIVERSITY_DRIVERS.map((driver) => <li>{driver}</li>)}</ol><p>Ordering can differ by ecosystem and region.</p></section>
+      </div>
+      <DataTable slot="table" caption="Modeled terrestrial-species very-high extinction-risk ranges" columns={[
+        { key: 'warming', label: 'Warming', unit: '°C', numeric: true }, { key: 'low', label: 'Range low', unit: '%', numeric: true }, { key: 'median', label: 'Median', unit: '%', numeric: true }, { key: 'high', label: 'Range high', unit: '%', numeric: true }, { key: 'evidenceClass', label: 'Evidence class' },
+      ]} rows={BIODIVERSITY_TABLE} />
+    </ChartFrame>
+
+    <ChartFrame
+      chart={cropChart}
+      unit="Percent per decade and percent per 1°C in separate panels"
+      geography="Global major-crop synthesis"
+      period="Assessed and modeled response studies"
+      sources={[CLIMATE_SOURCES.food, CLIMATE_SOURCES.cropAttribution, CLIMATE_SOURCES.cropSensitivity]}
+      summary={`Two study frames show negative median or isolated temperature effects for maize, rice, soybean, and wheat. A separate attribution study estimated a ${CROP_PRODUCTIVITY_CONTEXT.estimated_slowdown_percent}% slowing of cumulative agricultural productivity growth since 1961, equivalent to ${CROP_PRODUCTIVITY_CONTEXT.equivalent_recent_productivity_growth_years_lost} recent growth years—not a matching loss of food output.`}
+      caveats={['The panels use different units and assumptions and must not be combined numerically.', 'Crop yield is not food security; prices, access, nutrition, trade, conflict, pests, water, and adaptation also matter.']}
+    >
+      <div slot="plot" class="chart-small-multiples chart-small-multiples--two">
+        <section><h4>IPCC median · no adaptation · with CO₂ fertilization</h4><BarPlot id="crop-ipcc" values={CROP_IPCC_BARS} valueLabel="Yield effect" unit="% per decade" summary="IPCC median major-crop yield effects per decade with carbon-dioxide fertilization and without adaptation." /></section>
+        <section><h4>Isolated temperature effect · excludes adaptation and CO₂ fertilization</h4><BarPlot id="crop-isolated" values={CROP_ISOLATED_BARS} valueLabel="Yield effect" unit="% per 1°C" summary="Multi-method isolated temperature effect on four major crops per degree Celsius." /></section>
+      </div>
+      <DataTable slot="table" caption="Major-crop yield sensitivity under two incompatible study frames" columns={[
+        { key: 'studyFrame', label: 'Study frame' }, { key: 'crop', label: 'Crop' }, { key: 'effect', label: 'Effect', numeric: true }, { key: 'unit', label: 'Unit' },
+      ]} rows={CROP_TABLE} />
+    </ChartFrame>
+
+    <ChartFrame
+      chart={freshwaterChart}
+      unit="Framework plus source-specific people, percent, and multiplier records"
+      geography="Global context; local and basin evidence required for decisions"
+      period="Current context and assessed warming-conditioned relationships"
+      sources={[CLIMATE_SOURCES.freshwater, CLIMATE_SOURCES.impacts, CLIMATE_SOURCES.waterStatus, CLIMATE_SOURCES.waterDevelopment]}
+      summary="Freshwater risk depends on changing hazard, exposed water-dependent systems, vulnerability, and adaptation. Global assessments provide selected exposure and damage relationships but not a mappable global freshwater-loss coefficient."
+      caveats={['The current corpus does not support a spatial map of these global values.', 'Water availability, timing, reliability, quality, demand, infrastructure, governance, and environmental flows must be localized together.']}
+    >
+      <NetworkPlot slot="plot" id="freshwater-risk-framework" nodes={FRESHWATER_FRAMEWORK.nodes} edges={FRESHWATER_FRAMEWORK.edges} variant="causal_path" unit="qualitative risk relationship" summary="Freshwater risk arises from hazard, exposure, and vulnerability, while adaptation can reduce but not erase consequences." />
+      <DataTable slot="table" caption="Freshwater current context and temperature-conditioned evidence" columns={[
+        { key: 'evidenceClass', label: 'Evidence class' }, { key: 'metric', label: 'Metric' }, { key: 'warming', label: 'Warming', unit: '°C', numeric: true }, { key: 'value', label: 'Value and scope' }, { key: 'confidence', label: 'Confidence or qualification' },
+      ]} rows={FRESHWATER_TABLE} />
+    </ChartFrame>
+  </section>
+
+  <section id="recommendation" class="chapter-act" data-chapter-section>
+    <RecommendationPanel
+      id="risk-recommendation"
+      title="Limit future hazards and protect essential systems now"
+      conclusion="Pair aggressive mitigation with immediate heat protection, resilient essential infrastructure, ecosystem protection, and place-specific food and water adaptation."
+      rationale={[
+        'Every increment of warming increases multiple hazards, while mitigation benefits accumulate across regions and generations.',
+        'People and infrastructure already face dangerous heat, water, ecosystem, and displacement risks that cannot wait for emissions pathways to change.',
+        'Place-specific adaptation addresses exposure and vulnerability that global temperature relationships cannot represent.',
+      ]}
+      tradeoffs={['Substantial near-term capital and operating needs', 'Difficult prioritization across places and systems', 'Risk of maladaptation, displacement, or unequal protection without community authority']}
+      residualRisks={['Adaptation limits at higher warming', 'Irreversible ecosystem and cultural losses', 'Compound and cascading hazards beyond single-risk evidence']}
+    />
+
+    <ChartFrame
+      chart={priorityChart}
+      unit="Qualitative priority and evidence boundary"
+      geography="Multi-scale planning framework"
+      period="Immediate protection with recurring evidence review"
+      sources={[CLIMATE_SOURCES.physical, CLIMATE_SOURCES.impacts, CLIMATE_SOURCES.impactSummary]}
+      summary="The priority matrix separates immediate life protection, essential water service, food and ecosystem adaptive capacity, and preparation for displacement. Each priority retains a different evidence boundary rather than a common damage score."
+      caveats={['This is a sequencing framework, not a universal ranking of human value or a national damage function.', 'Local exposure, vulnerability, authority, cost, feasibility, and distributional evidence are required before investment decisions.']}
+    >
+      <div slot="plot" class="risk-priority-plot">
+        {RISK_PRIORITY_MATRIX.map((item) => <article><EvidenceBadge state="qualitative_evidence" /><h4>{item.priority}</h4><p><strong>{item.risk}</strong></p><p>{item.action}</p><small>{item.evidence}</small></article>)}
+      </div>
+      <DataTable slot="table" caption="Climate risk priorities and evidence boundaries" columns={[
+        { key: 'priority', label: 'Priority' }, { key: 'risk', label: 'Risk family' }, { key: 'exposure', label: 'Exposure' }, { key: 'action', label: 'Priority action' }, { key: 'evidence', label: 'Evidence boundary' },
+      ]} rows={RISK_PRIORITY_MATRIX} />
+    </ChartFrame>
+  </section>
+
+  <section id="model" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">05 · Model-supported case</p><h2>Filter assessed relationships without inventing a universal damage function</h2><p>The working view exposes only source-supported combinations of risk family, warming level, geography, and confidence. Empty combinations stay empty.</p></div>
+
+    <ChartFrame
+      chart={mobilityChart}
+      unit="Observed annual flow and scenario stock in separate panels"
+      geography="Observed global internal displacement; six World Bank regions"
+      period="Observed annually since 2008; upper scenario for 2050"
+      sources={[CLIMATE_SOURCES.impactSummary, CLIMATE_SOURCES.displacement, CLIMATE_SOURCES.unhcr, CLIMATE_SOURCES.worldBankMobility]}
+      summary="More than 20 million people per year have been internally displaced by weather-related extremes since 2008. Separately, the World Bank upper scenario totals 216 million internal climate migrants across six regions by 2050. The two measures are not summed or converted into refugees per degree."
+      caveats={['The observed flow is weather-related and not solely attributable to anthropogenic climate change.', 'Groundswell is a conditional internal-migration scenario, not a forecast and not an international refugee count.']}
+    >
+      <div slot="plot" class="mobility-plot-layout">
+        <section class="observed-mobility-card"><EvidenceBadge state="observed" /><h4>Observed weather-related internal displacement</h4><strong>{DISPLACEMENT_OBSERVED.people_internally_displaced_annually_by_weather_related_extremes_since_2008.replaceAll('_', ' ')}</strong><p>people annually since 2008</p><small>{DISPLACEMENT_OBSERVED.attribution_guardrail}</small></section>
+        <section><h4>World Bank 2050 upper scenario · internal migration</h4><BarPlot id="mobility-scenario" values={DISPLACEMENT_SCENARIO_BARS} valueLabel="Internal climate migrants" unit="million people" summary="World Bank upper-scenario internal climate migration by six regions in 2050." height={400} /></section>
+      </div>
+      <DataTable slot="table" caption="Observed displacement and scenario-based internal migration kept separate" columns={[
+        { key: 'evidenceClass', label: 'Evidence class' }, { key: 'scope', label: 'Scope' }, { key: 'value', label: 'Value', numeric: true }, { key: 'unit', label: 'Unit' }, { key: 'interpretation', label: 'Interpretation' },
+      ]} rows={DISPLACEMENT_TABLE} />
+    </ChartFrame>
+
+    <RiskWorkbench />
+    <CaveatPanel
+      title="Forbidden universal coefficients"
+      caveats={['Hazard, exposure, vulnerability, and adaptation must remain distinct.', 'Unsupported filter combinations are deliberate nulls, not missing values to estimate.']}
+      prohibitedInterpretations={['Global hurricane counts per degree.', 'Universal food loss or freshwater loss per degree.', 'Climate migrants or refugees per degree.', 'A national climate-damage function derived from unlike risk metrics.']}
+    />
+  </section>
+
+  <section id="delivery" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">06 · Delivery</p><h2>Build protection around service standards, local authority, and review gates</h2></div>
+    <ol class="delivery-sequence">
+      <li><strong>Protect life first.</strong><span>Heat-health plans, reliable cooling, worker standards, emergency communication, and continuity of care.</span></li>
+      <li><strong>Stress-test essential systems.</strong><span>Use locally credible heat, flood, drought, fire, and compound conditions for power, water, transport, housing, and health.</span></li>
+      <li><strong>Protect ecosystems and livelihoods.</strong><span>Reduce non-climate pressures while diversifying food, water, habitat, and income strategies.</span></li>
+      <li><strong>Prepare adaptive pathways.</strong><span>Set thresholds, monitoring, finance, community authority, and fair relocation or receiving-community capacity where needed.</span></li>
+    </ol>
+    <div class="delivery-gates">
+      <article><h3>Progress indicators</h3><p>Heat illness and mortality, cooling access, service downtime, risk-reduction coverage, ecosystem condition, water reliability, and recovery equity.</p></article>
+      <article><h3>Review gates</h3><p>Updated hazard evidence, changed exposure, adaptation performance, maladaptation, distributional outcomes, and emerging limits.</p></article>
+      <article><h3>Governance</h3><p>Define federal, state, Tribal, local, utility, employer, health-system, landowner, and community authority before emergencies.</p></article>
+    </div>
+    <aside class="continuation-card"><p>Cross-system continuation</p><a href={hrefForRoute('/food-water/food', base)}>Continue into food-system exposure and resilience →</a></aside>
+  </section>
+</article>

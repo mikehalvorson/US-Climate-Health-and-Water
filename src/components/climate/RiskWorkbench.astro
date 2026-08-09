@@ -1,0 +1,43 @@
+---
+import { CLIMATE_SOURCES, RISK_WORKBENCH_RECORDS } from '../../lib/data/climate';
+import type { ScenarioControlDefinition } from '../../lib/scenarios/state';
+import ScenarioWorkbench from '../ScenarioWorkbench.astro';
+import SourceDrawer from '../SourceDrawer.astro';
+
+const humanize = (value: string) => value.replaceAll('_', ' ').replace(/\b\w/gu, (character) => character.toUpperCase());
+const unique = (field: 'family' | 'geography' | 'confidence') => [...new Set(RISK_WORKBENCH_RECORDS.map((record) => record[field]))];
+const controls: readonly ScenarioControlDefinition[] = [
+  { id: 'family', label: 'Risk family', defaultValue: 'extreme_heat', options: unique('family').map((value) => ({ value, label: humanize(value) })) },
+  { id: 'warming', label: 'Global warming level', defaultValue: '1.5', options: [1.1, 1.5, 2, 3, 4, 5].map((value) => ({ value: String(value), label: `${value}°C above 1850–1900` })) },
+  { id: 'geography', label: 'Assessment geography', defaultValue: 'global_land', options: unique('geography').map((value) => ({ value, label: humanize(value) })) },
+  { id: 'confidence', label: 'Confidence class', defaultValue: 'likely', options: unique('confidence').map((value) => ({ value, label: humanize(value) })) },
+];
+const initial = RISK_WORKBENCH_RECORDS.find((record) => record.family === 'extreme_heat' && record.warming === 1.5 && record.geography === 'global_land' && record.confidence === 'likely');
+---
+<div data-risk-workbench data-workbench-records={JSON.stringify(RISK_WORKBENCH_RECORDS)}>
+  <ScenarioWorkbench
+    id="risk-evidence-filter"
+    title="Filter only compatible temperature-conditioned relationships"
+    decision="Choose a risk family, warming level, assessment geography, and confidence class. Unsupported combinations remain visibly unavailable."
+    controls={controls}
+    modelFamily="IPCC AR6 assessed dose-response lookup"
+    seamNote="Each row retains its own metric, unit, geography, and confidence. Empty combinations are not interpolated, and separate risk families are not converted to a common damage score."
+    readiness="Source-response lookup · no universal impact-per-degree coefficients"
+  >
+    <dl class="workbench-result" data-risk-output>
+      <div><dt>Assessed metric</dt><dd data-risk-metric>{initial ? humanize(initial.metric) : 'Unavailable'}</dd></div>
+      <div><dt>Central value</dt><dd><span data-risk-value>{initial?.central}</span> <span data-risk-unit>{initial?.unit}</span></dd></div>
+      <div><dt>Assessed range</dt><dd data-risk-range>{initial?.low === null || initial?.high === null ? 'Not published for this metric' : `${initial?.low}–${initial?.high}`}</dd></div>
+      <div><dt>Evidence status</dt><dd data-risk-status>Compatible assessed relationship</dd></div>
+    </dl>
+    <p class="workbench-evidence" data-risk-guardrail>{initial?.guardrail}</p>
+    <div class="workbench-sources">
+      <span>Assessment sources:</span>
+      <SourceDrawer id="risk-workbench-physical-source" source={CLIMATE_SOURCES.physical} triggerLabel="IPCC physical science" />
+      <SourceDrawer id="risk-workbench-impacts-source" source={CLIMATE_SOURCES.impacts} triggerLabel="IPCC impacts assessment" />
+      <SourceDrawer id="risk-workbench-water-source" source={CLIMATE_SOURCES.freshwater} triggerLabel="IPCC water chapter" />
+    </div>
+  </ScenarioWorkbench>
+</div>
+
+<script>import '../../scripts/climate-workbenches.ts';</script>

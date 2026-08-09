@@ -1,0 +1,56 @@
+---
+import { CAUSE_WORKBENCH_RECORDS, CLIMATE_OBSERVED_PANELS, CLIMATE_SOURCES, WARMING_PERIODS } from '../../lib/data/climate';
+import type { ScenarioControlDefinition } from '../../lib/scenarios/state';
+import ScenarioWorkbench from '../ScenarioWorkbench.astro';
+import SourceDrawer from '../SourceDrawer.astro';
+
+const scenarioOptions = [...new Set(CAUSE_WORKBENCH_RECORDS.map((record) => record.scenario))];
+const controls: readonly ScenarioControlDefinition[] = [
+  {
+    id: 'series', label: 'Observed series', defaultValue: 'co2_ppm',
+    options: CLIMATE_OBSERVED_PANELS.map((panel) => ({ value: panel.id, label: `${panel.label} · ${panel.baseline}` })),
+  },
+  {
+    id: 'scenario', label: 'Assessed pathway', defaultValue: 'SSP2-4.5',
+    options: scenarioOptions.map((scenario) => ({ value: scenario, label: scenario })),
+  },
+  {
+    id: 'period', label: 'Warming period', defaultValue: '2081-2100',
+    options: WARMING_PERIODS.map((period) => ({ value: period, label: `${period} · 20-year mean` })),
+  },
+];
+const initial = CAUSE_WORKBENCH_RECORDS.find((record) => record.series === 'co2_ppm' && record.scenario === 'SSP2-4.5' && record.period === '2081-2100');
+---
+<div data-cause-workbench data-workbench-records={JSON.stringify(CAUSE_WORKBENCH_RECORDS)}>
+  <ScenarioWorkbench
+    id="cause-evidence-selector"
+    title="Inspect an observation beside an assessed warming period"
+    decision="Select one observed series, one IPCC emissions pathway, and one assessed period. The view preserves native observation baselines and 20-year scenario periods."
+    controls={controls}
+    modelFamily="IPCC AR6 assessment · source scenario comparison"
+    seamNote="Observed concentration, forcing, and temperature series retain their own units and baselines. SSP warming ranges are separate conditional assessments relative to 1850–1900; they are never spliced into annual observations."
+    readiness="Observed and source-scenario lookup · not an annual temperature predictor"
+  >
+    <div class="workbench-result-grid" data-cause-output>
+      <section>
+        <h3>Observed record</h3>
+        <p class="workbench-result__value"><span data-observed-value>{initial?.observedValue}</span> <span data-observed-unit>{initial?.observedUnit}</span></p>
+        <dl><div><dt>Latest year</dt><dd data-observed-year>{initial?.observedYear}</dd></div><div><dt>Native baseline</dt><dd data-observed-baseline>{initial?.nativeBaseline}</dd></div></dl>
+      </section>
+      <section>
+        <h3>Assessed warming</h3>
+        <p class="workbench-result__value"><span data-warming-best>{initial?.warmingBest}</span>°C</p>
+        <dl><div><dt>Very likely range</dt><dd data-warming-range>{initial?.warmingLow}–{initial?.warmingHigh}°C</dd></div><div><dt>Baseline</dt><dd data-warming-baseline>{initial?.warmingBaseline}</dd></div></dl>
+      </section>
+    </div>
+    <p class="workbench-evidence" data-workbench-evidence>No rebasing is applied. Changing the selectors changes the inspected records, not the evidence values.</p>
+    <div class="workbench-sources">
+      <span>Primary sources:</span>
+      <SourceDrawer id="cause-workbench-observation-source" source={CLIMATE_SOURCES.aggi} triggerLabel="NOAA AGGI" />
+      <SourceDrawer id="cause-workbench-temperature-source" source={CLIMATE_SOURCES.nasaTemperature} triggerLabel="NASA GISTEMP" />
+      <SourceDrawer id="cause-workbench-ipcc-source" source={CLIMATE_SOURCES.physical} triggerLabel="IPCC AR6 WGI" />
+    </div>
+  </ScenarioWorkbench>
+</div>
+
+<script>import '../../scripts/climate-workbenches.ts';</script>

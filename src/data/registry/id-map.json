@@ -189,6 +189,12 @@
     },
     {
       "kind": "chart",
+      "legacyId": "climate-risk-priority-matrix",
+      "canonicalId": "CHT-000083",
+      "semanticHash": "e789c027dcbab0663f7e20a09f3f6ea1cc6500e8066c76b59bd3408abac930a2"
+    },
+    {
+      "kind": "chart",
       "legacyId": "coastal-saltwater-intrusion-causal-model",
       "canonicalId": "CHT-000032",
       "semanticHash": "4cf2b98183bb0fac85944a5f212069047869cc13b3d17f4a4194e8ddc91ded69"
@@ -228,6 +234,12 @@
       "legacyId": "evidence_and_data_gap_map",
       "canonicalId": "CHT-000038",
       "semanticHash": "65574d17076cea1f1380cd46d20f56804074821391da8ed572d5f69fc13a4fb8"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "extreme-heat-response",
+      "canonicalId": "CHT-000084",
+      "semanticHash": "a21d29817b219465bb08b2b45207cc852ed034630e33e2b92958986eaf63994b"
     },
     {
       "kind": "chart",
@@ -1761,6 +1773,12 @@
     },
     {
       "kind": "dataset",
+      "legacyId": "path:research/climate/impacts/temperature-risk-ladder.json",
+      "canonicalId": "DAT-000106",
+      "semanticHash": "ef14a00df292d1a3d3cbaf16969ee17c952cbe8a350709d966cd8960551c8b30"
+    },
+    {
+      "kind": "dataset",
       "legacyId": "path:research/climate/timeseries/impact-dose-response.csv",
       "canonicalId": "DAT-000055",
       "semanticHash": "d91e892319a11f3904d095b4d2fb50e976ee27dfbc1ce696ecbc021269507d32"
@@ -2957,7 +2975,7 @@
       "kind": "open_item",
       "legacyId": "chart-data-bindings",
       "canonicalId": "OPN-000090",
-      "semanticHash": "0cb6e991f98c0789c552da916c4f903cdaab3a61a394761739b09af9bb70cde0"
+      "semanticHash": "59c55dac70da746e5e9474f057188165448e06bfe6a00c364927be0c06577c4c"
     },
     {
       "kind": "open_item",

@@ -10,12 +10,13 @@ interface Props {
   summary: string;
   width?: number;
   height?: number;
+  labelWidth?: number;
 }
 
-const { values, unit, valueLabel = 'Value', summary, width = 720, height = 360 } = Astro.props;
-const geometry = buildDotRangeGeometry(values, { width, height });
+const { values, unit, valueLabel = 'Value', summary, width = 720, height = 360, labelWidth = 48 } = Astro.props;
+const geometry = buildDotRangeGeometry(values, { width, height, insets: { left: labelWidth } });
 const domain = numericExtent(values.flatMap((item) => [item.low, item.value, item.high]));
-const scaleX = linearScale(domain, [48, width - 18]);
+const scaleX = linearScale(domain, [labelWidth, width - 18]);
 const ticks = [domain[0], (domain[0] + domain[1]) / 2, domain[1]];
 ---
 <svg class="svg-plot dot-range-plot" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={summary}>
@@ -28,13 +29,13 @@ const ticks = [domain[0], (domain[0] + domain[1]) / 2, domain[1]];
     const tooltip = item.missing ? `${value?.label}: missing` : `${value?.label}: ${value?.value ?? 'no central value'} ${unit}; range ${value?.low ?? 'missing'} to ${value?.high ?? 'missing'}`;
     return (
       <g class:list={['dot-range-row', { 'is-missing': item.missing }]}>
-        <text x="44" y={item.y} text-anchor="end" dominant-baseline="middle">{value?.label}</text>
+        <text x={labelWidth - 4} y={item.y} text-anchor="end" dominant-baseline="middle">{value?.label}</text>
         {item.lowX !== null && item.highX !== null && <line class="dot-range-line" x1={item.lowX} x2={item.highX} y1={item.y} y2={item.y} />}
         {item.lowX !== null && <path class="dot-range-cap" d={`M ${item.lowX} ${item.y - 6} V ${item.y + 6}`} />}
         {item.highX !== null && <path class="dot-range-cap" d={`M ${item.highX} ${item.y - 6} V ${item.y + 6}`} />}
         {item.valueX !== null && <circle class="dot-range-mark" cx={item.valueX} cy={item.y} r="7" tabindex="0" aria-label={tooltip} data-tooltip={tooltip}><title>{tooltip}</title></circle>}
         {item.lowX !== null && item.valueX === null && item.highX === null && <text class="lower-bound-mark" x={item.lowX + 5} y={item.y} dominant-baseline="middle">≥</text>}
-        {item.missing && <text class="missing-label" x="54" y={item.y} dominant-baseline="middle">missing</text>}
+        {item.missing && <text class="missing-label" x={labelWidth + 6} y={item.y} dominant-baseline="middle">missing</text>}
       </g>
     );
   })}

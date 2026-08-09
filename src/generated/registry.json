@@ -14695,6 +14695,33 @@
       ],
       "useClass": "trend",
       "participation": "display_only"
+    },
+    {
+      "id": "DAT-000106",
+      "registryKind": "dataset",
+      "label": "research/climate/impacts/temperature-risk-ladder.json",
+      "description": "Research dataset represented by research/climate/impacts/temperature-risk-ladder.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-028230f21aeb0dbd2ccd",
+      "legacyIds": [
+        "path:research/climate/impacts/temperature-risk-ladder.json"
+      ],
+      "path": "research/climate/impacts/temperature-risk-ladder.json",
+      "paths": [
+        "research/climate/impacts/temperature-risk-ladder.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
     }
   ],
   "metric": [
@@ -24237,6 +24264,98 @@
           "Do not mix 2015 national values into the same bars."
         ]
       }
+    },
+    {
+      "id": "CHT-000083",
+      "registryKind": "chart",
+      "label": "Prioritize action by hazard, exposure, vulnerability, and adaptive capacity",
+      "description": "Chart contract imported from research/climate/chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-e594322007ac707080b0",
+      "legacyIds": [
+        "climate-risk-priority-matrix"
+      ],
+      "chartType": "matrix",
+      "decisionQuestion": "Prioritize action by hazard, exposure, vulnerability, and adaptive capacity",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Prioritize action by hazard, exposure, vulnerability, and adaptive capacity.",
+      "dataReferences": [
+        "research/climate/impacts/biodiversity.json",
+        "research/climate/impacts/displacement.json",
+        "research/climate/impacts/food-systems.json",
+        "research/climate/impacts/freshwater.json",
+        "research/climate/impacts/hurricanes.json",
+        "research/climate/impacts/temperature-risk-ladder.json"
+      ],
+      "legacyContract": {
+        "chart_id": "climate-risk-priority-matrix",
+        "title": "Prioritize action by hazard, exposure, vulnerability, and adaptive capacity",
+        "type": "evidence_matrix",
+        "data": [
+          "impacts/temperature-risk-ladder.json",
+          "impacts/hurricanes.json",
+          "impacts/biodiversity.json",
+          "impacts/food-systems.json",
+          "impacts/freshwater.json",
+          "impacts/displacement.json"
+        ],
+        "columns": [
+          "risk",
+          "exposure",
+          "priority_action",
+          "evidence_boundary"
+        ],
+        "constraints": [
+          "Do not collapse unlike risks into a common numeric damage score.",
+          "Retain place-specific exposure, vulnerability, adaptation, and confidence requirements.",
+          "Use the matrix for sequencing, not as a universal ranking of human value."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000084",
+      "registryKind": "chart",
+      "label": "Extreme heat becomes more frequent and more intense",
+      "description": "Chart contract imported from research/climate/chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-e22be336aa5bc9223824",
+      "legacyIds": [
+        "extreme-heat-response"
+      ],
+      "chartType": "none",
+      "decisionQuestion": "Extreme heat becomes more frequent and more intense",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Extreme heat becomes more frequent and more intense.",
+      "dataReferences": [
+        "research/climate/impacts/temperature-risk-ladder.json"
+      ],
+      "legacyContract": {
+        "chart_id": "extreme-heat-response",
+        "title": "Extreme heat becomes more frequent and more intense",
+        "type": "aligned_small_multiples",
+        "data": "impacts/temperature-risk-ladder.json",
+        "panels": [
+          "one_in_10_year_hot_extreme_frequency_multiplier",
+          "one_in_10_year_hot_extreme_intensity_change_c"
+        ],
+        "constraints": [
+          "Keep frequency and intensity in separate unit panels.",
+          "State that values apply to global land relative to an 1850-1900 climate.",
+          "Do not convert the relationship into deaths, costs, or a local forecast without exposure and vulnerability evidence."
+        ]
+      }
     }
   ],
   "transformation": [
@@ -27527,6 +27646,7 @@
         "CHT-000029",
         "CHT-000030",
         "CHT-000031",
+        "CHT-000083",
         "CHT-000032",
         "CHT-000033",
         "CHT-000034",
@@ -27534,6 +27654,7 @@
         "CHT-000036",
         "CHT-000037",
         "CHT-000038",
+        "CHT-000084",
         "CHT-000039",
         "CHT-000040",
         "CHT-000041",

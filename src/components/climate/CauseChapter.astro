@@ -1,0 +1,228 @@
+---
+import BarPlot from '../charts/BarPlot.astro';
+import DotRangePlot from '../charts/DotRangePlot.astro';
+import LinePlot from '../charts/LinePlot.astro';
+import NetworkPlot from '../charts/NetworkPlot.astro';
+import CaveatPanel from '../CaveatPanel.astro';
+import ChartFrame from '../ChartFrame.astro';
+import DataTable from '../DataTable.astro';
+import EvidenceBadge from '../EvidenceBadge.astro';
+import OptionComparison from '../OptionComparison.astro';
+import RecommendationPanel from '../RecommendationPanel.astro';
+import ViewpointGrid from '../ViewpointGrid.astro';
+import {
+  approvedClimateChart,
+  ATTRIBUTION_PERIOD,
+  ATTRIBUTION_RANGES,
+  CAUSE_HEADLINE_METRICS,
+  CLIMATE_CAUSAL_CHAIN,
+  CLIMATE_OBSERVED_PANELS,
+  CLIMATE_OBSERVED_TABLE,
+  CLIMATE_SOURCES,
+  CORRELATION_DIAGNOSTIC,
+  CORRELATION_TABLE,
+  CUMULATIVE_CO2_SERIES,
+  CUMULATIVE_CO2_TABLE,
+  TCRE_RANGE,
+  WARMING_PERIODS,
+  WARMING_SCENARIO_RANGES,
+  WARMING_SCENARIO_TABLE,
+} from '../../lib/data/climate';
+import { hrefForRoute } from '../../lib/navigation/shell';
+import CauseWorkbench from './CauseWorkbench.astro';
+
+const causalChart = approvedClimateChart('climate-causal-chain', 'flow');
+const observedChart = approvedClimateChart('ghg-temperature-observed', 'line');
+const correlationChart = approvedClimateChart('observed-correlation-diagnostics', 'bar');
+const attributionChart = approvedClimateChart('attribution-waterfall', 'dot_range');
+const cumulativeChart = approvedClimateChart('cumulative-co2-tcre', 'line');
+const warmingChart = approvedClimateChart('future-warming-scenarios', 'dot_range');
+const base = import.meta.env.BASE_URL;
+---
+<article class="chapter-content" data-chapter-content="climate-cause">
+  <section id="current-system" class="chapter-act" data-chapter-section>
+    <div class="act-heading">
+      <p class="section-kicker">01 · Current system</p>
+      <h2>Physical evidence links human emissions to observed warming</h2>
+      <p>Human activities add greenhouse gases to the atmosphere. Those gases change radiative forcing, create an energy imbalance, and raise global temperature. Attribution tests that full mechanism against observations and counterfactual model experiments.</p>
+    </div>
+
+    <div class="evidence-stat-grid" aria-label="Cause and trajectory headline evidence">
+      {CAUSE_HEADLINE_METRICS.map((metric) => (
+        <article class="evidence-stat">
+          <EvidenceBadge state={metric.state === 'Observed' ? 'observed' : 'reported_estimate'} label={metric.state} />
+          <p>{metric.label}</p>
+          <strong>{metric.value === null ? 'Unavailable' : metric.value.toLocaleString('en-US', { maximumFractionDigits: 3 })} <span>{metric.unit}</span></strong>
+          <small>{metric.period}</small>
+        </article>
+      ))}
+    </div>
+
+    <ChartFrame
+      chart={causalChart}
+      unit="Physical relationship; no common numeric unit"
+      geography="Global climate system"
+      period="Industrial era through the current assessment"
+      sources={[CLIMATE_SOURCES.synthesis, CLIMATE_SOURCES.physical, CLIMATE_SOURCES.attribution]}
+      summary="Six assessed evidence steps connect human greenhouse-gas emissions to atmospheric abundance, forcing, energy imbalance, observed warming, and formal attribution; the final impacts node carries the mechanism into the next chapter."
+      caveats={['Natural drivers and internal variability affect individual years. They do not reproduce the observed multi-decadal warming when human influence is excluded.']}
+    >
+      <NetworkPlot slot="plot" id="climate-causal-chain" nodes={CLIMATE_CAUSAL_CHAIN.nodes} edges={CLIMATE_CAUSAL_CHAIN.edges} variant="causal_path" unit="qualitative assessed relationship" summary="A causal flow from human activity and emissions through concentration, forcing, energy imbalance, warming, and impacts." height={430} />
+      <DataTable slot="table" caption="Evidence behind the emissions-to-warming causal chain" columns={[
+        { key: 'order', label: 'Step', numeric: true }, { key: 'step', label: 'Physical step' }, { key: 'evidence', label: 'Evidence class' }, { key: 'sourceFamilies', label: 'Source identities' },
+      ]} rows={CLIMATE_CAUSAL_CHAIN.table} />
+    </ChartFrame>
+
+    <ChartFrame
+      chart={observedChart}
+      unit="Native units and baselines shown in each panel"
+      geography="Global"
+      period="1850–2025; source-specific coverage"
+      sources={[CLIMATE_SOURCES.co2, CLIMATE_SOURCES.aggi, CLIMATE_SOURCES.nasaTemperature, CLIMATE_SOURCES.noaaTemperature]}
+      summary="Atmospheric carbon dioxide and long-lived greenhouse-gas forcing rise over their measured periods. NASA and NOAA temperature anomalies also rise, while retaining different native reference means."
+      caveats={['Unlike units are separated into panels. The NASA and NOAA anomaly series are not rebased or averaged.', 'Co-movement is descriptive context; causal attribution comes from physical evidence and counterfactual experiments.']}
+    >
+      <div slot="plot" class="chart-small-multiples chart-small-multiples--two">
+        {CLIMATE_OBSERVED_PANELS.map((panel) => (
+          <section><h4>{panel.label}</h4><p class="panel-scope">{panel.baseline}</p><LinePlot series={panel.series} xLabel="Year" yLabel={panel.label} unit={panel.unit} focusX={[1850, 1979, 1990, 2024, 2025]} summary={`${panel.label}, retaining its native baseline and source coverage.`} height={245} /></section>
+        ))}
+      </div>
+      <DataTable slot="table" caption="Observed climate-series coverage and latest available values" columns={[
+        { key: 'series', label: 'Series' }, { key: 'firstYear', label: 'First year', numeric: true }, { key: 'lastYear', label: 'Latest year', numeric: true }, { key: 'latestValue', label: 'Latest value', numeric: true }, { key: 'unit', label: 'Unit' }, { key: 'nativeBaseline', label: 'Native baseline' },
+      ]} rows={CLIMATE_OBSERVED_TABLE} />
+    </ChartFrame>
+  </section>
+
+  <section id="problems" class="chapter-act" data-chapter-section>
+    <div class="act-heading">
+      <p class="section-kicker">02 · Why this is a problem</p>
+      <h2>Trend correlation is not the attribution test</h2>
+      <p>Two trending series can have a high correlation even when annual changes barely move together. Attribution instead combines established physics, fingerprints, observations, and model experiments with and without human influence.</p>
+    </div>
+
+    <ChartFrame
+      chart={correlationChart}
+      unit="Correlation coefficient"
+      geography="Global"
+      period="1979–2025"
+      sources={[CLIMATE_SOURCES.co2, CLIMATE_SOURCES.nasaTemperature, CLIMATE_SOURCES.attribution]}
+      summary="Carbon-dioxide concentration and NASA temperature anomaly have high correlations in levels and trailing means, but a much lower correlation in annual first differences. None of these descriptive coefficients is an attribution model."
+      caveats={['Autocorrelation and shared trends inflate levels and smoothed-series correlation.', 'First differences emphasize short-term variability and do not estimate equilibrium climate response.']}
+    >
+      <BarPlot slot="plot" id="correlation-diagnostic" values={CORRELATION_DIAGNOSTIC} valueLabel="Descriptive correlation" unit="coefficient" summary="Four descriptive correlation statistics comparing atmospheric carbon dioxide with NASA global temperature anomaly." />
+      <DataTable slot="table" caption="Observed carbon-dioxide and temperature correlation diagnostics" columns={[
+        { key: 'statistic', label: 'Statistic' }, { key: 'coefficient', label: 'Coefficient', numeric: true }, { key: 'period', label: 'Period' }, { key: 'sampleYears', label: 'Years', numeric: true }, { key: 'role', label: 'Interpretation' },
+      ]} rows={CORRELATION_TABLE} />
+    </ChartFrame>
+
+    <ChartFrame
+      chart={attributionChart}
+      unit="°C contribution to global warming"
+      geography="Global"
+      period={ATTRIBUTION_PERIOD}
+      sources={[CLIMATE_SOURCES.physical, CLIMATE_SOURCES.synthesis]}
+      summary="The best estimate of total human-caused warming closely matches observed warming. Well-mixed greenhouse gases caused more warming than observed in total because other human drivers, principally aerosols, offset part of it. Natural drivers and internal variability are centered near zero."
+      caveats={['Ranges are assessed likelihood intervals. Components are not independent probability distributions.', 'Cooling from other human drivers is displayed with a negative sign to preserve its physical direction.']}
+    >
+      <DotRangePlot slot="plot" values={ATTRIBUTION_RANGES} valueLabel="Assessed contribution" unit="°C" summary="Observed warming and assessed contributions from total human influence, greenhouse gases, other human drivers, natural drivers, and internal variability." labelWidth={180} />
+      <DataTable slot="table" caption="Assessed contributions to observed global warming" columns={[
+        { key: 'label', label: 'Contribution' }, { key: 'low', label: 'Likely low', unit: '°C', numeric: true }, { key: 'value', label: 'Best estimate', unit: '°C', numeric: true }, { key: 'high', label: 'Likely high', unit: '°C', numeric: true },
+      ]} rows={ATTRIBUTION_RANGES.map((item) => ({ label: item.label, low: item.low, value: item.value, high: item.high }))} />
+    </ChartFrame>
+
+    <ViewpointGrid id="cause-viewpoints" title="Why trajectory choices matter across the system" items={[
+      { viewpoint: 'people_and_households', label: 'People and households', problem: 'Long-lived emissions accumulate risk beyond the life of any single policy or asset.', evidenceState: 'qualitative_evidence', consequence: 'Faster reductions limit additional warming; affordability and reliable service still require deliberate policy design.' },
+      { viewpoint: 'workers_and_operators', label: 'Workers and operators', problem: 'High-emitting systems create transition and physical-risk exposure at the same time.', evidenceState: 'qualitative_evidence', consequence: 'Planned transition can create safer durable work, but retraining and regional economic support remain essential.' },
+      { viewpoint: 'businesses_and_producers', label: 'Businesses and producers', problem: 'Delayed action raises exposure to policy, supply-chain, insurance, and physical disruption.', evidenceState: 'qualitative_evidence', consequence: 'Clear cumulative-emissions direction improves planning, while technology and demand uncertainty remain.' },
+      { viewpoint: 'ecosystems_and_nonhuman_life', label: 'Ecosystems and nonhuman life', problem: 'Warming compounds land-use, pollution, exploitation, and invasive-species pressures.', evidenceState: 'reported_estimate', consequence: 'Lower warming reduces added pressure, but climate mitigation does not substitute for direct ecosystem protection.' },
+      { viewpoint: 'future_generations', label: 'Future generations', problem: 'Cumulative carbon dioxide commits warming across generations.', evidenceState: 'reported_estimate', consequence: 'Net-zero CO₂ stabilizes CO₂-caused warming; residual non-CO₂ forcing and adaptation needs remain.' },
+    ]} />
+  </section>
+
+  <section id="choices" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">03 · Choices</p><h2>Trajectory strategy is a choice about cumulative emissions and timing</h2></div>
+    <OptionComparison id="cause-options" title="Three plausible emissions strategies" question="How should policy respond to the assessed relationship between cumulative emissions and warming?" dimensions={[
+      { id: 'benefit', label: 'Benefit' }, { id: 'cost', label: 'Cost and lead time' }, { id: 'dependency', label: 'Dependencies' }, { id: 'residual', label: 'Residual risk' }, { id: 'maturity', label: 'Evidence maturity' },
+    ]} options={[
+      { id: 'rapid-broad', label: 'Rapid CO₂ plus non-CO₂ reduction', summary: 'Cut cumulative CO₂ while reducing potent non-CO₂ pollutants.', values: { benefit: 'Limits added warming and near-term forcing', cost: 'Fast infrastructure, technology, and behavior change', dependency: 'Clean energy, efficiency, methane controls, land stewardship', residual: 'Past warming and unavoidable impacts still require adaptation', maturity: 'Strong physical basis; delivery pathways vary' } },
+      { id: 'co2-only', label: 'CO₂-centered transition', summary: 'Prioritize the long-lived driver and net-zero CO₂.', values: { benefit: 'Addresses the principal cumulative driver', cost: 'Large capital and institutional transition', dependency: 'Durable net emissions reductions', residual: 'Non-CO₂ forcing and co-emitted pollutants remain', maturity: 'High-confidence cumulative relationship' } },
+      { id: 'delay-removal', label: 'Delay plus later removal', summary: 'Accept more near-term emissions and rely more heavily on future removals.', values: { benefit: 'Slower near-term asset turnover', cost: 'Greater future removal scale and land/energy demand', dependency: 'Uncertain durable removal, monitoring, and storage', residual: 'Higher peak warming and possible overshoot', maturity: 'Removal methods and scale are uneven' } },
+    ]} />
+
+    <ChartFrame
+      chart={cumulativeChart}
+      unit="GtCO₂ and °C per 1,000 GtCO₂ in separate panels"
+      geography="Global"
+      period="1850–2024 observed context; assessed TCRE relationship"
+      sources={[CLIMATE_SOURCES.carbonBudget, CLIMATE_SOURCES.physical]}
+      summary="Cumulative anthropogenic carbon-dioxide sources rise through 2024. The IPCC assessed transient climate response to cumulative emissions has a best estimate of 0.45°C per 1,000 GtCO₂ and a likely range of 0.27–0.63°C."
+      caveats={['Apply TCRE only to cumulative anthropogenic CO₂ within its assessed domain—not to annual emissions or aggregate CO₂-equivalent emissions.', 'The observed cumulative series is context and is not claimed to reproduce the attribution estimate exactly.']}
+    >
+      <div slot="plot" class="chart-small-multiples chart-small-multiples--two">
+        <section><h4>Observed cumulative CO₂ sources</h4><LinePlot series={CUMULATIVE_CO2_SERIES} xLabel="Year" yLabel="Cumulative anthropogenic CO₂" unit="GtCO₂" focusX={[1850, 1900, 1950, 2000, 2024]} summary="Cumulative anthropogenic carbon-dioxide sources since 1850 through 2024." /></section>
+        <section><h4>Assessed transient response</h4><DotRangePlot values={TCRE_RANGE} valueLabel="Warming response" unit="°C per 1,000 GtCO₂" summary="IPCC assessed TCRE best estimate and likely range." labelWidth={150} height={220} /></section>
+      </div>
+      <DataTable slot="table" caption="Selected cumulative carbon-dioxide context and assessed TCRE" columns={[
+        { key: 'year', label: 'Year', numeric: true }, { key: 'annualSources', label: 'Annual anthropogenic sources', unit: 'GtCO₂', numeric: true }, { key: 'cumulativeSources', label: 'Cumulative since 1850', unit: 'GtCO₂', numeric: true },
+      ]} rows={CUMULATIVE_CO2_TABLE} />
+    </ChartFrame>
+  </section>
+
+  <section id="recommendation" class="chapter-act" data-chapter-section>
+    <RecommendationPanel
+      id="cause-recommendation"
+      title="Act on cumulative carbon and near-term forcing together"
+      conclusion="Reduce cumulative CO₂ rapidly, reduce potent non-CO₂ pollutants, and reach net-zero CO₂ to stabilize temperature."
+      rationale={[
+        'Every additional net tonne of anthropogenic CO₂ adds to warming within the assessed near-linear relationship.',
+        'Cutting methane and other potent non-CO₂ pollutants reduces additional forcing while CO₂ approaches net zero.',
+        'Earlier durable reductions reduce dependence on uncertain large-scale future removal and limit peak warming.',
+      ]}
+      tradeoffs={['Rapid infrastructure and industrial transition', 'Up-front capital, siting, workforce, and distributional challenges', 'Need to protect essential energy and material services during change']}
+      residualRisks={['Already-observed warming and committed impacts', 'Non-CO₂ forcing and natural variability', 'Adaptation needs under every assessed pathway']}
+    />
+
+    <ChartFrame
+      chart={warmingChart}
+      unit="°C above 1850–1900"
+      geography="Global"
+      period="2021–2040, 2041–2060, and 2081–2100 assessment means"
+      sources={[CLIMATE_SOURCES.physical]}
+      summary="Near-term warming ranges overlap across the five assessed pathways. By late century, pathway choices create a much wider separation in best estimates and very-likely ranges."
+      caveats={['These are conditional Shared Socioeconomic Pathway assessments, not probabilities or annual forecasts.', 'The figure shows assessed 20-year periods; it does not fabricate annual temperature points between them.']}
+    >
+      <div slot="plot" class="chart-small-multiples chart-small-multiples--three">
+        {WARMING_PERIODS.map((period) => <section><h4>{period}</h4><DotRangePlot values={WARMING_SCENARIO_RANGES[period] ?? []} valueLabel="Global surface warming" unit="°C" summary={`Assessed warming ranges across five IPCC pathways for ${period}.`} labelWidth={105} height={300} /></section>)}
+      </div>
+      <DataTable slot="table" caption="IPCC assessed warming by pathway and 20-year period" columns={[
+        { key: 'scenario', label: 'Pathway' }, { key: 'period', label: 'Assessment period' }, { key: 'bestEstimate', label: 'Best estimate', unit: '°C', numeric: true }, { key: 'veryLikelyLow', label: 'Very likely low', unit: '°C', numeric: true }, { key: 'veryLikelyHigh', label: 'Very likely high', unit: '°C', numeric: true }, { key: 'baseline', label: 'Baseline' },
+      ]} rows={WARMING_SCENARIO_TABLE} />
+    </ChartFrame>
+  </section>
+
+  <section id="model" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">05 · Model-supported case</p><h2>Inspect sources without turning an assessment into an annual forecast</h2><p>The authorized working view is a lookup across observed records and assessed IPCC period ranges. It preserves baselines and source seams; it is not a reduced-complexity climate model.</p></div>
+    <CauseWorkbench />
+    <CaveatPanel
+      title="Model boundary"
+      caveats={['TCRE is authorized only as a sourced response range for cumulative anthropogenic CO₂.', 'A gas-specific emissions-to-temperature emulator remains a documented research gap.']}
+      prohibitedInterpretations={['A precise prediction of annual temperature.', 'Treating one year above 1.5°C as crossing a sustained long-term warming level.', 'Converting aggregate CO₂e emissions directly into atmospheric concentration or temperature.']}
+    />
+  </section>
+
+  <section id="delivery" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">06 · Delivery</p><h2>Measure cumulative progress and review delivery constraints openly</h2></div>
+    <ol class="delivery-sequence">
+      <li><strong>Count what accumulates.</strong><span>Track gross and net CO₂ by source and sink with transparent inventories and uncertainty.</span></li>
+      <li><strong>Reduce near-term forcing.</strong><span>Measure methane and other non-CO₂ pollutants with gas-specific lifetimes, forcing, and policy instruments.</span></li>
+      <li><strong>Protect services and workers.</strong><span>Sequence infrastructure, permitting, finance, manufacturing, and transition support rather than assuming instant substitution.</span></li>
+      <li><strong>Review against physical outcomes.</strong><span>Update observed concentration, forcing, temperature, and assessed pathway evidence without retuning past claims.</span></li>
+    </ol>
+    <div class="delivery-gates">
+      <article><h3>Progress indicators</h3><p>Annual and cumulative net CO₂, atmospheric methane, long-lived forcing, clean-service deployment, and verified durable removals.</p></article>
+      <article><h3>Review gates</h3><p>Inventory reconciliation, source-method changes, delivery bottlenecks, distributional burdens, and whether removal assumptions remain credible.</p></article>
+      <article><h3>Authority questions</h3><p>Which institutions set standards, finance infrastructure, protect workers and communities, verify removals, and update the public evidence record?</p></article>
+    </div>
+    <aside class="continuation-card"><p>Next mechanism</p><a href={hrefForRoute('/climate/risks', base)}>Continue from warming to hazards, exposure, vulnerability, and adaptation →</a></aside>
+  </section>
+</article>
