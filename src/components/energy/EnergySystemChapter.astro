@@ -1,0 +1,197 @@
+---
+import LinePlot from '../charts/LinePlot.astro';
+import NetworkPlot from '../charts/NetworkPlot.astro';
+import CaveatPanel from '../CaveatPanel.astro';
+import ChartFrame from '../ChartFrame.astro';
+import DataTable from '../DataTable.astro';
+import EvidenceBadge from '../EvidenceBadge.astro';
+import MetricCard from '../MetricCard.astro';
+import OptionComparison from '../OptionComparison.astro';
+import RecommendationPanel from '../RecommendationPanel.astro';
+import SourceDrawer from '../SourceDrawer.astro';
+import ViewpointGrid from '../ViewpointGrid.astro';
+import {
+  approvedEnergyChart,
+  ENERGY_ONTOLOGY,
+  ENERGY_SCENARIO_SEAM,
+  ENERGY_SOURCES,
+  US_GENERATION_2025,
+  US_GENERATION_SERIES,
+  US_PRIMARY_METRICS,
+  WORLD_GENERATION_2025,
+  WORLD_GENERATION_SERIES,
+} from '../../lib/data/energy';
+import EnergySystemWorkbench from './EnergySystemWorkbench.astro';
+
+const worldChart = approvedEnergyChart('CHT-000022', 'line');
+const usChart = approvedEnergyChart('CHT-000026', 'line');
+const seriesLegend = (series: readonly { label: string }[]) => series.map((item, index) => ({ label: item.label, className: `chart-series--${index % 6}` }));
+const generationColumns = [
+  { key: 'source', label: 'Source category' },
+  { key: 'value', label: '2025 generation', unit: 'TWh', numeric: true },
+  { key: 'status', label: 'Evidence status' },
+] as const;
+const seamRows = ENERGY_SCENARIO_SEAM.map((series) => ({
+  family: series.label,
+  firstYear: series.values.at(0)?.x ?? null,
+  firstValue: series.values.at(0)?.y ?? null,
+  lastYear: series.values.at(-1)?.x ?? null,
+  lastValue: series.values.at(-1)?.y ?? null,
+}));
+const ontologyRows = ENERGY_ONTOLOGY.edges.map((edge) => ({
+  from: ENERGY_ONTOLOGY.nodes.find((node) => node.id === edge.source)?.label ?? edge.source,
+  relationship: edge.label,
+  to: ENERGY_ONTOLOGY.nodes.find((node) => node.id === edge.target)?.label ?? edge.target,
+}));
+---
+<article class="chapter-content" data-chapter-content="energy-system">
+  <section id="current-system" class="chapter-act" data-chapter-section>
+    <div class="act-heading">
+      <p class="section-kicker">01 · Current system</p>
+      <h2>Electricity is a carrier inside a larger energy system</h2>
+      <p>Primary resources are converted into electricity, fuels, and heat; storage shifts a carrier through time. Generation, capacity, production, and consumption answer different questions and stay in separate measures.</p>
+    </div>
+
+    <ChartFrame
+      chart={worldChart}
+      unit="TWh"
+      geography="World"
+      period="1965–2025; source-specific coverage begins in different years"
+      sources={[ENERGY_SOURCES.worldHistory]}
+      legend={seriesLegend(WORLD_GENERATION_SERIES)}
+      annotations={['The six displayed series are the major source histories; the table retains all separately reported 2025 categories.', 'A numeric zero remains zero; absent early coverage is not backfilled.']}
+      summary="World electricity generation increased substantially over the period. Coal and natural gas remain large sources while wind and solar rose rapidly in the most recent years."
+      caveats={['The latest year may include upstream estimates. Oil, bioenergy, and other renewables remain visible in the table but are omitted from the line figure to preserve legibility.']}
+    >
+      <LinePlot slot="plot" series={WORLD_GENERATION_SERIES} xLabel="Year" yLabel="Electricity generation" unit="TWh" focusX={[1965, 2000, 2025]} summary="Six major world electricity-generation source histories from 1965 through 2025, with different source coverage start years." />
+      <DataTable slot="table" caption="World electricity generation by reported source in 2025" columns={generationColumns} rows={WORLD_GENERATION_2025} />
+    </ChartFrame>
+
+    <ChartFrame
+      chart={usChart}
+      unit="TWh"
+      geography="United States · 50 states and District of Columbia"
+      period="1949–2025; technology coverage varies; 2025 preliminary"
+      sources={[ENERGY_SOURCES.usGeneration, ENERGY_SOURCES.usSolar]}
+      legend={seriesLegend(US_GENERATION_SERIES)}
+      annotations={['Solar uses the all-scales series and is not added to its utility-scale and small-scale components.', 'Pumped storage can have negative net generation because it is storage, not a primary source.']}
+      summary="Natural gas supplied the largest U.S. generation volume in 2025. Coal declined from its earlier peak while wind and all-scale solar expanded."
+      caveats={['The EIA utility-scale total and the all-scale solar series have different boundaries. The table preserves that distinction rather than presenting a derived all-source total.']}
+    >
+      <LinePlot slot="plot" series={US_GENERATION_SERIES} xLabel="Year" yLabel="Net generation" unit="TWh" focusX={[1949, 1984, 2000, 2025]} summary="Six major U.S. electricity net-generation source histories through preliminary 2025 values." />
+      <DataTable slot="table" caption="U.S. electricity net generation by reported source in preliminary 2025" columns={generationColumns} rows={US_GENERATION_2025} />
+    </ChartFrame>
+
+    <div class="metric-grid" aria-label="U.S. primary energy production and consumption totals">
+      <MetricCard metric={US_PRIMARY_METRICS.production} label="U.S. primary energy production" source={ENERGY_SOURCES.production} sourceDrawerId="energy-production-source" caveat="Captured-energy accounting; preliminary and partly estimated." />
+      <MetricCard metric={US_PRIMARY_METRICS.consumption} label="U.S. primary energy consumption" source={ENERGY_SOURCES.consumption} sourceDrawerId="energy-consumption-source" caveat="Includes adjustments; petroleum excludes biofuels, which are counted in biomass." />
+    </div>
+    <CaveatPanel
+      title="Production and consumption are not an electricity balance"
+      caveats={['Both totals use quadrillion Btu, but they describe EIA primary-energy accounting. Neither can be divided by the TWh generation charts without an explicit conversion method.']}
+      prohibitedInterpretations={['Treating the difference as grid loss, wasted electricity, or a reliability margin.']}
+    />
+
+    <section class="ontology-figure" aria-labelledby="energy-ontology-title">
+      <div class="figure-heading">
+        <p class="section-kicker">Accounting explainer</p>
+        <h3 id="energy-ontology-title">Resource, conversion, carrier, and storage are different system roles</h3>
+      </div>
+      <NetworkPlot id="energy-ontology" nodes={ENERGY_ONTOLOGY.nodes} edges={ENERGY_ONTOLOGY.edges} variant="flow" unit="conceptual relationship" summary="Primary resources feed conversion technologies, which produce energy carriers. Storage charges from and later returns a carrier." />
+      <DataTable caption="Energy-system ontology relationships" columns={[
+        { key: 'from', label: 'From role' }, { key: 'relationship', label: 'Relationship' }, { key: 'to', label: 'To role' },
+      ]} rows={ontologyRows} />
+      <details class="method-disclosure"><summary>Read the ontology rules</summary><ul>{ENERGY_ONTOLOGY.rules.map((rule) => <li>{rule}</li>)}</ul></details>
+    </section>
+  </section>
+
+  <section id="problems" class="chapter-act" data-chapter-section>
+    <div class="act-heading">
+      <p class="section-kicker">02 · Problems</p>
+      <h2>The system must expand useful services while reducing coupled risks</h2>
+      <p>The central problem is not simply the amount of primary energy. It is whether households, firms, operators, communities, and ecosystems receive reliable services without shifting unaccounted burdens elsewhere.</p>
+    </div>
+    <ViewpointGrid
+      id="energy-system-viewpoints"
+      title="The same system looks different from each operating position"
+      items={[
+        { viewpoint: 'people_and_households', label: 'People and households', problem: 'Need dependable heating, cooling, mobility, and electricity without making reduced service the default response.', evidenceState: 'qualitative_evidence' },
+        { viewpoint: 'workers_and_operators', label: 'Workers and operators', problem: 'Must run, maintain, and safely transition complex fuel, power, and network assets.', evidenceState: 'qualitative_evidence' },
+        { viewpoint: 'businesses_and_producers', label: 'Businesses and producers', problem: 'Need predictable energy services, connection rules, and credible investment timelines.', evidenceState: 'qualitative_evidence' },
+        { viewpoint: 'host_communities_and_tribes', label: 'Host communities and Tribes', problem: 'Experience land, water, air, infrastructure, and participation effects at specific places.', evidenceState: 'qualitative_evidence' },
+        { viewpoint: 'ecosystems_and_nonhuman_life', label: 'Ecosystems', problem: 'Bear extraction, siting, water, waste, and climate pressures that annual energy totals do not show.', evidenceState: 'qualitative_evidence' },
+        { viewpoint: 'future_generations', label: 'Future generations', problem: 'Inherit long-lived infrastructure, waste obligations, climate effects, and foreclosed choices.', evidenceState: 'qualitative_evidence' },
+      ]}
+    />
+  </section>
+
+  <section id="choices" class="chapter-act" data-chapter-section>
+    <OptionComparison
+      id="energy-system-options"
+      title="Three strategic directions"
+      question="Which direction expands energy services while lowering emissions and avoiding an unexamined shift of burdens?"
+      dimensions={[
+        { id: 'service', label: 'Service objective' },
+        { id: 'electricity', label: 'Electricity role' },
+        { id: 'infrastructure', label: 'Infrastructure implication' },
+        { id: 'residual', label: 'Residual risk' },
+      ]}
+      options={[
+        { id: 'incremental', label: 'Continue and adapt incrementally', summary: 'Preserve most current conversion and delivery patterns.', values: { service: 'Maintains familiar supply pathways', electricity: 'Grows at the margin', infrastructure: 'Extends existing fuel and power assets', residual: 'Leaves large emissions and lock-in exposure' } },
+        { id: 'reduction', label: 'Reduce service demand first', summary: 'Treat lower delivered service as the primary balancing mechanism.', values: { service: 'Constrains some useful demand', electricity: 'Limits growth', infrastructure: 'May defer investment', residual: 'Can shift burdens to households and constrained communities' } },
+        { id: 'integrated', label: 'Efficiency, electrification, and clean supply', summary: 'Reduce energy per service while expanding suitable electric end uses.', values: { service: 'Targets equal or better useful service', electricity: 'Becomes a larger, cleaner carrier', infrastructure: 'Requires generation, flexibility, storage, and grid delivery', residual: 'Still requires land, water, materials, siting, and reliability management' } },
+      ]}
+    />
+  </section>
+
+  <section id="recommendation" class="chapter-act" data-chapter-section>
+    <RecommendationPanel
+      id="energy-system-recommendation"
+      title="Use less primary energy per unit of service, electrify suitable end uses, and decarbonize electricity"
+      conclusion="The preferred direction expands reliable energy services through efficiency and clean electrification; it does not make reduced service the primary solution."
+      rationale={[
+        'Efficiency lowers the primary-energy input required for a given service.',
+        'Electrification can replace direct combustion in end uses where electric technologies perform well.',
+        'Cleaner electricity reduces the emissions transferred into newly electrified services.',
+      ]}
+      tradeoffs={['More electricity generation and grid delivery are required.', 'Siting, workforce, manufacturing, land, water, and material constraints remain.', 'Firm capacity, storage, and flexible demand must be evaluated together.']}
+      residualRisks={['Hourly reliability is not established by annual TWh.', 'Technology impacts differ by place and accounting boundary.', 'Transition costs and benefits can be distributed unevenly.']}
+    />
+  </section>
+
+  <section id="model" class="chapter-act" data-chapter-section>
+    <div class="act-heading">
+      <p class="section-kicker">05 · Model and working view</p>
+      <h2>Keep observed history and source scenarios visibly separate</h2>
+      <p>Historical totals, AEO2026, and the ReEDS 2024 Mid-case come from different source families and scopes. The lines are independent; their endpoints are not joined into a dashboard forecast.</p>
+    </div>
+    <section class="scenario-seam-figure" aria-labelledby="energy-seam-title">
+      <div class="figure-heading">
+        <EvidenceBadge state="source_scenario" />
+        <h3 id="energy-seam-title">Observed U.S. generation and two conditional scenario families</h3>
+      </div>
+      <LinePlot series={ENERGY_SCENARIO_SEAM} xLabel="Year" yLabel="Electricity generation" unit="TWh" focusX={[1949, 2025, 2026, 2050]} summary="Observed U.S. generation ends in 2025. AEO2026 and ReEDS 2024 scenario lines begin separately and retain different national scopes." />
+      <DataTable caption="Source-family seam endpoints" columns={[
+        { key: 'family', label: 'Source family' }, { key: 'firstYear', label: 'First year', numeric: true }, { key: 'firstValue', label: 'First value', unit: 'TWh', numeric: true }, { key: 'lastYear', label: 'Last year', numeric: true }, { key: 'lastValue', label: 'Last value', unit: 'TWh', numeric: true },
+      ]} rows={seamRows} />
+      <div class="figure-sources"><strong>Sources:</strong><SourceDrawer id="energy-seam-observed-source" source={ENERGY_SOURCES.usGeneration} triggerLabel="EIA observed history" /><SourceDrawer id="energy-seam-aeo-source" source={ENERGY_SOURCES.aeo} triggerLabel="AEO2026" /><SourceDrawer id="energy-seam-reeds-source" source={ENERGY_SOURCES.reeds} triggerLabel="ReEDS 2024" /></div>
+      <CaveatPanel caveats={['AEO covers the United States; ReEDS is a contiguous-U.S. model. Scenario values are conditional outputs, not predictions.']} prohibitedInterpretations={['Splicing the lines into one continuous forecast or treating their spread as probability.']} />
+    </section>
+    <EnergySystemWorkbench />
+  </section>
+
+  <section id="delivery" class="chapter-act" data-chapter-section>
+    <div class="act-heading">
+      <p class="section-kicker">06 · Delivery</p>
+      <h2>Sequence service efficiency, electrification, clean supply, and delivery capacity together</h2>
+    </div>
+    <ol class="delivery-sequence">
+      <li><strong>Measure services and boundaries.</strong><span>Track useful service, primary energy, electricity, capacity, and generation as distinct quantities.</span></li>
+      <li><strong>Accelerate proven efficiency.</strong><span>Reduce energy intensity without assuming households or firms should accept poorer service.</span></li>
+      <li><strong>Electrify suitable end uses.</strong><span>Coordinate equipment adoption with distribution, generation, and flexible-load capability.</span></li>
+      <li><strong>Decarbonize and firm electricity.</strong><span>Build clean supply, storage, flexibility, and grid delivery under explicit reliability tests.</span></li>
+      <li><strong>Review local burdens and system gates.</strong><span>Stop or revise pathways when reliability, water, land, material, workforce, or community conditions fail.</span></li>
+    </ol>
+    <CaveatPanel title="Model boundary" caveats={['This chapter establishes annual accounting and source-scenario seams. It is not an hourly reliability model and does not publish an optimized build mix.']} />
+  </section>
+</article>

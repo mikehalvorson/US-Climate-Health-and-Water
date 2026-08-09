@@ -3,6 +3,9 @@ import RouteLayout from '../layouts/RouteLayout.astro';
 import CaveatPanel from '../components/CaveatPanel.astro';
 import EvidenceBadge from '../components/EvidenceBadge.astro';
 import EvidenceGap from '../components/EvidenceGap.astro';
+import DemandChapter from '../components/energy/DemandChapter.astro';
+import EnergySystemChapter from '../components/energy/EnergySystemChapter.astro';
+import { chapterContentFor } from '../lib/content/release';
 import { hrefForRoute, STORY_ANCHORS } from '../lib/navigation/shell';
 import { CANONICAL_REGISTRIES } from '../lib/registry/store';
 import { ROUTES } from '../lib/registry/routes';
@@ -19,6 +22,7 @@ export function getStaticPaths() {
 
 const { route } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const chapterContent = chapterContentFor(route.id);
 const statusCopy = {
   'current-system': ['Observed baseline', 'The evidence adapter is registered. Metrics and the system figure remain unavailable here until this chapter’s data identities, units, periods, geographies, and boundaries pass its vertical-slice gate.'],
   problems: ['Multiple viewpoints', 'The completed chapter will show burdens across affected people, operators, producers, communities, public health, ecosystems, governments, and future generations without inventing evidence for this shell.'],
@@ -29,7 +33,7 @@ const statusCopy = {
 } as const;
 ---
 <RouteLayout route={route}>
-  {route.routeKind === 'story' ? (
+  {chapterContent === 'energy-system' ? <EnergySystemChapter /> : chapterContent === 'energy-demand' ? <DemandChapter /> : route.routeKind === 'story' ? (
     <div class="shell-sections" aria-label={`${route.label} chapter publication gates`}>
       {STORY_ANCHORS.map((anchor, index) => {
         const copy = statusCopy[anchor.id];

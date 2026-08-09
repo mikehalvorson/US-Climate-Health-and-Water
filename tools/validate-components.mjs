@@ -57,14 +57,23 @@ function htmlFiles(directory) {
 const pages = htmlFiles(dist);
 const storyPages = pages.filter((path) => /data-current-route="RTE-0000(?:0[2-9]|1[0-5])"/u.test(readFileSync(path, 'utf8')));
 if (storyPages.length !== 14) failures.push(`Expected 14 story pages for shared-component checks; found ${storyPages.length}.`);
-for (const path of storyPages) {
+const shellStoryPages = storyPages.filter((path) => readFileSync(path, 'utf8').includes('data-release-status="shell"'));
+const releasedStoryPages = storyPages.filter((path) => readFileSync(path, 'utf8').includes('data-release-status="chapter"'));
+if (shellStoryPages.length !== 12) failures.push(`Expected 12 gated story shells; found ${shellStoryPages.length}.`);
+if (releasedStoryPages.length !== 2) failures.push(`Expected 2 released story chapters; found ${releasedStoryPages.length}.`);
+for (const path of shellStoryPages) {
   const html = readFileSync(path, 'utf8');
   if (!html.includes('data-evidence-badge="data_gap"')) failures.push(`${path}: missing explicit evidence-state badge.`);
   if (!html.includes('data-evidence-gap')) failures.push(`${path}: missing useful evidence-gap module.`);
   if (!html.includes('Next research action:')) failures.push(`${path}: evidence gap has no next action.`);
 }
+for (const path of releasedStoryPages) {
+  const html = readFileSync(path, 'utf8');
+  if (!html.includes('data-chart-frame')) failures.push(`${path}: released chapter has no shared chart frame.`);
+  if (!html.includes('data-scenario-workbench-container')) failures.push(`${path}: released chapter has no shared working view.`);
+}
 const methods = pages.map((path) => readFileSync(path, 'utf8')).find((html) => html.includes('data-current-route="RTE-000016"'));
 if (!methods?.includes('data-caveat-panel')) failures.push('Methods shell is missing the registry-count interpretation guardrail.');
 
 if (failures.length) throw new Error(`Shared-component validation failed:\n${failures.join('\n')}`);
-console.log(`PASS shared component contract (${requiredComponents.length} components, ${requiredPlots.length} SVG primitives, ${storyPages.length} story evidence-gap states).`);
+console.log(`PASS shared component contract (${requiredComponents.length} components, ${requiredPlots.length} SVG primitives, ${shellStoryPages.length} gated states, ${releasedStoryPages.length} released chapters).`);

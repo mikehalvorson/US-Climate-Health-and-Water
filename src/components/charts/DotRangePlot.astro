@@ -1,21 +1,28 @@
 ---
-import { buildDotRangeGeometry, type DotRangeInput } from '../../lib/charts/geometry';
+import { buildDotRangeGeometry, linearScale, numericExtent, type DotRangeInput } from '../../lib/charts/geometry';
 
 export interface LabeledDotRange extends DotRangeInput { label: string }
 
 interface Props {
   values: readonly LabeledDotRange[];
   unit: string;
+  valueLabel?: string;
   summary: string;
   width?: number;
   height?: number;
 }
 
-const { values, unit, summary, width = 720, height = 360 } = Astro.props;
+const { values, unit, valueLabel = 'Value', summary, width = 720, height = 360 } = Astro.props;
 const geometry = buildDotRangeGeometry(values, { width, height });
+const domain = numericExtent(values.flatMap((item) => [item.low, item.value, item.high]));
+const scaleX = linearScale(domain, [48, width - 18]);
+const ticks = [domain[0], (domain[0] + domain[1]) / 2, domain[1]];
 ---
 <svg class="svg-plot dot-range-plot" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={summary}>
   <title>{summary}</title>
+  <g class="plot-grid" aria-hidden="true">
+    {ticks.map((tick) => <><line x1={scaleX(tick)} x2={scaleX(tick)} y1="18" y2={height - 36} /><text x={scaleX(tick)} y={height - 18} text-anchor="middle">{tick.toLocaleString('en-US', { maximumFractionDigits: 1 })}</text></>)}
+  </g>
   {geometry.map((item, index) => {
     const value = values[index];
     const tooltip = item.missing ? `${value?.label}: missing` : `${value?.label}: ${value?.value ?? 'no central value'} ${unit}; range ${value?.low ?? 'missing'} to ${value?.high ?? 'missing'}`;
@@ -26,8 +33,10 @@ const geometry = buildDotRangeGeometry(values, { width, height });
         {item.lowX !== null && <path class="dot-range-cap" d={`M ${item.lowX} ${item.y - 6} V ${item.y + 6}`} />}
         {item.highX !== null && <path class="dot-range-cap" d={`M ${item.highX} ${item.y - 6} V ${item.y + 6}`} />}
         {item.valueX !== null && <circle class="dot-range-mark" cx={item.valueX} cy={item.y} r="7" tabindex="0" aria-label={tooltip} data-tooltip={tooltip}><title>{tooltip}</title></circle>}
+        {item.lowX !== null && item.valueX === null && item.highX === null && <text class="lower-bound-mark" x={item.lowX + 5} y={item.y} dominant-baseline="middle">≥</text>}
         {item.missing && <text class="missing-label" x="54" y={item.y} dominant-baseline="middle">missing</text>}
       </g>
     );
   })}
+  <text class="plot-axis-label" x={width / 2} y={height - 4} text-anchor="middle">{valueLabel} ({unit})</text>
 </svg>

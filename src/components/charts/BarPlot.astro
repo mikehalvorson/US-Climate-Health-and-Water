@@ -26,6 +26,7 @@ const missingPatternId = `${id}-missing-bar-pattern`;
     return (
       <g class:list={['chart-series', `chart-series--${index % 6}`, { 'is-missing': bar.missing }]}>
         {bar.missing ? <rect class="missing-bar-mark" x={bar.x} y={height - 48} width={bar.width} height="12" fill={`url(#${missingPatternId})`} /> : <rect class="bar-mark" x={bar.x} y={bar.y} width={bar.width} height={bar.height} tabindex="0" aria-label={tooltip} data-tooltip={tooltip}><title>{tooltip}</title></rect>}
+        {!bar.missing && <text class="bar-value-label" x={bar.x + bar.width / 2} y={Math.max(16, bar.y - 7)} text-anchor="middle">{bar.value?.toLocaleString('en-US', { maximumFractionDigits: 1 })}</text>}
         <text class="bar-label" x={bar.x + bar.width / 2} y={height - 18} text-anchor="middle">{value?.label}</text>
         {bar.missing && <text class="missing-label" x={bar.x + bar.width / 2} y={height - 53} text-anchor="middle">missing</text>}
       </g>

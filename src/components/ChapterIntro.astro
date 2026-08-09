@@ -1,5 +1,6 @@
 ---
 import { narrativeProgress } from '../lib/navigation/shell';
+import { releaseStatusFor } from '../lib/content/release';
 import { SUPERSECTION_DEFINITIONS } from '../lib/registry/routes';
 import type { RouteDefinition } from '../lib/registry/types';
 
@@ -8,6 +9,7 @@ const { route } = Astro.props;
 const section = SUPERSECTION_DEFINITIONS.find((candidate) => candidate.key === route.supersection);
 const eyebrow = route.routeKind === 'overview' ? 'Connected systems' : route.routeKind === 'methods' ? 'Inspection surface' : section?.label;
 const promise = route.role.endsWith('.') ? route.role.slice(0, -1) : route.role;
+const released = releaseStatusFor(route.id) === 'chapter';
 ---
 <header class="chapter-intro">
   <div class="chapter-intro__meta">
@@ -19,7 +21,7 @@ const promise = route.role.endsWith('.') ? route.role.slice(0, -1) : route.role;
   <div class="scope-badges" aria-label="Chapter scope and publication status">
     <span>Evidence vintage · Aug 2026</span>
     <span>Scope · Global, U.S. &amp; sourced local views</span>
-    <span class="status-badge">Shell review · content not released</span>
+    <span class="status-badge">{released ? 'Evidence-linked draft · vertical slice released' : 'Shell review · content not released'}</span>
   </div>
   <p class="page-promise"><strong>Chapter promise:</strong> {promise}.</p>
 </header>

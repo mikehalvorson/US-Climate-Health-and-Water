@@ -1,0 +1,41 @@
+---
+import { ENERGY_SYSTEM_WORKBENCH } from '../../lib/data/energy';
+import type { ScenarioControlDefinition } from '../../lib/scenarios/state';
+import ScenarioWorkbench from '../ScenarioWorkbench.astro';
+
+const controls: readonly ScenarioControlDefinition[] = [
+  {
+    id: 'geography', label: 'Geography', defaultValue: 'world',
+    options: [{ value: 'world', label: 'World' }, { value: 'us', label: 'United States' }],
+  },
+  {
+    id: 'metric', label: 'Measure', defaultValue: 'electricity_generation',
+    options: [
+      { value: 'electricity_generation', label: 'Electricity generation' },
+      { value: 'primary_energy_production', label: 'Primary energy production' },
+      { value: 'primary_energy_consumption', label: 'Primary energy consumption' },
+    ],
+  },
+];
+const initial = ENERGY_SYSTEM_WORKBENCH[0];
+---
+<div data-energy-system-workbench data-workbench-records={JSON.stringify(ENERGY_SYSTEM_WORKBENCH)}>
+  <ScenarioWorkbench
+    id="energy-system-selector"
+    title="Keep unlike energy measures apart"
+    decision="Select a geography and measure. The view reports only a registered compatible value and never converts TWh into primary-energy units."
+    controls={controls}
+    modelFamily="Observed accounting"
+    seamNote="Electricity generation and primary energy use different physical measures and accounting boundaries."
+    readiness="Observed 2025 display values"
+  >
+    <dl class="workbench-result" data-energy-system-output>
+      <div><dt>Selected value</dt><dd data-workbench-value>{initial?.value.toLocaleString('en-US', { maximumFractionDigits: 3 })}</dd></div>
+      <div><dt>Unit</dt><dd data-workbench-unit>{initial?.unit}</dd></div>
+      <div><dt>Period</dt><dd data-workbench-period>{initial?.period}</dd></div>
+      <div><dt>Evidence</dt><dd data-workbench-evidence>{initial?.evidence}</dd></div>
+    </dl>
+  </ScenarioWorkbench>
+</div>
+
+<script>import '../../scripts/energy-workbenches.ts';</script>

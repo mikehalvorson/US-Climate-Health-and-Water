@@ -13,11 +13,13 @@ interface Props {
   yLabel: string;
   unit: string;
   summary: string;
+  focusX?: readonly number[];
+  emphasizedSeriesId?: string;
   width?: number;
   height?: number;
 }
 
-const { series, xLabel, yLabel, unit, summary, width = 720, height = 360 } = Astro.props;
+const { series, xLabel, yLabel, unit, summary, focusX, emphasizedSeriesId, width = 720, height = 360 } = Astro.props;
 const allPresent = series.flatMap((item) => item.values.filter((point) => point.y !== null));
 const domains = {
   x: numericExtent(allPresent.map((point) => point.x), { padding: 0 }),
@@ -28,6 +30,8 @@ const ticks = [domains.y[0], (domains.y[0] + domains.y[1]) / 2, domains.y[1]];
 const plotTop = 18;
 const plotBottom = height - 36;
 const yForTick = (tick: number) => plotBottom - ((tick - domains.y[0]) / (domains.y[1] - domains.y[0])) * (plotBottom - plotTop);
+const xTicks = [domains.x[0], Math.round((domains.x[0] + domains.x[1]) / 2), domains.x[1]];
+const xForTick = (tick: number) => 48 + ((tick - domains.x[0]) / (domains.x[1] - domains.x[0])) * (width - 66);
 ---
 <svg class="svg-plot line-plot" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={summary}>
   <title>{summary}</title>
@@ -35,13 +39,17 @@ const yForTick = (tick: number) => plotBottom - ((tick - domains.y[0]) / (domain
     {ticks.map((tick) => <><line x1="48" x2={width - 18} y1={yForTick(tick)} y2={yForTick(tick)} /><text x="42" y={yForTick(tick)} text-anchor="end" dominant-baseline="middle">{tick.toLocaleString('en-US', { maximumFractionDigits: 2 })}</text></>)}
   </g>
   <line class="plot-axis" x1="48" x2={width - 18} y1={plotBottom} y2={plotBottom} aria-hidden="true" />
+  <g class="plot-x-ticks" aria-hidden="true">
+    {xTicks.map((tick) => <><line x1={xForTick(tick)} x2={xForTick(tick)} y1={plotBottom} y2={plotBottom + 5} /><text x={xForTick(tick)} y={plotBottom + 17} text-anchor="middle">{tick}</text></>)}
+  </g>
   <text class="plot-axis-label" x={width / 2} y={height - 5} text-anchor="middle">{xLabel}</text>
   <text class="plot-axis-label" transform={`translate(12 ${height / 2}) rotate(-90)`} text-anchor="middle">{yLabel} ({unit})</text>
   {geometries.map((item, seriesIndex) => (
-    <g class:list={['chart-series', `chart-series--${seriesIndex % 6}`]} data-series-id={item.id}>
+    <g class:list={['chart-series', emphasizedSeriesId ? item.id === emphasizedSeriesId ? 'chart-series--0' : 'chart-series--context' : `chart-series--${seriesIndex % 6}`]} data-series-id={item.id}>
       {item.geometry.segments.map((segment) => <path class="line-mark" d={linePath(segment)} />)}
       {item.geometry.segments.flat().map((point, pointIndex) => {
         const value = item.values.filter((candidate) => candidate.y !== null)[pointIndex];
+        if (focusX && value && !focusX.includes(value.x)) return null;
         const tooltip = `${item.label}; ${xLabel}: ${value?.x}; ${yLabel}: ${value?.y} ${unit}`;
         return <circle class="point-mark" cx={point.x} cy={point.y} r="5" tabindex="0" aria-label={tooltip} data-tooltip={tooltip}><title>{tooltip}</title></circle>;
       })}

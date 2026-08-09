@@ -12,7 +12,7 @@
     "generate:registries": "node tools/build-registries.mjs",
     "generate:check": "node tools/build-registries.mjs --check",
     "dev": "astro dev",
-    "build": "astro build && node tools/validate-shell.mjs && node tools/validate-components.mjs",
+    "build": "astro build && node tools/validate-shell.mjs && node tools/validate-components.mjs && node tools/validate-energy-chapters.mjs",
     "preview": "astro preview",
     "check": "pnpm generate:check && astro check && tsc --noEmit",
     "test": "vitest run",

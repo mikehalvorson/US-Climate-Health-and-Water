@@ -6,18 +6,19 @@ import SourceDrawer from './SourceDrawer.astro';
 
 interface Props {
   metric: MetricRecord;
+  label?: string;
   source?: SourceRecord;
   sourceDrawerId?: string;
   maximumFractionDigits?: number;
   caveat?: string;
 }
 
-const { metric, source, sourceDrawerId = `source-${metric.id.toLowerCase()}`, maximumFractionDigits = 2, caveat } = Astro.props;
+const { metric, label, source, sourceDrawerId = `source-${metric.id.toLowerCase()}`, maximumFractionDigits = 2, caveat } = Astro.props;
 const displayValue = formatEvidenceValue(metric.value, { maximumFractionDigits });
 ---
 <article class:list={['metric-card', { 'metric-card--missing': metric.value === null }]} data-metric-id={metric.id}>
   <div class="metric-card__header">
-    <p>{metric.label}</p>
+    <p>{label ?? metric.label}</p>
     <EvidenceBadge state={metric.evidenceState} />
   </div>
   <p class="metric-card__value">

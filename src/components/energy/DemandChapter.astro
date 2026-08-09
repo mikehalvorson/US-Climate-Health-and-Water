@@ -1,0 +1,277 @@
+---
+import BarPlot from '../charts/BarPlot.astro';
+import DotRangePlot from '../charts/DotRangePlot.astro';
+import LinePlot from '../charts/LinePlot.astro';
+import CaveatPanel from '../CaveatPanel.astro';
+import ChartFrame from '../ChartFrame.astro';
+import DataTable from '../DataTable.astro';
+import EvidenceBadge from '../EvidenceBadge.astro';
+import OptionComparison from '../OptionComparison.astro';
+import RecommendationPanel from '../RecommendationPanel.astro';
+import SourceDrawer from '../SourceDrawer.astro';
+import ViewpointGrid from '../ViewpointGrid.astro';
+import {
+  AEO_BASELINE_SECTOR_2050,
+  AEO_BASELINE_SECTOR_TABLE,
+  AEO_DEMAND_2050,
+  AEO_DEMAND_SERIES,
+  approvedEnergyChart,
+  DATA_CENTER_FACILITY_ROWS,
+  DATA_CENTER_SERVER_2050,
+  ENERGY_SOURCES,
+  EV_AEO_2050,
+  EV_GLOBAL_MILESTONES,
+  EV_US_HISTORY,
+  INDEXED_DEMAND_DRIVERS,
+  TEXAS_LOAD_SUMMARY,
+  TEXAS_SEASONAL_LOAD_SERIES,
+  US_ELECTRICITY_USE_2025,
+  US_ELECTRICITY_USE_SERIES,
+} from '../../lib/data/energy';
+import DemandWorkbench from './DemandWorkbench.astro';
+
+const historyChart = approvedEnergyChart('CHT-000006', 'line');
+const casesChart = approvedEnergyChart('CHT-000009', 'line');
+const sectorsChart = approvedEnergyChart('CHT-000010', 'bar');
+const dataCenterChart = approvedEnergyChart('CHT-000013', 'dot_range');
+const evChart = approvedEnergyChart('CHT-000014', 'dot_range');
+const driversChart = approvedEnergyChart('CHT-000016', 'line');
+const loadChart = approvedEnergyChart('CHT-000066', 'line');
+const legend = (series: readonly { label: string }[]) => series.map((item, index) => ({ label: item.label, className: `chart-series--${index % 6}` }));
+const caseLegend = [
+  { label: 'Counterfactual Baseline', className: 'chart-series--0' },
+  { label: 'Ten other internally consistent AEO cases', className: 'chart-series--context' },
+];
+const facilityWorld = DATA_CENTER_FACILITY_ROWS.filter((row) => row.label.startsWith('World')).map((row) => ({ id: row.label, label: row.label, low: row.low, value: row.value, high: row.high }));
+const facilityUs = DATA_CENTER_FACILITY_ROWS.filter((row) => row.label.startsWith('United States')).map((row) => ({ id: row.label, label: row.label, low: row.low, value: row.value, high: row.high }));
+const dataCenterTable = [
+  ...DATA_CENTER_FACILITY_ROWS.map((row) => ({ layer: 'Total facility', label: row.label, value: row.value, low: row.low, high: row.high, unit: row.unit, scope: row.scope })),
+  ...DATA_CENTER_SERVER_2050.map((row) => ({ layer: 'Server only', label: row.label, value: row.value, low: row.low, high: row.high, unit: 'TWh', scope: 'AEO server compute only; facility cooling and overhead not isolated' })),
+];
+const evTable = [
+  ...EV_US_HISTORY[0]!.values.map((point) => ({ panel: 'U.S. observed experimental estimate', label: point.x, value: point.y, low: null, high: null, unit: 'TWh' })),
+  ...EV_AEO_2050.map((row) => ({ panel: 'U.S. AEO2026 charging-location scenarios', label: row.label, value: row.value, low: row.low, high: row.high, unit: 'TWh' })),
+  ...EV_GLOBAL_MILESTONES.map((row) => ({ panel: 'World publisher milestones', label: row.label, value: row.value, low: row.low, high: row.high, unit: 'TWh' })),
+];
+const profileHours = [1, 6, 12, 18, 24];
+const profileTable = TEXAS_SEASONAL_LOAD_SERIES.flatMap((series) => series.values.filter((point) => profileHours.includes(point.x)).map((point) => ({ season: series.label, hour: point.x, meanDemand: point.y, unit: 'MW' })));
+const driverTable = INDEXED_DEMAND_DRIVERS.flatMap((series) => series.values.filter((point) => [2025, 2030, 2050].includes(point.x)).map((point) => ({ driver: series.label, year: point.x, index: point.y })));
+---
+<article class="chapter-content" data-chapter-content="energy-demand">
+  <section id="current-system" class="chapter-act" data-chapter-section>
+    <div class="act-heading">
+      <p class="section-kicker">01 · Current system</p>
+      <h2>U.S. electricity use is growing from a large, sector-diverse base</h2>
+      <p>Annual electricity demand combines residential, commercial, industrial, transportation, and direct-use accounting. The historical view keeps sector sales separate from the total-use overlay.</p>
+    </div>
+    <ChartFrame
+      chart={historyChart}
+      unit="TWh"
+      geography="United States"
+      period="1949–2025; 2025 preliminary"
+      sources={[ENERGY_SOURCES.demandHistory]}
+      legend={legend(US_ELECTRICITY_USE_SERIES)}
+      summary="Residential and commercial electricity sales are now the two largest sector series. Industrial sales remain substantial, while transportation sales exclude most charging assigned to buildings by location."
+      caveats={['The total-use line includes direct use and is not the sum of only the four displayed sector-sales lines.']}
+    >
+      <LinePlot slot="plot" series={US_ELECTRICITY_USE_SERIES} xLabel="Year" yLabel="Electricity sales or use" unit="TWh" focusX={[1949, 2000, 2025]} summary="U.S. annual electricity sales for four sectors and total electricity use from 1949 through preliminary 2025." />
+      <DataTable slot="table" caption="U.S. electricity sales and use in preliminary 2025" columns={[
+        { key: 'source', label: 'Measure' }, { key: 'value', label: 'Value', unit: 'TWh', numeric: true }, { key: 'status', label: 'Evidence status' },
+      ]} rows={US_ELECTRICITY_USE_2025} />
+    </ChartFrame>
+
+    <ChartFrame
+      chart={casesChart}
+      unit="TWh"
+      geography="United States"
+      period="2025–2050"
+      sources={[ENERGY_SOURCES.aeo]}
+      legend={caseLegend}
+      summary="All eleven AEO2026 cases increase total electricity use by 2050, but their endpoints differ materially. The Counterfactual Baseline is emphasized; the remaining cases are context, not a probability distribution."
+      caveats={['AEO cases are conditional scenarios with distinct assumptions. Their minimum and maximum do not form a confidence interval.']}
+    >
+      <LinePlot slot="plot" series={AEO_DEMAND_SERIES} emphasizedSeriesId="Counterfactual Baseline" xLabel="Year" yLabel="Total electricity use" unit="TWh" focusX={[2025, 2050]} summary="Eleven AEO2026 conditional U.S. electricity-use cases through 2050, with the Counterfactual Baseline emphasized." />
+      <DataTable slot="table" caption="AEO2026 total electricity-use endpoints in 2050" columns={[
+        { key: 'source', label: 'AEO case' }, { key: 'value', label: '2050 electricity use', unit: 'TWh', numeric: true }, { key: 'status', label: 'Evidence status' },
+      ]} rows={AEO_DEMAND_2050} />
+    </ChartFrame>
+
+    <ChartFrame
+      chart={sectorsChart}
+      unit="TWh"
+      geography="United States"
+      period="2050 · AEO2026 Counterfactual Baseline"
+      sources={[ENERGY_SOURCES.aeo]}
+      legend={legend(AEO_BASELINE_SECTOR_2050)}
+      summary="In the AEO2026 Counterfactual Baseline, residential and commercial sales are the largest 2050 sector categories, followed by industrial sales. Direct transportation sales remain small because charging is usually assigned to its residential or commercial location."
+      caveats={['The four sales sectors are mutually exclusive and can be compared. Direct use is outside this sector-sales decomposition.']}
+    >
+      <BarPlot slot="plot" id="demand-sector-2050" values={AEO_BASELINE_SECTOR_2050} valueLabel="Electricity sales" unit="TWh" summary="Four disjoint U.S. electricity-sales sectors in the AEO2026 Counterfactual Baseline for 2050." />
+      <DataTable slot="table" caption="AEO2026 Counterfactual Baseline electricity sales by sector" columns={[
+        { key: 'sector', label: 'Sector' }, { key: 'year', label: 'Year', numeric: true }, { key: 'value', label: 'Electricity sales', unit: 'TWh', numeric: true },
+      ]} rows={AEO_BASELINE_SECTOR_TABLE} />
+    </ChartFrame>
+  </section>
+
+  <section id="problems" class="chapter-act" data-chapter-section>
+    <div class="act-heading">
+      <p class="section-kicker">02 · Problems and growth drivers</p>
+      <h2>New loads differ in scope, timing, location, and flexibility</h2>
+      <p>Data centers and electric vehicles can add substantial annual demand, but their values cannot be treated as interchangeable totals or added on top of demand that already contains them.</p>
+    </div>
+
+    <ChartFrame
+      chart={dataCenterChart}
+      unit="TWh"
+      geography="World and United States · separate panels"
+      period="2014–2050 · source-specific milestones"
+      sources={[ENERGY_SOURCES.dataCenterWorld, ENERGY_SOURCES.dataCenterUs, ENERGY_SOURCES.aeo]}
+      legend={[
+        { label: 'Observed or reported estimate', className: 'chart-series--0' },
+        { label: 'Publisher scenario or range', className: 'chart-series--context' },
+      ]}
+      annotations={['Total-facility evidence and server-only AEO outputs are never connected as one series.']}
+      summary="Global and U.S. total-facility estimates rise in publisher assessments. AEO2026 separately reports server compute, whose 2050 values vary substantially across cases and exclude unisolated facility overhead."
+      caveats={['GPU shipments, utilization, average server power, efficiency, cooling, and power-usage effectiveness drive the long-run range.']}
+    >
+      <div slot="plot" class="chart-small-multiples">
+        <section><h4>World · total facility</h4><DotRangePlot values={facilityWorld} valueLabel="Annual electricity" unit="TWh" summary="World total-facility data-center electricity estimates and publisher scenarios." height={270} /></section>
+        <section><h4>United States · total facility</h4><DotRangePlot values={facilityUs} valueLabel="Annual electricity" unit="TWh" summary="U.S. total-facility data-center estimates and the LBNL 2028 projection range." height={270} /></section>
+        <section><h4>United States · server compute only</h4><DotRangePlot values={DATA_CENTER_SERVER_2050} valueLabel="Annual electricity" unit="TWh" summary="AEO2026 2050 server-only range with the Counterfactual Baseline point." height={180} /></section>
+      </div>
+      <DataTable slot="table" caption="Data-center electricity evidence with incompatible scopes kept separate" columns={[
+        { key: 'layer', label: 'Layer' }, { key: 'label', label: 'Geography, year, case' }, { key: 'value', label: 'Point', unit: 'TWh', numeric: true }, { key: 'low', label: 'Low', unit: 'TWh', numeric: true }, { key: 'high', label: 'High', unit: 'TWh', numeric: true }, { key: 'scope', label: 'Accounting scope' },
+      ]} rows={dataCenterTable} />
+    </ChartFrame>
+
+    <ChartFrame
+      chart={evChart}
+      unit="TWh"
+      geography="United States and world · separate panels"
+      period="2018–2035 observed estimates and source scenarios; AEO endpoint at 2050"
+      sources={[ENERGY_SOURCES.demandHistory, ENERGY_SOURCES.aeo, ENERGY_SOURCES.evWorld]}
+      summary="U.S. experimental EV electricity estimates rise after 2018, with a methodology break in 2023. AEO2026 charging-location cases and IEA global milestones show much larger conditional future loads."
+      caveats={['EV charging is already contained in total electricity use. It is an overlay, never an additive demand category.', 'CPS and NZE 2035 values are publisher lower bounds.']}
+    >
+      <div slot="plot" class="chart-small-multiples">
+        <section><h4>U.S. observed experimental estimate</h4><LinePlot series={EV_US_HISTORY} xLabel="Year" yLabel="EV charging" unit="TWh" focusX={[2018, 2022, 2023, 2025]} summary="Experimental U.S. on-road light-duty EV charging estimates, 2018 through 2025, with a method break at 2023." height={230} /></section>
+        <section><h4>U.S. AEO2026 charging locations · 2050</h4><DotRangePlot values={EV_AEO_2050} valueLabel="Annual electricity" unit="TWh" summary="AEO2026 range across cases for residential plus commercial charging-location electricity in 2050." height={180} /></section>
+        <section><h4>World road-EV milestones</h4><DotRangePlot values={EV_GLOBAL_MILESTONES} valueLabel="Annual electricity" unit="TWh" summary="IEA observed estimate and 2035 road-electric-vehicle scenario milestones, including lower bounds." height={250} /></section>
+      </div>
+      <DataTable slot="table" caption="Electric-vehicle electricity evidence by separate panel and scope" columns={[
+        { key: 'panel', label: 'Panel' }, { key: 'label', label: 'Year or scenario' }, { key: 'value', label: 'Point', unit: 'TWh', numeric: true }, { key: 'low', label: 'Low or lower bound', unit: 'TWh', numeric: true }, { key: 'high', label: 'High', unit: 'TWh', numeric: true },
+      ]} rows={evTable} />
+    </ChartFrame>
+
+    <ChartFrame
+      chart={loadChart}
+      unit="MW"
+      geography="EIA Texas region"
+      period="2024 seasonal average by UTC hour ending"
+      sources={[ENERGY_SOURCES.eia930]}
+      legend={legend(TEXAS_SEASONAL_LOAD_SERIES)}
+      summary="Texas regional average demand changes across the day and by season. The same annual energy volume could create a different peak if flexible loads move between these hours."
+      caveats={['This is a 2024 observed average profile, not a future hourly demand forecast.', 'Region and national EIA-930 profiles use UTC; balancing-authority and subregion profiles use local clock.']}
+    >
+      <LinePlot slot="plot" series={TEXAS_SEASONAL_LOAD_SERIES} xLabel="UTC hour ending" yLabel="Mean demand" unit="MW" focusX={profileHours} summary="Four 2024 seasonal average daily load shapes for the EIA Texas region, shown in UTC hour ending." />
+      <DataTable slot="table" caption="Selected hours from the 2024 EIA Texas regional seasonal average profiles" columns={[
+        { key: 'season', label: 'Season' }, { key: 'hour', label: 'UTC hour ending', numeric: true }, { key: 'meanDemand', label: 'Mean demand', unit: 'MW', numeric: true },
+      ]} rows={profileTable} />
+    </ChartFrame>
+
+    <section class="annual-peak-explainer" aria-labelledby="annual-peak-title">
+      <div>
+        <EvidenceBadge state="observed" />
+        <h3 id="annual-peak-title">Annual energy is not peak demand</h3>
+        <p>The Texas regional 2024 summary contains {TEXAS_LOAD_SUMMARY.observationCount.toLocaleString('en-US')} hourly observations. Mean demand and the observed peak answer different planning questions.</p>
+      </div>
+      <dl>
+        <div><dt>Mean demand</dt><dd>{TEXAS_LOAD_SUMMARY.meanMw.toLocaleString('en-US', { maximumFractionDigits: 0 })} MW</dd></div>
+        <div><dt>Observed peak</dt><dd>{TEXAS_LOAD_SUMMARY.peakMw.toLocaleString('en-US', { maximumFractionDigits: 0 })} MW</dd></div>
+        <div><dt>Mean ÷ peak</dt><dd>{(TEXAS_LOAD_SUMMARY.loadFactor * 100).toLocaleString('en-US', { maximumFractionDigits: 1 })}%</dd></div>
+      </dl>
+      <p><strong>Peak time:</strong> {TEXAS_LOAD_SUMMARY.peakTime} ({TEXAS_LOAD_SUMMARY.clockBasis}). Annual TWh alone cannot determine peak GW, ramping, congestion, or resource adequacy.</p>
+      <SourceDrawer id="annual-peak-eia930-source" source={ENERGY_SOURCES.eia930} triggerLabel="Inspect EIA-930 source" />
+    </section>
+  </section>
+
+  <section id="choices" class="chapter-act" data-chapter-section>
+    <ViewpointGrid
+      id="demand-viewpoints"
+      title="Demand choices change costs and burdens differently"
+      items={[
+        { viewpoint: 'people_and_households', label: 'Households', problem: 'Need efficient equipment and charging options without losing comfort, mobility, or control.', evidenceState: 'qualitative_evidence' },
+        { viewpoint: 'utilities_and_infrastructure_owners', label: 'Utilities and grid operators', problem: 'Must plan for coincident peaks, local connections, ramps, and uncertainty—not just annual sales.', evidenceState: 'qualitative_evidence' },
+        { viewpoint: 'businesses_and_producers', label: 'Large-load customers', problem: 'Need transparent connection rules and credible pathways for flexibility, siting, and infrastructure cost allocation.', evidenceState: 'qualitative_evidence' },
+        { viewpoint: 'government_and_taxpayers', label: 'Governments and ratepayers', problem: 'Need investment rules that avoid shifting speculative or stranded infrastructure costs without review.', evidenceState: 'qualitative_evidence' },
+      ]}
+    />
+    <OptionComparison
+      id="demand-options"
+      title="How to meet growing electric service demand"
+      question="Which demand strategy preserves useful services while reducing avoidable peak and infrastructure pressure?"
+      dimensions={[
+        { id: 'service', label: 'Service' }, { id: 'annual', label: 'Annual demand' }, { id: 'peak', label: 'Peak and ramps' }, { id: 'rules', label: 'Connection and operation' },
+      ]}
+      options={[
+        { id: 'unmanaged', label: 'Unmanaged growth', summary: 'Connect loads without systematic efficiency or flexibility requirements.', values: { service: 'Expands', annual: 'Higher', peak: 'Can intensify coincident peaks', rules: 'First-come infrastructure response' } },
+        { id: 'curtail', label: 'Service suppression', summary: 'Rely primarily on lower adoption or reduced service.', values: { service: 'Constrained', annual: 'Lower', peak: 'Lower in some cases', rules: 'Can shift burdens to users' } },
+        { id: 'flexible', label: 'Efficient and flexible electrification', summary: 'Pair efficient end uses with managed timing and transparent large-load rules.', values: { service: 'Expands or improves', annual: 'Reduced per unit of service', peak: 'Managed where technically feasible', rules: 'Performance, flexibility, and cost-allocation conditions' } },
+      ]}
+    />
+  </section>
+
+  <section id="recommendation" class="chapter-act" data-chapter-section>
+    <RecommendationPanel
+      id="demand-recommendation"
+      title="Pursue efficient and flexible electrification"
+      conclusion="Combine end-use efficiency with managed charging, technically feasible flexible computing and industrial loads, and transparent rules for connecting large new demand."
+      rationale={['Efficiency reduces electricity required per unit of useful service.', 'Flexibility can shift some load away from costly or constrained hours.', 'Transparent connection rules make infrastructure needs, timing, and cost responsibility visible.']}
+      tradeoffs={['Not every load is flexible.', 'Controls, communications, tariffs, and customer protections require implementation.', 'More annual electricity still requires substantial clean supply and grid investment.']}
+      residualRisks={['Local peaks can persist even if national annual totals appear manageable.', 'Scenario ranges remain sensitive to technology, economic, and policy assumptions.', 'Poorly designed flexibility programs can transfer risk to customers.']}
+    />
+  </section>
+
+  <section id="model" class="chapter-act" data-chapter-section>
+    <div class="act-heading">
+      <p class="section-kicker">05 · Model and working view</p>
+      <h2>Compare source scenarios without turning them into an hourly forecast</h2>
+      <p>The indexed view normalizes each driver to its own 2025 AEO value. Co-movement is descriptive and does not establish a single-variable causal coefficient.</p>
+    </div>
+    <ChartFrame
+      chart={driversChart}
+      unit="Index · 2025 = 100"
+      geography="United States"
+      period="2025–2050 · AEO2026 Counterfactual Baseline"
+      sources={[ENERGY_SOURCES.aeo]}
+      legend={legend(INDEXED_DEMAND_DRIVERS)}
+      summary="Population, households, commercial floorspace, and real GDP follow different indexed paths in the AEO2026 Counterfactual Baseline. Indexing allows comparison of relative change without mixing their native units."
+      caveats={['The index is a dashboard transformation. Native values remain available in the source dataset.', 'Parallel movement does not prove a causal coefficient.']}
+    >
+      <LinePlot slot="plot" series={INDEXED_DEMAND_DRIVERS} xLabel="Year" yLabel="Within-series index" unit="2025 = 100" focusX={[2025, 2030, 2050]} summary="Four AEO2026 demand drivers indexed independently to their own 2025 values." />
+      <DataTable slot="table" caption="Selected indexed AEO2026 demand-driver values" columns={[
+        { key: 'driver', label: 'Driver' }, { key: 'year', label: 'Year', numeric: true }, { key: 'index', label: 'Index', unit: '2025 = 100', numeric: true },
+      ]} rows={driverTable} />
+    </ChartFrame>
+    <DemandWorkbench />
+    <CaveatPanel
+      title="Forbidden model claim"
+      caveats={['The workbench supports annual source-scenario accounting and indexed comparison only.']}
+      prohibitedInterpretations={['Do not fabricate future hourly load profiles from annual AEO or NREL values.', 'Do not claim a reliability forecast, transmission requirement, or peak capacity result from annual TWh.']}
+    />
+  </section>
+
+  <section id="delivery" class="chapter-act" data-chapter-section>
+    <div class="act-heading">
+      <p class="section-kicker">06 · Delivery</p>
+      <h2>Connect load growth to measurable flexibility and infrastructure gates</h2>
+    </div>
+    <ol class="delivery-sequence">
+      <li><strong>Publish load definitions.</strong><span>Identify whether a value is total facility, server only, charging-location load, sector sales, direct use, or total use.</span></li>
+      <li><strong>Acquire hourly and geographic profiles.</strong><span>Use observed profiles for present operations and validated modeled profiles for future planning.</span></li>
+      <li><strong>Set large-load connection rules.</strong><span>Make timing, infrastructure, flexibility, reliability, and cost responsibility explicit.</span></li>
+      <li><strong>Deploy customer-protective flexibility.</strong><span>Prioritize managed charging, efficient equipment, thermal storage, computing flexibility, and industrial demand response where technically feasible.</span></li>
+      <li><strong>Review outcomes.</strong><span>Track peak contribution, service quality, curtailment, local infrastructure, bills, and distributional effects.</span></li>
+    </ol>
+  </section>
+</article>

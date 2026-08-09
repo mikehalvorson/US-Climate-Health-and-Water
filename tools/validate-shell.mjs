@@ -36,13 +36,16 @@ for (const path of pages) {
   const sequence = Number(id.slice(-6));
   const h1Count = (html.match(/<h1(?:\s|>)/gu) ?? []).length;
   if (h1Count !== 1) failures.push(`${routePath}: expected one h1, found ${h1Count}`);
-  for (const required of ['id="main-content"', 'aria-label="Primary navigation"', 'class="skip-link"', 'data-theme-toggle', 'data-release-status="shell"', 'aria-current="page"']) {
+  for (const required of ['id="main-content"', 'aria-label="Primary navigation"', 'class="skip-link"', 'data-theme-toggle', 'aria-current="page"']) {
     if (!html.includes(required)) failures.push(`${routePath}: missing ${required}`);
   }
+  if (!/data-release-status="(?:shell|chapter)"/u.test(html)) failures.push(`${routePath}: missing release status`);
   if (html.includes('undefined') || html.includes('NaN')) failures.push(`${routePath}: contains an invalid rendered value`);
   if (sequence >= 2 && sequence <= 15) {
     for (const anchor of storyAnchors) if (!html.includes(`id="${anchor}"`)) failures.push(`${routePath}: missing story anchor ${anchor}`);
-    if (!html.includes('data-shell-section')) failures.push(`${routePath}: shell publication state is not explicit`);
+    const released = html.includes('data-release-status="chapter"');
+    if (released && !html.includes('data-chapter-content')) failures.push(`${routePath}: released chapter content is missing`);
+    if (!released && !html.includes('data-shell-section')) failures.push(`${routePath}: shell publication state is not explicit`);
     if (!html.includes('class="tab-nav"')) failures.push(`${routePath}: local tab navigation is missing`);
   }
   if (sequence < 16 && !html.includes('rel="next"')) failures.push(`${routePath}: next chapter link is missing`);

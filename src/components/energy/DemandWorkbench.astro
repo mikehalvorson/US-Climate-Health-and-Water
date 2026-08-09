@@ -1,0 +1,59 @@
+---
+import { DEMAND_WORKBENCH_RECORDS, ENERGY_SOURCES } from '../../lib/data/energy';
+import type { ScenarioControlDefinition } from '../../lib/scenarios/state';
+import ScenarioWorkbench from '../ScenarioWorkbench.astro';
+import SourceDrawer from '../SourceDrawer.astro';
+
+const controls: readonly ScenarioControlDefinition[] = [
+  {
+    id: 'family', label: 'Scenario family and case', defaultValue: 'aeo_baseline',
+    options: [
+      { value: 'aeo_baseline', label: 'AEO2026 · Counterfactual Baseline' },
+      { value: 'aeo_high_demand', label: 'AEO2026 · High Electricity Demand' },
+      { value: 'efs_reference', label: 'NREL EFS 2018 · Reference electrification' },
+      { value: 'efs_high', label: 'NREL EFS 2018 · High electrification' },
+    ],
+  },
+  {
+    id: 'metric', label: 'End use', defaultValue: 'total',
+    options: [
+      { value: 'total', label: 'Total electricity use' },
+      { value: 'residential', label: 'Residential' },
+      { value: 'commercial', label: 'Commercial' },
+      { value: 'industrial', label: 'Industrial' },
+      { value: 'transportation', label: 'Transportation' },
+    ],
+  },
+  {
+    id: 'horizon', label: 'Horizon', defaultValue: '2050',
+    options: [{ value: '2030', label: '2030' }, { value: '2050', label: '2050' }],
+  },
+];
+const initial = DEMAND_WORKBENCH_RECORDS.find((record) => record.family === 'aeo_baseline' && record.metric === 'total' && record.horizon === 2050);
+---
+<div data-demand-workbench data-workbench-records={JSON.stringify(DEMAND_WORKBENCH_RECORDS)}>
+  <ScenarioWorkbench
+    id="demand-scenario-selector"
+    title="Compare native demand values and within-family indexes"
+    decision="Select an end use, source scenario family, and horizon. Values stay inside their source accounting and vintage."
+    controls={controls}
+    modelFamily="AEO2026 · NEMS"
+    seamNote="AEO2026 and NREL EFS use different vintages, reference years, and sector accounting. The workbench switches families; it never splices them."
+    readiness="Indexed accounting view · not a reliability forecast"
+  >
+    <dl class="workbench-result" data-demand-output>
+      <div><dt>Native value</dt><dd><span data-workbench-value>{initial?.value?.toLocaleString('en-US', { maximumFractionDigits: 1 })}</span> <span data-workbench-unit>{initial?.unit}</span></dd></div>
+      <div><dt>Within-family index</dt><dd data-workbench-index>{initial?.index?.toLocaleString('en-US', { maximumFractionDigits: 1 })}</dd></div>
+      <div><dt>Reference</dt><dd data-workbench-reference>{initial?.referencePeriod}</dd></div>
+      <div><dt>Scope</dt><dd data-workbench-scope>{initial?.scope}</dd></div>
+    </dl>
+    <p class="workbench-evidence" data-workbench-evidence>{initial?.evidence}</p>
+    <div class="workbench-sources" data-workbench-sources>
+      <span>Source family:</span>
+      <SourceDrawer id="demand-workbench-aeo-source" source={ENERGY_SOURCES.aeo} triggerLabel="AEO2026" />
+      <SourceDrawer id="demand-workbench-efs-source" source={ENERGY_SOURCES.efs} triggerLabel="NREL EFS 2018" />
+    </div>
+  </ScenarioWorkbench>
+</div>
+
+<script>import '../../scripts/energy-workbenches.ts';</script>
