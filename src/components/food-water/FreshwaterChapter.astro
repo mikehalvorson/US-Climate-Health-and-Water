@@ -1,0 +1,237 @@
+---
+import BarPlot from '../charts/BarPlot.astro';
+import DotRangePlot from '../charts/DotRangePlot.astro';
+import HeatmapPlot from '../charts/HeatmapPlot.astro';
+import LinePlot from '../charts/LinePlot.astro';
+import MapContextPlot from '../charts/MapContextPlot.astro';
+import NetworkPlot from '../charts/NetworkPlot.astro';
+import CaveatPanel from '../CaveatPanel.astro';
+import ChartFrame from '../ChartFrame.astro';
+import DataTable from '../DataTable.astro';
+import EvidenceBadge from '../EvidenceBadge.astro';
+import OptionComparison from '../OptionComparison.astro';
+import RecommendationPanel from '../RecommendationPanel.astro';
+import ViewpointGrid from '../ViewpointGrid.astro';
+import {
+  approvedFoodWaterChart,
+  AWG_ENERGY_RANGES,
+  AWG_SCALE_TABLE,
+  DESALINATION_SCALE_BARS,
+  DESALINATION_SCALE_TABLE,
+  HOUSEHOLD_SERVICE_RANGES,
+  HOUSEHOLD_SERVICE_TABLE,
+  SALTWATER_CAUSAL_MODEL,
+  WATER_CITY_POINTS,
+  WATER_CITY_TABLE,
+  WATER_CONSUMPTION_NETWORK,
+  WATER_CONSUMPTION_TABLE,
+  WATER_INTERVENTION_COLUMNS,
+  WATER_INTERVENTION_MATRIX,
+  WATER_INTERVENTION_ROWS,
+  WATER_INTERVENTION_TABLE,
+  WATER_RISK_HORIZONS,
+  WATER_SOURCES,
+  WATER_WITHDRAWAL_SERIES,
+  WATER_WITHDRAWAL_TABLE,
+} from '../../lib/data/foodWater';
+import { hrefForRoute } from '../../lib/navigation/shell';
+import WaterWorkbench from './WaterWorkbench.astro';
+
+const withdrawalChart = approvedFoodWaterChart('us-water-withdrawals-1950-2015', 'line');
+const consumptionChart = approvedFoodWaterChart('withdrawal-versus-consumption', 'sankey');
+const householdChart = approvedFoodWaterChart('household-service-ladder', 'dot_range');
+const cityChart = approvedFoodWaterChart('city-source-dependency-map', 'map');
+const horizonChart = approvedFoodWaterChart('freshwater-risk-horizons', 'line');
+const saltwaterChart = approvedFoodWaterChart('coastal-saltwater-intrusion-causal-model', 'causal_path');
+const desalinationChart = approvedFoodWaterChart('desalination-scale', 'bar');
+const awgChart = approvedFoodWaterChart('awg-service-feasibility', 'dot_range');
+const matrixChart = approvedFoodWaterChart('water-portfolio-decision-matrix', 'matrix');
+const base = import.meta.env.BASE_URL;
+const riskTypeLabel = (value: string) => value.replaceAll('_', ' ');
+---
+<article class="chapter-content" data-chapter-content="freshwater-security">
+  <section id="current-system" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">01 · Current system</p><h2>National water totals conceal different physical services</h2><p>The latest fully comparable all-category U.S. inventory ends in 2015. It records withdrawals, not a national run-out clock, and its categories cannot be interpreted without source, geography, and return-flow boundaries.</p></div>
+
+    <div class="evidence-stat-grid evidence-stat-grid--four" aria-label="Freshwater accounting headline evidence">
+      <article class="evidence-stat"><EvidenceBadge state="observed" /><p>2015 freshwater withdrawal</p><strong>281 <span>Bgal/day</span></strong><small>Latest fully comparable all-category inventory</small></article>
+      <article class="evidence-stat"><EvidenceBadge state="reported_estimate" /><p>Covered-sector crop consumption</p><strong>75.7 <span>Bgal/day</span></strong><small>2010–20 modeled conterminous-U.S. average</small></article>
+      <article class="evidence-stat"><EvidenceBadge state="reported_estimate" /><p>Watershed stress exposure</p><strong>27 <span>million people</span></strong><small>2009–20 screening indicator; not tap-water loss</small></article>
+      <article class="evidence-stat"><EvidenceBadge state="data_gap" /><p>National plastic-policy net water saving</p><strong>Unavailable</strong><small>Replacement service and watershed terms are not populated</small></article>
+    </div>
+
+    <ChartFrame
+      chart={withdrawalChart}
+      unit="Billion gallons per day withdrawn"
+      geography="United States inventory boundary"
+      period="1950–2015; five-year inventory points"
+      sources={[WATER_SOURCES.inventory]}
+      summary="Total U.S. withdrawals rose through 1980 and were 322 billion gallons per day in 2015. Thermoelectric, irrigation, public-supply, domestic, livestock, and industrial series retain historical category changes and do not sum exactly to the total."
+      caveats={['2015 is the last fully comparable all-category national inventory in this evidence package.', 'Historical definitions and estimation methods changed; no line is extended to 2026.', 'Withdrawal is water taken from a source, not necessarily water consumed.']}
+    >
+      <LinePlot slot="plot" series={WATER_WITHDRAWAL_SERIES} xLabel="Inventory year" yLabel="Withdrawal" unit="Bgal/day" summary="U.S. total and six category withdrawal histories from 1950 through 2015." focusX={[1950, 1980, 2015]} emphasizedSeriesId="total" height={430} />
+      <DataTable slot="table" caption="U.S. water withdrawals by selected category, 1950–2015" columns={[{ key: 'year', label: 'Year', numeric: true }, { key: 'category', label: 'Category' }, { key: 'withdrawal', label: 'Withdrawal', unit: 'Bgal/day', numeric: true }, { key: 'accountingNote', label: 'Accounting note' }]} rows={WATER_WITHDRAWAL_TABLE} />
+    </ChartFrame>
+
+    <ChartFrame
+      chart={consumptionChart}
+      unit="Million gallons per day; withdrawal and consumptive use shown as separate flows"
+      geography="Conterminous United States"
+      period="Modeled 2010–20 average"
+      sources={[WATER_SOURCES.consumption]}
+      summary="Crop irrigation withdrew about 105,497 and consumed 75,698 million gallons per day across the covered sectors. Freshwater thermoelectric power withdrew 82,656 but consumed 2,904, illustrating why withdrawal and consumption cannot share an unlabeled total."
+      caveats={['The three-sector subtotal is not total U.S. water use.', 'Do not mix these modeled 2010–20 values with the 2015 inventory bars.', 'Returned water may still differ in temperature, quality, or timing.']}
+    >
+      <NetworkPlot slot="plot" id="water-withdrawal-consumption" nodes={WATER_CONSUMPTION_NETWORK.nodes} edges={WATER_CONSUMPTION_NETWORK.edges} variant="sankey" unit="million gallons per day" summary="Withdrawals into crop irrigation, public supply, and thermoelectric power compared with the portion consumed." height={430} />
+      <DataTable slot="table" caption="Withdrawal versus consumptive use for three modeled sectors" columns={[{ key: 'sector', label: 'Sector' }, { key: 'withdrawal', label: 'Withdrawal', unit: 'Mgal/day', numeric: true }, { key: 'consumptiveUse', label: 'Consumptive use', unit: 'Mgal/day', numeric: true }, { key: 'fraction', label: 'Consumed fraction', unit: '%', numeric: true }, { key: 'geography', label: 'Geography' }, { key: 'period', label: 'Period' }]} rows={WATER_CONSUMPTION_TABLE} />
+    </ChartFrame>
+
+    <ChartFrame
+      chart={householdChart}
+      unit="Liters per person per day"
+      geography="U.S. current domestic average compared with WHO basic-needs guidance"
+      period="2015 U.S. average and current cited guidance"
+      sources={[WATER_SOURCES.inventory, WATER_SOURCES.household]}
+      summary="The U.S. domestic-use average of 310.4 liters per person per day is almost sixty times the 5.3-liter drinking-only reference. A drinking-water device therefore does not replace cooking, sanitation, laundry, bathing, leaks, or outdoor service."
+      caveats={['WHO references describe basic-needs guidance, not a U.S. household-service target.', 'The 82-gallon U.S. value is a national average, not an efficient-service floor.']}
+    >
+      <DotRangePlot slot="plot" values={HOUSEHOLD_SERVICE_RANGES} valueLabel="Service volume" unit="L/person/day" summary="Drinking-only, basic service, and full current U.S. domestic service volumes." labelWidth={285} height={320} />
+      <DataTable slot="table" caption="Household water-service ladder" columns={[{ key: 'serviceLevel', label: 'Service level' }, { key: 'litersPerPersonPerDay', label: 'Volume', unit: 'L/person/day', numeric: true }, { key: 'meaning', label: 'Interpretation' }]} rows={HOUSEHOLD_SERVICE_TABLE} />
+    </ChartFrame>
+  </section>
+
+  <section id="problems" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">02 · Why this is a problem</p><h2>Water service can fail locally while national volume remains large</h2><p>Dependence on one river, aquifer, aqueduct, treatment train, or operating rule creates distinct failure pathways. A location marker identifies the utility context; it does not encode city-wide run-out probability.</p></div>
+
+    <ChartFrame
+      chart={cityChart}
+      unit="Context location and source-portfolio description; no scarcity score"
+      geography="Selected U.S. cities and regions"
+      period="Source-specific profile dates through the 2026 access date"
+      sources={[WATER_SOURCES.inventory, WATER_SOURCES.nationalRisk, WATER_SOURCES.colorado, WATER_SOURCES.coastal]}
+      summary="Selected utilities rely on very different combinations of rivers, reservoirs, groundwater, reuse, transfers, and desalination. Source dependency identifies an exposure pathway; it is not a probability that a city runs out of water."
+      caveats={['Markers are approximate contextual locators, not boundary-accurate watershed geometry.', 'Dated supply mixes are valid only for their stated source year.', 'Current drought stages and restrictions are volatile and require refresh before operational use.']}
+    >
+      <MapContextPlot slot="plot" points={WATER_CITY_POINTS} unit="portfolio context" summary="Context locations for selected U.S. water-utility source portfolios." height={430} />
+      <DataTable slot="table" caption="Selected city and regional water-source dependencies" columns={[{ key: 'place', label: 'Place' }, { key: 'supplyProfile', label: 'Supply profile' }, { key: 'primaryExposures', label: 'Primary exposures' }, { key: 'adaptation', label: 'Adaptation context' }, { key: 'qualification', label: 'Critical qualification' }]} rows={WATER_CITY_TABLE} />
+    </ChartFrame>
+
+    <ChartFrame
+      chart={horizonChart}
+      unit="Typed date, period, or open horizon; source-specific metric retained"
+      geography="Selected U.S. national, basin, state, county, and utility contexts"
+      period="Observed and planning evidence from 2009 through 2100, plus open-ended hazards"
+      sources={[WATER_SOURCES.nationalRisk, WATER_SOURCES.colorado, WATER_SOURCES.coastal]}
+      summary="The evidence includes current conditions, observed chronic risks, episodic hazards, a 2027 regulatory deadline, planning counterfactuals, scenario-model horizons, and infrastructure targets. These classes are not failure dates and cannot be placed on one countdown."
+      caveats={['Open-ended hazards retain no fabricated year.', 'Planning counterfactuals assume recommended strategies are absent or delayed.', 'The Miami model reports no evaluated wellfield impact through 2040; it does not guarantee conditions after 2040.']}
+    >
+      <div slot="plot" class="risk-horizon-plot" aria-label="Typed freshwater risk horizon timeline">
+        {WATER_RISK_HORIZONS.map((item) => <article data-risk-type={item.riskType}><span>{riskTypeLabel(item.riskType)}</span><strong>{item.geography}</strong><p>{item.startYear === null ? item.horizon : item.endYear !== null && item.endYear !== item.startYear ? `${item.startYear}–${item.endYear}` : item.startYear}</p><small>{item.interpretation}</small></article>)}
+      </div>
+      <DataTable slot="table" caption="Typed freshwater risk horizons" columns={[{ key: 'geography', label: 'Geography' }, { key: 'riskType', label: 'Risk type' }, { key: 'startYear', label: 'Start', numeric: true }, { key: 'endYear', label: 'End', numeric: true }, { key: 'horizon', label: 'Horizon label' }, { key: 'metric', label: 'Metric' }, { key: 'value', label: 'Value', numeric: true }, { key: 'unit', label: 'Unit' }, { key: 'interpretation', label: 'Evidence interpretation' }]} rows={WATER_RISK_HORIZONS} />
+    </ChartFrame>
+
+    <ChartFrame
+      chart={saltwaterChart}
+      unit="Causal relationship; no universal rate or failure year"
+      geography="Coastal aquifer and wellfield framework"
+      period="Current hydrogeologic evidence"
+      sources={[WATER_SOURCES.coastal]}
+      summary="Sea level is one driver of saltwater intrusion. Pumping, canal and drainage stages, drought and recharge, aquifer geology, hydraulic gradient, and well-screen placement determine whether a particular well becomes saline."
+      caveats={['Miami, Long Island, and Brunswick have different pathways and observed conditions.', 'A regional aquifer can retain large freshwater volume while individual wells become unusable.']}
+    >
+      <NetworkPlot slot="plot" id="saltwater-causal-model" nodes={SALTWATER_CAUSAL_MODEL.nodes} edges={SALTWATER_CAUSAL_MODEL.edges} variant="causal_path" unit="qualitative causal pathway" summary="Multiple hydrologic and operating drivers move a saltwater interface toward a well and affect delivered water quality." height={450} />
+      <DataTable slot="table" caption="Saltwater-intrusion causal pathways" columns={[{ key: 'place', label: 'Place or pathway' }, { key: 'condition', label: 'Condition' }, { key: 'qualification', label: 'Qualification' }]} rows={[
+        { place: 'Miami-Dade County', condition: 'Sea level, pumping, canals, recharge, and highly permeable aquifer interact', qualification: 'No modeled wellfield impact through 2040 in cited evaluated cases' },
+        { place: 'Long Island', condition: 'Pumping and coastal boundaries produce localized intrusion', qualification: 'Localized well impacts do not imply regional exhaustion' },
+        { place: 'Brunswick–Glynn County', condition: 'Pumping-induced migration interacts with an existing chloride plume', qualification: 'Observed local constraint requiring monitoring and pumping management' },
+      ]} />
+    </ChartFrame>
+
+    <ViewpointGrid id="freshwater-viewpoints" title="Water reliability distributes risk across connected users" items={[
+      { viewpoint: 'people_and_households', label: 'People and households', problem: 'Affordability, quality, outages, and basic access can fail before a source is physically exhausted.', evidenceState: 'qualitative_evidence', consequence: 'Efficiency and rates must preserve essential service and protect low-income households.' },
+      { viewpoint: 'businesses_and_producers', label: 'Farmers and rural communities', problem: 'Groundwater decline can reduce irrigated production and reshape local economies over staggered horizons.', evidenceState: 'source_scenario', consequence: 'Pumping governance, transition support, crop choices, and rural investment must move together.' },
+      { viewpoint: 'utilities_and_infrastructure_owners', label: 'Utilities and operators', problem: 'Treatment, conveyance, storage, power, and source concentration govern operational reliability.', evidenceState: 'reported_estimate', consequence: 'Portfolios and adaptive operating thresholds matter more than a single supply headline.' },
+      { viewpoint: 'host_communities_and_tribes', label: 'Host communities and Tribes', problem: 'Transfers, reservoirs, wellfields, brine, and watershed actions affect sovereign rights and place-based values.', evidenceState: 'qualitative_evidence', consequence: 'Authority, consent, environmental flows, and benefit sharing must be explicit.' },
+      { viewpoint: 'ecosystems_and_nonhuman_life', label: 'Ecosystems', problem: 'Withdrawals, altered flow timing, salinity, temperature, and concentrate can degrade habitat.', evidenceState: 'qualitative_evidence', consequence: 'A portfolio must protect environmental flows and water quality, not volume alone.' },
+      { viewpoint: 'government_and_taxpayers', label: 'Governments and ratepayers', problem: 'Late projects, drought emergencies, and stranded capacity can shift large costs inequitably.', evidenceState: 'source_scenario', consequence: 'Stage investments against observable thresholds and publish affordability impacts.' },
+    ]} />
+  </section>
+
+  <section id="choices" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">03 · Choices</p><h2>Demand, reuse, protection, storage, and new supply solve different problems</h2></div>
+    <OptionComparison id="water-options" title="Three freshwater portfolio postures" question="How should a basin or utility sequence demand, system operations, reuse, and new supply?" dimensions={[{ id: 'benefit', label: 'Primary benefit' }, { id: 'cost', label: 'Cost and lead time' }, { id: 'dependency', label: 'Dependencies' }, { id: 'residual', label: 'Residual risk' }, { id: 'maturity', label: 'Evidence maturity' }]} options={[
+      { id: 'supply-first', label: 'New-supply first', summary: 'Lead with desalination, transfers, or new extraction.', values: { benefit: 'Adds firm capacity where feasible', cost: 'High capital, energy, permitting, and conveyance', dependency: 'Source, rights, intake, brine, power, finance', residual: 'Demand, quality, ecosystem, and affordability risk', maturity: 'Mature technologies; highly site-specific economics' } },
+      { id: 'demand-only', label: 'Demand-only', summary: 'Rely on conservation and efficiency without targeted capacity.', values: { benefit: 'Fast, lower-cost reduction in avoidable use', cost: 'Program operation and equity protections', dependency: 'Codes, rates, enforcement, participation', residual: 'Extreme drought, growth, and single-source event risk', maturity: 'Strong for many measures; savings vary by use' } },
+      { id: 'portfolio', label: 'Adaptive portfolio', summary: 'Sequence efficiency, repair, reuse, protection, operations, and justified supply.', values: { benefit: 'Addresses demand, reliability, quality, and diversification', cost: 'Higher coordination and monitoring need', dependency: 'Basin governance, utility delivery, community authority', residual: 'Irreducible drought and project-performance risk', maturity: 'Strong rationale; package remains local' } },
+    ]} />
+
+    <ChartFrame
+      chart={desalinationChart}
+      unit="50-Mgal/day capacity equivalents; electricity range in table"
+      geography="U.S. national-scale illustrations anchored to operating municipal plants"
+      period="2015 water volumes with cited seawater reverse-osmosis energy range"
+      sources={[WATER_SOURCES.desalination, WATER_SOURCES.carlsbad, WATER_SOURCES.inventory]}
+      summary="A 50-million-gallon-per-day municipal increment is demonstrated scale. Matching 2015 U.S. domestic use would require about 532 such capacity equivalents and 118–165 TWh per year before distribution and other excluded burdens; replacing irrigation or all freshwater is vastly larger and is not proposed."
+      caveats={['Plant counts are capacity-equivalents, not a build program.', 'The energy range excludes distribution, embodied construction, and several site-specific intake and treatment burdens.', 'Brackish and seawater projects have different energy, intake, and concentrate constraints.']}
+    >
+      <BarPlot slot="plot" id="desalination-scale" values={DESALINATION_SCALE_BARS} valueLabel="50-Mgal/day capacity equivalents" unit="plants-equivalent" summary="Desalination capacity equivalents required to match selected 2015 U.S. water-use volumes." height={410} />
+      <DataTable slot="table" caption="Desalination capacity and electricity scale illustrations" columns={[{ key: 'target', label: 'Target volume' }, { key: 'capacity', label: 'Capacity', unit: 'Mgal/day', numeric: true }, { key: 'plantEquivalents', label: '50-Mgal/day equivalents', numeric: true }, { key: 'electricityLow', label: 'Electricity low', unit: 'TWh/year', numeric: true }, { key: 'electricityHigh', label: 'Electricity high', unit: 'TWh/year', numeric: true }, { key: 'interpretation', label: 'Interpretation' }]} rows={DESALINATION_SCALE_TABLE} />
+    </ChartFrame>
+
+    <ChartFrame
+      chart={awgChart}
+      unit="Proxy electricity, kilowatt-hours per day"
+      geography="Per-person and household service illustrations"
+      period="Current cited device context and dehumidifier-efficiency proxy"
+      sources={[WATER_SOURCES.awg, WATER_SOURCES.awgProxy, WATER_SOURCES.household]}
+      summary="Atmospheric water generation may serve a small drinking-water niche. Using a dehumidifier proxy, full current U.S. domestic service for one person would require roughly 82–183 kWh per day before potable treatment, maintenance, and cool- or dry-air derating."
+      caveats={['ENERGY STAR dehumidifier values are a condenser proxy, not certified AWG performance.', 'Rated output depends strongly on temperature and humidity.', 'Condensate requires treatment, sanitary storage, monitoring, and maintenance.']}
+    >
+      <DotRangePlot slot="plot" values={AWG_ENERGY_RANGES} valueLabel="Proxy electricity" unit="kWh/day" summary="Proxy atmospheric-water energy bands for drinking-only, basic, and full domestic service volumes." labelWidth={300} height={390} />
+      <DataTable slot="table" caption="Atmospheric water generation scale scenarios" columns={[{ key: 'service', label: 'Service' }, { key: 'waterLitersPerDay', label: 'Water', unit: 'L/day', numeric: true }, { key: 'electricityLow', label: 'Energy low', numeric: true }, { key: 'electricityHigh', label: 'Energy high', numeric: true }, { key: 'electricityUnit', label: 'Energy unit' }, { key: 'interpretation', label: 'Interpretation' }]} rows={AWG_SCALE_TABLE} />
+    </ChartFrame>
+  </section>
+
+  <section id="recommendation" class="chapter-act" data-chapter-section>
+    <RecommendationPanel
+      id="freshwater-recommendation"
+      title="Build adaptive basin and utility portfolios"
+      conclusion="Basin and utility portfolios that begin with efficiency, leak repair, reuse, watershed and aquifer protection, and operating improvements, then add targeted new supply where justified."
+      rationale={['Irrigation dominates covered consumptive use nationally, while utility and industrial risks are intensely local.', 'Efficiency, repair, reuse, recharge, storage, and operating changes can improve service without assuming an unlimited new source.', 'Targeted desalination or other supply can add reliability where full lifecycle value exceeds energy, ecological, permitting, and affordability costs.']}
+      tradeoffs={['Portfolio coordination is institutionally demanding', 'Demand measures can be inequitable without basic-service and affordability protection', 'Reuse and new supply require treatment, energy, public trust, and long-term operations']}
+      residualRisks={['Extreme multi-year drought and compound infrastructure failure', 'Over-allocation, legal conflict, contamination, and ecosystem thresholds', 'Project delay, cost escalation, and performance below planned yield']}
+    />
+
+    <ChartFrame
+      chart={matrixChart}
+      unit="Ordinal fit: 3 preferred, 2 conditional, 1 poor fit"
+      geography="Cross-domain planning framework"
+      period="Current evidence and recurring portfolio review"
+      sources={[WATER_SOURCES.inventory, WATER_SOURCES.consumption, WATER_SOURCES.coastal, WATER_SOURCES.desalination, WATER_SOURCES.awg]}
+      summary="Leak repair and demand reform fit avoidable demand; reuse, storage, recharge, and conservation fit seasonal municipal shortage; pumping and canal management fit coastal salinity; governance and transition fit agricultural depletion; atmospheric water is conditional for humid emergency niches, not utility base supply."
+      caveats={['Ordinal fit is a decision aid, not a cost-benefit score.', 'Reliability, energy, cost, quality, ecosystems, equity, and implementation time still require separate local assessment.']}
+    >
+      <HeatmapPlot slot="plot" id="water-intervention-fit" values={WATER_INTERVENTION_MATRIX} rows={WATER_INTERVENTION_ROWS} columns={WATER_INTERVENTION_COLUMNS} unit="fit class" summary="Preferred, conditional, and poor-fit intervention families for five water problems." variant="matrix" height={500} width={820} />
+      <DataTable slot="table" caption="Water intervention decision matrix" columns={[{ key: 'problem', label: 'Problem type' }, { key: 'preferred', label: 'Preferred interventions' }, { key: 'conditional', label: 'Conditional interventions' }, { key: 'poorFit', label: 'Poor fit' }]} rows={WATER_INTERVENTION_TABLE} />
+    </ChartFrame>
+  </section>
+
+  <section id="model" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">05 · Model-supported case</p><h2>Filter native evidence without manufacturing a run-out date</h2><p>The working view keeps sector accounting, source inventory, place dependency, typed horizon, and technology scale in independent panels.</p></div>
+    <WaterWorkbench />
+    <CaveatPanel title="Planning horizons are not run-out dates" caveats={['A regulatory deadline identifies when rules change; an infrastructure target identifies when capacity may be needed.', 'A planning counterfactual describes what happens under its assumptions if strategies are not implemented.', 'An episodic hazard can remain open-ended when no fixed year is defensible.']} prohibitedInterpretations={['Every western city runs out of water on a stated date.', 'A national average establishes a facility or watershed impact.', 'Desalination or atmospheric water can replace all present freshwater use without energy, cost, quality, brine, and distribution constraints.']} />
+  </section>
+
+  <section id="delivery" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">06 · Delivery</p><h2>Stage portfolios against service measures and observable thresholds</h2></div>
+    <ol class="delivery-sequence">
+      <li><strong>Define the service and accounting boundary.</strong><span>Separate withdrawal, consumptive use, delivery, capacity, indirect footprint, quality, and environmental flow.</span></li>
+      <li><strong>Repair and protect first.</strong><span>Meter losses, protect source waters and aquifers, reform avoidable demand, and preserve basic affordable service.</span></li>
+      <li><strong>Diversify operations and supply.</strong><span>Use reuse, recharge, storage, conjunctive management, and targeted supply under site-specific permits and safeguards.</span></li>
+      <li><strong>Review adaptive pathways.</strong><span>Track drought, quality, demand, project yield, ecosystem condition, affordability, and governance triggers without treating the horizon as a countdown.</span></li>
+    </ol>
+    <div class="delivery-gates"><article><h3>Service measures</h3><p>Reliability, quality compliance, affordable basic access, consumptive use, losses, environmental flows, and outage duration.</p></article><article><h3>Project gates</h3><p>Verified yield, energy and emissions, intake and brine, permits, lifecycle cost, ecosystem effects, and public acceptance.</p></article><article><h3>Stop or revise</h3><p>Source harm exceeds modeled benefit, affordability deteriorates, demand savings shift burden, or a project misses its reliability threshold.</p></article></div>
+    <aside class="continuation-card"><p>Cross-system continuation</p><a href={hrefForRoute('/food-water/plastics', base)}>Continue into material flows, exposure, and replacement systems →</a></aside>
+  </section>
+</article>

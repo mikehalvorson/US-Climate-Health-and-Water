@@ -1,0 +1,41 @@
+---
+import { WATER_SOURCES, WATER_WORKBENCH } from '../../lib/data/foodWater';
+import type { ScenarioControlDefinition } from '../../lib/scenarios/state';
+import ScenarioWorkbench from '../ScenarioWorkbench.astro';
+import SourceDrawer from '../SourceDrawer.astro';
+
+const controls: readonly ScenarioControlDefinition[] = [
+  { id: 'sector', label: 'Sector accounting', defaultValue: 'crop_irrigation', options: WATER_WORKBENCH.sectors.map((item) => ({ value: item.id, label: item.label })) },
+  { id: 'source', label: '2015 water source', defaultValue: 'fresh_surface', options: WATER_WORKBENCH.sources.map((item) => ({ value: item.id, label: item.label })) },
+  { id: 'city', label: 'City or region', defaultValue: 'el-paso-tx', options: WATER_WORKBENCH.cities.map((item) => ({ value: item.id, label: item.label })) },
+  { id: 'risk', label: 'Typed risk horizon', defaultValue: 'WRSK-COLORADO-2027', options: WATER_WORKBENCH.risks.map((item) => ({ value: item.id, label: `${item.label} · ${item.type.replaceAll('_', ' ')}` })) },
+  { id: 'technology', label: 'Technology scale case', defaultValue: 'desal-1', options: WATER_WORKBENCH.technologies.map((item) => ({ value: item.id, label: item.label })) },
+];
+const initialSector = WATER_WORKBENCH.sectors.find((item) => item.id === 'crop_irrigation');
+const initialSource = WATER_WORKBENCH.sources.find((item) => item.id === 'fresh_surface');
+const initialCity = WATER_WORKBENCH.cities.find((item) => item.id === 'el-paso-tx');
+const initialRisk = WATER_WORKBENCH.risks.find((item) => item.id === 'WRSK-COLORADO-2027');
+const initialTechnology = WATER_WORKBENCH.technologies.find((item) => item.id === 'desal-1');
+---
+<div data-water-workbench data-workbench-records={JSON.stringify(WATER_WORKBENCH)}>
+  <ScenarioWorkbench
+    id="freshwater-portfolio-filter"
+    title="Inspect compatible water-accounting and portfolio evidence"
+    decision="Choose a sector, source, place, typed risk, and technology scale. Each result retains its native accounting boundary instead of forming a synthetic scarcity score."
+    controls={controls}
+    modelFamily="Verified lookup across USGS inventories, utility profiles, typed risk records, and technology scale cases"
+    seamNote="Selections are independent evidence lenses. Withdrawal, consumption, city source dependency, dated planning evidence, and technology capacity are not added together."
+    readiness="Source-linked lookup · no run-out model"
+  >
+    <div class="workbench-result-grid water-workbench-output">
+      <section><h3>Sector accounting</h3><p class="workbench-result__value"><span data-water-sector-withdrawal>{initialSector?.withdrawal.toLocaleString('en-US')}</span> <small>Mgal/day withdrawal</small></p><dl><div><dt>Consumptive use</dt><dd data-water-sector-consumption>{initialSector?.consumption.toLocaleString('en-US')} Mgal/day</dd></div><div><dt>Consumed fraction</dt><dd data-water-sector-fraction>{initialSector?.fraction}%</dd></div></dl></section>
+      <section><h3>2015 source inventory</h3><p class="workbench-result__value"><span data-water-source-value>{initialSource?.value}</span> <small data-water-source-unit>{initialSource?.unit}</small></p><p data-water-source-label>{initialSource?.label}</p></section>
+      <section><h3 data-water-city-label>{initialCity?.label}</h3><p data-water-city-profile>{initialCity?.profile}</p><small data-water-city-exposure>{initialCity?.exposure}</small><p class="workbench-evidence" data-water-city-qualification>{initialCity?.qualification}</p></section>
+      <section><h3 data-water-risk-label>{initialRisk?.label}</h3><p><strong data-water-risk-type>{initialRisk?.type.replaceAll('_', ' ')}</strong> · <span data-water-risk-horizon>{initialRisk?.horizon.replaceAll('_', ' ')}</span></p><p data-water-risk-finding>{initialRisk?.finding}</p><small data-water-risk-confidence>{initialRisk?.confidence.replaceAll('_', ' ')}</small></section>
+      <section><h3 data-water-tech-family>{initialTechnology?.family}</h3><p class="workbench-result__value" data-water-tech-service>{initialTechnology?.service}</p><p><strong>Energy range:</strong> <span data-water-tech-energy>{initialTechnology?.energy}</span></p><small data-water-tech-interpretation>{initialTechnology?.interpretation}</small></section>
+    </div>
+    <div class="workbench-sources"><span>Core evidence:</span><SourceDrawer id="water-workbench-inventory-source" source={WATER_SOURCES.inventory} triggerLabel="USGS 2015 inventory" /><SourceDrawer id="water-workbench-consumption-source" source={WATER_SOURCES.consumption} triggerLabel="USGS consumption model" /><SourceDrawer id="water-workbench-desal-source" source={WATER_SOURCES.desalination} triggerLabel="Desalination scale" /><SourceDrawer id="water-workbench-awg-source" source={WATER_SOURCES.awg} triggerLabel="AWG technical brief" /></div>
+  </ScenarioWorkbench>
+</div>
+
+<script>import '../../scripts/food-water-workbenches.ts';</script>

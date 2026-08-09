@@ -7,6 +7,8 @@ import DemandChapter from '../components/energy/DemandChapter.astro';
 import EnergySystemChapter from '../components/energy/EnergySystemChapter.astro';
 import CauseChapter from '../components/climate/CauseChapter.astro';
 import RiskChapter from '../components/climate/RiskChapter.astro';
+import FreshwaterChapter from '../components/food-water/FreshwaterChapter.astro';
+import PlasticsChapter from '../components/food-water/PlasticsChapter.astro';
 import { chapterContentFor } from '../lib/content/release';
 import { hrefForRoute, STORY_ANCHORS } from '../lib/navigation/shell';
 import { CANONICAL_REGISTRIES } from '../lib/registry/store';
@@ -35,7 +37,7 @@ const statusCopy = {
 } as const;
 ---
 <RouteLayout route={route}>
-  {chapterContent === 'energy-system' ? <EnergySystemChapter /> : chapterContent === 'energy-demand' ? <DemandChapter /> : chapterContent === 'climate-cause' ? <CauseChapter /> : chapterContent === 'climate-risks' ? <RiskChapter /> : route.routeKind === 'story' ? (
+  {chapterContent === 'energy-system' ? <EnergySystemChapter /> : chapterContent === 'energy-demand' ? <DemandChapter /> : chapterContent === 'climate-cause' ? <CauseChapter /> : chapterContent === 'climate-risks' ? <RiskChapter /> : chapterContent === 'freshwater-security' ? <FreshwaterChapter /> : chapterContent === 'plastics-materials' ? <PlasticsChapter /> : route.routeKind === 'story' ? (
     <div class="shell-sections" aria-label={`${route.label} chapter publication gates`}>
       {STORY_ANCHORS.map((anchor, index) => {
         const copy = statusCopy[anchor.id];

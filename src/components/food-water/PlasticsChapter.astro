@@ -1,0 +1,270 @@
+---
+import BarPlot from '../charts/BarPlot.astro';
+import DotRangePlot from '../charts/DotRangePlot.astro';
+import HeatmapPlot from '../charts/HeatmapPlot.astro';
+import NetworkPlot from '../charts/NetworkPlot.astro';
+import CaveatPanel from '../CaveatPanel.astro';
+import ChartFrame from '../ChartFrame.astro';
+import DataTable from '../DataTable.astro';
+import EvidenceBadge from '../EvidenceBadge.astro';
+import EvidenceGap from '../EvidenceGap.astro';
+import OptionComparison from '../OptionComparison.astro';
+import RecommendationPanel from '../RecommendationPanel.astro';
+import ViewpointGrid from '../ViewpointGrid.astro';
+import {
+  approvedFoodWaterChart,
+  FUNCTIONAL_WATER_BARS,
+  FUNCTIONAL_WATER_TABLE,
+  GROSS_WATER_RANGES,
+  GROSS_WATER_TABLE,
+  HEALTH_EVIDENCE_COLUMNS,
+  HEALTH_EVIDENCE_MATRIX,
+  HEALTH_EVIDENCE_ROWS,
+  HEALTH_EVIDENCE_TABLE,
+  LEADING_RESIN_BARS,
+  LEADING_RESIN_TABLE,
+  PFAS_VACCINE_AUDIT,
+  PLASTIC_FLOW_NETWORK,
+  PLASTIC_FLOW_TABLE,
+  PLASTIC_GUARDRAILS,
+  PLASTIC_SOURCES,
+  POLICY_COLUMNS,
+  POLICY_MATRIX,
+  POLICY_ROWS,
+  POLICY_TABLE,
+  REPLACEMENT_NETWORK,
+  REPLACEMENT_TABLE,
+  RESIN_PROCESS_NETWORK,
+  RESIN_PROCESS_TABLE,
+  RESIN_WATER_RANGES,
+  RESIN_WATER_TABLE,
+  SEAWEED_SCENARIO_BARS,
+  SEAWEED_SCENARIO_TABLE,
+} from '../../lib/data/foodWater';
+import { hrefForRoute } from '../../lib/navigation/shell';
+import PlasticsWorkbench from './PlasticsWorkbench.astro';
+
+const flowChart = approvedFoodWaterChart('us_plastic_material_flow_2019', 'sankey');
+const resinChart = approvedFoodWaterChart('leading_us_resins_2019', 'bar');
+const processChart = approvedFoodWaterChart('resin_manufacturing_pathways', 'flow');
+const waterChart = approvedFoodWaterChart('resin_water_database_range', 'dot_range');
+const grossWaterChart = approvedFoodWaterChart('gross_avoided_water_scenarios', 'bar');
+const healthChart = approvedFoodWaterChart('health_evidence_ladder', 'matrix');
+const vaccineChart = approvedFoodWaterChart('pfas_vaccine_claim_correction', 'matrix');
+const policyChart = approvedFoodWaterChart('country_policy_mechanisms', 'matrix');
+const replacementChart = approvedFoodWaterChart('replacement_decision_tree', 'flow');
+const functionalChart = approvedFoodWaterChart('functional_unit_water_balance', 'bar');
+const seaweedChart = approvedFoodWaterChart('seaweed_scale_funnel', 'bar');
+const base = import.meta.env.BASE_URL;
+---
+<article class="chapter-content" data-chapter-content="plastics-materials">
+  <section id="current-system" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">01 · Current system</p><h2>Plastic is a material system, not one product or one toxicological entity</h2><p>A 2019 economy-wide material-flow model estimated more than 57 million metric tons of U.S. production and consumption. Resin, application, additive, manufacturing emission, particle, and end-of-life destination remain separate identities throughout this chapter.</p></div>
+
+    <div class="evidence-stat-grid evidence-stat-grid--four" aria-label="Plastics system headline evidence">
+      <article class="evidence-stat"><EvidenceBadge state="reported_estimate" /><p>2019 U.S. consumption</p><strong>&gt;57 <span>MMT</span></strong><small>Economy-wide material-flow model</small></article>
+      <article class="evidence-stat"><EvidenceBadge state="reported_estimate" /><p>Disposed</p><strong>48 <span>MMT</span></strong><small>Same 2019 model boundary</small></article>
+      <article class="evidence-stat"><EvidenceBadge state="reported_estimate" /><p>Recovered for reuse</p><strong>&lt;7<span>%</span></strong><small>Not merged with EPA's separate 2018 MSW series</small></article>
+      <article class="evidence-stat"><EvidenceBadge state="data_gap" /><p>National net water effect</p><strong>Unavailable</strong><small>Replacement and service terms remain unpopulated</small></article>
+    </div>
+
+    <ChartFrame
+      chart={flowChart}
+      unit="Million metric tons; one 2019 economy-wide MFA boundary"
+      geography="United States"
+      period="2019 modeled material flow"
+      sources={[PLASTIC_SOURCES.materialFlow]}
+      summary="More than 57 million metric tons of domestic production plus trade supplied more than 57 million metric tons of U.S. consumption. The model assigned 48 million metric tons to disposal and 8.8 to addition to in-use stock, with less than 7% recovered for reuse."
+      caveats={['The production-to-consumption edge is a rounded visual reconciliation, not a separately reported official flow.', 'The less-than-7% recovery statement is not converted to a precise mass edge.', 'Do not combine this 2019 economy-wide MFA with EPA 2018 municipal-solid-waste tonnage.']}
+    >
+      <NetworkPlot slot="plot" id="plastic-material-flow" nodes={PLASTIC_FLOW_NETWORK.nodes} edges={PLASTIC_FLOW_NETWORK.edges} variant="sankey" unit="million metric tons" summary="Modeled 2019 U.S. plastic production, trade, consumption, disposal, stock, and unquantified recovery relationship." height={470} />
+      <DataTable slot="table" caption="2019 U.S. plastic material-flow baseline" columns={[{ key: 'flow', label: 'Flow or stock' }, { key: 'value', label: 'Value', numeric: true }, { key: 'unit', label: 'Unit' }, { key: 'qualifier', label: 'Qualifier' }, { key: 'year', label: 'Year', numeric: true }]} rows={PLASTIC_FLOW_TABLE} />
+    </ChartFrame>
+
+    <ChartFrame
+      chart={resinChart}
+      unit="Million metric tons of modeled U.S. consumption"
+      geography="United States"
+      period="2019"
+      sources={[PLASTIC_SOURCES.materialFlow]}
+      summary="Polypropylene, HDPE, LLDPE, and PVC were the four leading individually reported resins in the 2019 material-flow model, at 8.6, 7.9, 5.7, and 5.2 million metric tons respectively."
+      caveats={['These are resin masses, not toxicity rankings.', 'Other resins with unavailable harmonized consumption remain null rather than estimated.']}
+    >
+      <BarPlot slot="plot" id="leading-resins" values={LEADING_RESIN_BARS} valueLabel="Modeled consumption" unit="MMT" summary="Four leading individual resins in the 2019 U.S. material-flow model." />
+      <DataTable slot="table" caption="Leading individually reported U.S. resins in 2019" columns={[{ key: 'rank', label: 'Rank', numeric: true }, { key: 'resin', label: 'Resin' }, { key: 'modeledConsumption', label: 'Modeled consumption', unit: 'MMT', numeric: true }, { key: 'year', label: 'Year', numeric: true }]} rows={LEADING_RESIN_TABLE} />
+    </ChartFrame>
+
+    <ChartFrame
+      chart={processChart}
+      unit="Qualitative process and water-node boundary; no plant coefficient"
+      geography="U.S.-relevant commodity and engineering resin pathways"
+      period="Current cited process descriptions"
+      sources={[PLASTIC_SOURCES.materialFlow, PLASTIC_SOURCES.resinWater]}
+      summary="Every resin moves through feedstock and precursor production, polymerization, finishing, compounding, and product conversion. Cooling, steam, electricity, washing, reaction media, emissions control, and finishing create different water nodes by pathway."
+      caveats={['The flow locates potential water use; it does not quantify a coefficient.', 'Monomer and processing hazards are not direct risk estimates for every finished article.', 'Product conversion, washing, and end of life sit outside many cradle-to-resin inventories.']}
+    >
+      <NetworkPlot slot="plot" id="resin-process-flow" nodes={RESIN_PROCESS_NETWORK.nodes} edges={RESIN_PROCESS_NETWORK.edges} variant="flow" unit="qualitative stage link" summary="Generic resin pathway from feedstock through monomer, polymerization, finishing, and product conversion." height={360} />
+      <DataTable slot="table" caption="Resin-specific manufacturing and water-node pathways" columns={[{ key: 'resin', label: 'Resin' }, { key: 'primaryInputs', label: 'Primary inputs' }, { key: 'processSteps', label: 'Process steps' }, { key: 'waterNodes', label: 'Principal water nodes' }, { key: 'qualification', label: 'Qualification' }]} rows={RESIN_PROCESS_TABLE} />
+    </ChartFrame>
+  </section>
+
+  <section id="problems" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">02 · Why this is a problem</p><h2>Scale, leakage, hazardous chemistry, and uncertain human particle effects require different responses</h2><p>The strongest reasons to act do not depend on claiming that every plastic is equally toxic. High material throughput, poor recovery, persistent leakage, and specific chemical or occupational hazards are already actionable; particle dose-response evidence remains incomplete.</p></div>
+
+    <ChartFrame
+      chart={waterChart}
+      unit="Liters of cradle-to-resin freshwater consumption per kilogram of resin"
+      geography="Cross-database life-cycle inventories with differing regions and assumptions"
+      period="Source databases synthesized in the 2023 study"
+      sources={[PLASTIC_SOURCES.resinWater, PLASTIC_SOURCES.resinWaterSi]}
+      summary="Approximate database ranges span 3.3–44.4 L/kg for PET, 5.9–24.1 for HDPE, 5.2–20.5 for PP, and 35–128 for PLA. The variation prevents a single national plant or product coefficient."
+      caveats={['Values are approximated from a supporting-information figure.', 'The databases differ in region, year, allocation, recycling, and system boundary.', 'PLA illustrates that bio-based does not automatically mean water-saving.']}
+    >
+      <DotRangePlot slot="plot" values={RESIN_WATER_RANGES} valueLabel="Cradle-to-resin water consumption" unit="L/kg resin" summary="Minimum, approximate cross-database mean, and maximum resin water estimates." labelWidth={90} />
+      <DataTable slot="table" caption="Cross-database cradle-to-resin freshwater ranges" columns={[{ key: 'resin', label: 'Resin' }, { key: 'low', label: 'Low', unit: 'L/kg', numeric: true }, { key: 'approximateMean', label: 'Approximate mean', unit: 'L/kg', numeric: true }, { key: 'high', label: 'High', unit: 'L/kg', numeric: true }, { key: 'precision', label: 'Precision' }, { key: 'guardrail', label: 'Guardrail' }]} rows={RESIN_WATER_TABLE} />
+    </ChartFrame>
+
+    <ChartFrame
+      chart={healthChart}
+      unit="Evidence maturity class: 3 stronger, 2 important association, 1 limited, hatched unavailable"
+      geography="Evidence-specific populations and exposure routes"
+      period="Current cited federal reviews, cohort studies, and chemical assessments"
+      sources={[PLASTIC_SOURCES.foodParticles, PLASTIC_SOURCES.particleReview, PLASTIC_SOURCES.cardiovascular, PLASTIC_SOURCES.vaccine]}
+      summary="Human exposure to plastic particles is documented, but food-level quantitative risk and causal dose response are not established. A carotid-plaque cohort reports an important association, while vinyl chloride and isocyanate evidence concerns specific chemicals and occupational routes."
+      caveats={['Polymer, monomer, additive, processing aid, contaminant, emission, and particle are separate entities.', 'Biomonitoring or a clinical association does not by itself prove that swallowing plastic caused an outcome.', 'Evidence classes summarize the cited scope; they are not comparable disease-risk scores.']}
+    >
+      <HeatmapPlot slot="plot" id="health-evidence-ladder" values={HEALTH_EVIDENCE_MATRIX} rows={HEALTH_EVIDENCE_ROWS} columns={HEALTH_EVIDENCE_COLUMNS} unit="evidence class" summary="Evidence maturity across exposure, association, causal finding, and action basis for selected plastic-related entities." variant="matrix" height={440} width={840} />
+      <DataTable slot="table" caption="Plastic-related health evidence and misuse guardrails" columns={[{ key: 'entity', label: 'Entity or endpoint' }, { key: 'evidenceClass', label: 'Evidence class' }, { key: 'finding', label: 'Qualified finding' }, { key: 'causalStatus', label: 'Causal status or action basis' }, { key: 'guardrail', label: 'Misuse guardrail' }]} rows={HEALTH_EVIDENCE_TABLE} />
+    </ChartFrame>
+
+    <ChartFrame
+      chart={vaccineChart}
+      unit="Claim, measured exposure, outcome, and qualified finding kept separate"
+      geography="Prospective Faroese birth cohort"
+      period="Maternal pregnancy exposure and child follow-up at ages 5 and 7"
+      sources={[PLASTIC_SOURCES.vaccine]}
+      summary="The study measured maternal and child serum PFAS and later tetanus and diphtheria antibody concentrations. It did not measure mothers eating many microplastic particles and did not show universal vaccine failure."
+      caveats={['PFAS are chemicals and are not synonymous with plastic particles or every plastic product.', 'The observational cohort reports associations with antibody concentrations, not a randomized causal test.']}
+    >
+      <div slot="plot" class="claim-audit-grid">
+        {PFAS_VACCINE_AUDIT.map((item, index) => <article class:list={[{ 'claim-audit-grid__rejected': index === 0 }]}>{index === 0 ? <EvidenceBadge state="data_gap" label="Rejected claim" /> : <EvidenceBadge state={index === 3 ? 'qualitative_evidence' : 'reported_estimate'} />}<h4>{item.panel}</h4><p>{item.text}</p><small>{item.status}</small></article>)}
+      </div>
+      <DataTable slot="table" caption="PFAS vaccine study claim audit" columns={[{ key: 'panel', label: 'Panel' }, { key: 'text', label: 'Content' }, { key: 'status', label: 'Status' }]} rows={PFAS_VACCINE_AUDIT} />
+    </ChartFrame>
+
+    <ViewpointGrid id="plastics-viewpoints" title="Material choices distribute benefits and burdens across a full lifecycle" items={[
+      { viewpoint: 'people_and_households', label: 'People and households', problem: 'Convenience, food preservation, affordability, chemical exposure, litter, and waste fees interact.', evidenceState: 'qualitative_evidence', consequence: 'Policy must preserve safe service while reducing unnecessary and high-exposure uses.' },
+      { viewpoint: 'workers_and_operators', label: 'Workers', problem: 'Monomers, reactive chemicals, dust, heat, emissions, sorting, and waste handling create distinct occupational exposures.', evidenceState: 'reported_estimate', consequence: 'Substitution does not replace engineering controls, disclosure, monitoring, and worker protection.' },
+      { viewpoint: 'host_communities_and_tribes', label: 'Fence-line and host communities', problem: 'Extraction, petrochemical production, manufacturing, incineration, landfill, and replacement facilities concentrate burdens.', evidenceState: 'qualitative_evidence', consequence: 'Facility emissions, water quality, authority, and cumulative impacts require place-specific review.' },
+      { viewpoint: 'businesses_and_producers', label: 'Producers and service operators', problem: 'Packaging, sterile devices, infrastructure, and protected products provide functions that substitutes must match.', evidenceState: 'qualitative_evidence', consequence: 'Functional performance and product-loss evidence prevent burden shifting.' },
+      { viewpoint: 'public_health', label: 'Public health', problem: 'Known chemical hazards coexist with uncertain particle dose-response and essential medical uses.', evidenceState: 'reported_estimate', consequence: 'Entity- and route-specific action is more protective than blanket causal claims.' },
+      { viewpoint: 'ecosystems_and_nonhuman_life', label: 'Ecosystems and wildlife', problem: 'Persistent leakage causes ingestion, entanglement, habitat exposure, and fragmentation.', evidenceState: 'qualitative_evidence', consequence: 'Prevention, reuse, capture, and producer responsibility remain necessary even while human-health evidence develops.' },
+    ]} />
+  </section>
+
+  <section id="choices" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">03 · Choices</p><h2>Eliminate, reuse, capture, redesign, substitute, or retain by application</h2></div>
+    <OptionComparison id="plastic-options" title="Three material-system strategies" question="How should policy reduce plastic burden while preserving the service that matters?" dimensions={[{ id: 'benefit', label: 'Primary benefit' }, { id: 'cost', label: 'Cost and lead time' }, { id: 'dependency', label: 'Dependencies' }, { id: 'residual', label: 'Residual risk' }, { id: 'maturity', label: 'Evidence maturity' }]} options={[
+      { id: 'recycling-led', label: 'Recycling-led', summary: 'Prioritize collection and recycled content while retaining most applications.', values: { benefit: 'Reduces some virgin demand and disposal', cost: 'Collection, sorting, reprocessing, and quality control', dependency: 'Design compatibility, markets, chain of custody', residual: 'Leakage, additives, rejects, and continued throughput', maturity: 'Mature for selected streams; weak for many formats' } },
+      { id: 'substitution-led', label: 'Substitution-led', summary: 'Replace plastic quickly with paper, glass, metal, fiber, or biobased materials.', values: { benefit: 'Can reduce targeted fossil resin and litter', cost: 'New manufacturing, mass, logistics, land, water, and energy', dependency: 'Equivalent performance and end-of-life systems', residual: 'Burden shifting and protected-product loss', maturity: 'Application-specific; national net water not established' } },
+      { id: 'service-led', label: 'Service-led hierarchy', summary: 'Eliminate unnecessary use, scale reuse and capture, control hazards, then validate substitutes.', values: { benefit: 'Targets throughput, exposure, and leakage together', cost: 'System redesign, return logistics, standards, enforcement', dependency: 'Functional units, safety gates, producer funding', residual: 'Critical-use and substitute uncertainty', maturity: 'Strong hierarchy; local implementation evidence varies' } },
+    ]} />
+
+    <ChartFrame
+      chart={policyChart}
+      unit="Mechanism present within cited policy scope; hatched means not established in package"
+      geography="European Union, France, Germany, and Rwanda"
+      period="Policy milestones through 2030 as cited"
+      sources={[PLASTIC_SOURCES.euPolicy, PLASTIC_SOURCES.francePolicy, PLASTIC_SOURCES.germanyPolicy, PLASTIC_SOURCES.rwandaPolicy]}
+      summary="The four jurisdictions combine targeted restrictions, reusable serviceware, deposits, producer responsibility, collection, recycled content, and exceptions in different packages. None is evidence that an economy is plastic-free."
+      caveats={['A legal requirement is not a measured national water saving.', 'Mechanisms, target scopes, exemptions, dates, and realized outcomes must remain distinct.']}
+    >
+      <HeatmapPlot slot="plot" id="plastic-policy-matrix" values={POLICY_MATRIX} rows={POLICY_ROWS} columns={POLICY_COLUMNS} unit="present in cited scope" summary="Selected policy mechanisms used by the European Union, France, Germany, and Rwanda." variant="matrix" height={390} width={850} />
+      <DataTable slot="table" caption="Country and regional plastic policy mechanisms" columns={[{ key: 'jurisdiction', label: 'Jurisdiction' }, { key: 'mechanisms', label: 'Mechanisms' }, { key: 'replacementPattern', label: 'Replacement pattern' }, { key: 'scopeGuardrail', label: 'Scope guardrail' }]} rows={POLICY_TABLE} />
+    </ChartFrame>
+
+    <ChartFrame
+      chart={replacementChart}
+      unit="Decision gates; no universal material score"
+      geography="Application-specific product-service systems"
+      period="Current decision framework with recurring validation"
+      sources={[PLASTIC_SOURCES.globalRoadmap, PLASTIC_SOURCES.resinWater]}
+      summary="A valid replacement decision starts with service essentiality and credible exposure or leakage, then tests a validated alternative on the same functional unit, lifecycle water, safety, product loss, and end-of-life route."
+      caveats={['Critical medical, food-preservation, electrical, and infrastructure uses require staged transition.', 'A material name does not establish a safer substitute.', 'Stop conditions override a nominal material target.']}
+    >
+      <NetworkPlot slot="plot" id="replacement-decision-tree" nodes={REPLACEMENT_NETWORK.nodes} edges={REPLACEMENT_NETWORK.edges} variant="flow" unit="decision gate" summary="Application decision path through essentiality, exposure or leakage, validated alternatives, transition, or controlled retention." height={390} />
+      <DataTable slot="table" caption="Application-specific replacement strategy tiers" columns={[{ key: 'tier', label: 'Tier', numeric: true }, { key: 'strategy', label: 'Strategy' }, { key: 'eligibility', label: 'Eligibility' }, { key: 'candidateApplications', label: 'Candidate applications' }, { key: 'instruments', label: 'Instruments' }, { key: 'waterMeasurement', label: 'Water measurement' }]} rows={REPLACEMENT_TABLE} />
+    </ChartFrame>
+  </section>
+
+  <section id="recommendation" class="chapter-act" data-chapter-section>
+    <RecommendationPanel
+      id="plastics-recommendation"
+      title="Use a service-led material hierarchy"
+      conclusion="Eliminate unnecessary and high-exposure uses first, scale reuse and high capture, control hazardous chemistry and emissions, and validate substitutes using functional service and lifecycle evidence."
+      rationale={['Packaging is the largest named use category and poor recovery makes prevention, reuse, and capture high-leverage.', 'Specific chemical and occupational hazards can be controlled without claiming that every resin or particle has the same health effect.', 'Functional service and lifecycle evidence prevent water, energy, product-loss, and safety burdens from moving into the replacement system.']}
+      tradeoffs={['Reuse requires convenient return, sanitation, loss control, and sustained high capture', 'Disclosure and hazardous-chemistry controls require supply-chain verification', 'Some substitutes add mass, washing, land, water, energy, or product loss']}
+      residualRisks={['Uncertain particle dose-response and formulation data', 'Critical-use transition and supply resilience', 'Leakage, informal disposal, and unverified recycling destinations']}
+    />
+
+    <ChartFrame
+      chart={grossWaterChart}
+      unit="U.S. gallons per 1 million kilograms of virgin resin avoided"
+      geography="Cross-database cradle-to-resin illustration"
+      period="2023 database synthesis; illustrative mass case"
+      sources={[PLASTIC_SOURCES.resinWater, PLASTIC_SOURCES.resinWaterSi]}
+      summary="Avoiding one million kilograms of PET, HDPE, or PP implies a wide gross cradle-to-resin water range. These values exclude substitute production, washing, reverse logistics, protected-product loss, end of life, and watershed scarcity, so they are not net savings."
+      caveats={['The title is gross avoided cradle-to-resin water, never water saved by banning plastic.', 'Database ranges are not current U.S. plant coefficients.', 'Replacement-system terms must be modeled on the same functional service.']}
+    >
+      <DotRangePlot slot="plot" values={GROSS_WATER_RANGES} valueLabel="Gross avoided cradle-to-resin water" unit="U.S. gallons" summary="Low, central, and high gross resin-production water associated with avoiding one million kilograms of PET, HDPE, or PP." labelWidth={80} />
+      <DataTable slot="table" caption="Illustrative gross avoided cradle-to-resin water" columns={[{ key: 'resin', label: 'Resin' }, { key: 'massAvoided', label: 'Virgin mass avoided', unit: 'kg', numeric: true }, { key: 'grossLowGallons', label: 'Gross low', unit: 'U.S. gal', numeric: true }, { key: 'grossCentralGallons', label: 'Gross central', unit: 'U.S. gal', numeric: true }, { key: 'grossHighGallons', label: 'Gross high', unit: 'U.S. gal', numeric: true }, { key: 'status', label: 'Status' }]} rows={GROSS_WATER_TABLE} />
+    </ChartFrame>
+  </section>
+
+  <section id="model" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">05 · Model-supported case</p><h2>Expose the missing terms before estimating a net result</h2><p>The working view filters verified evidence. The functional-unit balance below deliberately publishes nulls where a specific service, replacement, place, reuse rate, and operating system have not been chosen.</p></div>
+
+    <ChartFrame
+      chart={functionalChart}
+      unit="Liters per specified functional service; all terms unavailable in the national view"
+      geography="Requires product-service and watershed specification"
+      period="Counterfactual period must be supplied by the decision"
+      sources={[PLASTIC_SOURCES.resinWater]}
+      summary="A net water balance needs avoided virgin resin, replacement material, conversion, washing, reverse logistics, product loss, end-of-life credits, scarcity, and water-quality terms. No national compatible dataset populates those terms, so the chart shows explicit missing marks rather than zero."
+      caveats={[`Required functional unit: ${PLASTIC_GUARDRAILS.functionalUnit}.`, PLASTIC_GUARDRAILS.nationalGate, 'A missing term is unknown, not zero.']}
+    >
+      <BarPlot slot="plot" id="functional-water-balance" values={FUNCTIONAL_WATER_BARS} valueLabel="Net water term" unit="L/service" summary="Every required national functional-unit water-balance term is explicitly unavailable." height={390} />
+      <DataTable slot="table" caption="Required functional-unit water terms and current gap status" columns={[{ key: 'term', label: 'Required term' }, { key: 'value', label: 'Value', numeric: true }, { key: 'unit', label: 'Unit' }, { key: 'status', label: 'Status' }]} rows={FUNCTIONAL_WATER_TABLE} />
+    </ChartFrame>
+
+    <EvidenceGap title="National net replacement water remains gated" decision="What is the net water effect of replacing a defined plastic-enabled service?" missingInputs={['Replacement material and mass ratio on the same service and lifetime', 'Reuse cycles, wash efficiency, loss, reverse logistics, product spoilage, and end-of-life credits', 'Facility and watershed location, seasonal scarcity, water quality, and electricity mix']} nextAction="Meter representative product-service pilots and publish harmonized functional-unit inventories before aggregating adoption." />
+
+    <ChartFrame
+      chart={seaweedChart}
+      unit="Million metric tons of illustrative finished material per year"
+      geography="DOE-screened U.S. offshore resource context; national scenario illustration"
+      period="Modeled resource and illustrative conversion cases, not forecasts"
+      sources={[PLASTIC_SOURCES.seaweedResource, PLASTIC_SOURCES.seaweedLca, PLASTIC_SOURCES.materialFlow]}
+      summary="Starting from a modeled 380-million-dry-ton-per-year resource at or below $1,000 per dry ton, illustrative allocation and conversion assumptions yield 3.8, 11.4, or 28.5 million metric tons of finished material. Performance, ecology, processing water, infrastructure, cost, competing uses, and end of life remain gates."
+      caveats={['Modeled suitable resource is not forecast production.', 'Dry modeled biomass cannot be compared directly with wet current harvest.', 'Marine cultivation may avoid irrigation while extraction and conversion still use water and produce wastewater.']}
+    >
+      <div slot="plot" class="seaweed-funnel-plot"><p><strong>380 MMT/year</strong><span>modeled dry biomass starting point</span></p><span aria-hidden="true">↓ allocation · yield · performance · infrastructure</span><BarPlot id="seaweed-scenarios" values={SEAWEED_SCENARIO_BARS} valueLabel="Illustrative finished material" unit="MMT/year" summary="Three illustrative seaweed-to-material conversion scenarios, not forecasts." height={340} /></div>
+      <DataTable slot="table" caption="Illustrative seaweed conversion scenarios, not forecasts" columns={[{ key: 'scenario', label: 'Scenario' }, { key: 'modeledDryBiomass', label: 'Modeled dry biomass', unit: 'MMT/year', numeric: true }, { key: 'allocation', label: 'Allocated to bioplastic', unit: '%', numeric: true }, { key: 'yield', label: 'Finished-material yield', unit: '% dry biomass', numeric: true }, { key: 'finishedMaterial', label: 'Finished material', unit: 'MMT/year', numeric: true }, { key: 'shareOf2019Consumption', label: 'Share of 2019 U.S. consumption', unit: '%', numeric: true }, { key: 'status', label: 'Status' }]} rows={SEAWEED_SCENARIO_TABLE} />
+    </ChartFrame>
+
+    <PlasticsWorkbench />
+    <CaveatPanel title="Red lines for material claims" caveats={['Specific high-confidence hazards and poor material recovery justify action without inventing universal toxicity.', 'Substitution claims require the same functional service, safety, performance, place, and lifecycle boundary.', 'Seaweed and other biobased pathways remain candidate systems until scale, performance, ecology, and processing evidence clears gates.']} prohibitedInterpretations={['All plastics are equally toxic.', 'Detected particles prove causation.', 'A jurisdiction is plastic-free.', 'Gross avoided resin water is net water savings.', 'Modeled seaweed potential is forecast production.']} />
+  </section>
+
+  <section id="delivery" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">06 · Delivery</p><h2>Move from item counts to verified service and material balances</h2></div>
+    <ol class="delivery-sequence">
+      <li><strong>Define essentiality and the functional unit.</strong><span>Specify service, performance, lifetime, safety, geography, exposure, and current material system.</span></li>
+      <li><strong>Act on unnecessary use and known hazards.</strong><span>Eliminate avoidable applications, control emissions and hazardous chemistry, and protect workers and communities.</span></li>
+      <li><strong>Build reuse and high-capture infrastructure.</strong><span>Fund convenient return, interoperable pools, sanitation standards, verified processing, and producer responsibility.</span></li>
+      <li><strong>Gate substitutes and publish balances.</strong><span>Compare lifecycle water, quality, scarcity, energy, product loss, cost, health, end of life, and distributional outcomes.</span></li>
+    </ol>
+    <div class="delivery-gates"><article><h3>Progress indicators</h3><p>Virgin resin avoided by resin and use, completed reuse turns, return rate, verified final recycling, leakage, priority releases, and worker exposure.</p></article><article><h3>Water and service gates</h3><p>Liters per completed service, wash efficiency, replacement manufacture, product loss, scarcity, water quality, and safety performance.</p></article><article><h3>Stop conditions</h3><p>{PLASTIC_GUARDRAILS.stopConditions.join('; ')}.</p></article></div>
+    <aside class="continuation-card"><p>Cross-system continuation</p><a href={hrefForRoute('/food-water/food', base)}>Continue into food-system service, loss, land, and water →</a></aside>
+  </section>
+</article>

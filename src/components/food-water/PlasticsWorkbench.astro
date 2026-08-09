@@ -1,0 +1,44 @@
+---
+import { PLASTIC_SOURCES, PLASTIC_WORKBENCH } from '../../lib/data/foodWater';
+import type { ScenarioControlDefinition } from '../../lib/scenarios/state';
+import ScenarioWorkbench from '../ScenarioWorkbench.astro';
+import SourceDrawer from '../SourceDrawer.astro';
+
+const controls: readonly ScenarioControlDefinition[] = [
+  { id: 'resin', label: 'Resin family', defaultValue: 'PP', options: PLASTIC_WORKBENCH.resins.map((item) => ({ value: item.id, label: item.label })) },
+  { id: 'application', label: 'Application', defaultValue: 'packaging', options: PLASTIC_WORKBENCH.applications.map((item) => ({ value: item.id, label: item.label })) },
+  { id: 'exposure', label: 'Exposure population', defaultValue: 'consumer', options: PLASTIC_WORKBENCH.exposures.map((item) => ({ value: item.id, label: item.label })) },
+  { id: 'health', label: 'Health evidence class', defaultValue: 'health-1', options: PLASTIC_WORKBENCH.healthClasses.map((item) => ({ value: item.id, label: item.label })) },
+  { id: 'policy', label: 'Policy jurisdiction', defaultValue: 'European_Union', options: PLASTIC_WORKBENCH.policies.map((item) => ({ value: item.id, label: item.label })) },
+  { id: 'replacement', label: 'Replacement strategy', defaultValue: 'eliminate_or_reuse_now', options: PLASTIC_WORKBENCH.replacements.map((item) => ({ value: item.id, label: item.label })) },
+];
+const initialResin = PLASTIC_WORKBENCH.resins.find((item) => item.id === 'PP');
+const initialApplication = PLASTIC_WORKBENCH.applications.find((item) => item.id === 'packaging');
+const initialExposure = PLASTIC_WORKBENCH.exposures.find((item) => item.id === 'consumer');
+const initialHealth = PLASTIC_WORKBENCH.healthClasses[0];
+const initialPolicy = PLASTIC_WORKBENCH.policies.find((item) => item.id === 'European_Union');
+const initialReplacement = PLASTIC_WORKBENCH.replacements.find((item) => item.id === 'eliminate_or_reuse_now');
+---
+<div data-plastics-workbench data-workbench-records={JSON.stringify(PLASTIC_WORKBENCH)}>
+  <ScenarioWorkbench
+    id="plastics-decision-filter"
+    title="Filter resin, service, exposure, evidence, policy, and replacement"
+    decision="Inspect each decision layer without treating a resin name, detected particle, chemical hazard, jurisdiction, or substitute as interchangeable evidence."
+    controls={controls}
+    modelFamily="Application-specific evidence and decision lookup"
+    seamNote="The six filters are independent lenses. This view does not estimate exposure dose, health risk, policy outcome, substitute performance, or net water savings from a cross-product of selections."
+    readiness="Decision support · functional-unit net model remains gated"
+  >
+    <div class="workbench-result-grid plastics-workbench-output">
+      <section><h3 data-plastic-resin-label>{initialResin?.label}</h3><p><strong data-plastic-resin-class>{initialResin?.resinClass}</strong></p><p data-plastic-resin-uses>{initialResin?.uses}</p><small data-plastic-resin-priority>{initialResin?.priority}</small><p class="workbench-evidence" data-plastic-resin-guardrail>{initialResin?.healthGuardrail}</p></section>
+      <section><h3 data-plastic-application-label>{initialApplication?.label}</h3><p class="workbench-result__value"><span data-plastic-application-volume>{initialApplication?.volume ?? 'Unavailable'}</span> <small>MMT into use in 2019</small></p><p data-plastic-application-decision>{initialApplication?.decision}</p></section>
+      <section><h3 data-plastic-exposure-label>{initialExposure?.label}</h3><p data-plastic-exposure-boundary>{initialExposure?.boundary}</p></section>
+      <section><h3 data-plastic-health-label>{initialHealth?.label}</h3><p data-plastic-health-finding>{initialHealth?.finding}</p><p><strong>Causal status:</strong> <span data-plastic-health-causal>{initialHealth?.causalStatus}</span></p><small data-plastic-health-guardrail>{initialHealth?.guardrail}</small></section>
+      <section><h3 data-plastic-policy-label>{initialPolicy?.label}</h3><p data-plastic-policy-mechanisms>{initialPolicy?.mechanisms}</p><small data-plastic-policy-scope>{initialPolicy?.scope}</small></section>
+      <section><h3 data-plastic-replacement-label>{initialReplacement?.label}</h3><p data-plastic-replacement-eligibility>{initialReplacement?.eligibility}</p><p data-plastic-replacement-applications>{initialReplacement?.applications}</p><small data-plastic-replacement-water>{initialReplacement?.water}</small></section>
+    </div>
+    <div class="workbench-sources"><span>Core evidence:</span><SourceDrawer id="plastics-workbench-flow-source" source={PLASTIC_SOURCES.materialFlow} triggerLabel="U.S. material flow" /><SourceDrawer id="plastics-workbench-health-source" source={PLASTIC_SOURCES.foodParticles} triggerLabel="FDA particle review" /><SourceDrawer id="plastics-workbench-policy-source" source={PLASTIC_SOURCES.euPolicy} triggerLabel="EU policy scope" /><SourceDrawer id="plastics-workbench-water-source" source={PLASTIC_SOURCES.resinWater} triggerLabel="Resin water ranges" /></div>
+  </ScenarioWorkbench>
+</div>
+
+<script>import '../../scripts/food-water-workbenches.ts';</script>

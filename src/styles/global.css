@@ -459,6 +459,28 @@ a:hover { text-decoration-thickness: 0.13em; }
 .evidence-matrix-plot > section { min-width: 0; padding: 1rem; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); }
 .evidence-matrix-plot h4 { margin: 0.75rem 0; font-family: ui-serif, Georgia, serif; font-size: 1.25rem; }
 .evidence-matrix-plot p { padding-bottom: 0.55rem; border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: 0.76rem; }
+
+.risk-horizon-plot { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.65rem; padding: 1rem; }
+.risk-horizon-plot article { position: relative; min-width: 0; padding: 0.85rem 0.9rem 0.85rem 1rem; border: 1px solid var(--line); border-left: 0.3rem solid var(--climate); border-radius: var(--radius-md); background: var(--surface); }
+.risk-horizon-plot article[data-risk-type="planning_counterfactual"] { border-left-color: var(--evidence-estimate); }
+.risk-horizon-plot article[data-risk-type="scenario_model"] { border-left-color: var(--energy); }
+.risk-horizon-plot article[data-risk-type="current_condition"], .risk-horizon-plot article[data-risk-type="observed_chronic"] { border-left-color: var(--water); }
+.risk-horizon-plot article > span { display: block; color: var(--ink-muted); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; }
+.risk-horizon-plot article strong { display: block; margin-top: 0.25rem; font-family: ui-serif, Georgia, serif; }
+.risk-horizon-plot article p { margin: 0.35rem 0; font-size: 1.05rem; font-weight: 750; }
+.risk-horizon-plot article small { color: var(--ink-soft); }
+.water-workbench-output, .plastics-workbench-output { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.water-workbench-output > section:nth-child(5) { grid-column: 1 / -1; }
+.claim-audit-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; padding: 1rem; }
+.claim-audit-grid article { padding: 1rem; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); }
+.claim-audit-grid__rejected { border-color: color-mix(in srgb, var(--danger) 65%, var(--line)) !important; background: color-mix(in srgb, var(--danger) 8%, var(--surface)) !important; }
+.claim-audit-grid h4 { margin: 0.7rem 0; font-family: ui-serif, Georgia, serif; font-size: 1.2rem; }
+.claim-audit-grid p { color: var(--ink-soft); font-size: 0.8rem; }
+.claim-audit-grid small { color: var(--ink-muted); font-weight: 750; }
+.seaweed-funnel-plot { padding: 1rem; text-align: center; }
+.seaweed-funnel-plot > p { display: inline-grid; gap: 0.2rem; min-width: min(100%, 28rem); margin: 0 auto 0.5rem; padding: 1rem 2rem; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); }
+.seaweed-funnel-plot > p strong { font-family: ui-serif, Georgia, serif; font-size: 2rem; }
+.seaweed-funnel-plot > p span, .seaweed-funnel-plot > span { color: var(--ink-muted); font-size: 0.7rem; font-weight: 750; text-transform: uppercase; }
 .biodiversity-plot-layout, .mobility-plot-layout { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(15rem, 0.7fr); gap: 1rem; align-items: center; padding: 1rem; }
 .driver-context, .observed-mobility-card { padding: 1rem; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); }
 .driver-context h4, .observed-mobility-card h4 { margin: 0 0 0.8rem; font-family: ui-serif, Georgia, serif; font-size: 1.1rem; }
@@ -553,7 +575,8 @@ a:hover { text-decoration-thickness: 0.13em; }
   .chart-small-multiples--three { grid-template-columns: 1fr; }
   .chart-small-multiples--three section { border-bottom: 1px solid var(--line); }
   .chart-small-multiples--three section:last-child { border-bottom: 0; }
-  .evidence-matrix-plot, .biodiversity-plot-layout, .mobility-plot-layout { grid-template-columns: 1fr; }
+  .evidence-matrix-plot, .biodiversity-plot-layout, .mobility-plot-layout, .risk-horizon-plot, .claim-audit-grid, .water-workbench-output, .plastics-workbench-output { grid-template-columns: 1fr; }
+  .water-workbench-output > section:nth-child(5) { grid-column: auto; }
   .delivery-gates { grid-template-columns: 1fr; }
 }
 
