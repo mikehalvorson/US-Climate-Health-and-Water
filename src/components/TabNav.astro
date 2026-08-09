@@ -1,0 +1,30 @@
+---
+import { hrefForRoute, localNavigationFor } from '../lib/navigation/shell';
+import { SUPERSECTION_DEFINITIONS } from '../lib/registry/routes';
+import type { RouteDefinition } from '../lib/registry/types';
+
+interface Props { route: RouteDefinition }
+const { route } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const tabs = localNavigationFor(route);
+const section = SUPERSECTION_DEFINITIONS.find((candidate) => candidate.key === route.supersection);
+---
+{tabs.length > 0 && section && (
+  <div class="tab-band">
+    <div class="tab-band__inner">
+      <span class="tab-band__label">{section.label}</span>
+      <nav class="tab-nav" aria-label={`${section.label} chapters`}>
+        {tabs.map((tab, index) => (
+          <a
+            href={hrefForRoute(tab.path, base)}
+            class:list={{ 'is-active': tab.active }}
+            aria-current={tab.active ? 'page' : undefined}
+            data-route-id={tab.id}
+          >
+            <span>{String(index + 1).padStart(2, '0')}</span>{tab.label}
+          </a>
+        ))}
+      </nav>
+    </div>
+  </div>
+)}

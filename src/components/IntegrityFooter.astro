@@ -1,0 +1,22 @@
+---
+import { INTEGRITY_TEST_REGISTRY, summarizeIntegrity } from '../lib/registry/integrity';
+import { hrefForRoute } from '../lib/navigation/shell';
+
+const base = import.meta.env.BASE_URL;
+const summary = summarizeIntegrity(INTEGRITY_TEST_REGISTRY, []);
+const repository = 'https://github.com/mikehalvorson/US-Climate-Health-and-Water';
+---
+<footer class="integrity-footer">
+  <div class="integrity-footer__summary">
+    <div>
+      <p class="integrity-footer__eyebrow">Public integrity feed</p>
+      <strong>{summary.registered} checks registered · {summary.executed} loaded · {summary.unloaded} unloaded</strong>
+      <p>The shell never converts an unloaded check into a pass. Executed build results will be connected in the Evidence &amp; Methods step.</p>
+    </div>
+    <a href={hrefForRoute('/methods', base)}>Inspect evidence &amp; methods</a>
+  </div>
+  <div class="integrity-footer__links">
+    <span>Static narrative remains readable without JavaScript.</span>
+    <a href={repository}>Repository and source corpus</a>
+  </div>
+</footer>

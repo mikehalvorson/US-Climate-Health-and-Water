@@ -1,0 +1,49 @@
+---
+import '../styles/global.css';
+import IntegrityFooter from '../components/IntegrityFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import TabNav from '../components/TabNav.astro';
+import { hrefForRoute } from '../lib/navigation/shell';
+import type { RouteDefinition } from '../lib/registry/types';
+
+interface Props {
+  route: RouteDefinition;
+  title?: string;
+  description?: string;
+}
+
+const { route, title = route.label, description = route.decisionQuestion } = Astro.props;
+const canonicalUrl = new URL(hrefForRoute(route.path, import.meta.env.BASE_URL), Astro.site);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <script is:inline>
+      (() => {
+        try {
+          const stored = localStorage.getItem('chw-theme');
+          const preferred = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          document.documentElement.dataset.theme = stored === 'dark' || stored === 'light' ? stored : preferred;
+        } catch {
+          document.documentElement.dataset.theme = 'light';
+        }
+      })();
+    </script>
+    <title>{title} | U.S. Climate, Health &amp; Water</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+  </head>
+  <body data-current-route={route.id} data-release-status="shell">
+    <a class="skip-link" href="#main-content">Skip to chapter content</a>
+    <div class="site-frame">
+      <SiteHeader route={route} />
+      <TabNav route={route} />
+      <slot />
+      <IntegrityFooter />
+    </div>
+    <script>import '../scripts/theme.ts';</script>
+  </body>
+</html>

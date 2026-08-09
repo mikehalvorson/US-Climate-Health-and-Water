@@ -1,0 +1,20 @@
+---
+import ChapterIntro from '../components/ChapterIntro.astro';
+import ChapterNav from '../components/ChapterNav.astro';
+import StoryRail from '../components/StoryRail.astro';
+import type { RouteDefinition } from '../lib/registry/types';
+import BaseLayout from './BaseLayout.astro';
+
+interface Props { route: RouteDefinition }
+const { route } = Astro.props;
+---
+<BaseLayout route={route}>
+  <main id="main-content" class="page-shell" tabindex="-1">
+    <ChapterIntro route={route} />
+    <div class:list={['story-layout', { 'story-layout--sitewide': route.routeKind !== 'story' }]}>
+      {route.routeKind === 'story' && <StoryRail />}
+      <div class="story-content"><slot /></div>
+    </div>
+    <ChapterNav route={route} />
+  </main>
+</BaseLayout>

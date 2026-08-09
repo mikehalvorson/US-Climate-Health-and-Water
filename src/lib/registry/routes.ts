@@ -53,6 +53,19 @@ export interface MechanismLink {
   label: string;
 }
 
+export interface SupersectionDefinition {
+  key: Exclude<Supersection, 'sitewide'>;
+  label: string;
+  landingRouteId: string;
+  purpose: string;
+}
+
+export const SUPERSECTION_DEFINITIONS = [
+  { key: 'energy', label: 'Energy', landingRouteId: 'RTE-000002', purpose: 'Reliable, abundant, low-carbon energy and delivery.' },
+  { key: 'climate', label: 'Climate', landingRouteId: 'RTE-000007', purpose: 'The causes, risks, and responses shaping climate outcomes.' },
+  { key: 'food_water', label: 'Food & Water', landingRouteId: 'RTE-000011', purpose: 'Secure essential services within basin and material limits.' },
+] as const satisfies readonly SupersectionDefinition[];
+
 export const MECHANISM_LINKS = [
   { originRouteId: 'RTE-000003', destinationRouteId: 'RTE-000005', label: 'See how annual demand becomes hourly and geographic infrastructure need.' },
   { originRouteId: 'RTE-000004', destinationRouteId: 'RTE-000011', label: 'Continue into cooling, hydrology, and basin constraints.' },
@@ -82,7 +95,8 @@ export function routesForSupersection(supersection: Exclude<Supersection, 'sitew
 }
 
 export function supersectionLanding(supersection: Exclude<Supersection, 'sitewide'>): RouteDefinition {
-  const landing = routesForSupersection(supersection)[0];
+  const definition = SUPERSECTION_DEFINITIONS.find((candidate) => candidate.key === supersection);
+  const landing = definition ? routeById(definition.landingRouteId) : undefined;
   if (!landing) {
     throw new Error(`Supersection ${supersection} has no route.`);
   }

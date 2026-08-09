@@ -1,0 +1,15 @@
+---
+import { STORY_ANCHORS } from '../lib/navigation/shell';
+---
+<aside class="story-rail" aria-label="Chapter progress">
+  <details open>
+    <summary>Inside this chapter <span>6 parts</span></summary>
+    <nav aria-label="On this page">
+      <ol>
+        {STORY_ANCHORS.map((anchor, index) => (
+          <li><a href={`#${anchor.id}`}><span>{String(index + 1).padStart(2, '0')}</span>{anchor.label}</a></li>
+        ))}
+      </ol>
+    </nav>
+  </details>
+</aside>

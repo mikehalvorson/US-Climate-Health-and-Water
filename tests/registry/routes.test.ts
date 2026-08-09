@@ -9,6 +9,7 @@ import {
   previousRoute,
   ROUTE_FOREIGN_KEYS,
   ROUTES,
+  SUPERSECTION_DEFINITIONS,
   routesForSupersection,
   supersectionLanding,
 } from '../../src/lib/registry';
@@ -41,6 +42,7 @@ describe('route registry', () => {
   });
 
   it('owns contiguous local-tab order and supersection landings', () => {
+    expect(SUPERSECTION_DEFINITIONS.map((section) => section.landingRouteId)).toEqual(['RTE-000002', 'RTE-000007', 'RTE-000011']);
     expect(routesForSupersection('energy').map((route) => route.localTabOrder)).toEqual([0, 1, 2, 3, 4]);
     expect(routesForSupersection('climate').map((route) => route.localTabOrder)).toEqual([0, 1, 2, 3]);
     expect(routesForSupersection('food_water').map((route) => route.localTabOrder)).toEqual([0, 1, 2, 3, 4]);

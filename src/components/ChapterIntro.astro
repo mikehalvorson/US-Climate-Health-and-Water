@@ -1,0 +1,25 @@
+---
+import { narrativeProgress } from '../lib/navigation/shell';
+import { SUPERSECTION_DEFINITIONS } from '../lib/registry/routes';
+import type { RouteDefinition } from '../lib/registry/types';
+
+interface Props { route: RouteDefinition }
+const { route } = Astro.props;
+const section = SUPERSECTION_DEFINITIONS.find((candidate) => candidate.key === route.supersection);
+const eyebrow = route.routeKind === 'overview' ? 'Connected systems' : route.routeKind === 'methods' ? 'Inspection surface' : section?.label;
+const promise = route.role.endsWith('.') ? route.role.slice(0, -1) : route.role;
+---
+<header class="chapter-intro">
+  <div class="chapter-intro__meta">
+    <span>{eyebrow}</span>
+    <span>{narrativeProgress(route)}</span>
+  </div>
+  <h1>{route.label}</h1>
+  <p class="decision-question">{route.decisionQuestion}</p>
+  <div class="scope-badges" aria-label="Chapter scope and publication status">
+    <span>Evidence vintage · Aug 2026</span>
+    <span>Scope · Global, U.S. &amp; sourced local views</span>
+    <span class="status-badge">Shell review · content not released</span>
+  </div>
+  <p class="page-promise"><strong>Chapter promise:</strong> {promise}.</p>
+</header>
