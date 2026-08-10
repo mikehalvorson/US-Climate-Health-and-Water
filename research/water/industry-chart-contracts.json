@@ -1,0 +1,48 @@
+{
+  "title": "Water for Energy & Industry chart contracts",
+  "contracts": [
+    {
+      "chart_id": "industry-data-center-growth",
+      "title": "Data-center direct water, 2023 estimate and 2028 range",
+      "type": "dot_range",
+      "data": ["sectors/data-centers.json#/direct_water"],
+      "constraints": ["Projection range is a source scenario, not a forecast.", "Do not assign the national estimate or range to a facility."]
+    },
+    {
+      "chart_id": "industry-direct-indirect-boundary",
+      "title": "Direct and indirect data-center water remain separate",
+      "type": "flow",
+      "data": ["sectors/data-centers.json#/direct_water", "sectors/data-centers.json#/indirect_electricity_water"],
+      "constraints": ["Indirect electricity water is an attributed upstream footprint.", "Do not add it to national totals that already include the power sector."]
+    },
+    {
+      "chart_id": "industry-thermoelectric-boundary",
+      "title": "Thermoelectric withdrawal is not consumption",
+      "type": "bar",
+      "data": ["national-water-use.json#/modeled_2010_2020/covered_sectors"],
+      "constraints": ["Keep freshwater withdrawal and consumptive use separate.", "Do not assign national averages to a plant or watershed."]
+    },
+    {
+      "chart_id": "industry-facility-water-system",
+      "title": "Facility, utility, energy, and watershed system",
+      "type": "flow",
+      "data": ["accounting-boundaries.json", "cross-domain-findings.json"],
+      "constraints": ["Show source, season, return flow, quality, and power dependencies.", "A physically present source is not necessarily operationally available."]
+    },
+    {
+      "chart_id": "industry-siting-drought-scorecard",
+      "title": "Siting and drought-operating scorecard",
+      "type": "matrix",
+      "data": ["sectors/data-centers.json#/site_level_drivers", "gaps.json"],
+      "constraints": ["Scores describe required decision evidence, not facility performance.", "No national average may clear a local siting gate."]
+    },
+    {
+      "chart_id": "industry-facility-evidence-map",
+      "title": "Verified facility water and watershed map",
+      "type": "map",
+      "status": "data_gap",
+      "data": ["gaps.json#/gaps/WGAP-DATA-CENTER-SITES"],
+      "constraints": ["Keep unavailable until facility, source, seasonal, utility, return-flow, and discharge data are verified.", "Provide a non-map requirements table."]
+    }
+  ]
+}

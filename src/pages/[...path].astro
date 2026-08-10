@@ -9,7 +9,9 @@ import GenerationChapter from '../components/energy/GenerationChapter.astro';
 import GridChapter from '../components/energy/GridChapter.astro';
 import CauseChapter from '../components/climate/CauseChapter.astro';
 import RiskChapter from '../components/climate/RiskChapter.astro';
+import CoastChapter from '../components/climate/CoastChapter.astro';
 import FreshwaterChapter from '../components/food-water/FreshwaterChapter.astro';
+import IndustryChapter from '../components/food-water/IndustryChapter.astro';
 import PlasticsChapter from '../components/food-water/PlasticsChapter.astro';
 import { chapterContentFor } from '../lib/content/release';
 import { hrefForRoute, STORY_ANCHORS } from '../lib/navigation/shell';
@@ -39,7 +41,7 @@ const statusCopy = {
 } as const;
 ---
 <RouteLayout route={route}>
-  {chapterContent === 'energy-system' ? <EnergySystemChapter /> : chapterContent === 'energy-demand' ? <DemandChapter /> : chapterContent === 'generation-choices' ? <GenerationChapter /> : chapterContent === 'grid-delivery' ? <GridChapter /> : chapterContent === 'climate-cause' ? <CauseChapter /> : chapterContent === 'climate-risks' ? <RiskChapter /> : chapterContent === 'freshwater-security' ? <FreshwaterChapter /> : chapterContent === 'plastics-materials' ? <PlasticsChapter /> : route.routeKind === 'story' ? (
+  {chapterContent === 'energy-system' ? <EnergySystemChapter /> : chapterContent === 'energy-demand' ? <DemandChapter /> : chapterContent === 'generation-choices' ? <GenerationChapter /> : chapterContent === 'grid-delivery' ? <GridChapter /> : chapterContent === 'climate-cause' ? <CauseChapter /> : chapterContent === 'climate-risks' ? <RiskChapter /> : chapterContent === 'coasts-communities' ? <CoastChapter /> : chapterContent === 'freshwater-security' ? <FreshwaterChapter /> : chapterContent === 'industry-water' ? <IndustryChapter /> : chapterContent === 'plastics-materials' ? <PlasticsChapter /> : route.routeKind === 'story' ? (
     <div class="shell-sections" aria-label={`${route.label} chapter publication gates`}>
       {STORY_ANCHORS.map((anchor, index) => {
         const copy = statusCopy[anchor.id];

@@ -1,0 +1,112 @@
+---
+import BarPlot from '../charts/BarPlot.astro';
+import DotRangePlot from '../charts/DotRangePlot.astro';
+import HeatmapPlot from '../charts/HeatmapPlot.astro';
+import LogScalePlot from '../charts/LogScalePlot.astro';
+import NetworkPlot from '../charts/NetworkPlot.astro';
+import CaveatPanel from '../CaveatPanel.astro';
+import ChartFrame from '../ChartFrame.astro';
+import DataTable from '../DataTable.astro';
+import EvidenceGap from '../EvidenceGap.astro';
+import RecommendationPanel from '../RecommendationPanel.astro';
+import ViewpointGrid from '../ViewpointGrid.astro';
+import {
+  approvedIndustryChart,
+  DATA_CENTER_BOUNDARY_NETWORK,
+  DATA_CENTER_BOUNDARY_TABLE,
+  DATA_CENTER_WATER_RANGES,
+  DATA_CENTER_WATER_TABLE,
+  FACILITY_MAP_REQUIREMENTS,
+  FACILITY_WATER_NETWORK,
+  FACILITY_WATER_TABLE,
+  INDUSTRY_NATIONAL_LOCAL_SCALE,
+  INDUSTRY_SCORE_COLUMNS,
+  INDUSTRY_SCORE_MATRIX,
+  INDUSTRY_SCORE_ROWS,
+  INDUSTRY_SCORE_TABLE,
+  INDUSTRY_SOURCES,
+  INDUSTRY_WORKBENCH,
+  THERMOELECTRIC_BARS,
+  THERMOELECTRIC_TABLE,
+} from '../../lib/data/industry';
+import { hrefForRoute } from '../../lib/navigation/shell';
+import IndustryWorkbench from './IndustryWorkbench.astro';
+
+const scaleChart = approvedIndustryChart('data-center-national-local-scale', 'map');
+const growthChart = approvedIndustryChart('industry-data-center-growth', 'dot_range');
+const boundaryChart = approvedIndustryChart('industry-direct-indirect-boundary', 'flow');
+const thermalChart = approvedIndustryChart('industry-thermoelectric-boundary', 'bar');
+const systemChart = approvedIndustryChart('industry-facility-water-system', 'flow');
+const scoreChart = approvedIndustryChart('industry-siting-drought-scorecard', 'matrix');
+const mapChart = approvedIndustryChart('industry-facility-evidence-map', 'map');
+const base = import.meta.env.BASE_URL;
+---
+<article class="chapter-content" data-chapter-content="industry-water">
+  <section id="current-system" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">01 · Current system</p><h2>National scale and local water impact answer different questions</h2><p>Thermoelectric and industrial withdrawals are large national flows. Data-center direct water is much smaller nationally, yet facilities can concentrate new demand in one utility and watershed on a short schedule.</p></div>
+    <ChartFrame chart={scaleChart} unit="Billion gallons per day on a logarithmic position scale" geography="United States national context; years and boundaries differ" period="2015 thermoelectric and industrial inventory; 2023 data-center estimate" sources={[INDUSTRY_SOURCES.inventory, INDUSTRY_SOURCES.industrial, INDUSTRY_SOURCES.dataCenters]} summary="The national comparison spans roughly three orders of magnitude: 133 Bgal/day thermoelectric self-supplied withdrawal, 14.8 industrial self-supplied withdrawal, and 0.04777 data-center direct water. The log position reveals scale without making unlike years or boundaries additive." caveats={['The comparison mixes clearly labeled context years and must not be summed.', 'Industrial self-supplied withdrawal excludes public-supply deliveries.', 'Nationally small demand does not establish locally small impact.']}>
+      <LogScalePlot slot="plot" values={INDUSTRY_NATIONAL_LOCAL_SCALE} summary="National water-scale context for thermoelectric power, self-supplied industry, and data-center direct water." />
+      <DataTable slot="table" caption="National-to-local facility water scale context" columns={[{ key: 'label', label: 'Context' }, { key: 'value', label: 'Value', numeric: true }, { key: 'unit', label: 'Unit' }, { key: 'boundary', label: 'Boundary' }]} rows={INDUSTRY_NATIONAL_LOCAL_SCALE} />
+    </ChartFrame>
+    <ChartFrame chart={growthChart} unit="Million gallons per day, national direct water" geography="United States data-center estimate and source scenario" period="2023 estimate and 2028 projection range" sources={[INDUSTRY_SOURCES.dataCenters, INDUSTRY_SOURCES.dataCenterProjection]} summary="Estimated direct data-center water rises from 47.77 Mgal/day in 2023 to a source projection range of 101.3–202.7 Mgal/day in 2028. The range is not a facility forecast or a universal workload coefficient." caveats={['The 2028 range is a source scenario.', 'Cooling, climate, workload, water source, reuse, and operating conditions drive site results.', INDUSTRY_WORKBENCH.guardrail.rule]}>
+      <DotRangePlot slot="plot" values={DATA_CENTER_WATER_RANGES} valueLabel="National direct water" unit="Mgal/day" summary="2023 direct data-center water estimate and 2028 source projection range." labelWidth={280} width={820} height={280} />
+      <DataTable slot="table" caption="Data-center direct-water estimate and projection range" columns={[{ key: 'period', label: 'Period' }, { key: 'evidenceState', label: 'Evidence state' }, { key: 'low', label: 'Low', numeric: true }, { key: 'central', label: 'Central', numeric: true }, { key: 'high', label: 'High', numeric: true }, { key: 'unit', label: 'Unit' }, { key: 'boundary', label: 'Boundary' }]} rows={DATA_CENTER_WATER_TABLE} />
+    </ChartFrame>
+  </section>
+
+  <section id="problems" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">02 · Why this is a problem</p><h2>Direct, indirect, withdrawal, consumption, and discharge are not interchangeable</h2><p>Facility water accounting fails when an attributed upstream electricity footprint is added to national power-sector water, or when a national thermoelectric average is assigned to a plant.</p></div>
+    <ChartFrame chart={boundaryChart} unit="Mgal/day for quantified 2023 national context; qualitative links remain unquantified" geography="United States data-center attribution boundary" period="2023" sources={[INDUSTRY_SOURCES.dataCenters]} summary="The 47.77-Mgal/day direct estimate and 579-Mgal/day attributed electricity-water estimate follow separate branches. Indirect water is useful attribution but cannot be added to a physical national total that already contains the power sector." caveats={['Direct and indirect estimates have different system boundaries.', 'An attributed upstream footprint is not water metered at a data center.', 'Facility source, withdrawal, consumption, return flow, and discharge quality remain unresolved nationally.']}>
+      <NetworkPlot slot="plot" id="data-center-water-boundary" nodes={DATA_CENTER_BOUNDARY_NETWORK.nodes} edges={DATA_CENTER_BOUNDARY_NETWORK.edges} variant="flow" unit="Mgal/day or qualitative link" summary="Separate direct facility-water and indirect electricity-water attribution branches." width={900} height={430} />
+      <DataTable slot="table" caption="Direct and indirect data-center water boundaries" columns={[{ key: 'boundary', label: 'Boundary' }, { key: 'value', label: 'Value', numeric: true }, { key: 'unit', label: 'Unit' }, { key: 'year', label: 'Year', numeric: true }, { key: 'accounting', label: 'Accounting rule' }]} rows={DATA_CENTER_BOUNDARY_TABLE} />
+    </ChartFrame>
+    <ChartFrame chart={thermalChart} unit="Million gallons per day freshwater" geography="Conterminous United States covered-sector model" period="2010–20 modeled average" sources={[INDUSTRY_SOURCES.consumption]} summary="Thermoelectric freshwater withdrawal averaged 82,656 Mgal/day while consumptive use averaged 2,904 Mgal/day, about four percent. High withdrawal with substantial return flow is not zero impact because timing, temperature, chemistry, and location still matter." caveats={['The covered-sector values are not a plant average.', 'Once-through and recirculating cooling have different withdrawal and consumption patterns.', 'Returned water can differ in temperature, quality, timing, and downstream availability.']}>
+      <BarPlot slot="plot" id="thermoelectric-water-boundary" values={THERMOELECTRIC_BARS} valueLabel="Freshwater volume" unit="Mgal/day" summary="Thermoelectric freshwater withdrawal and consumptive use shown as separate measures." width={820} height={360} />
+      <DataTable slot="table" caption="Thermoelectric freshwater withdrawal and consumption" columns={[{ key: 'measure', label: 'Measure' }, { key: 'value', label: 'Value', numeric: true }, { key: 'unit', label: 'Unit' }, { key: 'period', label: 'Period' }, { key: 'fraction', label: 'Relationship' }, { key: 'interpretation', label: 'Interpretation' }]} rows={THERMOELECTRIC_TABLE} />
+    </ChartFrame>
+    <ViewpointGrid id="industry-water-viewpoints" title="Facility growth connects operators to shared local systems" items={[
+      { viewpoint: 'people_and_households', label: 'Customers and households', problem: 'New load can affect utility capital, rates, drought allocations, and service reliability.', evidenceState: 'qualitative_evidence', consequence: 'Basic affordable service and transparent cost allocation need explicit protection.' },
+      { viewpoint: 'utilities_and_infrastructure_owners', label: 'Water and power providers', problem: 'Coincident water, electricity, treatment, conveyance, and wastewater needs can exceed planned headroom.', evidenceState: 'qualitative_evidence', consequence: 'Interconnection and water-service commitments must share scenarios and triggers.' },
+      { viewpoint: 'host_communities_and_tribes', label: 'Host communities and competing users', problem: 'Facilities compete within legal, cultural, seasonal, and cumulative watershed constraints.', evidenceState: 'qualitative_evidence', consequence: 'Participation, rights, benefits, drought priority, and enforceable operating terms belong in siting.' },
+      { viewpoint: 'ecosystems_and_nonhuman_life', label: 'Ecosystems', problem: 'Withdrawal timing, consumptive loss, temperature, chemistry, and reduced dilution affect habitat.', evidenceState: 'qualitative_evidence', consequence: 'Environmental flow and discharge quality must remain decision gates.' },
+    ]} />
+  </section>
+
+  <section id="choices" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">03 · Choices</p><h2>Efficiency helps, but siting begins with the whole local system</h2><p>A lower-water cooling design can reduce demand, yet a credible decision still needs source reliability, seasonality, utility capacity, return flow, quality, power demand, community impacts, and drought rules.</p></div>
+    <ChartFrame chart={systemChart} unit="Qualitative system dependency; quantitative flow requires facility evidence" geography="Facility, utility, source, watershed, grid, community, and ecosystem boundary" period="Siting, normal operations, drought operations, and closure" sources={[INDUSTRY_SOURCES.nationalRisk, INDUSTRY_SOURCES.consumption]} summary="A facility depends on a verified water source or utility, uses water in cooling or process systems, consumes or returns it with timing and quality effects, adds power demand, and changes risks for people, other users, and ecosystems." caveats={['A physically present source may be operationally unavailable because of rights, quality, treatment, conveyance, storage, or drought rules.', 'Indirect electricity water stays an attribution layer.', 'Every quantitative edge requires a site, period, source, and accounting boundary.']}>
+      <NetworkPlot slot="plot" id="facility-water-system" nodes={FACILITY_WATER_NETWORK.nodes} edges={FACILITY_WATER_NETWORK.edges} variant="flow" unit="qualitative dependency" summary="Facility-to-utility-to-watershed system including consumption, return flow, quality, power, and competing needs." width={900} height={480} />
+      <DataTable slot="table" caption="Facility-water system evidence requirements" columns={[{ key: 'stage', label: 'System stage' }, { key: 'requiredEvidence', label: 'Required evidence' }, { key: 'decision', label: 'Decision question' }]} rows={FACILITY_WATER_TABLE} />
+    </ChartFrame>
+    <ChartFrame chart={scoreChart} unit="Evidence importance: 3 decision gate, 2 required context or monitoring" geography="Facility and watershed decision framework" period="Disclosure, siting, normal operations, and drought operations" sources={[INDUSTRY_SOURCES.nationalRisk, INDUSTRY_SOURCES.dataCenters]} summary="Source reliability, seasonal budget, complete water balance, water quality, power-water interaction, and community and ecosystem effects are required across the facility lifecycle. The matrix scores evidence importance, not facility performance." caveats={['No national average clears a local siting gate.', 'A high cell does not mean the facility performs well.', 'Drought triggers must be enforceable and tied to monitored source and service conditions.']}>
+      <HeatmapPlot slot="plot" id="industry-siting-scorecard" values={INDUSTRY_SCORE_MATRIX} rows={INDUSTRY_SCORE_ROWS} columns={INDUSTRY_SCORE_COLUMNS} unit="evidence importance" summary="Facility water siting and operating evidence requirements by decision stage." variant="matrix" width={860} height={430} />
+      <DataTable slot="table" caption="Facility siting and drought-operating scorecard" columns={[{ key: 'dimension', label: 'Dimension' }, { key: 'disclosure', label: 'Disclosure' }, { key: 'siting', label: 'Siting' }, { key: 'normalOperations', label: 'Normal operations' }, { key: 'droughtOperations', label: 'Drought operations' }, { key: 'qualification', label: 'Qualification' }]} rows={INDUSTRY_SCORE_TABLE} />
+    </ChartFrame>
+  </section>
+
+  <section id="recommendation" class="chapter-act" data-chapter-section>
+    <RecommendationPanel id="industry-water-recommendation" title="Fit large facilities within verified seasonal watershed budgets" conclusion="Watershed-budget siting and operation with disclosure, efficiency, reuse, drought triggers, community protection, and energy-system coordination." rationale={['National context cannot establish whether one utility, source, aquifer, or watershed can support a facility.', 'Complete direct-water and return-flow accounting reveals the seasonal quantity and quality change that local users experience.', 'Coordinating electricity and water prevents upstream burdens and infrastructure needs from being hidden.']} tradeoffs={['Lower-water cooling can change energy use, cost, noise, or performance', 'Reuse requires treatment, conveyance, storage, quality control, and a reliable source stream', 'Strict local budgets may redirect projects or constrain output during drought']} residualRisks={['Compound drought, heat, grid stress, water-quality limits, and utility outages', 'Unverified disclosure, changing workloads, and facility expansion after approval', 'Costs or curtailment shifted to households, smaller users, ecosystems, or downstream communities']} />
+    <ChartFrame chart={mapChart} status="empty" summary="A national facility-water map is withheld because verified facility, source, seasonal, utility, return-flow, discharge, and watershed records are not present." caveats={['A map marker without facility and water-system identity would imply false geographic precision.', 'National averages must not be assigned to facilities.']}>
+      <DataTable slot="table" caption="Evidence required to enable a facility-water map" columns={[{ key: 'field', label: 'Required field' }, { key: 'currentStatus', label: 'Current status' }, { key: 'enablementTest', label: 'Enablement test' }]} rows={FACILITY_MAP_REQUIREMENTS} />
+    </ChartFrame>
+    <EvidenceGap title="Verified facility-water geography is not available" decision="Map and compare large facilities against seasonal utility and watershed limits." missingInputs={FACILITY_MAP_REQUIREMENTS.map((item) => item.field)} nextAction="Build a versioned facility registry from permits, utility agreements, environmental reviews, company disclosures, discharge records, and watershed data; preserve unknowns and validate every spatial join." />
+  </section>
+
+  <section id="model" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">05 · Model-supported case</p><h2>Compare boundaries without inventing site-level impacts</h2><p>The working view returns only compatible national context. Missing facility-boundary combinations remain unavailable, and the site selector cannot be enabled by user input.</p></div>
+    <IndustryWorkbench />
+    <CaveatPanel title="Facility effects require facility evidence" caveats={['Data-center workload footprints vary by more than 10,000-fold across published configurations and boundaries.', 'Self-supplied industrial totals omit public-supply deliveries.', 'Current plastics withdrawal, consumption, utility deliveries, and lifecycle water are not reconciled nationally.']} prohibitedInterpretations={['A universal gallons-per-query or gallons-per-AI-response coefficient.', 'A national average assigned to a data center, power plant, factory, or watershed.', 'Indirect electricity water added to a national total that already contains power-sector water.']} />
+  </section>
+
+  <section id="delivery" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">06 · Delivery</p><h2>Make disclosure, siting, drought operation, and closure enforceable</h2></div>
+    <ol class="delivery-sequence">
+      <li><strong>Define the service and boundary.</strong><span>Identify facility, campus, workload or output, source, utility, withdrawal, consumption, return, discharge quality, season, and electricity attribution.</span></li>
+      <li><strong>Test the seasonal budget.</strong><span>Compare incremental demand with reliable yield, storage, treatment, conveyance, environmental flow, competing needs, rights, climate stress, and cumulative projects.</span></li>
+      <li><strong>Condition approval and operation.</strong><span>Require meters, disclosure, efficiency, suitable reuse, drought triggers, curtailment priorities, community protections, and energy-system coordination.</span></li>
+      <li><strong>Audit expansion and closure.</strong><span>Review actual demand, quality, incidents, workload or production growth, utility costs, ecosystem conditions, and decommissioning obligations.</span></li>
+    </ol>
+    <div class="delivery-gates"><article><h3>Siting gate</h3><p>Verified source, monthly budget, rights, infrastructure headroom, cumulative demand, ecosystem flow, community agreement, and alternative sites.</p></article><article><h3>Operating gate</h3><p>Metered withdrawal and consumption, return flow, discharge permit, efficiency, reuse performance, power demand, and public reporting.</p></article><article><h3>Drought gate</h3><p>Observable trigger, enforceable curtailment, protected essential service, competing-user allocation, ecosystem floor, and recovery rule.</p></article></div>
+    <aside class="continuation-card"><p>Cross-system continuation</p><a href={hrefForRoute('/energy/plan', base)}>Continue into large-load demand, generation, grid, and portfolio constraints →</a></aside>
+  </section>
+</article>

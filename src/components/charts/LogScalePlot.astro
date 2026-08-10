@@ -1,0 +1,26 @@
+---
+interface ScaleValue { id: string; label: string; value: number; unit: string; boundary: string }
+interface Props { values: readonly ScaleValue[]; summary: string; width?: number; height?: number }
+const { values, summary, width = 820, height = 330 } = Astro.props;
+const left = 285;
+const positive = values.map((item) => item.value).filter((value) => value > 0);
+const minimum = Math.min(...positive);
+const maximum = Math.max(...positive);
+const span = Math.log10(maximum) - Math.log10(minimum) || 1;
+const x = (value: number) => left + ((Math.log10(value) - Math.log10(minimum)) / span) * (width - left - 70);
+---
+<svg class="svg-plot log-scale-plot" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={summary}>
+  <title>{summary}</title>
+  {values.map((item, index) => {
+    const y = 68 + index * 82;
+    const tooltip = `${item.label}: ${item.value.toLocaleString('en-US', { maximumFractionDigits: 4 })} ${item.unit}. ${item.boundary}`;
+    return <g class:list={['log-scale-row', `chart-series--${index % 6}`]} tabindex="0" aria-label={tooltip} data-tooltip={tooltip}>
+      <text x={left - 14} y={y + 4} text-anchor="end">{item.label}</text>
+      <line x1={left} x2={x(item.value)} y1={y} y2={y} />
+      <circle cx={x(item.value)} cy={y} r="8" />
+      <text class="bar-value-label" x={Math.min(width - 18, x(item.value) + 12)} y={y + 4}>{item.value.toLocaleString('en-US', { maximumFractionDigits: 4 })}</text>
+      <title>{tooltip}</title>
+    </g>;
+  })}
+  <text class="plot-axis-label" x={left + (width - left) / 2} y={height - 14} text-anchor="middle">Logarithmic position · values retain {values[0]?.unit}</text>
+</svg>

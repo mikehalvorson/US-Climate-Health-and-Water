@@ -429,6 +429,23 @@ a:hover { text-decoration-thickness: 0.13em; }
 .transformer-chain strong { font-family: ui-serif, Georgia, serif; }
 .transformer-chain p, .transformer-chain small { color: var(--ink-soft); font-size: 0.68rem; }
 .infrastructure-workbench-output { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.log-scale-row line { stroke: var(--series-color); stroke-width: 5; }
+.log-scale-row circle { fill: var(--series-color); stroke: var(--surface); stroke-width: 2; }
+.log-scale-row:focus-visible { outline: none; }
+.log-scale-row:focus-visible line, .log-scale-row:focus-visible circle { stroke: var(--focus); stroke-width: 5; }
+.exposure-range-grid, .receiving-capacity-grid, .adaptation-pathway-grid { display: grid; gap: 0.75rem; padding: 0.85rem; }
+.exposure-range-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.receiving-capacity-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.adaptation-pathway-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.exposure-range-grid article, .receiving-capacity-grid article, .adaptation-pathway-grid article { min-width: 0; padding: 0.9rem; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); }
+.exposure-range-grid h4, .receiving-capacity-grid h4, .adaptation-pathway-grid h4 { margin: 0.65rem 0; font-family: ui-serif, Georgia, serif; font-size: 1rem; }
+.exposure-range-grid p { margin: 0.75rem 0; }
+.exposure-range-grid p strong { font-family: ui-serif, Georgia, serif; font-size: clamp(1.35rem, 3vw, 2rem); }
+.exposure-range-grid p span, .exposure-range-grid small, .receiving-capacity-grid small, .adaptation-pathway-grid small { color: var(--ink-muted); font-size: 0.66rem; }
+.receiving-capacity-grid p, .adaptation-pathway-grid p { color: var(--ink-soft); font-size: 0.72rem; }
+.adaptation-pathway-grid article { border-top: 0.24rem solid var(--climate); }
+.adaptation-pathway-grid article > span { color: var(--climate); font-size: 0.66rem; font-weight: 850; }
+.place-workbench-output { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
 .scenario-workbench { overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); box-shadow: var(--shadow); }
 .scenario-workbench__header { display: grid; grid-template-columns: minmax(0, 1fr) minmax(13rem, 0.35fr); gap: 1.5rem; padding: clamp(1.2rem, 3vw, 2rem); }
@@ -620,6 +637,8 @@ a:hover { text-decoration-thickness: 0.13em; }
   .chart-small-multiples--three section:last-child { border-bottom: 0; }
   .evidence-matrix-plot, .biodiversity-plot-layout, .mobility-plot-layout, .risk-horizon-plot, .claim-audit-grid, .water-workbench-output, .plastics-workbench-output, .split-plot { grid-template-columns: 1fr; }
   .technology-card-grid, .nuclear-evidence-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .adaptation-pathway-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .exposure-range-grid { grid-template-columns: 1fr; }
   .water-workbench-output > section:nth-child(5) { grid-column: auto; }
   .delivery-gates { grid-template-columns: 1fr; }
 }
@@ -655,6 +674,7 @@ a:hover { text-decoration-thickness: 0.13em; }
   .metric-grid, .annual-peak-explainer dl, .workbench-result { grid-template-columns: 1fr; }
   .evidence-stat-grid, .chart-small-multiples--two, .workbench-result-grid, .risk-priority-plot, .technology-card-grid, .nuclear-evidence-grid { grid-template-columns: 1fr; }
   .process-swimlane section { grid-template-columns: 1fr; }
+  .receiving-capacity-grid, .adaptation-pathway-grid { grid-template-columns: 1fr; }
   .chart-small-multiples--two section { border-bottom: 1px solid var(--line); }
   .chart-small-multiples--two section:last-child { border-bottom: 0; }
   .workbench-result-grid dl { grid-template-columns: 1fr; }

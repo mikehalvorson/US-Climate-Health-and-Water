@@ -34,6 +34,7 @@
     "technologies/atmospheric-water-generation.json",
     "cross-domain-findings.json",
     "chart-contracts.json",
+    "industry-chart-contracts.json",
     "gaps.json",
     "summary.json",
     "timeseries/usgs-historical-water-use-1950-2015.csv",

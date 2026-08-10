@@ -1,0 +1,115 @@
+---
+import DotRangePlot from '../charts/DotRangePlot.astro';
+import LinePlot from '../charts/LinePlot.astro';
+import NetworkPlot from '../charts/NetworkPlot.astro';
+import CaveatPanel from '../CaveatPanel.astro';
+import ChartFrame from '../ChartFrame.astro';
+import DataTable from '../DataTable.astro';
+import EvidenceBadge from '../EvidenceBadge.astro';
+import RecommendationPanel from '../RecommendationPanel.astro';
+import ViewpointGrid from '../ViewpointGrid.astro';
+import {
+  approvedCoastChart,
+  COAST_ADAPTATION_CONTEXT,
+  COAST_ADAPTATION_PATHWAYS,
+  COAST_EXPOSURE_RANGES,
+  COAST_FLOOD_SERIES,
+  COAST_FLOOD_TABLE,
+  COAST_HABITABILITY_NETWORK,
+  COAST_HABITABILITY_TABLE,
+  COAST_MIGRATION_RANGES,
+  COAST_MIGRATION_TABLE,
+  COAST_RECEIVING_CONTEXT,
+  COAST_RECEIVING_DOMAINS,
+  COAST_SCENARIO_SERIES,
+  COAST_SCENARIO_TABLE,
+  COAST_SOURCES,
+  COAST_TREND_RANGES,
+  COAST_TREND_TABLE,
+} from '../../lib/data/coasts';
+import { hrefForRoute } from '../../lib/navigation/shell';
+import CoastWorkbench from './CoastWorkbench.astro';
+
+const trendChart = approvedCoastChart('observed-local-rsl-trends', 'bar');
+const scenarioChart = approvedCoastChart('local-relative-sea-level-fan', 'dot_range');
+const floodChart = approvedCoastChart('high-tide-flood-days', 'line');
+const habitabilityChart = approvedCoastChart('city-habitability-cascade', 'flow');
+const exposureChart = approvedCoastChart('nature-2050-exposure', 'map');
+const migrationChart = approvedCoastChart('migration-stress-test', 'flow');
+const receivingChart = approvedCoastChart('receiving-city-capacity', 'matrix');
+const pathwayChart = approvedCoastChart('adaptation-pathway-timeline', 'map');
+const base = import.meta.env.BASE_URL;
+---
+<article class="chapter-content" data-chapter-content="coasts-communities">
+  <section id="current-system" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">01 · Current system</p><h2>Sea level is experienced relative to moving land</h2><p>Observed relative trends combine ocean change and local land motion. The three gauges have different record lengths and geographic meanings, so they are evidence about their locations—not linear forecasts or municipal water depths.</p></div>
+    <ChartFrame chart={trendChart} unit="Millimeters per year, record-wide trend ± reported uncertainty" geography="Virginia Key, New Canal Station, and Grand Isle tide gauges" period="Station-specific records through December 2025" sources={[COAST_SOURCES.observed]} summary="Observed relative sea-level trends are about 3.20 mm/year at Virginia Key, 5.99 at New Canal Station, and 9.12 at Grand Isle, with each station’s reported trend uncertainty retained." caveats={['Record lengths differ by station.', 'Grand Isle is a coastal Louisiana indicator, not New Orleans.', 'Observed linear trends are not official future scenarios.']}>
+      <DotRangePlot slot="plot" values={COAST_TREND_RANGES} valueLabel="Observed relative trend" unit="mm/year" summary="Record-wide observed relative sea-level trends and uncertainty at three NOAA gauges." labelWidth={220} width={820} height={320} />
+      <DataTable slot="table" caption="Observed relative sea-level trends and geographic boundaries" columns={[{ key: 'station', label: 'Station' }, { key: 'stationId', label: 'NOAA station' }, { key: 'record', label: 'Record' }, { key: 'trend', label: 'Trend', unit: 'mm/year', numeric: true }, { key: 'uncertainty', label: '± uncertainty', unit: 'mm/year', numeric: true }, { key: 'interpretation', label: 'Interpretation' }, { key: 'geographicGuardrail', label: 'Geographic guardrail' }]} rows={COAST_TREND_TABLE} />
+    </ChartFrame>
+    <ChartFrame chart={scenarioChart} unit="Meters of local relative sea-level change since 2020" geography="Virginia Key tide gauge" period="2020–2100, decadal NOAA scenario points" sources={[COAST_SOURCES.scenarios]} summary="Five NOAA local scenarios for Virginia Key begin from a visible 2020 change baseline of zero and diverge through 2100. The lines are ordered scenarios, not probabilities or parcel flood depths." caveats={['The native change-since-2020 baseline remains visible.', 'Scenario labels do not carry probabilities.', 'Miami-Dade’s planning range uses a different reference and is not silently spliced to this series.']}>
+      <LinePlot slot="plot" series={COAST_SCENARIO_SERIES} xLabel="Scenario year" yLabel="Relative change since 2020" unit="m" summary="NOAA Low through High local relative sea-level scenarios at Virginia Key." width={900} height={430} />
+      <DataTable slot="table" caption="Virginia Key NOAA local relative sea-level scenarios" columns={[{ key: 'location', label: 'Location' }, { key: 'scenario', label: 'Scenario' }, { key: 'year', label: 'Year', numeric: true }, { key: 'changeFrom2020', label: 'Change since 2020', unit: 'm', numeric: true }, { key: 'baseline', label: 'Baseline' }, { key: 'landMotionContribution', label: 'VLM contribution', unit: 'cm/year', numeric: true }, { key: 'guardrail', label: 'Geographic guardrail' }]} rows={COAST_SCENARIO_TABLE} />
+    </ChartFrame>
+  </section>
+
+  <section id="problems" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">02 · Why this is a problem</p><h2>Habitability can erode before permanent inundation</h2><p>Threshold flooding, groundwater, drainage, access, utilities, insurance, finance, and household resources interact. A threshold-exceedance day does not mean an entire city is flooded.</p></div>
+    <ChartFrame chart={floodChart} unit="Days per year above the local minor-flood threshold" geography="Virginia Key and Grand Isle tide gauges" period="2020–2100 decadal source scenarios" sources={[COAST_SOURCES.observed, COAST_SOURCES.scenarios]} summary="Intermediate and High NOAA scenarios show locally defined minor-threshold exceedance days at two gauges. A day counts a gauge-threshold exceedance, not flooded area, depth, duration, storm surge, or citywide impact." caveats={['Minor thresholds are local and not interchangeable between gauges.', 'Grand Isle is not New Orleans.', 'Threshold days do not encode defenses, rainfall, drainage, roads, buildings, or exposed population.']}>
+      <LinePlot slot="plot" series={COAST_FLOOD_SERIES} xLabel="Decade" yLabel="Threshold-exceedance days" unit="days/year" summary="Intermediate and High scenario minor high-tide flood days at Virginia Key and Grand Isle." width={900} height={430} />
+      <DataTable slot="table" caption="Local high-tide threshold-exceedance days" columns={[{ key: 'station', label: 'Station' }, { key: 'stationId', label: 'NOAA station' }, { key: 'threshold', label: 'Local threshold' }, { key: 'decade', label: 'Decade', numeric: true }, { key: 'scenario', label: 'Scenario' }, { key: 'daysPerYear', label: 'Days/year', numeric: true }, { key: 'guardrail', label: 'Geographic guardrail' }]} rows={COAST_FLOOD_TABLE} />
+    </ChartFrame>
+    <ChartFrame chart={habitabilityChart} unit="Qualitative causal pathway; no binary city-loss threshold" geography="Coastal urban systems, with New Orleans and Miami pathways in the table" period="Current evidence and planning context" sources={[COAST_SOURCES.nationalAssessment, COAST_SOURCES.miamiPlanning]} summary="Higher relative water levels can increase tidal and surge thresholds, reduce drainage head, raise groundwater, disrupt access and services, increase housing and finance costs, and drive adaptation or displacement unevenly." caveats={['Functional habitability is not parcel elevation alone.', 'Buildings can remain dry while access or utilities fail.', 'Displacement depends on protection, public investment, household resources, and housing markets.']}>
+      <NetworkPlot slot="plot" id="coastal-habitability" nodes={COAST_HABITABILITY_NETWORK.nodes} edges={COAST_HABITABILITY_NETWORK.edges} variant="flow" unit="qualitative pathway" summary="Causal cascade from relative water level through services, affordability, adaptation, and displacement." width={900} height={430} />
+      <DataTable slot="table" caption="New Orleans and Miami habitability pathways" columns={[{ key: 'city', label: 'Planning context' }, { key: 'hazard', label: 'Hazard' }, { key: 'mechanism', label: 'Mechanism' }, { key: 'consequences', label: 'Consequences' }, { key: 'guardrail', label: 'Geographic guardrail' }]} rows={COAST_HABITABILITY_TABLE} />
+    </ChartFrame>
+    <ViewpointGrid id="coastal-viewpoints" title="Coastal risk and adaptive capacity are distributed unevenly" items={[
+      { viewpoint: 'people_and_households', label: 'Residents and renters', problem: 'Flooding, premiums, repairs, outages, rent, credit, and mobility resources shape who can remain.', evidenceState: 'qualitative_evidence', consequence: 'Protection and relocation programs must protect tenants and households with fewer resources.' },
+      { viewpoint: 'utilities_and_infrastructure_owners', label: 'Utilities and infrastructure', problem: 'Drainage, roads, drinking water, wastewater, electricity, ports, and emergency services fail through different thresholds.', evidenceState: 'qualitative_evidence', consequence: 'Asset-specific triggers and recovery standards belong in adaptive pathways.' },
+      { viewpoint: 'host_communities_and_tribes', label: 'Communities and receiving places', problem: 'Sending communities can lose cohesion while arrivals create concentrated housing and service needs elsewhere.', evidenceState: 'qualitative_evidence', consequence: 'Plans need voluntary movement support and funded receiving capacity.' },
+      { viewpoint: 'ecosystems_and_nonhuman_life', label: 'Coastal ecosystems', problem: 'Wetlands and shorelines can buffer hazards but need space, sediment, and ecological continuity.', evidenceState: 'qualitative_evidence', consequence: 'Restoration must be planned as dynamic habitat, not an unlimited hard-defense substitute.' },
+    ]} />
+  </section>
+
+  <section id="choices" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">03 · Choices</p><h2>Exposure and movement estimates answer different questions</h2><p>Study-domain exposure is not observed flooding, displacement, or migration. Migration scenarios can test receiving-city capacity only when their high-end, end-century assumptions remain explicit.</p></div>
+    <ChartFrame chart={exposureChart} unit="Source-native 2050 ranges; unit printed per metric" geography="32 U.S. coastal-city study domains" period="2050 SSP2-4.5 exposure study with 2010 population and property baselines" sources={[COAST_SOURCES.exposure]} summary="Including vertical land motion adds an estimated 1,334–1,813 km², 176,000–518,000 people, and 94,000–288,000 properties to modeled 2050 exposure across 32 study domains." caveats={['Study domains are not always municipal boundaries.', 'The static connected-inundation model omits defenses.', 'Exposure is not damage, displacement, migration, or a citywide forecast.']}>
+      <div slot="plot" class="exposure-range-grid" aria-label="2050 exposure ranges with land motion">{COAST_EXPOSURE_RANGES.map((item) => <article><EvidenceBadge state="source_scenario" /><h4>{item.metric}</h4><p><strong>{item.low.toLocaleString('en-US')}–{item.high.toLocaleString('en-US')}</strong> <span>{item.unit}</span></p><small>{item.context}</small></article>)}</div>
+      <DataTable slot="table" caption="Additional 2050 coastal exposure when vertical land motion is included" columns={[{ key: 'metric', label: 'Metric' }, { key: 'low', label: 'Low', numeric: true }, { key: 'high', label: 'High', numeric: true }, { key: 'unit', label: 'Unit' }, { key: 'context', label: 'Context' }]} rows={COAST_EXPOSURE_RANGES} />
+    </ChartFrame>
+    <ChartFrame chart={migrationChart} unit="Modeled net migration with reported interval" geography="Selected U.S. CBSAs" period="2100 high-end 1.8-meter no-adaptation and adaptation variants" sources={[COAST_SOURCES.migration]} summary="The no-adaptation stress test shows large modeled net losses for Miami and New Orleans and gains for Austin, Orlando, and Atlanta. Values are scenario-model outputs, not annual arrival paths or forecasts." caveats={['The 1.8-meter end-century framing is a high-end stress case.', 'Historical migration links may change.', 'Exposure, displacement, migration, and permanent resettlement remain separate quantities.']}>
+      <DotRangePlot slot="plot" values={COAST_MIGRATION_RANGES} valueLabel="Modeled net migration" unit="people" summary="Selected CBSA net-migration estimates and intervals in the high-end 2100 no-adaptation scenario." labelWidth={190} width={900} height={390} />
+      <DataTable slot="table" caption="High-end 2100 migration stress-test variants" columns={[{ key: 'cbsa', label: 'CBSA' }, { key: 'adaptation', label: 'Variant' }, { key: 'estimate', label: 'Net estimate', numeric: true }, { key: 'intervalLow', label: 'Interval low', numeric: true }, { key: 'intervalHigh', label: 'Interval high', numeric: true }, { key: 'horizon', label: 'Horizon', numeric: true }, { key: 'seaLevelRise', label: 'Sea-level scenario', unit: 'm', numeric: true }, { key: 'interpretation', label: 'Interpretation' }]} rows={COAST_MIGRATION_TABLE} />
+    </ChartFrame>
+  </section>
+
+  <section id="recommendation" class="chapter-act" data-chapter-section>
+    <RecommendationPanel id="coastal-recommendation" title="Build local adaptive pathways and receiving capacity" conclusion="Local adaptive pathways combining protection, accommodation, restoration, exposure avoidance, and funded voluntary relocation where durable protection is not equitable or feasible." rationale={['New Orleans and Miami have different physical settings, engineered dependencies, and failure pathways.', 'Adaptation changes outcomes, so fixed disappearance dates erase the decisions that matter.', 'Early receiving-city preparation can protect newcomers and incumbent residents from concentrated service strain.']} tradeoffs={['Protection can transfer water, induce exposure, and require perpetual maintenance', 'Avoidance and relocation can disrupt communities and raise housing costs without equity safeguards', 'Restoration has ecological benefits but cannot eliminate every extreme event']} residualRisks={['Compound surge, rainfall, groundwater, power, drainage, and access failures', 'Insurance, credit, tax-base, and affordability feedbacks', 'Unequal protection, involuntary immobility, fragmented relocation, and destination strain']} />
+    <ChartFrame chart={receivingChart} unit="Required capacity domain and denominator; no cross-domain total" geography="Receiving-city planning framework informed by Houston’s Katrina experience" period="Current evidence and pre-event planning horizon" sources={[COAST_SOURCES.receiving]} summary={COAST_RECEIVING_CONTEXT.headline} caveats={[COAST_RECEIVING_CONTEXT.guardrail, 'A domain ratio must not combine incomparable units.', 'Pre-event conditions may already be inadequate or inequitable.']}>
+      <div slot="plot" class="receiving-capacity-grid" aria-label="Receiving-city capacity framework">{COAST_RECEIVING_DOMAINS.map((item) => <article><EvidenceBadge state="data_gap" label={item.status} /><h4>{item.label}</h4><p>{item.failureModes}</p><small><strong>Denominators:</strong> {item.denominators}</small></article>)}</div>
+      <DataTable slot="table" caption="Receiving-city capacity domains and required denominators" columns={[{ key: 'label', label: 'Domain' }, { key: 'failureModes', label: 'Failure modes' }, { key: 'indicators', label: 'Minimum indicators' }, { key: 'denominators', label: 'Capacity denominators' }, { key: 'equitySlices', label: 'Equity slices' }, { key: 'status', label: 'Status' }]} rows={COAST_RECEIVING_DOMAINS} />
+    </ChartFrame>
+    <ChartFrame chart={pathwayChart} unit="Pathway, lead time, trigger, and commitment class" geography="Local coastal planning framework" period="Begin now; review against observed service and physical triggers" sources={[COAST_SOURCES.nationalAssessment, COAST_SOURCES.miamiPlanning]} summary="Protect, accommodate, restore and buffer, avoid, and relocate solve different problems and have different lead times, limits, and commitments. They form an adaptive sequence rather than one national rule." caveats={[COAST_ADAPTATION_CONTEXT.principle, COAST_ADAPTATION_CONTEXT.timelineRule]}>
+      <div slot="plot" class="adaptation-pathway-grid" aria-label="Coastal adaptation pathways and lead times">{COAST_ADAPTATION_PATHWAYS.map((item, index) => <article><span>{String(index + 1).padStart(2, '0')}</span><h4>{item.label}</h4><p><strong>{item.leadTime}</strong></p><p>{item.measures}</p><small>{item.commitment}</small></article>)}</div>
+      <DataTable slot="table" caption="Adaptive pathways, uses, limits, and commitments" columns={[{ key: 'label', label: 'Pathway' }, { key: 'leadTime', label: 'Lead time' }, { key: 'measures', label: 'Measures' }, { key: 'bestFor', label: 'Best for' }, { key: 'limitations', label: 'Limitations' }, { key: 'commitment', label: 'Commitment' }]} rows={COAST_ADAPTATION_PATHWAYS} />
+    </ChartFrame>
+  </section>
+
+  <section id="model" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">05 · Model-supported case</p><h2>Keep city, gauge, grid point, baseline, and horizon bound together</h2><p>The working view exposes every location seam. It does not convert a tide-gauge scenario into a parcel map, flood depth, city-loss date, or probability forecast.</p></div>
+    <CoastWorkbench />
+    <CaveatPanel title="Local scenarios are conditional planning evidence" caveats={['New Canal Station, Grand Isle, the 30°N / 90°W grid, and the City of New Orleans are distinct geographies.', 'Virginia Key, Miami-Dade County, the City of Miami, and the research study domain are distinct geographies.', 'Miami-Dade planning ranges and NOAA change-since-2020 scenarios retain their native baselines.']} prohibitedInterpretations={['A threshold flood day means an entire city is flooded.', 'A high-end 2100 migration scenario is a forecast.', 'A single year marks when Miami or New Orleans becomes wholly uninhabitable.']} />
+  </section>
+
+  <section id="delivery" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">06 · Delivery</p><h2>Fund decisions before physical and service thresholds are crossed</h2></div>
+    <ol class="delivery-sequence">
+      <li><strong>Bind local evidence.</strong><span>Maintain gauge, vertical land motion, scenario baseline, flood threshold, defense, drainage, groundwater, asset, service, and social-vulnerability records.</span></li>
+      <li><strong>Act on no-regrets pathways.</strong><span>Protect critical services, restore buffers, prevent new exposure, improve buildings and drainage, and preserve affordable housing.</span></li>
+      <li><strong>Pre-authorize trigger decisions.</strong><span>Publish thresholds, lead times, finance, maintenance duties, voluntary relocation terms, land disposition, and receiving-area investment.</span></li>
+      <li><strong>Review distribution and residual risk.</strong><span>Track outages, repeat loss, premiums, rent, credit, health, mobility resources, ecosystem condition, and receiving-system capacity.</span></li>
+    </ol>
+    <div class="delivery-gates"><article><h3>Physical trigger</h3><p>Relative water level, land motion, flood frequency, groundwater, salt front, defense margin, drainage, and restoration performance.</p></article><article><h3>Service trigger</h3><p>Access, outage, wastewater, drinking water, emergency response, insurance, affordability, repeat loss, and recovery time.</p></article><article><h3>Equity trigger</h3><p>Renters, low-income households, disability, language, Tribal and cultural ties, immobility, compensation, and destination affordability.</p></article></div>
+    <aside class="continuation-card"><p>Cross-system continuation</p><a href={hrefForRoute('/food-water/freshwater', base)}>Continue into coastal aquifers, pumping, salinity, and water portfolios →</a></aside>
+  </section>
+</article>

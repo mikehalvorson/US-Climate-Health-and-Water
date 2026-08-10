@@ -1,0 +1,26 @@
+---
+import { COAST_SOURCES, COAST_WORKBENCH } from '../../lib/data/coasts';
+import type { ScenarioControlDefinition } from '../../lib/scenarios/state';
+import ScenarioWorkbench from '../ScenarioWorkbench.astro';
+import SourceDrawer from '../SourceDrawer.astro';
+
+const controls: readonly ScenarioControlDefinition[] = [
+  { id: 'city', label: 'Coastal planning context', defaultValue: 'miami', options: COAST_WORKBENCH.cities.map((item) => ({ value: item.id, label: item.label })) },
+  { id: 'scenario', label: 'NOAA local scenario', defaultValue: 'Intermediate', options: COAST_WORKBENCH.scenarios.map((item) => ({ value: item.id, label: item.label })) },
+  { id: 'horizon', label: 'Horizon', defaultValue: '2070', options: COAST_WORKBENCH.horizons.map((item) => ({ value: item.id, label: item.label })) },
+];
+const initialCity = COAST_WORKBENCH.cities.find((item) => item.id === 'miami');
+const initialRecord = COAST_WORKBENCH.records.find((item) => item.city === 'miami' && item.scenario === 'Intermediate' && item.horizon === 2070);
+---
+<div data-coast-workbench data-workbench-records={JSON.stringify(COAST_WORKBENCH)}>
+  <ScenarioWorkbench id="coastal-local-scenario" title="Inspect a city-bound local sea-level scenario" decision="Choose a planning context, NOAA local scenario, and horizon. The observed gauge, scenario point, 2020 change baseline, and planning boundary remain visible together." controls={controls} modelFamily="NOAA observed relative trends and local scenario series with city planning context" seamNote="New Orleans observations use New Canal Station while its scenario uses the 30°N / 90°W grid. Miami-Dade planning ranges use a different reference and are not silently rebased to NOAA." readiness="Source scenario lookup · not parcel inundation or forecast">
+    <div class="workbench-result-grid place-workbench-output">
+      <section><h3 data-coast-city>{initialCity?.label}</h3><p><strong data-coast-gauge>{initialCity?.gauge}</strong> · station <span data-coast-station>{initialCity?.stationId}</span></p><p class="workbench-result__value"><span data-coast-trend>{initialCity?.gaugeTrend}</span> <small>{initialCity?.gaugeUnit}</small></p><small>Observed record-wide relative trend; not extrapolated.</small></section>
+      <section><h3 data-coast-scenario-location>{initialCity?.scenarioLabel}</h3><p class="workbench-result__value"><span data-coast-change>{initialRecord?.changeFrom2020M}</span> <small>m change since 2020</small></p><p><span data-coast-scenario>{initialRecord?.scenario}</span> · <span data-coast-horizon>{initialRecord?.horizon}</span></p><small data-coast-location-type>{initialRecord?.locationType}</small></section>
+      <section><h3>Planning context</h3><p data-coast-planning>{initialCity?.planningContext}</p><small data-coast-flood-context>{initialCity?.floodContext}</small></section>
+      <section><h3>Geographic guardrail</h3><p data-coast-guardrail>{initialCity?.guardrail}</p><small data-coast-baseline>{initialCity?.baseline}</small></section>
+    </div>
+    <div class="workbench-sources"><span>Core evidence:</span><SourceDrawer id="coast-workbench-observed" source={COAST_SOURCES.observed} triggerLabel="NOAA observed gauge trends" /><SourceDrawer id="coast-workbench-scenarios" source={COAST_SOURCES.scenarios} triggerLabel="NOAA local scenarios" /><SourceDrawer id="coast-workbench-miami" source={COAST_SOURCES.miamiPlanning} triggerLabel="Miami-Dade planning context" /></div>
+  </ScenarioWorkbench>
+</div>
+<script>import '../../scripts/place-workbenches.ts';</script>

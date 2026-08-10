@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "evidenceVintage": "2026-08-01",
-  "trackedInputCount": 210,
+  "trackedInputCount": 211,
   "hashAlgorithm": "sha256",
   "inputs": {
     "research/README.md": "92a64e1e02ddb6e45c96d573c39f0bba36588ea0d360d30872a1deca3b859e8f",
@@ -195,7 +195,8 @@
     "research/water/claims.json": "a7b7fc9f6bee5dae65e455ed126fdf73e19589ccbf630bbbd023ee5d14811bfe",
     "research/water/cross-domain-findings.json": "4a58a4c082036eaba71d936e670d4f4472febee555d80b51ba70b943f4529117",
     "research/water/gaps.json": "f973b1a4a81af6c8edfb2c2b77c93fda37dec832d9d473024078aa64e9cd652d",
-    "research/water/manifest.json": "498c7b0d81da2b58ee47461fccf28c7f1bc11daa296db8de49c8acecb7443cf2",
+    "research/water/industry-chart-contracts.json": "93376d675c1308eac7d473adf3426aea0dbd6014d220f142279fd6f1155370a8",
+    "research/water/manifest.json": "ee75b28fa220934cdd328b351c9c7fd135cc3662c1c0dcc007ff011f9af8f024",
     "research/water/national-water-use.json": "cc025beffb9c8426933c83c4b80f43994577e95a32abb969c28faffe1d77e071",
     "research/water/risk/city-source-dependencies.json": "f09b4e01931d7c525f5b78439d984c1b72c9e88f0f5471a477c80cd30c02e406",
     "research/water/risk/risk-register.json": "67e8e63718ed7cf7b6e3028f4376a566c41a71167e689dbc28a01a099c19a102",
@@ -216,8 +217,8 @@
     "research/water/timeseries/usgs-historical-water-use-1950-2015.csv": "a59f1009c8c3941099f3ae8a07848324307d6c5c3f4ad8508cc7891f653209c0"
   },
   "outputs": {
-    "src/data/registry/id-map.json": "fc77575465aafda8ba2eeaad20972f6668a8444299cd3bfee87e9859120b583f",
-    "src/generated/registry.json": "0dde5e89b326972e41f5a99732061e55dd6e7e3fbc7e4ddc6f1924617c5a6a15",
-    "src/generated/registry-audit.json": "12977d9108ad15e902ae41655f8602e9cdfbefbf7787db69928f8d6424010622"
+    "src/data/registry/id-map.json": "0c970b6ac7103176db1ac14fc8bd0941ac95a31cc011830ea1c7a52115d067c5",
+    "src/generated/registry.json": "879258ef9f6ee3e419bad3a75a563172b5c8e323277d73129c50be33d5d14cdc",
+    "src/generated/registry-audit.json": "fdc8dd9756e7b985d2f908ff4e1cafdb3ed43334c36023141bd18c809e84ad67"
   }
 }

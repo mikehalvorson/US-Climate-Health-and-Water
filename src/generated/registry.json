@@ -14776,6 +14776,87 @@
       ],
       "useClass": "trend",
       "participation": "display_only"
+    },
+    {
+      "id": "DAT-000109",
+      "registryKind": "dataset",
+      "label": "research/water/accounting-boundaries.json",
+      "description": "Research dataset represented by research/water/accounting-boundaries.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-d8fbd738214c8de7724a",
+      "legacyIds": [
+        "path:research/water/accounting-boundaries.json"
+      ],
+      "path": "research/water/accounting-boundaries.json",
+      "paths": [
+        "research/water/accounting-boundaries.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000110",
+      "registryKind": "dataset",
+      "label": "research/water/cross-domain-findings.json",
+      "description": "Research dataset represented by research/water/cross-domain-findings.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-48dbff96baa2faf83f30",
+      "legacyIds": [
+        "path:research/water/cross-domain-findings.json"
+      ],
+      "path": "research/water/cross-domain-findings.json",
+      "paths": [
+        "research/water/cross-domain-findings.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000111",
+      "registryKind": "dataset",
+      "label": "research/water/gaps.json",
+      "description": "Research dataset represented by research/water/gaps.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-5a7411698f1d2506ff85",
+      "legacyIds": [
+        "path:research/water/gaps.json"
+      ],
+      "path": "research/water/gaps.json",
+      "paths": [
+        "research/water/gaps.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
     }
   ],
   "metric": [
@@ -24643,6 +24724,219 @@
           "Unknown and configuration-specific evidence must remain visible."
         ]
       }
+    },
+    {
+      "id": "CHT-000092",
+      "registryKind": "chart",
+      "label": "Data-center direct water, 2023 estimate and 2028 range",
+      "description": "Chart contract imported from research/water/industry-chart-contracts.json.",
+      "status": "pending",
+      "semanticFingerprint": "fp-ae6939c2a82af2422d6f",
+      "legacyIds": [
+        "industry-data-center-growth"
+      ],
+      "chartType": "dot_range",
+      "decisionQuestion": "Data-center direct water, 2023 estimate and 2028 range",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Data-center direct water, 2023 estimate and 2028 range.",
+      "dataReferences": [],
+      "legacyContract": {
+        "chart_id": "industry-data-center-growth",
+        "title": "Data-center direct water, 2023 estimate and 2028 range",
+        "type": "dot_range",
+        "data": [
+          "sectors/data-centers.json#/direct_water"
+        ],
+        "constraints": [
+          "Projection range is a source scenario, not a forecast.",
+          "Do not assign the national estimate or range to a facility."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000093",
+      "registryKind": "chart",
+      "label": "Direct and indirect data-center water remain separate",
+      "description": "Chart contract imported from research/water/industry-chart-contracts.json.",
+      "status": "pending",
+      "semanticFingerprint": "fp-f8b2d027cfb48ebe6a7e",
+      "legacyIds": [
+        "industry-direct-indirect-boundary"
+      ],
+      "chartType": "flow",
+      "decisionQuestion": "Direct and indirect data-center water remain separate",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Direct and indirect data-center water remain separate.",
+      "dataReferences": [],
+      "legacyContract": {
+        "chart_id": "industry-direct-indirect-boundary",
+        "title": "Direct and indirect data-center water remain separate",
+        "type": "flow",
+        "data": [
+          "sectors/data-centers.json#/direct_water",
+          "sectors/data-centers.json#/indirect_electricity_water"
+        ],
+        "constraints": [
+          "Indirect electricity water is an attributed upstream footprint.",
+          "Do not add it to national totals that already include the power sector."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000094",
+      "registryKind": "chart",
+      "label": "Verified facility water and watershed map",
+      "description": "Chart contract imported from research/water/industry-chart-contracts.json.",
+      "status": "pending",
+      "semanticFingerprint": "fp-a7a94e2a29213118f07e",
+      "legacyIds": [
+        "industry-facility-evidence-map"
+      ],
+      "chartType": "map",
+      "decisionQuestion": "Verified facility water and watershed map",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Verified facility water and watershed map.",
+      "dataReferences": [],
+      "legacyContract": {
+        "chart_id": "industry-facility-evidence-map",
+        "title": "Verified facility water and watershed map",
+        "type": "map",
+        "status": "data_gap",
+        "data": [
+          "gaps.json#/gaps/WGAP-DATA-CENTER-SITES"
+        ],
+        "constraints": [
+          "Keep unavailable until facility, source, seasonal, utility, return-flow, and discharge data are verified.",
+          "Provide a non-map requirements table."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000095",
+      "registryKind": "chart",
+      "label": "Facility, utility, energy, and watershed system",
+      "description": "Chart contract imported from research/water/industry-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-3b7881914277e5b3433b",
+      "legacyIds": [
+        "industry-facility-water-system"
+      ],
+      "chartType": "flow",
+      "decisionQuestion": "Facility, utility, energy, and watershed system",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Facility, utility, energy, and watershed system.",
+      "dataReferences": [
+        "research/water/accounting-boundaries.json",
+        "research/water/cross-domain-findings.json"
+      ],
+      "legacyContract": {
+        "chart_id": "industry-facility-water-system",
+        "title": "Facility, utility, energy, and watershed system",
+        "type": "flow",
+        "data": [
+          "accounting-boundaries.json",
+          "cross-domain-findings.json"
+        ],
+        "constraints": [
+          "Show source, season, return flow, quality, and power dependencies.",
+          "A physically present source is not necessarily operationally available."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000096",
+      "registryKind": "chart",
+      "label": "Siting and drought-operating scorecard",
+      "description": "Chart contract imported from research/water/industry-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-16ffe3a4bba9f60d65b3",
+      "legacyIds": [
+        "industry-siting-drought-scorecard"
+      ],
+      "chartType": "matrix",
+      "decisionQuestion": "Siting and drought-operating scorecard",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Siting and drought-operating scorecard.",
+      "dataReferences": [
+        "research/water/gaps.json"
+      ],
+      "legacyContract": {
+        "chart_id": "industry-siting-drought-scorecard",
+        "title": "Siting and drought-operating scorecard",
+        "type": "matrix",
+        "data": [
+          "sectors/data-centers.json#/site_level_drivers",
+          "gaps.json"
+        ],
+        "constraints": [
+          "Scores describe required decision evidence, not facility performance.",
+          "No national average may clear a local siting gate."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000097",
+      "registryKind": "chart",
+      "label": "Thermoelectric withdrawal is not consumption",
+      "description": "Chart contract imported from research/water/industry-chart-contracts.json.",
+      "status": "pending",
+      "semanticFingerprint": "fp-72aa99e4b9a00ef13217",
+      "legacyIds": [
+        "industry-thermoelectric-boundary"
+      ],
+      "chartType": "bar",
+      "decisionQuestion": "Thermoelectric withdrawal is not consumption",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Thermoelectric withdrawal is not consumption.",
+      "dataReferences": [],
+      "legacyContract": {
+        "chart_id": "industry-thermoelectric-boundary",
+        "title": "Thermoelectric withdrawal is not consumption",
+        "type": "bar",
+        "data": [
+          "national-water-use.json#/modeled_2010_2020/covered_sectors"
+        ],
+        "constraints": [
+          "Keep freshwater withdrawal and consumptive use separate.",
+          "Do not assign national averages to a plant or watershed."
+        ]
+      }
     }
   ],
   "transformation": [
@@ -27958,6 +28252,12 @@
         "CHT-000045",
         "CHT-000046",
         "CHT-000047",
+        "CHT-000092",
+        "CHT-000093",
+        "CHT-000094",
+        "CHT-000095",
+        "CHT-000096",
+        "CHT-000097",
         "CHT-000048",
         "CHT-000049",
         "CHT-000050",

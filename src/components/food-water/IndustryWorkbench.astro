@@ -1,0 +1,27 @@
+---
+import { INDUSTRY_SOURCES, INDUSTRY_WORKBENCH } from '../../lib/data/industry';
+import type { ScenarioControlDefinition } from '../../lib/scenarios/state';
+import ScenarioWorkbench from '../ScenarioWorkbench.astro';
+import SourceDrawer from '../SourceDrawer.astro';
+
+const controls: readonly ScenarioControlDefinition[] = [
+  { id: 'facility', label: 'Facility type', defaultValue: 'data_center', options: INDUSTRY_WORKBENCH.facilityTypes.map((item) => ({ value: item.id, label: item.label })) },
+  { id: 'boundary', label: 'Water-accounting boundary', defaultValue: 'direct_withdrawal', options: INDUSTRY_WORKBENCH.boundaries.map((item) => ({ value: item.id, label: item.label })) },
+  { id: 'site', label: 'Verified facility site', defaultValue: 'unavailable', options: [{ value: 'unavailable', label: 'Facility map unavailable' }], disabledReason: 'Requires verified facility, source, seasonal, utility, return-flow, discharge, and watershed records.' },
+];
+const initialFacility = INDUSTRY_WORKBENCH.facilityTypes.find((item) => item.id === 'data_center');
+const initialBoundary = INDUSTRY_WORKBENCH.boundaries.find((item) => item.id === 'direct_withdrawal');
+const initialRecord = INDUSTRY_WORKBENCH.records.find((item) => item.facility === 'data_center' && item.boundary === 'direct_withdrawal');
+---
+<div data-industry-workbench data-workbench-records={JSON.stringify(INDUSTRY_WORKBENCH)}>
+  <ScenarioWorkbench id="facility-water-boundary" title="Compare facility types without assigning national averages to sites" decision="Choose a facility class and accounting boundary. The output either shows a source-native national context or an explicit unavailable state; the site selector remains disabled." controls={controls} modelFamily="Verified lookup across USGS sector boundaries and LBNL data-center estimates" seamNote="Withdrawal, consumption, return flow, discharge quality, and attributed electricity water are different records. Values from different boundaries are not added." readiness="National context only · facility layer gated">
+    <div class="workbench-result-grid place-workbench-output">
+      <section><h3 data-industry-facility>{initialFacility?.label}</h3><p data-industry-context>{initialFacility?.context}</p></section>
+      <section><h3 data-industry-boundary>{initialBoundary?.label}</h3><p class="workbench-result__value"><span data-industry-value>{initialRecord?.value}</span> <small data-industry-unit>{initialRecord?.unit}</small></p><p><span data-industry-period>{initialRecord?.period}</span> · <span data-industry-geography>{initialRecord?.geography}</span></p></section>
+      <section><h3>Evidence state</h3><p><strong data-industry-state>{initialRecord?.evidenceState}</strong></p><p data-industry-qualification>{initialRecord?.qualification}</p></section>
+      <section><h3>Facility map</h3><p><strong>Unavailable</strong></p><p>National estimates do not establish local source capacity, seasonal use, drought behavior, return flow, or discharge quality.</p></section>
+    </div>
+    <div class="workbench-sources"><span>Core evidence:</span><SourceDrawer id="industry-workbench-usgs" source={INDUSTRY_SOURCES.consumption} triggerLabel="USGS sector accounting" /><SourceDrawer id="industry-workbench-lbnl" source={INDUSTRY_SOURCES.dataCenters} triggerLabel="LBNL data-center estimate" /><SourceDrawer id="industry-workbench-sites" source={INDUSTRY_SOURCES.nationalRisk} triggerLabel="USGS watershed context" /></div>
+  </ScenarioWorkbench>
+</div>
+<script>import '../../scripts/place-workbenches.ts';</script>

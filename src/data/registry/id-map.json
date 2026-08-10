@@ -339,6 +339,42 @@
     },
     {
       "kind": "chart",
+      "legacyId": "industry-data-center-growth",
+      "canonicalId": "CHT-000092",
+      "semanticHash": "ff34e3675fd29ab40a32d91a70b3d858b4a1b1dad926f878f73fad910991ce5f"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "industry-direct-indirect-boundary",
+      "canonicalId": "CHT-000093",
+      "semanticHash": "e168f02d32f798b4d7128f32b1f8ef0b3d434887fe5d1c3ea7f0ea1ea17836ca"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "industry-facility-evidence-map",
+      "canonicalId": "CHT-000094",
+      "semanticHash": "4362f0db8df641e1c0469c4b254cbe5a890a861e38d130b55c8e832f02a19994"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "industry-facility-water-system",
+      "canonicalId": "CHT-000095",
+      "semanticHash": "66ea5c863be74b5e7cdc85a920151a004d6900a7e2012e71310568fe15e12b58"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "industry-siting-drought-scorecard",
+      "canonicalId": "CHT-000096",
+      "semanticHash": "245cec0831569a76385b50a9d787650f3019dbf9cf61c62d50a0ea5ab448141f"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "industry-thermoelectric-boundary",
+      "canonicalId": "CHT-000097",
+      "semanticHash": "defd17273e18398ced91a993a19a82d761639ec90732d7d67bbdec452c533bd8"
+    },
+    {
+      "kind": "chart",
       "legacyId": "leading_us_resins_2019",
       "canonicalId": "CHT-000048",
       "semanticHash": "5486f2bcda8c2873c73c4c5d23738220eedab98a2064d45f8eb44224551165f1"
@@ -2073,6 +2109,24 @@
     },
     {
       "kind": "dataset",
+      "legacyId": "path:research/water/accounting-boundaries.json",
+      "canonicalId": "DAT-000109",
+      "semanticHash": "e81793dbeb26aaad5eb52f9424e5f32aa088f046d833a589e7b5dced7c9fec74"
+    },
+    {
+      "kind": "dataset",
+      "legacyId": "path:research/water/cross-domain-findings.json",
+      "canonicalId": "DAT-000110",
+      "semanticHash": "a2376a10a2606b89c1e6554a667daac9cac43b4adb095aa731b018182e706235"
+    },
+    {
+      "kind": "dataset",
+      "legacyId": "path:research/water/gaps.json",
+      "canonicalId": "DAT-000111",
+      "semanticHash": "4534623e61e535e87a3503f58d49db5310789aefe4e3c9d9eabb3d0bdb8962b0"
+    },
+    {
+      "kind": "dataset",
       "legacyId": "path:research/water/risk/city-source-dependencies.json",
       "canonicalId": "DAT-000095",
       "semanticHash": "22537dee4623a35d61a6ccf86758371cf77b82c4d39301a6a5055d43712d0d49"
@@ -3029,7 +3083,7 @@
       "kind": "open_item",
       "legacyId": "chart-data-bindings",
       "canonicalId": "OPN-000090",
-      "semanticHash": "a2ae8ca3fd339c5d61d6ca07132fc30b19e0acec4c6685f265fc66fd51f25cb4"
+      "semanticHash": "b3336454ba808e9eef96b6168b3986117fc6228e59d4f1b006ab35f9f6ddcccd"
     },
     {
       "kind": "open_item",
