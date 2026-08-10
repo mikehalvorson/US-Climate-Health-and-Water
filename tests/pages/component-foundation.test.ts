@@ -36,8 +36,10 @@ describe('shared component accessibility foundation', () => {
   });
 
   it('defines responsive reflow instead of a fixed-width chart canvas', () => {
+    expect(css).toContain('body {\n  margin: 0;\n  min-width: 0;');
     expect(css).toContain('.svg-plot { display: block; width: 100%; height: auto;');
     expect(css).not.toMatch(/\.svg-plot\s*\{[^}]*min-width/gu);
+    expect(css).toContain('.overview-dashboard > *, .methods-workspace > * { min-width: 0; }');
     expect(css).toContain('.viewpoint-grid__items, .scenario-workbench__controls { grid-template-columns: 1fr; }');
     expect(css).toContain('.chart-frame__caption, .scenario-workbench__header { grid-template-columns: 1fr; }');
   });

@@ -1,96 +1,92 @@
-# U.S. Climate, Energy, and Water Dashboard
+# U.S. Climate, Health, and Water Dashboard
 
-An evidence-linked public dashboard about climate change, global and U.S.
-energy production and consumption, U.S. electricity transmission, and current
-and future water use.
+An evidence-linked public dashboard about the connected U.S. energy, climate,
+food, water, health, and materials systems.
 
-The site will use Astro and will follow the general visual and narrative
-structure of the National Health Assurance dashboard: a guided overview,
-chapter routes, interactive working views, explicit sources and uncertainty,
-and chapter-to-chapter navigation.
+**Live dashboard:** <https://mikehalvorson.github.io/US-Climate-Health-and-Water/>
 
-## Current phase
+## First working draft
 
-The project has completed its research baseline and canonical registry
-foundation. Public dashboard routes have not been implemented yet. The first
-verified corpus covers
-global and U.S. energy production, generation, consumption, transmission, and
-the public En-ROADS model architecture. It now also includes a verified
-technical, health, regulatory, and lifecycle-sustainability problem framework;
-an all-method technology impact matrix; and a dedicated nuclear-generation,
-fuel-cycle, safety, water, licensing, and waste module. Chart-ready historical and scenario
-series cover world observations through 2025, U.S. observations through 2025,
-U.S. scenarios through 2050, and world scenarios through 2100. A dedicated
-electricity-consumption package adds 20,997 rows covering World system demand, U.S. sector sales
-and use, all eleven AEO2026 demand cases, residential/commercial/industrial
-end uses, data centers, EV charging, macro drivers, an electrification stress
-test, and global sector-demand scenarios. The
-transmission package adds 1,264,896 source hourly load records, 191,530 derived
-aggregate/profile/summary records, a 10,031-feature federal high-voltage line
-layer, 20 sourced major-corridor records (including NECEC), a graphable project
-process, and transformer plus cross-sector supply-chain evidence. The
-machine-readable index is
-[`research/energy/README.md`](research/energy/README.md).
+The first draft contains an Overview, fourteen evidence-linked story chapters,
+and an Evidence & Methods workspace. It is a static Astro site with a guided
+narrative, accessible figures and data tables, explicit source and caveat
+disclosures, small client-side working views, and checksummed public registries.
+The evidence vintage is **2026-08-01**.
 
-The climate cause-and-impact corpus adds observed greenhouse-gas, forcing, and
-temperature time series; formal causal attribution and cumulative-CO2 response;
-IPCC warming scenarios; and qualified impact relationships for extreme heat,
-tropical cyclones, biodiversity, food systems, freshwater, sea level, and
-climate-related displacement. Headline claims carry three-check verification
-audits, and unsupported universal coefficients remain explicit nulls. A coastal
-city module audits claims about New Orleans and Miami, supplies local NOAA
-scenario series through 2100, separates exposure from displacement, and defines
-receiving-city capacity indicators. Its index is
-[`research/climate/README.md`](research/climate/README.md).
+The 16 public routes are grouped into:
 
-The freshwater corpus adds national withdrawal and consumptive-use accounting,
-1950–2015 historical data, household/agriculture/manufacturing/plastics/data-center
-sector files, 18 city and regional source-dependency profiles, 14 explicitly typed
-risk horizons, and scale-tested desalination and atmospheric-water-generation
-modules. Its 20 headline claims have three-check audits, all 63 sources have a
-recorded link/content review path, and unsupported plastics coefficients remain
-explicit gaps. Its index is [`research/water/README.md`](research/water/README.md).
+- Overview: the connected-system argument and chapter guide.
+- Energy: system, demand, generation, grid, and plan.
+- Climate: cause, risks, coasts, and plan.
+- Food & Water: freshwater, food, industry, plastics, and plan.
+- Evidence & Methods: searchable ledgers, definitions, model boundaries, open
+  items, integrity results, and downloads.
 
-The plastics corpus adds a 2019 U.S. economy-wide material-flow baseline,
-major-resin manufacturing pathways, bounded resin-water estimates, functional
-replacement strategies, international policy cases, seaweed scale scenarios,
-and health and environmental evidence that separates polymers, monomers,
-additives, PFAS, and particles. Its 21 dashboard claims each carry a three-check
-audit; the disputed pregnancy-and-vaccine claim is preserved as a correction,
-not repeated as fact. Its index is
-[`research/plastics/README.md`](research/plastics/README.md).
+## Run and verify locally
 
-The application foundation uses Astro 5, strict TypeScript, and Vitest. Stable
-namespaces, typed registry contracts, controlled vocabularies, all 16 required
-routes, mechanism links, and the reconciled integrity-test contract live under
-[`src/lib/registry`](src/lib/registry). Run `pnpm test`, `pnpm check`, and
-`pnpm build` to verify the current foundation.
+Requirements: Node.js 22–24 and pnpm 11.16.
 
-No factual claim or numeric parameter is ready for publication until it passes
-the verification process in
-[`docs/RESEARCH_PROTOCOL.md`](docs/RESEARCH_PROTOCOL.md).
-
-## Planned repository structure
-
-```text
-docs/                 Project standards and design documentation
-research/             Verified claims, source register, and domain research
-src/                   Astro pages, components, data models, and client code
-public/data/           Published datasets with provenance metadata
-tests/                 Evidence, data, model, and interface checks
+```shell
+pnpm install --frozen-lockfile
+pnpm dev
+pnpm test
+pnpm check
+pnpm build
+pnpm preview
 ```
 
-See [`docs/INFORMATION_ARCHITECTURE.md`](docs/INFORMATION_ARCHITECTURE.md)
-for the proposed dashboard story and reusable NHA design patterns.
+`pnpm test` runs the registry, evidence, model, page-contract, chart, and
+accessibility-oriented unit tests. `pnpm check` verifies generated artifacts,
+Astro, and strict TypeScript. `pnpm build` creates `dist/` and runs every
+chapter, sitewide, provenance, accessibility-contract, and release-budget
+validator.
 
-The implementation will proceed in verified segments documented in
-[`docs/FIRST_DRAFT_IMPLEMENTATION_PLAN.md`](docs/FIRST_DRAFT_IMPLEMENTATION_PLAN.md).
-The initial repository, runtime, validator, and data-size audit is recorded in
-[`docs/BUILD_READINESS.md`](docs/BUILD_READINESS.md).
+## Evidence and public data
+
+Research inputs are under [`research/`](research/). Canonical application
+registries are generated from those inputs; builds do not mutate research
+files. The Methods route publishes checksummed subsets from
+[`public/data/`](public/data/) together with record counts, SHA-256 hashes, and
+a data/model manifest.
+
+The current inspection surface covers 215 tracked research inputs, 336 sources,
+157 claims, 130 datasets, 117 metrics, 12 parameters, 128 scenarios, 129 chart
+contracts, 5 transformations, 17 model contracts, 14 denominators, and 102 open
+items. No factual claim or numeric parameter is published as established unless
+it clears [`docs/RESEARCH_PROTOCOL.md`](docs/RESEARCH_PROTOCOL.md).
+
+## Known gaps and deferred models
+
+The dashboard deliberately publishes unavailable states rather than filling
+them with invented values. The 102-item public gap register includes 12 pending
+parameters. The 17 model records describe authorization boundaries; they do not
+authorize unsupported optimized portfolios, reliability proofs, national
+damage or household-cost totals, diet optima, facility-level effects, or the
+nationalization of basin results. Integrated optimization, hourly reliability,
+damage, food-system, and facility-water models remain deferred until their
+required data, coefficients, validation, and governance gates are complete.
+
+## Update and deployment procedure
+
+1. Add or revise source material under `research/` without changing established
+   values silently.
+2. Run `pnpm generate:registries` and `pnpm generate:public` intentionally, then
+   inspect all generated diffs and open-item changes.
+3. Run `pnpm test`, `pnpm check`, and `pnpm build`.
+4. Commit and push verified source to `main`.
+5. The GitHub Pages workflow repeats the locked install and full quality gate,
+   uploads only `dist/`, and deploys the verified artifact.
+6. Verify the public base path, representative chapter routes, assets, and
+   downloads after deployment.
+
+Architecture and release details are documented in
+[`docs/CODEX_FIRST_DRAFT_BUILD_SPEC.md`](docs/CODEX_FIRST_DRAFT_BUILD_SPEC.md),
+[`docs/FIRST_DRAFT_IMPLEMENTATION_PLAN.md`](docs/FIRST_DRAFT_IMPLEMENTATION_PLAN.md),
+and [`docs/FIRST_DRAFT_IMPLEMENTATION_REPORT.md`](docs/FIRST_DRAFT_IMPLEMENTATION_REPORT.md).
 
 ## Evidence rule
 
 Hallucinated facts, invented citations, citation laundering, and sources that
-do not support the attached claim are release-blocking defects. When a source
-cannot be verified, the claim remains explicitly open and stays out of the
-public dashboard.
+do not support the attached claim are release-blocking defects. When evidence
+cannot be verified, the affected output remains explicitly unavailable and the
+gap stays visible.

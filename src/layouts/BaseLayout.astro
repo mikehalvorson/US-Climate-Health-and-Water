@@ -40,6 +40,11 @@ const releaseStatus = releaseStatusFor(route.id);
   </head>
   <body data-current-route={route.id} data-release-status={releaseStatus}>
     <a class="skip-link" href="#main-content">Skip to chapter content</a>
+    <noscript>
+      <p class="no-script-notice">
+        Interactive filters and scenario controls are unavailable because client JavaScript is disabled. The narrative, sources, caveats, chart summaries, and data tables remain readable.
+      </p>
+    </noscript>
     <div class="site-frame">
       <SiteHeader route={route} />
       <TabNav route={route} />

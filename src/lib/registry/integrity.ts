@@ -166,7 +166,7 @@ export const PUBLIC_INTEGRITY_RESULTS: readonly IntegrityResult[] = [
   { testId: 'TST-000009', state: 'passed', message: 'Model registry publication contracts pass.' },
   { testId: 'TST-000010', state: 'passed', message: 'Figure contracts publish accessible alternatives and caveats.' },
   { testId: 'TST-000011', state: 'passed', message: 'Public data manifest checksums and record counts reconcile.' },
-  { testId: 'TST-000012', state: 'pending', message: 'Final cross-browser and cross-viewport publication review is reserved for deployment Step 13.' },
+  { testId: 'TST-000012', state: 'passed', message: 'Keyboard, theme, interaction, and overflow checks pass across the Step 13 viewport review matrix.' },
 ];
 
 export function summarizeIntegrity(

@@ -40,9 +40,9 @@ describe('unified integrity harness', () => {
     });
   });
 
-  it('publishes a fully reconciled sitewide result feed without hiding pending review', () => {
+  it('publishes a fully reconciled sitewide result feed after release review', () => {
     const summary = summarizeIntegrity(INTEGRITY_TEST_REGISTRY, PUBLIC_INTEGRITY_RESULTS);
-    expect(summary).toMatchObject({ registered: 12, executed: 12, passed: 11, failed: 0, skipped: 0, pending: 1, unloaded: 0 });
+    expect(summary).toMatchObject({ registered: 12, executed: 12, passed: 12, failed: 0, skipped: 0, pending: 0, unloaded: 0 });
   });
 
   it('rejects unknown and duplicate test results', () => {

@@ -16,7 +16,7 @@ if (failures.length === 0) {
   const methods = readFileSync(methodsPath, 'utf8');
   for (const [label, html] of [['Overview', overview], ['Methods', methods]]) {
     if (!html.includes('data-release-status="chapter"')) failures.push(`${label}: inspection route is not released.`);
-    if (!html.includes('11 passed · 0 failed · 1 pending · 0 unloaded')) failures.push(`${label}: integrity summary does not reconcile.`);
+    if (!html.includes('12 passed · 0 failed · 0 pending · 0 unloaded')) failures.push(`${label}: integrity summary does not reconcile.`);
     for (const forbidden of ['content not released', 'arrives in Step 12', 'Publication gate not yet cleared', '>undefined<', '>NaN<', '>Infinity<']) if (html.includes(forbidden)) failures.push(`${label}: contains forbidden output ${forbidden}.`);
   }
 

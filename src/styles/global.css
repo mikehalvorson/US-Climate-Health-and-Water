@@ -108,7 +108,7 @@
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
-  min-width: 20rem;
+  min-width: 0;
   background: var(--page);
   color: var(--ink);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -249,7 +249,7 @@ a:hover { text-decoration-thickness: 0.13em; }
 .shell-section .evidence-badge { margin-top: 0.6rem; }
 
 .source-disclosure { display: inline-flex; }
-.source-disclosure__trigger { color: var(--water); font-size: 0.76rem; font-weight: 760; }
+.source-disclosure__trigger { display: inline-flex; min-height: 2.75rem; align-items: center; color: var(--water); font-size: 0.76rem; font-weight: 760; }
 .source-drawer { width: min(calc(100% - 2rem), 44rem); max-height: min(85vh, 48rem); padding: 0; overflow: auto; border: 1px solid var(--line-strong); border-radius: var(--radius-lg); background: var(--surface-raised); color: var(--ink); box-shadow: 0 2rem 7rem rgba(0, 0, 0, 0.35); }
 .source-drawer::backdrop { background: rgba(4, 14, 11, 0.72); backdrop-filter: blur(0.18rem); }
 .source-drawer__header { position: sticky; z-index: 1; top: 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: start; padding: 1.3rem 1.3rem 1rem; border-bottom: 1px solid var(--line); background: var(--surface-raised); }
@@ -626,6 +626,7 @@ a:hover { text-decoration-thickness: 0.13em; }
 .integrity-footer__links { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 0 1.5rem; border-top: 1px solid #31463f; color: #9db0a7; font-size: 0.72rem; }
 
 .overview-dashboard, .methods-workspace { display: grid; gap: clamp(3.5rem, 8vw, 6.5rem); }
+.overview-dashboard > *, .methods-workspace > * { min-width: 0; }
 .overview-dashboard > section > h2, .methods-section > h2 { max-width: 52rem; }
 .overview-lede, .methods-intro, .overview-conclusion { padding: clamp(1.5rem, 4vw, 2.7rem); border: 1px solid var(--line); border-left: 0.35rem solid var(--climate); border-radius: var(--radius-lg); background: var(--surface); box-shadow: var(--shadow); }
 .overview-lede h2, .overview-conclusion h2, .methods-intro h2 { margin: 0.35rem 0 1rem; font-family: ui-serif, Georgia, serif; font-size: clamp(1.8rem, 4vw, 3.4rem); line-height: 1.08; letter-spacing: -0.035em; }
@@ -663,7 +664,7 @@ a:hover { text-decoration-thickness: 0.13em; }
 .ledger-tools input { min-height: 2.75rem; width: 100%; padding: 0.55rem 0.7rem; border: 1px solid var(--line-strong); border-radius: var(--radius-sm); background: var(--surface-raised); color: var(--ink); }
 .ledger-tools button { min-height: 2.75rem; padding: 0.55rem 0.85rem; border: 1px solid var(--line-strong); border-radius: var(--radius-sm); background: var(--surface); color: var(--ink); cursor: pointer; }
 .ledger-tools p { grid-column: 1 / -1; margin: 0; color: var(--ink-muted); font-size: 0.68rem; }
-.methods-table-scroll { max-height: 40rem; overflow: auto; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); }
+.methods-table-scroll { max-width: 100%; max-height: 40rem; overflow: auto; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); }
 .methods-table-scroll table { width: 100%; min-width: 52rem; border-collapse: collapse; font-size: 0.72rem; }
 .methods-table-scroll caption { padding: 0.75rem; color: var(--ink-soft); font-weight: 760; text-align: left; }
 .methods-table-scroll th, .methods-table-scroll td { padding: 0.7rem; border-top: 1px solid var(--line); vertical-align: top; text-align: left; }
@@ -789,5 +790,11 @@ a:hover { text-decoration-thickness: 0.13em; }
   body { background: white; color: black; }
   .page-shell { width: 100%; }
   .shell-section, .shell-notice, .system-card { break-inside: avoid; box-shadow: none; }
+  .methods-table-scroll, .data-table-scroll { max-height: none; overflow: visible; border: 0; }
+  .methods-table-scroll table, .data-table-scroll table { width: 100%; min-width: 0; font-size: 8pt; }
+  .chart-frame__table > :not(summary) { display: block !important; }
+  .chart-frame { break-inside: avoid; box-shadow: none; }
   .integrity-footer { background: white; color: black; border-top: 2px solid black; }
 }
+
+.no-script-notice { margin: 0; padding: 0.75rem clamp(1rem, 3vw, 2rem); border-bottom: 1px solid var(--line); background: var(--energy-soft); color: var(--ink); font-weight: 700; }
