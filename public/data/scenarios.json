@@ -1,0 +1,2061 @@
+{
+  "schemaVersion": "1.0.0",
+  "evidenceVintage": "2026-08-01",
+  "recordType": "scenario",
+  "recordCount": 128,
+  "provenance": {
+    "canonicalInput": "src/generated/registry.json",
+    "generator": "tools/build-public-data.mjs",
+    "hashAlgorithm": "sha256"
+  },
+  "records": [
+    {
+      "id": "SCN-000001",
+      "registryKind": "scenario",
+      "label": "Below 2°C",
+      "description": "Source scenario from GCAM 6.0 NGFS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-c40c7680eb8552e2a17f",
+      "legacyIds": [
+        "GCAM 6.0 NGFS::Below 2°C"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000005",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000002",
+      "registryKind": "scenario",
+      "label": "Current Policies",
+      "description": "Source scenario from GCAM 6.0 NGFS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-2f5e9d0985d519d9681b",
+      "legacyIds": [
+        "GCAM 6.0 NGFS::Current Policies"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000005",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000003",
+      "registryKind": "scenario",
+      "label": "Delayed transition",
+      "description": "Source scenario from GCAM 6.0 NGFS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-b9f20980b12d4b3302f3",
+      "legacyIds": [
+        "GCAM 6.0 NGFS::Delayed transition"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000005",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000004",
+      "registryKind": "scenario",
+      "label": "Fragmented World",
+      "description": "Source scenario from GCAM 6.0 NGFS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-450ff09b6d0f97f1c513",
+      "legacyIds": [
+        "GCAM 6.0 NGFS::Fragmented World"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000005",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000005",
+      "registryKind": "scenario",
+      "label": "Low demand",
+      "description": "Source scenario from GCAM 6.0 NGFS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-5cdf9f5c0bff00344c8b",
+      "legacyIds": [
+        "GCAM 6.0 NGFS::Low demand"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000005",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000006",
+      "registryKind": "scenario",
+      "label": "Nationally Determined Contributions (NDCs)",
+      "description": "Source scenario from GCAM 6.0 NGFS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-6affd2eb7fcaf904cb44",
+      "legacyIds": [
+        "GCAM 6.0 NGFS::Nationally Determined Contributions (NDCs)"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000005",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000007",
+      "registryKind": "scenario",
+      "label": "Net Zero 2050",
+      "description": "Source scenario from GCAM 6.0 NGFS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-a430583916e76addda8a",
+      "legacyIds": [
+        "GCAM 6.0 NGFS::Net Zero 2050"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000005",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000008",
+      "registryKind": "scenario",
+      "label": "IEA 2026-2030 forecast",
+      "description": "Source scenario from IEA Electricity 2026.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-91d8a44d6ade6709a867",
+      "legacyIds": [
+        "IEA Electricity 2026::IEA 2026-2030 forecast"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000006",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000009",
+      "registryKind": "scenario",
+      "label": "Observed estimate",
+      "description": "Source scenario from IEA Electricity 2026.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-21d7609a283399aea99d",
+      "legacyIds": [
+        "IEA Electricity 2026::Observed estimate"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000006",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000010",
+      "registryKind": "scenario",
+      "label": "Base Case",
+      "description": "Source scenario from IEA Energy and AI.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-b6acde2e06b42a17d8c3",
+      "legacyIds": [
+        "IEA Energy and AI::Base Case"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000007",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000011",
+      "registryKind": "scenario",
+      "label": "High Efficiency Case",
+      "description": "Source scenario from IEA Energy and AI.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-5c1c82d3d956fcc5db72",
+      "legacyIds": [
+        "IEA Energy and AI::High Efficiency Case"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000007",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000012",
+      "registryKind": "scenario",
+      "label": "Lift-Off Case",
+      "description": "Source scenario from IEA Energy and AI.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-777b33bd03a5d6470c23",
+      "legacyIds": [
+        "IEA Energy and AI::Lift-Off Case"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000007",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000013",
+      "registryKind": "scenario",
+      "label": "Observed estimate",
+      "description": "Source scenario from IEA Energy and AI.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-bdc6b968da9a2a8a0bee",
+      "legacyIds": [
+        "IEA Energy and AI::Observed estimate"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000007",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000014",
+      "registryKind": "scenario",
+      "label": "Current Policies Scenario",
+      "description": "Source scenario from IEA Global EV Outlook.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-4c72725fdc73c90eebdc",
+      "legacyIds": [
+        "IEA Global EV Outlook::Current Policies Scenario"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000008",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000015",
+      "registryKind": "scenario",
+      "label": "Net Zero Emissions by 2050 Scenario",
+      "description": "Source scenario from IEA Global EV Outlook.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-93175464eb8fe7b5bbac",
+      "legacyIds": [
+        "IEA Global EV Outlook::Net Zero Emissions by 2050 Scenario"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000008",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000016",
+      "registryKind": "scenario",
+      "label": "Observed estimate",
+      "description": "Source scenario from IEA Global EV Outlook.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-d89ed9eb34f712a7b316",
+      "legacyIds": [
+        "IEA Global EV Outlook::Observed estimate"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000008",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000017",
+      "registryKind": "scenario",
+      "label": "Stated Policies Scenario",
+      "description": "Source scenario from IEA Global EV Outlook.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-49aab97f9ded5fd39417",
+      "legacyIds": [
+        "IEA Global EV Outlook::Stated Policies Scenario"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000008",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000018",
+      "registryKind": "scenario",
+      "label": "1.5°C Scenario",
+      "description": "Source scenario from IRENA WETO.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-7e3a1c666c5864e94a1b",
+      "legacyIds": [
+        "IRENA WETO::1.5°C Scenario"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000009",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000019",
+      "registryKind": "scenario",
+      "label": "1.5°C Scenario",
+      "description": "Source scenario from IRENA World Energy Transitions Outlook 2022.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-64388a125ef3c5a626f4",
+      "legacyIds": [
+        "IRENA World Energy Transitions Outlook 2022::1.5°C Scenario"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000010",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000020",
+      "registryKind": "scenario",
+      "label": "Historical estimate",
+      "description": "Source scenario from LBNL Data Center Energy Usage Report.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-b3755a9a40abdc02f84b",
+      "legacyIds": [
+        "LBNL Data Center Energy Usage Report::Historical estimate"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000011",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000021",
+      "registryKind": "scenario",
+      "label": "Projection range",
+      "description": "Source scenario from LBNL Data Center Energy Usage Report.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-b941f2a834512d44fcf5",
+      "legacyIds": [
+        "LBNL Data Center Energy Usage Report::Projection range"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000011",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000022",
+      "registryKind": "scenario",
+      "label": "Below 2°C",
+      "description": "Source scenario from MESSAGEix-GLOBIOM 2.0-M-R12-NGFS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-7eb449bb81ff300bfb7c",
+      "legacyIds": [
+        "MESSAGEix-GLOBIOM 2.0-M-R12-NGFS::Below 2°C"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000012",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000023",
+      "registryKind": "scenario",
+      "label": "Current Policies",
+      "description": "Source scenario from MESSAGEix-GLOBIOM 2.0-M-R12-NGFS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-20f9b60e66a84a7740c2",
+      "legacyIds": [
+        "MESSAGEix-GLOBIOM 2.0-M-R12-NGFS::Current Policies"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000012",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000024",
+      "registryKind": "scenario",
+      "label": "Delayed transition",
+      "description": "Source scenario from MESSAGEix-GLOBIOM 2.0-M-R12-NGFS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-4850054d1f238c26b69d",
+      "legacyIds": [
+        "MESSAGEix-GLOBIOM 2.0-M-R12-NGFS::Delayed transition"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000012",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000025",
+      "registryKind": "scenario",
+      "label": "Fragmented World",
+      "description": "Source scenario from MESSAGEix-GLOBIOM 2.0-M-R12-NGFS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-232bb09f4656056a1397",
+      "legacyIds": [
+        "MESSAGEix-GLOBIOM 2.0-M-R12-NGFS::Fragmented World"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000012",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000026",
+      "registryKind": "scenario",
+      "label": "Low demand",
+      "description": "Source scenario from MESSAGEix-GLOBIOM 2.0-M-R12-NGFS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-8c0e54fcd32851a76e97",
+      "legacyIds": [
+        "MESSAGEix-GLOBIOM 2.0-M-R12-NGFS::Low demand"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000012",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000027",
+      "registryKind": "scenario",
+      "label": "Nationally Determined Contributions (NDCs)",
+      "description": "Source scenario from MESSAGEix-GLOBIOM 2.0-M-R12-NGFS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-9e568199cc330c43c2c5",
+      "legacyIds": [
+        "MESSAGEix-GLOBIOM 2.0-M-R12-NGFS::Nationally Determined Contributions (NDCs)"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000012",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000028",
+      "registryKind": "scenario",
+      "label": "Net Zero 2050",
+      "description": "Source scenario from MESSAGEix-GLOBIOM 2.0-M-R12-NGFS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-2b0c3e26f6674c08a410",
+      "legacyIds": [
+        "MESSAGEix-GLOBIOM 2.0-M-R12-NGFS::Net Zero 2050"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000012",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000029",
+      "registryKind": "scenario",
+      "label": "Alternative Electricity",
+      "description": "Source scenario from National Energy Modeling System (NEMS).",
+      "status": "provisional",
+      "semanticFingerprint": "fp-360e642d5ff089f1be9d",
+      "legacyIds": [
+        "National Energy Modeling System (NEMS)::Alternative Electricity"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000013",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000030",
+      "registryKind": "scenario",
+      "label": "Alternative Electricity and Transportation",
+      "description": "Source scenario from National Energy Modeling System (NEMS).",
+      "status": "provisional",
+      "semanticFingerprint": "fp-4ed3c7fe5b071460200d",
+      "legacyIds": [
+        "National Energy Modeling System (NEMS)::Alternative Electricity and Transportation"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000013",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000031",
+      "registryKind": "scenario",
+      "label": "Alternative Transportation",
+      "description": "Source scenario from National Energy Modeling System (NEMS).",
+      "status": "provisional",
+      "semanticFingerprint": "fp-65942ceeff8302adcebe",
+      "legacyIds": [
+        "National Energy Modeling System (NEMS)::Alternative Transportation"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000013",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000032",
+      "registryKind": "scenario",
+      "label": "Counterfactual Baseline",
+      "description": "Source scenario from National Energy Modeling System (NEMS).",
+      "status": "provisional",
+      "semanticFingerprint": "fp-16b315aec3413794426e",
+      "legacyIds": [
+        "National Energy Modeling System (NEMS)::Counterfactual Baseline"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000013",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000033",
+      "registryKind": "scenario",
+      "label": "High Economic Growth",
+      "description": "Source scenario from National Energy Modeling System (NEMS).",
+      "status": "provisional",
+      "semanticFingerprint": "fp-4a73955f244e2220dbed",
+      "legacyIds": [
+        "National Energy Modeling System (NEMS)::High Economic Growth"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000013",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000034",
+      "registryKind": "scenario",
+      "label": "High Electricity Demand",
+      "description": "Source scenario from National Energy Modeling System (NEMS).",
+      "status": "provisional",
+      "semanticFingerprint": "fp-acfe7776ae2a5c47f7f7",
+      "legacyIds": [
+        "National Energy Modeling System (NEMS)::High Electricity Demand"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000013",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000035",
+      "registryKind": "scenario",
+      "label": "High Oil and Gas Supply",
+      "description": "Source scenario from National Energy Modeling System (NEMS).",
+      "status": "provisional",
+      "semanticFingerprint": "fp-2c757b7ca23bdbbf56ce",
+      "legacyIds": [
+        "National Energy Modeling System (NEMS)::High Oil and Gas Supply"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000013",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000036",
+      "registryKind": "scenario",
+      "label": "High Zero-Carbon Technology Cost",
+      "description": "Source scenario from National Energy Modeling System (NEMS).",
+      "status": "provisional",
+      "semanticFingerprint": "fp-c9375449f6f9fda4139b",
+      "legacyIds": [
+        "National Energy Modeling System (NEMS)::High Zero-Carbon Technology Cost"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000013",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000037",
+      "registryKind": "scenario",
+      "label": "Low Economic Growth",
+      "description": "Source scenario from National Energy Modeling System (NEMS).",
+      "status": "provisional",
+      "semanticFingerprint": "fp-5d6aa64ee2e46154a288",
+      "legacyIds": [
+        "National Energy Modeling System (NEMS)::Low Economic Growth"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000013",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000038",
+      "registryKind": "scenario",
+      "label": "Low Oil and Gas Supply",
+      "description": "Source scenario from National Energy Modeling System (NEMS).",
+      "status": "provisional",
+      "semanticFingerprint": "fp-b3b126e855be2562174c",
+      "legacyIds": [
+        "National Energy Modeling System (NEMS)::Low Oil and Gas Supply"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000013",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000039",
+      "registryKind": "scenario",
+      "label": "Low Zero-Carbon Technology Cost",
+      "description": "Source scenario from National Energy Modeling System (NEMS).",
+      "status": "provisional",
+      "semanticFingerprint": "fp-67ac3a4f28f729be33f7",
+      "legacyIds": [
+        "National Energy Modeling System (NEMS)::Low Zero-Carbon Technology Cost"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000013",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000040",
+      "registryKind": "scenario",
+      "label": "Alternative Electricity",
+      "description": "Source scenario from NEMS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-8dc51678e6c3d24fcbb7",
+      "legacyIds": [
+        "NEMS::Alternative Electricity"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000014",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000041",
+      "registryKind": "scenario",
+      "label": "Alternative Electricity and Transportation",
+      "description": "Source scenario from NEMS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-eaedb1700e0a56111a0f",
+      "legacyIds": [
+        "NEMS::Alternative Electricity and Transportation"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000014",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000042",
+      "registryKind": "scenario",
+      "label": "Alternative Transportation",
+      "description": "Source scenario from NEMS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-08490c41747a33ef3641",
+      "legacyIds": [
+        "NEMS::Alternative Transportation"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000014",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000043",
+      "registryKind": "scenario",
+      "label": "Counterfactual Baseline",
+      "description": "Source scenario from NEMS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-a3be3098325ef7b1ae0a",
+      "legacyIds": [
+        "NEMS::Counterfactual Baseline"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000014",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000044",
+      "registryKind": "scenario",
+      "label": "High Economic Growth",
+      "description": "Source scenario from NEMS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-9f74d437b564e1783d9a",
+      "legacyIds": [
+        "NEMS::High Economic Growth"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000014",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000045",
+      "registryKind": "scenario",
+      "label": "High Electricity Demand",
+      "description": "Source scenario from NEMS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-f508cc9d1b75f15c95e7",
+      "legacyIds": [
+        "NEMS::High Electricity Demand"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000014",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000046",
+      "registryKind": "scenario",
+      "label": "High Oil and Gas Supply",
+      "description": "Source scenario from NEMS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-0dbb624246487e54fa22",
+      "legacyIds": [
+        "NEMS::High Oil and Gas Supply"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000014",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000047",
+      "registryKind": "scenario",
+      "label": "High Zero-Carbon Technology Cost",
+      "description": "Source scenario from NEMS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-0915edbf46ddfbf2d33b",
+      "legacyIds": [
+        "NEMS::High Zero-Carbon Technology Cost"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000014",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000048",
+      "registryKind": "scenario",
+      "label": "Low Economic Growth",
+      "description": "Source scenario from NEMS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-6cdfebca419fda71ddde",
+      "legacyIds": [
+        "NEMS::Low Economic Growth"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000014",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000049",
+      "registryKind": "scenario",
+      "label": "Low Oil and Gas Supply",
+      "description": "Source scenario from NEMS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-0fe2b25b9fc1ddc50da0",
+      "legacyIds": [
+        "NEMS::Low Oil and Gas Supply"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000014",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000050",
+      "registryKind": "scenario",
+      "label": "Low Zero-Carbon Technology Cost",
+      "description": "Source scenario from NEMS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-4fe6261cbaf1917414da",
+      "legacyIds": [
+        "NEMS::Low Zero-Carbon Technology Cost"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000014",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000051",
+      "registryKind": "scenario",
+      "label": "2016 reference year",
+      "description": "Source scenario from NREL Electrification Futures Study.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-14dd1e51fad23cabe932",
+      "legacyIds": [
+        "NREL Electrification Futures Study::2016 reference year"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000015",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000052",
+      "registryKind": "scenario",
+      "label": "High electrification | Moderate technology advancement",
+      "description": "Source scenario from NREL Electrification Futures Study.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-ba01b73d7f7ebe121824",
+      "legacyIds": [
+        "NREL Electrification Futures Study::High electrification | Moderate technology advancement"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000015",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000053",
+      "registryKind": "scenario",
+      "label": "High electrification | Rapid technology advancement",
+      "description": "Source scenario from NREL Electrification Futures Study.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-79b87f9d5bd954a06823",
+      "legacyIds": [
+        "NREL Electrification Futures Study::High electrification | Rapid technology advancement"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000015",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000054",
+      "registryKind": "scenario",
+      "label": "High electrification | Slow technology advancement",
+      "description": "Source scenario from NREL Electrification Futures Study.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-c31dd6c8247f99c9a202",
+      "legacyIds": [
+        "NREL Electrification Futures Study::High electrification | Slow technology advancement"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000015",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000055",
+      "registryKind": "scenario",
+      "label": "Medium electrification | Moderate technology advancement",
+      "description": "Source scenario from NREL Electrification Futures Study.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-85874bc7ac9b0c6080eb",
+      "legacyIds": [
+        "NREL Electrification Futures Study::Medium electrification | Moderate technology advancement"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000015",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000056",
+      "registryKind": "scenario",
+      "label": "Medium electrification | Rapid technology advancement",
+      "description": "Source scenario from NREL Electrification Futures Study.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-269672fd4d3c0c6dafad",
+      "legacyIds": [
+        "NREL Electrification Futures Study::Medium electrification | Rapid technology advancement"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000015",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000057",
+      "registryKind": "scenario",
+      "label": "Medium electrification | Slow technology advancement",
+      "description": "Source scenario from NREL Electrification Futures Study.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-3699098046b662ba44bb",
+      "legacyIds": [
+        "NREL Electrification Futures Study::Medium electrification | Slow technology advancement"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000015",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000058",
+      "registryKind": "scenario",
+      "label": "Reference electrification | Moderate technology advancement",
+      "description": "Source scenario from NREL Electrification Futures Study.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-5872fb644e9b3d0bf63d",
+      "legacyIds": [
+        "NREL Electrification Futures Study::Reference electrification | Moderate technology advancement"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000015",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000059",
+      "registryKind": "scenario",
+      "label": "Reference electrification | Rapid technology advancement",
+      "description": "Source scenario from NREL Electrification Futures Study.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-f350edf7732cfa31dc47",
+      "legacyIds": [
+        "NREL Electrification Futures Study::Reference electrification | Rapid technology advancement"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000015",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000060",
+      "registryKind": "scenario",
+      "label": "Reference electrification | Slow technology advancement",
+      "description": "Source scenario from NREL Electrification Futures Study.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-da6b03138f4f0e15e828",
+      "legacyIds": [
+        "NREL Electrification Futures Study::Reference electrification | Slow technology advancement"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000015",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000061",
+      "registryKind": "scenario",
+      "label": "Adv_CCS",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-ac77ec6fbc7939a06a0a",
+      "legacyIds": [
+        "ReEDS::Adv_CCS"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000062",
+      "registryKind": "scenario",
+      "label": "Adv_CCS_CO2e_100by2035",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-b579f18f1751ca025975",
+      "legacyIds": [
+        "ReEDS::Adv_CCS_CO2e_100by2035"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000063",
+      "registryKind": "scenario",
+      "label": "Adv_CCS_No_TC_Expiration",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-5db6b6564d495f39a37a",
+      "legacyIds": [
+        "ReEDS::Adv_CCS_No_TC_Expiration"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000064",
+      "registryKind": "scenario",
+      "label": "Adv_NG",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-5d6f0676fb90b551c053",
+      "legacyIds": [
+        "ReEDS::Adv_NG"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000065",
+      "registryKind": "scenario",
+      "label": "Adv_NG_CO2e_100by2035",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-3f461fd32a855edcf1a8",
+      "legacyIds": [
+        "ReEDS::Adv_NG_CO2e_100by2035"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000066",
+      "registryKind": "scenario",
+      "label": "Adv_NG_No_TC_Expiration",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-ee2cf69b581b8655a22a",
+      "legacyIds": [
+        "ReEDS::Adv_NG_No_TC_Expiration"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000067",
+      "registryKind": "scenario",
+      "label": "Adv_Nuclear",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-17279c7169d4a2c7ab80",
+      "legacyIds": [
+        "ReEDS::Adv_Nuclear"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000068",
+      "registryKind": "scenario",
+      "label": "Adv_Nuclear_CO2e_100by2035",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-5279faf236d69cef7d89",
+      "legacyIds": [
+        "ReEDS::Adv_Nuclear_CO2e_100by2035"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000069",
+      "registryKind": "scenario",
+      "label": "Adv_Nuclear_No_TC_Expiration",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-5d826fdebe1cf5499709",
+      "legacyIds": [
+        "ReEDS::Adv_Nuclear_No_TC_Expiration"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000070",
+      "registryKind": "scenario",
+      "label": "Adv_RE",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-c5be4a4663c08cb036a9",
+      "legacyIds": [
+        "ReEDS::Adv_RE"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000071",
+      "registryKind": "scenario",
+      "label": "Adv_RE_CO2e_100by2035",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-14c3340d14c226a4e7ae",
+      "legacyIds": [
+        "ReEDS::Adv_RE_CO2e_100by2035"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000072",
+      "registryKind": "scenario",
+      "label": "Adv_RE_No_TC_Expiration",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-d671b29ac8c83c0c4d65",
+      "legacyIds": [
+        "ReEDS::Adv_RE_No_TC_Expiration"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000073",
+      "registryKind": "scenario",
+      "label": "Con_CCS",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-cb75c466933658e6389c",
+      "legacyIds": [
+        "ReEDS::Con_CCS"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000074",
+      "registryKind": "scenario",
+      "label": "Con_CCS_CO2e_100by2035",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-af071b05db6a55d04a30",
+      "legacyIds": [
+        "ReEDS::Con_CCS_CO2e_100by2035"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000075",
+      "registryKind": "scenario",
+      "label": "Con_CCS_No_TC_Expiration",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-6ca5d00cc461ed832299",
+      "legacyIds": [
+        "ReEDS::Con_CCS_No_TC_Expiration"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000076",
+      "registryKind": "scenario",
+      "label": "Con_NG",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-cd19c070951c1acfdf71",
+      "legacyIds": [
+        "ReEDS::Con_NG"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000077",
+      "registryKind": "scenario",
+      "label": "Con_NG_CO2e_100by2035",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-a84504cf8f7a08eff11c",
+      "legacyIds": [
+        "ReEDS::Con_NG_CO2e_100by2035"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000078",
+      "registryKind": "scenario",
+      "label": "Con_NG_No_TC_Expiration",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-d95faef9773044a5f578",
+      "legacyIds": [
+        "ReEDS::Con_NG_No_TC_Expiration"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000079",
+      "registryKind": "scenario",
+      "label": "Con_Nuclear",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-a28e636defe345f1c8a3",
+      "legacyIds": [
+        "ReEDS::Con_Nuclear"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000080",
+      "registryKind": "scenario",
+      "label": "Con_Nuclear_CO2e_100by2035",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-4c9aa2ea88034fe5c68d",
+      "legacyIds": [
+        "ReEDS::Con_Nuclear_CO2e_100by2035"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000081",
+      "registryKind": "scenario",
+      "label": "Con_Nuclear_No_TC_Expiration",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-4c14d48342bc007f4e74",
+      "legacyIds": [
+        "ReEDS::Con_Nuclear_No_TC_Expiration"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000082",
+      "registryKind": "scenario",
+      "label": "Con_RE",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-a5410862372a616b1e7d",
+      "legacyIds": [
+        "ReEDS::Con_RE"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000083",
+      "registryKind": "scenario",
+      "label": "Con_RE_CO2e_100by2035",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-b4f2be96f83d448106f3",
+      "legacyIds": [
+        "ReEDS::Con_RE_CO2e_100by2035"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000084",
+      "registryKind": "scenario",
+      "label": "Con_RE_No_TC_Expiration",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-1783cb1f91fbd77a227c",
+      "legacyIds": [
+        "ReEDS::Con_RE_No_TC_Expiration"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000085",
+      "registryKind": "scenario",
+      "label": "DAC",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-bd16b5034dfb3672149b",
+      "legacyIds": [
+        "ReEDS::DAC"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000086",
+      "registryKind": "scenario",
+      "label": "DAC_CO2e_100by2035",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-f1d1ce2bc7f9c90a0c97",
+      "legacyIds": [
+        "ReEDS::DAC_CO2e_100by2035"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000087",
+      "registryKind": "scenario",
+      "label": "DAC_No_TC_Expiration",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-25b2ba163972fb0b5090",
+      "legacyIds": [
+        "ReEDS::DAC_No_TC_Expiration"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000088",
+      "registryKind": "scenario",
+      "label": "DC_Tran_CO2e_100by2035",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-56834efc936514a2efb2",
+      "legacyIds": [
+        "ReEDS::DC_Tran_CO2e_100by2035"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000089",
+      "registryKind": "scenario",
+      "label": "DC_Trans",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-630ef3d255294db05080",
+      "legacyIds": [
+        "ReEDS::DC_Trans"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000090",
+      "registryKind": "scenario",
+      "label": "DC_Trans_No_TC_Expiration",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-5c1fe375ba2028acaad3",
+      "legacyIds": [
+        "ReEDS::DC_Trans_No_TC_Expiration"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000091",
+      "registryKind": "scenario",
+      "label": "High_Demand_Growth",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-67169dfce8f81ffda869",
+      "legacyIds": [
+        "ReEDS::High_Demand_Growth"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000092",
+      "registryKind": "scenario",
+      "label": "High_Demand_Growth_CO2e_100by2035",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-43822dd36d293d68b301",
+      "legacyIds": [
+        "ReEDS::High_Demand_Growth_CO2e_100by2035"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000093",
+      "registryKind": "scenario",
+      "label": "High_Demand_Growth_No_TC_Expiration",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-ed9ecf60be3b818824d1",
+      "legacyIds": [
+        "ReEDS::High_Demand_Growth_No_TC_Expiration"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000094",
+      "registryKind": "scenario",
+      "label": "High_H2",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-f527b0e3cffbf7bb2586",
+      "legacyIds": [
+        "ReEDS::High_H2"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000095",
+      "registryKind": "scenario",
+      "label": "High_H2_and_Demand",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-4ebe1fae6ec06deb6d86",
+      "legacyIds": [
+        "ReEDS::High_H2_and_Demand"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000096",
+      "registryKind": "scenario",
+      "label": "High_H2_and_Demand_CO2e_100by2035",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-2ea45aa78d98ee62ba01",
+      "legacyIds": [
+        "ReEDS::High_H2_and_Demand_CO2e_100by2035"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000097",
+      "registryKind": "scenario",
+      "label": "High_H2_and_Demand_No_TC_Expiration",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-3c081cca544baa86dcd7",
+      "legacyIds": [
+        "ReEDS::High_H2_and_Demand_No_TC_Expiration"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000098",
+      "registryKind": "scenario",
+      "label": "High_H2_CO2e_100by2035",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-efb75dbdd79fd66ded3d",
+      "legacyIds": [
+        "ReEDS::High_H2_CO2e_100by2035"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000099",
+      "registryKind": "scenario",
+      "label": "High_H2_No_TC_Expiration",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-a31e28a4a84d3b09c17f",
+      "legacyIds": [
+        "ReEDS::High_H2_No_TC_Expiration"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000100",
+      "registryKind": "scenario",
+      "label": "Limited_Trans",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-c59e0c8cf804a8e33a19",
+      "legacyIds": [
+        "ReEDS::Limited_Trans"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000101",
+      "registryKind": "scenario",
+      "label": "Limited_Trans_CO2e_100by2035",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-7b1247dfa02abf63e335",
+      "legacyIds": [
+        "ReEDS::Limited_Trans_CO2e_100by2035"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000102",
+      "registryKind": "scenario",
+      "label": "Limited_Trans_No_TC_Expiration",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-1d94b6090de08a1ab97e",
+      "legacyIds": [
+        "ReEDS::Limited_Trans_No_TC_Expiration"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000103",
+      "registryKind": "scenario",
+      "label": "Low_Demand_Growth",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-95d1429c48f5d6c8ce60",
+      "legacyIds": [
+        "ReEDS::Low_Demand_Growth"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000104",
+      "registryKind": "scenario",
+      "label": "Low_Demand_Growth_CO2e_100by2035",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-92b23ee53d38c45d36c0",
+      "legacyIds": [
+        "ReEDS::Low_Demand_Growth_CO2e_100by2035"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000105",
+      "registryKind": "scenario",
+      "label": "Low_Demand_Growth_No_TC_Expiration",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-63b0267e1d363a9ea215",
+      "legacyIds": [
+        "ReEDS::Low_Demand_Growth_No_TC_Expiration"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000106",
+      "registryKind": "scenario",
+      "label": "Mid_Case",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-f44566b9bad99df0209e",
+      "legacyIds": [
+        "ReEDS::Mid_Case"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000107",
+      "registryKind": "scenario",
+      "label": "Mid_Case_100by2035",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-9a7712b007c5b41d6771",
+      "legacyIds": [
+        "ReEDS::Mid_Case_100by2035"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000108",
+      "registryKind": "scenario",
+      "label": "Mid_Case_95by2035",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-56eec524add6cdb41593",
+      "legacyIds": [
+        "ReEDS::Mid_Case_95by2035"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000109",
+      "registryKind": "scenario",
+      "label": "Mid_Case_95by2050",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-004182adf58ded9148c3",
+      "legacyIds": [
+        "ReEDS::Mid_Case_95by2050"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000110",
+      "registryKind": "scenario",
+      "label": "Mid_Case_CO2e_100by2035",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-9ddfaa9b19f79367a888",
+      "legacyIds": [
+        "ReEDS::Mid_Case_CO2e_100by2035"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000111",
+      "registryKind": "scenario",
+      "label": "Mid_Case_CO2e_95by2035",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-00e23ee2c7e5e2d2867f",
+      "legacyIds": [
+        "ReEDS::Mid_Case_CO2e_95by2035"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000112",
+      "registryKind": "scenario",
+      "label": "Mid_Case_CO2e_95by2050",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-2d98fd9571e9f189900b",
+      "legacyIds": [
+        "ReEDS::Mid_Case_CO2e_95by2050"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000113",
+      "registryKind": "scenario",
+      "label": "Mid_Case_No_111D",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-8533ac77356af79c7796",
+      "legacyIds": [
+        "ReEDS::Mid_Case_No_111D"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000114",
+      "registryKind": "scenario",
+      "label": "Mid_Case_No_IRA",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-d3a863ca861df9d3c764",
+      "legacyIds": [
+        "ReEDS::Mid_Case_No_IRA"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000115",
+      "registryKind": "scenario",
+      "label": "Mid_Case_No_IRA_111D",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-e8d1106ac27828a8055c",
+      "legacyIds": [
+        "ReEDS::Mid_Case_No_IRA_111D"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000116",
+      "registryKind": "scenario",
+      "label": "Mid_Case_No_TC_Expiration",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-159d100ed23880b4224a",
+      "legacyIds": [
+        "ReEDS::Mid_Case_No_TC_Expiration"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000117",
+      "registryKind": "scenario",
+      "label": "Mid_Case_NoNascent",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-c257f8741f938a65c4e1",
+      "legacyIds": [
+        "ReEDS::Mid_Case_NoNascent"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000118",
+      "registryKind": "scenario",
+      "label": "No_TC_Expiration_CO2e_100by2035",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-8f9807c7766c34069d54",
+      "legacyIds": [
+        "ReEDS::No_TC_Expiration_CO2e_100by2035"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000119",
+      "registryKind": "scenario",
+      "label": "Reduced_RE_Resource",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-2c97f10f70685739254f",
+      "legacyIds": [
+        "ReEDS::Reduced_RE_Resource"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000120",
+      "registryKind": "scenario",
+      "label": "Reduced_RE_Resource_CO2e_100by2035",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-331fcdfaa0c28e35140e",
+      "legacyIds": [
+        "ReEDS::Reduced_RE_Resource_CO2e_100by2035"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000121",
+      "registryKind": "scenario",
+      "label": "Reduced_RE_Resource_No_TC_Expiration",
+      "description": "Source scenario from ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-ee8aba564ac4e1e41f3e",
+      "legacyIds": [
+        "ReEDS::Reduced_RE_Resource_No_TC_Expiration"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000016",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000122",
+      "registryKind": "scenario",
+      "label": "Below 2°C",
+      "description": "Source scenario from REMIND-MAgPIE 3.3-4.8.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-3c4c2c13f114801939ba",
+      "legacyIds": [
+        "REMIND-MAgPIE 3.3-4.8::Below 2°C"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000017",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000123",
+      "registryKind": "scenario",
+      "label": "Current Policies",
+      "description": "Source scenario from REMIND-MAgPIE 3.3-4.8.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-77ec27827e140d5d73af",
+      "legacyIds": [
+        "REMIND-MAgPIE 3.3-4.8::Current Policies"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000017",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000124",
+      "registryKind": "scenario",
+      "label": "Delayed transition",
+      "description": "Source scenario from REMIND-MAgPIE 3.3-4.8.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-54b4a43b0141f200a1b8",
+      "legacyIds": [
+        "REMIND-MAgPIE 3.3-4.8::Delayed transition"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000017",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000125",
+      "registryKind": "scenario",
+      "label": "Fragmented World",
+      "description": "Source scenario from REMIND-MAgPIE 3.3-4.8.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-8e00aee2bbaeaaab361d",
+      "legacyIds": [
+        "REMIND-MAgPIE 3.3-4.8::Fragmented World"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000017",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000126",
+      "registryKind": "scenario",
+      "label": "Low demand",
+      "description": "Source scenario from REMIND-MAgPIE 3.3-4.8.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-2aaaf39b89aa3a3fcbf1",
+      "legacyIds": [
+        "REMIND-MAgPIE 3.3-4.8::Low demand"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000017",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000127",
+      "registryKind": "scenario",
+      "label": "Nationally Determined Contributions (NDCs)",
+      "description": "Source scenario from REMIND-MAgPIE 3.3-4.8.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-34aafed83d715ffce8c4",
+      "legacyIds": [
+        "REMIND-MAgPIE 3.3-4.8::Nationally Determined Contributions (NDCs)"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000017",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    },
+    {
+      "id": "SCN-000128",
+      "registryKind": "scenario",
+      "label": "Net Zero 2050",
+      "description": "Source scenario from REMIND-MAgPIE 3.3-4.8.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-9f636b6e2c2818c915e1",
+      "legacyIds": [
+        "REMIND-MAgPIE 3.3-4.8::Net Zero 2050"
+      ],
+      "scenarioType": "source_scenario",
+      "modelId": "MOD-000017",
+      "purpose": "Preserve a named source scenario without cross-family collapse.",
+      "evidenceState": "source_scenario",
+      "overrides": []
+    }
+  ]
+}

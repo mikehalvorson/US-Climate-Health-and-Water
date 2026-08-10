@@ -1,0 +1,443 @@
+{
+  "schemaVersion": "1.0.0",
+  "evidenceVintage": "2026-08-01",
+  "recordType": "model",
+  "recordCount": 17,
+  "provenance": {
+    "canonicalInput": "src/generated/registry.json",
+    "generator": "tools/build-public-data.mjs",
+    "hashAlgorithm": "sha256"
+  },
+  "records": [
+    {
+      "id": "MOD-000001",
+      "registryKind": "model",
+      "label": "dashboard-climate-strategy",
+      "description": "Canonical boundary for dashboard-climate-strategy.",
+      "status": "pending",
+      "semanticFingerprint": "fp-498f76fc5ef23a62962e",
+      "legacyIds": [
+        "dashboard-climate-strategy"
+      ],
+      "version": "v0.1-contract",
+      "modelClass": "strategy",
+      "inputIds": [],
+      "sourceIds": [],
+      "outputMetricIds": [],
+      "interpretation": "Contract only; no authorized quantitative output.",
+      "prohibitedInterpretations": [
+        "Do not treat a conditional scenario as a forecast or probability distribution."
+      ],
+      "validationRequirements": [
+        "Source-family seam is visible.",
+        "Inputs, units, geography, period, and scenario are explicit."
+      ]
+    },
+    {
+      "id": "MOD-000002",
+      "registryKind": "model",
+      "label": "dashboard-food-system",
+      "description": "Canonical boundary for dashboard-food-system.",
+      "status": "pending",
+      "semanticFingerprint": "fp-53efb569697187715fb9",
+      "legacyIds": [
+        "dashboard-food-system"
+      ],
+      "version": "v0.1-contract",
+      "modelClass": "strategy",
+      "inputIds": [],
+      "sourceIds": [],
+      "outputMetricIds": [],
+      "interpretation": "Contract only; no authorized quantitative output.",
+      "prohibitedInterpretations": [
+        "Do not treat a conditional scenario as a forecast or probability distribution."
+      ],
+      "validationRequirements": [
+        "Source-family seam is visible.",
+        "Inputs, units, geography, period, and scenario are explicit."
+      ]
+    },
+    {
+      "id": "MOD-000003",
+      "registryKind": "model",
+      "label": "dashboard-food-water",
+      "description": "Canonical boundary for dashboard-food-water.",
+      "status": "pending",
+      "semanticFingerprint": "fp-7e561e61fee0ccf3c0e4",
+      "legacyIds": [
+        "dashboard-food-water"
+      ],
+      "version": "v0.1-contract",
+      "modelClass": "strategy",
+      "inputIds": [],
+      "sourceIds": [],
+      "outputMetricIds": [],
+      "interpretation": "Contract only; no authorized quantitative output.",
+      "prohibitedInterpretations": [
+        "Do not treat a conditional scenario as a forecast or probability distribution."
+      ],
+      "validationRequirements": [
+        "Source-family seam is visible.",
+        "Inputs, units, geography, period, and scenario are explicit."
+      ]
+    },
+    {
+      "id": "MOD-000004",
+      "registryKind": "model",
+      "label": "dashboard-integrated-energy",
+      "description": "Canonical boundary for dashboard-integrated-energy.",
+      "status": "pending",
+      "semanticFingerprint": "fp-56a68d5cca3f2bae7470",
+      "legacyIds": [
+        "dashboard-integrated-energy"
+      ],
+      "version": "v0.1-contract",
+      "modelClass": "strategy",
+      "inputIds": [],
+      "sourceIds": [],
+      "outputMetricIds": [],
+      "interpretation": "Contract only; no authorized quantitative output.",
+      "prohibitedInterpretations": [
+        "Do not treat a conditional scenario as a forecast or probability distribution."
+      ],
+      "validationRequirements": [
+        "Source-family seam is visible.",
+        "Inputs, units, geography, period, and scenario are explicit."
+      ]
+    },
+    {
+      "id": "MOD-000005",
+      "registryKind": "model",
+      "label": "GCAM 6.0 NGFS",
+      "description": "Canonical boundary for GCAM 6.0 NGFS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-6c8b83560e924a75f2d6",
+      "legacyIds": [
+        "GCAM 6.0 NGFS"
+      ],
+      "version": "v0.1-contract",
+      "modelClass": "source_response",
+      "inputIds": [],
+      "sourceIds": [
+        "SRC-000268"
+      ],
+      "outputMetricIds": [],
+      "interpretation": "Conditional source-response model; outputs are not predictions.",
+      "prohibitedInterpretations": [
+        "Do not treat a conditional scenario as a forecast or probability distribution."
+      ],
+      "validationRequirements": [
+        "Source-family seam is visible.",
+        "Inputs, units, geography, period, and scenario are explicit."
+      ]
+    },
+    {
+      "id": "MOD-000006",
+      "registryKind": "model",
+      "label": "IEA Electricity 2026",
+      "description": "Canonical boundary for IEA Electricity 2026.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-fed27d36f3714e0141be",
+      "legacyIds": [
+        "IEA Electricity 2026"
+      ],
+      "version": "v0.1-contract",
+      "modelClass": "source_response",
+      "inputIds": [],
+      "sourceIds": [
+        "SRC-000233"
+      ],
+      "outputMetricIds": [],
+      "interpretation": "Conditional source-response model; outputs are not predictions.",
+      "prohibitedInterpretations": [
+        "Do not treat a conditional scenario as a forecast or probability distribution."
+      ],
+      "validationRequirements": [
+        "Source-family seam is visible.",
+        "Inputs, units, geography, period, and scenario are explicit."
+      ]
+    },
+    {
+      "id": "MOD-000007",
+      "registryKind": "model",
+      "label": "IEA Energy and AI",
+      "description": "Canonical boundary for IEA Energy and AI.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-c78a5884572ccb6f2892",
+      "legacyIds": [
+        "IEA Energy and AI"
+      ],
+      "version": "v0.1-contract",
+      "modelClass": "source_response",
+      "inputIds": [],
+      "sourceIds": [
+        "SRC-000235"
+      ],
+      "outputMetricIds": [],
+      "interpretation": "Conditional source-response model; outputs are not predictions.",
+      "prohibitedInterpretations": [
+        "Do not treat a conditional scenario as a forecast or probability distribution."
+      ],
+      "validationRequirements": [
+        "Source-family seam is visible.",
+        "Inputs, units, geography, period, and scenario are explicit."
+      ]
+    },
+    {
+      "id": "MOD-000008",
+      "registryKind": "model",
+      "label": "IEA Global EV Outlook",
+      "description": "Canonical boundary for IEA Global EV Outlook.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-98507317193b70156e3e",
+      "legacyIds": [
+        "IEA Global EV Outlook"
+      ],
+      "version": "v0.1-contract",
+      "modelClass": "source_response",
+      "inputIds": [],
+      "sourceIds": [
+        "SRC-000243"
+      ],
+      "outputMetricIds": [],
+      "interpretation": "Conditional source-response model; outputs are not predictions.",
+      "prohibitedInterpretations": [
+        "Do not treat a conditional scenario as a forecast or probability distribution."
+      ],
+      "validationRequirements": [
+        "Source-family seam is visible.",
+        "Inputs, units, geography, period, and scenario are explicit."
+      ]
+    },
+    {
+      "id": "MOD-000009",
+      "registryKind": "model",
+      "label": "IRENA WETO",
+      "description": "Canonical boundary for IRENA WETO.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-02c02968743478ef757e",
+      "legacyIds": [
+        "IRENA WETO"
+      ],
+      "version": "v0.1-contract",
+      "modelClass": "source_response",
+      "inputIds": [],
+      "sourceIds": [
+        "SRC-000252"
+      ],
+      "outputMetricIds": [],
+      "interpretation": "Conditional source-response model; outputs are not predictions.",
+      "prohibitedInterpretations": [
+        "Do not treat a conditional scenario as a forecast or probability distribution."
+      ],
+      "validationRequirements": [
+        "Source-family seam is visible.",
+        "Inputs, units, geography, period, and scenario are explicit."
+      ]
+    },
+    {
+      "id": "MOD-000010",
+      "registryKind": "model",
+      "label": "IRENA World Energy Transitions Outlook 2022",
+      "description": "Canonical boundary for IRENA World Energy Transitions Outlook 2022.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-95d6c80eeadde3af35e5",
+      "legacyIds": [
+        "IRENA World Energy Transitions Outlook 2022"
+      ],
+      "version": "v0.1-contract",
+      "modelClass": "source_response",
+      "inputIds": [],
+      "sourceIds": [],
+      "outputMetricIds": [],
+      "interpretation": "Conditional source-response model; outputs are not predictions.",
+      "prohibitedInterpretations": [
+        "Do not treat a conditional scenario as a forecast or probability distribution."
+      ],
+      "validationRequirements": [
+        "Source-family seam is visible.",
+        "Inputs, units, geography, period, and scenario are explicit."
+      ]
+    },
+    {
+      "id": "MOD-000011",
+      "registryKind": "model",
+      "label": "LBNL Data Center Energy Usage Report",
+      "description": "Canonical boundary for LBNL Data Center Energy Usage Report.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-cd1e336080653e95c7e1",
+      "legacyIds": [
+        "LBNL Data Center Energy Usage Report"
+      ],
+      "version": "v0.1-contract",
+      "modelClass": "source_response",
+      "inputIds": [],
+      "sourceIds": [
+        "SRC-000257"
+      ],
+      "outputMetricIds": [],
+      "interpretation": "Conditional source-response model; outputs are not predictions.",
+      "prohibitedInterpretations": [
+        "Do not treat a conditional scenario as a forecast or probability distribution."
+      ],
+      "validationRequirements": [
+        "Source-family seam is visible.",
+        "Inputs, units, geography, period, and scenario are explicit."
+      ]
+    },
+    {
+      "id": "MOD-000012",
+      "registryKind": "model",
+      "label": "MESSAGEix-GLOBIOM 2.0-M-R12-NGFS",
+      "description": "Canonical boundary for MESSAGEix-GLOBIOM 2.0-M-R12-NGFS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-6005f7e9f49061700917",
+      "legacyIds": [
+        "MESSAGEix-GLOBIOM 2.0-M-R12-NGFS"
+      ],
+      "version": "v0.1-contract",
+      "modelClass": "source_response",
+      "inputIds": [],
+      "sourceIds": [
+        "SRC-000268"
+      ],
+      "outputMetricIds": [],
+      "interpretation": "Conditional source-response model; outputs are not predictions.",
+      "prohibitedInterpretations": [
+        "Do not treat a conditional scenario as a forecast or probability distribution."
+      ],
+      "validationRequirements": [
+        "Source-family seam is visible.",
+        "Inputs, units, geography, period, and scenario are explicit."
+      ]
+    },
+    {
+      "id": "MOD-000013",
+      "registryKind": "model",
+      "label": "National Energy Modeling System (NEMS)",
+      "description": "Canonical boundary for National Energy Modeling System (NEMS).",
+      "status": "provisional",
+      "semanticFingerprint": "fp-be143bdaa3451a98fd12",
+      "legacyIds": [
+        "National Energy Modeling System (NEMS)"
+      ],
+      "version": "v0.1-contract",
+      "modelClass": "source_response",
+      "inputIds": [],
+      "sourceIds": [],
+      "outputMetricIds": [],
+      "interpretation": "Conditional source-response model; outputs are not predictions.",
+      "prohibitedInterpretations": [
+        "Do not treat a conditional scenario as a forecast or probability distribution."
+      ],
+      "validationRequirements": [
+        "Source-family seam is visible.",
+        "Inputs, units, geography, period, and scenario are explicit."
+      ]
+    },
+    {
+      "id": "MOD-000014",
+      "registryKind": "model",
+      "label": "NEMS",
+      "description": "Canonical boundary for NEMS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-b7d19d58f6e1fe97a749",
+      "legacyIds": [
+        "NEMS"
+      ],
+      "version": "v0.1-contract",
+      "modelClass": "source_response",
+      "inputIds": [],
+      "sourceIds": [
+        "SRC-000182"
+      ],
+      "outputMetricIds": [],
+      "interpretation": "Conditional source-response model; outputs are not predictions.",
+      "prohibitedInterpretations": [
+        "Do not treat a conditional scenario as a forecast or probability distribution."
+      ],
+      "validationRequirements": [
+        "Source-family seam is visible.",
+        "Inputs, units, geography, period, and scenario are explicit."
+      ]
+    },
+    {
+      "id": "MOD-000015",
+      "registryKind": "model",
+      "label": "NREL Electrification Futures Study",
+      "description": "Canonical boundary for NREL Electrification Futures Study.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-d07549196f2ce476c5eb",
+      "legacyIds": [
+        "NREL Electrification Futures Study"
+      ],
+      "version": "v0.1-contract",
+      "modelClass": "source_response",
+      "inputIds": [],
+      "sourceIds": [
+        "SRC-000276"
+      ],
+      "outputMetricIds": [],
+      "interpretation": "Conditional source-response model; outputs are not predictions.",
+      "prohibitedInterpretations": [
+        "Do not treat a conditional scenario as a forecast or probability distribution."
+      ],
+      "validationRequirements": [
+        "Source-family seam is visible.",
+        "Inputs, units, geography, period, and scenario are explicit."
+      ]
+    },
+    {
+      "id": "MOD-000016",
+      "registryKind": "model",
+      "label": "ReEDS",
+      "description": "Canonical boundary for ReEDS.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-a2875c8ebd58a3b6aca2",
+      "legacyIds": [
+        "ReEDS"
+      ],
+      "version": "v0.1-contract",
+      "modelClass": "source_response",
+      "inputIds": [],
+      "sourceIds": [
+        "SRC-000277"
+      ],
+      "outputMetricIds": [],
+      "interpretation": "Conditional source-response model; outputs are not predictions.",
+      "prohibitedInterpretations": [
+        "Do not treat a conditional scenario as a forecast or probability distribution."
+      ],
+      "validationRequirements": [
+        "Source-family seam is visible.",
+        "Inputs, units, geography, period, and scenario are explicit."
+      ]
+    },
+    {
+      "id": "MOD-000017",
+      "registryKind": "model",
+      "label": "REMIND-MAgPIE 3.3-4.8",
+      "description": "Canonical boundary for REMIND-MAgPIE 3.3-4.8.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-161629cee4cdbb20756c",
+      "legacyIds": [
+        "REMIND-MAgPIE 3.3-4.8"
+      ],
+      "version": "v0.1-contract",
+      "modelClass": "source_response",
+      "inputIds": [],
+      "sourceIds": [
+        "SRC-000268"
+      ],
+      "outputMetricIds": [],
+      "interpretation": "Conditional source-response model; outputs are not predictions.",
+      "prohibitedInterpretations": [
+        "Do not treat a conditional scenario as a forecast or probability distribution."
+      ],
+      "validationRequirements": [
+        "Source-family seam is visible.",
+        "Inputs, units, geography, period, and scenario are explicit."
+      ]
+    }
+  ]
+}

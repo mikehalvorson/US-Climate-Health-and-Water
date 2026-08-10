@@ -4,6 +4,7 @@ import {
   assertIntegritySummary,
   assertRegistry,
   INTEGRITY_TEST_REGISTRY,
+  PUBLIC_INTEGRITY_RESULTS,
   summarizeIntegrity,
   type IntegrityResult,
   type IntegritySummary,
@@ -12,12 +13,12 @@ import {
 describe('unified integrity harness', () => {
   it('registers stable integrity test identities', () => {
     expect(() => assertRegistry('integrity_test', INTEGRITY_TEST_REGISTRY)).not.toThrow();
-    expect(INTEGRITY_TEST_REGISTRY).toHaveLength(5);
+    expect(INTEGRITY_TEST_REGISTRY).toHaveLength(12);
   });
 
   it('counts absent results as unloaded instead of hiding them', () => {
     const summary = summarizeIntegrity(INTEGRITY_TEST_REGISTRY, []);
-    expect(summary).toMatchObject({ registered: 5, executed: 0, unloaded: 5, passed: 0 });
+    expect(summary).toMatchObject({ registered: 12, executed: 0, unloaded: 12, passed: 0 });
   });
 
   it('reconciles passed, failed, skipped, and pending results', () => {
@@ -29,14 +30,19 @@ describe('unified integrity harness', () => {
     ];
     const summary = summarizeIntegrity(INTEGRITY_TEST_REGISTRY, results);
     expect(summary).toMatchObject({
-      registered: 5,
+      registered: 12,
       executed: 4,
       passed: 1,
       failed: 1,
       skipped: 1,
       pending: 1,
-      unloaded: 1,
+      unloaded: 8,
     });
+  });
+
+  it('publishes a fully reconciled sitewide result feed without hiding pending review', () => {
+    const summary = summarizeIntegrity(INTEGRITY_TEST_REGISTRY, PUBLIC_INTEGRITY_RESULTS);
+    expect(summary).toMatchObject({ registered: 12, executed: 12, passed: 11, failed: 0, skipped: 0, pending: 1, unloaded: 0 });
   });
 
   it('rejects unknown and duplicate test results', () => {
@@ -50,14 +56,14 @@ describe('unified integrity harness', () => {
 
   it('rejects a summary whose advertised counts do not reconcile', () => {
     const invalid: IntegritySummary = {
-      registered: 5,
-      executed: 5,
-      passed: 5,
+      registered: 12,
+      executed: 12,
+      passed: 12,
       failed: 0,
       skipped: 0,
       pending: 0,
       unloaded: 1,
-      byState: { passed: 5, failed: 0, skipped: 0, pending: 0, unloaded: 1 },
+      byState: { passed: 12, failed: 0, skipped: 0, pending: 0, unloaded: 1 },
     };
     expect(() => assertIntegritySummary(invalid)).toThrow('does not reconcile');
   });

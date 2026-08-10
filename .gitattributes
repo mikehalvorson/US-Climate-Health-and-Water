@@ -1,3 +1,5 @@
 src/data/registry/id-map.json text eol=lf
 src/generated/*.json text eol=lf
 tools/*.mjs text eol=lf
+public/data/*.json text eol=lf
+research/sitewide-chart-contracts.json text eol=lf

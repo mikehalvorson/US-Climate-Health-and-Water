@@ -52,7 +52,7 @@ for (const path of pages) {
   if (sequence > 1 && !html.includes('rel="prev"')) failures.push(`${routePath}: previous chapter link is missing`);
 
   const links = [...html.matchAll(/href="([^"#?]+)(?:[?#][^"]*)?"/gu)].map((match) => match[1]);
-  for (const href of links.filter((value) => value.startsWith(base) && !value.includes('/_astro/'))) {
+  for (const href of links.filter((value) => value.startsWith(base) && !value.includes('/_astro/') && !value.includes('/data/'))) {
     const normalized = href.endsWith('/') ? href : `${href}/`;
     if (!publicPaths.has(normalized)) failures.push(`${routePath}: unresolved internal route ${href}`);
   }

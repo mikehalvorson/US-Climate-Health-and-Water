@@ -19,28 +19,13 @@ describe('chapter release mapping', () => {
     expect(chapterContentFor('RTE-000013')).toBe('industry-water');
     expect(chapterContentFor('RTE-000014')).toBe('plastics-materials');
     expect(chapterContentFor('RTE-000015')).toBe('food-water-plan');
-    expect(ROUTES.filter((route) => releaseStatusFor(route.id) === 'chapter').map((route) => route.id)).toEqual([
-      'RTE-000002',
-      'RTE-000003',
-      'RTE-000004',
-      'RTE-000005',
-      'RTE-000006',
-      'RTE-000007',
-      'RTE-000008',
-      'RTE-000009',
-      'RTE-000010',
-      'RTE-000011',
-      'RTE-000012',
-      'RTE-000013',
-      'RTE-000014',
-      'RTE-000015',
-    ]);
+    expect(ROUTES.filter((route) => releaseStatusFor(route.id) === 'chapter').map((route) => route.id)).toEqual(ROUTES.map((route) => route.id));
   });
 
   it('keeps overview and methods on their dedicated non-chapter surfaces', () => {
     for (const route of ROUTES.filter((candidate) => ['RTE-000001', 'RTE-000016'].includes(candidate.id))) {
       expect(chapterContentFor(route.id)).toBeNull();
-      expect(releaseStatusFor(route.id)).toBe('shell');
+      expect(releaseStatusFor(route.id)).toBe('chapter');
     }
   });
 });

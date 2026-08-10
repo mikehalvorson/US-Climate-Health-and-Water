@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.0.0",
+  "evidenceVintage": "2026-08-01",
+  "hashAlgorithm": "sha256",
+  "provenance": "Generated from the canonical evidence registry and audit. Null values, evidence states, accounting boundaries, and source identities are preserved.",
+  "files": [
+    {
+      "file": "sources.json",
+      "bytes": 301980,
+      "sha256": "edecc9f3f8a6c3dc9d4b6af0586e7ac9b46b4897abe47dbcdb78234ff1ab53eb",
+      "recordCount": 336
+    },
+    {
+      "file": "claims.json",
+      "bytes": 182311,
+      "sha256": "5da7313ac72318214662968a8807c3fa62a221502ea24c116f2d90d4d0f470ac",
+      "recordCount": 157
+    },
+    {
+      "file": "datasets.json",
+      "bytes": 121865,
+      "sha256": "8fafabfe030b322bbc25a79d4674e06b72b42d57c52b8a254516769bfeb4d1e8",
+      "recordCount": 130
+    },
+    {
+      "file": "scenarios.json",
+      "bytes": 72581,
+      "sha256": "9b65f74cb51b6b2a40a083213075cffae7feb25b93cfd5a6e1785723748701df",
+      "recordCount": 128
+    },
+    {
+      "file": "transformations.json",
+      "bytes": 4884,
+      "sha256": "c30d73119681b1afab72ac367406e2453d991f0b71811a1dbc0ac91495ad20af",
+      "recordCount": 5
+    },
+    {
+      "file": "models.json",
+      "bytes": 15155,
+      "sha256": "d767604fcda93ae82324ba2576b2a59a610e14fe11e111fb2b7adecf29539b81",
+      "recordCount": 17
+    },
+    {
+      "file": "open-items.json",
+      "bytes": 108086,
+      "sha256": "ec02d6e67fbbcf314a60f12b3d34de3a5d8c168f588053a353f23c7e7546d963",
+      "recordCount": 102
+    },
+    {
+      "file": "registry-summary.json",
+      "bytes": 605,
+      "sha256": "a26f2d18d9a48d99f6cbb28d97d41446951d39199e10958b85db5ba33f15b679",
+      "recordCount": null
+    },
+    {
+      "file": "registry-manifest.json",
+      "bytes": 28556,
+      "sha256": "44a3ffa1da3c828e0850f5d8ed4677d6d43137391894b6b338c19b25928a73a7",
+      "recordCount": null
+    }
+  ]
+}

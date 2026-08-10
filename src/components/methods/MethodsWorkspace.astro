@@ -1,0 +1,170 @@
+---
+import audit from '../../generated/registry-audit.json';
+import registryManifest from '../../generated/registry-manifest.json';
+import CaveatPanel from '../CaveatPanel.astro';
+import EvidenceBadge from '../EvidenceBadge.astro';
+import { INTEGRITY_TEST_REGISTRY, PUBLIC_INTEGRITY_RESULTS, summarizeIntegrity } from '../../lib/registry/integrity';
+import { CANONICAL_REGISTRIES } from '../../lib/registry/store';
+
+const base = import.meta.env.BASE_URL;
+const dataHref = (file: string) => `${base}data/${file}`;
+const sources = CANONICAL_REGISTRIES.source ?? [];
+const claims = CANONICAL_REGISTRIES.claim ?? [];
+const datasets = CANONICAL_REGISTRIES.dataset ?? [];
+const scenarios = CANONICAL_REGISTRIES.scenario ?? [];
+const transformations = CANONICAL_REGISTRIES.transformation ?? [];
+const models = CANONICAL_REGISTRIES.model ?? [];
+const openItems = CANONICAL_REGISTRIES.open_item ?? [];
+const modelLabels = new Map(models.map((model) => [model.id, model.label]));
+const results = new Map(PUBLIC_INTEGRITY_RESULTS.map((result) => [result.testId, result]));
+const integrity = summarizeIntegrity(INTEGRITY_TEST_REGISTRY, PUBLIC_INTEGRITY_RESULTS);
+const definitions = [
+  ['Observed', 'Directly measured or inventoried evidence within its source boundary; vintage does not imply present-day status.'],
+  ['Reported estimate', 'A source-published estimate whose uncertainty and method remain source-owned.'],
+  ['Preliminary', 'A value the source may revise; the label remains attached everywhere it is shown.'],
+  ['Source scenario', 'A conditional pathway preserved inside its native model family, geography, and assumptions.'],
+  ['Dashboard transformation', 'A versioned formula applied to registered inputs with an explicit null rule.'],
+  ['Dashboard strategy model', 'A versioned decision model that may publish only after its validation requirements pass.'],
+  ['Withdrawal and consumption', 'Water withdrawal is removal from a source; consumption is the portion not returned on a compatible time and place boundary.'],
+  ['Missing value', 'Null means unavailable or unauthorized—not zero, negligible, or unchanged.'],
+] as const;
+const downloads = [
+  ['sources.json', 'Source registry', sources.length],
+  ['claims.json', 'Claim ledger', claims.length],
+  ['datasets.json', 'Dataset catalog', datasets.length],
+  ['scenarios.json', 'Scenario registry', scenarios.length],
+  ['transformations.json', 'Transformation registry', transformations.length],
+  ['models.json', 'Model registry', models.length],
+  ['open-items.json', 'Research-gap register', openItems.length],
+  ['registry-summary.json', 'Registry and audit summary', null],
+  ['registry-manifest.json', 'Research-input checksum manifest', registryManifest.trackedInputCount],
+  ['data-model-manifest.json', 'Public-download checksum manifest', 9],
+] as const;
+---
+<div class="methods-workspace" data-methods-workspace>
+  <section class="methods-intro" aria-labelledby="methods-intro-title">
+    <p class="section-kicker">Evidence vintage · {registryManifest.evidenceVintage}</p>
+    <h2 id="methods-intro-title">Inspect the evidence, transformations, models, conflicts, gaps, and publication tests behind every chapter.</h2>
+    <p>This workspace publishes canonical records without treating record volume as quality. Search is a progressive enhancement: every ledger and table remains readable when JavaScript is unavailable.</p>
+    <dl class="registry-summary" aria-label="Canonical evidence registry summary">
+      <div><dt>Sources</dt><dd>{sources.length}</dd></div>
+      <div><dt>Claims</dt><dd>{claims.length}</dd></div>
+      <div><dt>Datasets</dt><dd>{datasets.length}</dd></div>
+      <div><dt>Open items</dt><dd>{openItems.length}</dd></div>
+    </dl>
+  </section>
+
+  <nav class="methods-index" aria-label="Methods workspace sections">
+    <a href="#evidence-classes">Evidence classes</a><a href="#source-registry">Sources</a><a href="#claim-ledger">Claims</a><a href="#dataset-catalog">Datasets</a><a href="#definitions">Definitions</a><a href="#scenario-crosswalk">Scenarios</a><a href="#transformations">Transformations</a><a href="#model-registry">Models</a><a href="#source-conflicts">Conflicts</a><a href="#gap-register">Gaps</a><a href="#integrity-results">Integrity</a><a href="#downloads">Downloads</a>
+  </nav>
+
+  <section id="evidence-classes" class="methods-section" aria-labelledby="evidence-classes-title">
+    <p class="section-kicker">1 · Evidence classes and publication rules</p>
+    <h2 id="evidence-classes-title">Every claim states what kind of evidence it is.</h2>
+    <div class="methods-rule-grid">
+      {definitions.slice(0, 6).map(([label, description]) => <article><h3>{label}</h3><p>{description}</p></article>)}
+    </div>
+    <CaveatPanel title="Publication rules" caveats={['Periods, geographies, units, denominators, confidence, and accounting boundaries travel with a value.', 'Source scenarios are never spliced across model families.', 'Quantitative outputs stay null until registered inputs and validation gates are satisfied.']} prohibitedInterpretations={['Using a qualitative framework as a calculated outcome.', 'Treating a missing value as zero.', 'Treating a source scenario as a forecast or probability.']} />
+  </section>
+
+  <section id="source-registry" class="methods-section" aria-labelledby="source-registry-title" data-ledger-filter>
+    <p class="section-kicker">2a · Source registry</p>
+    <h2 id="source-registry-title">Search {sources.length} canonical sources.</h2>
+    <div class="ledger-tools">
+      <label>Search source title, publisher, domain, type, status, or ID<input type="search" data-ledger-query autocomplete="off" /></label>
+      <button type="button" data-ledger-reset>Clear</button><p role="status" aria-live="polite" data-ledger-count>{sources.length} of {sources.length} records visible</p>
+    </div>
+    <div class="methods-table-scroll" tabindex="0" role="region" aria-label="Searchable source registry">
+      <table><caption>Canonical source registry · evidence vintage {registryManifest.evidenceVintage}</caption><thead><tr><th scope="col">ID</th><th scope="col">Source</th><th scope="col">Domain and type</th><th scope="col">Dates</th><th scope="col">Status</th></tr></thead><tbody>
+        {sources.map((source) => <tr data-ledger-row><th scope="row">{source.id}</th><td><a href={source.url} target="_blank" rel="noreferrer">{source.title}</a><small>{source.publisher}</small></td><td>{source.domain}<small>{source.sourceType.replaceAll('_', ' ')}</small></td><td>Published: {source.publishedAt ?? 'Not recorded'}<small>Accessed: {source.accessedAt ?? 'Not recorded'}</small></td><td>{source.identityStatus.replaceAll('_', ' ')}<small>{source.status}</small></td></tr>)}
+      </tbody></table>
+    </div>
+  </section>
+
+  <section id="claim-ledger" class="methods-section" aria-labelledby="claim-ledger-title" data-ledger-filter>
+    <p class="section-kicker">2b · Claim ledger</p>
+    <h2 id="claim-ledger-title">Search {claims.length} claim-to-source chains.</h2>
+    <div class="ledger-tools">
+      <label>Search claim text, domain, geography, status, source ID, or claim ID<input type="search" data-ledger-query autocomplete="off" /></label>
+      <button type="button" data-ledger-reset>Clear</button><p role="status" aria-live="polite" data-ledger-count>{claims.length} of {claims.length} records visible</p>
+    </div>
+    <div class="methods-table-scroll" tabindex="0" role="region" aria-label="Searchable claim ledger">
+      <table><caption>Canonical claim ledger</caption><thead><tr><th scope="col">Claim</th><th scope="col">Scope</th><th scope="col">Evidence</th><th scope="col">Sources and guardrail</th></tr></thead><tbody>
+        {claims.map((claim) => <tr data-ledger-row><th scope="row"><span>{claim.id}</span>{claim.statement}</th><td>{claim.geography}<small>{claim.period} · {claim.domain}</small></td><td><EvidenceBadge state={claim.evidenceState} /><small>{claim.publicationStatus} · {claim.confidence} confidence · {claim.fidelityStatus}</small></td><td>{claim.sourceIds.join(', ')}<small>{claim.misuseGuardrail}</small></td></tr>)}
+      </tbody></table>
+    </div>
+  </section>
+
+  <section id="dataset-catalog" class="methods-section" aria-labelledby="dataset-catalog-title">
+    <p class="section-kicker">3 · Dataset catalog</p>
+    <h2 id="dataset-catalog-title">Geography, period, unit family, status, participation, and provenance stay attached.</h2>
+    <p><a class="download-link" href={dataHref('datasets.json')} download>Download the full dataset catalog →</a></p>
+    <div class="methods-table-scroll" tabindex="0" role="region" aria-label="Dataset catalog">
+      <table><caption>{datasets.length} registered datasets</caption><thead><tr><th scope="col">Dataset</th><th scope="col">Path</th><th scope="col">Geography</th><th scope="col">Period</th><th scope="col">Unit family</th><th scope="col">Use and status</th></tr></thead><tbody>
+        {datasets.map((dataset) => <tr><th scope="row">{dataset.id}<small>{dataset.label}</small></th><td>{dataset.path}</td><td>{dataset.geographyTypes.join(', ')}</td><td>{dataset.periods.join(', ')}</td><td>{dataset.unitFamilies.join(', ')}</td><td>{dataset.useClass}<small>{dataset.participation} · {dataset.status}</small></td></tr>)}
+      </tbody></table>
+    </div>
+  </section>
+
+  <section id="definitions" class="methods-section" aria-labelledby="definitions-title">
+    <p class="section-kicker">4 · Definitions and accounting boundaries</p>
+    <h2 id="definitions-title">Similar words are not interchangeable quantities.</h2>
+    <dl class="methods-definitions">{definitions.map(([term, definition]) => <div><dt>{term}</dt><dd>{definition}</dd></div>)}</dl>
+  </section>
+
+  <section id="scenario-crosswalk" class="methods-section" aria-labelledby="scenario-crosswalk-title">
+    <p class="section-kicker">5 · Scenario registry and model-family crosswalk</p>
+    <h2 id="scenario-crosswalk-title">Each of {scenarios.length} scenarios resolves to one model family.</h2>
+    <div class="methods-table-scroll" tabindex="0" role="region" aria-label="Scenario model crosswalk">
+      <table><caption>Scenario registry and owning model</caption><thead><tr><th scope="col">Scenario</th><th scope="col">Type</th><th scope="col">Model family</th><th scope="col">Evidence and purpose</th></tr></thead><tbody>
+        {scenarios.map((scenario) => <tr><th scope="row">{scenario.id}<small>{scenario.label}</small></th><td>{scenario.scenarioType.replaceAll('_', ' ')}</td><td>{scenario.modelId}<small>{modelLabels.get(scenario.modelId) ?? 'Registered model'}</small></td><td><EvidenceBadge state={scenario.evidenceState} /><small>{scenario.purpose}</small></td></tr>)}
+      </tbody></table>
+    </div>
+  </section>
+
+  <section id="transformations" class="methods-section" aria-labelledby="transformations-title">
+    <p class="section-kicker">6 · Transformations, formulas, and tests</p>
+    <h2 id="transformations-title">Only versioned transformations may create dashboard-derived values.</h2>
+    <div class="methods-card-grid">{transformations.map((transformation) => <article><p>{transformation.id} · {transformation.version}</p><h3>{transformation.label}</h3><code>{transformation.formula}</code><dl><div><dt>Inputs</dt><dd>{transformation.inputIds.join(', ') || 'None registered'}</dd></div><div><dt>Outputs</dt><dd>{transformation.outputMetricIds.join(', ') || 'None authorized'}</dd></div><div><dt>Null rule</dt><dd>{transformation.nullRule}</dd></div><div><dt>Confidence</dt><dd>{transformation.confidence}</dd></div></dl></article>)}</div>
+  </section>
+
+  <section id="model-registry" class="methods-section" aria-labelledby="model-registry-title">
+    <p class="section-kicker">7 · Strategy-model registry</p>
+    <h2 id="model-registry-title">Version, inputs, outputs, validation, and limitations are public.</h2>
+    <div class="methods-card-grid">{models.map((model) => <article><p>{model.id} · {model.modelClass}</p><h3>{model.label} <small>{model.version}</small></h3><p>{model.interpretation}</p><dl><div><dt>Inputs</dt><dd>{model.inputIds.join(', ') || 'None authorized'}</dd></div><div><dt>Outputs</dt><dd>{model.outputMetricIds.join(', ') || 'None authorized'}</dd></div><div><dt>Validation</dt><dd>{model.validationRequirements.join(' ')}</dd></div><div><dt>Do not interpret as</dt><dd>{model.prohibitedInterpretations.join(' ')}</dd></div></dl></article>)}</div>
+  </section>
+
+  <section id="source-conflicts" class="methods-section" aria-labelledby="source-conflicts-title">
+    <p class="section-kicker">8 · Known source conflicts</p>
+    <h2 id="source-conflicts-title">{audit.sourceDefinitionCollisions.length} source-definition collisions are resolved visibly.</h2>
+    <div class="methods-table-scroll" tabindex="0" role="region" aria-label="Source definition conflicts"><table><caption>Canonical owner resolutions</caption><thead><tr><th scope="col">Legacy and canonical IDs</th><th scope="col">Chosen owner</th><th scope="col">Candidates</th><th scope="col">Resolution</th></tr></thead><tbody>
+      {audit.sourceDefinitionCollisions.map((conflict) => <tr><th scope="row">{conflict.legacyId}<small>{conflict.canonicalId}</small></th><td>{conflict.chosenPath}</td><td>{conflict.candidatePaths.join('; ')}</td><td>{conflict.resolution.replaceAll('_', ' ')}<small>{conflict.metadataVariants} metadata variants</small></td></tr>)}
+    </tbody></table></div>
+  </section>
+
+  <section id="gap-register" class="methods-section" aria-labelledby="gap-register-title">
+    <p class="section-kicker">9 · Research-gap register</p>
+    <h2 id="gap-register-title">{openItems.length} open items remain publication-visible.</h2>
+    <p><a class="download-link" href={dataHref('open-items.json')} download>Download the complete gap register →</a></p>
+    <div class="methods-table-scroll" tabindex="0" role="region" aria-label="Research gap register"><table><caption>Open research and release items</caption><thead><tr><th scope="col">Gap</th><th scope="col">Status</th><th scope="col">Affected records</th><th scope="col">Owner and next action</th></tr></thead><tbody>
+      {openItems.map((item) => <tr><th scope="row">{item.id}<small>{item.label}</small></th><td>{item.itemStatus}<small>{item.severity.replaceAll('_', ' ')}</small></td><td>{item.affectedIds.join(', ') || 'Not bound'}</td><td>{item.owner}<small>{item.nextAction}</small></td></tr>)}
+    </tbody></table></div>
+  </section>
+
+  <section id="integrity-results" class="methods-section" aria-labelledby="integrity-results-title">
+    <p class="section-kicker">10 · Integrity-test groups and results</p>
+    <h2 id="integrity-results-title">{integrity.passed} passed · {integrity.failed} failed · {integrity.pending} pending · {integrity.unloaded} unloaded.</h2>
+    <p>All {integrity.registered} registered checks reconcile to a named state; pending work is not presented as a pass.</p>
+    <div class="integrity-result-grid">{INTEGRITY_TEST_REGISTRY.map((test) => { const result = results.get(test.id); return <article data-integrity-state={result?.state ?? 'unloaded'}><p>{test.id} · {test.group.replaceAll('_', ' ')}</p><h3>{test.label}</h3><strong>{result?.state ?? 'unloaded'}</strong><p>{result?.message ?? 'No result was loaded.'}</p></article>; })}</div>
+  </section>
+
+  <section id="downloads" class="methods-section" aria-labelledby="downloads-title">
+    <p class="section-kicker">11 · Downloads, update history, and evidence vintage</p>
+    <h2 id="downloads-title">Checksummed public data and model manifests</h2>
+    <div class="download-grid">{downloads.map(([file, label, count]) => <a href={dataHref(file)} download><strong>{label}</strong><span>{file}</span><small>{count === null ? 'Manifest or summary' : `${count} tracked records or inputs`} · JSON · SHA-256 provenance</small></a>)}</div>
+    <div class="update-history"><h3>Update history</h3><ol><li><time>2026-08-01</time><span>Evidence vintage fixed for the first-draft publication.</span></li><li><time>2026-08-09</time><span>Canonical registries generated from {registryManifest.trackedInputCount} tracked research inputs.</span></li><li><time>2026-08-09</time><span>Fourteen evidence-linked story chapters released and reconciled.</span></li><li><time>2026-08-09</time><span>Overview, Methods, public downloads, and integrity results released for Step 12.</span></li></ol></div>
+    <CaveatPanel title="What the public files establish" caveats={['Checksums establish file integrity and reproducibility, not scientific certainty.', 'Record counts describe inspection coverage, not evidence quality.', 'The final deployed URL and cross-browser publication review remain Step 13 work.']} />
+  </section>
+</div>
+
+<script>import '../../scripts/methods-search.ts';</script>

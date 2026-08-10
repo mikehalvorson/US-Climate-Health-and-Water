@@ -579,6 +579,42 @@
     },
     {
       "kind": "chart",
+      "legacyId": "overview-connected-system",
+      "canonicalId": "CHT-000124",
+      "semanticHash": "ba61439620d3a675d0e5b5924665ceff6451d1a510e1ca0fee8f47618c505d98"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "overview-current-scorecard",
+      "canonicalId": "CHT-000125",
+      "semanticHash": "b97af3d846e357084c79c50d76ee4c811016b95922adc5726bef3cf986b07fb9"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "overview-dependency-map",
+      "canonicalId": "CHT-000126",
+      "semanticHash": "715cb164b7669f999ddc6f7bf8814d50407c43dc1d0d068f72370012071a3a43"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "overview-outcome-readiness",
+      "canonicalId": "CHT-000127",
+      "semanticHash": "fa973f6f4b2cc0677c959fe7ffc358e6f6ea4893bc56c028890afcadf6bfa777"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "overview-portfolio-architecture",
+      "canonicalId": "CHT-000128",
+      "semanticHash": "8e24766b56777fd5eb4ac7b1b3693a38e87012827f1836be773abf1e02620c33"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "overview-roadmap",
+      "canonicalId": "CHT-000129",
+      "semanticHash": "edecf1ada72ea53b44cd4ced6d90c04d5cef656a22afb97daefc62abdef1c40d"
+    },
+    {
+      "kind": "chart",
       "legacyId": "pfas_vaccine_claim_correction",
       "canonicalId": "CHT-000056",
       "semanticHash": "6aa41b627a68f5b6f9339edb117c7cb418ea76f864bb7293e22ea5b8cdf158b4"
@@ -2019,6 +2055,12 @@
     },
     {
       "kind": "dataset",
+      "legacyId": "path:research/climate/plan-chart-contracts.json",
+      "canonicalId": "DAT-000125",
+      "semanticHash": "87edfb6ed22b889d1a88b3c15ce05cb7941db1e3f2233a546be23320fc931b4f"
+    },
+    {
+      "kind": "dataset",
       "legacyId": "path:research/climate/summary.json",
       "canonicalId": "DAT-000113",
       "semanticHash": "6e9bbc87a44f8a66f33f113cbcc8a85cf931e29845150d49ef3077a8808fc6a7"
@@ -2130,6 +2172,18 @@
       "legacyId": "path:research/energy/impacts/technology-impact-matrix.json",
       "canonicalId": "DAT-000108",
       "semanticHash": "235c725d66a75109904890820336680c2d724a0902b5c128baf162f497efb8a0"
+    },
+    {
+      "kind": "dataset",
+      "legacyId": "path:research/energy/plan-chart-contracts.json",
+      "canonicalId": "DAT-000126",
+      "semanticHash": "dfcbb26617b0d0f34541758beac3e0b1fae34cfb47ed9af69650fbed67c25adb"
+    },
+    {
+      "kind": "dataset",
+      "legacyId": "path:research/energy/summary.json",
+      "canonicalId": "DAT-000127",
+      "semanticHash": "50c59eb158bec886b04c8b1250935106e955fe0eb1571e8a7669155c333d9c20"
     },
     {
       "kind": "dataset",
@@ -2301,6 +2355,12 @@
     },
     {
       "kind": "dataset",
+      "legacyId": "path:research/plastics/summary.json",
+      "canonicalId": "DAT-000128",
+      "semanticHash": "b4540676c64aeab6e0d51ea49ca9103792924e6795909f606a11fda85b909436"
+    },
+    {
+      "kind": "dataset",
       "legacyId": "path:research/plastics/us-material-flows.json",
       "canonicalId": "DAT-000094",
       "semanticHash": "9062b65de834083b9f6c7770d0d855bab2d4971a0eb0aa2c2bbb784eaa900571"
@@ -2319,9 +2379,21 @@
     },
     {
       "kind": "dataset",
+      "legacyId": "path:research/water/food-plan-chart-contracts.json",
+      "canonicalId": "DAT-000129",
+      "semanticHash": "83107537eac42718df701580e812762bd2facf247c5b53254b1d2883181b6a5b"
+    },
+    {
+      "kind": "dataset",
       "legacyId": "path:research/water/gaps.json",
       "canonicalId": "DAT-000111",
       "semanticHash": "4534623e61e535e87a3503f58d49db5310789aefe4e3c9d9eabb3d0bdb8962b0"
+    },
+    {
+      "kind": "dataset",
+      "legacyId": "path:research/water/national-water-use.json",
+      "canonicalId": "DAT-000130",
+      "semanticHash": "9caa3344e643bb8c5943ffc61bd8c2b15a28a6f19a58a657a21f877ca6c08c70"
     },
     {
       "kind": "dataset",
@@ -3317,7 +3389,7 @@
       "kind": "open_item",
       "legacyId": "chart-data-bindings",
       "canonicalId": "OPN-000090",
-      "semanticHash": "5d815d8a16caf627f1c7f30da3a04aa4e5badcf81c952b6473e37fa46d704d25"
+      "semanticHash": "3477ef98a12c9b859599de47010818632a42d49f7bad3a2ee5c1a05e08cbbeb3"
     },
     {
       "kind": "open_item",

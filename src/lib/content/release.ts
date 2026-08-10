@@ -17,10 +17,12 @@ const RELEASED_CHAPTERS: Readonly<Record<string, ChapterContentKey>> = {
   'RTE-000015': 'food-water-plan',
 };
 
+const RELEASED_SITEWIDE_ROUTES = new Set(['RTE-000001', 'RTE-000016']);
+
 export function chapterContentFor(routeId: string): ChapterContentKey | null {
   return RELEASED_CHAPTERS[routeId] ?? null;
 }
 
 export function releaseStatusFor(routeId: string): 'chapter' | 'shell' {
-  return chapterContentFor(routeId) ? 'chapter' : 'shell';
+  return chapterContentFor(routeId) || RELEASED_SITEWIDE_ROUTES.has(routeId) ? 'chapter' : 'shell';
 }

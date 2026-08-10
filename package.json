@@ -11,10 +11,12 @@
   "scripts": {
     "generate:registries": "node tools/build-registries.mjs",
     "generate:check": "node tools/build-registries.mjs --check",
+    "generate:public": "node tools/build-public-data.mjs",
+    "generate:public:check": "node tools/build-public-data.mjs --check",
     "dev": "astro dev",
-    "build": "astro build && node tools/validate-shell.mjs && node tools/validate-components.mjs && node tools/validate-energy-chapters.mjs && node tools/validate-infrastructure-chapters.mjs && node tools/validate-climate-chapters.mjs && node tools/validate-place-chapters.mjs && node tools/validate-food-water-chapters.mjs && node tools/validate-capstone-chapters.mjs",
+    "build": "node tools/build-public-data.mjs --check && astro build && node tools/validate-shell.mjs && node tools/validate-components.mjs && node tools/validate-energy-chapters.mjs && node tools/validate-infrastructure-chapters.mjs && node tools/validate-climate-chapters.mjs && node tools/validate-place-chapters.mjs && node tools/validate-food-water-chapters.mjs && node tools/validate-capstone-chapters.mjs && node tools/validate-sitewide.mjs",
     "preview": "astro preview",
-    "check": "pnpm generate:check && astro check && tsc --noEmit",
+    "check": "pnpm generate:check && pnpm generate:public:check && astro check && tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest"
   },

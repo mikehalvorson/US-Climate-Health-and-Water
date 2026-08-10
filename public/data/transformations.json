@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "1.0.0",
+  "evidenceVintage": "2026-08-01",
+  "recordType": "transformation",
+  "recordCount": 5,
+  "provenance": {
+    "canonicalInput": "src/generated/registry.json",
+    "generator": "tools/build-public-data.mjs",
+    "hashAlgorithm": "sha256"
+  },
+  "records": [
+    {
+      "id": "TRN-000001",
+      "registryKind": "transformation",
+      "label": "Normalizer: normalize_coastal_cities.py",
+      "description": "Read-only corpus normalization implementation at research/climate/coastal-cities/timeseries/scripts/normalize_coastal_cities.py.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-5a2e9e95a5fedd62f0ad",
+      "legacyIds": [
+        "research/climate/coastal-cities/timeseries/scripts/normalize_coastal_cities.py"
+      ],
+      "version": "research-corpus-v1",
+      "formula": "Implementation-defined normalization; formal input/output equations remain an open item.",
+      "inputIds": [],
+      "outputMetricIds": [],
+      "confidence": "not_assessed",
+      "nullRule": "Source nulls and absent values must remain null; the adapter may not convert them to zero.",
+      "implementationPath": "research/climate/coastal-cities/timeseries/scripts/normalize_coastal_cities.py"
+    },
+    {
+      "id": "TRN-000002",
+      "registryKind": "transformation",
+      "label": "Normalizer: normalize_climate.py",
+      "description": "Read-only corpus normalization implementation at research/climate/timeseries/scripts/normalize_climate.py.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-de8d1fdfd691ce6d8a60",
+      "legacyIds": [
+        "research/climate/timeseries/scripts/normalize_climate.py"
+      ],
+      "version": "research-corpus-v1",
+      "formula": "Implementation-defined normalization; formal input/output equations remain an open item.",
+      "inputIds": [],
+      "outputMetricIds": [],
+      "confidence": "not_assessed",
+      "nullRule": "Source nulls and absent values must remain null; the adapter may not convert them to zero.",
+      "implementationPath": "research/climate/timeseries/scripts/normalize_climate.py"
+    },
+    {
+      "id": "TRN-000003",
+      "registryKind": "transformation",
+      "label": "Normalizer: normalize_consumption.py",
+      "description": "Read-only corpus normalization implementation at research/energy/consumption/timeseries/scripts/normalize_consumption.py.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-9e0536a0b26f192c88ec",
+      "legacyIds": [
+        "research/energy/consumption/timeseries/scripts/normalize_consumption.py"
+      ],
+      "version": "research-corpus-v1",
+      "formula": "Implementation-defined normalization; formal input/output equations remain an open item.",
+      "inputIds": [],
+      "outputMetricIds": [],
+      "confidence": "not_assessed",
+      "nullRule": "Source nulls and absent values must remain null; the adapter may not convert them to zero.",
+      "implementationPath": "research/energy/consumption/timeseries/scripts/normalize_consumption.py"
+    },
+    {
+      "id": "TRN-000004",
+      "registryKind": "transformation",
+      "label": "Normalizer: normalize_timeseries.py",
+      "description": "Read-only corpus normalization implementation at research/energy/timeseries/scripts/normalize_timeseries.py.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-9c3a1bff137b1a610d65",
+      "legacyIds": [
+        "research/energy/timeseries/scripts/normalize_timeseries.py"
+      ],
+      "version": "research-corpus-v1",
+      "formula": "Implementation-defined normalization; formal input/output equations remain an open item.",
+      "inputIds": [],
+      "outputMetricIds": [],
+      "confidence": "not_assessed",
+      "nullRule": "Source nulls and absent values must remain null; the adapter may not convert them to zero.",
+      "implementationPath": "research/energy/timeseries/scripts/normalize_timeseries.py"
+    },
+    {
+      "id": "TRN-000005",
+      "registryKind": "transformation",
+      "label": "Normalizer: normalize_eia930.py",
+      "description": "Read-only corpus normalization implementation at research/energy/transmission/load-shape/timeseries/scripts/normalize_eia930.py.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-2c90bee89431a88e53a8",
+      "legacyIds": [
+        "research/energy/transmission/load-shape/timeseries/scripts/normalize_eia930.py"
+      ],
+      "version": "research-corpus-v1",
+      "formula": "Implementation-defined normalization; formal input/output equations remain an open item.",
+      "inputIds": [],
+      "outputMetricIds": [],
+      "confidence": "not_assessed",
+      "nullRule": "Source nulls and absent values must remain null; the adapter may not convert them to zero.",
+      "implementationPath": "research/energy/transmission/load-shape/timeseries/scripts/normalize_eia930.py"
+    }
+  ]
+}

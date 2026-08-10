@@ -1,0 +1,3935 @@
+{
+  "schemaVersion": "1.0.0",
+  "evidenceVintage": "2026-08-01",
+  "recordType": "claim",
+  "recordCount": 157,
+  "provenance": {
+    "canonicalInput": "src/generated/registry.json",
+    "generator": "tools/build-public-data.mjs",
+    "hashAlgorithm": "sha256"
+  },
+  "records": [
+    {
+      "id": "CLM-000001",
+      "registryKind": "claim",
+      "label": "scenario_models",
+      "description": "En-ROADS is a global scenario-exploration model and its developers explicitly say it is not intended to produce predictions or projections of the future.",
+      "status": "active",
+      "semanticFingerprint": "fp-830b668524ea900fd0ba",
+      "legacyIds": [
+        "CLM-ENR-001"
+      ],
+      "statement": "En-ROADS is a global scenario-exploration model and its developers explicitly say it is not intended to produce predictions or projections of the future.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000206",
+        "SRC-000260"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Never label an En-ROADS result as a forecast, prediction, or expected outcome."
+    },
+    {
+      "id": "CLM-000002",
+      "registryKind": "claim",
+      "label": "scenario_models",
+      "description": "En-ROADS is a globally aggregated stock-flow system-dynamics model running from 1990 to 2100 with Euler integration and a 0.125-year time step.",
+      "status": "active",
+      "semanticFingerprint": "fp-aea0e8044c26ccbacc30",
+      "legacyIds": [
+        "CLM-ENR-002"
+      ],
+      "statement": "En-ROADS is a globally aggregated stock-flow system-dynamics model running from 1990 to 2100 with Euler integration and a 0.125-year time step.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000206",
+        "SRC-000208"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "1990",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000003",
+      "registryKind": "claim",
+      "label": "scenario_models",
+      "description": "En-ROADS does not assume that the modeled economy is always in equilibrium or that actors optimize over the full model horizon.",
+      "status": "active",
+      "semanticFingerprint": "fp-45132b8e74f63ec67238",
+      "legacyIds": [
+        "CLM-ENR-003"
+      ],
+      "statement": "En-ROADS does not assume that the modeled economy is always in equilibrium or that actors optimize over the full model horizon.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000208"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000004",
+      "registryKind": "claim",
+      "label": "scenario_models",
+      "description": "En-ROADS models coal, oil, gas, bioenergy, electricity, and hydrogen as energy carriers and resolves demand through road/rail, air/water transport, buildings, industry, and data-center end uses.",
+      "status": "active",
+      "semanticFingerprint": "fp-6ba561d77aa7be897698",
+      "legacyIds": [
+        "CLM-ENR-004"
+      ],
+      "statement": "En-ROADS models coal, oil, gas, bioenergy, electricity, and hydrogen as energy carriers and resolves demand through road/rail, air/water transport, buildings, industry, and data-center end uses.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000203",
+        "SRC-000209"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000005",
+      "registryKind": "claim",
+      "label": "scenario_models",
+      "description": "The July 2026 En-ROADS calibration documentation cites IEA World Energy Balances 2025, Energy Institute Statistical Review 2025, IAEA 2024 data, Global Carbon Budget 2025, IEA World Energy Outlook 2025, and NGFS scenarios among its calibration and comparison inputs.",
+      "status": "active",
+      "semanticFingerprint": "fp-71772a76671565ba84e4",
+      "legacyIds": [
+        "CLM-ENR-005"
+      ],
+      "statement": "The July 2026 En-ROADS calibration documentation cites IEA World Energy Balances 2025, Energy Institute Statistical Review 2025, IAEA 2024 data, Global Carbon Budget 2025, IEA World Energy Outlook 2025, and NGFS scenarios among its calibration and comparison inputs.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000202",
+        "SRC-000207"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "2026",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000006",
+      "registryKind": "claim",
+      "label": "licensing",
+      "description": "Climate Interactive's public documentation is licensed CC BY 4.0, while software integration is offered through a separately licensed En-ROADS SDK.",
+      "status": "active",
+      "semanticFingerprint": "fp-db0cf012e73c2db40724",
+      "legacyIds": [
+        "CLM-ENR-006"
+      ],
+      "statement": "Climate Interactive's public documentation is licensed CC BY 4.0, while software integration is offered through a separately licensed En-ROADS SDK.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000136",
+        "SRC-000204"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Attribute adapted documentation; do not represent a clean-room model as the En-ROADS production simulator."
+    },
+    {
+      "id": "CLM-000007",
+      "registryKind": "claim",
+      "label": "global_energy_consumption",
+      "description": "IEA estimates global energy demand grew 1.3%, or about 8 EJ, in 2025.",
+      "status": "active",
+      "semanticFingerprint": "fp-a015fbb89e47540f3344",
+      "legacyIds": [
+        "CLM-GLO-001"
+      ],
+      "statement": "IEA estimates global energy demand grew 1.3%, or about 8 EJ, in 2025.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000236",
+        "SRC-000242"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000008",
+      "registryKind": "claim",
+      "label": "global_electricity_consumption",
+      "description": "Global electricity demand grew by about 3%, or roughly 800 TWh, in 2025—about 2.3 times the growth rate of total energy demand.",
+      "status": "active",
+      "semanticFingerprint": "fp-ee665c97c72c2a7609eb",
+      "legacyIds": [
+        "CLM-GLO-002"
+      ],
+      "statement": "Global electricity demand grew by about 3%, or roughly 800 TWh, in 2025—about 2.3 times the growth rate of total energy demand.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000238",
+        "SRC-000242"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000009",
+      "registryKind": "claim",
+      "label": "global_electricity_generation",
+      "description": "IEA estimates that in 2025 low-emissions sources produced 43% of global electricity; renewables produced 34%, coal 34%, natural gas 21%, and wind plus solar 17%.",
+      "status": "active",
+      "semanticFingerprint": "fp-31aaeb3c8ab8cd8590c2",
+      "legacyIds": [
+        "CLM-GLO-003"
+      ],
+      "statement": "IEA estimates that in 2025 low-emissions sources produced 43% of global electricity; renewables produced 34%, coal 34%, natural gas 21%, and wind plus solar 17%.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000178",
+        "SRC-000239"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000010",
+      "registryKind": "claim",
+      "label": "global_electricity_generation",
+      "description": "IEA estimates solar PV generation rose about 600 TWh in 2025 to nearly 2,700 TWh, exceeding 8% of global generation.",
+      "status": "active",
+      "semanticFingerprint": "fp-2afdc05fcce8fc2bdc05",
+      "legacyIds": [
+        "CLM-GLO-004"
+      ],
+      "statement": "IEA estimates solar PV generation rose about 600 TWh in 2025 to nearly 2,700 TWh, exceeding 8% of global generation.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000178",
+        "SRC-000242"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000011",
+      "registryKind": "claim",
+      "label": "global_electricity_generation",
+      "description": "Energy Institute reports 32,202 TWh of global electricity generation in 2025, with coal at 32.6%, gas about 22%, solar 8.7%, wind 8.4%, and nuclear 8.8%.",
+      "status": "active",
+      "semanticFingerprint": "fp-66e1842b92634e7f4216",
+      "legacyIds": [
+        "CLM-GLO-005"
+      ],
+      "statement": "Energy Institute reports 32,202 TWh of global electricity generation in 2025, with coal at 32.6%, gas about 22%, solar 8.7%, wind 8.4%, and nuclear 8.8%.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000177",
+        "SRC-000178",
+        "SRC-000239"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "2025",
+      "confidence": "medium",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000012",
+      "registryKind": "claim",
+      "label": "global_renewable_capacity",
+      "description": "IRENA reports that renewables were 49% of global installed power capacity at the end of 2025 and 85.6% of net capacity additions during the year.",
+      "status": "active",
+      "semanticFingerprint": "fp-3e8917104ba931a3b37b",
+      "legacyIds": [
+        "CLM-GLO-006"
+      ],
+      "statement": "IRENA reports that renewables were 49% of global installed power capacity at the end of 2025 and 85.6% of net capacity additions during the year.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000236",
+        "SRC-000251"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000013",
+      "registryKind": "claim",
+      "label": "global_renewable_capacity",
+      "description": "IRENA's end-2025 world capacity totals are 2,391.584 GW solar, 1,291.368 GW wind, 1,295.765 GW renewable hydropower excluding pumped storage, 154.399 GW bioenergy, 15.674 GW geothermal, 8.422 GW concentrating solar power, and 0.490 GW marine energy.",
+      "status": "active",
+      "semanticFingerprint": "fp-18c25df707668e00e492",
+      "legacyIds": [
+        "CLM-GLO-007"
+      ],
+      "statement": "IRENA's end-2025 world capacity totals are 2,391.584 GW solar, 1,291.368 GW wind, 1,295.765 GW renewable hydropower excluding pumped storage, 154.399 GW bioenergy, 15.674 GW geothermal, 8.422 GW concentrating solar power, and 0.490 GW marine energy.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000251"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000014",
+      "registryKind": "claim",
+      "label": "global_renewable_capacity",
+      "description": "IRENA's final statistical compilation reports 692 GW of renewable additions in 2025, including 510 GW solar and 159 GW wind, while IEA's earlier global review estimated about 800 GW of renewable additions, more than 600 GW solar, and about 160 GW wind.",
+      "status": "active",
+      "semanticFingerprint": "fp-e085921c15a369db7218",
+      "legacyIds": [
+        "CLM-GLO-008"
+      ],
+      "statement": "IRENA's final statistical compilation reports 692 GW of renewable additions in 2025, including 510 GW solar and 159 GW wind, while IEA's earlier global review estimated about 800 GW of renewable additions, more than 600 GW solar, and about 160 GW wind.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000236",
+        "SRC-000251"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Expose source and methodology; never average these totals."
+    },
+    {
+      "id": "CLM-000015",
+      "registryKind": "claim",
+      "label": "global_nuclear_generation",
+      "description": "IAEA PRIS reports approximately 379 GW of nuclear net capacity and 2,635.25 TWh of nuclear electricity production for 2025 in its world-trend table.",
+      "status": "active",
+      "semanticFingerprint": "fp-912a9202a4f8de732a06",
+      "legacyIds": [
+        "CLM-GLO-009"
+      ],
+      "statement": "IAEA PRIS reports approximately 379 GW of nuclear net capacity and 2,635.25 TWh of nuclear electricity production for 2025 in its world-trend table.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000178",
+        "SRC-000229"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000016",
+      "registryKind": "claim",
+      "label": "global_oil",
+      "description": "IEA estimates global oil demand grew by 0.65 million barrels per day (0.7%, about 1.2 EJ) in 2025 while supply grew by about 3 million barrels per day.",
+      "status": "active",
+      "semanticFingerprint": "fp-5e98f87bc3722e08ac55",
+      "legacyIds": [
+        "CLM-GLO-010"
+      ],
+      "statement": "IEA estimates global oil demand grew by 0.65 million barrels per day (0.7%, about 1.2 EJ) in 2025 while supply grew by about 3 million barrels per day.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000236",
+        "SRC-000241"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000017",
+      "registryKind": "claim",
+      "label": "global_natural_gas",
+      "description": "IEA estimates global natural-gas demand increased about 1%, or 40 bcm (about 1.4 EJ), in 2025.",
+      "status": "active",
+      "semanticFingerprint": "fp-4554e24b81faa911ac5f",
+      "legacyIds": [
+        "CLM-GLO-011"
+      ],
+      "statement": "IEA estimates global natural-gas demand increased about 1%, or 40 bcm (about 1.4 EJ), in 2025.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000240",
+        "SRC-000242"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000018",
+      "registryKind": "claim",
+      "label": "global_coal",
+      "description": "IEA estimates global coal demand rose about 0.4%, around 30 million tonnes or 0.7 EJ, in 2025; roughly two-thirds of coal consumption was for power generation.",
+      "status": "active",
+      "semanticFingerprint": "fp-9fd707dfd40a8637a382",
+      "legacyIds": [
+        "CLM-GLO-012"
+      ],
+      "statement": "IEA estimates global coal demand rose about 0.4%, around 30 million tonnes or 0.7 EJ, in 2025; roughly two-thirds of coal consumption was for power generation.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000237",
+        "SRC-000242"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000019",
+      "registryKind": "claim",
+      "label": "global_end_use",
+      "description": "Buildings contributed nearly 45% of global electricity-demand growth in 2025, transport contributed more than 10%, and data-center electricity use grew about 17% (around 70 TWh).",
+      "status": "active",
+      "semanticFingerprint": "fp-4710a68f9aa489e731bf",
+      "legacyIds": [
+        "CLM-GLO-013"
+      ],
+      "statement": "Buildings contributed nearly 45% of global electricity-demand growth in 2025, transport contributed more than 10%, and data-center electricity use grew about 17% (around 70 TWh).",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000238",
+        "SRC-000242"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000020",
+      "registryKind": "claim",
+      "label": "global_transmission",
+      "description": "IEA reports more than 2,500 GW of projects stalled in grid-connection queues worldwide and annual grid investment near USD 400 billion, with about a 50% increase needed by 2030.",
+      "status": "active",
+      "semanticFingerprint": "fp-709a41ecae76d5005845",
+      "legacyIds": [
+        "CLM-GLO-014"
+      ],
+      "statement": "IEA reports more than 2,500 GW of projects stalled in grid-connection queues worldwide and annual grid investment near USD 400 billion, with about a 50% increase needed by 2030.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000234",
+        "SRC-000247"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "2030",
+      "confidence": "medium",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000021",
+      "registryKind": "claim",
+      "label": "global_transmission",
+      "description": "IEA reports typical grid planning and construction lead times of 5-15 years, compared with 1-5 years for renewable projects, 1-3 years for data centers, and 1-2 years for EV charging infrastructure.",
+      "status": "active",
+      "semanticFingerprint": "fp-fbf6da1db9f7f010be6b",
+      "legacyIds": [
+        "CLM-GLO-015"
+      ],
+      "statement": "IEA reports typical grid planning and construction lead times of 5-15 years, compared with 1-5 years for renewable projects, 1-3 years for data centers, and 1-2 years for EV charging infrastructure.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000234"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "medium",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000022",
+      "registryKind": "claim",
+      "label": "us_primary_energy_production",
+      "description": "EIA's July 2026 Monthly Energy Review reports 106.961 quadrillion Btu of U.S. primary energy production in 2025.",
+      "status": "active",
+      "semanticFingerprint": "fp-f4181240de23f55f1089",
+      "legacyIds": [
+        "CLM-US-001"
+      ],
+      "statement": "EIA's July 2026 Monthly Energy Review reports 106.961 quadrillion Btu of U.S. primary energy production in 2025.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000191",
+        "SRC-000195"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2026",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000023",
+      "registryKind": "claim",
+      "label": "us_primary_energy_production",
+      "description": "The 2025 U.S. production total comprised 10.876 quads coal, 40.708 dry natural gas, 28.211 crude oil, 9.740 natural-gas plant liquids, 8.195 nuclear electric power, and 9.229 renewable energy under EIA's captured-energy accounting.",
+      "status": "active",
+      "semanticFingerprint": "fp-1fe6402727dba2a47d30",
+      "legacyIds": [
+        "CLM-US-002"
+      ],
+      "statement": "The 2025 U.S. production total comprised 10.876 quads coal, 40.708 dry natural gas, 28.211 crude oil, 9.740 natural-gas plant liquids, 8.195 nuclear electric power, and 9.229 renewable energy under EIA's captured-energy accounting.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000191",
+        "SRC-000195"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000024",
+      "registryKind": "claim",
+      "label": "us_primary_energy_production",
+      "description": "EIA's renewable-production components for 2025 were 0.843 quads conventional hydro, 0.117 geothermal, 1.438 solar, 1.585 wind, and 5.247 biomass.",
+      "status": "active",
+      "semanticFingerprint": "fp-f4d696814ab290179f78",
+      "legacyIds": [
+        "CLM-US-003"
+      ],
+      "statement": "EIA's renewable-production components for 2025 were 0.843 quads conventional hydro, 0.117 geothermal, 1.438 solar, 1.585 wind, and 5.247 biomass.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000188",
+        "SRC-000195"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000025",
+      "registryKind": "claim",
+      "label": "us_primary_energy_consumption",
+      "description": "EIA's July 2026 Monthly Energy Review reports 96.256 quadrillion Btu of U.S. primary energy consumption in 2025.",
+      "status": "active",
+      "semanticFingerprint": "fp-149c65f8f40e33c11d9e",
+      "legacyIds": [
+        "CLM-US-004"
+      ],
+      "statement": "EIA's July 2026 Monthly Energy Review reports 96.256 quadrillion Btu of U.S. primary energy consumption in 2025.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000189",
+        "SRC-000196"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2026",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000026",
+      "registryKind": "claim",
+      "label": "us_primary_energy_consumption",
+      "description": "EIA's 2025 U.S. consumption components were 8.671 quads coal, 34.631 natural gas, 35.899 petroleum, 8.195 nuclear electric power, and 8.835 renewable energy, plus small net-import adjustments embedded in the total.",
+      "status": "active",
+      "semanticFingerprint": "fp-503a8778027a6ddbc730",
+      "legacyIds": [
+        "CLM-US-005"
+      ],
+      "statement": "EIA's 2025 U.S. consumption components were 8.671 quads coal, 34.631 natural gas, 35.899 petroleum, 8.195 nuclear electric power, and 8.835 renewable energy, plus small net-import adjustments embedded in the total.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000189",
+        "SRC-000196"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000027",
+      "registryKind": "claim",
+      "label": "us_electricity_generation",
+      "description": "EIA reports 4,429.502 TWh of utility-scale U.S. net generation in 2025 and 93.148 TWh of estimated small-scale solar PV, yielding 4,522.650 TWh when those non-overlapping categories are added.",
+      "status": "active",
+      "semanticFingerprint": "fp-673226425c68ad8d78f8",
+      "legacyIds": [
+        "CLM-US-006"
+      ],
+      "statement": "EIA reports 4,429.502 TWh of utility-scale U.S. net generation in 2025 and 93.148 TWh of estimated small-scale solar PV, yielding 4,522.650 TWh when those non-overlapping categories are added.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000187",
+        "SRC-000188"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000028",
+      "registryKind": "claim",
+      "label": "us_electricity_generation",
+      "description": "EIA's preliminary 2025 generation values include 1,807.338 TWh natural gas, 784.781 nuclear, 737.151 coal, 464.391 wind, 388.820 total solar, 247.023 conventional hydro, and 15.669 geothermal.",
+      "status": "active",
+      "semanticFingerprint": "fp-c69656292a1a4ed5ea8c",
+      "legacyIds": [
+        "CLM-US-007"
+      ],
+      "statement": "EIA's preliminary 2025 generation values include 1,807.338 TWh natural gas, 784.781 nuclear, 737.151 coal, 464.391 wind, 388.820 total solar, 247.023 conventional hydro, and 15.669 geothermal.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000187",
+        "SRC-000188"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000029",
+      "registryKind": "claim",
+      "label": "us_electricity_generation",
+      "description": "EIA's preliminary 2025 renewable generation includes 31.809 TWh wood and wood-derived fuels, 7.083 landfill gas, 5.266 biogenic municipal solid waste, and 2.029 other waste biomass.",
+      "status": "active",
+      "semanticFingerprint": "fp-384c478ba068a5a333f6",
+      "legacyIds": [
+        "CLM-US-008"
+      ],
+      "statement": "EIA's preliminary 2025 renewable generation includes 31.809 TWh wood and wood-derived fuels, 7.083 landfill gas, 5.266 biogenic municipal solid waste, and 2.029 other waste biomass.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000188",
+        "SRC-000198"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000030",
+      "registryKind": "claim",
+      "label": "us_electricity_generation",
+      "description": "EIA reports 2025 utility-scale generation of 14.370 TWh from petroleum liquids, 4.889 TWh from petroleum coke, 10.697 TWh from other fossil gases, and 6.654 TWh from the heterogeneous 'Other' category.",
+      "status": "active",
+      "semanticFingerprint": "fp-88f0f736f50fec4f986a",
+      "legacyIds": [
+        "CLM-US-009"
+      ],
+      "statement": "EIA reports 2025 utility-scale generation of 14.370 TWh from petroleum liquids, 4.889 TWh from petroleum coke, 10.697 TWh from other fossil gases, and 6.654 TWh from the heterogeneous 'Other' category.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000187"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Do not display 'Other' as a single generation technology without drill-down and a warning."
+    },
+    {
+      "id": "CLM-000031",
+      "registryKind": "claim",
+      "label": "us_energy_flow",
+      "description": "EIA's April 2026 energy-flow diagram allocates 2025 end-use energy as approximately 28.2 quads transportation, 26.6 industrial, 11.8 residential, and 9.9 commercial.",
+      "status": "active",
+      "semanticFingerprint": "fp-16cb6beeea4256926ffe",
+      "legacyIds": [
+        "CLM-US-010"
+      ],
+      "statement": "EIA's April 2026 energy-flow diagram allocates 2025 end-use energy as approximately 28.2 quads transportation, 26.6 industrial, 11.8 residential, and 9.9 commercial.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000189",
+        "SRC-000191"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "2026",
+      "confidence": "medium",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000032",
+      "registryKind": "claim",
+      "label": "us_energy_flow",
+      "description": "EIA's 2025 flow diagram shows 33.5 quads entering the electric-power sector, 13.8 quads delivered as electricity sales, and 19.7 quads labeled electrical-system energy losses; those losses combine conversion losses with transmission and distribution losses.",
+      "status": "active",
+      "semanticFingerprint": "fp-d29f81e0375993d4e6c0",
+      "legacyIds": [
+        "CLM-US-011"
+      ],
+      "statement": "EIA's 2025 flow diagram shows 33.5 quads entering the electric-power sector, 13.8 quads delivered as electricity sales, and 19.7 quads labeled electrical-system energy losses; those losses combine conversion losses with transmission and distribution losses.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000189",
+        "SRC-000199"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Never display 19.7 quads as transmission loss or grid loss."
+    },
+    {
+      "id": "CLM-000033",
+      "registryKind": "claim",
+      "label": "us_interconnection",
+      "description": "Berkeley Lab reports 2,061 GW of generation and storage in active U.S. interconnection queues at the end of 2025: 773 GW solar, 749 GW storage, 253 GW gas, and 220 GW wind.",
+      "status": "active",
+      "semanticFingerprint": "fp-b7ccf53b495161cfba8e",
+      "legacyIds": [
+        "CLM-US-012"
+      ],
+      "statement": "Berkeley Lab reports 2,061 GW of generation and storage in active U.S. interconnection queues at the end of 2025: 773 GW solar, 749 GW storage, 253 GW gas, and 220 GW wind.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000234",
+        "SRC-000258"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000034",
+      "registryKind": "claim",
+      "label": "us_interconnection",
+      "description": "Berkeley Lab finds only 13% of U.S. queued projects in its historical sample reached commercial operation, 75% withdrew, and median time from queue request to commercial operation now exceeds five years.",
+      "status": "active",
+      "semanticFingerprint": "fp-b3f395c6aadbb3518a03",
+      "legacyIds": [
+        "CLM-US-013"
+      ],
+      "statement": "Berkeley Lab finds only 13% of U.S. queued projects in its historical sample reached commercial operation, 75% withdrew, and median time from queue request to commercial operation now exceeds five years.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000234",
+        "SRC-000258"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000035",
+      "registryKind": "claim",
+      "label": "us_reliability",
+      "description": "NERC's 2025 assessment projects roughly 224 GW of additional summer peak demand and 245 GW of additional winter peak demand over ten years, while more than 105 GW of peak-season capacity is slated for retirement.",
+      "status": "active",
+      "semanticFingerprint": "fp-a4d97f329f3a9a97bd26",
+      "legacyIds": [
+        "CLM-US-014"
+      ],
+      "statement": "NERC's 2025 assessment projects roughly 224 GW of additional summer peak demand and 245 GW of additional winter peak demand over ten years, while more than 105 GW of peak-season capacity is slated for retirement.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000183",
+        "SRC-000267"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "2025",
+      "confidence": "medium",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000036",
+      "registryKind": "claim",
+      "label": "us_transmission",
+      "description": "DOE's final 2023 National Transmission Needs Study found median within-region transmission expansion of about 20% by 2035 in a moderate-load/moderate-clean-energy case, 64% in a high-clean-energy case, and 128% in a high-load case.",
+      "status": "active",
+      "semanticFingerprint": "fp-51038615969296d2fb18",
+      "legacyIds": [
+        "CLM-US-015"
+      ],
+      "statement": "DOE's final 2023 National Transmission Needs Study found median within-region transmission expansion of about 20% by 2035 in a moderate-load/moderate-clean-energy case, 64% in a high-clean-energy case, and 128% in a high-load case.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000159",
+        "SRC-000163"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "2023",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000037",
+      "registryKind": "claim",
+      "label": "energy_taxonomy",
+      "description": "Electricity storage is not a primary generation source: it consumes electricity to charge, returns less electricity than it consumes, and is reported by EIA with negative net generation to avoid double counting.",
+      "status": "active",
+      "semanticFingerprint": "fp-e39643376015041b904d",
+      "legacyIds": [
+        "CLM-TAX-001"
+      ],
+      "statement": "Electricity storage is not a primary generation source: it consumes electricity to charge, returns less electricity than it consumes, and is reported by EIA with negative net generation to avoid double counting.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000187",
+        "SRC-000199"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000038",
+      "registryKind": "claim",
+      "label": "energy_taxonomy",
+      "description": "Hydrogen is an energy carrier, not a primary energy source; it can be produced from water, fossil fuels, or biomass and converted to electricity in fuel cells.",
+      "status": "active",
+      "semanticFingerprint": "fp-67a19c55ebfb8fd6d6ed",
+      "legacyIds": [
+        "CLM-TAX-002"
+      ],
+      "statement": "Hydrogen is an energy carrier, not a primary energy source; it can be produced from water, fossil fuels, or biomass and converted to electricity in fuel cells.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000190",
+        "SRC-000209"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000039",
+      "registryKind": "claim",
+      "label": "marine_energy",
+      "description": "Marine-energy pathways include wave, tidal-stream, ocean-current, river-current, ocean-thermal-gradient, and salinity-gradient conversion; resource potential must not be presented as actual generation.",
+      "status": "active",
+      "semanticFingerprint": "fp-73cad8b7c19460d98934",
+      "legacyIds": [
+        "CLM-TAX-003"
+      ],
+      "statement": "Marine-energy pathways include wave, tidal-stream, ocean-current, river-current, ocean-thermal-gradient, and salinity-gradient conversion; resource potential must not be presented as actual generation.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000154",
+        "SRC-000251",
+        "SRC-000282"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000040",
+      "registryKind": "claim",
+      "label": "fusion_energy",
+      "description": "DOE's 2026 fusion roadmap targets a U.S. fusion pilot power plant in the mid-2030s, but the target depends on closing identified science, materials, fuel-cycle, and plant-engineering gaps and is not an observed generation datum or guaranteed deployment date.",
+      "status": "active",
+      "semanticFingerprint": "fp-95ef6eac5751d3bde8ad",
+      "legacyIds": [
+        "CLM-TAX-004"
+      ],
+      "statement": "DOE's 2026 fusion roadmap targets a U.S. fusion pilot power plant in the mid-2030s, but the target depends on closing identified science, materials, fuel-cycle, and plant-engineering gaps and is not an observed generation datum or guaranteed deployment date.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000143"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2026",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Keep fusion in research/future pathways; exclude from observed 2025 generation totals."
+    },
+    {
+      "id": "CLM-000041",
+      "registryKind": "claim",
+      "label": "power_system_adequacy",
+      "description": "Installed capacity, annual generation, capacity factor, flexibility, resource adequacy, and reliability are different measures; none can be used as an unlabeled proxy for the others.",
+      "status": "active",
+      "semanticFingerprint": "fp-aeecf704957aff1da434",
+      "legacyIds": [
+        "CLM-SYS-001"
+      ],
+      "statement": "Installed capacity, annual generation, capacity factor, flexibility, resource adequacy, and reliability are different measures; none can be used as an unlabeled proxy for the others.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000185",
+        "SRC-000267"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Expose the metric type and never rank reliability using nameplate capacity or capacity factor alone."
+    },
+    {
+      "id": "CLM-000042",
+      "registryKind": "claim",
+      "label": "inverter_based_resource_reliability",
+      "description": "NERC documented four 2024 Western Interconnection disturbances in which normally cleared faults coincided with unexpected widespread output reductions of 532-1,046 MW from solar, wind, and battery resources; its aggregated review identifies deficient models and studies as a material bulk-system risk.",
+      "status": "active",
+      "semanticFingerprint": "fp-5218d61acb37d533f277",
+      "legacyIds": [
+        "CLM-SYS-002"
+      ],
+      "statement": "NERC documented four 2024 Western Interconnection disturbances in which normally cleared faults coincided with unexpected widespread output reductions of 532-1,046 MW from solar, wind, and battery resources; its aggregated review identifies deficient models and studies as a material bulk-system risk.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000264",
+        "SRC-000265"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "2024",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000043",
+      "registryKind": "claim",
+      "label": "grid_connection_and_planning",
+      "description": "Interconnection-queue reform, long-term transmission planning, and multi-jurisdictional siting are distinct constraints; resolving one does not automatically resolve the others.",
+      "status": "active",
+      "semanticFingerprint": "fp-0a1cb98b110c17533f7c",
+      "legacyIds": [
+        "CLM-SYS-003"
+      ],
+      "statement": "Interconnection-queue reform, long-term transmission planning, and multi-jurisdictional siting are distinct constraints; resolving one does not automatically resolve the others.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000174",
+        "SRC-000221",
+        "SRC-000223",
+        "SRC-000258"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000044",
+      "registryKind": "claim",
+      "label": "fossil_generation_health",
+      "description": "Fossil-fuel combustion for electricity emits sulfur dioxide, nitrogen oxides, primary and secondary particulate matter, mercury, and greenhouse gases; the air pollutants contribute to cardiovascular, respiratory, neurological, and premature-mortality risks.",
+      "status": "active",
+      "semanticFingerprint": "fp-2841bf8b340e4f698f88",
+      "legacyIds": [
+        "CLM-HLT-001"
+      ],
+      "statement": "Fossil-fuel combustion for electricity emits sulfur dioxide, nitrogen oxides, primary and secondary particulate matter, mercury, and greenhouse gases; the air pollutants contribute to cardiovascular, respiratory, neurological, and premature-mortality risks.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000218",
+        "SRC-000292"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Never label WHO's 4.2 million global ambient-air-pollution deaths as power-sector deaths."
+    },
+    {
+      "id": "CLM-000045",
+      "registryKind": "claim",
+      "label": "environmental_justice_screening",
+      "description": "Power-plant proximity and neighborhood demographic indicators are useful screening variables but do not by themselves measure exposure, dose, causation, or individual health risk.",
+      "status": "active",
+      "semanticFingerprint": "fp-272188a227f309c63f30",
+      "legacyIds": [
+        "CLM-HLT-002"
+      ],
+      "statement": "Power-plant proximity and neighborhood demographic indicators are useful screening variables but do not by themselves measure exposure, dose, causation, or individual health risk.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000217",
+        "SRC-000218"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Label proximity maps 'screening context' and do not calculate causal health burdens from distance alone."
+    },
+    {
+      "id": "CLM-000046",
+      "registryKind": "claim",
+      "label": "fossil_supply_chain_methane",
+      "description": "IEA estimates fossil-fuel operations emitted about 124 million tonnes of methane in 2025, split approximately among oil (45 Mt), coal (43 Mt), and natural gas (36 Mt), with no clear sector-wide decline.",
+      "status": "active",
+      "semanticFingerprint": "fp-1423954d7ecb2493619c",
+      "legacyIds": [
+        "CLM-HLT-003"
+      ],
+      "statement": "IEA estimates fossil-fuel operations emitted about 124 million tonnes of methane in 2025, split approximately among oil (45 Mt), coal (43 Mt), and natural gas (36 Mt), with no clear sector-wide decline.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000245"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000047",
+      "registryKind": "claim",
+      "label": "nuclear_accident_health",
+      "description": "Nuclear health evidence requires separate treatment of routine operation, direct radiation effects from accidents, and indirect evacuation, continuity-of-care, social, and mental-health effects.",
+      "status": "active",
+      "semanticFingerprint": "fp-08cd519c70728574fee7",
+      "legacyIds": [
+        "CLM-HLT-004"
+      ],
+      "statement": "Nuclear health evidence requires separate treatment of routine operation, direct radiation effects from accidents, and indirect evacuation, continuity-of-care, social, and mental-health effects.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000285",
+        "SRC-000293",
+        "SRC-000294"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Do not summarize nuclear health as either 'no health effects' or a single cross-accident death number."
+    },
+    {
+      "id": "CLM-000048",
+      "registryKind": "claim",
+      "label": "interconnection_regulation",
+      "description": "FERC Order No. 2023 requires cluster-based interconnection studies, stronger project-readiness requirements, withdrawal penalties, and improved consideration of alternative transmission technologies to reduce queue delay and cost uncertainty.",
+      "status": "active",
+      "semanticFingerprint": "fp-21c3e608f27b5af4a8fa",
+      "legacyIds": [
+        "CLM-REG-001"
+      ],
+      "statement": "FERC Order No. 2023 requires cluster-based interconnection studies, stronger project-readiness requirements, withdrawal penalties, and improved consideration of alternative transmission technologies to reduce queue delay and cost uncertainty.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000223",
+        "SRC-000258"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "2023",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Display rule adoption and regional implementation separately from measured queue outcomes."
+    },
+    {
+      "id": "CLM-000049",
+      "registryKind": "claim",
+      "label": "transmission_regulation",
+      "description": "FERC Order No. 1920 requires long-term regional transmission planning and cost allocation, while actual projects still face separate siting and permitting across federal, state, local, Tribal, and private-land authorities.",
+      "status": "active",
+      "semanticFingerprint": "fp-5128cf2f5357921e82f9",
+      "legacyIds": [
+        "CLM-REG-002"
+      ],
+      "statement": "FERC Order No. 1920 requires long-term regional transmission planning and cost allocation, while actual projects still face separate siting and permitting across federal, state, local, Tribal, and private-land authorities.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000174",
+        "SRC-000221"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "1920",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000050",
+      "registryKind": "claim",
+      "label": "fossil_air_regulation",
+      "description": "EPA's February 2026 action repealed specified 2024 Mercury and Air Toxics Standards amendments for filterable particulate matter, lignite mercury, and continuous emissions monitoring; it did not repeal the underlying MATS program.",
+      "status": "active",
+      "semanticFingerprint": "fp-8aeedffe875b98ca2be3",
+      "legacyIds": [
+        "CLM-REG-003"
+      ],
+      "statement": "EPA's February 2026 action repealed specified 2024 Mercury and Air Toxics Standards amendments for filterable particulate matter, lignite mercury, and continuous emissions monitoring; it did not repeal the underlying MATS program.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000216"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "2026",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Never describe this action as repeal of MATS as a whole; carry an as-of date."
+    },
+    {
+      "id": "CLM-000051",
+      "registryKind": "claim",
+      "label": "power_water_regulation",
+      "description": "EPA's 2024 steam-electric effluent rule tightened wastewater requirements, while a December 2025 rule changed some compliance deadlines without changing the underlying zero-discharge requirements.",
+      "status": "active",
+      "semanticFingerprint": "fp-9b3d6237e60083639484",
+      "legacyIds": [
+        "CLM-REG-004"
+      ],
+      "statement": "EPA's 2024 steam-electric effluent rule tightened wastewater requirements, while a December 2025 rule changed some compliance deadlines without changing the underlying zero-discharge requirements.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000213",
+        "SRC-000214"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "2024",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Store effective requirements and deadline status as separate fields."
+    },
+    {
+      "id": "CLM-000052",
+      "registryKind": "claim",
+      "label": "power_greenhouse_gas_regulation",
+      "description": "As of 2026-08-01, EPA's repeal of the 2024 greenhouse-gas standards for fossil-fuel power plants remained a proposal on the reviewed EPA status page rather than a finalized repeal.",
+      "status": "active",
+      "semanticFingerprint": "fp-ea4050613f3e36cc37b4",
+      "legacyIds": [
+        "CLM-REG-005"
+      ],
+      "statement": "As of 2026-08-01, EPA's repeal of the 2024 greenhouse-gas standards for fossil-fuel power plants remained a proposal on the reviewed EPA status page rather than a finalized repeal.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000215"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "2026",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "High-volatility legal status: reverify before every release and never convert 'proposed' to 'final' without a final agency action."
+    },
+    {
+      "id": "CLM-000053",
+      "registryKind": "claim",
+      "label": "renewable_permitting",
+      "description": "Low-operational-emission generation is not regulation-free: hydropower can require FERC licensing and environmental review, and offshore renewable projects require BOEM review plus consultation under wildlife, fisheries, and historic-preservation laws.",
+      "status": "active",
+      "semanticFingerprint": "fp-0b24634a73c35f679b2e",
+      "legacyIds": [
+        "CLM-REG-006"
+      ],
+      "statement": "Low-operational-emission generation is not regulation-free: hydropower can require FERC licensing and environmental review, and offshore renewable projects require BOEM review plus consultation under wildlife, fisheries, and historic-preservation laws.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000131",
+        "SRC-000220"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000054",
+      "registryKind": "claim",
+      "label": "lifecycle_greenhouse_gas_emissions",
+      "description": "IPCC's harmonized AR5 literature medians place coal and natural-gas generation far above nuclear, wind, solar, hydro, geothermal, and ocean energy in life-cycle greenhouse-gas emissions, while also showing broad and sometimes highly skewed technology ranges.",
+      "status": "active",
+      "semanticFingerprint": "fp-210e2b177645a8216019",
+      "legacyIds": [
+        "CLM-SUS-001"
+      ],
+      "statement": "IPCC's harmonized AR5 literature medians place coal and natural-gas generation far above nuclear, wind, solar, hydro, geothermal, and ocean energy in life-cycle greenhouse-gas emissions, while also showing broad and sometimes highly skewed technology ranges.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000249",
+        "SRC-000269",
+        "SRC-000284"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000055",
+      "registryKind": "claim",
+      "label": "thermoelectric_water",
+      "description": "In the 2015 USGS national snapshot, thermoelectric power accounted for about 133,000 million gallons per day and 41% of U.S. water withdrawals; once-through cooling dominated withdrawals while recirculating systems had a much larger share of consumptive use relative to their withdrawal share.",
+      "status": "active",
+      "semanticFingerprint": "fp-6ac7bcd92abe2e6959a3",
+      "legacyIds": [
+        "CLM-SUS-002"
+      ],
+      "statement": "In the 2015 USGS national snapshot, thermoelectric power accounted for about 133,000 million gallons per day and 41% of U.S. water withdrawals; once-through cooling dominated withdrawals while recirculating systems had a much larger share of consumptive use relative to their withdrawal share.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000212",
+        "SRC-000288"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2015",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Never combine water withdrawal and water consumption; display 2015 prominently and do not imply it is a 2026 value."
+    },
+    {
+      "id": "CLM-000056",
+      "registryKind": "claim",
+      "label": "critical_materials",
+      "description": "Energy technologies face distinct critical-mineral supply, concentration, environmental, social, and climate risks; recycling can reduce mining and supply pressure but cannot eliminate primary material demand during rapid fleet growth.",
+      "status": "active",
+      "semanticFingerprint": "fp-112e9a6552905384a8ee",
+      "legacyIds": [
+        "CLM-SUS-003"
+      ],
+      "statement": "Energy technologies face distinct critical-mineral supply, concentration, environmental, social, and climate risks; recycling can reduce mining and supply pressure but cannot eliminate primary material demand during rapid fleet growth.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000232",
+        "SRC-000246"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use material- and technology-specific indicators; do not label all renewables, batteries, grids, or nuclear with one generic mineral score."
+    },
+    {
+      "id": "CLM-000057",
+      "registryKind": "claim",
+      "label": "renewable_end_of_life",
+      "description": "Solar modules and wind turbines contain high technically recyclable material shares, but actual circularity is constrained by collection, economics, composite materials, specialty components, and critical-material recovery.",
+      "status": "active",
+      "semanticFingerprint": "fp-707adae51ad80a46f4ad",
+      "legacyIds": [
+        "CLM-SUS-004"
+      ],
+      "statement": "Solar modules and wind turbines contain high technically recyclable material shares, but actual circularity is constrained by collection, economics, composite materials, specialty components, and critical-material recovery.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000168",
+        "SRC-000175",
+        "SRC-000246"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000058",
+      "registryKind": "claim",
+      "label": "wind_wildlife",
+      "description": "Wind-energy wildlife impacts include collision and displacement risks, with concern varying strongly by species, site, season, turbine design, and operation; siting and mitigation therefore matter more than a single fleet-average label.",
+      "status": "active",
+      "semanticFingerprint": "fp-d52761f61c8526d68332",
+      "legacyIds": [
+        "CLM-SUS-005"
+      ],
+      "statement": "Wind-energy wildlife impacts include collision and displacement risks, with concern varying strongly by species, site, season, turbine design, and operation; siting and mitigation therefore matter more than a single fleet-average label.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000131",
+        "SRC-000289"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000059",
+      "registryKind": "claim",
+      "label": "hydropower_sustainability",
+      "description": "Hydropower can provide dispatchable generation and storage services, but dams, reservoirs, diversions, and flow changes can alter habitat, fish passage, sediment, water quality, land use, and downstream hydrology; impacts differ sharply by project configuration and site.",
+      "status": "active",
+      "semanticFingerprint": "fp-2b34b2653dc0a975d46c",
+      "legacyIds": [
+        "CLM-SUS-006"
+      ],
+      "statement": "Hydropower can provide dispatchable generation and storage services, but dams, reservoirs, diversions, and flow changes can alter habitat, fish passage, sediment, water quality, land use, and downstream hydrology; impacts differ sharply by project configuration and site.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000151",
+        "SRC-000185",
+        "SRC-000220"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000060",
+      "registryKind": "claim",
+      "label": "geothermal_sustainability",
+      "description": "Geothermal can provide relatively steady low-carbon generation, but water management, gases and dissolved constituents, subsurface uncertainty, and induced seismicity require design- and site-specific assessment, particularly for enhanced geothermal systems.",
+      "status": "active",
+      "semanticFingerprint": "fp-fc949ac89d70899eccea",
+      "legacyIds": [
+        "CLM-SUS-007"
+      ],
+      "statement": "Geothermal can provide relatively steady low-carbon generation, but water management, gases and dissolved constituents, subsurface uncertainty, and induced seismicity require design- and site-specific assessment, particularly for enhanced geothermal systems.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000146",
+        "SRC-000185",
+        "SRC-000249"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000061",
+      "registryKind": "claim",
+      "label": "bioenergy_sustainability",
+      "description": "Bioenergy is not automatically carbon-neutral: net climate and sustainability outcomes depend on feedstock, counterfactual land use, direct and indirect land-use change, supply-chain emissions, conversion efficiency, accounting boundary, and time horizon; combustion can also emit health-relevant air pollutants.",
+      "status": "active",
+      "semanticFingerprint": "fp-af52ffb9bd796fc99038",
+      "legacyIds": [
+        "CLM-SUS-008"
+      ],
+      "statement": "Bioenergy is not automatically carbon-neutral: net climate and sustainability outcomes depend on feedstock, counterfactual land use, direct and indirect land-use change, supply-chain emissions, conversion efficiency, accounting boundary, and time horizon; combustion can also emit health-relevant air pollutants.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000218",
+        "SRC-000249",
+        "SRC-000250"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Require feedstock, counterfactual, land-use, supply-chain, and time-horizon metadata before applying a bioenergy carbon label."
+    },
+    {
+      "id": "CLM-000062",
+      "registryKind": "claim",
+      "label": "marine_energy_sustainability",
+      "description": "Marine-energy environmental evidence remains sparse because deployments are limited; monitoring through 2020 found little or no observed impact for several studied stressors, but that evidence cannot establish absence of commercial-scale impacts.",
+      "status": "active",
+      "semanticFingerprint": "fp-739bd39b9aea4f4867f1",
+      "legacyIds": [
+        "CLM-SUS-009"
+      ],
+      "statement": "Marine-energy environmental evidence remains sparse because deployments are limited; monitoring through 2020 found little or no observed impact for several studied stressors, but that evidence cannot establish absence of commercial-scale impacts.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000155",
+        "SRC-000253",
+        "SRC-000282"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "2020",
+      "confidence": "medium",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use an 'evidence sparse' badge and do not convert lack of observed effect into a zero-impact score."
+    },
+    {
+      "id": "CLM-000063",
+      "registryKind": "claim",
+      "label": "us_nuclear_operating_status",
+      "description": "Two official U.S. sources disagree on the current operating-reactor count: NRC reported 94 commercial power reactors as of 2026-06-09, while EIA reported 96 operating reactors as of March 2026.",
+      "status": "active",
+      "semanticFingerprint": "fp-96f86152995eb09877a7",
+      "legacyIds": [
+        "CLM-NUC-001"
+      ],
+      "statement": "Two official U.S. sources disagree on the current operating-reactor count: NRC reported 94 commercial power reactors as of 2026-06-09, while EIA reported 96 operating reactors as of March 2026.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000197",
+        "SRC-000273"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2026",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Prefer the later NRC regulatory snapshot for a current count, but show the EIA disagreement and both dates in methodology."
+    },
+    {
+      "id": "CLM-000064",
+      "registryKind": "claim",
+      "label": "nuclear_operations",
+      "description": "EIA reports the U.S. nuclear fleet averaged a 91% capacity factor in 2025; high annual utilization indicates steady fleet output but does not by itself measure construction risk, flexibility, safety, or system value.",
+      "status": "active",
+      "semanticFingerprint": "fp-ea664e55815f845f764e",
+      "legacyIds": [
+        "CLM-NUC-002"
+      ],
+      "statement": "EIA reports the U.S. nuclear fleet averaged a 91% capacity factor in 2025; high annual utilization indicates steady fleet output but does not by itself measure construction risk, flexibility, safety, or system value.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000185",
+        "SRC-000187",
+        "SRC-000197"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000065",
+      "registryKind": "claim",
+      "label": "nuclear_lifecycle_emissions",
+      "description": "Nuclear generation has low life-cycle greenhouse-gas emissions in major comparative assessments, but it is not impact-free because mining, conversion, enrichment, fuel fabrication, construction, decommissioning, waste management, and cooling all remain part of the life cycle.",
+      "status": "active",
+      "semanticFingerprint": "fp-25cb53b0394f57708f90",
+      "legacyIds": [
+        "CLM-NUC-003"
+      ],
+      "statement": "Nuclear generation has low life-cycle greenhouse-gas emissions in major comparative assessments, but it is not impact-free because mining, conversion, enrichment, fuel fabrication, construction, decommissioning, waste management, and cooling all remain part of the life cycle.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000249",
+        "SRC-000269",
+        "SRC-000284"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000066",
+      "registryKind": "claim",
+      "label": "nuclear_construction",
+      "description": "New large-reactor deployment in the United States carries material capital, schedule, financing, supply-chain, and first-of-a-kind execution risk; Vogtle illustrates that risk but is not a universal cost template for every nuclear design.",
+      "status": "active",
+      "semanticFingerprint": "fp-7f076f147bd96a61a6a0",
+      "legacyIds": [
+        "CLM-NUC-004"
+      ],
+      "statement": "New large-reactor deployment in the United States carries material capital, schedule, financing, supply-chain, and first-of-a-kind execution risk; Vogtle illustrates that risk but is not a universal cost template for every nuclear design.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000164",
+        "SRC-000201"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000067",
+      "registryKind": "claim",
+      "label": "nuclear_aging_and_license",
+      "description": "Much of the U.S. nuclear fleet is old, and operation from 60 to 80 years requires subsequent license renewal with aging-management, safety, and environmental review; a renewed license does not guarantee economic operation.",
+      "status": "active",
+      "semanticFingerprint": "fp-db1fa38e5fbd0b249314",
+      "legacyIds": [
+        "CLM-NUC-005"
+      ],
+      "statement": "Much of the U.S. nuclear fleet is old, and operation from 60 to 80 years requires subsequent license renewal with aging-management, safety, and environmental review; a renewed license does not guarantee economic operation.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000197",
+        "SRC-000275"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000068",
+      "registryKind": "claim",
+      "label": "advanced_nuclear_fuel_supply",
+      "description": "Many advanced-reactor designs depend on high-assay low-enriched uranium, and DOE states domestic commercial supply is not yet available at the needed scale; fuel availability can therefore delay otherwise licensed or constructed projects.",
+      "status": "active",
+      "semanticFingerprint": "fp-1273f133a47ff3b20734",
+      "legacyIds": [
+        "CLM-NUC-006"
+      ],
+      "statement": "Many advanced-reactor designs depend on high-assay low-enriched uranium, and DOE states domestic commercial supply is not yet available at the needed scale; fuel availability can therefore delay otherwise licensed or constructed projects.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000150",
+        "SRC-000164"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000069",
+      "registryKind": "claim",
+      "label": "nuclear_spent_fuel",
+      "description": "The United States has accumulated more than 90,000 metric tons of commercial spent nuclear fuel and lacks an operating permanent geologic repository; the inventory continues to grow by roughly 2,000 metric tons per year.",
+      "status": "active",
+      "semanticFingerprint": "fp-7b20a535600bf52fcfac",
+      "legacyIds": [
+        "CLM-NUC-007"
+      ],
+      "statement": "The United States has accumulated more than 90,000 metric tons of commercial spent nuclear fuel and lacks an operating permanent geologic repository; the inventory continues to grow by roughly 2,000 metric tons per year.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000170",
+        "SRC-000227",
+        "SRC-000271"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Distinguish spent-fuel inventory, interim storage, proposed consolidated storage, repository licensing, and operating disposal."
+    },
+    {
+      "id": "CLM-000070",
+      "registryKind": "claim",
+      "label": "nuclear_interim_storage",
+      "description": "Licensed dry-cask systems provide a demonstrated interim storage method after pool cooling, but interim-storage safety does not resolve the permanent-disposal obligation.",
+      "status": "active",
+      "semanticFingerprint": "fp-1e3192a6f71c32408d57",
+      "legacyIds": [
+        "CLM-NUC-008"
+      ],
+      "statement": "Licensed dry-cask systems provide a demonstrated interim storage method after pool cooling, but interim-storage safety does not resolve the permanent-disposal obligation.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000170",
+        "SRC-000227",
+        "SRC-000270"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000071",
+      "registryKind": "claim",
+      "label": "nuclear_routine_exposure",
+      "description": "NRC's 2024 occupational report recorded 90,579 uniquely monitored workers across covered nuclear facilities, 42,352 with measurable dose, and a 0.16 rem average among workers with measurable dose; these occupational data do not quantify severe-accident or population fuel-cycle risk.",
+      "status": "active",
+      "semanticFingerprint": "fp-379c7672f94eb22a8195",
+      "legacyIds": [
+        "CLM-NUC-009"
+      ],
+      "statement": "NRC's 2024 occupational report recorded 90,579 uniquely monitored workers across covered nuclear facilities, 42,352 with measurable dose, and a 0.16 rem average among workers with measurable dose; these occupational data do not quantify severe-accident or population fuel-cycle risk.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000272"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "2024",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000072",
+      "registryKind": "claim",
+      "label": "fukushima_health",
+      "description": "UNSCEAR found no documented adverse resident health effects directly attributable to Fukushima accident radiation and none expected to be detectable, while WHO documents substantial evacuation, disrupted-care, noncommunicable-disease, social, and mental-health consequences.",
+      "status": "active",
+      "semanticFingerprint": "fp-7e1030e4ff343bab81ed",
+      "legacyIds": [
+        "CLM-NUC-010"
+      ],
+      "statement": "UNSCEAR found no documented adverse resident health effects directly attributable to Fukushima accident radiation and none expected to be detectable, while WHO documents substantial evacuation, disrupted-care, noncommunicable-disease, social, and mental-health consequences.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000285",
+        "SRC-000294"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Present the two findings together; neither cancels the other."
+    },
+    {
+      "id": "CLM-000073",
+      "registryKind": "claim",
+      "label": "chernobyl_health",
+      "description": "WHO reports that the Chernobyl accident caused acute radiation syndrome among emergency workers and a large increase in thyroid cancer among people exposed as children or adolescents, alongside persistent mental-health effects and uncertainty for some longer-term outcomes.",
+      "status": "active",
+      "semanticFingerprint": "fp-d0f54268b958ad93df1a",
+      "legacyIds": [
+        "CLM-NUC-011"
+      ],
+      "statement": "WHO reports that the Chernobyl accident caused acute radiation syndrome among emergency workers and a large increase in thyroid cancer among people exposed as children or adolescents, alongside persistent mental-health effects and uncertainty for some longer-term outcomes.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000293"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000074",
+      "registryKind": "claim",
+      "label": "advanced_nuclear_regulation",
+      "description": "NRC's Part 53 provides a risk-informed, performance-based, technology-inclusive optional licensing framework for advanced reactors, but an available licensing framework is not evidence of commercial deployment, cost, or generation.",
+      "status": "active",
+      "semanticFingerprint": "fp-f63694c2c9eaccab357f",
+      "legacyIds": [
+        "CLM-NUC-012"
+      ],
+      "statement": "NRC's Part 53 provides a risk-informed, performance-based, technology-inclusive optional licensing framework for advanced reactors, but an available licensing framework is not evidence of commercial deployment, cost, or generation.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000164",
+        "SRC-000274"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Zero-power criticality, test milestones, design certification, construction permits, and commercial generation must be separate statuses."
+    },
+    {
+      "id": "CLM-000075",
+      "registryKind": "claim",
+      "label": "nuclear_fuel_sustainability",
+      "description": "Published uranium resource inventories and projections are inputs to fuel-security analysis, not proof that suitable enriched fuel will be available at the required price, location, specification, and schedule.",
+      "status": "active",
+      "semanticFingerprint": "fp-9d83985f79e84b6bfd4e",
+      "legacyIds": [
+        "CLM-NUC-013"
+      ],
+      "statement": "Published uranium resource inventories and projections are inputs to fuel-security analysis, not proof that suitable enriched fuel will be available at the required price, location, specification, and schedule.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000150",
+        "SRC-000281"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000076",
+      "registryKind": "claim",
+      "label": "nuclear_water",
+      "description": "Nuclear plants with steam-cycle cooling share thermoelectric water-withdrawal, consumption, thermal-discharge, drought, and intake-ecology concerns with other thermal plants; cooling configuration and site hydrology determine the magnitude.",
+      "status": "active",
+      "semanticFingerprint": "fp-414e5688f5ef59b9f664",
+      "legacyIds": [
+        "CLM-NUC-014"
+      ],
+      "statement": "Nuclear plants with steam-cycle cooling share thermoelectric water-withdrawal, consumption, thermal-discharge, drought, and intake-ecology concerns with other thermal plants; cooling configuration and site hydrology determine the magnitude.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000212",
+        "SRC-000284",
+        "SRC-000288"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000077",
+      "registryKind": "claim",
+      "label": "carbon_capture_and_storage",
+      "description": "Carbon capture and geologic storage can reduce captured-point-source emissions, but it adds equipment, energy, cost, transport, injection, monitoring, liability, and long-term storage requirements; U.S. demonstration history includes major cancellations and overruns.",
+      "status": "active",
+      "semanticFingerprint": "fp-54912e1962e7e8c9ed94",
+      "legacyIds": [
+        "CLM-CCS-001"
+      ],
+      "statement": "Carbon capture and geologic storage can reduce captured-point-source emissions, but it adds equipment, energy, cost, transport, injection, monitoring, liability, and long-term storage requirements; U.S. demonstration history includes major cancellations and overruns.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000211",
+        "SRC-000225",
+        "SRC-000249"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Never display capture rate as plant-wide or lifecycle emissions reduction without accounting for energy penalty and upstream emissions."
+    },
+    {
+      "id": "CLM-000078",
+      "registryKind": "claim",
+      "label": "global_electricity_consumption",
+      "description": "IEA estimates global electricity consumption at about 28,200 TWh in 2025 and forecasts about 33,600 TWh in 2030, with average annual growth of 3.6% during 2026-2030.",
+      "status": "active",
+      "semanticFingerprint": "fp-184e2824f576a2a99748",
+      "legacyIds": [
+        "CLM-DEM-001"
+      ],
+      "statement": "IEA estimates global electricity consumption at about 28,200 TWh in 2025 and forecasts about 33,600 TWh in 2030, with average annual growth of 3.6% during 2026-2030.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000233"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Display 2025 as an estimate and 2030 as a forecast; do not extrapolate the IEA line past 2030."
+    },
+    {
+      "id": "CLM-000079",
+      "registryKind": "claim",
+      "label": "global_electricity_demand_drivers",
+      "description": "IEA attributes 49% of the global electricity-demand increase from 2025 to 2030 to buildings; cooling, data centers, and heat pumps account for almost half of buildings growth, while transportation contributes more than 10% of total growth.",
+      "status": "active",
+      "semanticFingerprint": "fp-29056156cc8849b8cfd1",
+      "legacyIds": [
+        "CLM-DEM-002"
+      ],
+      "statement": "IEA attributes 49% of the global electricity-demand increase from 2025 to 2030 to buildings; cooling, data centers, and heat pumps account for almost half of buildings growth, while transportation contributes more than 10% of total growth.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000233"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000080",
+      "registryKind": "claim",
+      "label": "global_electricity_demand_drivers",
+      "description": "IEA expects emerging-market and developing economies to provide about 80% of global electricity-demand growth from 2025 to 2030, with China contributing nearly half and adding about 2,600 TWh.",
+      "status": "active",
+      "semanticFingerprint": "fp-9ac2b10725d4eae70253",
+      "legacyIds": [
+        "CLM-DEM-003"
+      ],
+      "statement": "IEA expects emerging-market and developing economies to provide about 80% of global electricity-demand growth from 2025 to 2030, with China contributing nearly half and adding about 2,600 TWh.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000233"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000081",
+      "registryKind": "claim",
+      "label": "us_electricity_consumption",
+      "description": "Across AEO2026 cases, U.S. electricity consumption grows by about 0.9%-1.6% per year through 2050, or about 25%-50% in total; electric vehicles and data centers account for about 50%-80% of the increase and 10%-25% of total 2050 demand, depending on the case.",
+      "status": "active",
+      "semanticFingerprint": "fp-b576fcf3ca65cf3f43db",
+      "legacyIds": [
+        "CLM-DEM-004"
+      ],
+      "statement": "Across AEO2026 cases, U.S. electricity consumption grows by about 0.9%-1.6% per year through 2050, or about 25%-50% in total; electric vehicles and data centers account for about 50%-80% of the increase and 10%-25% of total 2050 demand, depending on the case.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000182"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2026",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Call these conditional case ranges, not a confidence interval or prediction."
+    },
+    {
+      "id": "CLM-000082",
+      "registryKind": "claim",
+      "label": "electricity_accounting",
+      "description": "In AEO accounting, total generation minus direct use equals net generation to the grid; grid generation plus net imports equals electricity sales plus transmission, distribution, and unaccounted electricity; and sales plus direct use equals total electricity use.",
+      "status": "active",
+      "semanticFingerprint": "fp-e6a31a21c99e180fc35f",
+      "legacyIds": [
+        "CLM-DEM-005"
+      ],
+      "statement": "In AEO accounting, total generation minus direct use equals net generation to the grid; grid generation plus net imports equals electricity sales plus transmission, distribution, and unaccounted electricity; and sales plus direct use equals total electricity use.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000182"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Never compare total generation directly with sales without displaying direct use, net imports, and the system residual."
+    },
+    {
+      "id": "CLM-000083",
+      "registryKind": "claim",
+      "label": "data_center_electricity",
+      "description": "Data-center electricity is a rapidly growing but highly uncertain load: IEA estimates about 415 TWh globally in 2024 and about 945 TWh in its 2030 Base Case, while LBNL estimates 176 TWh in the United States in 2023 and projects a 325-580 TWh range for 2028.",
+      "status": "active",
+      "semanticFingerprint": "fp-6bae728096d633b91bfb",
+      "legacyIds": [
+        "CLM-DEM-006"
+      ],
+      "statement": "Data-center electricity is a rapidly growing but highly uncertain load: IEA estimates about 415 TWh globally in 2024 and about 945 TWh in its 2030 Base Case, while LBNL estimates 176 TWh in the United States in 2023 and projects a 325-580 TWh range for 2028.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000235",
+        "SRC-000257"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "2024",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Render 2028 as a range and preserve global/U.S. geography; do not combine it with server-only values."
+    },
+    {
+      "id": "CLM-000084",
+      "registryKind": "claim",
+      "label": "data_center_electricity",
+      "description": "AEO2026 projects U.S. commercial data-center server electricity at 445.6 TWh in the 2050 Counterfactual Baseline and 818.7 TWh in the 2050 High Electricity Demand case.",
+      "status": "active",
+      "semanticFingerprint": "fp-e95bed27f216848333b1",
+      "legacyIds": [
+        "CLM-DEM-007"
+      ],
+      "statement": "AEO2026 projects U.S. commercial data-center server electricity at 445.6 TWh in the 2050 Counterfactual Baseline and 818.7 TWh in the 2050 High Electricity Demand case.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000182"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2026",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "The measure is server electricity only, not total facility electricity."
+    },
+    {
+      "id": "CLM-000085",
+      "registryKind": "claim",
+      "label": "electric_vehicle_electricity",
+      "description": "IEA estimates global road-EV electricity demand at about 250 TWh in 2025 and projects that it exceeds 1,500 TWh in the 2035 Current Policies Scenario, reaches 1,700 TWh in the Stated Policies Scenario, and exceeds 3,000 TWh in the Net Zero Emissions by 2050 Scenario.",
+      "status": "active",
+      "semanticFingerprint": "fp-6cf750cfb61c07e73e9c",
+      "legacyIds": [
+        "CLM-DEM-008"
+      ],
+      "statement": "IEA estimates global road-EV electricity demand at about 250 TWh in 2025 and projects that it exceeds 1,500 TWh in the 2035 Current Policies Scenario, reaches 1,700 TWh in the Stated Policies Scenario, and exceeds 3,000 TWh in the Net Zero Emissions by 2050 Scenario.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000243"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "2025",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Encode CPS and NZE values as lower bounds, not exact points."
+    },
+    {
+      "id": "CLM-000086",
+      "registryKind": "claim",
+      "label": "electricity_accounting",
+      "description": "EIA's separately estimated EV electricity series is already included in electricity sales and total use, and AEO assigns on-road EV charging to residential or commercial demand according to charging location; transportation-sector sales therefore do not measure all EV charging.",
+      "status": "active",
+      "semanticFingerprint": "fp-7594305c9f1443985b95",
+      "legacyIds": [
+        "CLM-DEM-009"
+      ],
+      "statement": "EIA's separately estimated EV electricity series is already included in electricity sales and total use, and AEO assigns on-road EV charging to residential or commercial demand according to charging location; transportation-sector sales therefore do not measure all EV charging.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000182",
+        "SRC-000194"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "EV demand is an overlay unless the parent total is decomposed into mutually exclusive components."
+    },
+    {
+      "id": "CLM-000087",
+      "registryKind": "claim",
+      "label": "electrification_efficiency",
+      "description": "Electrification can raise electricity use while lowering total final energy per unit of service; IEA reports heat pumps are typically three to five times as energy efficient as gas boilers, and their accelerated deployment adds power demand while reducing direct-fuel heating.",
+      "status": "active",
+      "semanticFingerprint": "fp-5f92d84ea8f96589affe",
+      "legacyIds": [
+        "CLM-DEM-010"
+      ],
+      "statement": "Electrification can raise electricity use while lowering total final energy per unit of service; IEA reports heat pumps are typically three to five times as energy efficient as gas boilers, and their accelerated deployment adds power demand while reducing direct-fuel heating.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000244",
+        "SRC-000276"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000088",
+      "registryKind": "claim",
+      "label": "us_electrification_scenarios",
+      "description": "NREL's 2018 Electrification Futures Study Table 7.1 places 2050 U.S. electricity consumption at 4,696-4,772 TWh under Reference electrification, 5,520-5,871 TWh under Medium electrification, and 6,280-6,846 TWh under High electrification, depending on technology advancement.",
+      "status": "active",
+      "semanticFingerprint": "fp-014b5aec398a6a9caeef",
+      "legacyIds": [
+        "CLM-DEM-011"
+      ],
+      "statement": "NREL's 2018 Electrification Futures Study Table 7.1 places 2050 U.S. electricity consumption at 4,696-4,772 TWh under Reference electrification, 5,520-5,871 TWh under Medium electrification, and 6,280-6,846 TWh under High electrification, depending on technology advancement.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000276"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2018",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Use as an older electrification stress test, not a current forecast and not a continuation of AEO2026."
+    },
+    {
+      "id": "CLM-000089",
+      "registryKind": "claim",
+      "label": "global_electricity_scenarios",
+      "description": "NGFS Phase 5.1 provides conditional World final-electricity pathways through 2100 from three integrated-assessment models across seven transition scenarios; the outputs are scenarios rather than forecasts and their model spread must be preserved.",
+      "status": "active",
+      "semanticFingerprint": "fp-6b78b302ed7ac7f0c80a",
+      "legacyIds": [
+        "CLM-DEM-012"
+      ],
+      "statement": "NGFS Phase 5.1 provides conditional World final-electricity pathways through 2100 from three integrated-assessment models across seven transition scenarios; the outputs are scenarios rather than forecasts and their model spread must be preserved.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000268"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "2100",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Never average the models into a prediction or label a model envelope as a probability interval."
+    },
+    {
+      "id": "CLM-000090",
+      "registryKind": "claim",
+      "label": "power_system_planning",
+      "description": "Annual electricity consumption does not by itself determine peak demand, capacity need, or transmission need because the timing, coincidence, flexibility, and location of cooling, data-center, EV, heating, and industrial loads differ.",
+      "status": "active",
+      "semanticFingerprint": "fp-0ddf03a78f56f1187e7d",
+      "legacyIds": [
+        "CLM-DEM-013"
+      ],
+      "statement": "Annual electricity consumption does not by itself determine peak demand, capacity need, or transmission need because the timing, coincidence, flexibility, and location of cooling, data-center, EV, heating, and industrial loads differ.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000182",
+        "SRC-000231",
+        "SRC-000235"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Do not manufacture hourly profiles or reliability conclusions from annual TWh."
+    },
+    {
+      "id": "CLM-000091",
+      "registryKind": "claim",
+      "label": "electricity_accounting",
+      "description": "Ember defines its historical electricity-demand measure as gross electricity generation plus net imports; it is a system-demand measure and is not directly comparable to IEA final electricity consumption.",
+      "status": "active",
+      "semanticFingerprint": "fp-b88f32a9e7d515e23a18",
+      "legacyIds": [
+        "CLM-DEM-014"
+      ],
+      "statement": "Ember defines its historical electricity-demand measure as gross electricity generation plus net imports; it is a system-demand measure and is not directly comparable to IEA final electricity consumption.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000283"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "undated",
+      "confidence": "high",
+      "fidelityStatus": "verified",
+      "domain": "energy",
+      "misuseGuardrail": "Do not splice Ember/OWID historical system demand to IEA final-consumption milestones or imply that their 2025 totals conflict on the same definition."
+    },
+    {
+      "id": "CLM-000092",
+      "registryKind": "claim",
+      "label": "causal_attribution",
+      "description": "Human activities, principally greenhouse-gas emissions, have unequivocally caused global warming.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-74ed9a4c4d49c084a0d8",
+      "legacyIds": [
+        "CLM-CAUSE-001"
+      ],
+      "statement": "Human activities, principally greenhouse-gas emissions, have unequivocally caused global warming.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000052",
+        "SRC-000055"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "1850-1900",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "climate",
+      "misuseGuardrail": "CO2 and temperature are correlated, therefore CO2 caused warming."
+    },
+    {
+      "id": "CLM-000093",
+      "registryKind": "claim",
+      "label": "detection_and_attribution",
+      "description": "The best estimate of total human-caused warming in 2010-2019 was 1.07 C; well-mixed greenhouse gases contributed 1.0-2.0 C of warming, partly offset by other human drivers, principally aerosol cooling.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-456c675a6287098f31d1",
+      "legacyIds": [
+        "CLM-ATTR-001"
+      ],
+      "statement": "The best estimate of total human-caused warming in 2010-2019 was 1.07 C; well-mixed greenhouse gases contributed 1.0-2.0 C of warming, partly offset by other human drivers, principally aerosol cooling.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000054",
+        "SRC-000055"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "climate",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000094",
+      "registryKind": "claim",
+      "label": "physical_dose_response",
+      "description": "Every additional 1,000 GtCO2 of cumulative anthropogenic CO2 emissions is assessed to cause 0.27-0.63 C of global warming, with a best estimate of 0.45 C.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-85cac9c5726d6d90ef23",
+      "legacyIds": [
+        "CLM-TCRE-001"
+      ],
+      "statement": "Every additional 1,000 GtCO2 of cumulative anthropogenic CO2 emissions is assessed to cause 0.27-0.63 C of global warming, with a best estimate of 0.45 C.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000052",
+        "SRC-000055"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "climate",
+      "misuseGuardrail": "TCRE applies to cumulative anthropogenic CO2, not annual emissions and not all greenhouse gases expressed as CO2-equivalent."
+    },
+    {
+      "id": "CLM-000095",
+      "registryKind": "claim",
+      "label": "descriptive_correlation",
+      "description": "Annual global CO2 concentration and NASA global-temperature anomaly move closely together in levels over 1979-2025 (Pearson r approximately 0.95), but this trend correlation is not the causal attribution test.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-60ca2b73cbc578393982",
+      "legacyIds": [
+        "CLM-CORR-001"
+      ],
+      "statement": "Annual global CO2 concentration and NASA global-temperature anomaly move closely together in levels over 1979-2025 (Pearson r approximately 0.95), but this trend correlation is not the causal attribution test.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000080",
+        "SRC-000100"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "1979-2025",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "climate",
+      "misuseGuardrail": "Use radiative physics, fingerprints, forcing experiments, and formal attribution for causal claims."
+    },
+    {
+      "id": "CLM-000096",
+      "registryKind": "claim",
+      "label": "observed_radiative_forcing",
+      "description": "In 2024, long-lived greenhouse gases produced 3.54 W/m2 of effective radiative forcing relative to 1750, 54 percent above 1990; CO2 contributed 2.33 W/m2.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-d4ac024011f2cf5efd02",
+      "legacyIds": [
+        "CLM-AGGI-001"
+      ],
+      "statement": "In 2024, long-lived greenhouse gases produced 3.54 W/m2 of effective radiative forcing relative to 1750, 54 percent above 1990; CO2 contributed 2.33 W/m2.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000099"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "2024",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "climate",
+      "misuseGuardrail": "AGGI tracks direct forcing by long-lived gases; it omits aerosols, land-use changes, ozone, and feedbacks and is not a stand-alone temperature predictor."
+    },
+    {
+      "id": "CLM-000097",
+      "registryKind": "claim",
+      "label": "temperature_conditioned_projection",
+      "description": "A land heat extreme that occurred once per decade in the 1850-1900 climate is assessed to occur 4.1 times per decade at 1.5 C warming, 5.6 times at 2 C, and 9.4 times at 4 C—and to become progressively hotter.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-49089babcaebc3785069",
+      "legacyIds": [
+        "CLM-HEAT-001"
+      ],
+      "statement": "A land heat extreme that occurred once per decade in the 1850-1900 climate is assessed to occur 4.1 times per decade at 1.5 C warming, 5.6 times at 2 C, and 9.4 times at 4 C—and to become progressively hotter.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000055"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "1850-1900",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "climate",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000098",
+      "registryKind": "claim",
+      "label": "tropical_cyclone_response",
+      "description": "With about 2 C of anthropogenic warming, assessment medians indicate roughly 14 percent more near-storm rainfall and 5 percent higher lifetime-maximum winds; total global tropical-cyclone frequency is projected to decrease or remain approximately unchanged.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-63a574f0d55f0c7fb634",
+      "legacyIds": [
+        "CLM-TC-001"
+      ],
+      "statement": "With about 2 C of anthropogenic warming, assessment medians indicate roughly 14 percent more near-storm rainfall and 5 percent higher lifetime-maximum winds; total global tropical-cyclone frequency is projected to decrease or remain approximately unchanged.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000053",
+        "SRC-000066",
+        "SRC-000102"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "climate",
+      "misuseGuardrail": "Global warming will create more hurricanes everywhere."
+    },
+    {
+      "id": "CLM-000099",
+      "registryKind": "claim",
+      "label": "biodiversity_risk",
+      "description": "The assessed share of terrestrial species at very high extinction risk rises from 3-14 percent at 1.5 C to 3-18 percent at 2 C, 3-29 percent at 3 C, and 3-39 percent at 4 C warming.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-cca43b0fc968bfdf39bc",
+      "legacyIds": [
+        "CLM-BIO-001"
+      ],
+      "statement": "The assessed share of terrestrial species at very high extinction risk rises from 3-14 percent at 1.5 C to 3-18 percent at 2 C, 3-29 percent at 3 C, and 3-39 percent at 4 C warming.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000056",
+        "SRC-000061"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "climate",
+      "misuseGuardrail": "These are modeled very-high-risk shares, not observed extinction counts; non-climate drivers must remain visible."
+    },
+    {
+      "id": "CLM-000100",
+      "registryKind": "claim",
+      "label": "historical_impact_attribution",
+      "description": "Anthropogenic climate change is estimated to have slowed global agricultural total-factor-productivity growth by about 21 percent since 1961, equivalent to losing about seven years of recent productivity growth.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-966c013348ffddc1c776",
+      "legacyIds": [
+        "CLM-FOOD-001"
+      ],
+      "statement": "Anthropogenic climate change is estimated to have slowed global agricultural total-factor-productivity growth by about 21 percent since 1961, equivalent to losing about seven years of recent productivity growth.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000058",
+        "SRC-000113"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "1961",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "climate",
+      "misuseGuardrail": "Climate change has destroyed 21 percent of global food production."
+    },
+    {
+      "id": "CLM-000101",
+      "registryKind": "claim",
+      "label": "water_scarcity_projection",
+      "description": "Low-confidence estimates project about 3 billion people exposed to physical water scarcity at 2 C warming and about 4 billion at 4 C; exposure depends on both climate and socioeconomic conditions.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-50efd25e74aa60c12083",
+      "legacyIds": [
+        "CLM-WATER-001"
+      ],
+      "statement": "Low-confidence estimates project about 3 billion people exposed to physical water scarcity at 2 C warming and about 4 billion at 4 C; exposure depends on both climate and socioeconomic conditions.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000057",
+        "SRC-000061"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "climate",
+      "misuseGuardrail": "Do not describe this as loss of a fixed global freshwater stock."
+    },
+    {
+      "id": "CLM-000102",
+      "registryKind": "claim",
+      "label": "observed_change",
+      "description": "Global mean sea level rose 0.20 m from 1901 to 2018, and the rate increased to 3.7 mm per year in 2006-2018; human influence was very likely the main driver since at least 1971.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-4f808b25bb5ed4d3a433",
+      "legacyIds": [
+        "CLM-SLR-001"
+      ],
+      "statement": "Global mean sea level rose 0.20 m from 1901 to 2018, and the rate increased to 3.7 mm per year in 2006-2018; human influence was very likely the main driver since at least 1971.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000055",
+        "SRC-000103"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "1901",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "climate",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000103",
+      "registryKind": "claim",
+      "label": "scenario_projection",
+      "description": "Likely global mean sea-level rise by 2100 relative to 1995-2014 ranges from 0.28-0.55 m under SSP1-1.9 to 0.63-1.01 m under SSP5-8.5, with larger long-term commitment after 2100.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-af0c4c7d2a65d1f63807",
+      "legacyIds": [
+        "CLM-SLR-002"
+      ],
+      "statement": "Likely global mean sea-level rise by 2100 relative to 1995-2014 ranges from 0.28-0.55 m under SSP1-1.9 to 0.63-1.01 m under SSP5-8.5, with larger long-term commitment after 2100.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000055"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "2100",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "climate",
+      "misuseGuardrail": "Global mean is not a local projection; local vertical land motion and regional ocean processes matter."
+    },
+    {
+      "id": "CLM-000104",
+      "registryKind": "claim",
+      "label": "observed_displacement_context",
+      "description": "Weather-related extremes have internally displaced more than 20 million people per year on average since 2008, most commonly through storms and floods.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-431ab0d2d05d094f5184",
+      "legacyIds": [
+        "CLM-DISP-001"
+      ],
+      "statement": "Weather-related extremes have internally displaced more than 20 million people per year on average since 2008, most commonly through storms and floods.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000062"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "2008",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "climate",
+      "misuseGuardrail": "This is not a count attributable solely to anthropogenic climate change."
+    },
+    {
+      "id": "CLM-000105",
+      "registryKind": "claim",
+      "label": "scenario_projection",
+      "description": "World Bank scenario modeling found up to 216 million internal climate migrants across six regions by 2050, with early climate and development action potentially reducing the scale by as much as 80 percent.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-0e823a606070b9dd8f91",
+      "legacyIds": [
+        "CLM-DISP-002"
+      ],
+      "statement": "World Bank scenario modeling found up to 216 million internal climate migrants across six regions by 2050, with early climate and development action potentially reducing the scale by as much as 80 percent.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000335"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "2050",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "climate",
+      "misuseGuardrail": "Scenario, not forecast; internal migrants, not refugees."
+    },
+    {
+      "id": "CLM-000106",
+      "registryKind": "claim",
+      "label": "unsupported_global_coefficient",
+      "description": "Imported from legacy record CLM-DISP-003.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-1da0578f25dc3df9b392",
+      "legacyIds": [
+        "CLM-DISP-003"
+      ],
+      "statement": "",
+      "publicationStatus": "rejected",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000060",
+        "SRC-000306"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "rejected",
+      "domain": "climate",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000107",
+      "registryKind": "claim",
+      "label": "national_withdrawals",
+      "description": "In 2015, U.S. withdrawals averaged 322 billion gallons per day; 281 billion gallons per day were freshwater.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-372b4ee1ae0400b6e9e8",
+      "legacyIds": [
+        "WTR-NAT-001"
+      ],
+      "statement": "In 2015, U.S. withdrawals averaged 322 billion gallons per day; 281 billion gallons per day were freshwater.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000318"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2015",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "water",
+      "misuseGuardrail": "2015 is the latest fully comparable all-category inventory in this package, not a 2026 current-use estimate; withdrawal is not consumption."
+    },
+    {
+      "id": "CLM-000108",
+      "registryKind": "claim",
+      "label": "accounting",
+      "description": "Water withdrawal and consumptive use measure different burdens: power plants can withdraw very large cooling flows and return most of them, while irrigation consumes a much larger fraction through evapotranspiration.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-5d09aa206edc3b7d6726",
+      "legacyIds": [
+        "WTR-ACC-001"
+      ],
+      "statement": "Water withdrawal and consumptive use measure different burdens: power plants can withdraw very large cooling flows and return most of them, while irrigation consumes a much larger fraction through evapotranspiration.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000318",
+        "SRC-000330"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "water",
+      "misuseGuardrail": "Do not rank sectors using one unlabeled metric."
+    },
+    {
+      "id": "CLM-000109",
+      "registryKind": "claim",
+      "label": "national_consumptive_use",
+      "description": "For 2010–2020 in the conterminous United States, modeled crop irrigation averaged 105.497 Bgal/d withdrawn and 75.698 Bgal/d consumed; public supply 35.440 and 4.219; freshwater thermoelectric power 82.656 and 2.904.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-35279d014674a3b73c26",
+      "legacyIds": [
+        "WTR-MODEL-001"
+      ],
+      "statement": "For 2010–2020 in the conterminous United States, modeled crop irrigation averaged 105.497 Bgal/d withdrawn and 75.698 Bgal/d consumed; public supply 35.440 and 4.219; freshwater thermoelectric power 82.656 and 2.904.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000330"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2010–2020",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "water",
+      "misuseGuardrail": "These three sectors do not form an all-sector U.S. total and are not directly interchangeable with Circular 1441."
+    },
+    {
+      "id": "CLM-000110",
+      "registryKind": "claim",
+      "label": "household_use",
+      "description": "U.S. domestic use in 2015 averaged 26.6 Bgal/d, or 82 gallons per person per day, including 23.3 Bgal/d delivered by public suppliers and 3.26 Bgal/d self-supplied.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-6641e5e40019512069b5",
+      "legacyIds": [
+        "WTR-HOUSEHOLD-001"
+      ],
+      "statement": "U.S. domestic use in 2015 averaged 26.6 Bgal/d, or 82 gallons per person per day, including 23.3 Bgal/d delivered by public suppliers and 3.26 Bgal/d self-supplied.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000037",
+        "SRC-000318"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2015",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "water",
+      "misuseGuardrail": "Do not add domestic deliveries to public-supply withdrawals; they are a customer use of the same water."
+    },
+    {
+      "id": "CLM-000111",
+      "registryKind": "claim",
+      "label": "agriculture",
+      "description": "Irrigation is the dominant covered consumptive-use sector: the 2010–2020 model averaged 75.698 Bgal/d consumed, 72 percent of its withdrawals.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-d9cc75197ddb93e6a406",
+      "legacyIds": [
+        "WTR-AG-001"
+      ],
+      "statement": "Irrigation is the dominant covered consumptive-use sector: the 2010–2020 model averaged 75.698 Bgal/d consumed, 72 percent of its withdrawals.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000318",
+        "SRC-000330"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "2010–2020",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "water",
+      "misuseGuardrail": "The word covered refers to the three sectors modeled by PP1894-D; do not claim this is a complete all-sector consumption share."
+    },
+    {
+      "id": "CLM-000112",
+      "registryKind": "claim",
+      "label": "manufacturing",
+      "description": "Self-supplied U.S. industrial facilities withdrew 14.8 Bgal/d in 2015, including 14.0 Bgal/d of freshwater; the total excludes water delivered to industry by public suppliers.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-d8ee394247251546a660",
+      "legacyIds": [
+        "WTR-MFG-001"
+      ],
+      "statement": "Self-supplied U.S. industrial facilities withdrew 14.8 Bgal/d in 2015, including 14.0 Bgal/d of freshwater; the total excludes water delivered to industry by public suppliers.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000318",
+        "SRC-000322"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2015",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "water",
+      "misuseGuardrail": "Not a complete manufacturing total and not a consumptive-use estimate."
+    },
+    {
+      "id": "CLM-000113",
+      "registryKind": "claim",
+      "label": "plastics",
+      "description": "No defensible current national plastics-water total or universal water-per-kilogram factor was identified; resin, product conversion, upstream inputs, public deliveries, direct withdrawals, consumption, water quality, and local scarcity require separate accounting.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-a9156b7ba4494609c9c3",
+      "legacyIds": [
+        "WTR-PLASTICS-001"
+      ],
+      "statement": "No defensible current national plastics-water total or universal water-per-kilogram factor was identified; resin, product conversion, upstream inputs, public deliveries, direct withdrawals, consumption, water quality, and local scarcity require separate accounting.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000012",
+        "SRC-000013",
+        "SRC-000097",
+        "SRC-000120",
+        "SRC-000322"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "water",
+      "misuseGuardrail": "Never calculate ban savings by multiplying national resin mass by one literature coefficient."
+    },
+    {
+      "id": "CLM-000114",
+      "registryKind": "claim",
+      "label": "data_centers",
+      "description": "U.S. data centers directly used about 66 billion liters of water in 2023—47.8 Mgal/d on average—with a 2028 scenario range of 140–280 billion liters per year, or about 101–203 Mgal/d.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-bd780c2ebd26fad6da9f",
+      "legacyIds": [
+        "WTR-DC-001"
+      ],
+      "statement": "U.S. data centers directly used about 66 billion liters of water in 2023—47.8 Mgal/d on average—with a 2028 scenario range of 140–280 billion liters per year, or about 101–203 Mgal/d.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000068",
+        "SRC-000069"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2023",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "water",
+      "misuseGuardrail": "2028 is a projection range; annual national average can conceal intense local seasonal demand."
+    },
+    {
+      "id": "CLM-000115",
+      "registryKind": "claim",
+      "label": "data_center_accounting",
+      "description": "Data-center indirect electricity water must be shown as an upstream allocation, not added to national water totals that already include power generation.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-1365e2ae90d0cf006172",
+      "legacyIds": [
+        "WTR-DC-002"
+      ],
+      "statement": "Data-center indirect electricity water must be shown as an upstream allocation, not added to national water totals that already include power generation.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000068",
+        "SRC-000330"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "water",
+      "misuseGuardrail": "Adding both produces double counting."
+    },
+    {
+      "id": "CLM-000116",
+      "registryKind": "claim",
+      "label": "water_availability",
+      "description": "Nearly 27 million Americans—about 8 percent—live in watersheds where demand consistently approaches or exceeds modeled natural supply during the assessment period.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-891328f8966c6974939b",
+      "legacyIds": [
+        "WTR-STRESS-001"
+      ],
+      "statement": "Nearly 27 million Americans—about 8 percent—live in watersheds where demand consistently approaches or exceeds modeled natural supply during the assessment period.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000327",
+        "SRC-000328"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "water",
+      "misuseGuardrail": "A national watershed screening indicator is not a prediction that 27 million people will lose tap water."
+    },
+    {
+      "id": "CLM-000117",
+      "registryKind": "claim",
+      "label": "saltwater_intrusion",
+      "description": "Coastal saltwater intrusion is site-specific and commonly responds to pumping, hydraulic gradients, canals, drought, wells, and geology; sea-level rise can worsen the hazard but does not supply a universal breakthrough date.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-6365a3d3cc2b7e2bf1ca",
+      "legacyIds": [
+        "WTR-COAST-001"
+      ],
+      "statement": "Coastal saltwater intrusion is site-specific and commonly responds to pumping, hydraulic gradients, canals, drought, wells, and geology; sea-level rise can worsen the hazard but does not supply a universal breakthrough date.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000093",
+        "SRC-000319",
+        "SRC-000325"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "water",
+      "misuseGuardrail": "Do not transfer a date or salinity response from one aquifer to another."
+    },
+    {
+      "id": "CLM-000118",
+      "registryKind": "claim",
+      "label": "miami",
+      "description": "Miami-Dade's Biscayne aquifer is vulnerable to saltwater intrusion, but the cited county model did not project wellfield impacts through 2040 under its evaluated high sea-level-rise case.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-841bb7d06ac6423a04b7",
+      "legacyIds": [
+        "WTR-MIAMI-001"
+      ],
+      "statement": "Miami-Dade's Biscayne aquifer is vulnerable to saltwater intrusion, but the cited county model did not project wellfield impacts through 2040 under its evaluated high sea-level-rise case.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000074",
+        "SRC-000079",
+        "SRC-000325"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "2040",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "water",
+      "misuseGuardrail": "Do not state that Miami loses freshwater by 2040; do not extend the model result beyond 2040."
+    },
+    {
+      "id": "CLM-000119",
+      "registryKind": "claim",
+      "label": "colorado_river",
+      "description": "Colorado River operations enter a critical governance transition in water year 2027 because the current operating framework expires after 2026.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-d1e46f7c0d64c3165d28",
+      "legacyIds": [
+        "WTR-COLORADO-001"
+      ],
+      "statement": "Colorado River operations enter a critical governance transition in water year 2027 because the current operating framework expires after 2026.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000313"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "2027",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "water",
+      "misuseGuardrail": "This is a rulemaking deadline, not the date the river dries up."
+    },
+    {
+      "id": "CLM-000120",
+      "registryKind": "claim",
+      "label": "texas",
+      "description": "Texas's 2027 plan estimates potential drought-of-record shortages of 3.6 million acre-feet in 2030 and 5.8 million in 2080 if recommended strategies are not implemented.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-214f5907da1db79c4ecb",
+      "legacyIds": [
+        "WTR-TEXAS-001"
+      ],
+      "statement": "Texas's 2027 plan estimates potential drought-of-record shortages of 3.6 million acre-feet in 2030 and 5.8 million in 2080 if recommended strategies are not implemented.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000302"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "2027",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "water",
+      "misuseGuardrail": "This is a planning counterfactual designed to motivate projects and conservation, not a forecast of delivered shortages."
+    },
+    {
+      "id": "CLM-000121",
+      "registryKind": "claim",
+      "label": "new_mexico",
+      "description": "New Mexico's 50-year planning basis anticipates roughly 25 percent less water in rivers and aquifers and an approximately 750,000 acre-foot shortfall without offsetting action.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-e78edb5f8192c284efce",
+      "legacyIds": [
+        "WTR-NM-001"
+      ],
+      "statement": "New Mexico's 50-year planning basis anticipates roughly 25 percent less water in rivers and aquifers and an approximately 750,000 acre-foot shortfall without offsetting action.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000093",
+        "SRC-000098"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "water",
+      "misuseGuardrail": "Statewide planning estimate; local timing and magnitude vary by basin."
+    },
+    {
+      "id": "CLM-000122",
+      "registryKind": "claim",
+      "label": "high_plains_aquifer",
+      "description": "The High Plains aquifer lost an estimated 286.4 million acre-feet of recoverable storage from predevelopment to 2019; one peer-reviewed scenario finds 24 percent of current irrigated area unable to support irrigation by 2100.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-374f801ee81b6a96cd16",
+      "legacyIds": [
+        "WTR-HPA-001"
+      ],
+      "statement": "The High Plains aquifer lost an estimated 286.4 million acre-feet of recoverable storage from predevelopment to 2019; one peer-reviewed scenario finds 24 percent of current irrigated area unable to support irrigation by 2100.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000315",
+        "SRC-000321"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "2019",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "water",
+      "misuseGuardrail": "Do not describe the entire aquifer as empty in 2100; storage and irrigation viability are spatially heterogeneous."
+    },
+    {
+      "id": "CLM-000123",
+      "registryKind": "claim",
+      "label": "desalination",
+      "description": "Desalination is mature for selected coastal and brackish municipal supplies; U.S. examples operate at 25–50 Mgal/d, while energy, concentrate disposal, permitting, environmental effects, and cost constrain deployment.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-53a343d4a342fa76c443",
+      "legacyIds": [
+        "WTR-DESAL-001"
+      ],
+      "statement": "Desalination is mature for selected coastal and brackish municipal supplies; U.S. examples operate at 25–50 Mgal/d, while energy, concentrate disposal, permitting, environmental effects, and cost constrain deployment.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000010",
+        "SRC-000021",
+        "SRC-000025",
+        "SRC-000126",
+        "SRC-000297"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "water",
+      "misuseGuardrail": "Facility capacity is not constant output or proof that the technology fits another site."
+    },
+    {
+      "id": "CLM-000124",
+      "registryKind": "claim",
+      "label": "desalination_scale",
+      "description": "At 3.2–4.5 kWh/m³, producing the volume of 2015 U.S. domestic use by seawater reverse osmosis would require roughly 118–165 TWh/year before distribution and other excluded energy, illustrating why desalination is a portfolio increment rather than a universal replacement.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-d5f3de6f89dc6402660a",
+      "legacyIds": [
+        "WTR-DESAL-002"
+      ],
+      "statement": "At 3.2–4.5 kWh/m³, producing the volume of 2015 U.S. domestic use by seawater reverse osmosis would require roughly 118–165 TWh/year before distribution and other excluded energy, illustrating why desalination is a portfolio increment rather than a universal replacement.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000070",
+        "SRC-000318"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2015",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "water",
+      "misuseGuardrail": "Order-of-magnitude capacity calculation, not a build proposal, cost estimate, or claim that desalination must supply all domestic use."
+    },
+    {
+      "id": "CLM-000125",
+      "registryKind": "claim",
+      "label": "atmospheric_water_generation",
+      "description": "Commercial atmospheric water generators are sized for liters to thousands of liters per day and can serve drinking or emergency needs, but current systems do not scale credibly to ordinary U.S. household or community utility volumes.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-dcab6c3f383e48df4a82",
+      "legacyIds": [
+        "WTR-AWG-001"
+      ],
+      "statement": "Commercial atmospheric water generators are sized for liters to thousands of liters per day and can serve drinking or emergency needs, but current systems do not scale credibly to ordinary U.S. household or community utility volumes.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000026",
+        "SRC-000027",
+        "SRC-000083",
+        "SRC-000331"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "water",
+      "misuseGuardrail": "Do not compare drinking-only yield with full household demand or use dehumidifier efficiency as a certified AWG performance claim."
+    },
+    {
+      "id": "CLM-000126",
+      "registryKind": "claim",
+      "label": "atmospheric_water_quality",
+      "description": "Atmospheric condensate is not automatically potable; real-world systems require treatment, disinfection, sanitary storage, monitoring, and maintenance.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-2026fb5386c76bc5fddf",
+      "legacyIds": [
+        "WTR-AWG-002"
+      ],
+      "statement": "Atmospheric condensate is not automatically potable; real-world systems require treatment, disinfection, sanitary storage, monitoring, and maintenance.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000027",
+        "SRC-000028"
+      ],
+      "geography": "World",
+      "geographyType": "global",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "water",
+      "misuseGuardrail": "Never present raw condensate production as safe delivered drinking water."
+    },
+    {
+      "id": "CLM-000127",
+      "registryKind": "claim",
+      "label": "us_material_flow",
+      "description": "The United States produced and consumed more than 57 million metric tons of plastic in 2019, while less than 7% was recovered for reuse.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-eaaacc107ee07ef81bc9",
+      "legacyIds": [
+        "PLS-US-001"
+      ],
+      "statement": "The United States produced and consumed more than 57 million metric tons of plastic in 2019, while less than 7% was recovered for reuse.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000309"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2019",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "plastics",
+      "misuseGuardrail": "This is a modeled 2019 economy-wide material-flow result, not a 2026 annual statistic or EPA MSW total."
+    },
+    {
+      "id": "CLM-000128",
+      "registryKind": "claim",
+      "label": "leading_resins",
+      "description": "The leading individually reported U.S. resin consumption estimates for 2019 were PP 8.6, HDPE 7.9, LLDPE 5.7, and PVC 5.2 million metric tons.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-8148c1336b0a6f62be36",
+      "legacyIds": [
+        "PLS-US-002"
+      ],
+      "statement": "The leading individually reported U.S. resin consumption estimates for 2019 were PP 8.6, HDPE 7.9, LLDPE 5.7, and PVC 5.2 million metric tons.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000309"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2019",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "plastics",
+      "misuseGuardrail": "Do not infer current rank or sum these values as total plastic consumption."
+    },
+    {
+      "id": "CLM-000129",
+      "registryKind": "claim",
+      "label": "applications",
+      "description": "Packaging was the largest named 2019 U.S. application at 17.2 MMT; building and construction used 8.3 MMT.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-5211b91c4e34f590d30f",
+      "legacyIds": [
+        "PLS-US-003"
+      ],
+      "statement": "Packaging was the largest named 2019 U.S. application at 17.2 MMT; building and construction used 8.3 MMT.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000309"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2019",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "plastics",
+      "misuseGuardrail": "Use categories are modeled flows into use and do not equal same-year waste."
+    },
+    {
+      "id": "CLM-000130",
+      "registryKind": "claim",
+      "label": "municipal_waste",
+      "description": "EPA's 2018 municipal-solid-waste series reports 35.68 million U.S. tons of plastic generated, 3.09 recycled, 5.62 combusted for energy, and 26.97 landfilled.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-99d3163b1ca7531fd5a6",
+      "legacyIds": [
+        "PLS-US-004"
+      ],
+      "statement": "EPA's 2018 municipal-solid-waste series reports 35.68 million U.S. tons of plastic generated, 3.09 recycled, 5.62 combusted for energy, and 26.97 landfilled.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000035"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2018",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "plastics",
+      "misuseGuardrail": "Units are U.S. short tons and scope is MSW; do not combine with the 2019 economy-wide MFA."
+    },
+    {
+      "id": "CLM-000131",
+      "registryKind": "claim",
+      "label": "ocean_leakage",
+      "description": "The National Academies estimated 1.13-2.24 MMT of U.S. plastic waste entered the environment in 2016 and documented ingestion or entanglement among 914 species.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-63303bc98f74629aeb54",
+      "legacyIds": [
+        "PLS-ENV-001"
+      ],
+      "statement": "The National Academies estimated 1.13-2.24 MMT of U.S. plastic waste entered the environment in 2016 and documented ingestion or entanglement among 914 species.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000082"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2016",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "plastics",
+      "misuseGuardrail": "The range is an estimate with uncertainty; the species count is documentation of exposure/effect pathways, not an extinction count."
+    },
+    {
+      "id": "CLM-000132",
+      "registryKind": "claim",
+      "label": "manufacturing",
+      "description": "Commodity plastics are produced through distinct precursor chains: ethylene to PE, propylene to PP, ethylene glycol plus terephthalic acid to PET, and chlorine/ethylene through EDC and VCM to PVC.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-eb59a8a48780d6b9a888",
+      "legacyIds": [
+        "PLS-MFG-001"
+      ],
+      "statement": "Commodity plastics are produced through distinct precursor chains: ethylene to PE, propylene to PP, ethylene glycol plus terephthalic acid to PET, and chlorine/ethylene through EDC and VCM to PVC.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000005"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "plastics",
+      "misuseGuardrail": "These are pathway summaries; plant technology, regional feedstock, coproduct allocation, and additives vary."
+    },
+    {
+      "id": "CLM-000133",
+      "registryKind": "claim",
+      "label": "resin_water",
+      "description": "Approximate cross-database cradle-to-resin water-consumption ranges are 3.3-44.4 L/kg for PET, 5.9-24.1 for HDPE, and 5.2-20.5 for PP.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-b641bc1c9e603933a555",
+      "legacyIds": [
+        "PLS-WATER-001"
+      ],
+      "statement": "Approximate cross-database cradle-to-resin water-consumption ranges are 3.3-44.4 L/kg for PET, 5.9-24.1 for HDPE, and 5.2-20.5 for PP.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000121",
+        "SRC-000122"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "plastics",
+      "misuseGuardrail": "Values were read approximately from a figure; they are database results, not universal plant coefficients."
+    },
+    {
+      "id": "CLM-000134",
+      "registryKind": "claim",
+      "label": "water_uncertainty",
+      "description": "Life-cycle databases can produce materially different water results for the same resin because geography, allocation, technology, cooling-water recycling, and system boundaries differ.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-70045b5c3b457cdc7468",
+      "legacyIds": [
+        "PLS-WATER-002"
+      ],
+      "statement": "Life-cycle databases can produce materially different water results for the same resin because geography, allocation, technology, cooling-water recycling, and system boundaries differ.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000096",
+        "SRC-000121"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "plastics",
+      "misuseGuardrail": "Do not average incompatible values without a harmonization protocol."
+    },
+    {
+      "id": "CLM-000135",
+      "registryKind": "claim",
+      "label": "gross_avoidance",
+      "description": "Avoiding one million kilograms of virgin resin corresponds to gross cradle-to-resin water ranges of about 3.3-44.4 million L PET, 5.9-24.1 million L HDPE, or 5.2-20.5 million L PP.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-454252d91ff8d185cffa",
+      "legacyIds": [
+        "PLS-WATER-003"
+      ],
+      "statement": "Avoiding one million kilograms of virgin resin corresponds to gross cradle-to-resin water ranges of about 3.3-44.4 million L PET, 5.9-24.1 million L HDPE, or 5.2-20.5 million L PP.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000122"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "plastics",
+      "misuseGuardrail": "This multiplication excludes replacement production, washing, logistics, product loss, and end of life, so it is not net water savings."
+    },
+    {
+      "id": "CLM-000136",
+      "registryKind": "claim",
+      "label": "national_water_total",
+      "description": "A national net water-saving estimate for plastic replacement remains unavailable because dominant replacement systems lack harmonized functional-unit and geographic inventories.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-76506c0ae3422e1405b3",
+      "legacyIds": [
+        "PLS-WATER-004"
+      ],
+      "statement": "A national net water-saving estimate for plastic replacement remains unavailable because dominant replacement systems lack harmonized functional-unit and geographic inventories.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000030",
+        "SRC-000096",
+        "SRC-000121"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "plastics",
+      "misuseGuardrail": "Do not turn this evidence gap into a zero-impact assumption."
+    },
+    {
+      "id": "CLM-000137",
+      "registryKind": "claim",
+      "label": "particles",
+      "description": "Plastic particles have been reported in foods and human samples, but current evidence does not yet establish quantitative health risk at measured food levels.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-018013ea77a42dc6e64f",
+      "legacyIds": [
+        "PLS-HEALTH-001"
+      ],
+      "statement": "Plastic particles have been reported in foods and human samples, but current evidence does not yet establish quantitative health risk at measured food levels.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000032",
+        "SRC-000041",
+        "SRC-000332"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "plastics",
+      "misuseGuardrail": "Neither declare safety nor claim all real-world exposure is proven harmful; show the method and dose-response gaps."
+    },
+    {
+      "id": "CLM-000138",
+      "registryKind": "claim",
+      "label": "cardiovascular_association",
+      "description": "In one carotid-surgery cohort, detected plaque micro/nanoplastics were associated with a higher composite risk of heart attack, stroke, or death (adjusted HR 4.53; 95% CI 2.00-10.27).",
+      "status": "provisional",
+      "semanticFingerprint": "fp-81be77a00e000dcbbaa2",
+      "legacyIds": [
+        "PLS-HEALTH-002"
+      ],
+      "statement": "In one carotid-surgery cohort, detected plaque micro/nanoplastics were associated with a higher composite risk of heart attack, stroke, or death (adjusted HR 4.53; 95% CI 2.00-10.27).",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000094"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "plastics",
+      "misuseGuardrail": "This selected observational cohort cannot prove causation, ingestion route, source, or general-population risk."
+    },
+    {
+      "id": "CLM-000139",
+      "registryKind": "claim",
+      "label": "pfas_vaccine",
+      "description": "A Faroese cohort linked higher prenatal and childhood PFAS serum concentrations to lower tetanus and diphtheria antibody responses; it did not measure maternal microplastic ingestion or show universal vaccine failure.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-f1dea439f8fa42ea614d",
+      "legacyIds": [
+        "PLS-HEALTH-003"
+      ],
+      "statement": "A Faroese cohort linked higher prenatal and childhood PFAS serum concentrations to lower tetanus and diphtheria antibody responses; it did not measure maternal microplastic ingestion or show universal vaccine failure.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000007",
+        "SRC-000065"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "plastics",
+      "misuseGuardrail": "PFAS chemicals are not synonymous with microplastic particles or all plastics; findings are observational and outcome-specific."
+    },
+    {
+      "id": "CLM-000140",
+      "registryKind": "claim",
+      "label": "production_chemicals",
+      "description": "High-confidence chemical hazards exist in plastic supply chains, including carcinogenic classifications for vinyl chloride and concerns for styrene and acrylonitrile, plus occupational isocyanate sensitization and asthma.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-5ef33b84d50de402bcfe",
+      "legacyIds": [
+        "PLS-HEALTH-004"
+      ],
+      "statement": "High-confidence chemical hazards exist in plastic supply chains, including carcinogenic classifications for vinyl chloride and concerns for styrene and acrylonitrile, plus occupational isocyanate sensitization and asthma.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000095",
+        "SRC-000108",
+        "SRC-000109",
+        "SRC-000110"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "plastics",
+      "misuseGuardrail": "A monomer or reactive-precursor hazard does not establish the same exposure or risk from every cured finished article."
+    },
+    {
+      "id": "CLM-000141",
+      "registryKind": "claim",
+      "label": "pfas_packaging",
+      "description": "EPA found that certain fluorination processes used on HDPE containers can form and leach PFAS; this finding does not apply to every HDPE product.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-d09732c1fabf8743f707",
+      "legacyIds": [
+        "PLS-HEALTH-005"
+      ],
+      "statement": "EPA found that certain fluorination processes used on HDPE containers can form and leach PFAS; this finding does not apply to every HDPE product.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000033",
+        "SRC-000034"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "plastics",
+      "misuseGuardrail": "Always retain the qualifiers certain, fluorinated, and process-specific."
+    },
+    {
+      "id": "CLM-000142",
+      "registryKind": "claim",
+      "label": "international_policy",
+      "description": "The EU, France, Germany, and Rwanda use combinations of targeted restrictions, reuse, deposits, producer responsibility, collection, and exceptions rather than eliminating every plastic use.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-7f3e97099a508aa5e03a",
+      "legacyIds": [
+        "PLS-POLICY-001"
+      ],
+      "statement": "The EU, France, Germany, and Rwanda use combinations of targeted restrictions, reuse, deposits, producer responsibility, collection, and exceptions rather than eliminating every plastic use.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000018",
+        "SRC-000038",
+        "SRC-000045",
+        "SRC-000124"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "plastics",
+      "misuseGuardrail": "Do not describe any listed jurisdiction as plastic-free or treat legal targets as achieved water savings."
+    },
+    {
+      "id": "CLM-000143",
+      "registryKind": "claim",
+      "label": "seaweed_resource",
+      "description": "DOE modeled 0.38 billion dry metric tons per year of U.S. macroalgae supply at or below $1,000 per dry ton under a 50% productive-area assumption.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-328c37e4fdae9b97ec81",
+      "legacyIds": [
+        "PLS-SEA-001"
+      ],
+      "statement": "DOE modeled 0.38 billion dry metric tons per year of U.S. macroalgae supply at or below $1,000 per dry ton under a 50% productive-area assumption.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000020"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "plastics",
+      "misuseGuardrail": "This is modeled potential, not production, a forecast, sustainable harvest, or finished bioplastic output."
+    },
+    {
+      "id": "CLM-000144",
+      "registryKind": "claim",
+      "label": "seaweed_current_scale",
+      "description": "U.S. seaweed aquaculture remains developmental; NOAA reports an Alaska example exceeding 112,000 lb in 2019, in wet rather than dry weight.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-0dd084e496c5334c0dc9",
+      "legacyIds": [
+        "PLS-SEA-002"
+      ],
+      "statement": "U.S. seaweed aquaculture remains developmental; NOAA reports an Alaska example exceeding 112,000 lb in 2019, in wet rather than dry weight.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000105"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2019",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "plastics",
+      "misuseGuardrail": "Do not compare this wet harvest directly with DOE dry-biomass potential."
+    },
+    {
+      "id": "CLM-000145",
+      "registryKind": "claim",
+      "label": "seaweed_water",
+      "description": "Seaweed cultivation may avoid irrigation, but one 2026 film LCA found substantial conversion wastewater and higher water use than its LDPE comparator.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-9fec1736e646bbea98c5",
+      "legacyIds": [
+        "PLS-SEA-003"
+      ],
+      "statement": "Seaweed cultivation may avoid irrigation, but one 2026 film LCA found substantial conversion wastewater and higher water use than its LDPE comparator.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000002"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "2026",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "plastics",
+      "misuseGuardrail": "One formulation does not represent all seaweed materials; never call seaweed plastic water-free."
+    },
+    {
+      "id": "CLM-000146",
+      "registryKind": "claim",
+      "label": "replacement_hierarchy",
+      "description": "A defensible transition starts with unnecessary products, scales reuse and high capture, controls hazardous chemistry, and evaluates substitution on a product-service functional unit.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-5e7f9ed7e6d205cee2a5",
+      "legacyIds": [
+        "PLS-STRATEGY-001"
+      ],
+      "statement": "A defensible transition starts with unnecessary products, scales reuse and high capture, controls hazardous chemistry, and evaluates substitution on a product-service functional unit.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000096",
+        "SRC-000304"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "plastics",
+      "misuseGuardrail": "This is a decision framework, not evidence that every reuse or substitute system is lower-impact."
+    },
+    {
+      "id": "CLM-000147",
+      "registryKind": "claim",
+      "label": "burden_shifting",
+      "description": "Material substitution can shift burdens: a 2024 study found plastics had lower greenhouse-gas impacts in 15 of 16 modeled applications, while not resolving water, toxicity, litter, or biodiversity tradeoffs.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-58053f2fd6b32eab8ebb",
+      "legacyIds": [
+        "PLS-STRATEGY-002"
+      ],
+      "statement": "Material substitution can shift burdens: a 2024 study found plastics had lower greenhouse-gas impacts in 15 of 16 modeled applications, while not resolving water, toxicity, litter, or biodiversity tradeoffs.",
+      "publicationStatus": "provisional",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000001"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "2024",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "plastics",
+      "misuseGuardrail": "Do not use a greenhouse-gas comparison to dismiss other impacts or endorse all plastic uses."
+    },
+    {
+      "id": "CLM-000148",
+      "registryKind": "claim",
+      "label": "CC-CLAIM-001",
+      "description": "New Orleans faces increasing relative sea level, subsidence, storm-surge risk, and dependence on levees and pumps; no authoritative source establishes 2070 as a date when the entire city is underwater.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-98247984f77923461cd7",
+      "legacyIds": [
+        "CC-CLAIM-001"
+      ],
+      "statement": "New Orleans faces increasing relative sea level, subsidence, storm-surge risk, and dependence on levees and pumps; no authoritative source establishes 2070 as a date when the entire city is underwater.",
+      "publicationStatus": "rejected",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000087",
+        "SRC-000106",
+        "SRC-000311"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "2070",
+      "confidence": "not_assessed",
+      "fidelityStatus": "rejected",
+      "domain": "climate",
+      "misuseGuardrail": "[\"Do not use 2070 as an inundation deadline.\",\"Do not treat a tide-gauge result at Grand Isle as a citywide New Orleans result.\",\"Do not omit existing defenses from the headline.\"]"
+    },
+    {
+      "id": "CLM-000149",
+      "registryKind": "claim",
+      "label": "CC-CLAIM-002",
+      "description": "Miami-Dade plans for 21-54 inches of sea-level rise by 2070 relative to 2000 at the Key West reference. This range indicates serious and uneven flood, groundwater, water-quality, infrastructure, and adaptation pressures; it does not mean every part of Miami is underwater in 2070.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-736c75ad884939e2272e",
+      "legacyIds": [
+        "CC-CLAIM-002"
+      ],
+      "statement": "Miami-Dade plans for 21-54 inches of sea-level rise by 2070 relative to 2000 at the Key West reference. This range indicates serious and uneven flood, groundwater, water-quality, infrastructure, and adaptation pressures; it does not mean every part of Miami is underwater in 2070.",
+      "publicationStatus": "rejected",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000075",
+        "SRC-000087",
+        "SRC-000106"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "2070",
+      "confidence": "not_assessed",
+      "fidelityStatus": "rejected",
+      "domain": "climate",
+      "misuseGuardrail": "[\"Do not display 21-54 inches as a uniform water depth across Miami.\",\"Do not call a planning range a probability forecast.\",\"Do not equate Miami-Dade County, the City of Miami, and a research study domain.\"]"
+    },
+    {
+      "id": "CLM-000150",
+      "registryKind": "claim",
+      "label": "CC-CLAIM-003",
+      "description": "At Galveston Pier 21, Eugene Island, and Grand Isle, measured subsidence rates may remain larger than geocentric sea-level rise through 2045 or 2070 if the measured linear rates continue. This is not a city-disappearance forecast.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-450fc543fbfde67ac0da",
+      "legacyIds": [
+        "CC-CLAIM-003"
+      ],
+      "statement": "At Galveston Pier 21, Eugene Island, and Grand Isle, measured subsidence rates may remain larger than geocentric sea-level rise through 2045 or 2070 if the measured linear rates continue. This is not a city-disappearance forecast.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000087"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "2045",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "climate",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000151",
+      "registryKind": "claim",
+      "label": "CC-CLAIM-004",
+      "description": "Under SSP2-4.5 and absent defenses, Ohenhen et al. estimate an additional 1,334-1,813 square kilometers, 176,000-518,000 people, and 94,000-288,000 properties exposed across 32 U.S. coastal-city study domains by 2050 when vertical land motion is included.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-b770aa13017414871962",
+      "legacyIds": [
+        "CC-CLAIM-004"
+      ],
+      "statement": "Under SSP2-4.5 and absent defenses, Ohenhen et al. estimate an additional 1,334-1,813 square kilometers, 176,000-518,000 people, and 94,000-288,000 properties exposed across 32 U.S. coastal-city study domains by 2050 when vertical land motion is included.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000087",
+        "SRC-000106"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2050",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "climate",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000152",
+      "registryKind": "claim",
+      "label": "CC-CLAIM-005",
+      "description": "In a no-defense elevation model, 318-426 square kilometers and 386,000-448,000 people in the New Orleans study domain are topographically below high tide. This quantifies protection dependence, not current actual inundation.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-3369657acfa6e3568c14",
+      "legacyIds": [
+        "CC-CLAIM-005"
+      ],
+      "statement": "In a no-defense elevation model, 318-426 square kilometers and 386,000-448,000 people in the New Orleans study domain are topographically below high tide. This quantifies protection dependence, not current actual inundation.",
+      "publicationStatus": "rejected",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000087",
+        "SRC-000107",
+        "SRC-000311"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "rejected",
+      "domain": "climate",
+      "misuseGuardrail": "[\"Do not map the undefended footprint as present water.\",\"Do not describe exposed residents as already displaced.\"]"
+    },
+    {
+      "id": "CLM-000153",
+      "registryKind": "claim",
+      "label": "CC-CLAIM-006",
+      "description": "Miami-Dade's adopted planning range is 10-17 inches in 2040, 21-54 inches in 2070, and 40-136 inches in 2120, each above 2000 mean sea level at the Key West reference.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-add53fd99255d3f56898",
+      "legacyIds": [
+        "CC-CLAIM-006"
+      ],
+      "statement": "Miami-Dade's adopted planning range is 10-17 inches in 2040, 21-54 inches in 2070, and 40-136 inches in 2120, each above 2000 mean sea level at the Key West reference.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000075",
+        "SRC-000106"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "2040",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "climate",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000154",
+      "registryKind": "claim",
+      "label": "CC-CLAIM-007",
+      "description": "NOAA's record-wide relative trends through December 2025 are about 3.20 millimeters per year at Virginia Key, 5.99 at New Canal Station, and 9.12 at Grand Isle. These trends combine ocean change and local land motion and must not be linearly extrapolated as forecasts.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-3fab8e481be622406482",
+      "legacyIds": [
+        "CC-CLAIM-007"
+      ],
+      "statement": "NOAA's record-wide relative trends through December 2025 are about 3.20 millimeters per year at Virginia Key, 5.99 at New Canal Station, and 9.12 at Grand Isle. These trends combine ocean change and local land motion and must not be linearly extrapolated as forecasts.",
+      "publicationStatus": "verified",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000101"
+      ],
+      "geography": "Unspecified",
+      "geographyType": "unspecified",
+      "period": "2025",
+      "confidence": "not_assessed",
+      "fidelityStatus": "not_assessed",
+      "domain": "climate",
+      "misuseGuardrail": "Use only with its stated scope, source family, and evidence class."
+    },
+    {
+      "id": "CLM-000155",
+      "registryKind": "claim",
+      "label": "CC-CLAIM-008",
+      "description": "New Orleans' HSDRRS provides a 1% annual-chance level of storm-risk reduction. Residual risk remains, and performance depends on maintenance, settlement, subsidence, sea level, storm conditions, and future upgrades.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-597b88c107ee1109bb5e",
+      "legacyIds": [
+        "CC-CLAIM-008"
+      ],
+      "statement": "New Orleans' HSDRRS provides a 1% annual-chance level of storm-risk reduction. Residual risk remains, and performance depends on maintenance, settlement, subsidence, sea level, storm conditions, and future upgrades.",
+      "publicationStatus": "rejected",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000090",
+        "SRC-000311"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "rejected",
+      "domain": "climate",
+      "misuseGuardrail": "[\"Do not call the system flood-proof.\",\"Do not interpret 1% annual chance as one event per century.\"]"
+    },
+    {
+      "id": "CLM-000156",
+      "registryKind": "claim",
+      "label": "CC-CLAIM-009",
+      "description": "In a high-end 1.8-meter 2100 scenario without protection, Hauer et al. estimate 13.1 million U.S. residents on exposed land and model how associated migration could redistribute population. It is a stress test, not a forecast of guaranteed migrants.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-23bede9d30f2867b3609",
+      "legacyIds": [
+        "CC-CLAIM-009"
+      ],
+      "statement": "In a high-end 1.8-meter 2100 scenario without protection, Hauer et al. estimate 13.1 million U.S. residents on exposed land and model how associated migration could redistribute population. It is a stress test, not a forecast of guaranteed migrants.",
+      "publicationStatus": "rejected",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000059",
+        "SRC-000084",
+        "SRC-000085"
+      ],
+      "geography": "United States",
+      "geographyType": "national",
+      "period": "2100",
+      "confidence": "not_assessed",
+      "fidelityStatus": "rejected",
+      "domain": "climate",
+      "misuseGuardrail": "[\"Do not label exposed people as refugees.\",\"Do not present the 1.8-meter scenario as most likely.\",\"Do not assign the modeled 2100 total to 2070.\"]"
+    },
+    {
+      "id": "CLM-000157",
+      "registryKind": "claim",
+      "label": "CC-CLAIM-010",
+      "description": "Large arrivals can create acute and neighborhood-level pressures in affordable housing, health and mental-health care, schools, transport, documentation, employment, and social services. Aggregate citywide outcomes depend on capacity and support; Houston's Katrina experience does not support a universal collapse claim.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-e138bea6f45510f6d1c2",
+      "legacyIds": [
+        "CC-CLAIM-010"
+      ],
+      "statement": "Large arrivals can create acute and neighborhood-level pressures in affordable housing, health and mental-health care, schools, transport, documentation, employment, and social services. Aggregate citywide outcomes depend on capacity and support; Houston's Katrina experience does not support a universal collapse claim.",
+      "publicationStatus": "rejected",
+      "evidenceState": "qualitative_evidence",
+      "sourceIds": [
+        "SRC-000089",
+        "SRC-000119",
+        "SRC-000308"
+      ],
+      "geography": "Named city or community in claim",
+      "geographyType": "city",
+      "period": "undated",
+      "confidence": "not_assessed",
+      "fidelityStatus": "rejected",
+      "domain": "climate",
+      "misuseGuardrail": "[\"Do not use a single capacity ratio as proof of collapse.\",\"Do not assume all arrivals remain permanently.\",\"Do not erase neighborhood-level concentration with citywide averages.\"]"
+    }
+  ]
+}

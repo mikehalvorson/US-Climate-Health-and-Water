@@ -1,0 +1,128 @@
+---
+import ChartFrame from '../ChartFrame.astro';
+import DataTable from '../DataTable.astro';
+import EvidenceBadge from '../EvidenceBadge.astro';
+import OptionComparison from '../OptionComparison.astro';
+import RecommendationPanel from '../RecommendationPanel.astro';
+import SourceDrawer from '../SourceDrawer.astro';
+import ViewpointGrid from '../ViewpointGrid.astro';
+import FrameworkFigure from '../strategy/FrameworkFigure.astro';
+import { OVERVIEW_SCORECARD, OVERVIEW_SOURCES, overviewChart } from '../../lib/data/overview';
+import { hrefForRoute } from '../../lib/navigation/shell';
+import { ROUTES, SUPERSECTION_DEFINITIONS } from '../../lib/registry/routes';
+
+const base = import.meta.env.BASE_URL;
+const scorecardChart = overviewChart('overview-current-scorecard', 'table');
+const format = (value: number | null) => value === null ? 'Not quantified' : new Intl.NumberFormat('en-US', { maximumFractionDigits: 3 }).format(value);
+const scoreRows = OVERVIEW_SCORECARD.map((item) => ({ indicator: item.label, value: item.value, unit: item.unit, geography: item.geography, period: item.period, evidence: item.evidenceState, owner: item.ownerLabel }));
+const storyRoutes = ROUTES.filter((route) => route.routeKind === 'story');
+---
+<div class="overview-dashboard" data-overview-dashboard>
+  <section class="overview-lede" aria-labelledby="overview-objective-title">
+    <p class="section-kicker">Service objective</p>
+    <h2 id="overview-objective-title">Expand reliable essential services within climate, water, ecological, material, and community constraints.</h2>
+    <p>Energy, food, water, shelter, mobility, health, and productive capacity are delivered through shared infrastructure and institutions. The dashboard therefore treats demand, supply, resilience, affordability, and environmental limits as one connected decision—not fourteen isolated chapter answers.</p>
+  </section>
+
+  <section aria-labelledby="overview-system-title">
+    <h2 id="overview-system-title">The connected system</h2>
+    <FrameworkFigure chartId="overview-connected-system" chartType="flow" unit="Documented dependency" geography="Global system with U.S. decision focus" period="Current evidence vintage" summary="Energy enables water, food, industry, and adaptation; those systems shape energy demand, emissions, climate risk, and the resources available for future service." sources={OVERVIEW_SOURCES} items={[
+      { label: 'Demand and essential services', value: null, state: 'Planning layer', detail: 'People and institutions create service demand; efficiency and flexibility change the infrastructure required.', gate: 'Retain service floors and distributional effects.' },
+      { label: 'Energy and materials', value: null, state: 'Physical layer', detail: 'Generation, fuels, grids, equipment, and materials enable production while creating land, water, emissions, and supply-chain dependencies.', gate: 'Use technology- and place-specific evidence.' },
+      { label: 'Climate and ecosystems', value: null, state: 'Risk layer', detail: 'Cumulative emissions alter hazards and ecosystems, which feed back into power, water, food, health, and infrastructure reliability.', gate: 'Separate hazard, exposure, vulnerability, and response.' },
+      { label: 'Water, food, and industry', value: null, state: 'Allocation layer', detail: 'Withdrawals, consumption, quality, land, crops, manufacturing, and materials compete and interact across geography and time.', gate: 'Preserve basin, facility, crop, and household boundaries.' },
+      { label: 'Governance and delivery', value: null, state: 'Institutional layer', detail: 'Authority, participation, finance, workforce, permitting, procurement, and review gates determine what can be delivered fairly.', gate: 'Name accountable owners and stop/go conditions.' },
+    ]} caveats={['This is a dependency map, not a quantified integrated-system model.']} />
+  </section>
+
+  <section aria-labelledby="overview-scorecard-title">
+    <div class="section-heading">
+      <p class="section-kicker">Current-system evidence</p>
+      <h2 id="overview-scorecard-title">Six owned indicators establish scale without mixing units.</h2>
+      <p>Each card is a read-only view of evidence owned by an underlying chapter. Periods differ because the dashboard does not relabel older inventories as current.</p>
+    </div>
+    <ChartFrame chart={scorecardChart} unit="Mixed; separate cards" geography="U.S. and global as labeled" period="2015–2025" sources={OVERVIEW_SOURCES} summary="U.S. electricity use and generation, global cumulative carbon and warming, U.S. water withdrawals, and U.S. plastics consumption are all consequential, but their units and accounting boundaries are not interchangeable.">
+      <div slot="plot" class="overview-scorecard" role="list" aria-label="Current-system evidence scorecard">
+        {OVERVIEW_SCORECARD.map((item) => (
+          <article role="listitem" data-owner-route={item.ownerPath}>
+            <div><p>{item.label}</p><EvidenceBadge state={item.evidenceState} /></div>
+            <strong>{format(item.value)} <span>{item.value === null ? '' : item.unit}</span></strong>
+            <dl><div><dt>Geography</dt><dd>{item.geography}</dd></div><div><dt>Period</dt><dd>{item.period}</dd></div></dl>
+            <p>{item.boundary}</p>
+            <a href={hrefForRoute(item.ownerPath, base)}>Canonical owner · {item.ownerLabel}</a>
+            <SourceDrawer id={`${item.id}-source`} source={item.source} triggerLabel={`Source · ${item.source.publisher}`} />
+          </article>
+        ))}
+      </div>
+      <DataTable slot="table" caption="Current-system scorecard with canonical owners" columns={[{ key: 'indicator', label: 'Indicator' }, { key: 'value', label: 'Value', numeric: true }, { key: 'unit', label: 'Unit' }, { key: 'geography', label: 'Geography' }, { key: 'period', label: 'Period' }, { key: 'evidence', label: 'Evidence state' }, { key: 'owner', label: 'Canonical owner' }]} rows={scoreRows} />
+    </ChartFrame>
+  </section>
+
+  <section aria-labelledby="overview-dependencies-title">
+    <h2 id="overview-dependencies-title">Problems cross the three decision areas.</h2>
+    <FrameworkFigure chartId="overview-dependency-map" chartType="matrix" unit="Documented dependency" geography="Global and United States" period="Current evidence vintage" summary="Energy, climate, and food-water-material decisions share demand, infrastructure, land, water, emissions, ecological, affordability, and delivery constraints." sources={OVERVIEW_SOURCES} items={SUPERSECTION_DEFINITIONS.map((section) => ({ label: section.label, value: 'Interdependent', state: 'Chapter evidence', detail: section.purpose, gate: 'Continue into the chapter sequence before interpreting a system conclusion.' }))} />
+  </section>
+
+  <ViewpointGrid id="overview-viewpoints" title="The same system creates different stakes" items={[
+    { viewpoint: 'people_and_households', label: 'People and households', problem: 'Service reliability, bills, health, access, and recovery capacity are unevenly distributed.', evidenceState: 'qualitative_evidence' },
+    { viewpoint: 'businesses_and_producers', label: 'Producers and businesses', problem: 'Energy, water, materials, logistics, land, workforce, and policy uncertainty shape production choices.', evidenceState: 'qualitative_evidence' },
+    { viewpoint: 'utilities_and_infrastructure_owners', label: 'Operators and infrastructure owners', problem: 'Interdependent assets must perform through growth, weather, outages, maintenance, and constrained delivery.', evidenceState: 'qualitative_evidence' },
+    { viewpoint: 'host_communities_and_tribes', label: 'Communities and Tribes', problem: 'Facilities, corridors, extraction, hazards, benefits, burdens, consent, and sovereignty are place-specific.', evidenceState: 'qualitative_evidence' },
+    { viewpoint: 'ecosystems_and_nonhuman_life', label: 'Ecosystems and nonhuman life', problem: 'Land, water, temperature, pollution, extraction, and infrastructure alter habitat and ecological function.', evidenceState: 'qualitative_evidence' },
+    { viewpoint: 'government_and_taxpayers', label: 'Government and taxpayers', problem: 'Authority, finance, standards, procurement, public assets, risk transfer, and accountability must align.', evidenceState: 'qualitative_evidence' },
+    { viewpoint: 'future_generations', label: 'Future generations', problem: 'Long-lived emissions, infrastructure, resource depletion, debt, and ecological change constrain future choices.', evidenceState: 'qualitative_evidence' },
+  ]} />
+
+  <OptionComparison id="overview-choices" title="Three ways to organize the response" question="Which approach best protects essential outcomes across systems?" dimensions={[{ id: 'coverage', label: 'System coverage' }, { id: 'speed', label: 'Near-term action' }, { id: 'dependencies', label: 'Dependencies' }, { id: 'risk', label: 'Residual risk' }, { id: 'evidence', label: 'Evidence discipline' }]} options={[
+    { id: 'incremental', label: 'Incremental projects', summary: 'Advance isolated projects within existing programs.', values: { coverage: 'Narrow', speed: 'Potentially fast', dependencies: 'Often implicit', risk: 'System gaps persist', evidence: 'Project-specific' } },
+    { id: 'disconnected', label: 'Disconnected sector plans', summary: 'Improve each sector without a shared operating frame.', values: { coverage: 'Broad by sector', speed: 'Varies', dependencies: 'Managed at seams', risk: 'Burden shifting remains', evidence: 'Strong within boundaries' } },
+    { id: 'integrated', label: 'Integrated resilience portfolio', summary: 'Sequence demand, supply, resilience, and delivery around shared outcomes.', values: { coverage: 'Cross-system', speed: 'Phased', dependencies: 'Explicit and gated', risk: 'Residual risks visible', evidence: 'Canonical owners; nulls preserved' } },
+  ]} />
+
+  <RecommendationPanel id="overview-recommendation" title="Use an integrated resilience portfolio" conclusion="Plan energy, climate, water, food, and materials around reliable essential services, then release investments through evidence, participation, and delivery gates." rationale={['Physical dependencies and feedbacks cross chapter and agency boundaries.', 'A portfolio can combine efficiency, flexible demand, diversified supply, resilience, repair, reuse, ecosystem protection, and suitable new capacity.', 'Canonical evidence owners allow a sitewide recommendation without duplicating or silently changing chapter values.']} tradeoffs={['Coordination and data requirements increase.', 'Some decisions take longer because burdens and dependencies must be inspected.', 'A common portfolio does not eliminate local design and governance choices.']} residualRisks={['No validated integrated national outcome model is released.', 'Implementation capacity, finance, permitting, participation, and supply chains remain binding.', 'Severe or compounding stresses can exceed planned margins.']} />
+
+  <section aria-labelledby="overview-architecture-title">
+    <h2 id="overview-architecture-title">Recommended portfolio architecture</h2>
+    <FrameworkFigure chartId="overview-portfolio-architecture" chartType="flow" unit="Portfolio requirement" geography="United States with place-specific delivery" period="Near-, medium-, and long-term sequence" summary="The recommendation starts with service outcomes and efficiency, adds diverse low-carbon and resilient supply, protects water and ecosystems, substitutes safer materials, and advances only through accountable delivery gates." sources={OVERVIEW_SOURCES} items={[
+      { label: 'Protect essential outcomes', value: 'Service floors', state: 'Recommendation', detail: 'Define reliability, access, affordability, health, ecological, and recovery outcomes.', gate: 'Disaggregate people, place, and service.' },
+      { label: 'Reduce avoidable demand', value: 'Efficiency + flexibility', state: 'Recommendation', detail: 'Cut waste, shift compatible loads, repair losses, and preserve essential use.', gate: 'Test rebound and distributional effects.' },
+      { label: 'Diversify supply and delivery', value: 'Portfolio', state: 'Recommendation', detail: 'Combine suitable energy, grid, water, storage, reuse, food, and material pathways.', gate: 'Validate technology and geography.' },
+      { label: 'Adapt and restore', value: 'Robust pathways', state: 'Recommendation', detail: 'Harden systems, protect ecosystems, manage retreat where needed, and plan recovery.', gate: 'Use locally credible stresses and triggers.' },
+      { label: 'Govern and review', value: 'Stop/go gates', state: 'Recommendation', detail: 'Connect authority, participation, finance, workforce, procurement, measures, and revision.', gate: 'Publish owners, thresholds, and results.' },
+    ]} />
+  </section>
+
+  <section aria-labelledby="overview-outcomes-title">
+    <h2 id="overview-outcomes-title">Outcome claims remain readiness-aware.</h2>
+    <FrameworkFigure chartId="overview-outcome-readiness" chartType="matrix" unit="Readiness and value status" geography="Integrated U.S. decision frame" period="Reference, recommended, and stress cases" summary="The dashboard can state qualitative response logic, but comparable national outcomes for reliability, emissions, water, cost, health, and ecosystems remain unquantified until a validated integrated model is released." sources={OVERVIEW_SOURCES} items={[
+      { label: 'Reference logic', value: null, state: 'Not integrated', detail: 'Source scenarios remain inside their native energy, climate, water, food, and materials boundaries.', gate: 'Version a common baseline and accounting frame.' },
+      { label: 'Recommended logic', value: null, state: 'Qualitative portfolio', detail: 'The architecture covers shared dependencies, tradeoffs, and delivery requirements without claiming solved outcomes.', gate: 'Calibrate, validate, and publish integrated outputs.' },
+      { label: 'Stress logic', value: null, state: 'Planning tests', detail: 'Chapters expose drought, weather, demand, infrastructure, and delivery stresses without probabilities.', gate: 'Align hazard, load, resource, infrastructure, and vulnerability cases.' },
+      { label: 'Reliability and affordability', value: null, state: 'Data gap', detail: 'No comparable national service reliability or household burden result is authorized.', gate: 'Hourly, network, customer, cost, and distributional evidence.' },
+      { label: 'Emissions, water, health, ecosystems', value: null, state: 'Data gap', detail: 'No integrated net outcome is authorized across physical and social boundaries.', gate: 'Versioned cross-domain coefficients, baselines, and validation.' },
+    ]} caveats={['Not quantified is a publication result, not zero effect.']} />
+  </section>
+
+  <section class="chapter-guide" aria-labelledby="chapter-guide-title">
+    <p class="section-kicker">Chapter guide</p>
+    <h2 id="chapter-guide-title">Inspect the argument in narrative order.</h2>
+    <ol>{storyRoutes.map((route) => <li><a href={hrefForRoute(route.path, base)}><span>{String(route.order).padStart(2, '0')}</span><strong>{route.label}</strong><small>{route.decisionQuestion}</small></a></li>)}</ol>
+  </section>
+
+  <section aria-labelledby="overview-roadmap-title">
+    <h2 id="overview-roadmap-title">Implementation and research roadmap</h2>
+    <FrameworkFigure chartId="overview-roadmap" chartType="flow" unit="Phase and review gate" geography="Federal, regional, state, Tribal, local, utility, and private delivery" period="Sequenced; dates set by accountable programs" summary="Near-term no-regrets actions establish service floors and data; pilots validate designs; scaled portfolios follow performance and participation gates; long-lived commitments remain adaptive." sources={OVERVIEW_SOURCES} items={[
+      { label: '1 · Establish', value: 'Now', state: 'Foundation', detail: 'Publish baselines, service floors, dependency maps, open gaps, accountable owners, and protections.', gate: 'Evidence and participation coverage.' },
+      { label: '2 · Pilot', value: 'Next', state: 'Demonstration', detail: 'Test efficiency, flexibility, resilience, reuse, restoration, material substitution, and community delivery.', gate: 'Measured performance and burden review.' },
+      { label: '3 · Scale', value: 'Conditional', state: 'Portfolio delivery', detail: 'Expand interoperable infrastructure and programs only where pilots and system analysis support them.', gate: 'Reliability, affordability, ecological, and delivery thresholds.' },
+      { label: '4 · Adapt', value: 'Recurring', state: 'Review cycle', detail: 'Monitor outcomes, stresses, source vintage, distributional effects, and emerging evidence.', gate: 'Revise, pause, or stop when thresholds fail.' },
+    ]} />
+  </section>
+
+  <section class="overview-conclusion" aria-labelledby="overview-conclusion-title">
+    <p class="section-kicker">System conclusion</p>
+    <h2 id="overview-conclusion-title">Essential services can be expanded and made more resilient only if energy, climate, water, food, and materials are planned together.</h2>
+    <p>Quantification remains chapter-owned and model-gated. Continue through the evidence-linked chapters, or inspect the public ledgers, methods, conflicts, gaps, integrity results, and downloads.</p>
+    <a href={hrefForRoute('/methods', base)}>Inspect Evidence &amp; Methods →</a>
+  </section>
+</div>

@@ -15,7 +15,8 @@ describe('generated canonical evidence layer', () => {
 
   it('preserves the complete claim and chart-contract inventories', () => {
     expect(CANONICAL_REGISTRIES.claim).toHaveLength(157);
-    expect(CANONICAL_REGISTRIES.chart).toHaveLength(123);
+    expect(CANONICAL_REGISTRIES.dataset).toHaveLength(130);
+    expect(CANONICAL_REGISTRIES.chart).toHaveLength(129);
     expect(CANONICAL_REGISTRIES.source).toHaveLength(336);
     expect(audit.sourceDefinitionCollisions).toHaveLength(25);
     expect(audit.duplicateCanonicalIds).toEqual([]);

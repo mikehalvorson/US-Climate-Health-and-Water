@@ -10,6 +10,9 @@ const section = SUPERSECTION_DEFINITIONS.find((candidate) => candidate.key === r
 const eyebrow = route.routeKind === 'overview' ? 'Connected systems' : route.routeKind === 'methods' ? 'Inspection surface' : section?.label;
 const promise = route.role.endsWith('.') ? route.role.slice(0, -1) : route.role;
 const released = releaseStatusFor(route.id) === 'chapter';
+const publicationLabel = released
+  ? route.routeKind === 'story' ? 'Evidence-linked draft · vertical slice released' : 'Evidence-linked draft · inspection route released'
+  : 'Shell review · content not released';
 ---
 <header class="chapter-intro">
   <div class="chapter-intro__meta">
@@ -21,7 +24,7 @@ const released = releaseStatusFor(route.id) === 'chapter';
   <div class="scope-badges" aria-label="Chapter scope and publication status">
     <span>Evidence vintage · Aug 2026</span>
     <span>Scope · Global, U.S. &amp; sourced local views</span>
-    <span class="status-badge">{released ? 'Evidence-linked draft · vertical slice released' : 'Shell review · content not released'}</span>
+    <span class="status-badge">{publicationLabel}</span>
   </div>
   <p class="page-promise"><strong>Chapter promise:</strong> {promise}.</p>
 </header>

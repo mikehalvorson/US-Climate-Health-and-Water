@@ -1,0 +1,4050 @@
+{
+  "schemaVersion": "1.0.0",
+  "evidenceVintage": "2026-08-01",
+  "recordType": "dataset",
+  "recordCount": 130,
+  "provenance": {
+    "canonicalInput": "src/generated/registry.json",
+    "generator": "tools/build-public-data.mjs",
+    "hashAlgorithm": "sha256"
+  },
+  "records": [
+    {
+      "id": "DAT-000001",
+      "registryKind": "dataset",
+      "label": "colorado-post-2026",
+      "description": "Research dataset represented by research/water/timeseries/source-access.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-db38ec37c32529f8da9d",
+      "legacyIds": [
+        "colorado-post-2026"
+      ],
+      "path": "research/water/timeseries/source-access.json",
+      "paths": [
+        "research/water/timeseries/source-access.json"
+      ],
+      "sourceIds": [
+        "SRC-000313"
+      ],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000002",
+      "registryKind": "dataset",
+      "label": "corpus-stage3",
+      "description": "Research dataset represented by research/water/timeseries/source-access.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-2e15d9d6a6539d6df3a7",
+      "legacyIds": [
+        "corpus-stage3"
+      ],
+      "path": "research/water/timeseries/source-access.json",
+      "paths": [
+        "research/water/timeseries/source-access.json"
+      ],
+      "sourceIds": [
+        "SRC-000011"
+      ],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000003",
+      "registryKind": "dataset",
+      "label": "DS-DOE-MARINE-ATLAS",
+      "description": "Research dataset represented by research/energy/datasets.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-69b06364ad91f3b9b6c2",
+      "legacyIds": [
+        "DS-DOE-MARINE-ATLAS"
+      ],
+      "path": "research/energy/datasets.json",
+      "paths": [
+        "research/energy/datasets.json"
+      ],
+      "sourceIds": [
+        "SRC-000154"
+      ],
+      "geographyTypes": [
+        "state"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000004",
+      "registryKind": "dataset",
+      "label": "DS-EI-SR26",
+      "description": "Research dataset represented by research/energy/datasets.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-80d49406a193d84dbc27",
+      "legacyIds": [
+        "DS-EI-SR26"
+      ],
+      "path": "research/energy/datasets.json",
+      "paths": [
+        "research/energy/datasets.json"
+      ],
+      "sourceIds": [
+        "SRC-000177",
+        "SRC-000178"
+      ],
+      "geographyTypes": [
+        "global"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000005",
+      "registryKind": "dataset",
+      "label": "DS-EIA-860",
+      "description": "Research dataset represented by research/energy/datasets.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-705410f38d4536183451",
+      "legacyIds": [
+        "DS-EIA-860"
+      ],
+      "path": "research/energy/datasets.json",
+      "paths": [
+        "research/energy/datasets.json"
+      ],
+      "sourceIds": [
+        "SRC-000179"
+      ],
+      "geographyTypes": [
+        "state"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000006",
+      "registryKind": "dataset",
+      "label": "DS-EIA-923",
+      "description": "Research dataset represented by research/energy/datasets.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-3660fef3d9a9fce72d82",
+      "legacyIds": [
+        "DS-EIA-923"
+      ],
+      "path": "research/energy/datasets.json",
+      "paths": [
+        "research/energy/datasets.json"
+      ],
+      "sourceIds": [
+        "SRC-000180"
+      ],
+      "geographyTypes": [
+        "state"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000007",
+      "registryKind": "dataset",
+      "label": "DS-EIA-930",
+      "description": "Research dataset represented by research/energy/datasets.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-67c1cb190dbdd2baaf90",
+      "legacyIds": [
+        "DS-EIA-930"
+      ],
+      "path": "research/energy/datasets.json",
+      "paths": [
+        "research/energy/datasets.json"
+      ],
+      "sourceIds": [
+        "SRC-000181"
+      ],
+      "geographyTypes": [
+        "national"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000008",
+      "registryKind": "dataset",
+      "label": "DS-EIA-930-LOAD-2024",
+      "description": "Research dataset represented by research/energy/datasets.json, research/energy/transmission/load-shape/coverage.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-c937dbee31d59a5cbde8",
+      "legacyIds": [
+        "DS-EIA-930-LOAD-2024"
+      ],
+      "path": "research/energy/datasets.json",
+      "paths": [
+        "research/energy/datasets.json",
+        "research/energy/transmission/load-shape/coverage.json"
+      ],
+      "sourceIds": [
+        "SRC-000181"
+      ],
+      "geographyTypes": [
+        "national"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000009",
+      "registryKind": "dataset",
+      "label": "DS-EIA-AEO2026",
+      "description": "Research dataset represented by research/energy/consumption/accounting-boundaries.json, research/energy/consumption/scenario-statistics.json, research/energy/consumption/timeseries/normalized/us-demand-drivers-aeo2026.csv, research/energy/consumption/timeseries/normalized/us-electricity-end-use-aeo2026.csv, research/energy/consumption/timeseries/normalized/us-electricity-supply-demand-aeo2026.csv, research/energy/datasets.json, research/energy/timeseries/coverage.json, research/energy/timeseries/normalized/us-electricity-projections-aeo2026.csv, research/energy/timeseries/scenario-catalog.json, research/energy/timeseries/source-access.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-d88dbb9286ee29ae8a32",
+      "legacyIds": [
+        "DS-EIA-AEO2026"
+      ],
+      "path": "research/energy/consumption/accounting-boundaries.json",
+      "paths": [
+        "research/energy/consumption/accounting-boundaries.json",
+        "research/energy/consumption/scenario-statistics.json",
+        "research/energy/consumption/timeseries/normalized/us-demand-drivers-aeo2026.csv",
+        "research/energy/consumption/timeseries/normalized/us-electricity-end-use-aeo2026.csv",
+        "research/energy/consumption/timeseries/normalized/us-electricity-supply-demand-aeo2026.csv",
+        "research/energy/datasets.json",
+        "research/energy/timeseries/coverage.json",
+        "research/energy/timeseries/normalized/us-electricity-projections-aeo2026.csv",
+        "research/energy/timeseries/scenario-catalog.json",
+        "research/energy/timeseries/source-access.json"
+      ],
+      "sourceIds": [
+        "SRC-000182"
+      ],
+      "geographyTypes": [
+        "state"
+      ],
+      "periods": [
+        "2025",
+        "2026",
+        "2027",
+        "2028",
+        "2029",
+        "2030",
+        "2031",
+        "2032",
+        "2033",
+        "2034",
+        "2035",
+        "2036",
+        "2037",
+        "2038",
+        "2039",
+        "2040",
+        "2041",
+        "2042",
+        "2043",
+        "2044",
+        "2045",
+        "2046",
+        "2047",
+        "2048",
+        "2049",
+        "2050",
+        "{\"minimum\":2025,\"maximum\":2050,\"frequency\":\"annual\"}"
+      ],
+      "unitFamilies": [
+        "capacity",
+        "count",
+        "energy",
+        "qualitative",
+        "temperature",
+        "time"
+      ],
+      "useClass": "benchmark",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000010",
+      "registryKind": "dataset",
+      "label": "DS-EIA-EPM",
+      "description": "Research dataset represented by research/energy/datasets.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-1cb41fa5e2cefa8d20b1",
+      "legacyIds": [
+        "DS-EIA-EPM"
+      ],
+      "path": "research/energy/datasets.json",
+      "paths": [
+        "research/energy/datasets.json"
+      ],
+      "sourceIds": [
+        "SRC-000187",
+        "SRC-000188"
+      ],
+      "geographyTypes": [
+        "state"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000011",
+      "registryKind": "dataset",
+      "label": "DS-EIA-MER",
+      "description": "Research dataset represented by research/energy/datasets.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-b1a4ac311af7285e0448",
+      "legacyIds": [
+        "DS-EIA-MER"
+      ],
+      "path": "research/energy/datasets.json",
+      "paths": [
+        "research/energy/datasets.json"
+      ],
+      "sourceIds": [
+        "SRC-000191",
+        "SRC-000195",
+        "SRC-000196"
+      ],
+      "geographyTypes": [
+        "state"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000012",
+      "registryKind": "dataset",
+      "label": "DS-EIA-MER-10.6",
+      "description": "Research dataset represented by research/energy/datasets.json, research/energy/timeseries/coverage.json, research/energy/timeseries/normalized/us-electricity-generation-history.csv, research/energy/timeseries/source-access.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-75d44d0af2b4bfe60612",
+      "legacyIds": [
+        "DS-EIA-MER-10.6"
+      ],
+      "path": "research/energy/datasets.json",
+      "paths": [
+        "research/energy/datasets.json",
+        "research/energy/timeseries/coverage.json",
+        "research/energy/timeseries/normalized/us-electricity-generation-history.csv",
+        "research/energy/timeseries/source-access.json"
+      ],
+      "sourceIds": [
+        "SRC-000192"
+      ],
+      "geographyTypes": [
+        "state"
+      ],
+      "periods": [
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "unitFamilies": [
+        "energy"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000013",
+      "registryKind": "dataset",
+      "label": "DS-EIA-MER-7.2A",
+      "description": "Research dataset represented by research/energy/datasets.json, research/energy/timeseries/coverage.json, research/energy/timeseries/normalized/us-electricity-generation-history.csv, research/energy/timeseries/source-access.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-0ef8d4f55d4f66dd74c7",
+      "legacyIds": [
+        "DS-EIA-MER-7.2A"
+      ],
+      "path": "research/energy/datasets.json",
+      "paths": [
+        "research/energy/datasets.json",
+        "research/energy/timeseries/coverage.json",
+        "research/energy/timeseries/normalized/us-electricity-generation-history.csv",
+        "research/energy/timeseries/source-access.json"
+      ],
+      "sourceIds": [
+        "SRC-000193"
+      ],
+      "geographyTypes": [
+        "state"
+      ],
+      "periods": [
+        "1949",
+        "1950",
+        "1951",
+        "1952",
+        "1953",
+        "1954",
+        "1955",
+        "1956",
+        "1957",
+        "1958",
+        "1959",
+        "1960",
+        "1961",
+        "1962",
+        "1963",
+        "1964",
+        "1965",
+        "1966",
+        "1967",
+        "1968",
+        "1969",
+        "1970",
+        "1971",
+        "1972",
+        "1973",
+        "1974",
+        "1975",
+        "1976",
+        "1977",
+        "1978",
+        "1979",
+        "1980",
+        "1981",
+        "1982",
+        "1983",
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "unitFamilies": [
+        "energy"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000014",
+      "registryKind": "dataset",
+      "label": "DS-EIA-MER-7.6",
+      "description": "Research dataset represented by research/energy/consumption/scenario-statistics.json, research/energy/consumption/timeseries/normalized/us-electricity-consumption-history.csv, research/energy/datasets.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-cd8537c371c210c5cb22",
+      "legacyIds": [
+        "DS-EIA-MER-7.6"
+      ],
+      "path": "research/energy/consumption/scenario-statistics.json",
+      "paths": [
+        "research/energy/consumption/scenario-statistics.json",
+        "research/energy/consumption/timeseries/normalized/us-electricity-consumption-history.csv",
+        "research/energy/datasets.json"
+      ],
+      "sourceIds": [
+        "SRC-000194"
+      ],
+      "geographyTypes": [
+        "state"
+      ],
+      "periods": [
+        "1949",
+        "1950",
+        "1951",
+        "1952",
+        "1953",
+        "1954",
+        "1955",
+        "1956",
+        "1957",
+        "1958",
+        "1959",
+        "1960",
+        "1961",
+        "1962",
+        "1963",
+        "1964",
+        "1965",
+        "1966",
+        "1967",
+        "1968",
+        "1969",
+        "1970",
+        "1971",
+        "1972",
+        "1973",
+        "1974",
+        "1975",
+        "1976",
+        "1977",
+        "1978",
+        "1979",
+        "1980",
+        "1981",
+        "1982",
+        "1983",
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "unitFamilies": [
+        "energy"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000015",
+      "registryKind": "dataset",
+      "label": "DS-EIA-SEDS",
+      "description": "Research dataset represented by research/energy/datasets.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-5d38989ca3fe13577d5a",
+      "legacyIds": [
+        "DS-EIA-SEDS"
+      ],
+      "path": "research/energy/datasets.json",
+      "paths": [
+        "research/energy/datasets.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "state"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000016",
+      "registryKind": "dataset",
+      "label": "DS-HIFLD-TRANSMISSION-LINES",
+      "description": "Research dataset represented by research/energy/datasets.json, research/energy/transmission/corridors/base-layer-acquisition.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-9e12e0182af01bee12e8",
+      "legacyIds": [
+        "DS-HIFLD-TRANSMISSION-LINES"
+      ],
+      "path": "research/energy/datasets.json",
+      "paths": [
+        "research/energy/datasets.json",
+        "research/energy/transmission/corridors/base-layer-acquisition.json"
+      ],
+      "sourceIds": [
+        "SRC-000228"
+      ],
+      "geographyTypes": [
+        "state"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000017",
+      "registryKind": "dataset",
+      "label": "DS-IAEA-PRIS",
+      "description": "Research dataset represented by research/energy/datasets.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-a45f5486c20cd049f267",
+      "legacyIds": [
+        "DS-IAEA-PRIS"
+      ],
+      "path": "research/energy/datasets.json",
+      "paths": [
+        "research/energy/datasets.json"
+      ],
+      "sourceIds": [
+        "SRC-000229"
+      ],
+      "geographyTypes": [
+        "global"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000018",
+      "registryKind": "dataset",
+      "label": "DS-IEA-ELECTRICITY26-DEMAND",
+      "description": "Research dataset represented by research/energy/consumption/timeseries/normalized/global-and-us-demand-milestones.csv, research/energy/datasets.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-c1c10d815cb924348164",
+      "legacyIds": [
+        "DS-IEA-ELECTRICITY26-DEMAND"
+      ],
+      "path": "research/energy/consumption/timeseries/normalized/global-and-us-demand-milestones.csv",
+      "paths": [
+        "research/energy/consumption/timeseries/normalized/global-and-us-demand-milestones.csv",
+        "research/energy/datasets.json"
+      ],
+      "sourceIds": [
+        "SRC-000233"
+      ],
+      "geographyTypes": [
+        "global"
+      ],
+      "periods": [
+        "2025",
+        "2030"
+      ],
+      "unitFamilies": [
+        "energy"
+      ],
+      "useClass": "benchmark",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000019",
+      "registryKind": "dataset",
+      "label": "DS-IEA-ENERGY-AI25",
+      "description": "Research dataset represented by research/energy/consumption/timeseries/normalized/global-and-us-demand-milestones.csv, research/energy/datasets.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-e98fda5c0486deb8e3d1",
+      "legacyIds": [
+        "DS-IEA-ENERGY-AI25"
+      ],
+      "path": "research/energy/consumption/timeseries/normalized/global-and-us-demand-milestones.csv",
+      "paths": [
+        "research/energy/consumption/timeseries/normalized/global-and-us-demand-milestones.csv",
+        "research/energy/datasets.json"
+      ],
+      "sourceIds": [
+        "SRC-000235"
+      ],
+      "geographyTypes": [
+        "global"
+      ],
+      "periods": [
+        "2024",
+        "2030",
+        "2035"
+      ],
+      "unitFamilies": [
+        "energy"
+      ],
+      "useClass": "benchmark",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000020",
+      "registryKind": "dataset",
+      "label": "DS-IEA-GER26",
+      "description": "Research dataset represented by research/energy/datasets.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-661bb02c111c2de1d6de",
+      "legacyIds": [
+        "DS-IEA-GER26"
+      ],
+      "path": "research/energy/datasets.json",
+      "paths": [
+        "research/energy/datasets.json"
+      ],
+      "sourceIds": [
+        "SRC-000236"
+      ],
+      "geographyTypes": [
+        "global"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000021",
+      "registryKind": "dataset",
+      "label": "DS-IEA-GEVO26",
+      "description": "Research dataset represented by research/energy/consumption/timeseries/normalized/global-and-us-demand-milestones.csv, research/energy/datasets.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-e3d36fa16555e7d1c9da",
+      "legacyIds": [
+        "DS-IEA-GEVO26"
+      ],
+      "path": "research/energy/consumption/timeseries/normalized/global-and-us-demand-milestones.csv",
+      "paths": [
+        "research/energy/consumption/timeseries/normalized/global-and-us-demand-milestones.csv",
+        "research/energy/datasets.json"
+      ],
+      "sourceIds": [
+        "SRC-000243"
+      ],
+      "geographyTypes": [
+        "global"
+      ],
+      "periods": [
+        "2025",
+        "2035"
+      ],
+      "unitFamilies": [
+        "energy"
+      ],
+      "useClass": "benchmark",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000022",
+      "registryKind": "dataset",
+      "label": "DS-IRENA-CAP26",
+      "description": "Research dataset represented by research/energy/datasets.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-bb69893bb060ae163405",
+      "legacyIds": [
+        "DS-IRENA-CAP26"
+      ],
+      "path": "research/energy/datasets.json",
+      "paths": [
+        "research/energy/datasets.json"
+      ],
+      "sourceIds": [
+        "SRC-000251"
+      ],
+      "geographyTypes": [
+        "global"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000023",
+      "registryKind": "dataset",
+      "label": "DS-IRENA-WETO2022-OCEAN",
+      "description": "Research dataset represented by research/energy/datasets.json, research/energy/timeseries/coverage.json, research/energy/timeseries/normalized/global-specialized-technology-scenarios.csv, research/energy/timeseries/scenario-catalog.json, research/energy/timeseries/source-access.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-171e5a47b4a2c88afa00",
+      "legacyIds": [
+        "DS-IRENA-WETO2022-OCEAN"
+      ],
+      "path": "research/energy/datasets.json",
+      "paths": [
+        "research/energy/datasets.json",
+        "research/energy/timeseries/coverage.json",
+        "research/energy/timeseries/normalized/global-specialized-technology-scenarios.csv",
+        "research/energy/timeseries/scenario-catalog.json",
+        "research/energy/timeseries/source-access.json"
+      ],
+      "sourceIds": [
+        "SRC-000252"
+      ],
+      "geographyTypes": [
+        "global"
+      ],
+      "periods": [
+        "2021",
+        "2030",
+        "2050",
+        "{\"historical_reference\":[2021],\"scenario_milestones\":[2030,2050]}"
+      ],
+      "unitFamilies": [
+        "capacity"
+      ],
+      "useClass": "benchmark",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000024",
+      "registryKind": "dataset",
+      "label": "DS-IRENASTAT-CAP26",
+      "description": "Research dataset represented by research/energy/datasets.json, research/energy/timeseries/coverage.json, research/energy/timeseries/normalized/global-irena-capacity-and-generation-history.csv, research/energy/timeseries/source-access.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-76d2ae4b77bd795c5c5d",
+      "legacyIds": [
+        "DS-IRENASTAT-CAP26"
+      ],
+      "path": "research/energy/datasets.json",
+      "paths": [
+        "research/energy/datasets.json",
+        "research/energy/timeseries/coverage.json",
+        "research/energy/timeseries/normalized/global-irena-capacity-and-generation-history.csv",
+        "research/energy/timeseries/source-access.json"
+      ],
+      "sourceIds": [
+        "SRC-000253"
+      ],
+      "geographyTypes": [
+        "global"
+      ],
+      "periods": [
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "unitFamilies": [
+        "capacity"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000025",
+      "registryKind": "dataset",
+      "label": "DS-IRENASTAT-GEN25",
+      "description": "Research dataset represented by research/energy/datasets.json, research/energy/timeseries/coverage.json, research/energy/timeseries/normalized/global-irena-capacity-and-generation-history.csv, research/energy/timeseries/source-access.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-d29b1ff4618cd882b367",
+      "legacyIds": [
+        "DS-IRENASTAT-GEN25"
+      ],
+      "path": "research/energy/datasets.json",
+      "paths": [
+        "research/energy/datasets.json",
+        "research/energy/timeseries/coverage.json",
+        "research/energy/timeseries/normalized/global-irena-capacity-and-generation-history.csv",
+        "research/energy/timeseries/source-access.json"
+      ],
+      "sourceIds": [
+        "SRC-000254"
+      ],
+      "geographyTypes": [
+        "global"
+      ],
+      "periods": [
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "unitFamilies": [
+        "energy"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000026",
+      "registryKind": "dataset",
+      "label": "DS-LBNL-DATACENTER24",
+      "description": "Research dataset represented by research/energy/consumption/timeseries/normalized/global-and-us-demand-milestones.csv, research/energy/datasets.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-f537c62efab6f2ebf111",
+      "legacyIds": [
+        "DS-LBNL-DATACENTER24"
+      ],
+      "path": "research/energy/consumption/timeseries/normalized/global-and-us-demand-milestones.csv",
+      "paths": [
+        "research/energy/consumption/timeseries/normalized/global-and-us-demand-milestones.csv",
+        "research/energy/datasets.json"
+      ],
+      "sourceIds": [
+        "SRC-000257"
+      ],
+      "geographyTypes": [
+        "state"
+      ],
+      "periods": [
+        "2014",
+        "2018",
+        "2023",
+        "2028"
+      ],
+      "unitFamilies": [
+        "energy"
+      ],
+      "useClass": "benchmark",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000027",
+      "registryKind": "dataset",
+      "label": "DS-LBNL-QUEUES26",
+      "description": "Research dataset represented by research/energy/datasets.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-5eaedf613c91d32bff06",
+      "legacyIds": [
+        "DS-LBNL-QUEUES26"
+      ],
+      "path": "research/energy/datasets.json",
+      "paths": [
+        "research/energy/datasets.json"
+      ],
+      "sourceIds": [
+        "SRC-000258"
+      ],
+      "geographyTypes": [
+        "state"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000028",
+      "registryKind": "dataset",
+      "label": "DS-NERC-LTRA25",
+      "description": "Research dataset represented by research/energy/datasets.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-62922f30fccda7f617b2",
+      "legacyIds": [
+        "DS-NERC-LTRA25"
+      ],
+      "path": "research/energy/datasets.json",
+      "paths": [
+        "research/energy/datasets.json"
+      ],
+      "sourceIds": [
+        "SRC-000267"
+      ],
+      "geographyTypes": [
+        "national"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000029",
+      "registryKind": "dataset",
+      "label": "DS-NGFS-PHASE5.1",
+      "description": "Research dataset represented by research/energy/consumption/accounting-boundaries.json, research/energy/consumption/scenario-statistics.json, research/energy/consumption/timeseries/normalized/global-electricity-consumption-ngfs-phase5.1.csv, research/energy/consumption/timeseries/normalized/global-electricity-supply-demand-ngfs-phase5.1.csv, research/energy/datasets.json, research/energy/timeseries/coverage.json, research/energy/timeseries/normalized/global-electricity-projections-ngfs-phase5.1.csv, research/energy/timeseries/scenario-catalog.json, research/energy/timeseries/source-access.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-62b59a6ca3969efd277b",
+      "legacyIds": [
+        "DS-NGFS-PHASE5.1"
+      ],
+      "path": "research/energy/consumption/accounting-boundaries.json",
+      "paths": [
+        "research/energy/consumption/accounting-boundaries.json",
+        "research/energy/consumption/scenario-statistics.json",
+        "research/energy/consumption/timeseries/normalized/global-electricity-consumption-ngfs-phase5.1.csv",
+        "research/energy/consumption/timeseries/normalized/global-electricity-supply-demand-ngfs-phase5.1.csv",
+        "research/energy/datasets.json",
+        "research/energy/timeseries/coverage.json",
+        "research/energy/timeseries/normalized/global-electricity-projections-ngfs-phase5.1.csv",
+        "research/energy/timeseries/scenario-catalog.json",
+        "research/energy/timeseries/source-access.json"
+      ],
+      "sourceIds": [
+        "SRC-000268"
+      ],
+      "geographyTypes": [
+        "global"
+      ],
+      "periods": [
+        "2020",
+        "2025",
+        "2030",
+        "2035",
+        "2040",
+        "2045",
+        "2050",
+        "2055",
+        "2060",
+        "2065",
+        "2070",
+        "2075",
+        "2080",
+        "2085",
+        "2090",
+        "2095",
+        "2100",
+        "{\"minimum\":2020,\"maximum\":2100,\"frequency\":\"five-year\",\"required_dashboard_years_present\":[2050,2060,2070]}"
+      ],
+      "unitFamilies": [
+        "capacity",
+        "energy"
+      ],
+      "useClass": "benchmark",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000030",
+      "registryKind": "dataset",
+      "label": "DS-NREL-EFS18",
+      "description": "Research dataset represented by research/energy/consumption/timeseries/normalized/us-electrification-scenarios-nrel-efs.csv, research/energy/datasets.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-0fac6a950344b2b8e1c9",
+      "legacyIds": [
+        "DS-NREL-EFS18"
+      ],
+      "path": "research/energy/consumption/timeseries/normalized/us-electrification-scenarios-nrel-efs.csv",
+      "paths": [
+        "research/energy/consumption/timeseries/normalized/us-electrification-scenarios-nrel-efs.csv",
+        "research/energy/datasets.json"
+      ],
+      "sourceIds": [
+        "SRC-000276"
+      ],
+      "geographyTypes": [
+        "state"
+      ],
+      "periods": [
+        "2016",
+        "2050"
+      ],
+      "unitFamilies": [
+        "energy"
+      ],
+      "useClass": "benchmark",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000031",
+      "registryKind": "dataset",
+      "label": "DS-NREL-STANDARD-SCENARIOS-2024",
+      "description": "Research dataset represented by research/energy/datasets.json, research/energy/timeseries/coverage.json, research/energy/timeseries/normalized/us-electricity-projections-nrel-standard-scenarios-2024.csv, research/energy/timeseries/scenario-catalog.json, research/energy/timeseries/source-access.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-33b98718f701008abbbc",
+      "legacyIds": [
+        "DS-NREL-STANDARD-SCENARIOS-2024"
+      ],
+      "path": "research/energy/datasets.json",
+      "paths": [
+        "research/energy/datasets.json",
+        "research/energy/timeseries/coverage.json",
+        "research/energy/timeseries/normalized/us-electricity-projections-nrel-standard-scenarios-2024.csv",
+        "research/energy/timeseries/scenario-catalog.json",
+        "research/energy/timeseries/source-access.json"
+      ],
+      "sourceIds": [
+        "SRC-000277"
+      ],
+      "geographyTypes": [
+        "state"
+      ],
+      "periods": [
+        "2026",
+        "2029",
+        "2032",
+        "2035",
+        "2038",
+        "2041",
+        "2044",
+        "2047",
+        "2050",
+        "{\"minimum\":2026,\"maximum\":2050,\"values\":[2026,2029,2032,2035,2038,2041,2044,2047,2050]}"
+      ],
+      "unitFamilies": [
+        "capacity",
+        "energy"
+      ],
+      "useClass": "benchmark",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000032",
+      "registryKind": "dataset",
+      "label": "DS-OWID-ENERGY",
+      "description": "Research dataset represented by research/energy/consumption/scenario-statistics.json, research/energy/consumption/timeseries/normalized/global-electricity-demand-history-ember-owid.csv, research/energy/datasets.json, research/energy/timeseries/coverage.json, research/energy/timeseries/normalized/global-electricity-generation-history.csv, research/energy/timeseries/source-access.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-4267520f4bf5e73f2b25",
+      "legacyIds": [
+        "DS-OWID-ENERGY"
+      ],
+      "path": "research/energy/consumption/scenario-statistics.json",
+      "paths": [
+        "research/energy/consumption/scenario-statistics.json",
+        "research/energy/consumption/timeseries/normalized/global-electricity-demand-history-ember-owid.csv",
+        "research/energy/datasets.json",
+        "research/energy/timeseries/coverage.json",
+        "research/energy/timeseries/normalized/global-electricity-generation-history.csv",
+        "research/energy/timeseries/source-access.json"
+      ],
+      "sourceIds": [
+        "SRC-000283"
+      ],
+      "geographyTypes": [
+        "global"
+      ],
+      "periods": [
+        "1965",
+        "1966",
+        "1967",
+        "1968",
+        "1969",
+        "1970",
+        "1971",
+        "1972",
+        "1973",
+        "1974",
+        "1975",
+        "1976",
+        "1977",
+        "1978",
+        "1979",
+        "1980",
+        "1981",
+        "1982",
+        "1983",
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "unitFamilies": [
+        "energy"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000033",
+      "registryKind": "dataset",
+      "label": "DS-US-MAJOR-CORRIDORS",
+      "description": "Research dataset represented by research/energy/datasets.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-ff0087d08c9a2eb05714",
+      "legacyIds": [
+        "DS-US-MAJOR-CORRIDORS"
+      ],
+      "path": "research/energy/datasets.json",
+      "paths": [
+        "research/energy/datasets.json"
+      ],
+      "sourceIds": [
+        "SRC-000228"
+      ],
+      "geographyTypes": [
+        "state"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000034",
+      "registryKind": "dataset",
+      "label": "DS-WB-TD-LOSSES",
+      "description": "Research dataset represented by research/energy/datasets.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-8a92e9825588e864fd3f",
+      "legacyIds": [
+        "DS-WB-TD-LOSSES"
+      ],
+      "path": "research/energy/datasets.json",
+      "paths": [
+        "research/energy/datasets.json"
+      ],
+      "sourceIds": [
+        "SRC-000291"
+      ],
+      "geographyTypes": [
+        "national"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000035",
+      "registryKind": "dataset",
+      "label": "federal-lca-commons",
+      "description": "Research dataset represented by research/water/timeseries/source-access.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-8f1ecdd775ba86e6c71c",
+      "legacyIds": [
+        "federal-lca-commons"
+      ],
+      "path": "research/water/timeseries/source-access.json",
+      "paths": [
+        "research/water/timeseries/source-access.json"
+      ],
+      "sourceIds": [
+        "SRC-000044"
+      ],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000036",
+      "registryKind": "dataset",
+      "label": "observations-global-energy-2025",
+      "description": "Research dataset represented by research/energy/observations-global-2025.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-6f8ffc57d0ed3bc70a69",
+      "legacyIds": [
+        "observations-global-energy-2025"
+      ],
+      "path": "research/energy/observations-global-2025.json",
+      "paths": [
+        "research/energy/observations-global-2025.json"
+      ],
+      "sourceIds": [
+        "SRC-000178",
+        "SRC-000229",
+        "SRC-000236",
+        "SRC-000237",
+        "SRC-000238",
+        "SRC-000239",
+        "SRC-000240",
+        "SRC-000241",
+        "SRC-000242",
+        "SRC-000251"
+      ],
+      "geographyTypes": [
+        "global"
+      ],
+      "periods": [
+        "2025"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000037",
+      "registryKind": "dataset",
+      "label": "observations-us-energy-2025",
+      "description": "Research dataset represented by research/energy/observations-us-2025.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-20652e8bec12134ef34e",
+      "legacyIds": [
+        "observations-us-energy-2025"
+      ],
+      "path": "research/energy/observations-us-2025.json",
+      "paths": [
+        "research/energy/observations-us-2025.json"
+      ],
+      "sourceIds": [
+        "SRC-000187",
+        "SRC-000188",
+        "SRC-000189",
+        "SRC-000195",
+        "SRC-000196"
+      ],
+      "geographyTypes": [
+        "state"
+      ],
+      "periods": [
+        "2025"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000038",
+      "registryKind": "dataset",
+      "label": "research/climate/attribution/causal-chain.json",
+      "description": "Research dataset represented by research/climate/attribution/causal-chain.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-548415d6a5f809a485c7",
+      "legacyIds": [
+        "path:research/climate/attribution/causal-chain.json"
+      ],
+      "path": "research/climate/attribution/causal-chain.json",
+      "paths": [
+        "research/climate/attribution/causal-chain.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000039",
+      "registryKind": "dataset",
+      "label": "research/climate/attribution/ghg-temperature-relationship.json",
+      "description": "Research dataset represented by research/climate/attribution/ghg-temperature-relationship.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-cc65e5ed00acdd0c6c6c",
+      "legacyIds": [
+        "path:research/climate/attribution/ghg-temperature-relationship.json"
+      ],
+      "path": "research/climate/attribution/ghg-temperature-relationship.json",
+      "paths": [
+        "research/climate/attribution/ghg-temperature-relationship.json"
+      ],
+      "sourceIds": [
+        "SRC-000055"
+      ],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000040",
+      "registryKind": "dataset",
+      "label": "research/climate/coastal-cities/adaptation-pathways.json",
+      "description": "Research dataset represented by research/climate/coastal-cities/adaptation-pathways.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-f1ee3cf64faad058d7fa",
+      "legacyIds": [
+        "path:research/climate/coastal-cities/adaptation-pathways.json"
+      ],
+      "path": "research/climate/coastal-cities/adaptation-pathways.json",
+      "paths": [
+        "research/climate/coastal-cities/adaptation-pathways.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000041",
+      "registryKind": "dataset",
+      "label": "research/climate/coastal-cities/city-risk-profiles.json",
+      "description": "Research dataset represented by research/climate/coastal-cities/city-risk-profiles.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-655e1d9fb46cb9c2c1e6",
+      "legacyIds": [
+        "path:research/climate/coastal-cities/city-risk-profiles.json"
+      ],
+      "path": "research/climate/coastal-cities/city-risk-profiles.json",
+      "paths": [
+        "research/climate/coastal-cities/city-risk-profiles.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000042",
+      "registryKind": "dataset",
+      "label": "research/climate/coastal-cities/claim-audit.json",
+      "description": "Research dataset represented by research/climate/coastal-cities/claim-audit.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-8b0179e746ed8e53b015",
+      "legacyIds": [
+        "path:research/climate/coastal-cities/claim-audit.json"
+      ],
+      "path": "research/climate/coastal-cities/claim-audit.json",
+      "paths": [
+        "research/climate/coastal-cities/claim-audit.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000043",
+      "registryKind": "dataset",
+      "label": "research/climate/coastal-cities/receiving-city-strain.json",
+      "description": "Research dataset represented by research/climate/coastal-cities/receiving-city-strain.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-12ae4b744c357b84d915",
+      "legacyIds": [
+        "path:research/climate/coastal-cities/receiving-city-strain.json"
+      ],
+      "path": "research/climate/coastal-cities/receiving-city-strain.json",
+      "paths": [
+        "research/climate/coastal-cities/receiving-city-strain.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000044",
+      "registryKind": "dataset",
+      "label": "research/climate/coastal-cities/timeseries/hauer-2100-cbsa-net-migration.csv",
+      "description": "Research dataset represented by research/climate/coastal-cities/timeseries/hauer-2100-cbsa-net-migration.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-264edc685fa1c21d94f1",
+      "legacyIds": [
+        "path:research/climate/coastal-cities/timeseries/hauer-2100-cbsa-net-migration.csv"
+      ],
+      "path": "research/climate/coastal-cities/timeseries/hauer-2100-cbsa-net-migration.csv",
+      "paths": [
+        "research/climate/coastal-cities/timeseries/hauer-2100-cbsa-net-migration.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000045",
+      "registryKind": "dataset",
+      "label": "research/climate/coastal-cities/timeseries/noaa-high-tide-flood-days.csv",
+      "description": "Research dataset represented by research/climate/coastal-cities/timeseries/noaa-high-tide-flood-days.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-7c64d5e544bc7184d209",
+      "legacyIds": [
+        "path:research/climate/coastal-cities/timeseries/noaa-high-tide-flood-days.csv"
+      ],
+      "path": "research/climate/coastal-cities/timeseries/noaa-high-tide-flood-days.csv",
+      "paths": [
+        "research/climate/coastal-cities/timeseries/noaa-high-tide-flood-days.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000046",
+      "registryKind": "dataset",
+      "label": "research/climate/coastal-cities/timeseries/noaa-relative-sea-level-scenarios.csv",
+      "description": "Research dataset represented by research/climate/coastal-cities/timeseries/noaa-relative-sea-level-scenarios.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-b4551090df11b32a89c5",
+      "legacyIds": [
+        "path:research/climate/coastal-cities/timeseries/noaa-relative-sea-level-scenarios.csv"
+      ],
+      "path": "research/climate/coastal-cities/timeseries/noaa-relative-sea-level-scenarios.csv",
+      "paths": [
+        "research/climate/coastal-cities/timeseries/noaa-relative-sea-level-scenarios.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000047",
+      "registryKind": "dataset",
+      "label": "research/climate/coastal-cities/timeseries/observed-relative-sea-level-trends.csv",
+      "description": "Research dataset represented by research/climate/coastal-cities/timeseries/observed-relative-sea-level-trends.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-35c21a21901d87964b7c",
+      "legacyIds": [
+        "path:research/climate/coastal-cities/timeseries/observed-relative-sea-level-trends.csv"
+      ],
+      "path": "research/climate/coastal-cities/timeseries/observed-relative-sea-level-trends.csv",
+      "paths": [
+        "research/climate/coastal-cities/timeseries/observed-relative-sea-level-trends.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000048",
+      "registryKind": "dataset",
+      "label": "research/climate/coastal-cities/timeseries/scenario-milestones.csv",
+      "description": "Research dataset represented by research/climate/coastal-cities/timeseries/scenario-milestones.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-fc922f716a109265df50",
+      "legacyIds": [
+        "path:research/climate/coastal-cities/timeseries/scenario-milestones.csv"
+      ],
+      "path": "research/climate/coastal-cities/timeseries/scenario-milestones.csv",
+      "paths": [
+        "research/climate/coastal-cities/timeseries/scenario-milestones.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000049",
+      "registryKind": "dataset",
+      "label": "research/climate/impacts/biodiversity.json",
+      "description": "Research dataset represented by research/climate/impacts/biodiversity.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-acab961bf27dd5f7baee",
+      "legacyIds": [
+        "path:research/climate/impacts/biodiversity.json"
+      ],
+      "path": "research/climate/impacts/biodiversity.json",
+      "paths": [
+        "research/climate/impacts/biodiversity.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000050",
+      "registryKind": "dataset",
+      "label": "research/climate/impacts/displacement.json",
+      "description": "Research dataset represented by research/climate/impacts/displacement.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-69fd281d3c5c6fcfd411",
+      "legacyIds": [
+        "path:research/climate/impacts/displacement.json"
+      ],
+      "path": "research/climate/impacts/displacement.json",
+      "paths": [
+        "research/climate/impacts/displacement.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000051",
+      "registryKind": "dataset",
+      "label": "research/climate/impacts/food-systems.json",
+      "description": "Research dataset represented by research/climate/impacts/food-systems.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-ea30e30347b9bf8efe74",
+      "legacyIds": [
+        "path:research/climate/impacts/food-systems.json"
+      ],
+      "path": "research/climate/impacts/food-systems.json",
+      "paths": [
+        "research/climate/impacts/food-systems.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000052",
+      "registryKind": "dataset",
+      "label": "research/climate/impacts/freshwater.json",
+      "description": "Research dataset represented by research/climate/impacts/freshwater.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-18beefe509985312a9f6",
+      "legacyIds": [
+        "path:research/climate/impacts/freshwater.json"
+      ],
+      "path": "research/climate/impacts/freshwater.json",
+      "paths": [
+        "research/climate/impacts/freshwater.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000053",
+      "registryKind": "dataset",
+      "label": "research/climate/impacts/hurricanes.json",
+      "description": "Research dataset represented by research/climate/impacts/hurricanes.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-d1ffc7d76cc42e1abdc6",
+      "legacyIds": [
+        "path:research/climate/impacts/hurricanes.json"
+      ],
+      "path": "research/climate/impacts/hurricanes.json",
+      "paths": [
+        "research/climate/impacts/hurricanes.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000054",
+      "registryKind": "dataset",
+      "label": "research/climate/impacts/sea-level.json",
+      "description": "Research dataset represented by research/climate/impacts/sea-level.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-f977bac44d118b4a4851",
+      "legacyIds": [
+        "path:research/climate/impacts/sea-level.json"
+      ],
+      "path": "research/climate/impacts/sea-level.json",
+      "paths": [
+        "research/climate/impacts/sea-level.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000055",
+      "registryKind": "dataset",
+      "label": "research/climate/timeseries/impact-dose-response.csv",
+      "description": "Research dataset represented by research/climate/timeseries/impact-dose-response.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-846b937ddf5c08a845f0",
+      "legacyIds": [
+        "path:research/climate/timeseries/impact-dose-response.csv"
+      ],
+      "path": "research/climate/timeseries/impact-dose-response.csv",
+      "paths": [
+        "research/climate/timeseries/impact-dose-response.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000056",
+      "registryKind": "dataset",
+      "label": "research/climate/timeseries/normalized/global-co2-emissions-and-cumulative-1850-2024.csv",
+      "description": "Research dataset represented by research/climate/timeseries/normalized/global-co2-emissions-and-cumulative-1850-2024.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-730de6d9b52ab44f0534",
+      "legacyIds": [
+        "path:research/climate/timeseries/normalized/global-co2-emissions-and-cumulative-1850-2024.csv"
+      ],
+      "path": "research/climate/timeseries/normalized/global-co2-emissions-and-cumulative-1850-2024.csv",
+      "paths": [
+        "research/climate/timeseries/normalized/global-co2-emissions-and-cumulative-1850-2024.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000057",
+      "registryKind": "dataset",
+      "label": "research/climate/timeseries/normalized/observed-correlation-statistics.json",
+      "description": "Research dataset represented by research/climate/timeseries/normalized/observed-correlation-statistics.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-9a9651f2ddb47e71349a",
+      "legacyIds": [
+        "path:research/climate/timeseries/normalized/observed-correlation-statistics.json"
+      ],
+      "path": "research/climate/timeseries/normalized/observed-correlation-statistics.json",
+      "paths": [
+        "research/climate/timeseries/normalized/observed-correlation-statistics.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000058",
+      "registryKind": "dataset",
+      "label": "research/climate/timeseries/normalized/observed-ghg-temperature.csv",
+      "description": "Research dataset represented by research/climate/timeseries/normalized/observed-ghg-temperature.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-3c0730a621fb3151c5c0",
+      "legacyIds": [
+        "path:research/climate/timeseries/normalized/observed-ghg-temperature.csv"
+      ],
+      "path": "research/climate/timeseries/normalized/observed-ghg-temperature.csv",
+      "paths": [
+        "research/climate/timeseries/normalized/observed-ghg-temperature.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000059",
+      "registryKind": "dataset",
+      "label": "research/climate/timeseries/scenario-warming.csv",
+      "description": "Research dataset represented by research/climate/timeseries/scenario-warming.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-8aa8bf90d7f008b92335",
+      "legacyIds": [
+        "path:research/climate/timeseries/scenario-warming.csv"
+      ],
+      "path": "research/climate/timeseries/scenario-warming.csv",
+      "paths": [
+        "research/climate/timeseries/scenario-warming.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000060",
+      "registryKind": "dataset",
+      "label": "research/energy/consumption/timeseries/normalized/global-and-us-demand-milestones.csv",
+      "description": "Research dataset represented by research/energy/consumption/timeseries/normalized/global-and-us-demand-milestones.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-5e2b682522cf8e213509",
+      "legacyIds": [
+        "path:research/energy/consumption/timeseries/normalized/global-and-us-demand-milestones.csv"
+      ],
+      "path": "research/energy/consumption/timeseries/normalized/global-and-us-demand-milestones.csv",
+      "paths": [
+        "research/energy/consumption/timeseries/normalized/global-and-us-demand-milestones.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000061",
+      "registryKind": "dataset",
+      "label": "research/energy/consumption/timeseries/normalized/global-electricity-consumption-ngfs-phase5.1.csv",
+      "description": "Research dataset represented by research/energy/consumption/timeseries/normalized/global-electricity-consumption-ngfs-phase5.1.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-9d367d3c5b9498127028",
+      "legacyIds": [
+        "path:research/energy/consumption/timeseries/normalized/global-electricity-consumption-ngfs-phase5.1.csv"
+      ],
+      "path": "research/energy/consumption/timeseries/normalized/global-electricity-consumption-ngfs-phase5.1.csv",
+      "paths": [
+        "research/energy/consumption/timeseries/normalized/global-electricity-consumption-ngfs-phase5.1.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000062",
+      "registryKind": "dataset",
+      "label": "research/energy/consumption/timeseries/normalized/global-electricity-demand-history-ember-owid.csv",
+      "description": "Research dataset represented by research/energy/consumption/timeseries/normalized/global-electricity-demand-history-ember-owid.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-db29e8382f454438cb2c",
+      "legacyIds": [
+        "path:research/energy/consumption/timeseries/normalized/global-electricity-demand-history-ember-owid.csv"
+      ],
+      "path": "research/energy/consumption/timeseries/normalized/global-electricity-demand-history-ember-owid.csv",
+      "paths": [
+        "research/energy/consumption/timeseries/normalized/global-electricity-demand-history-ember-owid.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000063",
+      "registryKind": "dataset",
+      "label": "research/energy/consumption/timeseries/normalized/global-electricity-supply-demand-ngfs-phase5.1.csv",
+      "description": "Research dataset represented by research/energy/consumption/timeseries/normalized/global-electricity-supply-demand-ngfs-phase5.1.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-ee29c3a723b871ea627e",
+      "legacyIds": [
+        "path:research/energy/consumption/timeseries/normalized/global-electricity-supply-demand-ngfs-phase5.1.csv"
+      ],
+      "path": "research/energy/consumption/timeseries/normalized/global-electricity-supply-demand-ngfs-phase5.1.csv",
+      "paths": [
+        "research/energy/consumption/timeseries/normalized/global-electricity-supply-demand-ngfs-phase5.1.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000064",
+      "registryKind": "dataset",
+      "label": "research/energy/consumption/timeseries/normalized/us-demand-drivers-aeo2026.csv",
+      "description": "Research dataset represented by research/energy/consumption/timeseries/normalized/us-demand-drivers-aeo2026.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-ad2c634a4d0d61063928",
+      "legacyIds": [
+        "path:research/energy/consumption/timeseries/normalized/us-demand-drivers-aeo2026.csv"
+      ],
+      "path": "research/energy/consumption/timeseries/normalized/us-demand-drivers-aeo2026.csv",
+      "paths": [
+        "research/energy/consumption/timeseries/normalized/us-demand-drivers-aeo2026.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000065",
+      "registryKind": "dataset",
+      "label": "research/energy/consumption/timeseries/normalized/us-electricity-consumption-history.csv",
+      "description": "Research dataset represented by research/energy/consumption/timeseries/normalized/us-electricity-consumption-history.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-2744d345f97e8e47d3a1",
+      "legacyIds": [
+        "path:research/energy/consumption/timeseries/normalized/us-electricity-consumption-history.csv"
+      ],
+      "path": "research/energy/consumption/timeseries/normalized/us-electricity-consumption-history.csv",
+      "paths": [
+        "research/energy/consumption/timeseries/normalized/us-electricity-consumption-history.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000066",
+      "registryKind": "dataset",
+      "label": "research/energy/consumption/timeseries/normalized/us-electricity-end-use-aeo2026.csv",
+      "description": "Research dataset represented by research/energy/consumption/timeseries/normalized/us-electricity-end-use-aeo2026.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-5509b94f22c68de84ed8",
+      "legacyIds": [
+        "path:research/energy/consumption/timeseries/normalized/us-electricity-end-use-aeo2026.csv"
+      ],
+      "path": "research/energy/consumption/timeseries/normalized/us-electricity-end-use-aeo2026.csv",
+      "paths": [
+        "research/energy/consumption/timeseries/normalized/us-electricity-end-use-aeo2026.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000067",
+      "registryKind": "dataset",
+      "label": "research/energy/consumption/timeseries/normalized/us-electricity-supply-demand-aeo2026.csv",
+      "description": "Research dataset represented by research/energy/consumption/timeseries/normalized/us-electricity-supply-demand-aeo2026.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-3687c8fb6d50be756fd5",
+      "legacyIds": [
+        "path:research/energy/consumption/timeseries/normalized/us-electricity-supply-demand-aeo2026.csv"
+      ],
+      "path": "research/energy/consumption/timeseries/normalized/us-electricity-supply-demand-aeo2026.csv",
+      "paths": [
+        "research/energy/consumption/timeseries/normalized/us-electricity-supply-demand-aeo2026.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000068",
+      "registryKind": "dataset",
+      "label": "research/energy/consumption/timeseries/normalized/us-electrification-scenarios-nrel-efs.csv",
+      "description": "Research dataset represented by research/energy/consumption/timeseries/normalized/us-electrification-scenarios-nrel-efs.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-fcaf443c8eaab4f60d04",
+      "legacyIds": [
+        "path:research/energy/consumption/timeseries/normalized/us-electrification-scenarios-nrel-efs.csv"
+      ],
+      "path": "research/energy/consumption/timeseries/normalized/us-electrification-scenarios-nrel-efs.csv",
+      "paths": [
+        "research/energy/consumption/timeseries/normalized/us-electrification-scenarios-nrel-efs.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000069",
+      "registryKind": "dataset",
+      "label": "research/energy/timeseries/normalized/global-electricity-generation-history.csv",
+      "description": "Research dataset represented by research/energy/timeseries/normalized/global-electricity-generation-history.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-850c8bd377a8860fb9be",
+      "legacyIds": [
+        "path:research/energy/timeseries/normalized/global-electricity-generation-history.csv"
+      ],
+      "path": "research/energy/timeseries/normalized/global-electricity-generation-history.csv",
+      "paths": [
+        "research/energy/timeseries/normalized/global-electricity-generation-history.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "energy"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000070",
+      "registryKind": "dataset",
+      "label": "research/energy/timeseries/normalized/global-electricity-projections-ngfs-phase5.1.csv",
+      "description": "Research dataset represented by research/energy/timeseries/normalized/global-electricity-projections-ngfs-phase5.1.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-77515835dc2dbc463399",
+      "legacyIds": [
+        "path:research/energy/timeseries/normalized/global-electricity-projections-ngfs-phase5.1.csv"
+      ],
+      "path": "research/energy/timeseries/normalized/global-electricity-projections-ngfs-phase5.1.csv",
+      "paths": [
+        "research/energy/timeseries/normalized/global-electricity-projections-ngfs-phase5.1.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000071",
+      "registryKind": "dataset",
+      "label": "research/energy/timeseries/normalized/global-irena-capacity-and-generation-history.csv",
+      "description": "Research dataset represented by research/energy/timeseries/normalized/global-irena-capacity-and-generation-history.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-0dfeadd188ca14e3424f",
+      "legacyIds": [
+        "path:research/energy/timeseries/normalized/global-irena-capacity-and-generation-history.csv"
+      ],
+      "path": "research/energy/timeseries/normalized/global-irena-capacity-and-generation-history.csv",
+      "paths": [
+        "research/energy/timeseries/normalized/global-irena-capacity-and-generation-history.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "capacity",
+        "energy"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000072",
+      "registryKind": "dataset",
+      "label": "research/energy/timeseries/normalized/global-specialized-technology-scenarios.csv",
+      "description": "Research dataset represented by research/energy/timeseries/normalized/global-specialized-technology-scenarios.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-e9d050c76cc44776e43f",
+      "legacyIds": [
+        "path:research/energy/timeseries/normalized/global-specialized-technology-scenarios.csv"
+      ],
+      "path": "research/energy/timeseries/normalized/global-specialized-technology-scenarios.csv",
+      "paths": [
+        "research/energy/timeseries/normalized/global-specialized-technology-scenarios.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "capacity"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000073",
+      "registryKind": "dataset",
+      "label": "research/energy/timeseries/normalized/us-electricity-generation-history.csv",
+      "description": "Research dataset represented by research/energy/timeseries/normalized/us-electricity-generation-history.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-68a0ae703abbe0bb6556",
+      "legacyIds": [
+        "path:research/energy/timeseries/normalized/us-electricity-generation-history.csv"
+      ],
+      "path": "research/energy/timeseries/normalized/us-electricity-generation-history.csv",
+      "paths": [
+        "research/energy/timeseries/normalized/us-electricity-generation-history.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "energy"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000074",
+      "registryKind": "dataset",
+      "label": "research/energy/timeseries/normalized/us-electricity-projections-aeo2026.csv",
+      "description": "Research dataset represented by research/energy/timeseries/normalized/us-electricity-projections-aeo2026.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-49f4879ecfeaff6b65d1",
+      "legacyIds": [
+        "path:research/energy/timeseries/normalized/us-electricity-projections-aeo2026.csv"
+      ],
+      "path": "research/energy/timeseries/normalized/us-electricity-projections-aeo2026.csv",
+      "paths": [
+        "research/energy/timeseries/normalized/us-electricity-projections-aeo2026.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000075",
+      "registryKind": "dataset",
+      "label": "research/energy/timeseries/normalized/us-electricity-projections-nrel-standard-scenarios-2024.csv",
+      "description": "Research dataset represented by research/energy/timeseries/normalized/us-electricity-projections-nrel-standard-scenarios-2024.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-ef78e1874fd674a19b4b",
+      "legacyIds": [
+        "path:research/energy/timeseries/normalized/us-electricity-projections-nrel-standard-scenarios-2024.csv"
+      ],
+      "path": "research/energy/timeseries/normalized/us-electricity-projections-nrel-standard-scenarios-2024.csv",
+      "paths": [
+        "research/energy/timeseries/normalized/us-electricity-projections-nrel-standard-scenarios-2024.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000076",
+      "registryKind": "dataset",
+      "label": "research/energy/transmission/corridors/base-layers/hifld-transmission-lines-230kv-plus.geojson",
+      "description": "Research dataset represented by research/energy/transmission/corridors/base-layers/hifld-transmission-lines-230kv-plus.geojson.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-4b2b6b4d2c0b9b114ce4",
+      "legacyIds": [
+        "path:research/energy/transmission/corridors/base-layers/hifld-transmission-lines-230kv-plus.geojson"
+      ],
+      "path": "research/energy/transmission/corridors/base-layers/hifld-transmission-lines-230kv-plus.geojson",
+      "paths": [
+        "research/energy/transmission/corridors/base-layers/hifld-transmission-lines-230kv-plus.geojson"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000077",
+      "registryKind": "dataset",
+      "label": "research/energy/transmission/corridors/corridor-catalog.json",
+      "description": "Research dataset represented by research/energy/transmission/corridors/corridor-catalog.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-323faf128c1ee0439b97",
+      "legacyIds": [
+        "path:research/energy/transmission/corridors/corridor-catalog.json"
+      ],
+      "path": "research/energy/transmission/corridors/corridor-catalog.json",
+      "paths": [
+        "research/energy/transmission/corridors/corridor-catalog.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000078",
+      "registryKind": "dataset",
+      "label": "research/energy/transmission/corridors/major-corridors.geojson",
+      "description": "Research dataset represented by research/energy/transmission/corridors/major-corridors.geojson.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-4044491021b7352542b9",
+      "legacyIds": [
+        "path:research/energy/transmission/corridors/major-corridors.geojson"
+      ],
+      "path": "research/energy/transmission/corridors/major-corridors.geojson",
+      "paths": [
+        "research/energy/transmission/corridors/major-corridors.geojson"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000079",
+      "registryKind": "dataset",
+      "label": "research/energy/transmission/cross-domain-gap-register.json",
+      "description": "Research dataset represented by research/energy/transmission/cross-domain-gap-register.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-bf171a498ee29467bbd1",
+      "legacyIds": [
+        "path:research/energy/transmission/cross-domain-gap-register.json"
+      ],
+      "path": "research/energy/transmission/cross-domain-gap-register.json",
+      "paths": [
+        "research/energy/transmission/cross-domain-gap-register.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000080",
+      "registryKind": "dataset",
+      "label": "research/energy/transmission/load-shape/timeseries/normalized/average-hourly-load-profiles-2024.csv",
+      "description": "Research dataset represented by research/energy/transmission/load-shape/timeseries/normalized/average-hourly-load-profiles-2024.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-3a64f35a0f64a34bac8e",
+      "legacyIds": [
+        "path:research/energy/transmission/load-shape/timeseries/normalized/average-hourly-load-profiles-2024.csv"
+      ],
+      "path": "research/energy/transmission/load-shape/timeseries/normalized/average-hourly-load-profiles-2024.csv",
+      "paths": [
+        "research/energy/transmission/load-shape/timeseries/normalized/average-hourly-load-profiles-2024.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000081",
+      "registryKind": "dataset",
+      "label": "research/energy/transmission/load-shape/timeseries/normalized/load-shape-summary-2024.csv",
+      "description": "Research dataset represented by research/energy/transmission/load-shape/timeseries/normalized/load-shape-summary-2024.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-385495da2633f68e87e3",
+      "legacyIds": [
+        "path:research/energy/transmission/load-shape/timeseries/normalized/load-shape-summary-2024.csv"
+      ],
+      "path": "research/energy/transmission/load-shape/timeseries/normalized/load-shape-summary-2024.csv",
+      "paths": [
+        "research/energy/transmission/load-shape/timeseries/normalized/load-shape-summary-2024.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000082",
+      "registryKind": "dataset",
+      "label": "research/energy/transmission/needs-and-expectations.json",
+      "description": "Research dataset represented by research/energy/transmission/needs-and-expectations.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-ae82c617fb4e32f052a9",
+      "legacyIds": [
+        "path:research/energy/transmission/needs-and-expectations.json"
+      ],
+      "path": "research/energy/transmission/needs-and-expectations.json",
+      "paths": [
+        "research/energy/transmission/needs-and-expectations.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000083",
+      "registryKind": "dataset",
+      "label": "research/energy/transmission/process/process-graph.json",
+      "description": "Research dataset represented by research/energy/transmission/process/process-graph.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-2cd71e9039b44867fa94",
+      "legacyIds": [
+        "path:research/energy/transmission/process/process-graph.json"
+      ],
+      "path": "research/energy/transmission/process/process-graph.json",
+      "paths": [
+        "research/energy/transmission/process/process-graph.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000084",
+      "registryKind": "dataset",
+      "label": "research/energy/transmission/supply-chain/bottleneck-register.json",
+      "description": "Research dataset represented by research/energy/transmission/supply-chain/bottleneck-register.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-29432115802f0dc663e7",
+      "legacyIds": [
+        "path:research/energy/transmission/supply-chain/bottleneck-register.json"
+      ],
+      "path": "research/energy/transmission/supply-chain/bottleneck-register.json",
+      "paths": [
+        "research/energy/transmission/supply-chain/bottleneck-register.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000085",
+      "registryKind": "dataset",
+      "label": "research/energy/transmission/supply-chain/supply-chain-map.json",
+      "description": "Research dataset represented by research/energy/transmission/supply-chain/supply-chain-map.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-8db013bbec94ebb9afaa",
+      "legacyIds": [
+        "path:research/energy/transmission/supply-chain/supply-chain-map.json"
+      ],
+      "path": "research/energy/transmission/supply-chain/supply-chain-map.json",
+      "paths": [
+        "research/energy/transmission/supply-chain/supply-chain-map.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000086",
+      "registryKind": "dataset",
+      "label": "research/energy/transmission/supply-chain/transformers.json",
+      "description": "Research dataset represented by research/energy/transmission/supply-chain/transformers.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-262d8cdd4ddd6cdeeb45",
+      "legacyIds": [
+        "path:research/energy/transmission/supply-chain/transformers.json"
+      ],
+      "path": "research/energy/transmission/supply-chain/transformers.json",
+      "paths": [
+        "research/energy/transmission/supply-chain/transformers.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000087",
+      "registryKind": "dataset",
+      "label": "research/plastics/country-case-studies.json",
+      "description": "Research dataset represented by research/plastics/country-case-studies.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-6c027278ab487d890d94",
+      "legacyIds": [
+        "path:research/plastics/country-case-studies.json"
+      ],
+      "path": "research/plastics/country-case-studies.json",
+      "paths": [
+        "research/plastics/country-case-studies.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000088",
+      "registryKind": "dataset",
+      "label": "research/plastics/gaps.json",
+      "description": "Research dataset represented by research/plastics/gaps.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-ba78535c3dab58f8f3d6",
+      "legacyIds": [
+        "path:research/plastics/gaps.json"
+      ],
+      "path": "research/plastics/gaps.json",
+      "paths": [
+        "research/plastics/gaps.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000089",
+      "registryKind": "dataset",
+      "label": "research/plastics/health-evidence.json",
+      "description": "Research dataset represented by research/plastics/health-evidence.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-4ee9336924abda6290de",
+      "legacyIds": [
+        "path:research/plastics/health-evidence.json"
+      ],
+      "path": "research/plastics/health-evidence.json",
+      "paths": [
+        "research/plastics/health-evidence.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000090",
+      "registryKind": "dataset",
+      "label": "research/plastics/manufacturing-pathways.json",
+      "description": "Research dataset represented by research/plastics/manufacturing-pathways.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-be5bf9855f530137a4a0",
+      "legacyIds": [
+        "path:research/plastics/manufacturing-pathways.json"
+      ],
+      "path": "research/plastics/manufacturing-pathways.json",
+      "paths": [
+        "research/plastics/manufacturing-pathways.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000091",
+      "registryKind": "dataset",
+      "label": "research/plastics/replacement-strategy.json",
+      "description": "Research dataset represented by research/plastics/replacement-strategy.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-a1dd06fbc87ffa86d820",
+      "legacyIds": [
+        "path:research/plastics/replacement-strategy.json"
+      ],
+      "path": "research/plastics/replacement-strategy.json",
+      "paths": [
+        "research/plastics/replacement-strategy.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000092",
+      "registryKind": "dataset",
+      "label": "research/plastics/scenarios/gross-water-avoidance.csv",
+      "description": "Research dataset represented by research/plastics/scenarios/gross-water-avoidance.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-45fe9eb53ce2737994eb",
+      "legacyIds": [
+        "path:research/plastics/scenarios/gross-water-avoidance.csv"
+      ],
+      "path": "research/plastics/scenarios/gross-water-avoidance.csv",
+      "paths": [
+        "research/plastics/scenarios/gross-water-avoidance.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000093",
+      "registryKind": "dataset",
+      "label": "research/plastics/seaweed.json",
+      "description": "Research dataset represented by research/plastics/seaweed.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-4a22368aaa2e6362ddff",
+      "legacyIds": [
+        "path:research/plastics/seaweed.json"
+      ],
+      "path": "research/plastics/seaweed.json",
+      "paths": [
+        "research/plastics/seaweed.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000094",
+      "registryKind": "dataset",
+      "label": "research/plastics/us-material-flows.json",
+      "description": "Research dataset represented by research/plastics/us-material-flows.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-04b78449b2aa0d1f7e2b",
+      "legacyIds": [
+        "path:research/plastics/us-material-flows.json"
+      ],
+      "path": "research/plastics/us-material-flows.json",
+      "paths": [
+        "research/plastics/us-material-flows.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000095",
+      "registryKind": "dataset",
+      "label": "research/water/risk/city-source-dependencies.json",
+      "description": "Research dataset represented by research/water/risk/city-source-dependencies.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-263c3a5103067a8c732a",
+      "legacyIds": [
+        "path:research/water/risk/city-source-dependencies.json"
+      ],
+      "path": "research/water/risk/city-source-dependencies.json",
+      "paths": [
+        "research/water/risk/city-source-dependencies.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000096",
+      "registryKind": "dataset",
+      "label": "research/water/sectors/data-centers.json",
+      "description": "Research dataset represented by research/water/sectors/data-centers.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-dbdb7dbb3176271dbaf1",
+      "legacyIds": [
+        "path:research/water/sectors/data-centers.json"
+      ],
+      "path": "research/water/sectors/data-centers.json",
+      "paths": [
+        "research/water/sectors/data-centers.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000097",
+      "registryKind": "dataset",
+      "label": "research/water/timeseries/risk-horizons.csv",
+      "description": "Research dataset represented by research/water/timeseries/risk-horizons.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-086190d5a14c06ce6dfc",
+      "legacyIds": [
+        "path:research/water/timeseries/risk-horizons.csv"
+      ],
+      "path": "research/water/timeseries/risk-horizons.csv",
+      "paths": [
+        "research/water/timeseries/risk-horizons.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000098",
+      "registryKind": "dataset",
+      "label": "research/water/timeseries/technology-scale-scenarios.csv",
+      "description": "Research dataset represented by research/water/timeseries/technology-scale-scenarios.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-0e78ed48728d06339bde",
+      "legacyIds": [
+        "path:research/water/timeseries/technology-scale-scenarios.csv"
+      ],
+      "path": "research/water/timeseries/technology-scale-scenarios.csv",
+      "paths": [
+        "research/water/timeseries/technology-scale-scenarios.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000099",
+      "registryKind": "dataset",
+      "label": "research/water/timeseries/usgs-historical-water-use-1950-2015.csv",
+      "description": "Research dataset represented by research/water/timeseries/usgs-historical-water-use-1950-2015.csv.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-98a488c9a606423fd9ae",
+      "legacyIds": [
+        "path:research/water/timeseries/usgs-historical-water-use-1950-2015.csv"
+      ],
+      "path": "research/water/timeseries/usgs-historical-water-use-1950-2015.csv",
+      "paths": [
+        "research/water/timeseries/usgs-historical-water-use-1950-2015.csv"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000100",
+      "registryKind": "dataset",
+      "label": "twdb-state-water-plan",
+      "description": "Research dataset represented by research/water/timeseries/source-access.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-bf3fb56c7ddf2cdd8c81",
+      "legacyIds": [
+        "twdb-state-water-plan"
+      ],
+      "path": "research/water/timeseries/source-access.json",
+      "paths": [
+        "research/water/timeseries/source-access.json"
+      ],
+      "sourceIds": [
+        "SRC-000302"
+      ],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000101",
+      "registryKind": "dataset",
+      "label": "usgs-circular-1441-2015",
+      "description": "Research dataset represented by research/water/timeseries/source-access.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-97aa0477cc5e9633c273",
+      "legacyIds": [
+        "usgs-circular-1441-2015"
+      ],
+      "path": "research/water/timeseries/source-access.json",
+      "paths": [
+        "research/water/timeseries/source-access.json"
+      ],
+      "sourceIds": [
+        "SRC-000318"
+      ],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000102",
+      "registryKind": "dataset",
+      "label": "usgs-high-plains-aquifer",
+      "description": "Research dataset represented by research/water/timeseries/source-access.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-a8d284f3e18da119610e",
+      "legacyIds": [
+        "usgs-high-plains-aquifer"
+      ],
+      "path": "research/water/timeseries/source-access.json",
+      "paths": [
+        "research/water/timeseries/source-access.json"
+      ],
+      "sourceIds": [
+        "SRC-000321"
+      ],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000103",
+      "registryKind": "dataset",
+      "label": "usgs-nwaa",
+      "description": "Research dataset represented by research/water/timeseries/source-access.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-6011233d7076fc90ec4b",
+      "legacyIds": [
+        "usgs-nwaa"
+      ],
+      "path": "research/water/timeseries/source-access.json",
+      "paths": [
+        "research/water/timeseries/source-access.json"
+      ],
+      "sourceIds": [
+        "SRC-000328"
+      ],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000104",
+      "registryKind": "dataset",
+      "label": "usgs-pp1894d-2010-2020",
+      "description": "Research dataset represented by research/water/timeseries/source-access.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-f83d7a5f0277a09dd3e0",
+      "legacyIds": [
+        "usgs-pp1894d-2010-2020"
+      ],
+      "path": "research/water/timeseries/source-access.json",
+      "paths": [
+        "research/water/timeseries/source-access.json"
+      ],
+      "sourceIds": [
+        "SRC-000330"
+      ],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000105",
+      "registryKind": "dataset",
+      "label": "utility-annual-water-quality-reports",
+      "description": "Research dataset represented by research/water/timeseries/source-access.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-205540162fee3eaf6a31",
+      "legacyIds": [
+        "utility-annual-water-quality-reports"
+      ],
+      "path": "research/water/timeseries/source-access.json",
+      "paths": [
+        "research/water/timeseries/source-access.json"
+      ],
+      "sourceIds": [
+        "SRC-000067",
+        "SRC-000111"
+      ],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000106",
+      "registryKind": "dataset",
+      "label": "research/climate/impacts/temperature-risk-ladder.json",
+      "description": "Research dataset represented by research/climate/impacts/temperature-risk-ladder.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-028230f21aeb0dbd2ccd",
+      "legacyIds": [
+        "path:research/climate/impacts/temperature-risk-ladder.json"
+      ],
+      "path": "research/climate/impacts/temperature-risk-ladder.json",
+      "paths": [
+        "research/climate/impacts/temperature-risk-ladder.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000107",
+      "registryKind": "dataset",
+      "label": "research/energy/impacts/nuclear-generation.json",
+      "description": "Research dataset represented by research/energy/impacts/nuclear-generation.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-421842a4d82482f75c4a",
+      "legacyIds": [
+        "path:research/energy/impacts/nuclear-generation.json"
+      ],
+      "path": "research/energy/impacts/nuclear-generation.json",
+      "paths": [
+        "research/energy/impacts/nuclear-generation.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000108",
+      "registryKind": "dataset",
+      "label": "research/energy/impacts/technology-impact-matrix.json",
+      "description": "Research dataset represented by research/energy/impacts/technology-impact-matrix.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-a2cf69b4bd1ea406bbea",
+      "legacyIds": [
+        "path:research/energy/impacts/technology-impact-matrix.json"
+      ],
+      "path": "research/energy/impacts/technology-impact-matrix.json",
+      "paths": [
+        "research/energy/impacts/technology-impact-matrix.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000109",
+      "registryKind": "dataset",
+      "label": "research/water/accounting-boundaries.json",
+      "description": "Research dataset represented by research/water/accounting-boundaries.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-d8fbd738214c8de7724a",
+      "legacyIds": [
+        "path:research/water/accounting-boundaries.json"
+      ],
+      "path": "research/water/accounting-boundaries.json",
+      "paths": [
+        "research/water/accounting-boundaries.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000110",
+      "registryKind": "dataset",
+      "label": "research/water/cross-domain-findings.json",
+      "description": "Research dataset represented by research/water/cross-domain-findings.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-48dbff96baa2faf83f30",
+      "legacyIds": [
+        "path:research/water/cross-domain-findings.json"
+      ],
+      "path": "research/water/cross-domain-findings.json",
+      "paths": [
+        "research/water/cross-domain-findings.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000111",
+      "registryKind": "dataset",
+      "label": "research/water/gaps.json",
+      "description": "Research dataset represented by research/water/gaps.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-5a7411698f1d2506ff85",
+      "legacyIds": [
+        "path:research/water/gaps.json"
+      ],
+      "path": "research/water/gaps.json",
+      "paths": [
+        "research/water/gaps.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000112",
+      "registryKind": "dataset",
+      "label": "research/climate/gaps.json",
+      "description": "Research dataset represented by research/climate/gaps.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-516e8eb2067c094088e9",
+      "legacyIds": [
+        "path:research/climate/gaps.json"
+      ],
+      "path": "research/climate/gaps.json",
+      "paths": [
+        "research/climate/gaps.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000113",
+      "registryKind": "dataset",
+      "label": "research/climate/summary.json",
+      "description": "Research dataset represented by research/climate/summary.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-19c381d556dfe7127fa2",
+      "legacyIds": [
+        "path:research/climate/summary.json"
+      ],
+      "path": "research/climate/summary.json",
+      "paths": [
+        "research/climate/summary.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000114",
+      "registryKind": "dataset",
+      "label": "research/energy/consumption/demand-drivers.json",
+      "description": "Research dataset represented by research/energy/consumption/demand-drivers.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-9f99718d6042f973916b",
+      "legacyIds": [
+        "path:research/energy/consumption/demand-drivers.json"
+      ],
+      "path": "research/energy/consumption/demand-drivers.json",
+      "paths": [
+        "research/energy/consumption/demand-drivers.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000115",
+      "registryKind": "dataset",
+      "label": "research/energy/en-roads/model-map.json",
+      "description": "Research dataset represented by research/energy/en-roads/model-map.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-c6027e29fb753fc5af03",
+      "legacyIds": [
+        "path:research/energy/en-roads/model-map.json"
+      ],
+      "path": "research/energy/en-roads/model-map.json",
+      "paths": [
+        "research/energy/en-roads/model-map.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000116",
+      "registryKind": "dataset",
+      "label": "research/energy/technology-taxonomy.json",
+      "description": "Research dataset represented by research/energy/technology-taxonomy.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-3c55267a89d47c102c2e",
+      "legacyIds": [
+        "path:research/energy/technology-taxonomy.json"
+      ],
+      "path": "research/energy/technology-taxonomy.json",
+      "paths": [
+        "research/energy/technology-taxonomy.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000117",
+      "registryKind": "dataset",
+      "label": "research/energy/timeseries/gap-register.json",
+      "description": "Research dataset represented by research/energy/timeseries/gap-register.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-7600e1959d76ec85f5b8",
+      "legacyIds": [
+        "path:research/energy/timeseries/gap-register.json"
+      ],
+      "path": "research/energy/timeseries/gap-register.json",
+      "paths": [
+        "research/energy/timeseries/gap-register.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000118",
+      "registryKind": "dataset",
+      "label": "research/energy/transmission/infrastructure-challenges.json",
+      "description": "Research dataset represented by research/energy/transmission/infrastructure-challenges.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-baad212dcbb3e77037ab",
+      "legacyIds": [
+        "path:research/energy/transmission/infrastructure-challenges.json"
+      ],
+      "path": "research/energy/transmission/infrastructure-challenges.json",
+      "paths": [
+        "research/energy/transmission/infrastructure-challenges.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000119",
+      "registryKind": "dataset",
+      "label": "research/water/risk/risk-register.json",
+      "description": "Research dataset represented by research/water/risk/risk-register.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-38ddd1141f52fea900e3",
+      "legacyIds": [
+        "path:research/water/risk/risk-register.json"
+      ],
+      "path": "research/water/risk/risk-register.json",
+      "paths": [
+        "research/water/risk/risk-register.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000120",
+      "registryKind": "dataset",
+      "label": "research/water/sectors/agriculture.json",
+      "description": "Research dataset represented by research/water/sectors/agriculture.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-11595f39f7b829b1070f",
+      "legacyIds": [
+        "path:research/water/sectors/agriculture.json"
+      ],
+      "path": "research/water/sectors/agriculture.json",
+      "paths": [
+        "research/water/sectors/agriculture.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000121",
+      "registryKind": "dataset",
+      "label": "research/water/sectors/manufacturing-plastics.json",
+      "description": "Research dataset represented by research/water/sectors/manufacturing-plastics.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-c16847c9438fea40f105",
+      "legacyIds": [
+        "path:research/water/sectors/manufacturing-plastics.json"
+      ],
+      "path": "research/water/sectors/manufacturing-plastics.json",
+      "paths": [
+        "research/water/sectors/manufacturing-plastics.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000122",
+      "registryKind": "dataset",
+      "label": "research/water/summary.json",
+      "description": "Research dataset represented by research/water/summary.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-e2d0a60b79b65b0715ba",
+      "legacyIds": [
+        "path:research/water/summary.json"
+      ],
+      "path": "research/water/summary.json",
+      "paths": [
+        "research/water/summary.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000123",
+      "registryKind": "dataset",
+      "label": "research/water/technologies/atmospheric-water-generation.json",
+      "description": "Research dataset represented by research/water/technologies/atmospheric-water-generation.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-0191f9c4f662849336f9",
+      "legacyIds": [
+        "path:research/water/technologies/atmospheric-water-generation.json"
+      ],
+      "path": "research/water/technologies/atmospheric-water-generation.json",
+      "paths": [
+        "research/water/technologies/atmospheric-water-generation.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000124",
+      "registryKind": "dataset",
+      "label": "research/water/technologies/desalination.json",
+      "description": "Research dataset represented by research/water/technologies/desalination.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-cf68b623dd3c2a2ccf5f",
+      "legacyIds": [
+        "path:research/water/technologies/desalination.json"
+      ],
+      "path": "research/water/technologies/desalination.json",
+      "paths": [
+        "research/water/technologies/desalination.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000125",
+      "registryKind": "dataset",
+      "label": "research/climate/plan-chart-contracts.json",
+      "description": "Research dataset represented by research/climate/plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-8d1c60ed6a048b275556",
+      "legacyIds": [
+        "path:research/climate/plan-chart-contracts.json"
+      ],
+      "path": "research/climate/plan-chart-contracts.json",
+      "paths": [
+        "research/climate/plan-chart-contracts.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000126",
+      "registryKind": "dataset",
+      "label": "research/energy/plan-chart-contracts.json",
+      "description": "Research dataset represented by research/energy/plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-3074007e3375acd0ec32",
+      "legacyIds": [
+        "path:research/energy/plan-chart-contracts.json"
+      ],
+      "path": "research/energy/plan-chart-contracts.json",
+      "paths": [
+        "research/energy/plan-chart-contracts.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000127",
+      "registryKind": "dataset",
+      "label": "research/energy/summary.json",
+      "description": "Research dataset represented by research/energy/summary.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-053890101bf0305ad048",
+      "legacyIds": [
+        "path:research/energy/summary.json"
+      ],
+      "path": "research/energy/summary.json",
+      "paths": [
+        "research/energy/summary.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000128",
+      "registryKind": "dataset",
+      "label": "research/plastics/summary.json",
+      "description": "Research dataset represented by research/plastics/summary.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-6f614b0bcc38196c8656",
+      "legacyIds": [
+        "path:research/plastics/summary.json"
+      ],
+      "path": "research/plastics/summary.json",
+      "paths": [
+        "research/plastics/summary.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000129",
+      "registryKind": "dataset",
+      "label": "research/water/food-plan-chart-contracts.json",
+      "description": "Research dataset represented by research/water/food-plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-300eecfed2dd6d7c713f",
+      "legacyIds": [
+        "path:research/water/food-plan-chart-contracts.json"
+      ],
+      "path": "research/water/food-plan-chart-contracts.json",
+      "paths": [
+        "research/water/food-plan-chart-contracts.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000130",
+      "registryKind": "dataset",
+      "label": "research/water/national-water-use.json",
+      "description": "Research dataset represented by research/water/national-water-use.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-f97451a55a5de0417437",
+      "legacyIds": [
+        "path:research/water/national-water-use.json"
+      ],
+      "path": "research/water/national-water-use.json",
+      "paths": [
+        "research/water/national-water-use.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    }
+  ]
+}

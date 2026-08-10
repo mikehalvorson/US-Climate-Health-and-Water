@@ -1,0 +1,2823 @@
+{
+  "schemaVersion": "1.0.0",
+  "evidenceVintage": "2026-08-01",
+  "recordType": "open_item",
+  "recordCount": 102,
+  "provenance": {
+    "canonicalInput": "src/generated/registry.json",
+    "generator": "tools/build-public-data.mjs",
+    "hashAlgorithm": "sha256"
+  },
+  "records": [
+    {
+      "id": "OPN-000001",
+      "registryKind": "open_item",
+      "label": "citywide_inundation_deadline",
+      "description": "No authoritative study establishes a date when all of New Orleans or all of Miami becomes permanently inundated.",
+      "status": "active",
+      "semanticFingerprint": "fp-c13eabce79552a4b0e74",
+      "legacyIds": [
+        "research/climate/coastal-cities/gaps.json:CC-GAP-001"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000009"
+      ],
+      "owner": "coastal",
+      "nextAction": "[\"parcel-scale elevations with vertical datum\",\"hydraulic connectivity\",\"defense and drainage performance\",\"groundwater\",\"adaptation pathway\",\"scenario and time horizon\"]",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "CC-GAP-001",
+      "sourcePath": "research/climate/coastal-cities/gaps.json"
+    },
+    {
+      "id": "OPN-000002",
+      "registryKind": "open_item",
+      "label": "2070_parcel_exposure",
+      "description": "Comparable parcel-level 2070 exposure, population, property, and essential-service layers for both cities under current NOAA scenarios and explicit adaptation variants.",
+      "status": "active",
+      "semanticFingerprint": "fp-97b4532b72389ca7cff1",
+      "legacyIds": [
+        "research/climate/coastal-cities/gaps.json:CC-GAP-002"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000009"
+      ],
+      "owner": "coastal",
+      "nextAction": "Acquire and validate the missing evidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "CC-GAP-002",
+      "sourcePath": "research/climate/coastal-cities/gaps.json"
+    },
+    {
+      "id": "OPN-000003",
+      "registryKind": "open_item",
+      "label": "defense_condition_and_future_standard",
+      "description": "Machine-readable asset-by-asset condition, elevation margin, settlement, failure probability, upgrade schedule, cost, and funding for levees, gates, pumps, outfalls, canals, seawalls, and raised infrastructure.",
+      "status": "active",
+      "semanticFingerprint": "fp-ac57c81b38613122b266",
+      "legacyIds": [
+        "research/climate/coastal-cities/gaps.json:CC-GAP-003"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000009"
+      ],
+      "owner": "coastal",
+      "nextAction": "Acquire and validate the missing evidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "CC-GAP-003",
+      "sourcePath": "research/climate/coastal-cities/gaps.json"
+    },
+    {
+      "id": "OPN-000004",
+      "registryKind": "open_item",
+      "label": "compound_flooding",
+      "description": "Joint, spatially aligned probabilities for tide, surge, rainfall, groundwater, river/canal stage, pump availability, power loss, and blocked outfalls.",
+      "status": "active",
+      "semanticFingerprint": "fp-4dfd8c2f9473241ac1d7",
+      "legacyIds": [
+        "research/climate/coastal-cities/gaps.json:CC-GAP-004"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000009"
+      ],
+      "owner": "coastal",
+      "nextAction": "Acquire and validate the missing evidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "CC-GAP-004",
+      "sourcePath": "research/climate/coastal-cities/gaps.json"
+    },
+    {
+      "id": "OPN-000005",
+      "registryKind": "open_item",
+      "label": "functional_habitability_thresholds",
+      "description": "Empirically validated thresholds connecting flood frequency and service reliability to household departure, business closure, school enrollment, insurance availability, and municipal finance.",
+      "status": "active",
+      "semanticFingerprint": "fp-c032735ee248cccb33de",
+      "legacyIds": [
+        "research/climate/coastal-cities/gaps.json:CC-GAP-005"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000009"
+      ],
+      "owner": "coastal",
+      "nextAction": "Acquire and validate the missing evidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "CC-GAP-005",
+      "sourcePath": "research/climate/coastal-cities/gaps.json"
+    },
+    {
+      "id": "OPN-000006",
+      "registryKind": "open_item",
+      "label": "migration_timing_and_destinations",
+      "description": "Updated origin-destination flows under current local sea-level, housing-cost, insurance, adaptation, demographic, and labor-market scenarios through 2050 and 2070.",
+      "status": "active",
+      "semanticFingerprint": "fp-377505b2e620460244f2",
+      "legacyIds": [
+        "research/climate/coastal-cities/gaps.json:CC-GAP-006"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000009"
+      ],
+      "owner": "coastal",
+      "nextAction": "Acquire and validate the missing evidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "CC-GAP-006",
+      "sourcePath": "research/climate/coastal-cities/gaps.json"
+    },
+    {
+      "id": "OPN-000007",
+      "registryKind": "open_item",
+      "label": "immobility",
+      "description": "Local estimates of households unable to move, return, or adapt due to income, disability, health, tenure, credit, family ties, or legal barriers.",
+      "status": "active",
+      "semanticFingerprint": "fp-36a2691277ce1639461d",
+      "legacyIds": [
+        "research/climate/coastal-cities/gaps.json:CC-GAP-007"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000009"
+      ],
+      "owner": "coastal",
+      "nextAction": "Acquire and validate the missing evidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "CC-GAP-007",
+      "sourcePath": "research/climate/coastal-cities/gaps.json"
+    },
+    {
+      "id": "OPN-000008",
+      "registryKind": "open_item",
+      "label": "receiving_capacity",
+      "description": "Consistent current capacity and planned expansion by tract for housing, schools, health, utilities, transport, social services, and municipal finance in likely destination metros.",
+      "status": "active",
+      "semanticFingerprint": "fp-b373ed0abeba4eb488bc",
+      "legacyIds": [
+        "research/climate/coastal-cities/gaps.json:CC-GAP-008"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000009"
+      ],
+      "owner": "coastal",
+      "nextAction": "Acquire and validate the missing evidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "CC-GAP-008",
+      "sourcePath": "research/climate/coastal-cities/gaps.json"
+    },
+    {
+      "id": "OPN-000009",
+      "registryKind": "open_item",
+      "label": "insurance_credit_and_fiscal_feedback",
+      "description": "Longitudinal, spatially resolved nonrenewal, premium, claims, mortgage, appraisal, tax-base, bond, and service-level data with privacy-safe access.",
+      "status": "active",
+      "semanticFingerprint": "fp-62a6da5854dac44b1c42",
+      "legacyIds": [
+        "research/climate/coastal-cities/gaps.json:CC-GAP-009"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000009"
+      ],
+      "owner": "coastal",
+      "nextAction": "Acquire and validate the missing evidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "CC-GAP-009",
+      "sourcePath": "research/climate/coastal-cities/gaps.json"
+    },
+    {
+      "id": "OPN-000010",
+      "registryKind": "open_item",
+      "label": "geographic_crosswalk",
+      "description": "Explicit crosswalk among city limits, counties, CBSAs, research domains, one-degree grids, tide gauges, census vintages, and parcel datasets.",
+      "status": "active",
+      "semanticFingerprint": "fp-282ee989714b67466b55",
+      "legacyIds": [
+        "research/climate/coastal-cities/gaps.json:CC-GAP-010"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000009"
+      ],
+      "owner": "coastal",
+      "nextAction": "Acquire and validate the missing evidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "CC-GAP-010",
+      "sourcePath": "research/climate/coastal-cities/gaps.json"
+    },
+    {
+      "id": "OPN-000011",
+      "registryKind": "open_item",
+      "label": "vertical_datum",
+      "description": "Consistent conversion among terrain, building, water-surface, tide-gauge, geoid, and local construction datums.",
+      "status": "active",
+      "semanticFingerprint": "fp-a78e03f87209fa462197",
+      "legacyIds": [
+        "research/climate/coastal-cities/gaps.json:CC-GAP-011"
+      ],
+      "itemStatus": "open",
+      "severity": "medium",
+      "affectedIds": [
+        "RTE-000009"
+      ],
+      "owner": "coastal",
+      "nextAction": "Acquire and validate the missing evidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "CC-GAP-011",
+      "sourcePath": "research/climate/coastal-cities/gaps.json"
+    },
+    {
+      "id": "OPN-000012",
+      "registryKind": "open_item",
+      "label": "population_baseline",
+      "description": "Dynamic future populations and daytime/service populations aligned to hazard footprints; the Nature 2024 exposure analysis uses 2010 population/property baselines.",
+      "status": "active",
+      "semanticFingerprint": "fp-4985c4d2884fce75b8f5",
+      "legacyIds": [
+        "research/climate/coastal-cities/gaps.json:CC-GAP-012"
+      ],
+      "itemStatus": "open",
+      "severity": "medium",
+      "affectedIds": [
+        "RTE-000009"
+      ],
+      "owner": "coastal",
+      "nextAction": "Acquire and validate the missing evidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "CC-GAP-012",
+      "sourcePath": "research/climate/coastal-cities/gaps.json"
+    },
+    {
+      "id": "OPN-000013",
+      "registryKind": "open_item",
+      "label": "adaptation_distribution",
+      "description": "Who pays, who benefits, who receives buyouts, who remains unprotected, and whether high-ground investment displaces current residents.",
+      "status": "active",
+      "semanticFingerprint": "fp-1424fca5c66b907e54b2",
+      "legacyIds": [
+        "research/climate/coastal-cities/gaps.json:CC-GAP-013"
+      ],
+      "itemStatus": "open",
+      "severity": "medium",
+      "affectedIds": [
+        "RTE-000009"
+      ],
+      "owner": "coastal",
+      "nextAction": "Acquire and validate the missing evidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "CC-GAP-013",
+      "sourcePath": "research/climate/coastal-cities/gaps.json"
+    },
+    {
+      "id": "OPN-000014",
+      "registryKind": "open_item",
+      "label": "uncertainty_propagation",
+      "description": "Joint uncertainty from emissions, ice sheets, regional ocean dynamics, subsidence, elevation error, defense performance, demographic change, behavior, and policy.",
+      "status": "active",
+      "semanticFingerprint": "fp-f8b8a7fc06c0fc1ff900",
+      "legacyIds": [
+        "research/climate/coastal-cities/gaps.json:CC-GAP-014"
+      ],
+      "itemStatus": "open",
+      "severity": "medium",
+      "affectedIds": [
+        "RTE-000009"
+      ],
+      "owner": "coastal",
+      "nextAction": "Acquire and validate the missing evidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "CC-GAP-014",
+      "sourcePath": "research/climate/coastal-cities/gaps.json"
+    },
+    {
+      "id": "OPN-000015",
+      "registryKind": "open_item",
+      "label": "local_relative_sea_level",
+      "description": "NOAA/IPCC gridded regional relative sea-level scenarios joined to U.S. tide gauges, vertical land motion, and extreme-water-level thresholds.",
+      "status": "active",
+      "semanticFingerprint": "fp-009375915a7b7256cb54",
+      "legacyIds": [
+        "research/climate/gaps.json:GAP-CLIM-001"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000007",
+        "RTE-000008",
+        "RTE-000009",
+        "RTE-000010"
+      ],
+      "owner": "climate",
+      "nextAction": "[\"NASA Sea Level Projection Tool\",\"NOAA 2022 U.S. Sea Level Rise Technical Report\",\"NOAA tide-gauge records\"]",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "GAP-CLIM-001",
+      "sourcePath": "research/climate/gaps.json"
+    },
+    {
+      "id": "OPN-000016",
+      "registryKind": "open_item",
+      "label": "event_attribution",
+      "description": "Event-specific attribution database with methods, event definition, counterfactual, risk ratio, intensity change, uncertainty, and peer-review status.",
+      "status": "active",
+      "semanticFingerprint": "fp-e0bc494087f2678d573c",
+      "legacyIds": [
+        "research/climate/gaps.json:GAP-CLIM-002"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000007",
+        "RTE-000008",
+        "RTE-000009",
+        "RTE-000010"
+      ],
+      "owner": "climate",
+      "nextAction": "Acquire and validate the missing evidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "GAP-CLIM-002",
+      "sourcePath": "research/climate/gaps.json"
+    },
+    {
+      "id": "OPN-000017",
+      "registryKind": "open_item",
+      "label": "biodiversity_spatialization",
+      "description": "Taxon- and ecosystem-specific geospatial exposure, observed abundance/range trends, attribution fields, protected areas, and land-use layers.",
+      "status": "active",
+      "semanticFingerprint": "fp-b0afe80e7c98b401f1a5",
+      "legacyIds": [
+        "research/climate/gaps.json:GAP-CLIM-003"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000007",
+        "RTE-000008",
+        "RTE-000009",
+        "RTE-000010"
+      ],
+      "owner": "climate",
+      "nextAction": "Acquire and validate the missing evidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "GAP-CLIM-003",
+      "sourcePath": "research/climate/gaps.json"
+    },
+    {
+      "id": "OPN-000018",
+      "registryKind": "open_item",
+      "label": "food_system_scenarios",
+      "description": "Consistent gridded crop-model ensemble covering yield, CO2 fertilization, irrigation, adaptation, heat stress, pests, trade, prices, and nutrition under common SSP/RCP pairs.",
+      "status": "active",
+      "semanticFingerprint": "fp-5bcd5d3cebfbcbff5b38",
+      "legacyIds": [
+        "research/climate/gaps.json:GAP-CLIM-004"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000007",
+        "RTE-000008",
+        "RTE-000009",
+        "RTE-000010"
+      ],
+      "owner": "climate",
+      "nextAction": "Acquire and validate the missing evidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "GAP-CLIM-004",
+      "sourcePath": "research/climate/gaps.json"
+    },
+    {
+      "id": "OPN-000019",
+      "registryKind": "open_item",
+      "label": "freshwater_geography",
+      "description": "Basin-scale runoff, recharge, snowpack, glacier contribution, withdrawals, consumption, environmental flows, quality, reservoirs, and drought/flood metrics under harmonized scenarios.",
+      "status": "active",
+      "semanticFingerprint": "fp-e6796d24b0f37c136f2b",
+      "legacyIds": [
+        "research/climate/gaps.json:GAP-CLIM-005"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000007",
+        "RTE-000008",
+        "RTE-000009",
+        "RTE-000010"
+      ],
+      "owner": "climate",
+      "nextAction": "Acquire and validate the missing evidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "GAP-CLIM-005",
+      "sourcePath": "research/climate/gaps.json"
+    },
+    {
+      "id": "OPN-000020",
+      "registryKind": "open_item",
+      "label": "displacement_denominators_and_attribution",
+      "description": "Consistent event-level displacement flows, repeated displacement, duration, return, destination, exposure denominators, and anthropogenic event-attribution links.",
+      "status": "active",
+      "semanticFingerprint": "fp-e563d958d5440509247f",
+      "legacyIds": [
+        "research/climate/gaps.json:GAP-CLIM-006"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000007",
+        "RTE-000008",
+        "RTE-000009",
+        "RTE-000010"
+      ],
+      "owner": "climate",
+      "nextAction": "Acquire and validate the missing evidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "GAP-CLIM-006",
+      "sourcePath": "research/climate/gaps.json"
+    },
+    {
+      "id": "OPN-000021",
+      "registryKind": "open_item",
+      "label": "annual_scenario_trajectories",
+      "description": "Model-derived annual temperature, forcing, and sea-level series for selected IAM/GCM ensemble members.",
+      "status": "active",
+      "semanticFingerprint": "fp-5574f609e3b26f73e58a",
+      "legacyIds": [
+        "research/climate/gaps.json:GAP-CLIM-007"
+      ],
+      "itemStatus": "open",
+      "severity": "medium",
+      "affectedIds": [
+        "RTE-000007",
+        "RTE-000008",
+        "RTE-000009",
+        "RTE-000010"
+      ],
+      "owner": "climate",
+      "nextAction": "Acquire and validate the missing evidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "GAP-CLIM-007",
+      "sourcePath": "research/climate/gaps.json"
+    },
+    {
+      "id": "OPN-000022",
+      "registryKind": "open_item",
+      "label": "non_co2_emissions_to_temperature",
+      "description": "A documented reduced-complexity climate model or emulator with gas-specific lifetimes, forcing, feedbacks, aerosols, and uncertainty.",
+      "status": "active",
+      "semanticFingerprint": "fp-7e4cec0248a0dbbb1c24",
+      "legacyIds": [
+        "research/climate/gaps.json:GAP-CLIM-008"
+      ],
+      "itemStatus": "open",
+      "severity": "medium",
+      "affectedIds": [
+        "RTE-000007",
+        "RTE-000008",
+        "RTE-000009",
+        "RTE-000010"
+      ],
+      "owner": "climate",
+      "nextAction": "Acquire and validate the missing evidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "GAP-CLIM-008",
+      "sourcePath": "research/climate/gaps.json"
+    },
+    {
+      "id": "OPN-000023",
+      "registryKind": "open_item",
+      "label": "satellite_sea_level_download",
+      "description": "Locally acquired NASA SSH indicator time series.",
+      "status": "active",
+      "semanticFingerprint": "fp-e1f80d0fd52ad6063fc8",
+      "legacyIds": [
+        "research/climate/gaps.json:GAP-CLIM-009"
+      ],
+      "itemStatus": "open",
+      "severity": "medium",
+      "affectedIds": [
+        "RTE-000007",
+        "RTE-000008",
+        "RTE-000009",
+        "RTE-000010"
+      ],
+      "owner": "climate",
+      "nextAction": "Acquire and validate the missing evidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "GAP-CLIM-009",
+      "sourcePath": "research/climate/gaps.json"
+    },
+    {
+      "id": "OPN-000024",
+      "registryKind": "open_item",
+      "label": "unsupported_global_coefficients",
+      "description": "No defensible universal coefficients for hurricanes counted, food security, freshwater stock loss, or refugees per degree.",
+      "status": "active",
+      "semanticFingerprint": "fp-b1738c97323a8c807a87",
+      "legacyIds": [
+        "research/climate/gaps.json:GAP-CLIM-010"
+      ],
+      "itemStatus": "open",
+      "severity": "medium",
+      "affectedIds": [
+        "RTE-000007",
+        "RTE-000008",
+        "RTE-000009",
+        "RTE-000010"
+      ],
+      "owner": "climate",
+      "nextAction": "Acquire and validate the missing evidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "GAP-CLIM-010",
+      "sourcePath": "research/climate/gaps.json"
+    },
+    {
+      "id": "OPN-000025",
+      "registryKind": "open_item",
+      "label": "United States technology scenarios after 2050",
+      "description": "A selected, validated U.S.-specific generation and capacity scenario from 2051 through approximately 2070.",
+      "status": "active",
+      "semanticFingerprint": "fp-350f45d312d96e0b4df5",
+      "legacyIds": [
+        "research/energy/timeseries/gap-register.json:GAP-TS-001"
+      ],
+      "itemStatus": "open",
+      "severity": "medium",
+      "affectedIds": [
+        "RTE-000002",
+        "RTE-000003",
+        "RTE-000004",
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "energy",
+      "nextAction": "[\"future EIA AEO releases\",\"DOE national studies with public 2070 outputs\",\"peer-reviewed U.S. integrated-assessment outputs\"]",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "GAP-TS-001",
+      "sourcePath": "research/energy/timeseries/gap-register.json"
+    },
+    {
+      "id": "OPN-000026",
+      "registryKind": "open_item",
+      "label": "Wave, tidal-stream, ocean-current, OTEC, and salinity-gradient split",
+      "description": "A consistent official global annual history and scenario series split by each marine conversion technology.",
+      "status": "active",
+      "semanticFingerprint": "fp-eacf61f8ad1f2f4faf5b",
+      "legacyIds": [
+        "research/energy/timeseries/gap-register.json:GAP-TS-002"
+      ],
+      "itemStatus": "open",
+      "severity": "medium",
+      "affectedIds": [
+        "RTE-000002",
+        "RTE-000003",
+        "RTE-000004",
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "energy",
+      "nextAction": "[\"future IRENASTAT technology detail\",\"IEA-OES annual-report deployment tables\",\"Joint Research Centre ocean-energy status reports\"]",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "GAP-TS-002",
+      "sourcePath": "research/energy/timeseries/gap-register.json"
+    },
+    {
+      "id": "OPN-000027",
+      "registryKind": "open_item",
+      "label": "En-ROADS run output",
+      "description": "A licensed, reproducible export of selected En-ROADS scenario runs or a validated local clean-room implementation.",
+      "status": "active",
+      "semanticFingerprint": "fp-b87abfa69935de1b973c",
+      "legacyIds": [
+        "research/energy/timeseries/gap-register.json:GAP-TS-003"
+      ],
+      "itemStatus": "open",
+      "severity": "medium",
+      "affectedIds": [
+        "RTE-000002",
+        "RTE-000003",
+        "RTE-000004",
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "energy",
+      "nextAction": "[\"licensed En-ROADS SDK\",\"documented simulator exports\",\"project clean-room model after validation\"]",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "GAP-TS-003",
+      "sourcePath": "research/energy/timeseries/gap-register.json"
+    },
+    {
+      "id": "OPN-000028",
+      "registryKind": "open_item",
+      "label": "IEA World Energy Outlook 2025 scenario rows",
+      "description": "Redistributable raw rows under terms confirmed for this public GitHub dashboard.",
+      "status": "active",
+      "semanticFingerprint": "fp-3c19da96be77d81434f7",
+      "legacyIds": [
+        "research/energy/timeseries/gap-register.json:GAP-TS-004"
+      ],
+      "itemStatus": "open",
+      "severity": "medium",
+      "affectedIds": [
+        "RTE-000002",
+        "RTE-000003",
+        "RTE-000004",
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "energy",
+      "nextAction": "[\"IEA permission or compatible data license\"]",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "GAP-TS-004",
+      "sourcePath": "research/energy/timeseries/gap-register.json"
+    },
+    {
+      "id": "OPN-000029",
+      "registryKind": "open_item",
+      "label": "Global technology history before detailed source-specific coverage",
+      "description": "A single primary-source global series with uniform definitions across all technologies back to 1949.",
+      "status": "active",
+      "semanticFingerprint": "fp-464a5107e06dad058c1d",
+      "legacyIds": [
+        "research/energy/timeseries/gap-register.json:GAP-TS-005"
+      ],
+      "itemStatus": "open",
+      "severity": "medium",
+      "affectedIds": [
+        "RTE-000002",
+        "RTE-000003",
+        "RTE-000004",
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "energy",
+      "nextAction": "Acquire and validate the missing evidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "GAP-TS-005",
+      "sourcePath": "research/energy/timeseries/gap-register.json"
+    },
+    {
+      "id": "OPN-000030",
+      "registryKind": "open_item",
+      "label": "Commercial fusion generation",
+      "description": "Observed commercial generation or a source-supported national/global generation trajectory.",
+      "status": "active",
+      "semanticFingerprint": "fp-b8cef5dc5493d7a9c74f",
+      "legacyIds": [
+        "research/energy/timeseries/gap-register.json:GAP-TS-006"
+      ],
+      "itemStatus": "open",
+      "severity": "medium",
+      "affectedIds": [
+        "RTE-000002",
+        "RTE-000003",
+        "RTE-000004",
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "energy",
+      "nextAction": "Acquire and validate the missing evidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "GAP-TS-006",
+      "sourcePath": "research/energy/timeseries/gap-register.json"
+    },
+    {
+      "id": "OPN-000031",
+      "registryKind": "open_item",
+      "label": "Unified hourly load projections by BA, zone, or bus through 2050-2070",
+      "description": "Unified hourly load projections by BA, zone, or bus through 2050-2070",
+      "status": "active",
+      "semanticFingerprint": "fp-cb3836148d2ba5ee143c",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P0-001"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "Annual TWh does not establish peak MW, ramping, weather coincidence, or which corridor is needed.",
+      "nextAction": "Acquire public ISO/RTO and utility load-forecast cases; create weather-normalized load-shape synthesis with transparent end-use models. Do not fabricate hourly data from annual totals.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P0-001",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000032",
+      "registryKind": "open_item",
+      "label": "Public, machine-readable line and interface ratings with seasonal, directional, outage, and contingency context",
+      "description": "Public, machine-readable line and interface ratings with seasonal, directional, outage, and contingency context",
+      "status": "active",
+      "semanticFingerprint": "fp-f5de61204b561642c878",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P0-002"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "Voltage and project nameplate are not usable transfer capability.",
+      "nextAction": "Ingest ISO/RTO planning tables and OASIS interface data region by region; publish only non-CEII aggregates.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P0-002",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000033",
+      "registryKind": "open_item",
+      "label": "Current national project inventory with stable IDs, route geometry, milestone dates, costs, status, and cancellation history",
+      "description": "Current national project inventory with stable IDs, route geometry, milestone dates, costs, status, and cancellation history",
+      "status": "active",
+      "semanticFingerprint": "fp-06dacee31a2602f4b9d2",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P0-003"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "Announcements and permits are often mistaken for operating capacity, while route and scope change over time.",
+      "nextAction": "Build a versioned project registry from FERC, DOE, state commissions, ISO/RTO plans, and developer filings with status evidence dates.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P0-003",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000034",
+      "registryKind": "open_item",
+      "label": "Distribution topology, hosting capacity, feeder/substation constraints, and transformer inventory",
+      "description": "Distribution topology, hosting capacity, feeder/substation constraints, and transformer inventory",
+      "status": "active",
+      "semanticFingerprint": "fp-8383469665891197a047",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P0-004"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "EVs, heat pumps, rooftop solar, batteries, and data centers often bind at distribution or subtransmission assets before bulk generation does.",
+      "nextAction": "Ingest utility hosting-capacity maps and public distribution plans; maintain aggregate security rules and avoid sensitive asset disclosure.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P0-004",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000035",
+      "registryKind": "open_item",
+      "label": "Deduplicated large-load and data-center interconnection queue with probability, timing, site, power quality, backup, and flexibility",
+      "description": "Deduplicated large-load and data-center interconnection queue with probability, timing, site, power quality, backup, and flexibility",
+      "status": "active",
+      "semanticFingerprint": "fp-d59ef2766084f6695e51",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P0-005"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "Announced requests can be speculative or duplicated, but omitting them understates local capacity and transformer needs.",
+      "nextAction": "Join ISO/RTO, utility, state economic-development, permit, land, and corporate filings; assign confidence tiers and never sum raw announcements.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P0-005",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000036",
+      "registryKind": "open_item",
+      "label": "Geographic EV charging load shapes under managed and unmanaged charging",
+      "description": "Geographic EV charging load shapes under managed and unmanaged charging",
+      "status": "active",
+      "semanticFingerprint": "fp-06cb67cc1af0abce0e5b",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P0-006"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "The same annual EV TWh can have very different feeder and system peaks.",
+      "nextAction": "Combine vehicle registrations, travel survey profiles, charger inventory, tariffs, managed-charging trials, temperature effects, and adoption scenarios.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P0-006",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000037",
+      "registryKind": "open_item",
+      "label": "Scenario harmonization across AEO, NREL, NGFS, DOE transmission studies, NERC, and ISO/RTO forecasts",
+      "description": "Scenario harmonization across AEO, NREL, NGFS, DOE transmission studies, NERC, and ISO/RTO forecasts",
+      "status": "active",
+      "semanticFingerprint": "fp-4370a40ba77b80191bab",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P0-007"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "Different policies, weather years, geographic boundaries, end-use accounting, and model vintages cannot be combined as one trajectory.",
+      "nextAction": "Create a scenario ontology with policy, technology cost, demand, fuel price, climate, geography, time resolution, and model lineage fields.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P0-007",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000038",
+      "registryKind": "open_item",
+      "label": "Generation-to-network locational linkage and realistic interconnection deliverability",
+      "description": "Generation-to-network locational linkage and realistic interconnection deliverability",
+      "status": "active",
+      "semanticFingerprint": "fp-ff2c05ea901e5bf8eb28",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P0-008"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "National generation capacity does not show whether output can reach load or satisfy resource adequacy.",
+      "nextAction": "Join EIA-860/923, queue records, public bus/zone mappings, transmission upgrades, and commercial-operation milestones with confidence-rated geocoding.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P0-008",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000039",
+      "registryKind": "open_item",
+      "label": "Common weather and climate stress years across load, renewable output, thermal derates, hydrology, wildfire, and outages",
+      "description": "Common weather and climate stress years across load, renewable output, thermal derates, hydrology, wildfire, and outages",
+      "status": "active",
+      "semanticFingerprint": "fp-707a4573b6dc39ccac33",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P0-009"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "Reliability depends on coincident events; separate average datasets hide compound stress.",
+      "nextAction": "Define historical and climate-adjusted weather-year ensembles; compute load and resource profiles from the same timestamps and preserve model uncertainty.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P0-009",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000040",
+      "registryKind": "open_item",
+      "label": "Current transformer, breaker, switchgear, cable, conductor, and HVDC converter order books and lead times",
+      "description": "Current transformer, breaker, switchgear, cable, conductor, and HVDC converter order books and lead times",
+      "status": "active",
+      "semanticFingerprint": "fp-ea61a86825d68d595473",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P0-010"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "Shared equipment can delay generation, transmission, data centers, and electrification simultaneously.",
+      "nextAction": "Collect anonymized quarterly utility and manufacturer surveys by product class and specification band; separate quote, order, factory slot, delivery, and commissioning dates.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P0-010",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000041",
+      "registryKind": "open_item",
+      "label": "Operating qualified manufacturing capacity versus announced factory capacity",
+      "description": "Operating qualified manufacturing capacity versus announced factory capacity",
+      "status": "active",
+      "semanticFingerprint": "fp-576a62390648dc3913cc",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P0-011"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "Announcements, awards, construction, qualification, ramp, and actual output are different states.",
+      "nextAction": "Facility registry with product, specification, nameplate, actual output, qualification, start date, ownership, funding, and source confidence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P0-011",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000042",
+      "registryKind": "open_item",
+      "label": "Scenario-consistent critical-material demand and supply by technology and chemistry",
+      "description": "Scenario-consistent critical-material demand and supply by technology and chemistry",
+      "status": "active",
+      "semanticFingerprint": "fp-2c2e57d65df5bb6feb67",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P0-012"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "Battery, wind, solar, grid, nuclear, and hydrogen scenarios can compete for copper, electrical steel, lithium, graphite, rare earths, and specialized catalysts.",
+      "nextAction": "Apply source-specific material-intensity ranges to capacity scenarios with recycling, substitution, yield, and geography; retain uncertainty and avoid fixed coefficients across decades.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P0-012",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000043",
+      "registryKind": "open_item",
+      "label": "Behind-the-meter solar, storage, backup generation, and flexible-load visibility",
+      "description": "Behind-the-meter solar, storage, backup generation, and flexible-load visibility",
+      "status": "active",
+      "semanticFingerprint": "fp-cdef5583eef1d0bc6f4b",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P1-013"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "Metered grid demand is net of some customer resources and can move differently from gross consumption.",
+      "nextAction": "Combine EIA, state interconnection, utility AMI studies, and survey estimates with explicit gross/net accounting.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P1-013",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000044",
+      "registryKind": "open_item",
+      "label": "Time-varying capacity credit and effective load-carrying capability by region",
+      "description": "Time-varying capacity credit and effective load-carrying capability by region",
+      "status": "active",
+      "semanticFingerprint": "fp-52ca0de2d5087f3a8be7",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P1-014"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "Nameplate MW cannot be compared directly across variable renewables, storage durations, thermal units, imports, and demand response.",
+      "nextAction": "Ingest accredited-capacity and ELCC results from each ISO/RTO and document method, season, vintage, and portfolio dependence.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P1-014",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000045",
+      "registryKind": "open_item",
+      "label": "Hourly forced outages, derates, fuel limitations, and maintenance by technology",
+      "description": "Hourly forced outages, derates, fuel limitations, and maintenance by technology",
+      "status": "active",
+      "semanticFingerprint": "fp-5f114097cf4ce04e831f",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P1-015"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "Installed capacity and annual generation hide availability during peaks and extreme events.",
+      "nextAction": "Use public ISO/RTO outage aggregates, NERC GADS where licensable, EIA fuel data, and weather-event reports; do not publish sensitive unit-level details.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P1-015",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000046",
+      "registryKind": "open_item",
+      "label": "Hourly losses, congestion, curtailment, and marginal transmission value on consistent national geography",
+      "description": "Hourly losses, congestion, curtailment, and marginal transmission value on consistent national geography",
+      "status": "active",
+      "semanticFingerprint": "fp-6b724e52fea6b58419fa",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P1-016"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "A small share of hours can drive large benefits, but ISO/RTO definitions and market designs differ.",
+      "nextAction": "Build operator-specific adapters for LMP congestion components, shadow prices, curtailment, and loss factors; aggregate only after semantic reconciliation.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P1-016",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000047",
+      "registryKind": "open_item",
+      "label": "Who pays and who benefits from each transmission project",
+      "description": "Who pays and who benefits from each transmission project",
+      "status": "active",
+      "semanticFingerprint": "fp-511ecb780c0630db4f42",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P1-017"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "Regional reliability, generator access, local land burden, and retail bill impacts fall on different groups.",
+      "nextAction": "Normalize cost allocation, revenue requirement, participant funding, contracts, tax benefits, community benefits, and modeled production-cost savings by payer and beneficiary.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P1-017",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000048",
+      "registryKind": "open_item",
+      "label": "Empirical project duration by milestone and reason for delay",
+      "description": "Empirical project duration by milestone and reason for delay",
+      "status": "active",
+      "semanticFingerprint": "fp-ce10634a949592d55db0",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P1-018"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "A single average hides routing, litigation, procurement, financing, and construction bottlenecks.",
+      "nextAction": "Versioned milestone event log from proposal through operation/cancellation with pause and litigation flags.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P1-018",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000049",
+      "registryKind": "open_item",
+      "label": "Project-level health and air-quality changes attributable to enabled dispatch",
+      "description": "Project-level health and air-quality changes attributable to enabled dispatch",
+      "status": "active",
+      "semanticFingerprint": "fp-d8ea775632e41ffeab12",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P1-019"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "Transmission health benefits depend on which generators run less or more and where people are exposed.",
+      "nextAction": "Link scenario dispatch to emissions, reduced-complexity air-quality models, demographic exposure, uncertainty, and baseline year.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P1-019",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000050",
+      "registryKind": "open_item",
+      "label": "Watershed-resolved water withdrawal, consumption, thermal discharge, hydropower, cooling, hydrogen, and data-center coupling",
+      "description": "Watershed-resolved water withdrawal, consumption, thermal discharge, hydropower, cooling, hydrogen, and data-center coupling",
+      "status": "active",
+      "semanticFingerprint": "fp-f29b0378de693dcfa932",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P1-020"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "National averages hide local scarcity and seasonal competition.",
+      "nextAction": "Join EIA plant cooling, USGS water use, hydrology and drought, watershed boundaries, data-center cooling design, and scenario operations on consistent time and space.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P1-020",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000051",
+      "registryKind": "open_item",
+      "label": "Climate-adjusted line, transformer, substation, and wildfire vulnerability",
+      "description": "Climate-adjusted line, transformer, substation, and wildfire vulnerability",
+      "status": "active",
+      "semanticFingerprint": "fp-610c32de998e37576e41",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P1-021"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "Ambient heat reduces equipment ratings; wildfire, flood, ice, wind, and sea-level hazards alter failure and maintenance risk.",
+      "nextAction": "Combine public asset aggregates with climate hazard layers and engineering vulnerability functions; protect CEII.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P1-021",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000052",
+      "registryKind": "open_item",
+      "label": "Digital component provenance, firmware vulnerability, and supplier concentration",
+      "description": "Digital component provenance, firmware vulnerability, and supplier concentration",
+      "status": "active",
+      "semanticFingerprint": "fp-3096896bc5cd0a9e5135",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P1-022"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "Inverters, relays, sensors, chargers, data centers, and grid controls share opaque digital supply chains.",
+      "nextAction": "Publish aggregate vendor-concentration and lifecycle-management indicators; keep exploitable asset detail restricted.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P1-022",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000053",
+      "registryKind": "open_item",
+      "label": "Workforce pipeline by occupation, certification, region, retirement, training time, and project demand",
+      "description": "Workforce pipeline by occupation, certification, region, retirement, training time, and project demand",
+      "status": "active",
+      "semanticFingerprint": "fp-6fe948dabc632eebcfbd",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P1-023"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "Lineworkers, electricians, planners, protection engineers, transformer winders/testers, welders, nuclear QA staff, and heavy-haul specialists are not interchangeable.",
+      "nextAction": "Combine BLS, apprenticeship, licensing, union, employer, and project labor estimates by detailed occupation.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P1-023",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000054",
+      "registryKind": "open_item",
+      "label": "End-of-life volumes, reuse, recycling yield, and destination for grid and generation equipment",
+      "description": "End-of-life volumes, reuse, recycling yield, and destination for grid and generation equipment",
+      "status": "active",
+      "semanticFingerprint": "fp-bd683ad2ac2d583be619",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P1-024"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "Retirements can return copper, aluminum, steel, battery materials, and components, but recovery timing and quality are uncertain.",
+      "nextAction": "Stock-and-flow model by installation vintage, lifetime distribution, reuse eligibility, collection, recovery yield, and processing location.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P1-024",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000055",
+      "registryKind": "open_item",
+      "label": "Cross-border imports with hourly source mix, contractual firmness, hydrology, and environmental accounting",
+      "description": "Cross-border imports with hourly source mix, contractual firmness, hydrology, and environmental accounting",
+      "status": "active",
+      "semanticFingerprint": "fp-45092b94a2118fc6ca9a",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P1-025"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "An import corridor's MW rating does not reveal annual energy, winter availability, capacity accreditation, or generation impacts abroad.",
+      "nextAction": "Join EIA-930 interchange, Canadian operator data, contracts, water/hydrology, certificates, and system-operator capacity treatment.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P1-025",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000056",
+      "registryKind": "open_item",
+      "label": "Public validation of approximate corridor geometry",
+      "description": "Public validation of approximate corridor geometry",
+      "status": "active",
+      "semanticFingerprint": "fp-914603a7eae172db24f7",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P2-026"
+      ],
+      "itemStatus": "open",
+      "severity": "medium",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "Schematic waypoints are adequate for a national overview but not local impact analysis.",
+      "nextAction": "Replace approximate paths with official developer or agency GIS where licensing permits; retain geometry source and resolution.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P2-026",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000057",
+      "registryKind": "open_item",
+      "label": "Heat-pump and electrified-building load shapes by climate zone and building stock",
+      "description": "Heat-pump and electrified-building load shapes by climate zone and building stock",
+      "status": "active",
+      "semanticFingerprint": "fp-66feee9633d6666740db",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P2-027"
+      ],
+      "itemStatus": "open",
+      "severity": "medium",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "Cold-climate peak and backup-heat assumptions can dominate winter demand.",
+      "nextAction": "Use building-stock models, AMI studies, equipment performance, envelope retrofits, and weather ensembles.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P2-027",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000058",
+      "registryKind": "open_item",
+      "label": "Commercialization pathways for marine, enhanced geothermal, advanced nuclear, long-duration storage, and other emerging technologies",
+      "description": "Commercialization pathways for marine, enhanced geothermal, advanced nuclear, long-duration storage, and other emerging technologies",
+      "status": "active",
+      "semanticFingerprint": "fp-764998caa140cb9a8e31",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P2-028"
+      ],
+      "itemStatus": "open",
+      "severity": "medium",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "Resource potential and demonstration capacity are often mistaken for commercial generation.",
+      "nextAction": "Track technology-readiness level, demonstration, order, financing, construction, qualification, and operation separately.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P2-028",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000059",
+      "registryKind": "open_item",
+      "label": "Consistent uncertainty distributions rather than point forecasts",
+      "description": "Consistent uncertainty distributions rather than point forecasts",
+      "status": "active",
+      "semanticFingerprint": "fp-e3a6525e445ce24ae827",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P2-029"
+      ],
+      "itemStatus": "open",
+      "severity": "medium",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "Data-center growth, fuel prices, policies, technology cost, weather, and construction timing are deeply uncertain.",
+      "nextAction": "Retain source scenario ensembles and quantified ranges; do not average incompatible scenarios into a false central case.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P2-029",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000060",
+      "registryKind": "open_item",
+      "label": "Automated source-vintage, link, checksum, and claim-evidence monitoring",
+      "description": "Automated source-vintage, link, checksum, and claim-evidence monitoring",
+      "status": "active",
+      "semanticFingerprint": "fp-5e0560ef40420f4b044e",
+      "legacyIds": [
+        "research/energy/transmission/cross-domain-gap-register.json:XG-P2-030"
+      ],
+      "itemStatus": "open",
+      "severity": "medium",
+      "affectedIds": [
+        "RTE-000005",
+        "RTE-000006"
+      ],
+      "owner": "transmission",
+      "blockingCondition": "Project status, draft studies, compliance schedules, and forecasts change after publication.",
+      "nextAction": "Build scheduled link checks and content hashes; route material changes to human claim review before dashboard publication.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "XG-P2-030",
+      "sourcePath": "research/energy/transmission/cross-domain-gap-register.json"
+    },
+    {
+      "id": "OPN-000061",
+      "registryKind": "open_item",
+      "label": "current_us_resin_flow",
+      "description": "The most internally complete national resin-by-use MFA is a 2019 snapshot; no verified annual public series with the same scope is available in this package.",
+      "status": "active",
+      "semanticFingerprint": "fp-778ad78b2808148c1a73",
+      "legacyIds": [
+        "research/plastics/gaps.json:PLG-001"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000014",
+        "RTE-000015"
+      ],
+      "owner": "plastics",
+      "nextAction": "License or reproduce annual producer and trade inputs and publish a versioned reconciliation with EPA and OECD scopes.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "PLG-001",
+      "sourcePath": "research/plastics/gaps.json"
+    },
+    {
+      "id": "OPN-000062",
+      "registryKind": "open_item",
+      "label": "facility_water",
+      "description": "No defensible current national total links U.S. resin and product plants to withdrawal, consumption, discharge, production, and watershed stress.",
+      "status": "active",
+      "semanticFingerprint": "fp-75c8a5320d71dcc448e8",
+      "legacyIds": [
+        "research/plastics/gaps.json:PLG-002"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000014",
+        "RTE-000015"
+      ],
+      "owner": "plastics",
+      "nextAction": "Join permits, DMR/TRI, public-supply deliveries, plant coordinates, capacity, and watershed data.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "PLG-002",
+      "sourcePath": "research/plastics/gaps.json"
+    },
+    {
+      "id": "OPN-000063",
+      "registryKind": "open_item",
+      "label": "harmonized_resin_water",
+      "description": "Water estimates for the same resin differ materially by database and system assumptions; several major resins lack harmonized U.S. ranges.",
+      "status": "active",
+      "semanticFingerprint": "fp-0862f93e32e8f64b56e3",
+      "legacyIds": [
+        "research/plastics/gaps.json:PLG-003"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000014",
+        "RTE-000015"
+      ],
+      "owner": "plastics",
+      "nextAction": "Build a U.S. regionalized common-boundary inventory for all leading resins and precursors.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "PLG-003",
+      "sourcePath": "research/plastics/gaps.json"
+    },
+    {
+      "id": "OPN-000064",
+      "registryKind": "open_item",
+      "label": "replacement_functional_units",
+      "description": "National replacement volumes, reuse cycles, wash efficiency, breakage, logistics, and protected-product loss are not established.",
+      "status": "active",
+      "semanticFingerprint": "fp-46f6aaf387e9ca48a1ee",
+      "legacyIds": [
+        "research/plastics/gaps.json:PLG-004"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000014",
+        "RTE-000015"
+      ],
+      "owner": "plastics",
+      "nextAction": "Pilot major service systems and publish metered water, loss, cost, and safety data.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "PLG-004",
+      "sourcePath": "research/plastics/gaps.json"
+    },
+    {
+      "id": "OPN-000065",
+      "registryKind": "open_item",
+      "label": "water_quality",
+      "description": "Liters alone omit chemical oxygen demand, salinity, hazardous pollutants, thermal discharge, and treatability.",
+      "status": "active",
+      "semanticFingerprint": "fp-b4caffea941db58f80ee",
+      "legacyIds": [
+        "research/plastics/gaps.json:PLG-005"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000014",
+        "RTE-000015"
+      ],
+      "owner": "plastics",
+      "nextAction": "Add pollutant mass and receiving-water condition to each life-cycle and facility record.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "PLG-005",
+      "sourcePath": "research/plastics/gaps.json"
+    },
+    {
+      "id": "OPN-000066",
+      "registryKind": "open_item",
+      "label": "microplastic_measurement",
+      "description": "Human and food measurements lack standardized sampling, contamination controls, size ranges, polymer identification, and reference materials.",
+      "status": "active",
+      "semanticFingerprint": "fp-a978beae08ad426d01cc",
+      "legacyIds": [
+        "research/plastics/gaps.json:PLG-006"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000014",
+        "RTE-000015"
+      ],
+      "owner": "plastics",
+      "nextAction": "Track FDA, EPA, NIST, and international method-validation programs before trend claims.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "PLG-006",
+      "sourcePath": "research/plastics/gaps.json"
+    },
+    {
+      "id": "OPN-000067",
+      "registryKind": "open_item",
+      "label": "human_dose_response",
+      "description": "Exposure is evident, but causal dose-response evidence by particle size, shape, polymer, additive, route, and life stage is insufficient for quantitative population risk.",
+      "status": "active",
+      "semanticFingerprint": "fp-df1b4ba4348ec8483042",
+      "legacyIds": [
+        "research/plastics/gaps.json:PLG-007"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000014",
+        "RTE-000015"
+      ],
+      "owner": "plastics",
+      "nextAction": "Use prospective cohorts, mechanistic work, validated methods, and exposure-source attribution.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "PLG-007",
+      "sourcePath": "research/plastics/gaps.json"
+    },
+    {
+      "id": "OPN-000068",
+      "registryKind": "open_item",
+      "label": "formulation_disclosure",
+      "description": "Resin labels do not identify all additives, processing aids, recycled contaminants, or intentionally added PFAS.",
+      "status": "active",
+      "semanticFingerprint": "fp-98d61dcab3cc532f65fc",
+      "legacyIds": [
+        "research/plastics/gaps.json:PLG-008"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000014",
+        "RTE-000015"
+      ],
+      "owner": "plastics",
+      "nextAction": "Require product-level digital disclosure with concentration bands and use restrictions.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "PLG-008",
+      "sourcePath": "research/plastics/gaps.json"
+    },
+    {
+      "id": "OPN-000069",
+      "registryKind": "open_item",
+      "label": "worker_and_fenceline_exposure",
+      "description": "National product statistics obscure occupational and community exposure around monomer, resin, compounding, converting, and waste facilities.",
+      "status": "active",
+      "semanticFingerprint": "fp-27d449d2f5bd926aec59",
+      "legacyIds": [
+        "research/plastics/gaps.json:PLG-009"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000014",
+        "RTE-000015"
+      ],
+      "owner": "plastics",
+      "nextAction": "Map facilities and combine air, water, incident, biomonitoring, demographic, and job-task data.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "PLG-009",
+      "sourcePath": "research/plastics/gaps.json"
+    },
+    {
+      "id": "OPN-000070",
+      "registryKind": "open_item",
+      "label": "verified_recycling_destination",
+      "description": "Collection, sorting, export, reprocessing, yield, and final product are often conflated.",
+      "status": "active",
+      "semanticFingerprint": "fp-7ea40b27523af98ecc99",
+      "legacyIds": [
+        "research/plastics/gaps.json:PLG-010"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000014",
+        "RTE-000015"
+      ],
+      "owner": "plastics",
+      "nextAction": "Use chain-of-custody mass balances with reject and export destinations.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "PLG-010",
+      "sourcePath": "research/plastics/gaps.json"
+    },
+    {
+      "id": "OPN-000071",
+      "registryKind": "open_item",
+      "label": "seaweed_ecological_carrying_capacity",
+      "description": "Modeled suitable area and biomass do not establish sustainable farm density, nutrient supply, biodiversity effects, navigation compatibility, or storm resilience.",
+      "status": "active",
+      "semanticFingerprint": "fp-4c0e65459ac82bfbf88f",
+      "legacyIds": [
+        "research/plastics/gaps.json:PLG-011"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000014",
+        "RTE-000015"
+      ],
+      "owner": "plastics",
+      "nextAction": "Conduct regional carrying-capacity pilots with pre-registered ecological thresholds.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "PLG-011",
+      "sourcePath": "research/plastics/gaps.json"
+    },
+    {
+      "id": "OPN-000072",
+      "registryKind": "open_item",
+      "label": "seaweed_conversion",
+      "description": "Industrial yields, solvent and crosslinker demand, wastewater treatment, durability, food-contact safety, biodegradation, and cost are not demonstrated nationally.",
+      "status": "active",
+      "semanticFingerprint": "fp-3ae7436ce4864971e076",
+      "legacyIds": [
+        "research/plastics/gaps.json:PLG-012"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000014",
+        "RTE-000015"
+      ],
+      "owner": "plastics",
+      "nextAction": "Meter integrated demonstration plants and compare on identical product-service units.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "PLG-012",
+      "sourcePath": "research/plastics/gaps.json"
+    },
+    {
+      "id": "OPN-000073",
+      "registryKind": "open_item",
+      "label": "country_outcomes",
+      "description": "Legal requirements are better documented than realized water, litter, cost, compliance, and burden-shifting outcomes.",
+      "status": "active",
+      "semanticFingerprint": "fp-fbc8b09accfaae0b8778",
+      "legacyIds": [
+        "research/plastics/gaps.json:PLG-013"
+      ],
+      "itemStatus": "open",
+      "severity": "medium",
+      "affectedIds": [
+        "RTE-000014",
+        "RTE-000015"
+      ],
+      "owner": "plastics",
+      "nextAction": "Ingest audited implementation metrics and pre/post evaluations by jurisdiction.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "PLG-013",
+      "sourcePath": "research/plastics/gaps.json"
+    },
+    {
+      "id": "OPN-000074",
+      "registryKind": "open_item",
+      "label": "critical_use_transition",
+      "description": "Validated alternatives and supply resilience vary across medical, electrical, insulation, and water infrastructure applications.",
+      "status": "active",
+      "semanticFingerprint": "fp-4a226ee75018f20ab532",
+      "legacyIds": [
+        "research/plastics/gaps.json:PLG-014"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000014",
+        "RTE-000015"
+      ],
+      "owner": "plastics",
+      "nextAction": "Build application-specific essential-use dossiers and staged substitution tests.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "PLG-014",
+      "sourcePath": "research/plastics/gaps.json"
+    },
+    {
+      "id": "OPN-000075",
+      "registryKind": "open_item",
+      "label": "No fully comparable all-category national water-withdrawal and consumptive-use inventory after 2015 is present.",
+      "description": "No fully comparable all-category national water-withdrawal and consumptive-use inventory after 2015 is present.",
+      "status": "active",
+      "semanticFingerprint": "fp-1e1554a638df126a09bf",
+      "legacyIds": [
+        "research/water/gaps.json:WGAP-NATIONAL-2020S"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000011",
+        "RTE-000013",
+        "RTE-000015"
+      ],
+      "owner": "water",
+      "blockingCondition": "Dashboard users may read 2015 values as current or combine noncomparable modeled products.",
+      "nextAction": "Use NWAA/PP1894-D time series for covered sectors and label all-category 2015 inventory; ingest future USGS category releases when available.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "WGAP-NATIONAL-2020S",
+      "sourcePath": "research/water/gaps.json"
+    },
+    {
+      "id": "OPN-000076",
+      "registryKind": "open_item",
+      "label": "No complete, consistent national consumptive-use total covers every sector.",
+      "description": "No complete, consistent national consumptive-use total covers every sector.",
+      "status": "active",
+      "semanticFingerprint": "fp-1e6d7d6ccaa0c33aa590",
+      "legacyIds": [
+        "research/water/gaps.json:WGAP-CONSUMPTION-ALL-SECTOR"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000011",
+        "RTE-000013",
+        "RTE-000015"
+      ],
+      "owner": "water",
+      "blockingCondition": "A fabricated national consumption denominator or misleading sector share.",
+      "nextAction": "Show covered-sector subtotal and nulls; build a harmonized model only with documented return-flow and consumption methods.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "WGAP-CONSUMPTION-ALL-SECTOR",
+      "sourcePath": "research/water/gaps.json"
+    },
+    {
+      "id": "OPN-000077",
+      "registryKind": "open_item",
+      "label": "Current direct withdrawal, consumption, utility-delivered water, and life-cycle water are not reconciled for U.S. plastics.",
+      "description": "Current direct withdrawal, consumption, utility-delivered water, and life-cycle water are not reconciled for U.S. plastics.",
+      "status": "active",
+      "semanticFingerprint": "fp-278db663bec9a018bfa7",
+      "legacyIds": [
+        "research/water/gaps.json:WGAP-PLASTICS-NATIONAL"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000011",
+        "RTE-000013",
+        "RTE-000015"
+      ],
+      "owner": "water",
+      "blockingCondition": "False precision in claimed water saved by plastics bans or replacements.",
+      "nextAction": "Build facility-water inventory for NAICS 325211 and relevant 326 subsectors; add upstream processes and product-service LCAs with scarcity weighting.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "WGAP-PLASTICS-NATIONAL",
+      "sourcePath": "research/water/gaps.json"
+    },
+    {
+      "id": "OPN-000078",
+      "registryKind": "open_item",
+      "label": "No ranked set of plastic products and service-equivalent alternatives has been modeled.",
+      "description": "No ranked set of plastic products and service-equivalent alternatives has been modeled.",
+      "status": "active",
+      "semanticFingerprint": "fp-7c4ea093f618c3ca87f2",
+      "legacyIds": [
+        "research/water/gaps.json:WGAP-PLASTICS-SUBSTITUTION"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000011",
+        "RTE-000013",
+        "RTE-000015"
+      ],
+      "owner": "water",
+      "blockingCondition": "A substitute can use more water through farming, washing, energy, or shorter service life.",
+      "nextAction": "Select priority products; define functional units and reuse counts; model avoidance plus paper/glass/metal/bio-based alternatives by watershed and scenario.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "WGAP-PLASTICS-SUBSTITUTION",
+      "sourcePath": "research/water/gaps.json"
+    },
+    {
+      "id": "OPN-000079",
+      "registryKind": "open_item",
+      "label": "National data-center estimates are not connected to verified campus-level withdrawals, consumption, cooling systems, utility sources, and seasonal stress.",
+      "description": "National data-center estimates are not connected to verified campus-level withdrawals, consumption, cooling systems, utility sources, and seasonal stress.",
+      "status": "active",
+      "semanticFingerprint": "fp-b4a0792ad80d62159045",
+      "legacyIds": [
+        "research/water/gaps.json:WGAP-DATA-CENTER-SITES"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000011",
+        "RTE-000013",
+        "RTE-000015"
+      ],
+      "owner": "water",
+      "blockingCondition": "Nationally small values hide local conflicts or facility estimates become speculative.",
+      "nextAction": "Create a facility registry from permits, utility agreements, environmental reviews, company disclosures, and watershed data; preserve unknowns.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "WGAP-DATA-CENTER-SITES",
+      "sourcePath": "research/water/gaps.json"
+    },
+    {
+      "id": "OPN-000080",
+      "registryKind": "open_item",
+      "label": "Utility source mixes have different years, legal definitions, and physical-delivery accounting.",
+      "description": "Utility source mixes have different years, legal definitions, and physical-delivery accounting.",
+      "status": "active",
+      "semanticFingerprint": "fp-9ad42d6169c580c1727d",
+      "legacyIds": [
+        "research/water/gaps.json:WGAP-CITY-COMPARABILITY"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000011",
+        "RTE-000013",
+        "RTE-000015"
+      ],
+      "owner": "water",
+      "blockingCondition": "False city rankings and apparent totals above/below 100 percent.",
+      "nextAction": "Version annual utility mix, distinguish legal entitlement/import accounting from physical source, and add reliability/yield metadata.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "WGAP-CITY-COMPARABILITY",
+      "sourcePath": "research/water/gaps.json"
+    },
+    {
+      "id": "OPN-000081",
+      "registryKind": "open_item",
+      "label": "Comparable local saltwater-intrusion projections are absent for many coastal cities and aquifers.",
+      "description": "Comparable local saltwater-intrusion projections are absent for many coastal cities and aquifers.",
+      "status": "active",
+      "semanticFingerprint": "fp-76a4555e339ceadce540",
+      "legacyIds": [
+        "research/water/gaps.json:WGAP-COASTAL-MODELS"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000011",
+        "RTE-000013",
+        "RTE-000015"
+      ],
+      "owner": "water",
+      "blockingCondition": "Sea-level scenarios become unsupported wellfield-failure dates.",
+      "nextAction": "Ingest calibrated groundwater models, well screens, pumping scenarios, canal stages, vertical land motion, monitoring chloride, and adaptation actions for each aquifer.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "WGAP-COASTAL-MODELS",
+      "sourcePath": "research/water/gaps.json"
+    },
+    {
+      "id": "OPN-000082",
+      "registryKind": "open_item",
+      "label": "Drought stages, reservoir levels, and restrictions are volatile live data.",
+      "description": "Drought stages, reservoir levels, and restrictions are volatile live data.",
+      "status": "active",
+      "semanticFingerprint": "fp-91aa175af8b3f8b7e98e",
+      "legacyIds": [
+        "research/water/gaps.json:WGAP-DROUGHT-LIVE"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000011",
+        "RTE-000013",
+        "RTE-000015"
+      ],
+      "owner": "water",
+      "blockingCondition": "A static research snapshot remains displayed after conditions change.",
+      "nextAction": "Add official APIs/scrapers, fetched_at, valid_through, stale-state UI, and archived observations.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "WGAP-DROUGHT-LIVE",
+      "sourcePath": "research/water/gaps.json"
+    },
+    {
+      "id": "OPN-000083",
+      "registryKind": "open_item",
+      "label": "No normalized site-specific capital, operating, energy, brine, conveyance, financing, and permitting model is included.",
+      "description": "No normalized site-specific capital, operating, energy, brine, conveyance, financing, and permitting model is included.",
+      "status": "active",
+      "semanticFingerprint": "fp-23883e3f7cc574ae5535",
+      "legacyIds": [
+        "research/water/gaps.json:WGAP-DESAL-COST-CURVES"
+      ],
+      "itemStatus": "open",
+      "severity": "medium",
+      "affectedIds": [
+        "RTE-000011",
+        "RTE-000013",
+        "RTE-000015"
+      ],
+      "owner": "water",
+      "blockingCondition": "One facility's cost is generalized nationwide.",
+      "nextAction": "Build consistent 2026-dollar levelized cost scenarios by seawater/brackish source, salinity, size, energy, disposal, and distance.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "WGAP-DESAL-COST-CURVES",
+      "sourcePath": "research/water/gaps.json"
+    },
+    {
+      "id": "OPN-000084",
+      "registryKind": "open_item",
+      "label": "Independent hourly field data linking AWG yield, electricity, humidity, temperature, water quality, and maintenance are sparse.",
+      "description": "Independent hourly field data linking AWG yield, electricity, humidity, temperature, water quality, and maintenance are sparse.",
+      "status": "active",
+      "semanticFingerprint": "fp-149a7c6eb415ccbe2c65",
+      "legacyIds": [
+        "research/water/gaps.json:WGAP-AWG-FIELD-PERFORMANCE"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000011",
+        "RTE-000013",
+        "RTE-000015"
+      ],
+      "owner": "water",
+      "blockingCondition": "Nameplate capacity and lab efficiency are presented as reliable potable yield.",
+      "nextAction": "Require third-party field trials across humid, temperate, and arid climates with potable treatment and lifecycle cost.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "WGAP-AWG-FIELD-PERFORMANCE",
+      "sourcePath": "research/water/gaps.json"
+    },
+    {
+      "id": "OPN-000085",
+      "registryKind": "open_item",
+      "label": "Affordability, tribal water rights, rural well failure, farmworker exposure, and small-utility capacity are not quantified consistently.",
+      "description": "Affordability, tribal water rights, rural well failure, farmworker exposure, and small-utility capacity are not quantified consistently.",
+      "status": "active",
+      "semanticFingerprint": "fp-c69fe12215d30f75ad3c",
+      "legacyIds": [
+        "research/water/gaps.json:WGAP-EQUITY"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "RTE-000011",
+        "RTE-000013",
+        "RTE-000015"
+      ],
+      "owner": "water",
+      "blockingCondition": "Engineering portfolios appear viable while shifting costs and failures to vulnerable communities.",
+      "nextAction": "Add household burden, service shutoff, well depth/failure, rights/access, project cost allocation, and public-health layers.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "WGAP-EQUITY",
+      "sourcePath": "research/water/gaps.json"
+    },
+    {
+      "id": "OPN-000086",
+      "registryKind": "open_item",
+      "label": "Quantity datasets do not fully represent PFAS, nitrate, salinity, harmful algal blooms, industrial discharge, wildfire contamination, or treatment capacity.",
+      "description": "Quantity datasets do not fully represent PFAS, nitrate, salinity, harmful algal blooms, industrial discharge, wildfire contamination, or treatment capacity.",
+      "status": "active",
+      "semanticFingerprint": "fp-3b8a67d96a19d5a68ad8",
+      "legacyIds": [
+        "research/water/gaps.json:WGAP-WATER-QUALITY"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "RTE-000011",
+        "RTE-000013",
+        "RTE-000015"
+      ],
+      "owner": "water",
+      "blockingCondition": "Available water is treated as usable water.",
+      "nextAction": "Integrate Safe Drinking Water, discharge, groundwater-quality, harmful-algal-bloom, salinity, and treatment-capability datasets.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09",
+      "legacyGapId": "WGAP-WATER-QUALITY",
+      "sourcePath": "research/water/gaps.json"
+    },
+    {
+      "id": "OPN-000087",
+      "registryKind": "open_item",
+      "label": "Complete source access dates",
+      "description": "Source records without access dates remain provisional.",
+      "status": "active",
+      "semanticFingerprint": "fp-9ec94631199aff26c963",
+      "legacyIds": [
+        "missing-source-access-dates"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "SRC-000001",
+        "SRC-000002",
+        "SRC-000003",
+        "SRC-000004",
+        "SRC-000005",
+        "SRC-000006",
+        "SRC-000007",
+        "SRC-000008",
+        "SRC-000009",
+        "SRC-000010",
+        "SRC-000011",
+        "SRC-000012",
+        "SRC-000013",
+        "SRC-000014",
+        "SRC-000015",
+        "SRC-000016",
+        "SRC-000017",
+        "SRC-000018",
+        "SRC-000019",
+        "SRC-000020",
+        "SRC-000021",
+        "SRC-000022",
+        "SRC-000023",
+        "SRC-000024",
+        "SRC-000025",
+        "SRC-000026",
+        "SRC-000027",
+        "SRC-000028",
+        "SRC-000029",
+        "SRC-000030",
+        "SRC-000031",
+        "SRC-000032",
+        "SRC-000033",
+        "SRC-000034",
+        "SRC-000035",
+        "SRC-000036",
+        "SRC-000037",
+        "SRC-000038",
+        "SRC-000039",
+        "SRC-000040",
+        "SRC-000041",
+        "SRC-000042",
+        "SRC-000043",
+        "SRC-000044",
+        "SRC-000045",
+        "SRC-000046",
+        "SRC-000047",
+        "SRC-000048",
+        "SRC-000049",
+        "SRC-000050",
+        "SRC-000051",
+        "SRC-000052",
+        "SRC-000053",
+        "SRC-000054",
+        "SRC-000055",
+        "SRC-000056",
+        "SRC-000057",
+        "SRC-000058",
+        "SRC-000059",
+        "SRC-000060",
+        "SRC-000061",
+        "SRC-000062",
+        "SRC-000063",
+        "SRC-000064",
+        "SRC-000065",
+        "SRC-000066",
+        "SRC-000067",
+        "SRC-000068",
+        "SRC-000069",
+        "SRC-000070",
+        "SRC-000071",
+        "SRC-000072",
+        "SRC-000073",
+        "SRC-000074",
+        "SRC-000075",
+        "SRC-000076",
+        "SRC-000077",
+        "SRC-000078",
+        "SRC-000079",
+        "SRC-000080",
+        "SRC-000081",
+        "SRC-000082",
+        "SRC-000083",
+        "SRC-000084",
+        "SRC-000085",
+        "SRC-000086",
+        "SRC-000087",
+        "SRC-000088",
+        "SRC-000089",
+        "SRC-000090",
+        "SRC-000091",
+        "SRC-000092",
+        "SRC-000093",
+        "SRC-000094",
+        "SRC-000095",
+        "SRC-000096",
+        "SRC-000097",
+        "SRC-000098",
+        "SRC-000099",
+        "SRC-000100",
+        "SRC-000101",
+        "SRC-000102",
+        "SRC-000103",
+        "SRC-000104",
+        "SRC-000105",
+        "SRC-000106",
+        "SRC-000107",
+        "SRC-000108",
+        "SRC-000109",
+        "SRC-000110",
+        "SRC-000111",
+        "SRC-000112",
+        "SRC-000113",
+        "SRC-000114",
+        "SRC-000115",
+        "SRC-000116",
+        "SRC-000117",
+        "SRC-000118",
+        "SRC-000119",
+        "SRC-000120",
+        "SRC-000121",
+        "SRC-000122",
+        "SRC-000123",
+        "SRC-000124",
+        "SRC-000125",
+        "SRC-000126",
+        "SRC-000127",
+        "SRC-000128",
+        "SRC-000129",
+        "SRC-000130",
+        "SRC-000132",
+        "SRC-000133",
+        "SRC-000134",
+        "SRC-000135",
+        "SRC-000137",
+        "SRC-000138",
+        "SRC-000139",
+        "SRC-000140",
+        "SRC-000141",
+        "SRC-000142",
+        "SRC-000144",
+        "SRC-000145",
+        "SRC-000147",
+        "SRC-000148",
+        "SRC-000149",
+        "SRC-000152",
+        "SRC-000153",
+        "SRC-000156",
+        "SRC-000157",
+        "SRC-000158",
+        "SRC-000160",
+        "SRC-000161",
+        "SRC-000162",
+        "SRC-000165",
+        "SRC-000166",
+        "SRC-000167",
+        "SRC-000169",
+        "SRC-000171",
+        "SRC-000172",
+        "SRC-000173",
+        "SRC-000176",
+        "SRC-000186",
+        "SRC-000200",
+        "SRC-000219",
+        "SRC-000222",
+        "SRC-000224",
+        "SRC-000226",
+        "SRC-000255",
+        "SRC-000256",
+        "SRC-000259",
+        "SRC-000261",
+        "SRC-000262",
+        "SRC-000263",
+        "SRC-000266",
+        "SRC-000278",
+        "SRC-000279",
+        "SRC-000280",
+        "SRC-000286",
+        "SRC-000287",
+        "SRC-000290",
+        "SRC-000295",
+        "SRC-000296",
+        "SRC-000297",
+        "SRC-000298",
+        "SRC-000299",
+        "SRC-000300",
+        "SRC-000301",
+        "SRC-000302",
+        "SRC-000303",
+        "SRC-000304",
+        "SRC-000305",
+        "SRC-000306",
+        "SRC-000307",
+        "SRC-000308",
+        "SRC-000309",
+        "SRC-000310",
+        "SRC-000311",
+        "SRC-000312",
+        "SRC-000313",
+        "SRC-000314",
+        "SRC-000315",
+        "SRC-000316",
+        "SRC-000317",
+        "SRC-000318",
+        "SRC-000319",
+        "SRC-000320",
+        "SRC-000321",
+        "SRC-000322",
+        "SRC-000323",
+        "SRC-000324",
+        "SRC-000325",
+        "SRC-000326",
+        "SRC-000327",
+        "SRC-000328",
+        "SRC-000329",
+        "SRC-000330",
+        "SRC-000331",
+        "SRC-000332",
+        "SRC-000333",
+        "SRC-000334",
+        "SRC-000335",
+        "SRC-000336"
+      ],
+      "owner": "evidence",
+      "blockingCondition": "Source records without access dates remain provisional.",
+      "nextAction": "Complete source access dates",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09"
+    },
+    {
+      "id": "OPN-000088",
+      "registryKind": "open_item",
+      "label": "Assess claim confidence",
+      "description": "Claims without an explicit confidence grade remain provisional.",
+      "status": "active",
+      "semanticFingerprint": "fp-552defbedfa8957ba7b7",
+      "legacyIds": [
+        "missing-claim-confidence"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "CLM-000092",
+        "CLM-000093",
+        "CLM-000094",
+        "CLM-000095",
+        "CLM-000096",
+        "CLM-000097",
+        "CLM-000098",
+        "CLM-000099",
+        "CLM-000100",
+        "CLM-000101",
+        "CLM-000102",
+        "CLM-000103",
+        "CLM-000104",
+        "CLM-000105",
+        "CLM-000106",
+        "CLM-000107",
+        "CLM-000108",
+        "CLM-000109",
+        "CLM-000110",
+        "CLM-000111",
+        "CLM-000112",
+        "CLM-000113",
+        "CLM-000114",
+        "CLM-000115",
+        "CLM-000116",
+        "CLM-000117",
+        "CLM-000118",
+        "CLM-000119",
+        "CLM-000120",
+        "CLM-000121",
+        "CLM-000122",
+        "CLM-000123",
+        "CLM-000124",
+        "CLM-000125",
+        "CLM-000126",
+        "CLM-000127",
+        "CLM-000128",
+        "CLM-000129",
+        "CLM-000130",
+        "CLM-000131",
+        "CLM-000132",
+        "CLM-000133",
+        "CLM-000134",
+        "CLM-000135",
+        "CLM-000136",
+        "CLM-000137",
+        "CLM-000138",
+        "CLM-000139",
+        "CLM-000140",
+        "CLM-000141",
+        "CLM-000142",
+        "CLM-000143",
+        "CLM-000144",
+        "CLM-000145",
+        "CLM-000146",
+        "CLM-000147",
+        "CLM-000148",
+        "CLM-000149",
+        "CLM-000150",
+        "CLM-000151",
+        "CLM-000152",
+        "CLM-000153",
+        "CLM-000154",
+        "CLM-000155",
+        "CLM-000156",
+        "CLM-000157"
+      ],
+      "owner": "evidence",
+      "blockingCondition": "Claims without an explicit confidence grade remain provisional.",
+      "nextAction": "Assess claim confidence",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09"
+    },
+    {
+      "id": "OPN-000089",
+      "registryKind": "open_item",
+      "label": "Formalize transformation contracts",
+      "description": "Normalizer implementations require explicit equations and input/output bindings.",
+      "status": "active",
+      "semanticFingerprint": "fp-6f993ca60d1073efab51",
+      "legacyIds": [
+        "formal-transformation-contracts"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "TRN-000001",
+        "TRN-000002",
+        "TRN-000003",
+        "TRN-000004",
+        "TRN-000005"
+      ],
+      "owner": "evidence",
+      "blockingCondition": "Normalizer implementations require explicit equations and input/output bindings.",
+      "nextAction": "Formalize transformation contracts",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09"
+    },
+    {
+      "id": "OPN-000090",
+      "registryKind": "open_item",
+      "label": "Complete chart-to-metric bindings",
+      "description": "Chart contracts are preserved, but route-specific metric bindings await vertical-slice implementation.",
+      "status": "active",
+      "semanticFingerprint": "fp-d4c5b64fac5a958df7eb",
+      "legacyIds": [
+        "chart-data-bindings"
+      ],
+      "itemStatus": "open",
+      "severity": "high",
+      "affectedIds": [
+        "CHT-000001",
+        "CHT-000002",
+        "CHT-000003",
+        "CHT-000004",
+        "CHT-000005",
+        "CHT-000006",
+        "CHT-000007",
+        "CHT-000008",
+        "CHT-000009",
+        "CHT-000010",
+        "CHT-000011",
+        "CHT-000012",
+        "CHT-000013",
+        "CHT-000014",
+        "CHT-000015",
+        "CHT-000016",
+        "CHT-000017",
+        "CHT-000018",
+        "CHT-000019",
+        "CHT-000020",
+        "CHT-000021",
+        "CHT-000022",
+        "CHT-000023",
+        "CHT-000024",
+        "CHT-000025",
+        "CHT-000026",
+        "CHT-000027",
+        "CHT-000028",
+        "CHT-000029",
+        "CHT-000030",
+        "CHT-000031",
+        "CHT-000098",
+        "CHT-000099",
+        "CHT-000100",
+        "CHT-000101",
+        "CHT-000102",
+        "CHT-000103",
+        "CHT-000104",
+        "CHT-000083",
+        "CHT-000032",
+        "CHT-000033",
+        "CHT-000034",
+        "CHT-000035",
+        "CHT-000036",
+        "CHT-000037",
+        "CHT-000105",
+        "CHT-000106",
+        "CHT-000107",
+        "CHT-000108",
+        "CHT-000109",
+        "CHT-000110",
+        "CHT-000038",
+        "CHT-000084",
+        "CHT-000111",
+        "CHT-000112",
+        "CHT-000113",
+        "CHT-000114",
+        "CHT-000115",
+        "CHT-000116",
+        "CHT-000117",
+        "CHT-000118",
+        "CHT-000119",
+        "CHT-000120",
+        "CHT-000121",
+        "CHT-000122",
+        "CHT-000123",
+        "CHT-000039",
+        "CHT-000040",
+        "CHT-000041",
+        "CHT-000042",
+        "CHT-000085",
+        "CHT-000086",
+        "CHT-000087",
+        "CHT-000088",
+        "CHT-000089",
+        "CHT-000090",
+        "CHT-000091",
+        "CHT-000043",
+        "CHT-000044",
+        "CHT-000045",
+        "CHT-000046",
+        "CHT-000047",
+        "CHT-000092",
+        "CHT-000093",
+        "CHT-000094",
+        "CHT-000095",
+        "CHT-000096",
+        "CHT-000097",
+        "CHT-000048",
+        "CHT-000049",
+        "CHT-000050",
+        "CHT-000051",
+        "CHT-000052",
+        "CHT-000053",
+        "CHT-000054",
+        "CHT-000055",
+        "CHT-000124",
+        "CHT-000125",
+        "CHT-000126",
+        "CHT-000127",
+        "CHT-000128",
+        "CHT-000129",
+        "CHT-000056",
+        "CHT-000057",
+        "CHT-000058",
+        "CHT-000059",
+        "CHT-000060",
+        "CHT-000061",
+        "CHT-000062",
+        "CHT-000063",
+        "CHT-000064",
+        "CHT-000065",
+        "CHT-000066",
+        "CHT-000067",
+        "CHT-000068",
+        "CHT-000069",
+        "CHT-000070",
+        "CHT-000071",
+        "CHT-000072",
+        "CHT-000073",
+        "CHT-000074",
+        "CHT-000075",
+        "CHT-000076",
+        "CHT-000077",
+        "CHT-000078",
+        "CHT-000079",
+        "CHT-000080",
+        "CHT-000081",
+        "CHT-000082"
+      ],
+      "owner": "evidence",
+      "blockingCondition": "Chart contracts are preserved, but route-specific metric bindings await vertical-slice implementation.",
+      "nextAction": "Complete chart-to-metric bindings",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09"
+    },
+    {
+      "id": "OPN-000091",
+      "registryKind": "open_item",
+      "label": "Supply Regional hourly demand profiles",
+      "description": "Decision-critical input is intentionally pending until authoritative evidence and model ownership are established.",
+      "status": "active",
+      "semanticFingerprint": "fp-3773a66dce5b71056e07",
+      "legacyIds": [
+        "parameter:energy-hourly-demand-shape"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "PAR-000001"
+      ],
+      "owner": "models",
+      "blockingCondition": "The related quantitative strategy output is unavailable.",
+      "nextAction": "Select authoritative evidence, define bounds, and pass parameter validation.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09"
+    },
+    {
+      "id": "OPN-000092",
+      "registryKind": "open_item",
+      "label": "Supply Technology capital and operating costs",
+      "description": "Decision-critical input is intentionally pending until authoritative evidence and model ownership are established.",
+      "status": "active",
+      "semanticFingerprint": "fp-7c93c5bb1be6138fc46c",
+      "legacyIds": [
+        "parameter:energy-capital-costs"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "PAR-000002"
+      ],
+      "owner": "models",
+      "blockingCondition": "The related quantitative strategy output is unavailable.",
+      "nextAction": "Select authoritative evidence, define bounds, and pass parameter validation.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09"
+    },
+    {
+      "id": "OPN-000093",
+      "registryKind": "open_item",
+      "label": "Supply Weather-conditioned capacity contribution",
+      "description": "Decision-critical input is intentionally pending until authoritative evidence and model ownership are established.",
+      "status": "active",
+      "semanticFingerprint": "fp-0d038384063a46658406",
+      "legacyIds": [
+        "parameter:energy-capacity-contribution"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "PAR-000003"
+      ],
+      "owner": "models",
+      "blockingCondition": "The related quantitative strategy output is unavailable.",
+      "nextAction": "Select authoritative evidence, define bounds, and pass parameter validation.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09"
+    },
+    {
+      "id": "OPN-000094",
+      "registryKind": "open_item",
+      "label": "Supply Technology outage rates",
+      "description": "Decision-critical input is intentionally pending until authoritative evidence and model ownership are established.",
+      "status": "active",
+      "semanticFingerprint": "fp-7ffb32b5e54e02ba3f17",
+      "legacyIds": [
+        "parameter:energy-outage-rates"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "PAR-000004"
+      ],
+      "owner": "models",
+      "blockingCondition": "The related quantitative strategy output is unavailable.",
+      "nextAction": "Select authoritative evidence, define bounds, and pass parameter validation.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09"
+    },
+    {
+      "id": "OPN-000095",
+      "registryKind": "open_item",
+      "label": "Supply Transmission build-rate constraint",
+      "description": "Decision-critical input is intentionally pending until authoritative evidence and model ownership are established.",
+      "status": "active",
+      "semanticFingerprint": "fp-a0246d2eb5852d11de1e",
+      "legacyIds": [
+        "parameter:energy-transmission-build-rate"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "PAR-000005"
+      ],
+      "owner": "models",
+      "blockingCondition": "The related quantitative strategy output is unavailable.",
+      "nextAction": "Select authoritative evidence, define bounds, and pass parameter validation.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09"
+    },
+    {
+      "id": "OPN-000096",
+      "registryKind": "open_item",
+      "label": "Supply Representative and stress weather years",
+      "description": "Decision-critical input is intentionally pending until authoritative evidence and model ownership are established.",
+      "status": "active",
+      "semanticFingerprint": "fp-e41199ac112ae8ccd504",
+      "legacyIds": [
+        "parameter:energy-weather-years"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "PAR-000006"
+      ],
+      "owner": "models",
+      "blockingCondition": "The related quantitative strategy output is unavailable.",
+      "nextAction": "Select authoritative evidence, define bounds, and pass parameter validation.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09"
+    },
+    {
+      "id": "OPN-000097",
+      "registryKind": "open_item",
+      "label": "Supply Adaptation-conditioned exposure",
+      "description": "Decision-critical input is intentionally pending until authoritative evidence and model ownership are established.",
+      "status": "active",
+      "semanticFingerprint": "fp-82a97f86faa8236d708d",
+      "legacyIds": [
+        "parameter:climate-adaptation-exposure"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "PAR-000007"
+      ],
+      "owner": "models",
+      "blockingCondition": "The related quantitative strategy output is unavailable.",
+      "nextAction": "Select authoritative evidence, define bounds, and pass parameter validation.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09"
+    },
+    {
+      "id": "OPN-000098",
+      "registryKind": "open_item",
+      "label": "Supply Adaptation lifecycle cost",
+      "description": "Decision-critical input is intentionally pending until authoritative evidence and model ownership are established.",
+      "status": "active",
+      "semanticFingerprint": "fp-15c28b8e92ed3f621870",
+      "legacyIds": [
+        "parameter:climate-adaptation-cost"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "PAR-000008"
+      ],
+      "owner": "models",
+      "blockingCondition": "The related quantitative strategy output is unavailable.",
+      "nextAction": "Select authoritative evidence, define bounds, and pass parameter validation.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09"
+    },
+    {
+      "id": "OPN-000099",
+      "registryKind": "open_item",
+      "label": "Supply Food production and demand baseline",
+      "description": "Decision-critical input is intentionally pending until authoritative evidence and model ownership are established.",
+      "status": "active",
+      "semanticFingerprint": "fp-0adbe6948a910d29ad96",
+      "legacyIds": [
+        "parameter:food-production-baseline"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "PAR-000009"
+      ],
+      "owner": "models",
+      "blockingCondition": "The related quantitative strategy output is unavailable.",
+      "nextAction": "Select authoritative evidence, define bounds, and pass parameter validation.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09"
+    },
+    {
+      "id": "OPN-000100",
+      "registryKind": "open_item",
+      "label": "Supply Diet and waste demand assumptions",
+      "description": "Decision-critical input is intentionally pending until authoritative evidence and model ownership are established.",
+      "status": "active",
+      "semanticFingerprint": "fp-e898231af576424dd6aa",
+      "legacyIds": [
+        "parameter:food-diet-demand"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "PAR-000010"
+      ],
+      "owner": "models",
+      "blockingCondition": "The related quantitative strategy output is unavailable.",
+      "nextAction": "Select authoritative evidence, define bounds, and pass parameter validation.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09"
+    },
+    {
+      "id": "OPN-000101",
+      "registryKind": "open_item",
+      "label": "Supply Facility-level water operation data",
+      "description": "Decision-critical input is intentionally pending until authoritative evidence and model ownership are established.",
+      "status": "active",
+      "semanticFingerprint": "fp-dea024d64e2b17620b5f",
+      "legacyIds": [
+        "parameter:water-facility-operations"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "PAR-000011"
+      ],
+      "owner": "models",
+      "blockingCondition": "The related quantitative strategy output is unavailable.",
+      "nextAction": "Select authoritative evidence, define bounds, and pass parameter validation.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09"
+    },
+    {
+      "id": "OPN-000102",
+      "registryKind": "open_item",
+      "label": "Supply Watershed availability and ecological constraint",
+      "description": "Decision-critical input is intentionally pending until authoritative evidence and model ownership are established.",
+      "status": "active",
+      "semanticFingerprint": "fp-b7cd6ff25f33a1bcfabd",
+      "legacyIds": [
+        "parameter:water-watershed-availability"
+      ],
+      "itemStatus": "open",
+      "severity": "release_blocking",
+      "affectedIds": [
+        "PAR-000012"
+      ],
+      "owner": "models",
+      "blockingCondition": "The related quantitative strategy output is unavailable.",
+      "nextAction": "Select authoritative evidence, define bounds, and pass parameter validation.",
+      "created": "2026-08-09",
+      "lastReviewed": "2026-08-09"
+    }
+  ]
+}

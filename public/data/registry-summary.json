@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0.0",
+  "evidenceVintage": "2026-08-01",
+  "trackedResearchInputs": 215,
+  "counts": {
+    "schemaVersion": 5,
+    "generatedFrom": 23,
+    "evidenceVintage": 10,
+    "source": 336,
+    "claim": 157,
+    "dataset": 130,
+    "metric": 117,
+    "parameter": 12,
+    "scenario": 128,
+    "chart": 129,
+    "transformation": 5,
+    "model": 17,
+    "denominator": 14,
+    "open_item": 102
+  },
+  "audit": {
+    "sourceDefinitionConflicts": 25,
+    "duplicateCanonicalIds": 0,
+    "orphanResolutions": 0,
+    "pendingSources": 0,
+    "pendingParameters": 12,
+    "openItems": 102
+  }
+}

@@ -1,6 +1,5 @@
 ---
 import RouteLayout from '../layouts/RouteLayout.astro';
-import CaveatPanel from '../components/CaveatPanel.astro';
 import EvidenceBadge from '../components/EvidenceBadge.astro';
 import EvidenceGap from '../components/EvidenceGap.astro';
 import DemandChapter from '../components/energy/DemandChapter.astro';
@@ -17,9 +16,9 @@ import IndustryChapter from '../components/food-water/IndustryChapter.astro';
 import PlasticsChapter from '../components/food-water/PlasticsChapter.astro';
 import FoodChapter from '../components/food-water/FoodChapter.astro';
 import FoodWaterPlanChapter from '../components/food-water/FoodWaterPlanChapter.astro';
+import MethodsWorkspace from '../components/methods/MethodsWorkspace.astro';
 import { chapterContentFor } from '../lib/content/release';
 import { hrefForRoute, STORY_ANCHORS } from '../lib/navigation/shell';
-import { CANONICAL_REGISTRIES } from '../lib/registry/store';
 import { ROUTES } from '../lib/registry/routes';
 import type { RouteDefinition } from '../lib/registry/types';
 
@@ -76,28 +75,6 @@ const statusCopy = {
         <a href={hrefForRoute('/methods', base)}>Inspect the current evidence and gap foundation →</a>
       </aside>
     </div>
-  ) : (
-    <div class="methods-shell">
-      <section class="shell-notice" aria-labelledby="methods-status-title">
-        <p class="section-kicker">Inspection surface · shell state</p>
-        <h2 id="methods-status-title">The ledgers exist; the searchable public methods workspace arrives in Step 12.</h2>
-        <p>The canonical layer already preserves collisions, confidence, source coverage, model boundaries, missing access dates, pending parameters, and every open research item.</p>
-      </section>
-      <dl class="registry-summary" aria-label="Canonical evidence registry summary">
-        <div><dt>Sources</dt><dd>{CANONICAL_REGISTRIES.source?.length ?? 0}</dd></div>
-        <div><dt>Claims</dt><dd>{CANONICAL_REGISTRIES.claim?.length ?? 0}</dd></div>
-        <div><dt>Datasets</dt><dd>{CANONICAL_REGISTRIES.dataset?.length ?? 0}</dd></div>
-        <div><dt>Open items</dt><dd>{CANONICAL_REGISTRIES.open_item?.length ?? 0}</dd></div>
-      </dl>
-      <CaveatPanel
-        title="What these counts do not establish"
-        caveats={[
-          'Registry counts describe the inspection foundation, not the number of conclusions ready for publication.',
-          'A registered source or metric can remain provisional, pending, or blocked by an open research item.',
-        ]}
-        prohibitedInterpretations={['Treating record volume as evidence quality or model readiness.']}
-      />
-    </div>
-  )}
+  ) : <MethodsWorkspace />}
   <script>import '../scripts/strategy-workbenches.ts';</script>
 </RouteLayout>

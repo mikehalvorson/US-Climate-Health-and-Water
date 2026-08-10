@@ -1,47 +1,10 @@
 ---
+import OverviewDashboard from '../components/overview/OverviewDashboard.astro';
 import RouteLayout from '../layouts/RouteLayout.astro';
-import { hrefForRoute } from '../lib/navigation/shell';
-import { routeById, ROUTES, SUPERSECTION_DEFINITIONS } from '../lib/registry/routes';
+import { ROUTES } from '../lib/registry/routes';
 
 const route = ROUTES[0];
-const base = import.meta.env.BASE_URL;
 ---
 <RouteLayout route={route}>
-  <section class="shell-notice" aria-labelledby="shell-status-title">
-    <p class="section-kicker">First-draft build · Step 4</p>
-    <h2 id="shell-status-title">The route system is ready; chapter evidence is not yet published.</h2>
-    <p>This review surface verifies how the complete argument will move across energy, climate, food, water, and materials. Canonical evidence exists behind the shell, but it will appear only as each vertical slice clears its own publication tests.</p>
-  </section>
-
-  <section class="system-guide" aria-labelledby="system-guide-title">
-    <div class="section-heading">
-      <p class="section-kicker">One system · three decisions</p>
-      <h2 id="system-guide-title">Follow essential services through their shared constraints.</h2>
-    </div>
-    <div class="system-guide__grid">
-      {SUPERSECTION_DEFINITIONS.map((section, index) => {
-        const landing = routeById(section.landingRouteId);
-        return landing && (
-          <a class={`system-card system-card--${section.key}`} href={hrefForRoute(landing.path, base)}>
-            <span>0{index + 1}</span>
-            <strong>{section.label}</strong>
-            <p>{section.purpose}</p>
-            <small>Begin with {landing.label} →</small>
-          </a>
-        );
-      })}
-    </div>
-  </section>
-
-  <section class="shell-ledger" aria-labelledby="ledger-title">
-    <div>
-      <p class="section-kicker">What this step proves</p>
-      <h2 id="ledger-title">A coherent frame before persuasive content.</h2>
-    </div>
-    <ul>
-      <li><strong>16</strong><span>canonical routes in one narrative order</span></li>
-      <li><strong>3</strong><span>supersections with local chapter progress</span></li>
-      <li><strong>0</strong><span>research values invented for the shell</span></li>
-    </ul>
-  </section>
+  <OverviewDashboard />
 </RouteLayout>

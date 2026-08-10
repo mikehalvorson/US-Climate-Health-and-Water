@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "charts": [
+    {
+      "chart_id": "overview-connected-system",
+      "title": "Essential services share one connected physical system",
+      "type": "flow",
+      "data": ["energy/summary.json", "climate/summary.json", "water/summary.json", "plastics/summary.json"],
+      "constraints": ["Arrows describe dependencies and feedbacks, not modeled flow magnitudes.", "No chapter boundary removes a physical or institutional dependency."]
+    },
+    {
+      "chart_id": "overview-current-scorecard",
+      "title": "Current-system evidence scorecard",
+      "type": "table",
+      "data": ["energy/timeseries/normalized/us-electricity-generation-history.csv", "energy/consumption/timeseries/normalized/us-electricity-consumption-history.csv", "climate/timeseries/normalized/global-co2-emissions-and-cumulative-1850-2024.csv", "climate/attribution/causal-chain.json", "water/national-water-use.json", "plastics/us-material-flows.json"],
+      "constraints": ["Mixed units remain in separate cards and are never summed.", "Every value retains the geography, period, evidence state, and canonical chapter that owns it."]
+    },
+    {
+      "chart_id": "overview-dependency-map",
+      "title": "Three decision areas depend on one another",
+      "type": "matrix",
+      "data": ["energy/impacts/technology-impact-matrix.json", "climate/summary.json", "water/cross-domain-findings.json"],
+      "constraints": ["Cells state documented dependencies, not causal effect sizes.", "Cross-system burdens remain visible when evidence is incomplete."]
+    },
+    {
+      "chart_id": "overview-portfolio-architecture",
+      "title": "Integrated resilience portfolio architecture",
+      "type": "flow",
+      "data": ["energy/plan-chart-contracts.json", "climate/plan-chart-contracts.json", "water/food-plan-chart-contracts.json"],
+      "constraints": ["The architecture is a recommendation, not an optimized national build plan.", "Each element retains its chapter-specific evidence and delivery gates."]
+    },
+    {
+      "chart_id": "overview-outcome-readiness",
+      "title": "Outcome readiness across reference, recommended, and stress logic",
+      "type": "matrix",
+      "data": ["energy/timeseries/gap-register.json", "climate/gaps.json", "water/gaps.json", "plastics/gaps.json"],
+      "constraints": ["Qualitative planning logic is not a modeled outcome.", "Unavailable cross-system values remain explicit nulls until a versioned integrated model is validated."]
+    },
+    {
+      "chart_id": "overview-roadmap",
+      "title": "Implementation and research advance through shared gates",
+      "type": "flow",
+      "data": ["energy/transmission/process/process-graph.json", "climate/gaps.json", "water/gaps.json"],
+      "constraints": ["Phases describe sequence and review gates, not promised completion dates.", "No phase may claim quantified outcomes while its required data or model gate is open."]
+    }
+  ]
+}

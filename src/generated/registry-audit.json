@@ -4,11 +4,11 @@
   "counts": {
     "source": 336,
     "claim": 157,
-    "dataset": 124,
+    "dataset": 130,
     "metric": 117,
     "parameter": 12,
     "scenario": 128,
-    "chart": 123,
+    "chart": 129,
     "transformation": 5,
     "model": 17,
     "denominator": 14,
@@ -1256,7 +1256,7 @@
     "openItems": 102,
     "pendingSources": 0,
     "pendingParameters": 12,
-    "unboundCharts": 123
+    "unboundCharts": 129
   },
   "policies": {
     "sourceCollision": "Highest-precedence domain owner wins; all candidate paths remain in this audit.",
