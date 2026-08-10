@@ -14857,6 +14857,357 @@
       ],
       "useClass": "trend",
       "participation": "display_only"
+    },
+    {
+      "id": "DAT-000112",
+      "registryKind": "dataset",
+      "label": "research/climate/gaps.json",
+      "description": "Research dataset represented by research/climate/gaps.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-516e8eb2067c094088e9",
+      "legacyIds": [
+        "path:research/climate/gaps.json"
+      ],
+      "path": "research/climate/gaps.json",
+      "paths": [
+        "research/climate/gaps.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000113",
+      "registryKind": "dataset",
+      "label": "research/climate/summary.json",
+      "description": "Research dataset represented by research/climate/summary.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-19c381d556dfe7127fa2",
+      "legacyIds": [
+        "path:research/climate/summary.json"
+      ],
+      "path": "research/climate/summary.json",
+      "paths": [
+        "research/climate/summary.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000114",
+      "registryKind": "dataset",
+      "label": "research/energy/consumption/demand-drivers.json",
+      "description": "Research dataset represented by research/energy/consumption/demand-drivers.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-9f99718d6042f973916b",
+      "legacyIds": [
+        "path:research/energy/consumption/demand-drivers.json"
+      ],
+      "path": "research/energy/consumption/demand-drivers.json",
+      "paths": [
+        "research/energy/consumption/demand-drivers.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000115",
+      "registryKind": "dataset",
+      "label": "research/energy/en-roads/model-map.json",
+      "description": "Research dataset represented by research/energy/en-roads/model-map.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-c6027e29fb753fc5af03",
+      "legacyIds": [
+        "path:research/energy/en-roads/model-map.json"
+      ],
+      "path": "research/energy/en-roads/model-map.json",
+      "paths": [
+        "research/energy/en-roads/model-map.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000116",
+      "registryKind": "dataset",
+      "label": "research/energy/technology-taxonomy.json",
+      "description": "Research dataset represented by research/energy/technology-taxonomy.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-3c55267a89d47c102c2e",
+      "legacyIds": [
+        "path:research/energy/technology-taxonomy.json"
+      ],
+      "path": "research/energy/technology-taxonomy.json",
+      "paths": [
+        "research/energy/technology-taxonomy.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000117",
+      "registryKind": "dataset",
+      "label": "research/energy/timeseries/gap-register.json",
+      "description": "Research dataset represented by research/energy/timeseries/gap-register.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-7600e1959d76ec85f5b8",
+      "legacyIds": [
+        "path:research/energy/timeseries/gap-register.json"
+      ],
+      "path": "research/energy/timeseries/gap-register.json",
+      "paths": [
+        "research/energy/timeseries/gap-register.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000118",
+      "registryKind": "dataset",
+      "label": "research/energy/transmission/infrastructure-challenges.json",
+      "description": "Research dataset represented by research/energy/transmission/infrastructure-challenges.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-baad212dcbb3e77037ab",
+      "legacyIds": [
+        "path:research/energy/transmission/infrastructure-challenges.json"
+      ],
+      "path": "research/energy/transmission/infrastructure-challenges.json",
+      "paths": [
+        "research/energy/transmission/infrastructure-challenges.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000119",
+      "registryKind": "dataset",
+      "label": "research/water/risk/risk-register.json",
+      "description": "Research dataset represented by research/water/risk/risk-register.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-38ddd1141f52fea900e3",
+      "legacyIds": [
+        "path:research/water/risk/risk-register.json"
+      ],
+      "path": "research/water/risk/risk-register.json",
+      "paths": [
+        "research/water/risk/risk-register.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000120",
+      "registryKind": "dataset",
+      "label": "research/water/sectors/agriculture.json",
+      "description": "Research dataset represented by research/water/sectors/agriculture.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-11595f39f7b829b1070f",
+      "legacyIds": [
+        "path:research/water/sectors/agriculture.json"
+      ],
+      "path": "research/water/sectors/agriculture.json",
+      "paths": [
+        "research/water/sectors/agriculture.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000121",
+      "registryKind": "dataset",
+      "label": "research/water/sectors/manufacturing-plastics.json",
+      "description": "Research dataset represented by research/water/sectors/manufacturing-plastics.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-c16847c9438fea40f105",
+      "legacyIds": [
+        "path:research/water/sectors/manufacturing-plastics.json"
+      ],
+      "path": "research/water/sectors/manufacturing-plastics.json",
+      "paths": [
+        "research/water/sectors/manufacturing-plastics.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000122",
+      "registryKind": "dataset",
+      "label": "research/water/summary.json",
+      "description": "Research dataset represented by research/water/summary.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-e2d0a60b79b65b0715ba",
+      "legacyIds": [
+        "path:research/water/summary.json"
+      ],
+      "path": "research/water/summary.json",
+      "paths": [
+        "research/water/summary.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000123",
+      "registryKind": "dataset",
+      "label": "research/water/technologies/atmospheric-water-generation.json",
+      "description": "Research dataset represented by research/water/technologies/atmospheric-water-generation.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-0191f9c4f662849336f9",
+      "legacyIds": [
+        "path:research/water/technologies/atmospheric-water-generation.json"
+      ],
+      "path": "research/water/technologies/atmospheric-water-generation.json",
+      "paths": [
+        "research/water/technologies/atmospheric-water-generation.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
+    },
+    {
+      "id": "DAT-000124",
+      "registryKind": "dataset",
+      "label": "research/water/technologies/desalination.json",
+      "description": "Research dataset represented by research/water/technologies/desalination.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-cf68b623dd3c2a2ccf5f",
+      "legacyIds": [
+        "path:research/water/technologies/desalination.json"
+      ],
+      "path": "research/water/technologies/desalination.json",
+      "paths": [
+        "research/water/technologies/desalination.json"
+      ],
+      "sourceIds": [],
+      "geographyTypes": [
+        "unspecified"
+      ],
+      "periods": [
+        "undated"
+      ],
+      "unitFamilies": [
+        "qualitative"
+      ],
+      "useClass": "trend",
+      "participation": "display_only"
     }
   ],
   "metric": [
@@ -24937,6 +25288,1002 @@
           "Do not assign national averages to a plant or watershed."
         ]
       }
+    },
+    {
+      "id": "CHT-000098",
+      "registryKind": "chart",
+      "label": "Adaptation packages follow the risk and responsible system",
+      "description": "Chart contract imported from research/climate/plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-eaffc9f3de72ea319288",
+      "legacyIds": [
+        "climate-plan-adaptation-packages"
+      ],
+      "chartType": "matrix",
+      "decisionQuestion": "Adaptation packages follow the risk and responsible system",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Adaptation packages follow the risk and responsible system.",
+      "dataReferences": [
+        "research/climate/impacts/freshwater.json",
+        "research/climate/impacts/sea-level.json",
+        "research/climate/impacts/temperature-risk-ladder.json"
+      ],
+      "legacyContract": {
+        "chart_id": "climate-plan-adaptation-packages",
+        "title": "Adaptation packages follow the risk and responsible system",
+        "type": "matrix",
+        "data": [
+          "impacts/temperature-risk-ladder.json",
+          "impacts/freshwater.json",
+          "impacts/sea-level.json"
+        ],
+        "constraints": [
+          "Adaptation choices require local exposure and vulnerability evidence.",
+          "Global risk evidence is not a local project design."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000099",
+      "registryKind": "chart",
+      "label": "Mitigation changes warming; adaptation changes exposure and vulnerability",
+      "description": "Chart contract imported from research/climate/plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-39d818d81088dc7b69e8",
+      "legacyIds": [
+        "climate-plan-causal-map"
+      ],
+      "chartType": "causal_path",
+      "decisionQuestion": "Mitigation changes warming; adaptation changes exposure and vulnerability",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Mitigation changes warming; adaptation changes exposure and vulnerability.",
+      "dataReferences": [
+        "research/climate/attribution/causal-chain.json",
+        "research/climate/impacts/temperature-risk-ladder.json"
+      ],
+      "legacyContract": {
+        "chart_id": "climate-plan-causal-map",
+        "title": "Mitigation changes warming; adaptation changes exposure and vulnerability",
+        "type": "causal_path",
+        "data": [
+          "attribution/causal-chain.json",
+          "impacts/temperature-risk-ladder.json"
+        ],
+        "constraints": [
+          "Keep mitigation, warming, hazard, exposure, vulnerability, adaptation, and residual risk distinct.",
+          "Do not infer national damages from this map."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000100",
+      "registryKind": "chart",
+      "label": "Mitigation levers act through different systems and time horizons",
+      "description": "Chart contract imported from research/climate/plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-4602d776d0167d5e7da7",
+      "legacyIds": [
+        "climate-plan-mitigation-levers"
+      ],
+      "chartType": "matrix",
+      "decisionQuestion": "Mitigation levers act through different systems and time horizons",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Mitigation levers act through different systems and time horizons.",
+      "dataReferences": [
+        "research/climate/attribution/ghg-temperature-relationship.json",
+        "research/climate/summary.json"
+      ],
+      "legacyContract": {
+        "chart_id": "climate-plan-mitigation-levers",
+        "title": "Mitigation levers act through different systems and time horizons",
+        "type": "matrix",
+        "data": [
+          "summary.json",
+          "attribution/ghg-temperature-relationship.json"
+        ],
+        "constraints": [
+          "The matrix is a responsibility and dependency map, not a marginal-abatement-cost curve.",
+          "No lever receives an unsupported universal rank."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000101",
+      "registryKind": "chart",
+      "label": "Versioned robust-decision model contract",
+      "description": "Chart contract imported from research/climate/plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-a608d32367bbc52c5766",
+      "legacyIds": [
+        "climate-plan-model-contract"
+      ],
+      "chartType": "flow",
+      "decisionQuestion": "Versioned robust-decision model contract",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Versioned robust-decision model contract.",
+      "dataReferences": [
+        "research/climate/gaps.json",
+        "research/climate/timeseries/impact-dose-response.csv",
+        "research/climate/timeseries/scenario-warming.csv"
+      ],
+      "legacyContract": {
+        "chart_id": "climate-plan-model-contract",
+        "title": "Versioned robust-decision model contract",
+        "type": "flow",
+        "data": [
+          "timeseries/scenario-warming.csv",
+          "timeseries/impact-dose-response.csv",
+          "gaps.json"
+        ],
+        "constraints": [
+          "No integrated damage total is authorized.",
+          "Release requires scenario provenance, local exposure, adaptation response, validation, and residual-risk reporting."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000102",
+      "registryKind": "chart",
+      "label": "Residual risk remains under lower, central, and severe conditions",
+      "description": "Chart contract imported from research/climate/plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-7eb1482c9e02b53c9eae",
+      "legacyIds": [
+        "climate-plan-residual-risk"
+      ],
+      "chartType": "matrix",
+      "decisionQuestion": "Residual risk remains under lower, central, and severe conditions",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Residual risk remains under lower, central, and severe conditions.",
+      "dataReferences": [
+        "research/climate/gaps.json",
+        "research/climate/timeseries/impact-dose-response.csv"
+      ],
+      "legacyContract": {
+        "chart_id": "climate-plan-residual-risk",
+        "title": "Residual risk remains under lower, central, and severe conditions",
+        "type": "matrix",
+        "data": [
+          "timeseries/impact-dose-response.csv",
+          "gaps.json"
+        ],
+        "constraints": [
+          "Cells are qualitative planning states, not damage estimates.",
+          "Severe stress tests are not assigned probabilities."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000103",
+      "registryKind": "chart",
+      "label": "Mitigate low and adapt high through staged delivery",
+      "description": "Chart contract imported from research/climate/plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-30b549c4c73566c71500",
+      "legacyIds": [
+        "climate-plan-roadmap"
+      ],
+      "chartType": "flow",
+      "decisionQuestion": "Mitigate low and adapt high through staged delivery",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Mitigate low and adapt high through staged delivery.",
+      "dataReferences": [
+        "research/climate/gaps.json",
+        "research/climate/summary.json"
+      ],
+      "legacyContract": {
+        "chart_id": "climate-plan-roadmap",
+        "title": "Mitigate low and adapt high through staged delivery",
+        "type": "flow",
+        "data": [
+          "summary.json",
+          "gaps.json"
+        ],
+        "constraints": [
+          "The sequence is a robust-decision roadmap, not a national benefit-cost optimum.",
+          "Monitoring and revision gates remain explicit."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000104",
+      "registryKind": "chart",
+      "label": "Assessed warming pathways are scenarios, not forecasts",
+      "description": "Chart contract imported from research/climate/plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-cbecf0ec216b07fe250b",
+      "legacyIds": [
+        "climate-plan-source-scenarios"
+      ],
+      "chartType": "dot_range",
+      "decisionQuestion": "Assessed warming pathways are scenarios, not forecasts",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Assessed warming pathways are scenarios, not forecasts.",
+      "dataReferences": [
+        "research/climate/timeseries/scenario-warming.csv"
+      ],
+      "legacyContract": {
+        "chart_id": "climate-plan-source-scenarios",
+        "title": "Assessed warming pathways are scenarios, not forecasts",
+        "type": "dot_range",
+        "data": [
+          "timeseries/scenario-warming.csv"
+        ],
+        "constraints": [
+          "Show assessed periods and ranges.",
+          "Do not invent annual trajectories or probabilities."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000105",
+      "registryKind": "chart",
+      "label": "A diversified low-carbon energy architecture",
+      "description": "Chart contract imported from research/energy/plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-cb854c71da5630118550",
+      "legacyIds": [
+        "energy-plan-architecture"
+      ],
+      "chartType": "flow",
+      "decisionQuestion": "A diversified low-carbon energy architecture",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for A diversified low-carbon energy architecture.",
+      "dataReferences": [
+        "research/energy/impacts/technology-impact-matrix.json",
+        "research/energy/technology-taxonomy.json"
+      ],
+      "legacyContract": {
+        "chart_id": "energy-plan-architecture",
+        "title": "A diversified low-carbon energy architecture",
+        "type": "flow",
+        "data": [
+          "technology-taxonomy.json",
+          "impacts/technology-impact-matrix.json"
+        ],
+        "constraints": [
+          "Architecture is a recommended design, not an optimized build mix.",
+          "Keep demand, supply, grid, and delivery requirements visible."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000106",
+      "registryKind": "chart",
+      "label": "Versioned integrated energy model contract",
+      "description": "Chart contract imported from research/energy/plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-a8dbc2626d8781c61eb6",
+      "legacyIds": [
+        "energy-plan-model-contract"
+      ],
+      "chartType": "flow",
+      "decisionQuestion": "Versioned integrated energy model contract",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Versioned integrated energy model contract.",
+      "dataReferences": [
+        "research/energy/en-roads/model-map.json",
+        "research/energy/timeseries/gap-register.json"
+      ],
+      "legacyContract": {
+        "chart_id": "energy-plan-model-contract",
+        "title": "Versioned integrated energy model contract",
+        "type": "flow",
+        "data": [
+          "en-roads/model-map.json",
+          "timeseries/gap-register.json"
+        ],
+        "constraints": [
+          "No model output is authorized until inputs, equations, outputs, and validation tests are versioned.",
+          "Do not claim least cost, reliability, bills, or a final 2050 mix."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000107",
+      "registryKind": "chart",
+      "label": "Portfolio requirements span six delivery systems",
+      "description": "Chart contract imported from research/energy/plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-33f1ee6610f803b935f4",
+      "legacyIds": [
+        "energy-plan-requirements"
+      ],
+      "chartType": "matrix",
+      "decisionQuestion": "Portfolio requirements span six delivery systems",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Portfolio requirements span six delivery systems.",
+      "dataReferences": [
+        "research/energy/consumption/demand-drivers.json",
+        "research/energy/impacts/technology-impact-matrix.json",
+        "research/energy/transmission/needs-and-expectations.json"
+      ],
+      "legacyContract": {
+        "chart_id": "energy-plan-requirements",
+        "title": "Portfolio requirements span six delivery systems",
+        "type": "matrix",
+        "data": [
+          "impacts/technology-impact-matrix.json",
+          "transmission/needs-and-expectations.json",
+          "consumption/demand-drivers.json"
+        ],
+        "constraints": [
+          "Scores are planning requirements, not performance results.",
+          "Unknown compatible coefficients remain visible."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000108",
+      "registryKind": "chart",
+      "label": "Delivery phases advance only through evidence gates",
+      "description": "Chart contract imported from research/energy/plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-411cb3cc2ca10c867acc",
+      "legacyIds": [
+        "energy-plan-roadmap"
+      ],
+      "chartType": "flow",
+      "decisionQuestion": "Delivery phases advance only through evidence gates",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Delivery phases advance only through evidence gates.",
+      "dataReferences": [
+        "research/energy/timeseries/gap-register.json",
+        "research/energy/transmission/process/process-graph.json"
+      ],
+      "legacyContract": {
+        "chart_id": "energy-plan-roadmap",
+        "title": "Delivery phases advance only through evidence gates",
+        "type": "flow",
+        "data": [
+          "transmission/process/process-graph.json",
+          "timeseries/gap-register.json"
+        ],
+        "constraints": [
+          "Dates are sequencing horizons, not project completion forecasts.",
+          "A phase cannot clear while its named evidence gate is open."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000109",
+      "registryKind": "chart",
+      "label": "Stress-test the architecture before claiming robustness",
+      "description": "Chart contract imported from research/energy/plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-64eccbe7c374a5401010",
+      "legacyIds": [
+        "energy-plan-robustness"
+      ],
+      "chartType": "matrix",
+      "decisionQuestion": "Stress-test the architecture before claiming robustness",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Stress-test the architecture before claiming robustness.",
+      "dataReferences": [
+        "research/energy/timeseries/gap-register.json",
+        "research/energy/transmission/infrastructure-challenges.json"
+      ],
+      "legacyContract": {
+        "chart_id": "energy-plan-robustness",
+        "title": "Stress-test the architecture before claiming robustness",
+        "type": "matrix",
+        "data": [
+          "transmission/infrastructure-challenges.json",
+          "timeseries/gap-register.json"
+        ],
+        "constraints": [
+          "Cells state response logic and evidence gates, not reliability probabilities.",
+          "No stress case proves resource adequacy."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000110",
+      "registryKind": "chart",
+      "label": "Published energy scenario families stay separate",
+      "description": "Chart contract imported from research/energy/plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-a1387d657861322a6db3",
+      "legacyIds": [
+        "energy-plan-source-scenarios"
+      ],
+      "chartType": "line",
+      "decisionQuestion": "Published energy scenario families stay separate",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Published energy scenario families stay separate.",
+      "dataReferences": [
+        "research/energy/timeseries/normalized/global-electricity-projections-ngfs-phase5.1.csv",
+        "research/energy/timeseries/normalized/us-electricity-projections-aeo2026.csv",
+        "research/energy/timeseries/normalized/us-electricity-projections-nrel-standard-scenarios-2024.csv"
+      ],
+      "legacyContract": {
+        "chart_id": "energy-plan-source-scenarios",
+        "title": "Published energy scenario families stay separate",
+        "type": "line",
+        "data": [
+          "timeseries/normalized/us-electricity-projections-aeo2026.csv",
+          "timeseries/normalized/us-electricity-projections-nrel-standard-scenarios-2024.csv",
+          "timeseries/normalized/global-electricity-projections-ngfs-phase5.1.csv"
+        ],
+        "constraints": [
+          "AEO, NREL, and NGFS are source scenarios with different geographies and model boundaries.",
+          "Do not splice them into one national forecast."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000111",
+      "registryKind": "chart",
+      "label": "Major-crop sensitivity uses two non-combinable study frames",
+      "description": "Chart contract imported from research/water/food-plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-a389921132e7521325f8",
+      "legacyIds": [
+        "food-crop-yield-sensitivity"
+      ],
+      "chartType": "bar",
+      "decisionQuestion": "Major-crop sensitivity uses two non-combinable study frames",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Major-crop sensitivity uses two non-combinable study frames.",
+      "dataReferences": [
+        "research/climate/impacts/food-systems.json"
+      ],
+      "legacyContract": {
+        "chart_id": "food-crop-yield-sensitivity",
+        "title": "Major-crop sensitivity uses two non-combinable study frames",
+        "type": "bar",
+        "data": [
+          "../climate/impacts/food-systems.json"
+        ],
+        "constraints": [
+          "Separate percent per decade from percent per degree Celsius.",
+          "Expose adaptation and carbon-dioxide-fertilization assumptions."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000112",
+      "registryKind": "chart",
+      "label": "National food-system evidence readiness is uneven",
+      "description": "Chart contract imported from research/water/food-plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-b33248b48a79e14f8d29",
+      "legacyIds": [
+        "food-evidence-readiness"
+      ],
+      "chartType": "matrix",
+      "decisionQuestion": "National food-system evidence readiness is uneven",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for National food-system evidence readiness is uneven.",
+      "dataReferences": [
+        "research/climate/gaps.json",
+        "research/water/sectors/agriculture.json"
+      ],
+      "legacyContract": {
+        "chart_id": "food-evidence-readiness",
+        "title": "National food-system evidence readiness is uneven",
+        "type": "matrix",
+        "data": [
+          "sectors/agriculture.json",
+          "../climate/gaps.json"
+        ],
+        "constraints": [
+          "Readiness scores describe evidence coverage, not outcome quality.",
+          "Missing national baselines remain null."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000113",
+      "registryKind": "chart",
+      "label": "A local groundwater planning case shows transition pressure",
+      "description": "Chart contract imported from research/water/food-plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-569c501636d05e56b0ea",
+      "legacyIds": [
+        "food-groundwater-transition"
+      ],
+      "chartType": "line",
+      "decisionQuestion": "A local groundwater planning case shows transition pressure",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for A local groundwater planning case shows transition pressure.",
+      "dataReferences": [
+        "research/water/sectors/agriculture.json"
+      ],
+      "legacyContract": {
+        "chart_id": "food-groundwater-transition",
+        "title": "A local groundwater planning case shows transition pressure",
+        "type": "line",
+        "data": [
+          "sectors/agriculture.json"
+        ],
+        "constraints": [
+          "Hale County is a local planning estimate, not a national projection.",
+          "Do not interpret declining supply as an all-wells-fail date."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000114",
+      "registryKind": "chart",
+      "label": "Four food-system strategies use the same decision dimensions",
+      "description": "Chart contract imported from research/water/food-plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-4ee5a4ff47a86cde32f2",
+      "legacyIds": [
+        "food-options-comparison"
+      ],
+      "chartType": "matrix",
+      "decisionQuestion": "Four food-system strategies use the same decision dimensions",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Four food-system strategies use the same decision dimensions.",
+      "dataReferences": [
+        "research/climate/impacts/food-systems.json",
+        "research/water/sectors/agriculture.json"
+      ],
+      "legacyContract": {
+        "chart_id": "food-options-comparison",
+        "title": "Four food-system strategies use the same decision dimensions",
+        "type": "matrix",
+        "data": [
+          "sectors/agriculture.json",
+          "../climate/impacts/food-systems.json"
+        ],
+        "constraints": [
+          "Options are not optimized portfolios.",
+          "Qualitative comparisons cannot establish national food-security outcomes."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000115",
+      "registryKind": "chart",
+      "label": "Food-system outcomes extend beyond crop yield",
+      "description": "Chart contract imported from research/water/food-plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-bdbc5fe27cc6adc8142a",
+      "legacyIds": [
+        "food-system-boundary"
+      ],
+      "chartType": "flow",
+      "decisionQuestion": "Food-system outcomes extend beyond crop yield",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Food-system outcomes extend beyond crop yield.",
+      "dataReferences": [
+        "research/climate/impacts/food-systems.json",
+        "research/water/sectors/agriculture.json"
+      ],
+      "legacyContract": {
+        "chart_id": "food-system-boundary",
+        "title": "Food-system outcomes extend beyond crop yield",
+        "type": "flow",
+        "data": [
+          "sectors/agriculture.json",
+          "../climate/impacts/food-systems.json"
+        ],
+        "constraints": [
+          "Keep production, nutrition, affordability, waste, ecosystems, and labor visible.",
+          "Do not relabel crop sensitivity as food security."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000116",
+      "registryKind": "chart",
+      "label": "Proposed food-water-land model and release gates",
+      "description": "Chart contract imported from research/water/food-plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-196645f3ba9399f22fa6",
+      "legacyIds": [
+        "food-water-land-model"
+      ],
+      "chartType": "flow",
+      "decisionQuestion": "Proposed food-water-land model and release gates",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Proposed food-water-land model and release gates.",
+      "dataReferences": [
+        "research/climate/gaps.json",
+        "research/water/sectors/agriculture.json"
+      ],
+      "legacyContract": {
+        "chart_id": "food-water-land-model",
+        "title": "Proposed food-water-land model and release gates",
+        "type": "flow",
+        "data": [
+          "sectors/agriculture.json",
+          "../climate/gaps.json"
+        ],
+        "constraints": [
+          "This is a model contract, not a completed model.",
+          "Outputs stay unavailable until linked inputs and validation gates close."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000117",
+      "registryKind": "chart",
+      "label": "Portfolio contributions form a sequence, not an additive national total",
+      "description": "Chart contract imported from research/water/food-plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-3d4133b85fa680c79bce",
+      "legacyIds": [
+        "food-water-plan-contributions"
+      ],
+      "chartType": "bar",
+      "decisionQuestion": "Portfolio contributions form a sequence, not an additive national total",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Portfolio contributions form a sequence, not an additive national total.",
+      "dataReferences": [
+        "research/water/summary.json",
+        "research/water/technologies/atmospheric-water-generation.json",
+        "research/water/technologies/desalination.json"
+      ],
+      "legacyContract": {
+        "chart_id": "food-water-plan-contributions",
+        "title": "Portfolio contributions form a sequence, not an additive national total",
+        "type": "bar",
+        "data": [
+          "technologies/desalination.json",
+          "technologies/atmospheric-water-generation.json",
+          "summary.json"
+        ],
+        "constraints": [
+          "Unavailable compatible contributions remain null.",
+          "Do not add case-study yields across regions or technologies."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000118",
+      "registryKind": "chart",
+      "label": "Regional governance aligns authority with the physical system",
+      "description": "Chart contract imported from research/water/food-plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-7faa2adfeeb45bc75d97",
+      "legacyIds": [
+        "food-water-plan-governance"
+      ],
+      "chartType": "flow",
+      "decisionQuestion": "Regional governance aligns authority with the physical system",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Regional governance aligns authority with the physical system.",
+      "dataReferences": [
+        "research/water/accounting-boundaries.json",
+        "research/water/cross-domain-findings.json"
+      ],
+      "legacyContract": {
+        "chart_id": "food-water-plan-governance",
+        "title": "Regional governance aligns authority with the physical system",
+        "type": "flow",
+        "data": [
+          "accounting-boundaries.json",
+          "cross-domain-findings.json"
+        ],
+        "constraints": [
+          "The map is an implementation responsibility graph, not a jurisdictional completeness claim.",
+          "Tribal rights and local authority remain explicit."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000119",
+      "registryKind": "chart",
+      "label": "Versioned basin-food-industry model contract",
+      "description": "Chart contract imported from research/water/food-plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-92d310ceb9beb116de60",
+      "legacyIds": [
+        "food-water-plan-model-contract"
+      ],
+      "chartType": "flow",
+      "decisionQuestion": "Versioned basin-food-industry model contract",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Versioned basin-food-industry model contract.",
+      "dataReferences": [
+        "research/water/gaps.json",
+        "research/water/sectors/agriculture.json",
+        "research/water/sectors/data-centers.json",
+        "research/water/sectors/manufacturing-plastics.json"
+      ],
+      "legacyContract": {
+        "chart_id": "food-water-plan-model-contract",
+        "title": "Versioned basin-food-industry model contract",
+        "type": "flow",
+        "data": [
+          "sectors/agriculture.json",
+          "sectors/manufacturing-plastics.json",
+          "sectors/data-centers.json",
+          "gaps.json"
+        ],
+        "constraints": [
+          "No nationalized basin result is authorized.",
+          "Release requires water quantity, quality, return flow, food, industry, ecological, equity, and validation layers."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000120",
+      "registryKind": "chart",
+      "label": "Essential outcomes and ecological constraints are joint gates",
+      "description": "Chart contract imported from research/water/food-plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-a1b7516755d8e9967d5c",
+      "legacyIds": [
+        "food-water-plan-outcomes"
+      ],
+      "chartType": "matrix",
+      "decisionQuestion": "Essential outcomes and ecological constraints are joint gates",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Essential outcomes and ecological constraints are joint gates.",
+      "dataReferences": [
+        "research/water/cross-domain-findings.json",
+        "research/water/gaps.json"
+      ],
+      "legacyContract": {
+        "chart_id": "food-water-plan-outcomes",
+        "title": "Essential outcomes and ecological constraints are joint gates",
+        "type": "matrix",
+        "data": [
+          "cross-domain-findings.json",
+          "gaps.json"
+        ],
+        "constraints": [
+          "Engineering supply cannot override ecological, quality, rights, or affordability constraints.",
+          "Scores indicate decision requirements, not achieved outcomes."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000121",
+      "registryKind": "chart",
+      "label": "Essential-service portfolios face four planning conditions",
+      "description": "Chart contract imported from research/water/food-plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-12bbe756b381afae8e65",
+      "legacyIds": [
+        "food-water-plan-stress"
+      ],
+      "chartType": "matrix",
+      "decisionQuestion": "Essential-service portfolios face four planning conditions",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Essential-service portfolios face four planning conditions.",
+      "dataReferences": [
+        "research/water/gaps.json",
+        "research/water/risk/risk-register.json"
+      ],
+      "legacyContract": {
+        "chart_id": "food-water-plan-stress",
+        "title": "Essential-service portfolios face four planning conditions",
+        "type": "matrix",
+        "data": [
+          "risk/risk-register.json",
+          "gaps.json"
+        ],
+        "constraints": [
+          "Cells are response requirements, not outage probabilities.",
+          "Drought and infrastructure-failure effects require basin and utility models."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000122",
+      "registryKind": "chart",
+      "label": "Basins connect food, water, energy, materials, people, and ecosystems",
+      "description": "Chart contract imported from research/water/food-plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-b1547bb35186b472c536",
+      "legacyIds": [
+        "food-water-plan-system-map"
+      ],
+      "chartType": "flow",
+      "decisionQuestion": "Basins connect food, water, energy, materials, people, and ecosystems",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Basins connect food, water, energy, materials, people, and ecosystems.",
+      "dataReferences": [
+        "research/water/cross-domain-findings.json",
+        "research/water/sectors/agriculture.json"
+      ],
+      "legacyContract": {
+        "chart_id": "food-water-plan-system-map",
+        "title": "Basins connect food, water, energy, materials, people, and ecosystems",
+        "type": "flow",
+        "data": [
+          "cross-domain-findings.json",
+          "sectors/agriculture.json"
+        ],
+        "constraints": [
+          "Basin conditions and governance remain geographically explicit.",
+          "Do not aggregate incompatible basin evidence into one national average."
+        ]
+      }
+    },
+    {
+      "id": "CHT-000123",
+      "registryKind": "chart",
+      "label": "Portfolio tradeoffs stay multi-dimensional",
+      "description": "Chart contract imported from research/water/food-plan-chart-contracts.json.",
+      "status": "provisional",
+      "semanticFingerprint": "fp-7fd59657fbef1c893eed",
+      "legacyIds": [
+        "food-water-plan-tradeoffs"
+      ],
+      "chartType": "matrix",
+      "decisionQuestion": "Portfolio tradeoffs stay multi-dimensional",
+      "metricIds": [],
+      "sourceIds": [],
+      "permittedFilters": [],
+      "mandatoryAnnotations": [],
+      "forbiddenComparisons": [],
+      "emptyState": "No compatible evidence is available for the selected scope.",
+      "errorState": "The evidence view could not be generated; use the accessible source table.",
+      "accessibilitySummary": "Accessible table and source disclosure required for Portfolio tradeoffs stay multi-dimensional.",
+      "dataReferences": [
+        "research/water/cross-domain-findings.json",
+        "research/water/gaps.json"
+      ],
+      "legacyContract": {
+        "chart_id": "food-water-plan-tradeoffs",
+        "title": "Portfolio tradeoffs stay multi-dimensional",
+        "type": "matrix",
+        "data": [
+          "cross-domain-findings.json",
+          "gaps.json"
+        ],
+        "constraints": [
+          "Do not collapse reliability, cost, energy, emissions, ecosystems, and equity into one score.",
+          "Unknown household and ecological burdens remain visible."
+        ]
+      }
     }
   ],
   "transformation": [
@@ -28227,6 +29574,13 @@
         "CHT-000029",
         "CHT-000030",
         "CHT-000031",
+        "CHT-000098",
+        "CHT-000099",
+        "CHT-000100",
+        "CHT-000101",
+        "CHT-000102",
+        "CHT-000103",
+        "CHT-000104",
         "CHT-000083",
         "CHT-000032",
         "CHT-000033",
@@ -28234,8 +29588,27 @@
         "CHT-000035",
         "CHT-000036",
         "CHT-000037",
+        "CHT-000105",
+        "CHT-000106",
+        "CHT-000107",
+        "CHT-000108",
+        "CHT-000109",
+        "CHT-000110",
         "CHT-000038",
         "CHT-000084",
+        "CHT-000111",
+        "CHT-000112",
+        "CHT-000113",
+        "CHT-000114",
+        "CHT-000115",
+        "CHT-000116",
+        "CHT-000117",
+        "CHT-000118",
+        "CHT-000119",
+        "CHT-000120",
+        "CHT-000121",
+        "CHT-000122",
+        "CHT-000123",
         "CHT-000039",
         "CHT-000040",
         "CHT-000041",

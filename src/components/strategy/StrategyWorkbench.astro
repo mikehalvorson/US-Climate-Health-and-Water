@@ -1,0 +1,18 @@
+---
+import type { SourceRecord } from '../../lib/registry/types';
+import type { StrategyWorkbenchConfig } from '../../lib/data/strategy';
+import ScenarioWorkbench from '../ScenarioWorkbench.astro';
+import SourceDrawer from '../SourceDrawer.astro';
+
+interface Props { config: StrategyWorkbenchConfig; sources: readonly SourceRecord[] }
+const { config, sources } = Astro.props;
+const initialLayers = config.controls.map((control) => config.layers.find((layer) => layer.controlId === control.id && layer.value === control.defaultValue)).filter((layer) => layer !== undefined);
+---
+<div data-strategy-workbench data-strategy-config={JSON.stringify(config)}>
+  <ScenarioWorkbench id={config.id} title={config.title} decision={config.decision} controls={config.controls} modelFamily={config.modelFamily} seamNote={config.seamNote} readiness={config.readiness}>
+    <div class="workbench-result-grid strategy-workbench-output">
+      {initialLayers.map((layer) => <section><h3 data-strategy-title>{layer.title}</h3><p data-strategy-finding>{layer.finding}</p><p><strong data-strategy-evidence>{layer.evidence}</strong></p><small data-strategy-gate>{layer.gate}</small></section>)}
+    </div>
+    <div class="workbench-sources"><span>Core evidence:</span>{sources.map((source, index) => <SourceDrawer id={`${config.id}-source-${index + 1}`} source={source} triggerLabel={source.publisher} />)}</div>
+  </ScenarioWorkbench>
+</div>

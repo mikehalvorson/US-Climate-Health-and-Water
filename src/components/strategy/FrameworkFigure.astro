@@ -1,0 +1,37 @@
+---
+import type { SourceRecord } from '../../lib/registry/types';
+import type { ChartType } from '../../lib/registry/values';
+import { approvedStrategyChart, type FrameworkItem } from '../../lib/data/strategy';
+import ChartFrame from '../ChartFrame.astro';
+import DataTable from '../DataTable.astro';
+
+interface Props {
+  chartId: string;
+  chartType: ChartType;
+  unit: string;
+  geography: string;
+  period: string;
+  summary: string;
+  items: readonly FrameworkItem[];
+  sources: readonly SourceRecord[];
+  caveats?: readonly string[];
+}
+
+const { chartId, chartType, unit, geography, period, summary, items, sources, caveats = [] } = Astro.props;
+const chart = approvedStrategyChart(chartId, chartType);
+const tableRows = items.map((item) => ({ label: item.label, value: item.value, state: item.state, detail: item.detail, gate: item.gate }));
+---
+<ChartFrame chart={chart} unit={unit} geography={geography} period={period} sources={sources} summary={summary} caveats={caveats}>
+  <div slot="plot" class:list={['strategy-framework-grid', `strategy-framework-grid--${chartType}`]} role="img" aria-label={summary}>
+    {items.map((item, index) => (
+      <article>
+        <span>{String(index + 1).padStart(2, '0')} · {item.state}</span>
+        <h4>{item.label}</h4>
+        <strong>{item.value ?? 'Not quantified'}</strong>
+        <p>{item.detail}</p>
+        <small>Gate: {item.gate}</small>
+      </article>
+    ))}
+  </div>
+  <DataTable slot="table" caption={chart.label} columns={[{ key: 'label', label: 'Element' }, { key: 'value', label: 'Value or status' }, { key: 'state', label: 'Evidence state' }, { key: 'detail', label: 'Decision meaning' }, { key: 'gate', label: 'Release gate' }]} rows={tableRows} />
+</ChartFrame>

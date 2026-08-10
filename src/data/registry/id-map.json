@@ -189,6 +189,48 @@
     },
     {
       "kind": "chart",
+      "legacyId": "climate-plan-adaptation-packages",
+      "canonicalId": "CHT-000098",
+      "semanticHash": "deaab0b04948807b403b35f973e0dcb5df15160c8ef7212fcf28a7538af12e30"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "climate-plan-causal-map",
+      "canonicalId": "CHT-000099",
+      "semanticHash": "340d02748daadbfa89022301f67d8277afb8392b73ce0b98a8a30f5f3312abdd"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "climate-plan-mitigation-levers",
+      "canonicalId": "CHT-000100",
+      "semanticHash": "914b2545044163cbacbe50d98c898203880e8db11aafe683c62ebe6da92db20e"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "climate-plan-model-contract",
+      "canonicalId": "CHT-000101",
+      "semanticHash": "e5712a9d61c8b09959a302b7ed293ef63f0a5495a42c4661acca252e83a8f96a"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "climate-plan-residual-risk",
+      "canonicalId": "CHT-000102",
+      "semanticHash": "7648298cbc2e8b2c49b3348f46fc9543f52ce9ec7c3a077bf246073a185914ce"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "climate-plan-roadmap",
+      "canonicalId": "CHT-000103",
+      "semanticHash": "ae82f48b99d4e2d60cb11085d64143b99b7b82d5b7f352c8af0d07bc8c5e4463"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "climate-plan-source-scenarios",
+      "canonicalId": "CHT-000104",
+      "semanticHash": "50a08369eb235f4d0ed80ef55616526e6c6ca90f77ce4f8fc51d40a4746be179"
+    },
+    {
+      "kind": "chart",
       "legacyId": "climate-risk-priority-matrix",
       "canonicalId": "CHT-000083",
       "semanticHash": "e789c027dcbab0663f7e20a09f3f6ea1cc6500e8066c76b59bd3408abac930a2"
@@ -231,6 +273,42 @@
     },
     {
       "kind": "chart",
+      "legacyId": "energy-plan-architecture",
+      "canonicalId": "CHT-000105",
+      "semanticHash": "54725b30231291c3e60b1a58f3299ad892dc4b7a50a4c1230fb017ca5fd017e8"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "energy-plan-model-contract",
+      "canonicalId": "CHT-000106",
+      "semanticHash": "635afdddc91f0c6424eadceabba38350abf13ea32182365d265d86a3b6443d7d"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "energy-plan-requirements",
+      "canonicalId": "CHT-000107",
+      "semanticHash": "79ed2a39c9118b88e22785316f3035c990306ad9ef44959f11d711d073694ec1"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "energy-plan-roadmap",
+      "canonicalId": "CHT-000108",
+      "semanticHash": "ce879a94b4d58303d953975dedc215466a4e059eb3de59c3b43ca70dba3f0ab3"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "energy-plan-robustness",
+      "canonicalId": "CHT-000109",
+      "semanticHash": "52eaf762c4d8c437dfe6fe89176a4eb89281f46c974f66d99c6879fdf002dad5"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "energy-plan-source-scenarios",
+      "canonicalId": "CHT-000110",
+      "semanticHash": "9482cb64d6a9fd59ce03cb1ab010294192d05c44986d318fa73fe8daf21dc89a"
+    },
+    {
+      "kind": "chart",
       "legacyId": "evidence_and_data_gap_map",
       "canonicalId": "CHT-000038",
       "semanticHash": "65574d17076cea1f1380cd46d20f56804074821391da8ed572d5f69fc13a4fb8"
@@ -240,6 +318,84 @@
       "legacyId": "extreme-heat-response",
       "canonicalId": "CHT-000084",
       "semanticHash": "a21d29817b219465bb08b2b45207cc852ed034630e33e2b92958986eaf63994b"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "food-crop-yield-sensitivity",
+      "canonicalId": "CHT-000111",
+      "semanticHash": "56960e87d16edc812064c86df1e6d6362f4660d42f22e71bfb5ffa6c28513a5a"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "food-evidence-readiness",
+      "canonicalId": "CHT-000112",
+      "semanticHash": "d8ee8171edca5aab31184c4a4ddbb4f3d05d5db21d73c14b1271657c40a7c73a"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "food-groundwater-transition",
+      "canonicalId": "CHT-000113",
+      "semanticHash": "7d148df44027f5a6716b329eba437a0c57988ca9eede5206bb7032483f226920"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "food-options-comparison",
+      "canonicalId": "CHT-000114",
+      "semanticHash": "20494537c6bec17c9ca9846ed7c82344770b2937738430543f858c1e19be2f43"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "food-system-boundary",
+      "canonicalId": "CHT-000115",
+      "semanticHash": "c66b3c160358fcd8f5d8c2ff9e8082e8dfa0ae9328b0edebe37435d91264ce62"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "food-water-land-model",
+      "canonicalId": "CHT-000116",
+      "semanticHash": "6c704ed2f084e16b7ca759b34e4ffd546a695b9d735f02a475cc1ec8cfe47314"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "food-water-plan-contributions",
+      "canonicalId": "CHT-000117",
+      "semanticHash": "bc848ec60495d9551b7dbe6ee039e62161c2ecf8b0b2ff35d8127ac088f4f689"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "food-water-plan-governance",
+      "canonicalId": "CHT-000118",
+      "semanticHash": "3215627ea428455fda530cbca91fe6cdf3bebf4898ff57bcfce390abf6696b03"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "food-water-plan-model-contract",
+      "canonicalId": "CHT-000119",
+      "semanticHash": "d61258c28fbbda7502fbd2704f085cd470f7748acef55c2f174a20ca89645305"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "food-water-plan-outcomes",
+      "canonicalId": "CHT-000120",
+      "semanticHash": "321d96f1bd19da7255fb94495d995d110572f4919a910a0efd2259a3ef9a7ebb"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "food-water-plan-stress",
+      "canonicalId": "CHT-000121",
+      "semanticHash": "4c0f54b433fc22f1f319631c2164fd367e72d13344e353e97cc674f9d66ba1a2"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "food-water-plan-system-map",
+      "canonicalId": "CHT-000122",
+      "semanticHash": "9cc17a65c407bb7ae671c42d5f992e64303861cc062ea6f8154792bb5762eb17"
+    },
+    {
+      "kind": "chart",
+      "legacyId": "food-water-plan-tradeoffs",
+      "canonicalId": "CHT-000123",
+      "semanticHash": "1db665a2c9df587f413d6bfde7902a1b83f8c41d5cb6ae7cc3fdca0ffc870ad0"
     },
     {
       "kind": "chart",
@@ -1815,6 +1971,12 @@
     },
     {
       "kind": "dataset",
+      "legacyId": "path:research/climate/gaps.json",
+      "canonicalId": "DAT-000112",
+      "semanticHash": "50e85d0a65bcd04e916f44abb246f36e98951826d9936ea53f821253af100d9e"
+    },
+    {
+      "kind": "dataset",
       "legacyId": "path:research/climate/impacts/biodiversity.json",
       "canonicalId": "DAT-000049",
       "semanticHash": "1e80f2c8b222aed1cb4c3c7f5fb77c29cedbe71f8bdb109eccd96fdb33e49f48"
@@ -1857,6 +2019,12 @@
     },
     {
       "kind": "dataset",
+      "legacyId": "path:research/climate/summary.json",
+      "canonicalId": "DAT-000113",
+      "semanticHash": "6e9bbc87a44f8a66f33f113cbcc8a85cf931e29845150d49ef3077a8808fc6a7"
+    },
+    {
+      "kind": "dataset",
       "legacyId": "path:research/climate/timeseries/impact-dose-response.csv",
       "canonicalId": "DAT-000055",
       "semanticHash": "d91e892319a11f3904d095b4d2fb50e976ee27dfbc1ce696ecbc021269507d32"
@@ -1884,6 +2052,12 @@
       "legacyId": "path:research/climate/timeseries/scenario-warming.csv",
       "canonicalId": "DAT-000059",
       "semanticHash": "c771bebb102dd164e63b4e2b5b3a90c3b49db0ce4616a3f9902ac9bee6264744"
+    },
+    {
+      "kind": "dataset",
+      "legacyId": "path:research/energy/consumption/demand-drivers.json",
+      "canonicalId": "DAT-000114",
+      "semanticHash": "50a995704cbdd52360841c487b47e29798f6b9bed16b4c09a76815fb8f39ae2f"
     },
     {
       "kind": "dataset",
@@ -1941,6 +2115,12 @@
     },
     {
       "kind": "dataset",
+      "legacyId": "path:research/energy/en-roads/model-map.json",
+      "canonicalId": "DAT-000115",
+      "semanticHash": "5a8671869313d7b2080927fa1578e24adaad093a9f0c7cac8a719a15d1981c80"
+    },
+    {
+      "kind": "dataset",
       "legacyId": "path:research/energy/impacts/nuclear-generation.json",
       "canonicalId": "DAT-000107",
       "semanticHash": "11166917988196870c0b5751996b4c7c5ece48ab8d265cc74ef8a095f9100136"
@@ -1950,6 +2130,18 @@
       "legacyId": "path:research/energy/impacts/technology-impact-matrix.json",
       "canonicalId": "DAT-000108",
       "semanticHash": "235c725d66a75109904890820336680c2d724a0902b5c128baf162f497efb8a0"
+    },
+    {
+      "kind": "dataset",
+      "legacyId": "path:research/energy/technology-taxonomy.json",
+      "canonicalId": "DAT-000116",
+      "semanticHash": "aedd632e53c19c416a247138750083e512692c79cb6dc1e0c1639d2f00d8b1e9"
+    },
+    {
+      "kind": "dataset",
+      "legacyId": "path:research/energy/timeseries/gap-register.json",
+      "canonicalId": "DAT-000117",
+      "semanticHash": "554ec60d1392e3312fbd6f877df7ab85a3fe76ea0e9dde0c7f0b8cb3739baf18"
     },
     {
       "kind": "dataset",
@@ -2016,6 +2208,12 @@
       "legacyId": "path:research/energy/transmission/cross-domain-gap-register.json",
       "canonicalId": "DAT-000079",
       "semanticHash": "d187f799c86f2b77ccf8977dc56242a2e5ffacb6476ba32f07214e8bb118e028"
+    },
+    {
+      "kind": "dataset",
+      "legacyId": "path:research/energy/transmission/infrastructure-challenges.json",
+      "canonicalId": "DAT-000118",
+      "semanticHash": "3eaa4b27fedc3d2b20fbe522e63bc7771da46a107fed1ec23715bcc979ec9612"
     },
     {
       "kind": "dataset",
@@ -2133,9 +2331,45 @@
     },
     {
       "kind": "dataset",
+      "legacyId": "path:research/water/risk/risk-register.json",
+      "canonicalId": "DAT-000119",
+      "semanticHash": "147c5dd7c850cce5414efb0bb2b033f0db7de8c498b2e7d2f86ba4fe62b0f89a"
+    },
+    {
+      "kind": "dataset",
+      "legacyId": "path:research/water/sectors/agriculture.json",
+      "canonicalId": "DAT-000120",
+      "semanticHash": "2c73768f7a6470c2b2fc8ceb1516674084f46d26a5b219f851f78a0aae740bc4"
+    },
+    {
+      "kind": "dataset",
       "legacyId": "path:research/water/sectors/data-centers.json",
       "canonicalId": "DAT-000096",
       "semanticHash": "57e736b0334c9b0cba00115ea9245e177e9f05bed5d488702fd6ea70a8ebc05d"
+    },
+    {
+      "kind": "dataset",
+      "legacyId": "path:research/water/sectors/manufacturing-plastics.json",
+      "canonicalId": "DAT-000121",
+      "semanticHash": "02405635b624158f290b9d9b52214425ef39a649bb114c61d73c7509cf1b5e91"
+    },
+    {
+      "kind": "dataset",
+      "legacyId": "path:research/water/summary.json",
+      "canonicalId": "DAT-000122",
+      "semanticHash": "8a4797e3dbc52b19e818f0d20a83856c7e289d87418a1a183304b4b1f63654bf"
+    },
+    {
+      "kind": "dataset",
+      "legacyId": "path:research/water/technologies/atmospheric-water-generation.json",
+      "canonicalId": "DAT-000123",
+      "semanticHash": "d224551f046597cb1aed59ede19c2fd031508ac71be5d9e92e82c9952c657b25"
+    },
+    {
+      "kind": "dataset",
+      "legacyId": "path:research/water/technologies/desalination.json",
+      "canonicalId": "DAT-000124",
+      "semanticHash": "2e38b84a9c519b4f8a1b26f38b9fca40072355503f9184adff2f7c16fd20ce96"
     },
     {
       "kind": "dataset",
@@ -3083,7 +3317,7 @@
       "kind": "open_item",
       "legacyId": "chart-data-bindings",
       "canonicalId": "OPN-000090",
-      "semanticHash": "b3336454ba808e9eef96b6168b3986117fc6228e59d4f1b006ab35f9f6ddcccd"
+      "semanticHash": "5d815d8a16caf627f1c7f30da3a04aa4e5badcf81c952b6473e37fa46d704d25"
     },
     {
       "kind": "open_item",

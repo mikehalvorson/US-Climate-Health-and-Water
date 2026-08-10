@@ -1,0 +1,112 @@
+---
+import BarPlot from '../charts/BarPlot.astro';
+import LinePlot from '../charts/LinePlot.astro';
+import CaveatPanel from '../CaveatPanel.astro';
+import ChartFrame from '../ChartFrame.astro';
+import DataTable from '../DataTable.astro';
+import EvidenceGap from '../EvidenceGap.astro';
+import OptionComparison from '../OptionComparison.astro';
+import RecommendationPanel from '../RecommendationPanel.astro';
+import ViewpointGrid from '../ViewpointGrid.astro';
+import FrameworkFigure from '../strategy/FrameworkFigure.astro';
+import StrategyWorkbench from '../strategy/StrategyWorkbench.astro';
+import {
+  AGRICULTURE_CONTEXT,
+  approvedStrategyChart,
+  FOOD_CROP_IPCC_BARS,
+  FOOD_CROP_ISOLATED_BARS,
+  FOOD_CROP_TABLE,
+  FOOD_GROUNDWATER_SERIES,
+  FOOD_GROUNDWATER_TABLE,
+  FOOD_WORKBENCH,
+  STRATEGY_SOURCES,
+  strategyGap,
+} from '../../lib/data/strategy';
+
+const cropChart = approvedStrategyChart('food-crop-yield-sensitivity', 'bar');
+const groundwaterChart = approvedStrategyChart('food-groundwater-transition', 'line');
+const foodGap = strategyGap('GAP-CLIM-004');
+const sources = STRATEGY_SOURCES.food;
+---
+<article class="chapter-content" data-chapter-content="food-agriculture">
+  <section id="current-system" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">01 · Current system</p><h2>Food security is a connected system, not a crop-yield chart</h2><p>Climate, water, soil, labor, energy, materials, processing, logistics, markets, households, nutrition, waste, and ecosystems determine whether production becomes affordable healthy food.</p></div>
+    <FrameworkFigure chartId="food-system-boundary" chartType="flow" unit="System relationship; no additive national total" geography="United States food system with global climate evidence" period="Current boundary and planning horizons through 2100" sources={sources.slice(0, 3)} summary="Inputs and climate conditions shape production, but processing, logistics, access, nutrition, waste, labor, and environmental outcomes remain separate decision layers." items={[
+      { label: 'Climate, water, soil, and ecosystems', value: 'Biophysical boundary', state: 'Verified pathways', detail: 'Heat, drought, flood, pests, recharge, environmental flows, and soil condition shape feasible production.', gate: 'Local crop, basin, soil, and adaptation evidence' },
+      { label: 'Farm inputs and labor', value: 'Production capacity', state: 'Partial baseline', detail: 'Seed, fertilizer, machinery, energy, knowledge, finance, and safe labor conditions affect output and resilience.', gate: 'Comparable national input, labor, and cost baseline' },
+      { label: 'Crop and livestock production', value: 'Physical output', state: 'Partial evidence', detail: 'Yield and production are physical results, not household access or diet quality.', gate: 'Crop- and region-specific scenarios' },
+      { label: 'Processing, storage, and logistics', value: 'Supply-chain service', state: 'Model gap', detail: 'Capacity, refrigeration, transport, trade, and disruption determine availability and loss.', gate: 'Versioned facility and network model' },
+      { label: 'Affordability and nutrition', value: 'Essential outcome', state: 'Model gap', detail: 'Income, prices, access, culture, health, and distribution determine food security.', gate: 'Household, price, nutrition, and distribution data' },
+      { label: 'Waste and environmental burden', value: 'Residual outcome', state: 'Partial evidence', detail: 'Loss, waste, emissions, land, water, pollution, and biodiversity effects require explicit accounting.', gate: 'Compatible lifecycle and geography boundaries' },
+    ]} caveats={['Crop output, producer income, household affordability, nutrition, water storage, and ecosystem condition must remain separate outputs.', 'A national food-system baseline is not yet complete.']} />
+  </section>
+
+  <section id="problems" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">02 · Why this is a problem</p><h2>Warming pressure and groundwater decline arrive through different evidence frames</h2><p>The authorized evidence identifies major-crop sensitivities and geographically bounded groundwater transition pressure. It does not produce a national food-security forecast.</p></div>
+    <ChartFrame chart={cropChart} unit="Percent per decade and percent per 1°C in separate panels" geography="Global major-crop synthesis" period="Assessed and modeled response studies" sources={sources.slice(0, 2)} summary="Two non-combinable study frames show negative effects for maize, rice, soybean, and wheat. One includes carbon-dioxide fertilization with no adaptation; the other isolates temperature and excludes both." caveats={['Never place the two panels on one numeric scale.', 'Crop yield is not production, income, price, nutrition, access, or food security.']}>
+      <div slot="plot" class="chart-small-multiples chart-small-multiples--two"><section><h4>IPCC median · no adaptation · with CO₂ fertilization</h4><BarPlot id="food-crop-ipcc" values={FOOD_CROP_IPCC_BARS} valueLabel="Yield effect" unit="% per decade" summary="IPCC median crop-yield sensitivity per decade with carbon-dioxide fertilization and without adaptation." /></section><section><h4>Isolated temperature effect · excludes adaptation and CO₂ fertilization</h4><BarPlot id="food-crop-isolated" values={FOOD_CROP_ISOLATED_BARS} valueLabel="Yield effect" unit="% per 1°C" summary="Multi-method isolated temperature effect on four major crops per degree Celsius." /></section></div>
+      <DataTable slot="table" caption="Major-crop sensitivity under two incompatible study frames" columns={[{ key: 'studyFrame', label: 'Study frame' }, { key: 'crop', label: 'Crop' }, { key: 'effect', label: 'Effect', numeric: true }, { key: 'unit', label: 'Unit' }]} rows={FOOD_CROP_TABLE} />
+    </ChartFrame>
+    <ChartFrame chart={groundwaterChart} unit="Acre-feet per year" geography="Hale County, Texas" period="2030–2080 regional planning estimates" sources={sources.slice(2)} summary={`The local planning series declines from ${FOOD_GROUNDWATER_TABLE[0]?.existingSupply.toLocaleString('en-US')} acre-feet per year in 2030 to ${FOOD_GROUNDWATER_TABLE.at(-1)?.existingSupply.toLocaleString('en-US')} in 2080. It illustrates transition pressure, not a date when the High Plains aquifer or all wells fail.`} caveats={[AGRICULTURE_CONTEXT.high_plains_aquifer.interpretation, 'The local series must not be scaled to a national crop or groundwater result.']}>
+      <LinePlot slot="plot" series={FOOD_GROUNDWATER_SERIES} xLabel="Planning year" yLabel="Existing supply" unit="acre-feet/year" summary="Hale County existing groundwater supply planning estimates from 2030 through 2080." focusX={[2030, 2050, 2080]} />
+      <DataTable slot="table" caption="Hale County existing groundwater supply planning estimates" columns={[{ key: 'geography', label: 'Geography' }, { key: 'year', label: 'Year', numeric: true }, { key: 'existingSupply', label: 'Existing supply', unit: 'acre-feet/year', numeric: true }, { key: 'interpretation', label: 'Interpretation boundary' }]} rows={FOOD_GROUNDWATER_TABLE} />
+    </ChartFrame>
+    <ViewpointGrid id="food-system-viewpoints" title="Food-system transition affects different outcomes and people" items={[
+      { viewpoint: 'businesses_and_producers', label: 'Farmers and producers', problem: 'Climate, water, input, market, and debt risks can undermine income before national supply visibly changes.', evidenceState: 'qualitative_evidence', consequence: 'Risk-sharing, agronomy, crop choice, water rules, and transition support must protect viable livelihoods.' },
+      { viewpoint: 'workers_and_operators', label: 'Farm and food workers', problem: 'Heat, smoke, chemical exposure, unstable work, and disruption affect safety and income.', evidenceState: 'qualitative_evidence', consequence: 'Worker protection is a food-system requirement, not an external co-benefit.' },
+      { viewpoint: 'people_and_households', label: 'Households', problem: 'Availability does not guarantee affordability, access, nutrition, cultural fit, or stability.', evidenceState: 'data_gap', consequence: 'A national optimized diet or food-security result remains unavailable.' },
+      { viewpoint: 'ecosystems_and_nonhuman_life', label: 'Ecosystems', problem: 'Pumping, nutrient loss, habitat conversion, pesticide exposure, and warming degrade supporting systems.', evidenceState: 'qualitative_evidence', consequence: 'Environmental water, soil, habitat, and pollution limits are portfolio constraints.' },
+    ]} />
+  </section>
+
+  <section id="choices" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">03 · Choices</p><h2>Evidence readiness is strong for selected pathways and weak for integrated outcomes</h2></div>
+    <FrameworkFigure chartId="food-evidence-readiness" chartType="matrix" unit="Readiness class: verified pathway, partial baseline, or model gap" geography="United States with selected global and regional evidence" period="Current evidence package" sources={sources} summary="Production and water pathways have useful evidence, while nutrition, affordability, trade, labor, and integrated scenario outcomes need a consistent national baseline and model." items={[
+      { label: 'Production', value: 'Partial baseline', state: 'Selected crops', detail: 'Yield relationships and some national statistics exist.', gate: 'Harmonized crop, livestock, region, and adaptation baseline' },
+      { label: 'Nutrition', value: null, state: 'Model gap', detail: 'Production cannot establish diet quality or health.', gate: 'Diet, access, demographics, and health linkages' },
+      { label: 'Affordability', value: null, state: 'Model gap', detail: 'Prices, income, assistance, and local access are not integrated.', gate: 'Household burden and price-distribution model' },
+      { label: 'Land', value: 'Partial baseline', state: 'Boundary incomplete', detail: 'Land use must include habitat, soil, tenure, and competing uses.', gate: 'Spatial land and ecological constraint layers' },
+      { label: 'Water', value: 'Partial baseline', state: 'Strong selected cases', detail: 'National irrigation and selected aquifer evidence exist.', gate: 'Harmonized basin scenarios and return-flow accounting' },
+      { label: 'Energy and emissions', value: 'Partial baseline', state: 'Boundary incomplete', detail: 'Inputs, pumping, processing, refrigeration, and transport require compatible accounting.', gate: 'Versioned lifecycle and grid scenarios' },
+      { label: 'Waste', value: 'Partial baseline', state: 'Inconsistent definitions', detail: 'Loss and waste occur at different stages and need service-equivalent counterfactuals.', gate: 'Stage-specific mass and disposition baseline' },
+      { label: 'Trade', value: null, state: 'Model gap', detail: 'Imports, exports, substitution, and disruption are not joined to crop and water scenarios.', gate: 'Trade-network and policy scenarios' },
+      { label: 'Labor', value: null, state: 'Model gap', detail: 'Heat, safety, employment, wages, and transition are not integrated.', gate: 'Worker exposure and livelihood data' },
+    ]} />
+    <OptionComparison id="food-options" title="Four strategies under the same food-system dimensions" question="Which option best protects production, people, water, land, and resilience without claiming an unavailable national optimum?" dimensions={[{ id: 'benefit', label: 'Main benefit' }, { id: 'water', label: 'Water and land' }, { id: 'people', label: 'People and access' }, { id: 'dependency', label: 'Dependencies' }, { id: 'residual', label: 'Residual risk' }]} options={[
+      { id: 'yield', label: 'Yield-only', summary: 'Maximize physical output.', values: { benefit: 'Can lift output', water: 'Can intensify pumping, inputs, or land pressure', people: 'Does not guarantee affordability or nutrition', dependency: 'Crop technology and inputs', residual: 'Rebound, concentration, ecosystem loss' } },
+      { id: 'demand', label: 'Demand-only', summary: 'Reduce loss, waste, and resource-intensive demand.', values: { benefit: 'Reduces avoidable system pressure', water: 'Benefits depend on actual substitution', people: 'Requires affordability and cultural fit', dependency: 'Households, institutions, logistics', residual: 'Production and climate shocks remain' } },
+      { id: 'technology', label: 'Technology-only', summary: 'Rely on efficiency, genetics, irrigation, and controlled systems.', values: { benefit: 'Can improve selected performance', water: 'Savings may rebound or shift burdens', people: 'Access and ownership shape benefits', dependency: 'Capital, energy, skills, regulation', residual: 'Systemic and distributional risks' } },
+      { id: 'resilient', label: 'Resilient portfolio', summary: 'Pair productivity, diversity, protection, waste reduction, and access.', values: { benefit: 'Addresses multiple failure modes', water: 'Regionally appropriate crops and irrigation within ecological limits', people: 'Makes affordable healthy diets an outcome', dependency: 'Coordinated evidence, governance, finance, and transition', residual: 'Severe climate, conflict, and market shocks' } },
+    ]} />
+    <FrameworkFigure chartId="food-options-comparison" chartType="matrix" unit="Qualitative contribution; no combined score" geography="United States decision framework" period="Near-term action through long-term transition" sources={sources.slice(0, 3)} summary="Yield-only, demand-only, and technology-only strategies address selected pressures. The resilient portfolio spans production, water, ecosystems, loss and waste, supply chains, labor, affordability, and nutrition." items={[
+      { label: 'Yield-only', value: 'Narrow coverage', state: 'Comparator', detail: 'Improves physical output where agronomic gains hold.', gate: 'Water, ecosystem, income, price, and nutrition consequences' },
+      { label: 'Demand-only', value: 'Narrow coverage', state: 'Comparator', detail: 'Reduces selected pressure through loss, waste, and consumption changes.', gate: 'Service-equivalent substitution and distributional effects' },
+      { label: 'Technology-only', value: 'Conditional coverage', state: 'Comparator', detail: 'Deploys genetics, irrigation, controlled systems, and information.', gate: 'Capital, energy, rebound, ownership, and regional fit' },
+      { label: 'Resilient portfolio', value: 'Broadest coverage', state: 'Recommended', detail: 'Combines productivity, diversity, protection, waste reduction, supply-chain resilience, and access.', gate: 'Regional implementation and integrated validation' },
+    ]} />
+  </section>
+
+  <section id="recommendation" class="chapter-act" data-chapter-section>
+    <RecommendationPanel id="food-recommendation" title="Build resilience across production, resources, supply chains, and diets" conclusion="Climate-resilient productivity, regionally appropriate crops and irrigation, soil and ecosystem protection, reduced loss and waste, supply-chain diversity, and affordable healthy diets." rationale={['No single yield, demand, or technology lever covers the full food-system boundary.', 'Regional crop and water choices can respond to local evidence while national policy protects common outcomes.', 'Affordability, nutrition, labor, ecosystems, and producer livelihoods remain explicit decision criteria.']} tradeoffs={['Some crops, practices, locations, and business models will need transition support', 'Lower resource pressure can conflict with short-term output, revenue, or consumer convenience', 'Diversity and redundancy can cost more than brittle just-in-time systems']} residualRisks={['Severe heat, drought, flood, pests, conflict, and synchronized supply shocks', 'Rebound in irrigated area or consumption after efficiency gains', 'Benefits and burdens concentrated by land tenure, market power, income, race, geography, or immigration status']} />
+  </section>
+
+  <section id="model" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">05 · Model-supported case</p><h2>The working view exposes evidence seams instead of simulating food security</h2></div>
+    <StrategyWorkbench config={FOOD_WORKBENCH} sources={sources} />
+    <FrameworkFigure chartId="food-water-land-model" chartType="flow" unit="Versioned model contract; quantitative outputs unavailable" geography="Crop-region-basin-market-household system" period="Historical calibration and explicit planning horizons" sources={sources} summary="A proposed model connects climate and crop response to land, water, production, processing, trade, prices, access, nutrition, labor, ecosystems, and uncertainty. Every downstream output remains gated." items={[
+      { label: 'Inputs', value: 'Versioned datasets', state: 'Required', detail: 'Climate, crop, soil, land, water, energy, inputs, labor, infrastructure, trade, population, income, and diet.', gate: 'Common geography, period, units, provenance, and missingness' },
+      { label: 'Equations', value: 'Documented modules', state: 'Required', detail: 'Crop response, irrigation and return flow, allocation, loss and waste, trade, price, access, nutrition, and ecosystem constraints.', gate: 'Peer review, dimensional checks, and no silent proxies' },
+      { label: 'Outputs', value: null, state: 'Unavailable', detail: 'Production, income, storage, price, affordability, nutrition, emissions, land, water, labor, and ecological outcomes remain separate.', gate: 'No national optimized diet or composite food-security score' },
+      { label: 'Validation', value: 'Backtests and holdouts', state: 'Required', detail: 'Compare historical crop, water, price, trade, access, and distributional behavior across regions and shocks.', gate: 'Named acceptance thresholds and failure reporting' },
+      { label: 'Release', value: 'Versioned candidate', state: 'Blocked', detail: 'Publish assumptions, code, provenance, uncertainty, diagnostics, residuals, and known failure modes.', gate: 'Close GAP-CLIM-004 and pass independent review' },
+    ]} />
+    <EvidenceGap item={foodGap} decision="Produce consistent crop, water, production, trade, price, affordability, and nutrition results under common scenarios." missingInputs={['Gridded crop-model ensemble with carbon-dioxide fertilization, irrigation, adaptation, heat, and pests', 'Trade, price, income, access, nutrition, labor, land, and ecosystem layers', 'Regional validation and distributional reporting']} />
+    <CaveatPanel title="The first draft is a decision framework, not a national food optimizer" caveats={['Authorized crop sensitivities and groundwater cases remain source-native.', 'The workbench can filter evidence but cannot generate missing scenario outcomes.']} prohibitedInterpretations={['A national optimized diet, food-security result, or land-water tradeoff.', 'A crop-yield sensitivity presented as food production, price, hunger, or nutrition.', 'A local High Plains or Hale County result applied nationally.']} />
+  </section>
+
+  <section id="delivery" class="chapter-act" data-chapter-section>
+    <div class="act-heading"><p class="section-kicker">06 · Delivery</p><h2>Sequence no-regrets capacity while the integrated evidence base is built</h2></div>
+    <ol class="delivery-sequence"><li><strong>Protect essential outcomes now.</strong><span>Heat and worker safety, soil and water stewardship, loss prevention, nutrition access, risk management, and producer transition support.</span></li><li><strong>Build the baseline.</strong><span>Join production, livestock, water, land, inputs, labor, facilities, trade, prices, affordability, nutrition, waste, and ecosystems with explicit boundaries.</span></li><li><strong>Run regional pilots.</strong><span>Test crop, irrigation, groundwater, supply-chain, access, and ecosystem packages with local producers, Tribes, workers, communities, and agencies.</span></li><li><strong>Release the model in gates.</strong><span>Publish versioned modules only after calibration, backtesting, distributional review, and independent validation.</span></li></ol>
+    <div class="delivery-gates"><article><h3>Evidence gate</h3><p>Common scenario, geography, units, provenance, uncertainty, and missing-data rules.</p></article><article><h3>People gate</h3><p>Affordable healthy diets, safe work, producer livelihoods, Tribal rights, and community participation.</p></article><article><h3>Ecology gate</h3><p>Groundwater, environmental flows, soil, habitat, nutrient loss, pollution, and rebound.</p></article></div>
+  </section>
+</article>

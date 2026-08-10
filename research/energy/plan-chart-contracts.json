@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "charts": [
+    {
+      "chart_id": "energy-plan-architecture",
+      "title": "A diversified low-carbon energy architecture",
+      "type": "flow",
+      "data": ["technology-taxonomy.json", "impacts/technology-impact-matrix.json"],
+      "constraints": ["Architecture is a recommended design, not an optimized build mix.", "Keep demand, supply, grid, and delivery requirements visible."]
+    },
+    {
+      "chart_id": "energy-plan-source-scenarios",
+      "title": "Published energy scenario families stay separate",
+      "type": "line",
+      "data": ["timeseries/normalized/us-electricity-projections-aeo2026.csv", "timeseries/normalized/us-electricity-projections-nrel-standard-scenarios-2024.csv", "timeseries/normalized/global-electricity-projections-ngfs-phase5.1.csv"],
+      "constraints": ["AEO, NREL, and NGFS are source scenarios with different geographies and model boundaries.", "Do not splice them into one national forecast."]
+    },
+    {
+      "chart_id": "energy-plan-requirements",
+      "title": "Portfolio requirements span six delivery systems",
+      "type": "matrix",
+      "data": ["impacts/technology-impact-matrix.json", "transmission/needs-and-expectations.json", "consumption/demand-drivers.json"],
+      "constraints": ["Scores are planning requirements, not performance results.", "Unknown compatible coefficients remain visible."]
+    },
+    {
+      "chart_id": "energy-plan-robustness",
+      "title": "Stress-test the architecture before claiming robustness",
+      "type": "matrix",
+      "data": ["transmission/infrastructure-challenges.json", "timeseries/gap-register.json"],
+      "constraints": ["Cells state response logic and evidence gates, not reliability probabilities.", "No stress case proves resource adequacy."]
+    },
+    {
+      "chart_id": "energy-plan-roadmap",
+      "title": "Delivery phases advance only through evidence gates",
+      "type": "flow",
+      "data": ["transmission/process/process-graph.json", "timeseries/gap-register.json"],
+      "constraints": ["Dates are sequencing horizons, not project completion forecasts.", "A phase cannot clear while its named evidence gate is open."]
+    },
+    {
+      "chart_id": "energy-plan-model-contract",
+      "title": "Versioned integrated energy model contract",
+      "type": "flow",
+      "data": ["en-roads/model-map.json", "timeseries/gap-register.json"],
+      "constraints": ["No model output is authorized until inputs, equations, outputs, and validation tests are versioned.", "Do not claim least cost, reliability, bills, or a final 2050 mix."]
+    }
+  ]
+}

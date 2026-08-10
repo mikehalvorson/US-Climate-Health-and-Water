@@ -63,8 +63,8 @@ const storyPages = pages.filter((path) => /data-current-route="RTE-0000(?:0[2-9]
 if (storyPages.length !== 14) failures.push(`Expected 14 story pages for shared-component checks; found ${storyPages.length}.`);
 const shellStoryPages = storyPages.filter((path) => readFileSync(path, 'utf8').includes('data-release-status="shell"'));
 const releasedStoryPages = storyPages.filter((path) => readFileSync(path, 'utf8').includes('data-release-status="chapter"'));
-if (shellStoryPages.length !== 4) failures.push(`Expected 4 gated story shells; found ${shellStoryPages.length}.`);
-if (releasedStoryPages.length !== 10) failures.push(`Expected 10 released story chapters; found ${releasedStoryPages.length}.`);
+if (shellStoryPages.length !== 0) failures.push(`Expected 0 gated story shells; found ${shellStoryPages.length}.`);
+if (releasedStoryPages.length !== 14) failures.push(`Expected 14 released story chapters; found ${releasedStoryPages.length}.`);
 for (const path of shellStoryPages) {
   const html = readFileSync(path, 'utf8');
   if (!html.includes('data-evidence-badge="data_gap"')) failures.push(`${path}: missing explicit evidence-state badge.`);

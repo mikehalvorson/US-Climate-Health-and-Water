@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "evidenceVintage": "2026-08-01",
-  "trackedInputCount": 211,
+  "trackedInputCount": 214,
   "hashAlgorithm": "sha256",
   "inputs": {
     "research/README.md": "92a64e1e02ddb6e45c96d573c39f0bba36588ea0d360d30872a1deca3b859e8f",
@@ -38,7 +38,8 @@
     "research/climate/impacts/hurricanes.json": "8e65a1f0187f225192a7127b7f644fb306a21edeb7736ead5bd5fbf44e8656f9",
     "research/climate/impacts/sea-level.json": "af6e07e1393a6f770f2add3aecb89c5cd5b7105f86d48a47104bf95d95206aa3",
     "research/climate/impacts/temperature-risk-ladder.json": "cba9a8e3ef7934578e5bde11ec897cd8604820dca6e5c89cf251978fa279d1c3",
-    "research/climate/manifest.json": "46ac6d243f44aba7f0e376fc127f9336aa9fb214910fa623a95c5a6f8bcb120d",
+    "research/climate/manifest.json": "5e88cb2cfc753fbd2969e1425e23ce36771afce17d55945a3ef8854cd7543ba8",
+    "research/climate/plan-chart-contracts.json": "c5146074e5750c5aa80a4b77e976cb449e68fbcd50973f99c1b625dd64ca1534",
     "research/climate/scripts/validate_climate.py": "40ad4a0ceda155f618c0e23c2f7d873fea722a8552a42d121718a26c772aacee",
     "research/climate/source-verification.json": "38ac90166ce0864e9be78579ce3d926d74830dcc43a169837b2900d0a309ea48",
     "research/climate/sources.json": "1a37fff1c171bd8355f43af6462b11c74c469f5c55d3d65384ce2d3545f3d6c8",
@@ -110,9 +111,10 @@
     "research/energy/impacts/regulatory-status.json": "b52e408e0b8afc886e4dcfb3c6d524a82b244d86cf2c73597b208cbbfd732d79",
     "research/energy/impacts/scripts/validate_impacts.py": "d37886c07f00588925564f07a5a4a190a7f30d66f57f044025c1b95c1d7fd114",
     "research/energy/impacts/technology-impact-matrix.json": "1fbd2b52cb7fbbd1bb3582df89f0e5e236c892e13ecd11d3965636ae4bb19012",
-    "research/energy/manifest.json": "e3fbc660f985c2bacc563a93583a259e59794bb80c08fe5e86cb6de4762fc864",
+    "research/energy/manifest.json": "395eab16dee2fe63e783503e3eb8382ce5d38b92c44db9b7d6f428a42e73778c",
     "research/energy/observations-global-2025.json": "fd785efeb9dc245f8b50a97ba61e83a086bf9a41964ecf9735385ef3e86ba2d8",
     "research/energy/observations-us-2025.json": "997826c6ecc8d5c71cadad1165ff4312e17412a2c15db75229b88a421795eb6f",
+    "research/energy/plan-chart-contracts.json": "f0bffa0a672854917bb0163560fa74591f5ff937ed78f388c4f14818054be4b1",
     "research/energy/sources.json": "1bd1f872e9b18abc042ba3c8f38a2104a809e90b138920957d08ed093c045684",
     "research/energy/summary.json": "bd613813fa74badf134fea1e0a9abee881140bdcc4d3db82ea2d5fe58f588812",
     "research/energy/technology-taxonomy.json": "bcce4bd4bbda31a92f3c86bc5b7cff9e77f127e22747d1793ddeae3dd03cf164",
@@ -194,9 +196,10 @@
     "research/water/chart-contracts.json": "747a3a9bdc15b8198740ad16df22ba301592b68291ba612d620b8c3f12008cf3",
     "research/water/claims.json": "a7b7fc9f6bee5dae65e455ed126fdf73e19589ccbf630bbbd023ee5d14811bfe",
     "research/water/cross-domain-findings.json": "4a58a4c082036eaba71d936e670d4f4472febee555d80b51ba70b943f4529117",
+    "research/water/food-plan-chart-contracts.json": "e3b30bd0fd83eb172e8a5ba6a2e8b1833cbd069cf2762cc0e7e74a99fe07427b",
     "research/water/gaps.json": "f973b1a4a81af6c8edfb2c2b77c93fda37dec832d9d473024078aa64e9cd652d",
     "research/water/industry-chart-contracts.json": "93376d675c1308eac7d473adf3426aea0dbd6014d220f142279fd6f1155370a8",
-    "research/water/manifest.json": "ee75b28fa220934cdd328b351c9c7fd135cc3662c1c0dcc007ff011f9af8f024",
+    "research/water/manifest.json": "9c312471baa51a38997852bc3e4d039d4ecc72c3f545d49e735e48a42c1bcc68",
     "research/water/national-water-use.json": "cc025beffb9c8426933c83c4b80f43994577e95a32abb969c28faffe1d77e071",
     "research/water/risk/city-source-dependencies.json": "f09b4e01931d7c525f5b78439d984c1b72c9e88f0f5471a477c80cd30c02e406",
     "research/water/risk/risk-register.json": "67e8e63718ed7cf7b6e3028f4376a566c41a71167e689dbc28a01a099c19a102",
@@ -217,8 +220,8 @@
     "research/water/timeseries/usgs-historical-water-use-1950-2015.csv": "a59f1009c8c3941099f3ae8a07848324307d6c5c3f4ad8508cc7891f653209c0"
   },
   "outputs": {
-    "src/data/registry/id-map.json": "0c970b6ac7103176db1ac14fc8bd0941ac95a31cc011830ea1c7a52115d067c5",
-    "src/generated/registry.json": "879258ef9f6ee3e419bad3a75a563172b5c8e323277d73129c50be33d5d14cdc",
-    "src/generated/registry-audit.json": "fdc8dd9756e7b985d2f908ff4e1cafdb3ed43334c36023141bd18c809e84ad67"
+    "src/data/registry/id-map.json": "795f6d432793ef7ac0f439e67d7e367e5bc6cf9266420162835d2b6a6804433f",
+    "src/generated/registry.json": "4a37617318512d25e5ec82c1de64a35deff921a913cb3299c056427e29e9fa51",
+    "src/generated/registry-audit.json": "bab93d6c87d1ed8d73da97a3160762457f3a8b59337088523a51020d1d2da974"
   }
 }

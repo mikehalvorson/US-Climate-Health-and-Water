@@ -38,6 +38,7 @@
     "timeseries/scenario-warming.csv",
     "timeseries/impact-dose-response.csv",
     "chart-contracts.json",
+    "plan-chart-contracts.json",
     "gaps.json",
     "summary.json",
     "scripts/validate_climate.py",

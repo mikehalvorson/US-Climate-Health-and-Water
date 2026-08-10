@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "charts": [
+    {
+      "chart_id": "climate-plan-causal-map",
+      "title": "Mitigation changes warming; adaptation changes exposure and vulnerability",
+      "type": "causal_path",
+      "data": ["attribution/causal-chain.json", "impacts/temperature-risk-ladder.json"],
+      "constraints": ["Keep mitigation, warming, hazard, exposure, vulnerability, adaptation, and residual risk distinct.", "Do not infer national damages from this map."]
+    },
+    {
+      "chart_id": "climate-plan-source-scenarios",
+      "title": "Assessed warming pathways are scenarios, not forecasts",
+      "type": "dot_range",
+      "data": ["timeseries/scenario-warming.csv"],
+      "constraints": ["Show assessed periods and ranges.", "Do not invent annual trajectories or probabilities."]
+    },
+    {
+      "chart_id": "climate-plan-mitigation-levers",
+      "title": "Mitigation levers act through different systems and time horizons",
+      "type": "matrix",
+      "data": ["summary.json", "attribution/ghg-temperature-relationship.json"],
+      "constraints": ["The matrix is a responsibility and dependency map, not a marginal-abatement-cost curve.", "No lever receives an unsupported universal rank."]
+    },
+    {
+      "chart_id": "climate-plan-adaptation-packages",
+      "title": "Adaptation packages follow the risk and responsible system",
+      "type": "matrix",
+      "data": ["impacts/temperature-risk-ladder.json", "impacts/freshwater.json", "impacts/sea-level.json"],
+      "constraints": ["Adaptation choices require local exposure and vulnerability evidence.", "Global risk evidence is not a local project design."]
+    },
+    {
+      "chart_id": "climate-plan-residual-risk",
+      "title": "Residual risk remains under lower, central, and severe conditions",
+      "type": "matrix",
+      "data": ["timeseries/impact-dose-response.csv", "gaps.json"],
+      "constraints": ["Cells are qualitative planning states, not damage estimates.", "Severe stress tests are not assigned probabilities."]
+    },
+    {
+      "chart_id": "climate-plan-roadmap",
+      "title": "Mitigate low and adapt high through staged delivery",
+      "type": "flow",
+      "data": ["summary.json", "gaps.json"],
+      "constraints": ["The sequence is a robust-decision roadmap, not a national benefit-cost optimum.", "Monitoring and revision gates remain explicit."]
+    },
+    {
+      "chart_id": "climate-plan-model-contract",
+      "title": "Versioned robust-decision model contract",
+      "type": "flow",
+      "data": ["timeseries/scenario-warming.csv", "timeseries/impact-dose-response.csv", "gaps.json"],
+      "constraints": ["No integrated damage total is authorized.", "Release requires scenario provenance, local exposure, adaptation response, validation, and residual-risk reporting."]
+    }
+  ]
+}

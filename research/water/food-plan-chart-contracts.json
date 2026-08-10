@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0.0",
+  "charts": [
+    {
+      "chart_id": "food-system-boundary",
+      "title": "Food-system outcomes extend beyond crop yield",
+      "type": "flow",
+      "data": ["sectors/agriculture.json", "../climate/impacts/food-systems.json"],
+      "constraints": ["Keep production, nutrition, affordability, waste, ecosystems, and labor visible.", "Do not relabel crop sensitivity as food security."]
+    },
+    {
+      "chart_id": "food-crop-yield-sensitivity",
+      "title": "Major-crop sensitivity uses two non-combinable study frames",
+      "type": "bar",
+      "data": ["../climate/impacts/food-systems.json"],
+      "constraints": ["Separate percent per decade from percent per degree Celsius.", "Expose adaptation and carbon-dioxide-fertilization assumptions."]
+    },
+    {
+      "chart_id": "food-groundwater-transition",
+      "title": "A local groundwater planning case shows transition pressure",
+      "type": "line",
+      "data": ["sectors/agriculture.json"],
+      "constraints": ["Hale County is a local planning estimate, not a national projection.", "Do not interpret declining supply as an all-wells-fail date."]
+    },
+    {
+      "chart_id": "food-evidence-readiness",
+      "title": "National food-system evidence readiness is uneven",
+      "type": "matrix",
+      "data": ["sectors/agriculture.json", "../climate/gaps.json"],
+      "constraints": ["Readiness scores describe evidence coverage, not outcome quality.", "Missing national baselines remain null."]
+    },
+    {
+      "chart_id": "food-water-land-model",
+      "title": "Proposed food-water-land model and release gates",
+      "type": "flow",
+      "data": ["sectors/agriculture.json", "../climate/gaps.json"],
+      "constraints": ["This is a model contract, not a completed model.", "Outputs stay unavailable until linked inputs and validation gates close."]
+    },
+    {
+      "chart_id": "food-options-comparison",
+      "title": "Four food-system strategies use the same decision dimensions",
+      "type": "matrix",
+      "data": ["sectors/agriculture.json", "../climate/impacts/food-systems.json"],
+      "constraints": ["Options are not optimized portfolios.", "Qualitative comparisons cannot establish national food-security outcomes."]
+    },
+    {
+      "chart_id": "food-water-plan-system-map",
+      "title": "Basins connect food, water, energy, materials, people, and ecosystems",
+      "type": "flow",
+      "data": ["cross-domain-findings.json", "sectors/agriculture.json"],
+      "constraints": ["Basin conditions and governance remain geographically explicit.", "Do not aggregate incompatible basin evidence into one national average."]
+    },
+    {
+      "chart_id": "food-water-plan-outcomes",
+      "title": "Essential outcomes and ecological constraints are joint gates",
+      "type": "matrix",
+      "data": ["cross-domain-findings.json", "gaps.json"],
+      "constraints": ["Engineering supply cannot override ecological, quality, rights, or affordability constraints.", "Scores indicate decision requirements, not achieved outcomes."]
+    },
+    {
+      "chart_id": "food-water-plan-contributions",
+      "title": "Portfolio contributions form a sequence, not an additive national total",
+      "type": "bar",
+      "data": ["technologies/desalination.json", "technologies/atmospheric-water-generation.json", "summary.json"],
+      "constraints": ["Unavailable compatible contributions remain null.", "Do not add case-study yields across regions or technologies."]
+    },
+    {
+      "chart_id": "food-water-plan-stress",
+      "title": "Essential-service portfolios face four planning conditions",
+      "type": "matrix",
+      "data": ["risk/risk-register.json", "gaps.json"],
+      "constraints": ["Cells are response requirements, not outage probabilities.", "Drought and infrastructure-failure effects require basin and utility models."]
+    },
+    {
+      "chart_id": "food-water-plan-tradeoffs",
+      "title": "Portfolio tradeoffs stay multi-dimensional",
+      "type": "matrix",
+      "data": ["cross-domain-findings.json", "gaps.json"],
+      "constraints": ["Do not collapse reliability, cost, energy, emissions, ecosystems, and equity into one score.", "Unknown household and ecological burdens remain visible."]
+    },
+    {
+      "chart_id": "food-water-plan-governance",
+      "title": "Regional governance aligns authority with the physical system",
+      "type": "flow",
+      "data": ["accounting-boundaries.json", "cross-domain-findings.json"],
+      "constraints": ["The map is an implementation responsibility graph, not a jurisdictional completeness claim.", "Tribal rights and local authority remain explicit."]
+    },
+    {
+      "chart_id": "food-water-plan-model-contract",
+      "title": "Versioned basin-food-industry model contract",
+      "type": "flow",
+      "data": ["sectors/agriculture.json", "sectors/manufacturing-plastics.json", "sectors/data-centers.json", "gaps.json"],
+      "constraints": ["No nationalized basin result is authorized.", "Release requires water quantity, quality, return flow, food, industry, ecological, equity, and validation layers."]
+    }
+  ]
+}
